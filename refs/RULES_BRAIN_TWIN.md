@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-036 (indexation Notion)
+> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-037 (indexation Notion)
 
 ---
 
@@ -170,6 +170,19 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Généralise R-034** : R-034 dit "créer puis relier" au sein d'un batch. R-035 étend à l'échelle inter-types.
 - **Exemples** : ✅ Indexer ASSET.SUBTYPE → puis Manuel Actifs peut référencer ASSET.SUBTYPE dans sa création / ❌ Indexer Manuel Actifs d'abord avec relation vide vers ASSET.SUBTYPE, puis revenir plus tard (dette)
 - **Découverte** : 2026-04-24, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
+
+#### R-037 : Lecture complète du doc obligatoire avant indexation (pas de raccourci frontmatter)
+
+- **Portée** : Brain (indexation) — **tous types de docs**
+- **Statut** : Actif (renforce R-029)
+- **Why** : Le frontmatter YAML résume les métadonnées structurelles (title, code, scale_kind, aliases). Les propriétés Notion narratives (Description source, Description courte, Définition, Règles d'usage, Valeur ajoutée...) exigent le contenu approfondi qui vit dans les **sections du corps du doc** (intention + règles d'usage + exclusions + "quoi choisir / quand" + distinctions + patrons d'arbitrage + exemples). Se limiter au frontmatter produit des descriptions pauvres et non-actionnables.
+- **How to apply** : Pour indexer **tout doc Brain** (taxonomie, note de concept, manuel de BDD, méthode, prompt, etc.), **lire l'intégralité du doc** avant de remplir les propriétés narratives. Le frontmatter sert uniquement à extraire les champs structurés (title, code, type). Tout le reste doit venir de la lecture du corps :
+  - **Taxonomie** : sections 1 (objet/but), 2 (détection du domaine), 5 (heuristique), 8 (exemples) → Description source + Description courte
+  - **Note de concept** : sections 1 (résumé, définition, périmètre), 2 (rôle, valeur), 3 (caractéristiques, modules), 4 (relations), 7 (bonnes pratiques) → Définition + Règles d'usage + Valeur ajoutée + Usages IA
+  - **Manuel de BDD** : sections 1 (identité), 2 (périmètre/frontières), 3 (rôle systémique), 4 (modèle de données) → Description + Valeur ajoutée + Usages IA
+  - **Glossaire** (dérivé de note de concept via R-030) : lire la note de concept ET le doc auquel elle fait référence pour synthétiser
+- **Exemples** : ✅ Lire `ORG.CONTEXTE.LBP.md` en entier pour en tirer une Description source qui mentionne "qualifie le contexte organisationnel d'un poste par niveau de périmètre ; règles : choisir 1 seule valeur, ne pas typer un collectif ou une organisation avec cette taxo" / ❌ Se contenter du `summary:` du frontmatter qui dit juste "Qualifie le contexte d'ancrage d'un poste"
+- **Découverte** : 2026-04-24, Leonard, après batch A1 où raccourci frontmatter-only a produit des descriptions jugées pauvres
 
 #### R-034 : Ordonnancement création puis relation (2 passes)
 
