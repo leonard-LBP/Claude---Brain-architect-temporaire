@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24
+> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3 du Twin)
 
 ---
 
@@ -155,19 +155,158 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 
 ## 3. Règles Digital Twin
 
-*Règles spécifiques à la gouvernance des BDD instanciées du Digital Twin.*
+*Règles spécifiques à la gouvernance des BDD instanciées du Digital Twin. Source principale : Panorama V2 v3 (2026-04-22).*
 
-### 3.1 Instanciation
+### 3.1 Ontologie des objets
 
-*Section à remplir quand on formalisera le workflow de création d'un Twin.*
+#### R-011 : Frontières fortes entre objets canoniques
 
-### 3.2 Extraction / Post-traitement / Sandbox
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Le Twin produit de la valeur à condition que ses objets restent conceptuellement nets. Sans frontières strictes, les relations deviennent incohérentes et les analyses inexploitables.
+- **How to apply** : Maintenir les distinctions canoniques suivantes, qui ne doivent jamais être confondues :
+  - une **Organisation** n'est pas un **Collectif** (institution juridique vs groupement humain opérant)
+  - un **Poste** n'est pas un **Individu** (position formelle vs personne physique)
+  - un **Actif** n'est pas un **Environnement** (support mobilisable vs cadre d'usage/contrainte)
+  - une **Pratique** n'est pas un **Processus** (pattern opérant récurrent vs fonctionnement structuré)
+  - une **Problématique** n'est pas un **Enjeu** (nœud diagnostique consolidé vs formulation structurée d'un besoin/tension)
+  - un **Modulateur** n'est ni une **Capacité**, ni une **Pratique**, ni une **Problématique** (condition d'effectivité transversale)
+  - un **Événement** n'est pas une **Initiative** (repère temporel vs effort intentionnel structuré)
+  - une **Action détectée** n'est pas une **Pratique** (geste observé vs pattern récurrent consolidé)
+- **Exemples** : ✅ Une équipe produit = Collectif ; SA TotalEnergies = Organisation / ❌ "Équipe ABC (SA)" dans Organisations
+- **Découverte** : Panorama V2 v3, §3.2
 
-*Section à remplir quand on clarifiera les règles par type fonctionnel de BDD.*
+#### R-012 : Séparation des 4 régimes de connaissance
 
-### 3.3 Relations inter-BDD Twin
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Éviter les glissements entre symptôme et diagnostic, la sur-interprétation du brut, la confusion entre vu/pensé/décidé.
+- **How to apply** : Tout contenu du Twin relève d'un des 4 régimes, à ne jamais mélanger :
+  1. **Preuve source** : observé, documenté, cité, transcrit
+  2. **Qualification structurée** : typé, relié, mis en forme
+  3. **Consolidation analytique** : stabilisé comme objet de lecture/diagnostic
+  4. **Pilotage / action** : oriente, mesure, transforme
+- **Découverte** : Panorama V2 v3, §3.1
 
-*Section à remplir.*
+### 3.2 Architecture des BDD
+
+#### R-018 : Spécialisation des propriétés génériques à l'écriture
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Un socle générique commun ne garantit pas une grammaire de remplissage identique. Une description d'individu ne ressemble pas à une description d'actif.
+- **How to apply** : Respecter les propriétés génériques communes (Description, Indices observés, Indices d'existence, Commentaires, Merge Notes, Logs) mais appliquer des **instructions d'écriture spécifiques à chaque objet**. Les manuels de BDD portent cette doctrine.
+- **Exemples** : ✅ Description d'une problématique = nœud diagnostique consolidé + périmètre + logique centrale ; Description d'un actif = ce que c'est + à quoi il sert + pour qui / ❌ Description uniforme "texte libre 3-10 lignes"
+- **Découverte** : Panorama V2 v3, §3.7 et §8.4
+
+#### R-019 : Architecture en 5 couches d'une BDD bien spécifiée
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Homogénéité de design et lisibilité des fiches. Chaque couche répond à une question distincte.
+- **How to apply** : Une BDD importante du Twin est pensée comme un empilement cohérent :
+  1. **Propriétés génériques** (gouvernance, traçabilité)
+  2. **Relations + jumelles textes** (graphe + formulation observée)
+  3. **Propriétés spécifiques** (pouvoir explicatif propre)
+  4. **Couche 5D** (traversabilité systémique)
+  5. **Couche calculée** (rollups + formules)
+- **Exemples** : Variantes d'intensité selon famille (registre, socle sémantique, extraction factuelle, socle structurel, post-traitement analytique) — cf. Panorama §9.2
+- **Découverte** : Panorama V2 v3, §9.1
+
+### 3.3 Doctrine relationnelle
+
+#### R-013 : Sobriété relationnelle
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : La saturation relationnelle rend le graphe illisible et les rollups peu fiables. Les "edges décoratifs" détériorent la valeur analytique.
+- **How to apply** : Une relation réelle n'est créée que si elle apporte un gain clair de : compréhension, traversée, consolidation, comparaison, ou diagnostic. Éviter les relations "au cas où" et les raffinements sans gain net.
+- **Exemples** : ✅ `Organisation → comprend → Collectif` ; `OKR → est mesuré par → Indicateur` / ❌ Relation décorative "est mentionné par"
+- **Découverte** : Panorama V2 v3, §3.3 et §8.1
+
+#### R-014 : Règle absolue des sandboxes
+
+- **Portée** : Twin
+- **Statut** : Actif (absolue)
+- **Why** : Les sandboxes servent à explorer et pré-consolider sans figer le graphe officiel. Y introduire des relations réelles transformerait la sandbox en BDD parallèle semi-officielle.
+- **How to apply** : Une BDD sandbox n'a **jamais** de relations réelles avec les autres BDD du Twin, **à une seule exception** : la relation vers `Sources d'informations`. Les liens se matérialisent uniquement via jumelles textes.
+- **Exemples** : ✅ Sandbox Pratiques → jumelle texte "est conduite par (collectifs) (texte)" / ❌ Sandbox Pratiques → relation réelle vers Collectifs
+- **Découverte** : Panorama V2 v3, §3.4
+
+#### R-015 : Jumelles textes systématiques
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Préserver la formulation observée dans les sources, permettre la consolidation progressive, garder un indice relationnel avant validation, servir de base de vérification pour humain ou agent.
+- **How to apply** : Pour chaque relation réelle dans une BDD officielle, prévoir une **jumelle texte** qui conserve les formulations observées. Exemple : `est conduite par (collectifs) (texte)` accompagne `est conduite par (collectifs)`. Dans une sandbox, **seule la jumelle texte** existe.
+- **Découverte** : Panorama V2 v3, §8.2
+
+### 3.4 5D, rollups et formules
+
+#### R-016 : La 5D est une matrice de lecture, jamais une preuve primaire
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : La 5D sert à rendre visibles des structures, comparer des objets hétérogènes, synthétiser des traversées. Elle ne remplace pas la preuve, qui reste portée par objets, relations, propriétés spécifiques, sources, indices.
+- **How to apply** : Utiliser la 5D pour : contribution, exposition, dépendance, causalité/impact/risque, pilotage/mesure. Ne jamais l'utiliser pour reclassifier les objets ou fonder un diagnostic.
+- **Découverte** : Panorama V2 v3, §3.5 et §8.5
+
+#### R-017 : Sobriété des rollups et formules
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Les couches calculées ne sont pas là pour "faire riche". Elles doivent révéler un écart, un profil, une dépendance, une vulnérabilité, ou un état utile à la lecture.
+- **How to apply** : Un rollup ou une formule n'est conservé que s'il améliore réellement l'intelligibilité. Jamais de formule décorative. Pas de rollup dans une sandbox sans relations réelles.
+- **Exemples** : ✅ Formule `Vulnérabilité nette de l'actif`, rollup `Profils 5D agrégés d'exposition` / ❌ Formule "nombre total de relations"
+- **Découverte** : Panorama V2 v3, §3.6, §8.6, §8.7
+
+### 3.5 Traçabilité et gouvernance
+
+#### R-020 : Traçabilité obligatoire des fiches importantes
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Un diagnostic ou une lecture doit toujours pouvoir être relu, questionné, justifié, recontextualisé.
+- **How to apply** : Toute fiche importante doit rester **réauditable** via :
+  - Sources (relation vers `Sources d'informations`)
+  - Indices observés (journal structuré)
+  - Indices d'existence de l'objet
+  - Logs / Révisions LBP
+  - Traces de merge si applicable
+- **Découverte** : Panorama V2 v3, §13.2
+
+#### R-023 : Progressivité du remplissage
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Le Twin n'est pas conçu pour être "plein" immédiatement mais densifié progressivement à mesure que la preuve augmente. Imposer une complétude uniforme génère du remplissage artificiel.
+- **How to apply** : Toutes les BDD n'ont pas besoin du même niveau de densité au même moment. Ce qui compte : la qualité de ce qui est utile pour la question analytique du moment.
+- **Découverte** : Panorama V2 v3, §13.5
+
+#### R-025 : Tableau maître canonique obligatoirement tenu à jour
+
+- **Portée** : Twin
+- **Statut** : Actif (absolue)
+- **Why** : Le tableau maître est la référence canonique du Twin. Sans lui, l'architecture dérive.
+- **How to apply** :
+  - Toute création de BDD doit être ajoutée au tableau maître
+  - Toute suppression doit y être arbitrée
+  - Tout changement de régime architectural doit y être explicité
+  - Toute sandbox doit être distinguée de sa BDD officielle cible
+- **Découverte** : Panorama V2 v3, §4.3. Tableau maître reproduit dans `refs/SPECS_ARCHITECTURE_TWIN.md`.
+
+### 3.6 Lecture et traversées
+
+#### R-024 : Lecture du Twin sur 3 niveaux simultanés
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Le Twin n'est pas un entrepôt mais une machine de lecture systémique. Séparer les 3 niveaux évite les lectures faussement sûres.
+- **How to apply** : Toute traversée/analyse doit articuler :
+  1. **Niveau 1 — ce qui existe** : objets, acteurs, supports, contextes, temps
+  2. **Niveau 2 — ce qui se passe** : actions, pratiques, processus, signaux, enjeux, transformations
+  3. **Niveau 3 — ce que cela signifie et ce qu'il faut en faire** : problématiques, capacités, principes, modulateurs, OKR, indicateurs
+- **Découverte** : Panorama V2 v3, §14.3
 
 ---
 
@@ -204,6 +343,33 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 ### 5.4 Mise à jour d'un template
 
 *Section à remplir.*
+
+### 5.5 Consolidation et promotion (sandbox → officielle)
+
+#### R-021 : Distinction stricte fusionner / consolider / promouvoir
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Ces trois opérations sont fondamentalement différentes. Les confondre produit des décisions mal arbitrées et des graphes incohérents.
+- **How to apply** : Distinguer systématiquement :
+  - **Fusionner** : plusieurs fiches désignent réellement le même objet → merge (au sein d'une même BDD)
+  - **Consolider** : plusieurs entrées amont convergent vers un objet plus structuré (signaux → enjeu, enjeux → problématique, actions → processus candidat, actions → pratique)
+  - **Promouvoir** : une entrée sandbox devient une BDD officielle
+- **Exemples** : ✅ "Fusion" dans Merge Notes d'une BDD ; "Consolidation" dans le passage Journal des signaux → Enjeux / ❌ Parler de "fusion" pour une promotion sandbox
+- **Découverte** : Panorama V2 v3, §13.3
+
+#### R-022 : Critères minimaux de promotion sandbox → BDD officielle
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : Éviter les promotions trop précoces qui polluent le graphe officiel.
+- **How to apply** : Une promotion est autorisée uniquement si tous les critères suivants sont remplis :
+  1. **Preuves suffisantes** (indices observés + indices d'existence)
+  2. **Formulation stabilisée**
+  3. **Absence de confusion majeure** avec un objet déjà existant
+  4. **Valeur analytique nette** attendue après promotion
+  5. **Cohérence avec la frontière conceptuelle** de la BDD cible
+- **Découverte** : Panorama V2 v3, §13.4
 
 ---
 
