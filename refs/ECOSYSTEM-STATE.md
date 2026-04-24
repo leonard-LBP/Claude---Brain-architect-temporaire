@@ -55,8 +55,8 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | Batch | Statut | Volume | Commit |
 |---|---|---|---|
 | **Mini-batch 0 (calibration : Actif)** | ✅ Terminé | 4 creations + 4 archives + 3 relations | fdaaabd |
-| **A1 Taxonomies socle structurel** (ORG, COL, ASSET sauf SUBTYPE, JOB, ENV, EVT, ORG_REL, STAKEHOLDER) | ✅ Terminé | 29 creations + 17 archives | en cours |
-| A2 Taxonomies extraction + pivots (ACT, SIG, ENJ, CAP, INIT, IMPACT, EMO, IND) | A venir | ~18 | |
+| **A1 Taxonomies socle structurel** (ORG, COL, ASSET sauf SUBTYPE, JOB, ENV, EVT, ORG_REL, STAKEHOLDER) | ✅ Terminé + enrichissement descriptions | 29 creations + 17 archives + 29 MAJ enrichies | 9327200 + 2984dc6 |
+| **A2 Taxonomies extraction + pivots** (ACT, SIG, ENJ, CAP, INIT, IMPACT, EMO, IND) | ✅ Terminé | 17 creations (R-037) + 14 archives | en cours |
 | A3 Taxonomies couche analytique (PROC, PRA, INDIC, INS, SCALE, ORG5D) | A venir | ~30 | |
 | A4 Taxonomies Brain/transverse (AGENT, BRICK, GLO, MET, META, MTG, OBJ, OPS, OUT, PLATFORM, PROMPT, SKILL, SRC) | A venir | ~22 | |
 | B1 Manuels socle structurel (7 manuels — reprise Actifs pour ajouter les 7 relations taxo manquantes) | A venir | 7+1 | |
