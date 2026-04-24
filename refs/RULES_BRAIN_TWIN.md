@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-034 (indexation Notion)
+> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-036 (indexation Notion)
 
 ---
 
@@ -157,6 +157,20 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Exemples** : ✅ Pour `Code unique` d'une taxo, la description impose format `NAMESPACE.FAMILLE.LBP` MAJUSCULES alignée au mini-doc → valeur dérivée du nom de fichier .md / ❌ Inventer un code libre
 - **Découverte** : 2026-04-24. À faire évoluer quand les docs d'instructions d'écriture dédiés existeront pour les BDD Brain (aujourd'hui seules les BDD Twin en ont, cf. `Clefs de lectures/TWIN - Instructions écriture + clefs de lecture/`).
 
+#### R-035 : Ordre d'indexation inter-types (graphe de dépendances)
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Chaque type d'artefact Brain a des relations vers d'autres types. Pour éviter de créer une dette de relations (à rattraper dans des passes ultérieures), on indexe par ordre de dépendance : feuilles d'abord, types qui les consomment ensuite.
+- **How to apply** : Respecter cet ordre pour une indexation Brain complète :
+  1. **Taxonomies** (type feuille — aucune dépendance vers d'autres types Brain)
+  2. **Manuels de BDD** (consomment les Taxonomies via `utilise (taxonomies)`)
+  3. **Notes de concept + Glossaire** (Glossaire peut référencer Manuels via `est modélisé par`, Méthodes via `est mis en oeuvre par`)
+  4. **Méthodes, Agents, Prompts, Logic blocks, Outils externes, Templates de bricks** (consomment Glossaire, Manuels, Docs méta)
+- **Généralise R-034** : R-034 dit "créer puis relier" au sein d'un batch. R-035 étend à l'échelle inter-types.
+- **Exemples** : ✅ Indexer ASSET.SUBTYPE → puis Manuel Actifs peut référencer ASSET.SUBTYPE dans sa création / ❌ Indexer Manuel Actifs d'abord avec relation vide vers ASSET.SUBTYPE, puis revenir plus tard (dette)
+- **Découverte** : 2026-04-24, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
+
 #### R-034 : Ordonnancement création puis relation (2 passes)
 
 - **Portée** : Brain (indexation)
@@ -178,8 +192,24 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - **Mettre à jour** toutes les propriétés en lisant le nouveau doc (cf. R-029)
   - **Mettre à jour le lien source** si le chemin Drive a changé
   - **Ne pas changer le `Code unique`** (stable par R-005)
-  - Si le doc v1 est archivé et le v2 porte un nom/code différent (ex: Ressources → Actifs), alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2**
+  - Si le doc v2 porte un **nom ou code différent** de la v1, alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2** (R-036)
 - **Découverte** : 2026-04-24
+
+#### R-036 : Archivage + création lorsque le nom canonique change
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif (préférence de Leonard exprimée 2026-04-24)
+- **Why** : Préserver une trace claire des versions et éviter la confusion entre ancien et nouveau libellé. Un changement de nom signale souvent une évolution sémantique réelle (même si le code est stable).
+- **How to apply** : Lorsqu'on indexe une entrée v2 dont le **nom canonique diffère** de la v1 (même code stable ou code différent) :
+  1. **Archiver** l'entrée v1 existante (Statut → `Archivé`) sans modifier ses autres propriétés
+  2. **Créer** une nouvelle entrée v2 avec toutes ses propriétés, y compris le même Code unique si c'est le cas
+  3. Les relations portées par v1 sont perdues — les recréer depuis v2 si pertinentes
+- **Exceptions** :
+  - Nom strictement identique → mise à jour simple (R-032)
+  - Changement purement cosmétique (typo, accent, espace) → mise à jour simple acceptée
+- **Exemples** : ✅ `Contexte d'ancrage de rôle` → `Contexte d'ancrage organisationnel d'un poste` (sens différent) → archive + création / ❌ Mettre à jour en place `Dépendances — niveau` en `Niveau de dépendances du collectif`
+- **Conséquence** : un Registre plus volumineux avec de nombreuses entrées `Archivé`, mais traçabilité des évolutions sémantiques préservée
+- **Découverte** : 2026-04-24, Leonard, avant Batch A1
 
 ### 2.4 Gouvernance des taxonomies
 

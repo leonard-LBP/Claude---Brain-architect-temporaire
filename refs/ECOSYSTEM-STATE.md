@@ -50,16 +50,21 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 
 ### Indexation Notion (Phase 5) — progression
 
-| Mini-batch | Statut | Volume | Commit |
+> Ordre ajuste suite a R-035 (ordonnancement inter-types) : Taxonomies (A) avant Manuels (B) avant Notes concept + Glossaire (C).
+
+| Batch | Statut | Volume | Commit |
 |---|---|---|---|
-| **0 (calibration : Actif)** | ✅ Terminé | 4 creations + 4 archives + 3 relations | en cours |
-| 1a Socle structurel (Organisations, Collectifs, Individus, Postes, Environnements, Evenements, Relations inter-orga) | A venir | 7 manuels | |
-| 1b Extraction factuelle (Journal signaux, Actions detectees, Enjeux) | A venir | 3 manuels | |
-| 1c Semantique/Pivot/Mouvement (Glossaire specifique, Processus candidats, Initiatives) | A venir | 3 manuels | |
-| 1d Couche analytique (Processus, Pratiques, Principes, Capacites, Problematiques, OKR, Indicateurs, Modulateurs) | A venir | 8 manuels | |
-| 1e Sandboxes | A venir | 6 manuels | |
-| 2 Taxonomies (96) | A venir | divise en 2a/2b/2c/2d | |
-| 3 Notes de concept + Glossaire | A venir | 72 notes = double indexation | |
+| **Mini-batch 0 (calibration : Actif)** | ✅ Terminé | 4 creations + 4 archives + 3 relations | fdaaabd |
+| **A1 Taxonomies socle structurel** (ORG, COL, ASSET sauf SUBTYPE, JOB, ENV, EVT, ORG_REL, STAKEHOLDER) | ✅ Terminé | 29 creations + 17 archives | en cours |
+| A2 Taxonomies extraction + pivots (ACT, SIG, ENJ, CAP, INIT, IMPACT, EMO, IND) | A venir | ~18 | |
+| A3 Taxonomies couche analytique (PROC, PRA, INDIC, INS, SCALE, ORG5D) | A venir | ~30 | |
+| A4 Taxonomies Brain/transverse (AGENT, BRICK, GLO, MET, META, MTG, OBJ, OPS, OUT, PLATFORM, PROMPT, SKILL, SRC) | A venir | ~22 | |
+| B1 Manuels socle structurel (7 manuels — reprise Actifs pour ajouter les 7 relations taxo manquantes) | A venir | 7+1 | |
+| B2 Manuels extraction factuelle | A venir | 3 | |
+| B3 Manuels semantique/pivot/mouvement | A venir | 3 | |
+| B4 Manuels couche analytique | A venir | 8 | |
+| B5 Manuels sandboxes | A venir | 6 | |
+| C Notes de concept + Glossaire | A venir | 72 notes = double indexation | |
 
 ## Anomalies a traiter
 
@@ -83,7 +88,9 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-24 | Integration architecture Twin v2 (Panorama) dans refs/ | a411afa |
 | 2026-04-24 | Phase 1 Twin v2 — refonte arborescence vault + D-012 | d8d9a3d |
 | 2026-04-24 | Capture R-029 a R-034 (regles indexation Notion) | d7e21fa |
-| 2026-04-24 | Phase 5 mini-batch 0 Actif | (en cours) |
+| 2026-04-24 | Phase 5 mini-batch 0 Actif | fdaaabd |
+| 2026-04-24 | Capture R-035 (ordre d'indexation inter-types) + reseq | d7e21fa |
+| 2026-04-24 | Batch A1 Taxonomies socle structurel (29 creations + 17 archives) + R-036 | (en cours) |
 
 ## Prochaines etapes
 
