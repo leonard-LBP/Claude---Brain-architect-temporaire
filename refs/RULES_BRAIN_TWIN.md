@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 (archivage), R-027 (nommage), R-028 (cohérence manuel↔clefs de lecture)
+> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-034 (indexation Notion)
 
 ---
 
@@ -115,7 +115,71 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **How to apply** : Les descriptions de propriétés dans Notion commencent par un verbe à l'infinitif, restent en texte brut, ne dépassent pas 280 caractères. On les copie directement depuis le manuel de BDD.
 - **Découverte** : Convention établie dans les templates de manuels de BDD.
 
-*Sous-sections à créer : conventions de lien source, règles de remplissage des rollups, etc.*
+#### R-029 : Le doc Markdown est source de vérité pour l'indexation Notion
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Éviter toute divergence entre le contenu du doc et ses propriétés Notion. Les propriétés sont dérivées, pas inventées.
+- **How to apply** : Avant de créer ou mettre à jour une entrée Notion, l'agent doit **lire l'intégralité du doc Markdown correspondant**. Les propriétés sont dérivées du contenu. Si une propriété ne peut pas être dérivée du doc de façon non-ambiguë, laisser vide et signaler plutôt qu'inventer. Respecter les contraintes de format portées par **la description de chaque propriété Notion** (qui fait office d'instructions d'écriture).
+- **Exemples** : ✅ `Définition` remplie avec 3-10 lignes extraites/synthétisées du doc (car la description Notion impose 3-10 lignes) / ❌ `Définition` générée de toutes pièces par l'agent
+- **Découverte** : 2026-04-24, Leonard, avant indexation Twin v2
+
+#### R-030 : Double indexation d'une note de concept
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Le Glossaire LBP est un hub sémantique qui n'a pas de lien source direct. Le lien vers le doc vit côté `Registre des notes de concept`. Le Glossaire porte la sémantique, le Registre porte la traçabilité.
+- **How to apply** : Indexer une note de concept = créer **2 entrées Notion liées** :
+  1. Une entrée dans `Registre des notes de concept` avec `Lien note concept (source) = URL Drive`
+  2. Une entrée dans `Glossaire LBP` avec les propriétés sémantiques (Type concept, Domaine, Définition, Règles d'usage, etc.)
+  3. Lier l'entrée Glossaire → Registre via la relation `est documenté par (notes de concept)`
+  4. Si applicable, lier également Glossaire → Méthodes (`est mis en oeuvre par`) et/ou Glossaire → Manuels de BDD (`est modélisé par`)
+- **Découverte** : 2026-04-24, Leonard, avant indexation Twin v2
+
+#### R-031 : Alignement du code unique entre note de concept et glossaire
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Traçabilité stable et navigation cohérente. Un même concept doit avoir le **même code** dans les deux BDD.
+- **How to apply** : Le `Code unique` d'une entrée dans `Registre des notes de concept` et l'entrée correspondante dans `Glossaire LBP` doivent être strictement identiques (ex: `CPT.CAP.LBP.ACTIF` dans les deux). Ce code provient du doc Markdown source (propriété ou convention du template).
+- **Découverte** : 2026-04-24
+
+#### R-033 : Les descriptions de propriétés Notion sont des mini-prompts de remplissage
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif (temporaire — à updater quand les BDD Brain auront leurs docs d'instructions d'écriture et clefs de lecture)
+- **Why** : Pour les BDD du Brain, les **instructions d'écriture** ne vivent pas encore dans des docs séparés ; elles sont portées par les **descriptions de chaque propriété Notion**. Ignorer ces descriptions produit des contenus hors format.
+- **How to apply** : Avant de remplir une propriété, **lire sa description Notion** (via `notion-fetch` sur la data source). Respecter scrupuleusement les contraintes :
+  - Format imposé (ex: "3 à 10 lignes", "séparateur ';'", "MAJUSCULES")
+  - Structure imposée (ex: "Bon usage: ... ; Mauvais usage: ...")
+  - Valeurs strictes pour les select/multi-select (ex: "valeurs strictes: Core; Motor")
+  - Interdictions (ex: "ne pas inclure de contenu client")
+- **Exemples** : ✅ Pour `Code unique` d'une taxo, la description impose format `NAMESPACE.FAMILLE.LBP` MAJUSCULES alignée au mini-doc → valeur dérivée du nom de fichier .md / ❌ Inventer un code libre
+- **Découverte** : 2026-04-24. À faire évoluer quand les docs d'instructions d'écriture dédiés existeront pour les BDD Brain (aujourd'hui seules les BDD Twin en ont, cf. `Clefs de lectures/TWIN - Instructions écriture + clefs de lecture/`).
+
+#### R-034 : Ordonnancement création puis relation (2 passes)
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Notion exige que les 2 entrées cibles d'une relation existent avant de pouvoir les lier. Lors d'une indexation par batch, créer d'abord toutes les entrées, puis créer les relations dans une seconde passe.
+- **How to apply** :
+  1. **Passe 1 — Créations** : créer toutes les entrées Notion sans établir leurs relations (ou seulement les relations vers des entrées déjà existantes)
+  2. **Passe 2 — Relations** : établir les relations entre entrées créées dans la passe 1
+  3. En pratique : regrouper les doc par "type sans dépendance" en premier (ex: taxonomies), puis types dépendants (ex: manuels qui référencent taxonomies), puis types couvrant le graphe (ex: glossaire qui pointe vers manuels)
+- **Exemples** : ✅ Créer Manuel Actifs + Taxo ASSET.SUBTYPE → puis relier Manuel → Taxo / ❌ Tenter de créer le Manuel avec relation vers Taxo qui n'existe pas encore
+- **Découverte** : 2026-04-24, lors du dry-run mini-batch 0
+
+#### R-032 : Mise à jour plutôt que création pour une entrée existante
+
+- **Portée** : Brain (indexation)
+- **Statut** : Actif
+- **Why** : Éviter les doublons Notion. Les entrées existantes portent peut-être des relations, des rollups, des références qu'on casserait en recréant.
+- **How to apply** : Avant de créer une entrée Notion, vérifier qu'elle n'existe pas déjà (par `Code unique` d'abord, puis par `Nom canonique`). Si elle existe :
+  - **Mettre à jour** toutes les propriétés en lisant le nouveau doc (cf. R-029)
+  - **Mettre à jour le lien source** si le chemin Drive a changé
+  - **Ne pas changer le `Code unique`** (stable par R-005)
+  - Si le doc v1 est archivé et le v2 porte un nom/code différent (ex: Ressources → Actifs), alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2**
+- **Découverte** : 2026-04-24
 
 ### 2.4 Gouvernance des taxonomies
 
