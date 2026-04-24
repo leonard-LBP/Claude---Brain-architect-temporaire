@@ -3,7 +3,7 @@
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 2026-04-24 — ajout D-002 à D-009 (Panorama V2 v3 du Twin)
+> Dernière mise à jour : 2026-04-24 — ajout D-002 à D-009 (Panorama V2 v3) + D-010, D-011 (arborescence + conventions)
 
 ---
 
@@ -208,7 +208,52 @@
 
 *Décisions sur comment on gère l'écosystème (workflows, responsabilités, fréquences).*
 
-*(vide pour l'instant)*
+### D-010 : Arborescence cible d'Architecture data (v2)
+
+- **Date** : 2026-04-24
+- **Statut** : Adoptée (appliquée dans dossier temporaire ; migration vers vault à venir)
+- **Portée** : Transverse (Brain + Twin)
+- **Contexte** : La refonte Twin v2 produit ~200 nouveaux docs (22 manuels officiels + 6 sandboxes + ~74 notes de concept + ~96 taxonomies + 1 nouveau template). Il faut définir une arborescence cible évolutive avant migration vers le vault Architecture data, pour obtenir des URLs Drive stables avant indexation Notion.
+- **Options envisagées** :
+  - Indexer Notion d'abord puis ranger : double passe Notion (indexation sans URL, puis ajout URL).
+  - Ranger d'abord puis indexer en une seule passe : URLs Drive disponibles dès l'indexation.
+  - Structure détaillée par famille architecturale (sandboxes, BDD edge, analytique, etc.) : trop lourde pour 28 BDD.
+  - Structure minimale (juste zone d'archives par dossier) : lisible, évolutive.
+- **Choix retenu** :
+  - Séquence en 4 étapes : (0) clarifier statut Notion, (1) définir arborescence, (2) appliquer arborescence + archiver anciens, (3) indexer Notion en une passe.
+  - Arborescence :
+    - `Manuels de BDD/Digital Twin/` : 22 manuels à plat + `Sandbox/` (6 sandboxes) + `archives/`
+    - `Notes de Concept/` : notes à plat + `archives/`
+    - `Taxonomies/` : taxonomies à plat + `archives/`
+    - `Logic Blocks/` : sous-dossiers par BDD cible (dont nouveaux dossiers pour Actifs, Collectifs, Organisations, Postes, Initiatives, Relations inter-organisations) + `archives/` pour UO/Ressources/Rôles officiels
+    - `Docs Méta LBP/` : templates à plat + `archives/`
+  - Archivage **local par dossier thématique** (pas de grenier global).
+- **Conséquences** :
+  - ✅ URLs Drive disponibles dès la migration, indexation Notion en une passe
+  - ✅ Sandboxes visuellement séparées des BDD officielles (renforce R-014)
+  - ✅ Git garde l'historique complet des déplacements
+  - ⚠️ Application en 2 temps : d'abord dossier temporaire `I:\AI\Claude Code\Nouveaux docs Brain\`, puis migration vers vault
+- **Règles associées** : R-014 (sandboxes), R-025 (tableau maître), R-026 (archivage local), R-027 (nommage)
+
+### D-011 : Conventions de nommage des fichiers Brain/Twin
+
+- **Date** : 2026-04-24
+- **Statut** : Adoptée
+- **Portée** : Transverse
+- **Contexte** : Les anciens fichiers utilisaient différentes conventions (casse CAPITALES, tirets simples). Les nouveaux docs générés arrivaient avec tiret cadratin `—`. Il faut trancher pour éviter les disparités dans le vault.
+- **Options envisagées** :
+  - Tiret cadratin `—` (nouveaux) : élégant typographiquement, compliqué à taper.
+  - Tiret simple `-` (anciens) : standard clavier, lisible.
+  - Underscore `_` : plus technique, moins convivial pour Obsidian.
+- **Choix retenu** :
+  - **Séparateur** : tiret simple `-`
+  - **Casse** : Title Case pour les manuels (`Manuel de BDD - Actifs.md`), minuscule pour les notes de concept (`concept - Actif.md`), code taxonomie pour les taxonomies (`ACT.IMPACT_DOMAIN.LBP.md`)
+  - **Uniformisation rétroactive** : à faire au moment de la migration (renommer éventuellement les anciens fichiers CAPITALES `BDD - AGENTS LBP.md` → `Manuel de BDD - Agents LBP.md`, à décider au cas par cas)
+- **Conséquences** :
+  - ✅ Compatibilité clavier et interopérabilité avec tout outil
+  - ✅ Homogénéité visuelle dans Obsidian
+  - ⚠️ Les 28 nouveaux manuels Twin v2 ont été renommés (tiret cadratin → tiret simple) dans le dossier temporaire le 2026-04-24
+- **Règles associées** : R-027
 
 ---
 

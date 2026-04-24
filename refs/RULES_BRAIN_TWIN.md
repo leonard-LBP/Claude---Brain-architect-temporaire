@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3 du Twin)
+> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 (archivage), R-027 (nommage), R-028 (cohérence manuel↔clefs de lecture)
 
 ---
 
@@ -141,7 +141,31 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 
 ### 2.6 Archivage des docs Brain
 
-*Section à remplir quand on traitera l'archivage des docs obsolètes (UO, ressources, rôles officiels...).*
+#### R-026 : Archivage local par dossier thématique
+
+- **Portée** : Transverse (Brain + Twin)
+- **Statut** : Actif
+- **Why** : Éviter qu'un "grenier global" à la racine du vault gonfle sans fin et rende l'archivage illisible. Garder l'archive proche de son contexte thématique.
+- **How to apply** : Chaque dossier thématique (`Manuels de BDD/Digital Twin/`, `Notes de Concept/`, `Taxonomies/`, `Logic Blocks/`, `Docs Méta LBP/`) a son propre sous-dossier `archives/`. Le git garde l'historique complet des déplacements — pas besoin de doublons dans le vault.
+- **Exemples** : ✅ `Notes de Concept/archives/concept - Ressource.md` / ❌ `ARCHIVES/Notes de Concept/...`
+- **Découverte** : 2026-04-24, conception arborescence cible pour refonte Twin v2 (D-010)
+
+### 2.7 Conventions de nommage
+
+#### R-027 : Conventions de nommage des fichiers Brain/Twin
+
+- **Portée** : Transverse
+- **Statut** : Actif
+- **Why** : Homogénéité visuelle dans Obsidian, compatibilité clavier, interopérabilité inter-outils.
+- **How to apply** :
+  - **Séparateur** : tiret simple `-` (jamais tiret cadratin `—`, jamais underscore)
+  - **Casse manuels de BDD** : Title Case, ex: `Manuel de BDD - Actifs.md`
+  - **Casse notes de concept** : minuscule, ex: `concept - Actif.md`
+  - **Casse taxonomies** : code canonique, ex: `ACT.IMPACT_DOMAIN.LBP.md`
+  - **Accents et apostrophes typographiques autorisés** (Obsidian et Drive les gèrent)
+  - **Préfixe** : pour les concepts, toujours `concept - `. Pour les manuels Twin v2, `Manuel de BDD - `.
+- **Exemples** : ✅ `Manuel de BDD - Relations inter-organisations.md`, `concept - Poste.md`, `ORG_REL.TYPE.LBP.md` / ❌ `Manuel de BDD — Actifs.md` (cadratin), `Concept - Actif.md` (majuscule), `BDD_ACTIFS.md` (underscore)
+- **Découverte** : 2026-04-24, standardisation lors de la migration Twin v2 (D-011)
 
 ### 2.7 Relations inter-BDD Brain
 
@@ -344,7 +368,22 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 
 *Section à remplir.*
 
-### 5.5 Consolidation et promotion (sandbox → officielle)
+### 5.5 Mise à jour d'un manuel de BDD
+
+#### R-028 : Cohérence manuel ↔ doc clefs de lecture
+
+- **Portée** : Brain (propagation vers docs dérivés)
+- **Statut** : Actif
+- **Why** : Le doc *Instructions d'écriture & clefs de lecture* d'une BDD est **dérivé** du manuel de BDD correspondant. Une asymétrie entre les deux produit des agents qui écrivent/lisent différemment de la spec, et des incohérences dans le Twin.
+- **How to apply** : Le **manuel de BDD est source de vérité**. À chaque mise à jour d'un manuel :
+  1. Identifier le doc clefs de lecture correspondant dans `Architecture data/Clefs de lectures/TWIN - Instructions écriture + clefs de lecture/`
+  2. Vérifier la cohérence (champs, instructions d'écriture, clefs de lecture, taxonomies référencées)
+  3. Mettre à jour le doc dérivé si asymétrie
+  4. Consigner la MAJ dans les logs du doc dérivé
+- **Exemples** : ✅ On renomme le champ "Rôles officiels" en "Postes" dans le manuel → on met à jour `écriture + lecture - Rôles officiels.md` (ou on le renomme/recrée en `Postes`) / ❌ On modifie un manuel sans vérifier le doc dérivé
+- **Découverte** : 2026-04-24, confirmé par Leonard
+
+### 5.6 Consolidation et promotion (sandbox → officielle)
 
 #### R-021 : Distinction stricte fusionner / consolider / promouvoir
 

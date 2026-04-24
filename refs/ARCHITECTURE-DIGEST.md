@@ -13,7 +13,7 @@ LBP (Little Big Picture) est un cabinet de conseil qui construit des Digital Twi
 | **Core Brain** | Gouvernance : glossaire, taxonomies, notes de concept | Permanent | 3 |
 | **Motor Brain** | Bibliothèque opérationnelle : prompts, agents, méthodes, logic blocks, templates, outils | Permanent | 7 |
 | **Admin Brain** | Docs méta (doctrine) | Permanent | 1 |
-| **Digital Twin** | Représentation structurée du client | Instancié par mission | **29** (v2) |
+| **Digital Twin** | Représentation structurée du client | Instancié par mission | **28** (v2) |
 | **Mission Ops** | Pilotage opérationnel de mission | Instancié par mission | 4 |
 
 ## 2. Principe fondamental
@@ -47,10 +47,9 @@ Pas tous les prompts passent par toute la pile. Pattern privilégié pour les op
 
 → Détail : `refs/SPECS_ARCHITECTURE_BRAIN.md`
 
-### Digital Twin v2 (29 BDD instanciées)
+### Digital Twin v2 (28 BDD instanciées)
 
-**1 registre / satellite**
-- Sources d'informations
+> `Sources d'informations` est Mission Ops (satellite de traçabilité transverse), pas Twin.
 
 **1 socle sémantique**
 - Glossaire spécifique entreprise

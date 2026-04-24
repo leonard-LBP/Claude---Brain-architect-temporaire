@@ -1,9 +1,10 @@
 # SPECS — Architecture Digital Twin LBP
 
-> Référence canonique des 29 BDD du Digital Twin (v2, 2026-04-22).
+> Référence canonique des **28 BDD** du Digital Twin v2 (22 officielles + 6 sandboxes).
 > Source doctrinale : `Panorama V2 — Macro-architecture, chaînes de valeur et logique analytique du Digital Twin LBP v3`.
+> **Note** : `Sources d'informations` n'est PAS une BDD Twin mais une BDD **Mission Ops** (comme `Meetings`, `Actions LBP`, `Bricks`). Le Panorama l'inclut dans son tableau maître parce qu'elle joue un rôle de satellite de traçabilité pour les objets Twin, mais son instance opérationnelle vit en Mission Ops.
 > Les schémas Notion détaillés (champs, propriétés, relations) vivent dans les **Manuels de BDD** (vault Architecture data). Ce fichier porte la vue d'ensemble structurante.
-> Dernière mise à jour : 2026-04-24
+> Dernière mise à jour : 2026-04-24 — retrait de Sources d'informations (Mission Ops)
 
 ---
 
@@ -24,39 +25,40 @@ Les 8 principes cardinaux (cf. Panorama §3) :
 
 ---
 
-## 2. Tableau maître canonique des 29 BDD
+## 2. Tableau maître canonique des 28 BDD Twin
+
+> Pour mémoire : `Sources d'informations` est Mission Ops (satellite de traçabilité transverse), cf. note en tête de document.
 
 | # | BDD | Objet principal | Famille architecturale | Mode d'alimentation | Régime relationnel | Valeur systémique dominante |
 |---|---|---|---|---|---|---|
-| 1 | `Sources d'informations` | Source d'information | Registre / satellite de traçabilité | Humain + ingestion | Référentiel source ; relations documentaires | Traçabilité primaire de tout le Twin |
-| 2 | `Glossaire spécifique entreprise` | Terme / expression située | Socle sémantique | Curation / clarification | Relations réelles + jumelles textes | Stabiliser le langage client |
-| 3 | `Journal des signaux` | Signal faible ou indice qualitatif | Observation qualitative amont | Extraction / lecture qualitative | Relations réelles + jumelles textes | Capter les indices faibles avant consolidation |
-| 4 | `Actions détectées` | Action observée ou dite | Extraction factuelle | Extraction IA + revue | Relations réelles + jumelles textes | Matière brute du faire réel |
-| 5 | `Enjeux` | Enjeu formulé | Extraction factuelle stratégique | Extraction IA + revue | Relations réelles + jumelles textes | Remonter besoins, tensions, objectifs, opportunités, craintes |
-| 6 | `Organisations` | Organisation | Socle structurel institutionnel | Curation / structuration | Relations réelles + jumelles textes | Décrire les acteurs institués |
-| 7 | `Relations inter-organisations` | Relation directionnelle entre deux organisations | BDD edge structurelle | Curation / structuration | Relations réelles + jumelles textes | Cartographier l'écosystème relationnel externe |
-| 8 | `Collectifs` | Collectif opérant | Socle structurel social | Curation / structuration | Relations réelles + jumelles textes | Décrire les groupes humains où le travail se coordonne |
-| 9 | `Individus` | Individu | Socle structurel humain | Extraction + curation | Relations réelles + jumelles textes | Rendre visibles les personnes significatives |
-| 10 | `Postes` | Poste | Structure formelle | Curation / structuration | Relations réelles + jumelles textes | Décrire la charpente formelle des fonctions |
-| 11 | `Actifs` | Actif | Supports / moyens | Curation / structuration | Relations réelles + jumelles textes | Rendre visibles supports, dépendances, vulnérabilités |
-| 12 | `Environnements` | Environnement | Contextes / contraintes | Curation / structuration | Relations réelles + jumelles textes | Expliciter les cadres d'usage, d'exposition, de contrainte |
-| 13 | `Événements` | Événement | Temps / trajectoire | Curation / structuration | Relations réelles + jumelles textes | Donner les jalons, bascules, épisodes structurants |
-| 14 | `Initiatives organisationnelles` | Initiative organisationnelle | Mouvement / transformation | Curation / pilotage | Relations réelles + jumelles textes | Décrire les efforts temporaires structurés de transformation |
-| 15 | `Processus candidats` | Processus candidat | Pivot de qualification | Analyse / consultant | Relations réelles + jumelles textes | Préparer la consolidation des fonctionnements |
-| 16 | `Processus` | Processus | Fonctionnement consolidé | Analyse / consultant | Relations réelles + jumelles textes | Modéliser les fonctionnements structurés stabilisés |
-| 17 | `Pratiques organisationnelles` | Pratique organisationnelle | Réel opérant consolidé | Analyse / consultant | Relations réelles + jumelles textes | Rendre visibles les patterns opérants récurrents |
-| 18 | `Principes organisationnels` | Principe organisationnel | Couche normative | Analyse / consultant | Relations réelles + jumelles textes | Formaliser la couche normative du système |
-| 19 | `Capacités organisationnelles` | Capacité organisationnelle | Couche capacitaire | Analyse / consultant | Relations réelles + jumelles textes | Rendre visibles les aptitudes collectives durables |
-| 20 | `Problématiques` | Problématique | Couche diagnostique | Analyse / consultant | Relations réelles + jumelles textes | Produire les nœuds diagnostiques consolidés |
-| 21 | `OKR` | OKR | Couche de pilotage | Analyse / consultant | Relations réelles + jumelles textes | Relier diagnostic, pilotage, transformation |
-| 22 | `Indicateurs` | Indicateur | Couche de mesure | Analyse / consultant | Relations réelles + jumelles textes | Objectiver la performance, les écarts, la progression |
-| 23 | `Modulateurs` | Modulateur | Couche d'effectivité | Référentiel préchargé + évaluation consultant | Relations réelles + jumelles textes | Expliquer les conditions d'effectivité, les plafonds |
-| 24 | `Capacités métier candidates (sandbox)` | Capacité métier candidate | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des capacités pressenties |
-| 25 | `OKR (sandbox)` | OKR exploratoire | Sandbox d'exploration | Analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des objectifs avant promotion |
-| 26 | `Pratiques organisationnelles (sandbox)` | Pratique exploratoire | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des pratiques pressenties |
-| 27 | `Principes organisationnels (sandbox)` | Principe exploratoire | Sandbox d'exploration | Analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des principes pressentis |
-| 28 | `Problématiques (sandbox)` | Problématique exploratoire | Sandbox d'exploration | Analyse exploratoire / consolidation initiale | Jumelles textes + relation à `Sources d'informations` | Tester des formulations diagnostiques instables |
-| 29 | `Processus candidats (sandbox)` | Processus candidat exploratoire | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des regroupements fonctionnels pressentis |
+| 1 | `Glossaire spécifique entreprise` | Terme / expression située | Socle sémantique | Curation / clarification | Relations réelles + jumelles textes | Stabiliser le langage client |
+| 2 | `Journal des signaux` | Signal faible ou indice qualitatif | Observation qualitative amont | Extraction / lecture qualitative | Relations réelles + jumelles textes | Capter les indices faibles avant consolidation |
+| 3 | `Actions détectées` | Action observée ou dite | Extraction factuelle | Extraction IA + revue | Relations réelles + jumelles textes | Matière brute du faire réel |
+| 4 | `Enjeux` | Enjeu formulé | Extraction factuelle stratégique | Extraction IA + revue | Relations réelles + jumelles textes | Remonter besoins, tensions, objectifs, opportunités, craintes |
+| 5 | `Organisations` | Organisation | Socle structurel institutionnel | Curation / structuration | Relations réelles + jumelles textes | Décrire les acteurs institués |
+| 6 | `Relations inter-organisations` | Relation directionnelle entre deux organisations | BDD edge structurelle | Curation / structuration | Relations réelles + jumelles textes | Cartographier l'écosystème relationnel externe |
+| 7 | `Collectifs` | Collectif opérant | Socle structurel social | Curation / structuration | Relations réelles + jumelles textes | Décrire les groupes humains où le travail se coordonne |
+| 8 | `Individus` | Individu | Socle structurel humain | Extraction + curation | Relations réelles + jumelles textes | Rendre visibles les personnes significatives |
+| 9 | `Postes` | Poste | Structure formelle | Curation / structuration | Relations réelles + jumelles textes | Décrire la charpente formelle des fonctions |
+| 10 | `Actifs` | Actif | Supports / moyens | Curation / structuration | Relations réelles + jumelles textes | Rendre visibles supports, dépendances, vulnérabilités |
+| 11 | `Environnements` | Environnement | Contextes / contraintes | Curation / structuration | Relations réelles + jumelles textes | Expliciter les cadres d'usage, d'exposition, de contrainte |
+| 12 | `Événements` | Événement | Temps / trajectoire | Curation / structuration | Relations réelles + jumelles textes | Donner les jalons, bascules, épisodes structurants |
+| 13 | `Initiatives organisationnelles` | Initiative organisationnelle | Mouvement / transformation | Curation / pilotage | Relations réelles + jumelles textes | Décrire les efforts temporaires structurés de transformation |
+| 14 | `Processus candidats` | Processus candidat | Pivot de qualification | Analyse / consultant | Relations réelles + jumelles textes | Préparer la consolidation des fonctionnements |
+| 15 | `Processus` | Processus | Fonctionnement consolidé | Analyse / consultant | Relations réelles + jumelles textes | Modéliser les fonctionnements structurés stabilisés |
+| 16 | `Pratiques organisationnelles` | Pratique organisationnelle | Réel opérant consolidé | Analyse / consultant | Relations réelles + jumelles textes | Rendre visibles les patterns opérants récurrents |
+| 17 | `Principes organisationnels` | Principe organisationnel | Couche normative | Analyse / consultant | Relations réelles + jumelles textes | Formaliser la couche normative du système |
+| 18 | `Capacités organisationnelles` | Capacité organisationnelle | Couche capacitaire | Analyse / consultant | Relations réelles + jumelles textes | Rendre visibles les aptitudes collectives durables |
+| 19 | `Problématiques` | Problématique | Couche diagnostique | Analyse / consultant | Relations réelles + jumelles textes | Produire les nœuds diagnostiques consolidés |
+| 20 | `OKR` | OKR | Couche de pilotage | Analyse / consultant | Relations réelles + jumelles textes | Relier diagnostic, pilotage, transformation |
+| 21 | `Indicateurs` | Indicateur | Couche de mesure | Analyse / consultant | Relations réelles + jumelles textes | Objectiver la performance, les écarts, la progression |
+| 22 | `Modulateurs` | Modulateur | Couche d'effectivité | Référentiel préchargé + évaluation consultant | Relations réelles + jumelles textes | Expliquer les conditions d'effectivité, les plafonds |
+| 23 | `Capacités métier candidates (sandbox)` | Capacité métier candidate | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des capacités pressenties |
+| 24 | `OKR (sandbox)` | OKR exploratoire | Sandbox d'exploration | Analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des objectifs avant promotion |
+| 25 | `Pratiques organisationnelles (sandbox)` | Pratique exploratoire | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des pratiques pressenties |
+| 26 | `Principes organisationnels (sandbox)` | Principe exploratoire | Sandbox d'exploration | Analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des principes pressentis |
+| 27 | `Problématiques (sandbox)` | Problématique exploratoire | Sandbox d'exploration | Analyse exploratoire / consolidation initiale | Jumelles textes + relation à `Sources d'informations` | Tester des formulations diagnostiques instables |
+| 28 | `Processus candidats (sandbox)` | Processus candidat exploratoire | Sandbox d'exploration | Extraction / analyse exploratoire | Jumelles textes + relation à `Sources d'informations` | Tester des regroupements fonctionnels pressentis |
 
 ---
 
@@ -64,7 +66,6 @@ Les 8 principes cardinaux (cf. Panorama §3) :
 
 | Famille | BDD concernées | Fonction architecturale |
 |---------|----------------|-------------------------|
-| **Registre / satellite** | Sources d'informations | Porter la preuve primaire du Twin |
 | **Socle sémantique** | Glossaire spécifique entreprise | Stabiliser vocabulaire et expressions du client |
 | **Extraction factuelle** | Journal des signaux, Actions détectées, Enjeux | Capter la matière amont |
 | **Socle structurel** | Organisations, Relations inter-organisations, Collectifs, Individus, Postes, Actifs, Environnements, Événements | Charpente structurelle du Twin |
