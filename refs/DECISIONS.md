@@ -235,6 +235,31 @@
   - ⚠️ Application en 2 temps : d'abord dossier temporaire `I:\AI\Claude Code\Nouveaux docs Brain\`, puis migration vers vault
 - **Règles associées** : R-014 (sandboxes), R-025 (tableau maître), R-026 (archivage local), R-027 (nommage)
 
+### D-012 : Séquence de migration Twin v2 vers Architecture data (7 phases)
+
+- **Date** : 2026-04-24
+- **Statut** : Adoptée
+- **Portée** : Transverse (Brain + Twin + Mission Ops)
+- **Contexte** : Après validation de l'arborescence cible (D-010) et des conventions de nommage (D-011), il fallait séquencer la migration de ~200 nouveaux docs + archivage de leurs v1 + refonte ciblée de l'arborescence existante. Objectif : avoir vault et Drive alignés AVANT l'indexation Notion (une seule passe avec URLs).
+- **Options envisagées** :
+  - Migration tout-en-un : risqué, pas de point de contrôle intermédiaire.
+  - Par couche d'artefacts : OK mais mélange refonte arborescence et migration.
+  - **Par phases avec refonte en amont** : plus rigoureux, chaque phase vérifiable.
+- **Choix retenu** : Séquence en 7 phases, refonte arborescence d'abord :
+  1. **Phase 1 — Refondre l'arborescence d'Architecture data** : renommer `Docs Méta LBP/` → `00 - Docs méta/` (avec sous-structure Templates + Doctrines), renommer `Core & Motor Brain/` → `Brain/`, créer `archives/` systématiques.
+  2. **Phase 2 — Archiver les anciens docs v1** : tous les manuels Twin v1, toutes les notes de concept v1, toutes les taxonomies v1, ancien template. **Exception** : les logic blocks obsolètes ne sont PAS archivés maintenant (gardés comme inspiration pour la mise à jour future des nouveaux logic blocks Actifs, Collectifs, Organisations, Postes, Initiatives, Relations inter-organisations).
+  3. **Phase 3 — Migrer les nouveaux docs** depuis dossier temporaire vers Architecture data (manuels Twin v2, notes de concept, taxonomies, nouveau template).
+  4. **Phase 4 — Synchronisation Drive + vérification URLs**.
+  5. **Phase 5 — Indexation Notion** : archiver les anciennes entrées Notion + indexer les nouveaux docs avec URLs Drive.
+  6. **Phase 6 — Mise à jour des clefs de lecture** (R-028) : **templatiser d'abord** le doc "Instructions d'écriture & clefs de lecture" (améliorer le modèle), puis mettre à jour chaque doc dérivé.
+  7. **Phase 7 — Chantier Prompts + Logic blocks** (séparé) : audit dossier Prompts actuel, mise à jour des prompts maîtres et logic blocks pour refléter Twin v2, rangement final.
+- **Conséquences** :
+  - ✅ Vault propre avant ingestion des nouveaux docs
+  - ✅ Aucune indexation Notion sans URL Drive valide
+  - ✅ Clair séparation entre "rangement" (phases 1-4), "gouvernance Notion" (phase 5), "dérivés docs" (phase 6), "mise à jour de contenu" (phase 7)
+  - ✅ Logic blocks obsolètes conservés comme matière d'inspiration — ne pas les archiver trop tôt
+- **Règles associées** : R-026 (archivage local), R-027 (nommage), R-028 (manuel=source de vérité)
+
 ### D-011 : Conventions de nommage des fichiers Brain/Twin
 
 - **Date** : 2026-04-24
