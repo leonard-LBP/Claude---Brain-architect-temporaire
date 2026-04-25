@@ -106,9 +106,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 ## Prochaines etapes
 
 - **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
-- **Anomalies QA** à corriger en source (vault) :
-  - `concept - Repères communs.md` : artefact `:contentReference[oaicite:5]{index=5}` + texte tronqué dans summary frontmatter
-  - `concept - Soft skill.md` : texte tronqué `décin collective` dans summary frontmatter
 - **Phase 6** : Clefs de lecture (R-028)
 - **Phase 7** : Prompts maitres et Logic blocks (refonte vers nouvelle archi Twin v2)
 - **Enrichissement éditorial Phase 5bis** (option B) : remplir les champs avancés des fiches Glossaire LBP (Valeur ajoutée LBP, Usages IA potentiels, Règles d'usage et pièges, Équivalent langage courant) à partir du corps des notes de concept
+- **Chantier "logique des codes uniques"** (backlog : voir `RULES_BRAIN_TWIN-backlog.md`) : définir une grammaire unifiée des codes pour tous les docs Brain/Motor — pas tout de suite, après Phases 6 et 7
