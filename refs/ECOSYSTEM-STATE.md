@@ -60,11 +60,12 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | **Correction R-036 doublons A1+A2** | ✅ Terminé | 25 MAJ v1 (ressuscitation enrichie) + 25 v2 [DOUBLON] supprimées par Leonard | (à commit) |
 | **A3 Taxonomies couche analytique** (INDIC, INS, ORG5D, PRA, PROC, SCALE) | ✅ Terminé | 23 MAJ enrichies + 2 créations (INDIC.TIMEROLE, SCALE.COVERAGE) + R-038 | (à commit) |
 | **A4 Taxonomies Brain/transverse** (AGENT, BRICK, GLO, MET, META, MTG, OBJ, OPS, OUT, PLATFORM, PROMPT, SKILL, SRC) | ✅ Terminé | 24 MAJ enrichies + 1 création (MTG.EXEC_STATUS) + housekeeping ACT (1 MAJ ACT.CONSOLIDATION_TARGET + 1 archive ACT.CANDIDATE_TYPE) | (à commit) |
-| B1 Manuels socle structurel (7 manuels — reprise Actifs pour ajouter les 7 relations taxo manquantes) | A venir | 7+1 | |
-| B2 Manuels extraction factuelle | A venir | 3 | |
-| B3 Manuels semantique/pivot/mouvement | A venir | 3 | |
-| B4 Manuels couche analytique | A venir | 8 | |
-| B5 Manuels sandboxes | A venir | 6 | |
+| **B1 Manuels socle structurel** | ✅ Terminé | 8 manuels (3 MAJ + 5 créations dont Actifs avec dette 7 relations comblée) | (à commit) |
+| **B2 Manuels extraction factuelle** | ✅ Terminé | 2 MAJ (Actions détectées, Enjeux) | (à commit) |
+| **B3 Manuels sémantique/mouvement/pivot/observation** | ✅ Terminé | 4 (2 MAJ Glossaire + Journal des signaux ; 2 créations Initiatives orga + Processus candidats) | (à commit) |
+| **B4 Manuels couche analytique officielle** | ✅ Terminé | 8 (7 MAJ + 1 création Processus, migration "post-traitement" → "analytique officiel") | (à commit) |
+| **B5 Manuels sandboxes** | ✅ Terminé | 6 créations (Type fonctionnel = "Digital Twin - sandbox") | (à commit) |
+| **+ D-013 + modifs template + schéma Notion** | ✅ Terminé | template_version "v6.1.0" : ajout propriété Notion + ajout aux 28 frontmatters vault + 3 modifs template + maj manuel "Manuels de BDD" + 4 nouveaux types fonctionnels Notion + housekeeping (5 entrées) | (à commit) |
 | C Notes de concept + Glossaire | A venir | 72 notes = double indexation | |
 
 ## Anomalies a traiter
@@ -97,6 +98,8 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-25 | Capture R-038 (identifiant pivot par type d'objet : taxos = code, autres = nom) | (à commit) |
 | 2026-04-25 | Batch A3 Taxonomies couche analytique (23 MAJ enrichies + 2 créations) | (à commit) |
 | 2026-04-25 | Batch A4 Taxonomies Brain/transverse (24 MAJ enrichies + 1 création + housekeeping ACT.CANDIDATE_TYPE → ACT.CONSOLIDATION_TARGET) | (à commit) |
+| 2026-04-25 | Capture D-013 (traçabilité de version de template d'instanciation) + modifs template Manuel de BDD + manuel "Manuels de BDD" | (à commit) |
+| 2026-04-25 | Batch B Manuels Twin v2 (B1-B5 : 13 MAJ + 15 créations = 28 manuels) + 28 frontmatters vault avec template_version + housekeeping (5 entrées Notion) + 4 nouveaux types fonctionnels Notion | (à commit) |
 
 ## Prochaines etapes
 

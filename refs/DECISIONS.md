@@ -3,7 +3,7 @@
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 2026-04-24 — ajout D-002 à D-009 (Panorama V2 v3) + D-010, D-011 (arborescence + conventions)
+> Dernière mise à jour : 2026-04-25 — ajout D-013 (traçabilité de version de template d'instanciation)
 
 ---
 
@@ -279,6 +279,29 @@
   - ✅ Homogénéité visuelle dans Obsidian
   - ⚠️ Les 28 nouveaux manuels Twin v2 ont été renommés (tiret cadratin → tiret simple) dans le dossier temporaire le 2026-04-24
 - **Règles associées** : R-027
+
+### D-013 : Traçabilité de version de template d'instanciation
+
+- **Date** : 2026-04-25
+- **Statut** : Adoptée
+- **Portée** : Brain (Manuels de BDD ; étendable à Notes concept, Glossaire, Bricks ultérieurement)
+- **Contexte** : Les templates d'instanciation LBP évoluent (template Manuel de BDD désormais en v6.1.0 = standard Twin v2). Les manuels générés via d'anciens templates restent valides mais structurellement différents (sections, frontmatter, vocabulaires). Sans traçabilité explicite, on ne peut pas distinguer les manuels conformes au standard courant des manuels legacy à migrer, ni piloter les migrations futures de templates.
+- **Options envisagées** :
+  - Pas de traçabilité : on suppose que tous les manuels suivent le standard courant. Casse dès qu'un template évolue.
+  - Tag implicite via `tags` du frontmatter : non structuré, pas filtrable côté Notion.
+  - **Champ dédié `template_version` (frontmatter vault + propriété Notion)** : explicite, filtrable, pérennise la traçabilité.
+- **Choix retenu** :
+  - **Côté template** : ajouter une instruction au bloc `FRONTMATTER_INSTANCE` du template pour que tout manuel instancié porte un champ `template_version` reflétant la valeur du champ `version` du template (actuellement "6.1.0").
+  - **Côté vault** : ajouter `template_version: "6.1.0"` au frontmatter des manuels Twin v2 lors du batch B (rétro-fit).
+  - **Côté Notion** : ajouter une propriété `Version du template` (Select, mono) à la BDD `Manuels de BDD` ; renseigner `v6.1.0` pour tous les manuels Twin lors du batch B ; laisser vide pour les manuels legacy.
+  - **Convention** : champ vide = manuel legacy (template antérieur ou inconnu) ; à renseigner progressivement au fur et à mesure des migrations.
+- **Conséquences** :
+  - ✅ Distinction propre entre manuels v2 conformes et manuels legacy
+  - ✅ Capacité à filtrer / piloter les migrations futures de templates
+  - ✅ Pattern réutilisable pour les autres BDD à templates (Notes concept, Glossaire, Bricks)
+  - ⚠️ Il faudra incrémenter `template_version` dans le manuel à chaque montée de version du template (à formaliser quand le 1er upgrade de template arrivera)
+  - ⚠️ Les manuels Brain et Mission Ops anciennement indexés restent vides — la migration future demandera un audit
+- **Règles associées** : à venir si on étend le pattern (potentielle R-039 sur "traçabilité de génération par template")
 
 ---
 
