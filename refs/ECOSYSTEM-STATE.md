@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 2026-04-25 — Phase 5 batchs A1-A4 (taxonomies) terminés, prêt pour batchs B (Manuels) puis C (Notes concept + Glossaire)
+> Derniere mise a jour : 2026-04-25 — Phase 5 batch C terminé (Notes concept + Glossaire double-indexés). Phase 5 indexation Notion COMPLÈTE.
 
 ## Phase actuelle
 
@@ -66,7 +66,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | **B4 Manuels couche analytique officielle** | ✅ Terminé | 8 (7 MAJ + 1 création Processus, migration "post-traitement" → "analytique officiel") | (à commit) |
 | **B5 Manuels sandboxes** | ✅ Terminé | 6 créations (Type fonctionnel = "Digital Twin - sandbox") | (à commit) |
 | **+ D-013 + modifs template + schéma Notion** | ✅ Terminé | template_version "v6.1.0" : ajout propriété Notion + ajout aux 28 frontmatters vault + 3 modifs template + maj manuel "Manuels de BDD" + 4 nouveaux types fonctionnels Notion + housekeeping (5 entrées) | (à commit) |
-| C Notes de concept + Glossaire | A venir | 72 notes = double indexation | |
+| **C Notes de concept + Glossaire** | ✅ Terminé | 152 actions Notion : 135 MAJ (67 cas A × 2 + 1 relation Template de brick) + 10 créations (5 cas D × 2) + 5 relations cas D + 2 archivages UO + 2 renommages (Référentiel 3P → 3P, Process → Processus) | (à commit) |
 
 ## Anomalies a traiter
 
@@ -100,12 +100,15 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-25 | Batch A4 Taxonomies Brain/transverse (24 MAJ enrichies + 1 création + housekeeping ACT.CANDIDATE_TYPE → ACT.CONSOLIDATION_TARGET) | (à commit) |
 | 2026-04-25 | Capture D-013 (traçabilité de version de template d'instanciation) + modifs template Manuel de BDD + manuel "Manuels de BDD" | (à commit) |
 | 2026-04-25 | Batch B Manuels Twin v2 (B1-B5 : 13 MAJ + 15 créations = 28 manuels) + 28 frontmatters vault avec template_version + housekeeping (5 entrées Notion) + 4 nouveaux types fonctionnels Notion | (à commit) |
+| 2026-04-25 | Batch C Notes de concept + Glossaire (double indexation) : 152 actions Notion = 135 MAJ + 10 créations + 5 relations + 2 archivages + 2 renommages | (à commit) |
+| 2026-04-25 | Capture R-039 (QA anti-artefacts IA dans tous les docs LBP) | (à commit) |
 
 ## Prochaines etapes
 
-- **Commit unifié** des batchs A1+A2+A3+A4 + corrections doublons + R-038 + housekeeping ACT
-- Combler la dette sur Manuel Actifs (ajouter ses 7 relations vers ASSET.LIFECYCLE, ASSET.PROVENANCE, ASSET.SUBSTITUTABILITY, OBJ.STATUT, ORG5D.DIM, SCALE.CRITICALITY, SCALE.IMPACT_INTENSITY) avant batch B
-- **Batch B** : Manuels Twin v2 (B1 socle structurel, B2 extraction factuelle, B3 sémantique/pivot/mouvement, B4 couche analytique, B5 sandboxes — 21 manuels, R-038 = pivot par nom canonique)
-- **Batch C** : Notes de concept + Glossaire (72 notes, double indexation)
-- Phase 6 : Clefs de lecture
-- Phase 7 : Prompts maitres et Logic blocks
+- **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
+- **Anomalies QA** à corriger en source (vault) :
+  - `concept - Repères communs.md` : artefact `:contentReference[oaicite:5]{index=5}` + texte tronqué dans summary frontmatter
+  - `concept - Soft skill.md` : texte tronqué `décin collective` dans summary frontmatter
+- **Phase 6** : Clefs de lecture (R-028)
+- **Phase 7** : Prompts maitres et Logic blocks (refonte vers nouvelle archi Twin v2)
+- **Enrichissement éditorial Phase 5bis** (option B) : remplir les champs avancés des fiches Glossaire LBP (Valeur ajoutée LBP, Usages IA potentiels, Règles d'usage et pièges, Équivalent langage courant) à partir du corps des notes de concept

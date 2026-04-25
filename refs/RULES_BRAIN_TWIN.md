@@ -77,6 +77,29 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Exemples** : ✅ "Capacité Organisationnelle" dans Glossaire LBP / ❌ "Capacité Organisationnelle - Client X" dans Glossaire LBP
 - **Découverte** : Principe architectural originel.
 
+### 1.3 Qualité documentaire (QA)
+
+#### R-039 : Aucun artefact de génération IA dans les docs LBP
+
+- **Portée** : Transverse (tous les documents LBP : manuels, notes de concept, glossaire, taxonomies, prompts, méthodes, templates, frontmatters, contenus de fiches Notion, etc.)
+- **Statut** : Actif
+- **Why** : Les générateurs IA (notamment ChatGPT/o1 avec sources web) laissent parfois des artefacts de citation ou de balisage qui ne devraient jamais apparaître dans le doc final. Ces artefacts cassent la lisibilité, polluent l'extraction sémantique, et trahissent un défaut de relecture avant publication.
+- **How to apply** : Avant de finaliser ou publier tout doc LBP (vault, Notion, Drive), faire une **passe QA anti-artefacts** qui détecte et supprime au minimum :
+  - `:contentReference[oaicite:N]{index=N}` (citation OpenAI/Bing brute)
+  - `【N†source】` ou `[N†source]` (citations OpenAI tournée)
+  - `[citation:N]`, `[ref:N]`, `[1]`, `[2]`... isolés sans bibliographie
+  - `<sup>N</sup>` orphelins
+  - Caractères de remplacement Unicode (`�`, `\ufffd`)
+  - Balises markdown brisées (`**...` ou `[...](` non fermés)
+  - Fragments de placeholders non résolus (`[[NOM_OBJET]]`, `<INSTR>...</INSTR>`)
+  - Texte tronqué visible (phrases coupées en milieu, comme "décin collective" au lieu de "décisions et de la performance collective")
+- **Exemples détectés** :
+  - ❌ Note vault `concept - Repères communs.md` : `Ils peuvent être symboliques [...] fonctionnels:contentReference[oaicite:5]{index=5}iguïtés en rendant visibles des attentes communes.` (artefact de citation + texte tronqué) — corrigé manuellement à l'indexation Notion (batch C, 2026-04-25)
+  - ❌ Note vault `concept - Soft skill.md` : `qualité des interactions, des décin collective.` (texte tronqué)
+- **Outillage suggéré** : grep de motifs avant publication, ou contrôle automatique dans pipeline d'indexation.
+- **Conséquence si violation** : doc à corriger en source (vault) ET en cible (Notion) ; relire systématiquement la sortie de tout générateur IA avant intégration.
+- **Découverte** : 2026-04-25, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
+
 ---
 
 ## 2. Règles Brain
