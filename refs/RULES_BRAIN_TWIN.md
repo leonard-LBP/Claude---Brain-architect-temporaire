@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-24 — ajout R-011 à R-025 (Panorama V2 v3) + R-026 à R-028 (archivage, nommage, clefs de lecture) + R-029 à R-037 (indexation Notion)
+> Dernière mise à jour : 2026-04-25 — R-036 révisée + ajout R-038 (identifiant pivot par type d'objet)
 
 ---
 
@@ -208,21 +208,37 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - Si le doc v2 porte un **nom ou code différent** de la v1, alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2** (R-036)
 - **Découverte** : 2026-04-24
 
-#### R-036 : Archivage + création lorsque le nom canonique change
+#### R-036 : Le Code unique est l'identité ; MAJ en place tant que le code est stable
 
 - **Portée** : Brain (indexation)
-- **Statut** : Actif (préférence de Leonard exprimée 2026-04-24)
-- **Why** : Préserver une trace claire des versions et éviter la confusion entre ancien et nouveau libellé. Un changement de nom signale souvent une évolution sémantique réelle (même si le code est stable).
-- **How to apply** : Lorsqu'on indexe une entrée v2 dont le **nom canonique diffère** de la v1 (même code stable ou code différent) :
-  1. **Archiver** l'entrée v1 existante (Statut → `Archivé`) sans modifier ses autres propriétés
-  2. **Créer** une nouvelle entrée v2 avec toutes ses propriétés, y compris le même Code unique si c'est le cas
-  3. Les relations portées par v1 sont perdues — les recréer depuis v2 si pertinentes
-- **Exceptions** :
-  - Nom strictement identique → mise à jour simple (R-032)
-  - Changement purement cosmétique (typo, accent, espace) → mise à jour simple acceptée
-- **Exemples** : ✅ `Contexte d'ancrage de rôle` → `Contexte d'ancrage organisationnel d'un poste` (sens différent) → archive + création / ❌ Mettre à jour en place `Dépendances — niveau` en `Niveau de dépendances du collectif`
-- **Conséquence** : un Registre plus volumineux avec de nombreuses entrées `Archivé`, mais traçabilité des évolutions sémantiques préservée
-- **Découverte** : 2026-04-24, Leonard, avant Batch A1
+- **Statut** : Actif (révisé 2026-04-25 par Leonard)
+- **Why** : Le `Code unique` est l'identité stable de l'objet ; le `Nom canonique` n'est qu'un libellé éditable. Tant que le code est inchangé, l'entité est la même — seul son libellé / sa description / son URL évoluent. Préserver l'entrée existante préserve aussi ses relations Notion entrantes (rollups, références d'autres BDD), ses ID Notion stables, et évite de polluer le Registre avec des doublons archivés.
+- **How to apply** :
+  - **Code identique** (même si le nom canonique change, peu importe l'amplitude du changement) → **mise à jour en place** de l'entrée existante (Nom, Description, URL Drive, Aliases, etc.). Pas d'archivage.
+  - **Code différent** (renommage de namespace, changement de TOKEN, scission/fusion d'objet) → archive de l'entrée v1 + création d'une nouvelle entrée v2.
+- **Exemples** :
+  - ✅ ORG.CONTEXTE.LBP : v1 "Contexte d'ancrage de rôle" → v2 "Contexte d'ancrage organisationnel d'un poste" (code stable) → **MAJ** de v1
+  - ✅ ORG.DEP_LEVEL.LBP → COL.DEP_LEVEL.LBP (code change suite à scission UO→Orga+Collectif) → archive v1 + création v2
+  - ✅ ACT.CANDIDATE_TYPE.LBP → ACT.CONSOLIDATION_TARGET.LBP (TOKEN change) → archive v1 + création v2
+- **Conséquence** : Registre propre, IDs Notion stables, relations préservées. La trace des évolutions de libellés vit dans l'historique Notion (créé/last edited) et le journal git.
+- **Note historique** : version initiale (2026-04-24) imposait archive+create dès que le nom changeait — révisée le 2026-04-25 après détection de 25 doublons inutiles dans batchs A1+A2 (correctifs appliqués).
+- **Découverte / révision** : 2026-04-25, Leonard, après examen des batchs A1+A2
+
+#### R-038 : Identifiant pivot par type d'objet (taxonomies = code, autres = nom)
+
+- **Portée** : Brain (indexation, déduplication)
+- **Statut** : Actif
+- **Why** : R-036 (test de doublon par code unique) ne s'applique strictement qu'aux taxonomies. Pour les autres BDD Brain, le code n'est pas (encore) un identifiant fiable : il peut changer au cours d'updates, n'est pas systématiquement renseigné, ou n'est pas conçu comme pivot de déduplication. C'est le **Nom canonique** qui sert d'identifiant pivot pour ces objets. Confondre les deux logiques amène à créer des doublons (pour les taxos quand on dédoublonne par nom) ou à manquer des doublons (pour les manuels quand on dédoublonne par code).
+- **How to apply** :
+  - **Taxonomies** → identifiant pivot = `Code unique` (format `XXX.YYY.LBP`, immuable). Application stricte de R-036.
+  - **Manuels de BDD, Notes de concept, Glossaire, autres BDD Brain** → identifiant pivot = `Nom canonique` (avec normalisation : trim, casse insensible, accents normalisés pour la comparaison). Le code éventuellement présent est informatif, pas pivot.
+  - Lors d'une indexation Notion : avant toute création, requêter le registre cible avec le bon champ pivot. Si match → MAJ en place ; sinon → création.
+- **Exemples** :
+  - ✅ Taxo ORG.CONTEXTE.LBP : doublon détecté par code → MAJ v1
+  - ✅ Manuel "Actifs" (anciennement "Ressources") : doublon détecté par nom (après normalisation) — pas par code, qui peut avoir changé
+  - ❌ Tester un doublon de manuel uniquement par code : risque de rater une refonte de nom + code, ou de créer un faux doublon si le code a évolué
+- **Conséquence** : R-036 reste valable mais son champ pivot dépend du type d'objet. Cette règle préfigure la procédure de réconciliation pour les batchs B (Manuels) et C (Notes concept + Glossaire).
+- **Découverte** : 2026-04-25, Leonard, après correction des 25 doublons A1+A2 — précision donnée pour anticiper les batchs Manuels et Notes concept.
 
 ### 2.4 Gouvernance des taxonomies
 

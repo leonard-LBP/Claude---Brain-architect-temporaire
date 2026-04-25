@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 2026-04-24 — Phase 5 mini-batch 0 effectue
+> Derniere mise a jour : 2026-04-25 — Phase 5 batchs A1-A4 (taxonomies) terminés, prêt pour batchs B (Manuels) puis C (Notes concept + Glossaire)
 
 ## Phase actuelle
 
@@ -57,8 +57,9 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | **Mini-batch 0 (calibration : Actif)** | ✅ Terminé | 4 creations + 4 archives + 3 relations | fdaaabd |
 | **A1 Taxonomies socle structurel** (ORG, COL, ASSET sauf SUBTYPE, JOB, ENV, EVT, ORG_REL, STAKEHOLDER) | ✅ Terminé + enrichissement descriptions | 29 creations + 17 archives + 29 MAJ enrichies | 9327200 + 2984dc6 |
 | **A2 Taxonomies extraction + pivots** (ACT, SIG, ENJ, CAP, INIT, IMPACT, EMO, IND) | ✅ Terminé | 17 creations (R-037) + 14 archives | en cours |
-| A3 Taxonomies couche analytique (PROC, PRA, INDIC, INS, SCALE, ORG5D) | A venir | ~30 | |
-| A4 Taxonomies Brain/transverse (AGENT, BRICK, GLO, MET, META, MTG, OBJ, OPS, OUT, PLATFORM, PROMPT, SKILL, SRC) | A venir | ~22 | |
+| **Correction R-036 doublons A1+A2** | ✅ Terminé | 25 MAJ v1 (ressuscitation enrichie) + 25 v2 [DOUBLON] supprimées par Leonard | (à commit) |
+| **A3 Taxonomies couche analytique** (INDIC, INS, ORG5D, PRA, PROC, SCALE) | ✅ Terminé | 23 MAJ enrichies + 2 créations (INDIC.TIMEROLE, SCALE.COVERAGE) + R-038 | (à commit) |
+| **A4 Taxonomies Brain/transverse** (AGENT, BRICK, GLO, MET, META, MTG, OBJ, OPS, OUT, PLATFORM, PROMPT, SKILL, SRC) | ✅ Terminé | 24 MAJ enrichies + 1 création (MTG.EXEC_STATUS) + housekeeping ACT (1 MAJ ACT.CONSOLIDATION_TARGET + 1 archive ACT.CANDIDATE_TYPE) | (à commit) |
 | B1 Manuels socle structurel (7 manuels — reprise Actifs pour ajouter les 7 relations taxo manquantes) | A venir | 7+1 | |
 | B2 Manuels extraction factuelle | A venir | 3 | |
 | B3 Manuels semantique/pivot/mouvement | A venir | 3 | |
@@ -91,10 +92,17 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-24 | Phase 5 mini-batch 0 Actif | fdaaabd |
 | 2026-04-24 | Capture R-035 (ordre d'indexation inter-types) + reseq | d7e21fa |
 | 2026-04-24 | Batch A1 Taxonomies socle structurel (29 creations + 17 archives) + R-036 | (en cours) |
+| 2026-04-25 | Batch A2 Taxonomies extraction + pivots (17 creations enrichies + 14 archives) + R-037 | (à commit) |
+| 2026-04-25 | Correction R-036 doublons A1+A2 (25 MAJ v1 + 25 archives v2 [DOUBLON]) | (à commit) |
+| 2026-04-25 | Capture R-038 (identifiant pivot par type d'objet : taxos = code, autres = nom) | (à commit) |
+| 2026-04-25 | Batch A3 Taxonomies couche analytique (23 MAJ enrichies + 2 créations) | (à commit) |
+| 2026-04-25 | Batch A4 Taxonomies Brain/transverse (24 MAJ enrichies + 1 création + housekeeping ACT.CANDIDATE_TYPE → ACT.CONSOLIDATION_TARGET) | (à commit) |
 
 ## Prochaines etapes
 
-- Mini-batch 1a : socle structurel (7 manuels restants apres Actifs)
-- Mini-batch 1b-1e
-- Batch 2 : taxonomies
-- Batch 3 : notes de concept + glossaire
+- **Commit unifié** des batchs A1+A2+A3+A4 + corrections doublons + R-038 + housekeeping ACT
+- Combler la dette sur Manuel Actifs (ajouter ses 7 relations vers ASSET.LIFECYCLE, ASSET.PROVENANCE, ASSET.SUBSTITUTABILITY, OBJ.STATUT, ORG5D.DIM, SCALE.CRITICALITY, SCALE.IMPACT_INTENSITY) avant batch B
+- **Batch B** : Manuels Twin v2 (B1 socle structurel, B2 extraction factuelle, B3 sémantique/pivot/mouvement, B4 couche analytique, B5 sandboxes — 21 manuels, R-038 = pivot par nom canonique)
+- **Batch C** : Notes de concept + Glossaire (72 notes, double indexation)
+- Phase 6 : Clefs de lecture
+- Phase 7 : Prompts maitres et Logic blocks
