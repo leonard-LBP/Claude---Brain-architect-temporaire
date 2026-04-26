@@ -102,6 +102,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-25 | Batch B Manuels Twin v2 (B1-B5 : 13 MAJ + 15 créations = 28 manuels) + 28 frontmatters vault avec template_version + housekeeping (5 entrées Notion) + 4 nouveaux types fonctionnels Notion | (à commit) |
 | 2026-04-25 | Batch C Notes de concept + Glossaire (double indexation) : 152 actions Notion = 135 MAJ + 10 créations + 5 relations + 2 archivages + 2 renommages | (à commit) |
 | 2026-04-25 | Capture R-039 (QA anti-artefacts IA dans tous les docs LBP) | (à commit) |
+| 2026-04-26 | Audit terminologique vault hors Twin : suppression "UO" / "unités organisationnelles" + "Ressources" (sens objet) dans Manuels Brain/Mission Ops, Méthodes, Templates de Bricks. 13 fichiers vault modifiés (dont renommage Template Brick UO→Collectifs : PRF-UO-IND → PRF-COL-IND). | (à commit) |
 
 ## Prochaines etapes
 
