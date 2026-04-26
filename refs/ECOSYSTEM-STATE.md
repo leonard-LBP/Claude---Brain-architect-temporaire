@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 2026-04-26 — Phase 6 TERMINÉE (28 WR-RD Twin v2 instanciés). Phase 5 + Phase 6 complètes.
+> Derniere mise a jour : 26-04-2026 — Capture R-044 (format date JJ-MM-YYYY transverse), R-041 appliquée sur WR-RD Problématiques + Problématiques sandbox (suite ajout sections 4.3 / 4.5 par Leonard), bulk update 25 WR-RD `created_at` ISO → JJ-MM-YYYY, Template WR-RD bumped v1.2.0 → v1.3.0.
 
 ## Phase actuelle
 

@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 2026-04-25 — R-036 révisée + ajout R-038 (identifiant pivot par type d'objet)
+> Dernière mise à jour : 26-04-2026 — Ajout R-044 (format date JJ-MM-YYYY transverse LBP)
 
 ---
 
@@ -99,6 +99,21 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Outillage suggéré** : grep de motifs avant publication, ou contrôle automatique dans pipeline d'indexation.
 - **Conséquence si violation** : doc à corriger en source (vault) ET en cible (Notion) ; relire systématiquement la sortie de tout générateur IA avant intégration.
 - **Découverte** : 2026-04-25, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
+
+#### R-044 : Format de date `JJ-MM-YYYY` (transverse LBP)
+
+- **Portée** : Transverse à tout l'écosystème LBP (Brain, Twin, Mission Ops, refs/, templates, scripts, frontmatters Obsidian, propriétés Notion textuelles, Logs/Révisions, exemples de contenu).
+- **Statut** : Actif
+- **Why** : Cohérence visuelle francophone, lisibilité immédiate, alignement avec les conventions de l'écosystème LBP. Le séparateur `-` (dash ASCII) est préféré au `/` pour éviter les cassures de chemin et l'abus de barres obliques (déjà chargées de sens dans les paths, urls, taxonomies).
+- **How to apply** : Toutes les dates affichées ou stockées en clair s'écrivent `JJ-MM-YYYY` (ex. `26-04-2026`). S'applique à : `created_at`, `updated_at`, `version_date` dans les frontmatters ; dates dans Logs/Révisions ; dates dans champs texte ; exemples de contenu dans manuels/WR-RD/templates.
+- **Exception** : si une propriété Notion est typée `Date` natif, on conserve le type natif (le rendu est géré par Notion et localisé). Ne concerne donc que les **dates en texte clair**.
+- **Migration** : règle appliquée going forward ; un sweep transverse des dates ISO `YYYY-MM-DD` héritées (notamment dans Logs/Révisions des manuels et `ECOSYSTEM-STATE.md`) est planifié ultérieurement, hors scope immédiat.
+- **Exemples** :
+  - ✅ `created_at: "26-04-2026"` (frontmatter manuel ou WR-RD)
+  - ✅ `| 26-04-2026 | Création du doc | v0.1.0 |` (ligne de log)
+  - ❌ `created_at: "2026-04-26"` (format ISO interdit en texte clair)
+  - ❌ `created_at: "26/04/2026"` (slash interdit)
+- **Découverte** : 2026-04-26, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
 
 ---
 
