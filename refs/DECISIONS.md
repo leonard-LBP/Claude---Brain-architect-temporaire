@@ -356,6 +356,46 @@
   - ✅ Convention extensible : tout futur dossier d'archives doit suivre ce naming.
 - **Règle implicite** : tout nouveau dossier d'archive vault → toujours `00 - archives/`, jamais `archives/`. À formaliser comme règle si besoin (R-XXX) au prochain ajout.
 
+### D-016 : Rôle, contenu et format des docs WR-RD (Write Rules / Read Keys)
+
+- **Date** : 2026-04-26
+- **Statut** : Adoptée
+- **Portée** : Brain (template d'instanciation) + Twin / Brain / Mission Ops (docs instanciés). Complète D-014 (colocalisation WR-RD avec leurs manuels parents).
+- **Contexte** : Suite à la refonte Twin v2 (Phase 5), il fallait définir la place exacte des docs « Instructions d'écriture + Clefs de lecture » (renommés WR-RD) dans l'écosystème agentique LBP, où coexistent : system prompts (identité agent), prompts maîtres (par opération), logic blocks (par opération × BDD), manuels de BDD (référence design exhaustive), descriptions de propriétés Notion (mini-prompts inline). Le risque était soit de doublonner avec les logic blocks, soit de re-générer une doctrine déjà tenue par le manuel parent.
+- **Constat préalable** : le template v6.1.0 du Manuel de BDD - Digital Twin prescrit déjà que les colonnes "Instructions d'écriture" (≤500 chars) et "Clefs de lecture" (≤400 chars) de la section 4 doivent être **autonomes** car elles seront "compilées vers les WR/RD". La doctrine du WR-RD était donc déjà en germe dans le manuel ; il restait à formaliser le format de sortie.
+- **Options envisagées** :
+  - **Option A — Statu quo discipliné** : maintenir un WR-RD éditorial avec sa propre doctrine et son contenu autonome.
+  - **Option B — Fusion dans le manuel** : pas de WR-RD, l'agent charge le manuel complet à chaque opération.
+  - **Option C — Fusion dans les logic blocks** : chaque logic block embarque les règles WR-RD nécessaires.
+  - **Option D — WR-RD comme projection stricte du manuel parent** : extraction automatique d'un sous-ensemble de colonnes de la section 4 du manuel ; aucune doctrine ni contenu propre.
+- **Choix retenu** : **Option D** — le WR-RD est une **projection stricte de la section 4 du manuel parent**, sans contenu propre.
+  - **Rôle clarifié** : doc compact runtime pour les agents (twin architect en priorité, mais aussi tout agent opérant sur les BDD) qui doivent lire/écrire dans une BDD sans charger le manuel complet. Les Instructions d'écriture et Clefs de lecture étant autonomes par construction côté manuel, le WR-RD peut s'autosuffire ligne par ligne.
+  - **Frontière nette avec les autres docs** :
+    - System Prompt (agent) → identité, autorité, garde-fous globaux.
+    - Prompt Maître (par opération) → mission, portée, garde-fous, hiérarchie d'autorité, format de sortie.
+    - Logic Block (opération × BDD) → discernement, heuristiques d'opération, faux positifs, prudence, cas limites.
+    - **WR-RD (par BDD) → tableau champ-par-champ : format d'écriture + sens de lecture (extraction stricte du manuel parent).**
+    - Manuel de BDD (par BDD) → design conceptuel exhaustif, relations, gouvernance, narratif, invariants, traçabilité structurelle.
+    - Description Notion ≤280 (par champ) → mini-prompt synthétique inline pour saisie rapide directement dans Notion.
+  - **8 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Exemples.
+  - **4 colonnes du manuel NON reprises** : Portée (info de design), Nature de production (implicite dans Type), Prérequis Must/Should/Nice (stratégie de complétion, pas contrat strict), Utilité pour le Digital Twin (pédagogie pour le brain architect).
+  - **5 sections cibles** miroir des sous-sections 4.1 à 4.5 du manuel : Génériques / Spécifiques / Relations + jumelles + rollups / 5D / Calculée. Sections 4 et 5 supprimées dans le doc instancié si la BDD n'a ni couche 5D ni couche calculée.
+  - **Naming** : fichier `WR-RD - [Nom de la BDD].md` (miroir de `Manuel de BDD - [Nom de la BDD].md`) ; code unique `WRRD_[NOM_TOKEN]` (cohérent avec `DBMAN_[NOM_TOKEN]`).
+  - **Frontmatter minimal** : `target_bdd_canonical_name`, `target_bdd_code`, `parent_manual`, `wr_rd_code`, `domain`, `version`, `template_version`, `created_at`, `tags`. Pas de `status` (géré hors document).
+  - **Pas de section maintenance, ni doctrine, ni historique de version, ni articulation avec autres docs dans le doc instancié** : tout cela vit dans le manuel parent et relève du brain architect, pas du twin architect runtime.
+- **Conséquences** :
+  - ✅ Aucun risque de doublon avec logic blocks (qui parlent de discernement) ni avec le manuel (qui parle de design).
+  - ✅ Source de vérité unique : la section 4 du manuel parent. Le WR-RD est une projection re-générable.
+  - ✅ Doc compact, chargeable runtime par les agents, sans bruit pour le twin architect.
+  - ✅ Extension future possible : générateur automatique manuel → WR-RD (script qui extrait les 8 colonnes des sous-sections 4.1 à 4.5 et émet le doc).
+  - ⚠ Toute évolution du WR-RD doit passer par une évolution du manuel parent puis re-projection (pas de retouche directe du WR-RD).
+  - ⚠ Naming "WR-RD" gardé (Write Rules / Read Keys) ; pourrait être reconsidéré si un meilleur nom émerge à l'usage.
+- **Template créé** : `Template - WR-RD - Digital Twin.md` (v1.0.0) dans `00 - Docs méta/Templates d'instanciation/`. Reproduit le pattern du Template Manuel de BDD (cleanup_rules, blocs @INSTR, settings, FRONTMATTER_INSTANCE, COLUMN_DEFINITIONS, INSTANTIATION_GUIDE).
+- **Implications à exécuter** :
+  - 🔜 Notion : sur la BDD "Manuels de BDD", renommer la propriété URL existante "Lien vers le doc du manuel" → "Lien vers le manuel de BDD (.md)" ; ajouter une nouvelle propriété URL "Lien vers le doc WR-RD (.md)".
+  - 🔜 Manuel parent "BDD - MANUELS DE BDD.md" : ajouter ces 2 propriétés dans la section 3.2 (champs) et la section 7 (propriétés spécifiques) avec instructions d'écriture / clefs de lecture autonomes.
+  - 🔜 Phase 6 : générer 22 WR-RD à partir des 22 manuels Twin v2 actifs + 6 sandboxes (extraction automatique souhaitable).
+
 ---
 
 ## 3. Décisions de mise en œuvre

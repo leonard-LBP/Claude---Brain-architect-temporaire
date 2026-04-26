@@ -105,11 +105,13 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-26 | Audit terminologique vault hors Twin : suppression "UO" / "unités organisationnelles" + "Ressources" (sens objet) dans Manuels Brain/Mission Ops, Méthodes, Templates de Bricks. 13 fichiers vault modifiés (dont renommage Template Brick UO→Collectifs : PRF-UO-IND → PRF-COL-IND). | (à commit) |
 | 2026-04-26 | Restructuration WR-RD (D-014) : 41 docs Clefs de lecture migrés (39 archivés Twin + 2 actifs Mission Ops Sources d'informations) ; sous-dossiers `WR-RD/` créés dans Brain/Digital Twin/Mission Ops ; dossier racine `Clefs de lectures/` supprimé. | (à commit) |
 | 2026-04-26 | Convention nommage (D-015) : 12 dossiers `archives/` du vault renommés en `00 - archives/` pour visibilité (tri alpha en tête). | (à commit) |
+| 2026-04-26 | D-016 + Template WR-RD v1.0.0 : rôle/contenu/format des WR-RD formalisés (projection stricte de la section 4 du manuel parent, 8 colonnes, 5 sections, frontmatter minimal). Template créé dans `00 - Docs méta/Templates d'instanciation/Template - WR-RD - Digital Twin.md`. | (à commit) |
 
 ## Prochaines etapes
 
 - **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
-- **Phase 6** : Recréer les docs WR-RD (Instructions d'écriture + Clefs de lecture) pour les manuels Twin v2 dans `Manuels de BDD/Digital Twin/WR-RD/` (R-028 + D-014). Discussion préalable à avoir sur le rôle exact de ces docs avant de les recréer (le naming "WR-RD" est provisoire).
+- **Pré-Phase 6 (à enchaîner)** : sur Notion, renommer la propriété URL existante "Lien vers le doc du manuel" → "Lien vers le manuel de BDD (.md)" ; ajouter une nouvelle propriété URL "Lien vers le doc WR-RD (.md)" ; mettre à jour le manuel `BDD - MANUELS DE BDD.md` (sections 3.2 + 7) pour documenter ces 2 propriétés.
+- **Phase 6** : générer les 28 WR-RD (22 manuels Twin v2 + 6 sandboxes) dans `Manuels de BDD/Digital Twin/WR-RD/` à partir du Template WR-RD v1.0.0 + extraction stricte des sections 4.1 à 4.5 des manuels parents (D-014, D-016).
 - **Phase 7** : Prompts maitres et Logic blocks (refonte vers nouvelle archi Twin v2)
 - **Enrichissement éditorial Phase 5bis** (option B) : remplir les champs avancés des fiches Glossaire LBP (Valeur ajoutée LBP, Usages IA potentiels, Règles d'usage et pièges, Équivalent langage courant) à partir du corps des notes de concept
 - **Chantier "logique des codes uniques"** (backlog : voir `RULES_BRAIN_TWIN-backlog.md`) : définir une grammaire unifiée des codes pour tous les docs Brain/Motor — pas tout de suite, après Phases 6 et 7
