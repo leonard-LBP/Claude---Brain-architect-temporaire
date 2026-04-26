@@ -324,19 +324,45 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 #### R-027 : Conventions de nommage des fichiers Brain/Twin
 
 - **Portée** : Transverse
-- **Statut** : Actif
-- **Why** : Homogénéité visuelle dans Obsidian, compatibilité clavier, interopérabilité inter-outils.
+- **Statut** : Actif (révisé 2026-04-26 : préfixe `Concept` capitalisé pour aligner avec R-043 ; em dash banni partout)
+- **Why** : Homogénéité visuelle dans Obsidian, compatibilité clavier, interopérabilité inter-outils, cohérence fichier ↔ frontmatter (R-043).
 - **How to apply** :
-  - **Séparateur** : tiret simple `-` (jamais tiret cadratin `—`, jamais underscore)
-  - **Casse manuels de BDD** : Title Case, ex: `Manuel de BDD - Actifs.md`
-  - **Casse notes de concept** : minuscule, ex: `concept - Actif.md`
+  - **Séparateur** : tiret simple `-` (jamais tiret cadratin `—`, jamais underscore). S'applique aux noms de fichiers ET aux champs `title` du frontmatter.
+  - **Préfixe manuels de BDD** : `Manuel de BDD - X.md` (Title Case)
+  - **Préfixe notes de concept** : `Concept - X.md` (Title Case, capitalisé)
+  - **Préfixe WR-RD** : `WR-RD - X.md`
   - **Casse taxonomies** : code canonique, ex: `ACT.IMPACT_DOMAIN.LBP.md`
-  - **Accents et apostrophes typographiques autorisés** (Obsidian et Drive les gèrent)
-  - **Préfixe** : pour les concepts, toujours `concept - `. Pour les manuels Twin v2, `Manuel de BDD - `.
-- **Exemples** : ✅ `Manuel de BDD - Relations inter-organisations.md`, `concept - Poste.md`, `ORG_REL.TYPE.LBP.md` / ❌ `Manuel de BDD — Actifs.md` (cadratin), `Concept - Actif.md` (majuscule), `BDD_ACTIFS.md` (underscore)
-- **Découverte** : 2026-04-24, standardisation lors de la migration Twin v2 (D-011)
+  - **Accents et apostrophes typographiques autorisés** dans le corps (Obsidian et Drive les gèrent)
+  - **Caractères interdits Windows** (`<>:"/\|?*`) à éviter ; si le concept canonique contient `/` (ex. "Input / Output"), le filename utilise `-` à la place (ex. `Concept - Input - Output (LBP).md`).
+- **Exemples** :
+  - ✅ `Manuel de BDD - Relations inter-organisations.md`
+  - ✅ `Concept - Poste.md`
+  - ✅ `WR-RD - Actifs.md`
+  - ✅ `ORG_REL.TYPE.LBP.md`
+  - ❌ `Manuel de BDD — Actifs.md` (em dash banni)
+  - ❌ `concept - Actif.md` (préfixe minuscule legacy)
+  - ❌ `BDD_ACTIFS.md` (underscore)
+- **Migration 2026-04-26** : 87 fichiers vault renommés en bulk + 100 frontmatters harmonisés (em dash → dash ASCII) lors de la cleanup Phase 6.
+- **Découverte** : 2026-04-24, standardisation lors de la migration Twin v2 (D-011) ; révisée 2026-04-26 pour intégrer R-043 et bannir l'em dash dans les filenames.
 
-### 2.7 Relations inter-BDD Brain
+#### R-043 : Cohérence stricte filename ↔ frontmatter `title`
+
+- **Portée** : Brain (manuels de BDD, notes de concept, WR-RD, méthodes, prompts, logic blocks, etc.)
+- **Statut** : Actif
+- **Why** : Le `title` du frontmatter est la **source canonique de l'identité** du doc ; le nom de fichier doit refléter cette identité pour permettre une navigation cohérente, des liens cross-doc fiables et une lecture sans ambiguïté entre l'ouverture du fichier et son frontmatter. Un mismatch fichier ↔ title est une dette documentaire silencieuse.
+- **How to apply** :
+  - Pour tout doc Brain (hors taxonomies, voir exception ci-dessous), le nom de fichier doit être **strictement** la valeur du champ `title` du frontmatter, suivie de l'extension `.md`.
+  - Si le `title` contient un caractère interdit en filename Windows (`<>:"/\|?*`), remplacer le caractère par `-` (cas standard `/` → ` - `) **dans le filename uniquement** ; le `title` du frontmatter conserve la formulation canonique.
+  - Toute modification de `title` doit déclencher un renommage du fichier ; tout renommage de fichier doit être précédé d'une modification du `title` cohérente.
+- **Exception : taxonomies** : le nom de fichier d'une taxonomie porte le `namespace_code` (ex: `ACT.IMPACT_DOMAIN.LBP.md`), pas le title. Le title humain reste lisible dans le frontmatter.
+- **Exemples** :
+  - ✅ Fichier `Concept - Actif.md` ↔ `title: "Concept - Actif"` dans le frontmatter.
+  - ✅ Fichier `Concept - Input - Output (LBP).md` ↔ `title: "Concept - Input / Output (LBP)"` (le `/` est autorisé dans le title, remplacé par ` - ` dans le filename).
+  - ❌ Fichier `BDD - AGENTS LBP.md` ↔ `title: "Manuel de BDD - Agents LBP"` (mismatch ; à corriger en renommant le fichier).
+- **Conséquence si violation** : navigation incohérente (le titre vu en haut du doc diffère du nom dans l'arborescence), liens cross-doc fragiles, perte de confiance dans l'identité des fichiers.
+- **Découverte** : 2026-04-26, Leonard, après audit de 114 mismatches dans le vault (manuels Brain en `BDD - X` au lieu de `Manuel de BDD - X`, notes en `concept - X` au lieu de `Concept - X`, manuels Twin avec em dash dans le title).
+
+### 2.10 Relations inter-BDD Brain
 
 *Section à remplir quand on formalisera les règles de relations (hub-spoke, miroirs, bidirectionnalité...).*
 
