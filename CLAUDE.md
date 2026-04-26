@@ -41,13 +41,17 @@
 
 A consulter selon le besoin ; `refs/ARCHITECTURE-DIGEST.md` a relire au debut de chaque conversation pour se recontextualiser.
 
+**🟦 Scope LBP (bundle ecosysteme)**
 - `refs/ARCHITECTURE-DIGEST.md` — Synthese de l'architecture LBP
 - `refs/RULES_BRAIN_TWIN.md` — Regles intrinseques a l'ecosysteme (IDs R-XXX)
 - `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties a formaliser plus tard
-- `refs/DECISIONS.md` — Decisions architecturales (le pourquoi des choix)
-- `refs/WORKFLOWS.md` — Workflows documentes
-- `refs/ECOSYSTEM-STATE.md` — Etat courant (a mettre a jour apres chaque changement)
+- `refs/DECISIONS.md` — Decisions architecturales (le pourquoi des choix, IDs D-XXX)
+- `refs/WORKFLOWS_LBP.md` — Workflows operationnels LBP (IDs WF-XXX)
 - `refs/SPECS_ARCHITECTURE_BRAIN.md` — Specs detaillees des 11 BDD Brain (schemas Notion)
+
+**🟪 Scope Session (hors bundle, collaboration Claude/Leonard)**
+- `refs/SESSION_WORKFLOWS.md` — Workflows propres a notre collaboration en session (re-contextualisation, etc.)
+- `refs/ECOSYSTEM-STATE.md` — Journal de session + etat courant (a mettre a jour apres chaque changement)
 
 ---
 
@@ -57,6 +61,7 @@ A consulter selon le besoin ; `refs/ARCHITECTURE-DIGEST.md` a relire au debut de
 - **C-005 — Memoire** : Sauvegarder en memoire les decisions importantes, preferences utilisateur, pointeurs de contexte.
 - **C-006 — Relecture avant modif** : Avant de modifier un doc, toujours le lire d'abord. Avant de creer un doc, verifier qu'il n'existe pas deja.
 - **C-007 — Pointer vers les docs de ref** : Quand une question est deja traitee dans les docs refs/, y renvoyer plutot que de parapher.
+- **C-008 — Separer scope LBP et scope Session dans `refs/`** : Tout doc dans `refs/` a un scope explicite : 🟦 **LBP** (bundle ecosysteme, vocation a etre publie/consomme par les agents et humains LBP) ou 🟪 **Session** (collaboration Claude/Leonard, hors bundle final). Les workflows LBP vont dans `WORKFLOWS_LBP.md` ; les workflows de session vont dans `SESSION_WORKFLOWS.md`. A terme, les fichiers du bundle LBP seront suffixes en `_LBP.md` pour permettre l'extraction propre du bundle. Tout nouveau doc dans `refs/` doit indiquer son scope dans son intro ou son frontmatter (ligne `> **Scope** : LBP` ou `> **Scope** : Session`).
 
 ---
 
