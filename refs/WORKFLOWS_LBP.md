@@ -19,7 +19,7 @@
 | WF-003 | Archiver un doc Brain (vault + Notion) | À formaliser |
 | WF-008 | Propagation d'impacts après modification | À formaliser |
 | WF-009 | Migration d'une BDD XXX | À formaliser |
-| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | À formaliser (Phase 6) |
+| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 2026-04-26 après 3 instanciations test) |
 
 ---
 
@@ -147,6 +147,117 @@ Vérifier que les entrées sont bien créées et reliées. Commit dans git (refs
 - **Descriptions = instructions** : les descriptions Notion sont les règles de remplissage (R-033)
 - **QA anti-artefacts** : vérifier l'absence d'artefacts IA (R-039) avant publication
 - **Identifiant pivot par type** : taxonomies = code, autres = nom canonique (R-038)
+
+---
+
+---
+
+## WF-013 : Générer un WR-RD à partir d'un Manuel de BDD
+
+**Statut** : Actif (formalisé 2026-04-26 après instanciation test de 3 WR-RD : Actifs, Pratiques organisationnelles, Journal des signaux)
+
+### Contexte
+
+Le WR-RD (Write Rules / Read Keys) est un précis champ par champ destiné aux agents qui lisent et écrivent dans une BDD du Twin. Il est strictement dérivé de la section 4 du manuel parent (D-014, D-016). Ce workflow décrit comment instancier ou re-générer un WR-RD en respectant les règles R-041 (propagation manuel → WR-RD) et R-042 (QA stricte d'égalité).
+
+### Prérequis
+
+- Manuel de BDD parent existant et stabilisé (au moins en version v0.X.Y avec section 4 renseignée).
+- Template `Template - WR-RD - Digital Twin.md` (v1.2.0+) accessible dans `00 - Docs méta/Templates d'instanciation/`.
+- Sous-dossier `WR-RD/` créé dans le groupe BDD cible (`Manuels de BDD/{Brain,Digital Twin,Mission Ops}/WR-RD/`).
+
+### Étapes
+
+**1. Lire intégralement la section 4 du manuel parent**
+
+Identifier les sous-sections renseignées (4.1 Génériques, 4.2 Spécifiques, 4.3 Relations + jumelles + rollups, 4.4 Couche 5D, 4.5 Couche calculée). Repérer celles qui sont vides ou marquées comme non applicables (ex : "Aucune propriété native de formule locale n'est définie").
+
+**2. Préparer le frontmatter**
+
+Selon le modèle FRONTMATTER_INSTANCE du Template WR-RD :
+- `target_bdd_canonical_name` = nom canonique exact de la BDD (depuis le frontmatter du manuel parent)
+- `target_bdd_code` = `DBMAN_[NOM_TOKEN]` (format underscore, MAJUSCULES, depuis le manuel)
+- `parent_manual` = `Manuel de BDD - [Nom de la BDD].md` (nom de fichier exact)
+- `wr_rd_code` = `WRRD_[NOM_TOKEN]` (token aligné avec le manuel)
+- `domain` = "Digital Twin" / "Brain" / "Mission Ops"
+- `version` = "0.1.0" pour première instanciation
+- `template_version` = version du template (ex: "1.2.0")
+- `created_at` = date ISO YYYY-MM-DD
+
+**3. Projeter chaque sous-section 4.X dans la section X correspondante du WR-RD**
+
+Mapping fixe :
+- 4.1 Propriétés génériques → 1) Propriétés génériques
+- 4.2 Propriétés spécifiques → 2) Propriétés spécifiques
+- 4.3 Relations + jumelles textes + rollups relationnels → 3) Relations + jumelles textes + rollups relationnels
+- 4.4 Couche 5D → 4) Couche 5D
+- 4.5 Couche calculée → 5) Couche calculée
+
+Pour chaque ligne du tableau de la sous-section du manuel, extraire **strictement** les 9 colonnes retenues, dans l'ordre fixe :
+1. Champ
+2. Type
+3. Taxonomie(s) — codes
+4. Cardinalité / multiplicité
+5. Forme logique attendue
+6. Instructions d'écriture
+7. Clefs de lecture
+8. Utilité pour le Digital Twin
+9. Exemples
+
+**Colonnes à NE PAS reprendre** (D-016) : Portée, Nature de production, Prérequis (Must / Should / Nice).
+
+**4. Si la BDD n'a pas de couche 5D ou pas de couche calculée native, supprimer la section correspondante**
+
+Au lieu de produire un tableau vide. Optionnellement, ajouter une note brève en fin de doc expliquant pourquoi la section a été supprimée.
+
+**Exemple** (Journal des signaux V1) : section 5 supprimée + note `> La BDD Journal des signaux n'a pas de couche calculée native (pas de propriété de formule locale en V1). La couche calculée est ici portée par les rollups relationnels de la section 3.`
+
+**5. QA stricte d'égalité (R-042)**
+
+Avant tout commit, vérifier cellule par cellule l'**égalité mot pour mot** entre le WR-RD et la section 4 du manuel parent sur les 9 colonnes retenues. Tolérances admises : adaptations typographiques liées au rendu Markdown (apostrophe droite vs typographique selon contexte). Aucun reformulation éditoriale ne doit être introduite dans le WR-RD.
+
+**6. QA anti-artefacts (R-039)**
+
+Vérifier l'absence d'artefacts IA dans le doc final (`:contentReference[oaicite:N]{index=N}`, `[citation:N]`, texte tronqué, placeholders non résolus).
+
+**7. Mettre à jour la fiche Notion correspondante dans la BDD "Manuels de BDD"**
+
+Renseigner la propriété **`Lien vers le doc WR-RD (.md)`** (URL Drive du fichier .md du WR-RD) sur la fiche Notion correspondant au manuel parent. Workflow WF-011 pour récupérer l'URL Drive.
+
+**8. Vérifier et tracer**
+
+- Le WR-RD est-il bien dans `Manuels de BDD/{Domain}/WR-RD/` ? (D-014)
+- Le frontmatter est-il complet et conforme ?
+- Les 5 sections (ou subset) sont-elles correctes ?
+- La fiche Notion du manuel pointe-t-elle vers le WR-RD ?
+
+Tracer dans `ECOSYSTEM-STATE.md` (journal de session) la création/mise à jour du WR-RD avec sa version.
+
+### Cas particulier : mise à jour d'un WR-RD existant après modification du manuel parent (R-041)
+
+1. Identifier la modification dans le manuel parent (ajout, suppression, modification de propriété en section 4).
+2. Reporter strictement la modification dans le WR-RD (colonnes retenues uniquement).
+3. Bumper la version du WR-RD (ex : v0.1.0 → v0.2.0).
+4. Si le template a évolué entretemps, mettre à jour `template_version`.
+5. Re-passer la QA stricte (R-042) puis QA anti-artefacts (R-039).
+6. Mettre à jour la propriété Notion `Lien vers le doc WR-RD (.md)` si l'URL Drive a changé (rare).
+
+### Points d'attention
+
+- **Pas de réinterprétation** : le WR-RD n'est jamais le lieu d'une amélioration éditoriale ; toute amélioration passe par le manuel parent (R-041, R-042).
+- **Sections conditionnelles** : supprimer plutôt que produire des tableaux vides (préserve la lisibilité côté agent).
+- **Codes alignés** : `WRRD_X` aligné avec `DBMAN_X` (token en miroir).
+- **Naming fichier** : `WR-RD - [Nom de la BDD].md` strict (miroir de `Manuel de BDD - [Nom de la BDD].md`).
+- **Frontières** (D-016) : pas de section maintenance, doctrine, articulation autres docs, ni historique de version au-delà du frontmatter.
+
+### Articulation avec d'autres règles et workflows
+
+- **R-041** : propagation Manuel → WR-RD obligatoire.
+- **R-042** : QA stricte d'égalité WR-RD ↔ Manuel section 4.
+- **R-039** : QA anti-artefacts IA.
+- **D-014** : colocalisation WR-RD avec leur manuel parent.
+- **D-016** : rôle, contenu et format des WR-RD.
+- **WF-011** : récupérer l'URL Drive du fichier .md du WR-RD pour la propriété Notion.
 
 ---
 

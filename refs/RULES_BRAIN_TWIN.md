@@ -344,6 +344,39 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 
 *Section à remplir quand on clarifiera les patterns d'héritage (notes de concept ← glossaire, manuels ← taxonomies, etc.).*
 
+### 2.9 Docs WR-RD (Write Rules / Read Keys)
+
+*Règles propres aux docs WR-RD dérivés des manuels de BDD. Voir D-014 (colocalisation), D-016 (rôle, contenu et format), Template - WR-RD - Digital Twin (v1.2.0+).*
+
+#### R-041 : Propagation Manuel de BDD → WR-RD obligatoire
+
+- **Portée** : Brain (toute BDD ayant un WR-RD instancié)
+- **Statut** : Actif
+- **Why** : Le WR-RD est une **projection stricte** de la section 4 du manuel parent (D-016). Si une propriété change dans le manuel (création, suppression, modification de Type, Cardinalité, Taxonomie, Forme logique, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin ou Exemples) sans propagation au WR-RD, alors le WR-RD ment aux agents qui le consomment runtime → erreurs de saisie ou d'interprétation. La direction de propagation est unilatérale : **manuel → WR-RD, jamais l'inverse**.
+- **How to apply** :
+  - Toute modification d'une propriété en section 4 d'un Manuel de BDD (sous-sections 4.1 à 4.5) déclenche **obligatoirement** la mise à jour du WR-RD correspondant.
+  - Pour chaque propriété modifiée, reporter les colonnes retenues dans le WR-RD : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples.
+  - Bumper la version du WR-RD (`version` dans frontmatter) et son `template_version` si le template a évolué.
+  - Le WR-RD ne doit **jamais** être édité indépendamment du manuel parent : si une formulation pose problème dans le WR-RD, corriger d'abord le manuel parent puis re-projeter.
+  - À l'inverse : aucune modification du WR-RD ne doit remonter "à reculons" dans le manuel sans passer par une décision éditoriale explicite côté manuel.
+- **Outillage suggéré** : à terme, un script de génération automatique du WR-RD à partir du manuel parent (extraction des 9 colonnes des sous-sections 4.1 à 4.5). Phase 6 / 6bis.
+- **Conséquence si violation** : WR-RD désaligné = agents qui produisent des données non conformes au manuel = pollution silencieuse du Twin client. À détecter au plus tôt par audit régulier.
+- **Découverte** : 2026-04-26, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
+
+#### R-042 : QA stricte d'égalité entre WR-RD et section 4 du manuel parent
+
+- **Portée** : Brain (toute génération ou modification d'un WR-RD)
+- **Statut** : Actif
+- **Why** : Le WR-RD étant une projection stricte (D-016, R-041), tout écart entre le contenu d'une cellule du WR-RD et la cellule correspondante du manuel parent constitue une **dérive éditoriale** silencieuse. Une instruction d'écriture reformulée "pour faire mieux" dans le WR-RD est une violation : le canon est dans le manuel.
+- **How to apply** :
+  - À la génération ou à la modification d'un WR-RD, vérifier que **chaque cellule** des 9 colonnes retenues est **mot pour mot identique** à la cellule correspondante du manuel parent (sections 4.1 à 4.5, colonnes : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples).
+  - Tolérances admises : adaptations purement typographiques inévitables au transfert Markdown (apostrophe droite vs typographique si le rendu force une normalisation) — à signaler dans les `Logs / Révisions` du WR-RD si appliquées.
+  - Si une instruction d'écriture ou clef de lecture est jugée mal formulée dans le manuel, **corriger d'abord le manuel parent** puis re-projeter vers le WR-RD (cohérent avec R-041).
+- **Contrôle** : avant tout commit / publication d'un WR-RD, faire un diff avec la section 4 du manuel parent sur les 9 colonnes retenues. Aucun écart non-typographique ne doit subsister.
+- **Outillage suggéré** : script de diff automatique manuel ↔ WR-RD à terme, avec alerte sur les cellules divergentes.
+- **Conséquence si violation** : voir R-041 — désalignement silencieux entre les deux artefacts, lecture incohérente côté agents et humains.
+- **Découverte** : 2026-04-26, Leonard, après les 3 premiers WR-RD instanciés.
+
 ---
 
 ## 3. Règles Digital Twin
