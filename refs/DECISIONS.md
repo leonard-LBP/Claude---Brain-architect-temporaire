@@ -303,6 +303,59 @@
   - ⚠️ Les manuels Brain et Mission Ops anciennement indexés restent vides — la migration future demandera un audit
 - **Règles associées** : à venir si on étend le pattern (potentielle R-039 sur "traçabilité de génération par template")
 
+### D-014 : Colocalisation des docs WR-RD avec leurs manuels de BDD parents
+
+- **Date** : 2026-04-26
+- **Statut** : Adoptée (provisoire — naming "WR-RD" à reconfirmer après discussion sur leur rôle exact)
+- **Portée** : Brain — organisation du vault Architecture data
+- **Contexte** : Les docs « Instructions d'écriture + Clefs de lecture » (un par BDD du Brain/Twin/Mission Ops) étaient stockés dans un dossier global `Architecture data/Clefs de lectures/` à la racine du vault. Cette localisation détachait les docs WR-RD de leurs manuels parents, créait une asymétrie avec la nouvelle architecture par groupe (`Manuels de BDD/{Brain, Digital Twin, Mission Ops}/`), et rendait moins évidente la traçabilité « un manuel ↔ ses docs dérivés ». Suite à la refonte Twin v2, tous les docs WR-RD existants étaient désalignés avec les nouvelles specs et devaient être archivés.
+- **Options envisagées** :
+  - Conserver le dossier global `Clefs de lectures/` mais y créer une sous-structure par groupe : préserve le repère « zone WR-RD » mais perpétue la séparation manuel/WR-RD.
+  - **Colocaliser** chaque WR-RD avec ses manuels parents dans un sous-dossier `WR-RD/` au sein de chaque dossier de groupe.
+- **Choix retenu** :
+  - Création d'un sous-dossier `WR-RD/` dans chaque groupe : `Manuels de BDD/Digital Twin/WR-RD/`, `Manuels de BDD/Brain/WR-RD/`, `Manuels de BDD/Mission Ops/WR-RD/`.
+  - Chaque WR-RD a un `00 - archives/` pour ses propres anciennes versions (cohérent avec D-015).
+  - Suppression du dossier `Clefs de lectures/` de la racine après migration.
+  - Naming "WR-RD" provisoire : à rediscuter quand on précisera le rôle de ces docs (qui peut évoluer face aux nouveaux manuels Twin v2).
+- **Migration effective (2026-04-26)** :
+  - 39 docs Twin (anciens « Clefs de lecture » + plus récents « écriture + lecture ») archivés dans `Manuels de BDD/Digital Twin/WR-RD/00 - archives/` car désalignés avec les nouvelles specs Twin v2.
+  - 2 docs Sources d'informations (Mission Ops) laissés ACTIFS dans `Manuels de BDD/Mission Ops/WR-RD/` car Mission Ops n'a pas encore été refondu.
+  - `Manuels de BDD/Brain/WR-RD/` : créé vide pour la cohérence (les BDD Brain seront aussi manipulées par des agents et auront leurs WR-RD à terme).
+  - Dossier racine `Architecture data/Clefs de lectures/` supprimé.
+- **Conséquences** :
+  - ✅ Proximité topologique entre un manuel et ses docs WR-RD (repérage facilité, navigation cohérente avec D-010).
+  - ✅ Symétrie complète : chaque groupe BDD a son `WR-RD/` + son `00 - archives/`.
+  - ✅ Aucun WR-RD obsolète n'est laissé en zone active.
+  - ⚠ Naming "WR-RD" non finalisé — à reconsidérer après discussion sur le rôle réel de ces docs (extraction, lecture analytique, contrôle qualité, contrat de donnée…).
+  - ⚠ Phase 6 = recréation des docs WR-RD pour les manuels Twin v2 actuels (à partir de zéro ou via dérivation depuis les manuels).
+
+### D-015 : Convention de nommage `00 - archives/` pour les dossiers d'archives
+
+- **Date** : 2026-04-26
+- **Statut** : Adoptée
+- **Portée** : Transverse — organisation visuelle de l'arborescence vault Architecture data
+- **Contexte** : Le vault contient 12 dossiers `archives/` répartis dans toute l'arborescence (un par grand dossier de docs : Taxonomies, Méthodes, Notes de Concept, Manuels de BDD/{Brain,Digital Twin,Mission Ops}, etc.). En tri alphabétique standard, ces dossiers se mélangeaient avec les sous-dossiers actifs (parfois en milieu de liste), rendant moins immédiat le repérage de la zone "actuel vs historique" lors de la navigation.
+- **Choix retenu** : préfixer tous les dossiers d'archives par `00 - ` → renommage `archives/` → `00 - archives/`. Le préfixe `00 - ` garantit que ces dossiers remontent en haut de chaque liste (tri alpha standard) sans confusion possible avec un dossier actif.
+- **Migration effective (2026-04-26)** : 12 dossiers renommés en une passe :
+  - `Taxonomies/00 - archives/`
+  - `Méthodes/00 - archives/`
+  - `Prompts/00 - archives/`
+  - `Templates de Bricks/00 - archives/`
+  - `Notes de Concept/00 - archives/`
+  - `Logic Blocks/00 - archives/`
+  - `00 - Docs méta/Templates d'instanciation/00 - archives/`
+  - `00 - Docs méta/Doctrines & playbooks/00 - archives/`
+  - `Manuels de BDD/00 - archives/`
+  - `Manuels de BDD/Digital Twin/00 - archives/`
+  - `Manuels de BDD/Mission Ops/00 - archives/`
+  - `Manuels de BDD/Brain/00 - archives/`
+  - + `Manuels de BDD/{Digital Twin, Brain, Mission Ops}/WR-RD/00 - archives/` (créés directement avec ce nommage)
+- **Conséquences** :
+  - ✅ Cohérent avec le pattern `00 - Docs méta/` déjà en racine du vault (préfixe `00 - ` = méta/transverse/historique remonté en haut).
+  - ✅ Repérage visuel immédiat de la frontière "actuel vs historique".
+  - ✅ Convention extensible : tout futur dossier d'archives doit suivre ce naming.
+- **Règle implicite** : tout nouveau dossier d'archive vault → toujours `00 - archives/`, jamais `archives/`. À formaliser comme règle si besoin (R-XXX) au prochain ajout.
+
 ---
 
 ## 3. Décisions de mise en œuvre

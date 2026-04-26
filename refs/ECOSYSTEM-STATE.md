@@ -103,11 +103,13 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-25 | Batch C Notes de concept + Glossaire (double indexation) : 152 actions Notion = 135 MAJ + 10 créations + 5 relations + 2 archivages + 2 renommages | (à commit) |
 | 2026-04-25 | Capture R-039 (QA anti-artefacts IA dans tous les docs LBP) | (à commit) |
 | 2026-04-26 | Audit terminologique vault hors Twin : suppression "UO" / "unités organisationnelles" + "Ressources" (sens objet) dans Manuels Brain/Mission Ops, Méthodes, Templates de Bricks. 13 fichiers vault modifiés (dont renommage Template Brick UO→Collectifs : PRF-UO-IND → PRF-COL-IND). | (à commit) |
+| 2026-04-26 | Restructuration WR-RD (D-014) : 41 docs Clefs de lecture migrés (39 archivés Twin + 2 actifs Mission Ops Sources d'informations) ; sous-dossiers `WR-RD/` créés dans Brain/Digital Twin/Mission Ops ; dossier racine `Clefs de lectures/` supprimé. | (à commit) |
+| 2026-04-26 | Convention nommage (D-015) : 12 dossiers `archives/` du vault renommés en `00 - archives/` pour visibilité (tri alpha en tête). | (à commit) |
 
 ## Prochaines etapes
 
 - **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
-- **Phase 6** : Clefs de lecture (R-028)
+- **Phase 6** : Recréer les docs WR-RD (Instructions d'écriture + Clefs de lecture) pour les manuels Twin v2 dans `Manuels de BDD/Digital Twin/WR-RD/` (R-028 + D-014). Discussion préalable à avoir sur le rôle exact de ces docs avant de les recréer (le naming "WR-RD" est provisoire).
 - **Phase 7** : Prompts maitres et Logic blocks (refonte vers nouvelle archi Twin v2)
 - **Enrichissement éditorial Phase 5bis** (option B) : remplir les champs avancés des fiches Glossaire LBP (Valeur ajoutée LBP, Usages IA potentiels, Règles d'usage et pièges, Équivalent langage courant) à partir du corps des notes de concept
 - **Chantier "logique des codes uniques"** (backlog : voir `RULES_BRAIN_TWIN-backlog.md`) : définir une grammaire unifiée des codes pour tous les docs Brain/Motor — pas tout de suite, après Phases 6 et 7
