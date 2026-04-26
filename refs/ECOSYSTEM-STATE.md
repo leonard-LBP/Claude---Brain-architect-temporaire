@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 2026-04-25 — Phase 5 batch C terminé (Notes concept + Glossaire double-indexés). Phase 5 indexation Notion COMPLÈTE.
+> Derniere mise a jour : 2026-04-26 — Phase 6 TERMINÉE (28 WR-RD Twin v2 instanciés). Phase 5 + Phase 6 complètes.
 
 ## Phase actuelle
 
@@ -113,12 +113,16 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-26 | Phase 6 — Trio test WR-RD : 3 WR-RD instanciés (Actifs v0.2.0, Pratiques organisationnelles v0.1.0, Journal des signaux v0.1.0). Profils représentatifs validés : standard, complexe (4 niveaux modulateurs), sans couche calculée native. R-041 + R-042 capturées (propagation manuel → WR-RD + QA stricte d'égalité). WF-013 formalisé dans WORKFLOWS_LBP.md. | (à commit) |
 | 2026-04-26 | Cleanup vault avant génération massive WR-RD : (a) 6 manuels sandboxes déplacés `Manuels de BDD/Digital Twin/Sandbox/` → racine `Digital Twin/`, dossier Sandbox supprimé ; (b) 100 frontmatters harmonisés em dash `—` → dash ASCII `-` (28 manuels Twin + 71 notes de concept + corrections cas spéciaux : Capacité organisationnelle/Connaissance/Repères communs/Source d'information/Manuel de BDD/Soft skill) ; (c) 87 fichiers vault renommés pour aligner filename ↔ title (15 manuels Brain `BDD - X` → `Manuel de BDD - X`, 4 manuels Mission Ops idem, 65 notes de concept `concept - X` → `Concept - X` + cas spéciaux). R-043 capturée (cohérence filename ↔ title) ; R-027 révisé en cohérence. Audit final : 0 mismatch résiduel. | (à commit) |
 | 2026-04-26 | Phase 6 lot 2 : WR-RD - Actions détectées v0.1.0 instancié. Reste 24 WR-RD à générer (18 manuels Twin actifs + 6 sandboxes) — délégation à un sous-agent general-purpose en cours (option B). | (à commit) |
+| 2026-04-26 | **Phase 6 TERMINÉE** : 24 WR-RD restants générés par sous-agent (parser Python ; extraction stricte 9 colonnes). Total 28/28 WR-RD Twin v2 instanciés. QA post-agent : 2 corrections frontmatter (em dash → dash ASCII dans title pour cohérence R-027/R-043, created_at corrigé 2026-04-25 → 2026-04-26). 5 anomalies de fond signalées côté **manuels parents** : (1) `Problématiques` section 4.3 absente, (2) `Organisations` section 4.4 absente, (3) `Glossaire spécifique` 4.4+4.5 non applicables V1 (documenté), (4) `Problématiques sandbox` 4.5 absente, (5) ~10 manuels avec 4.5 marquée non applicable V1 (texte de prose au lieu de tableau). À investiguer si manques intentionnels ou à compléter côté manuels. | (à commit) |
 
 ## Prochaines etapes
 
 - **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
 - **Pré-Phase 6 résiduel** : Leonard ajoute manuellement sur Notion les descriptions des 2 propriétés URL de la BDD "Manuels de BDD" (`Lien vers le manuel de BDD (.md)` et `Lien vers le doc WR-RD (.md)`) — DDL Notion ne supporte pas la description.
-- **Phase 6** : générer les 28 WR-RD (22 manuels Twin v2 + 6 sandboxes) dans `Manuels de BDD/Digital Twin/WR-RD/` à partir du Template WR-RD v1.1.0 + extraction stricte des sections 4.1 à 4.5 des manuels parents (D-014, D-016). Documenter le workflow comme **WF-013 — Générer un WR-RD à partir d'un Manuel de BDD** dans `refs/WORKFLOWS.md` après les 1-2 premières instanciations.
+- **Phase 6 TERMINÉE 2026-04-26** : 28 WR-RD générés (22 manuels Twin actifs + 6 sandboxes), Template v1.2.0, WF-013 documenté dans `refs/WORKFLOWS_LBP.md`.
+- **Suites Phase 6** :
+  - Investiguer les 5 anomalies signalées par le sous-agent côté manuels parents (sections absentes ou non applicables) : sont-elles intentionnelles ou des manques à combler ?
+  - Renseigner sur Notion la propriété `Lien vers le doc WR-RD (.md)` pour les 28 fiches manuels Twin (URL Drive de chaque WR-RD) — workflow WF-011 + WF-013 étape 7.
 - **Phase 7** : Prompts maitres et Logic blocks (refonte vers nouvelle archi Twin v2)
 - **Enrichissement éditorial Phase 5bis** (option B) : remplir les champs avancés des fiches Glossaire LBP (Valeur ajoutée LBP, Usages IA potentiels, Règles d'usage et pièges, Équivalent langage courant) à partir du corps des notes de concept
 - **Chantier "logique des codes uniques"** (backlog : voir `RULES_BRAIN_TWIN-backlog.md`) : définir une grammaire unifiée des codes pour tous les docs Brain/Motor — pas tout de suite, après Phases 6 et 7
