@@ -128,6 +128,29 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **How to apply** : Tout doc Brain est généré à partir d'un template (indexé dans Docs méta LBP). Cycle : Template → instanciation → cleanup → validation → indexation Notion.
 - **Découverte** : Principe architectural originel.
 
+#### R-040 : Toutes les instructions de génération vivent dans des blocs `@INSTR-*`
+
+- **Portée** : Brain (templates d'instanciation)
+- **Statut** : Actif
+- **Why** : Un template définit la structure du doc final (sections numérotées `# 1)`, `# 2)`, etc.). Si une instruction de génération apparaît sous forme d'un titre Markdown numéroté (ex. `# 0) GUIDE D'INSTANTIATION`), elle se confond visuellement avec les vraies sections du doc final, crée un parasitage cognitif (la séquence `0,1,2,3...` laisse penser que `0)` est le début légitime de la structure), et augmente le risque que l'agent générateur oublie de la supprimer ou la prenne par mimétisme pour un modèle de section. Par construction, les instructions de génération ne doivent **jamais** ressembler à une section du doc final.
+- **How to apply** :
+  - Tout contenu qui guide la génération du doc (instructions, doctrine, exemples normatifs, paramétrages, vocabulaire contrôlé, guide d'instanciation, settings…) DOIT vivre **exclusivement** dans un bloc `<!-- @INSTR-START: NOM_BLOC ... @INSTR-END: NOM_BLOC -->`.
+  - **Aucun titre Markdown numéroté** (`# 0)`, `## 0.1`, etc.) ne doit servir de wrapper à des instructions de génération.
+  - Les blocs `@INSTR-*` sont **flottants** dans le template (placés là où c'est lisible pour l'auteur du template) et tous **systématiquement supprimés** à l'instanciation par la `cleanup_rules` standard `SUPPRIMER tous les commentaires HTML @INSTR-*`.
+  - La `cleanup_rules` du template ne doit **jamais** contenir une règle ad hoc du type `SUPPRIMER la section 0) GUIDE D'INSTANTIATION` puisque cette section ne doit pas exister.
+  - Les sections numérotées `# 1)`, `# 2)`, etc. sont **réservées à la structure du doc final** et ne contiennent jamais de contenu d'instruction de génération.
+  - Une vraie section structurelle d'un doc final peut légitimement être numérotée `# 0)` si elle décrit du contenu métadata du doc (ex. `# 0) Meta de la brick` dans `Template méta de Brick.md` qui contient des sous-sections 0.1 Contexte & mandat, 0.2 Sources & procédé de production…). Le critère de discrimination : ce contenu apparaît-il dans le doc instancié final (oui = structure, à laisser) ou est-il supprimé à l'instanciation (oui = instruction, à wrapper dans `@INSTR-*`) ?
+- **Exemples** :
+  - ✅ `<!-- @INSTR-START: INSTANTIATION_GUIDE [contenu] @INSTR-END: INSTANTIATION_GUIDE -->` placé entre les autres blocs `@INSTR-*` du template.
+  - ❌ `# 0) GUIDE D'INSTANTIATION — [INSTR-SECTION] (SUPPRIMER APRÈS USAGE)` suivi de sous-titres `## 0.1`, `## 0.2`…
+  - ❌ `cleanup_rules: - SUPPRIMER la section 0) GUIDE D'INSTANTIATION` (témoigne d'une violation à corriger).
+- **Conséquences** :
+  - ✅ Structure du doc final sacrée et lisible (numérotation commence à `1`, jamais à `0` pour des instructions).
+  - ✅ Une seule règle de cleanup suffit : `SUPPRIMER tous les commentaires HTML @INSTR-*`.
+  - ✅ Pas de risque de contamination structurelle ni d'oubli de suppression.
+- **Migration effectuée** : 2026-04-26 — 6 templates corrigés (Template Manuel de BDD - Digital Twin v6.1.0→v6.2.0 ; Template WR-RD - Digital Twin v1.0.0→v1.1.0 ; template-methode_lbp v1.0.0→v1.1.0 ; Template-prompt_lbp v1.0.0→v1.1.0 ; Template-Fiche_outil_LBP v1.0.0→v1.1.0 ; template-taxonomie). Le 7e cas (`# 0) Meta de la brick` dans `Template méta de Brick.md`) est conservé car c'est une vraie section structurelle du doc final.
+- **Découverte** : 2026-04-26, Leonard, après revue des templates Manuel de BDD - Digital Twin v6.1.0 et WR-RD - Digital Twin v1.0.0.
+
 ### 2.3 Indexation Notion (doc → BDD)
 
 #### R-006 : Descriptions Notion ≤280 caractères

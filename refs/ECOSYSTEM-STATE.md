@@ -106,6 +106,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 | 2026-04-26 | Restructuration WR-RD (D-014) : 41 docs Clefs de lecture migrés (39 archivés Twin + 2 actifs Mission Ops Sources d'informations) ; sous-dossiers `WR-RD/` créés dans Brain/Digital Twin/Mission Ops ; dossier racine `Clefs de lectures/` supprimé. | (à commit) |
 | 2026-04-26 | Convention nommage (D-015) : 12 dossiers `archives/` du vault renommés en `00 - archives/` pour visibilité (tri alpha en tête). | (à commit) |
 | 2026-04-26 | D-016 + Template WR-RD v1.0.0 : rôle/contenu/format des WR-RD formalisés (projection stricte de la section 4 du manuel parent, 8 colonnes, 5 sections, frontmatter minimal). Template créé dans `00 - Docs méta/Templates d'instanciation/Template - WR-RD - Digital Twin.md`. | (à commit) |
+| 2026-04-26 | R-040 + correction 6 templates : suppression des titres `# 0) GUIDE D'INSTANTIATION` (qui parasitaient la structure des docs instanciés). Tous les contenus d'instruction désormais exclusivement dans des blocs `@INSTR-*`. Templates touchés : Manuel de BDD Digital Twin v6.1→v6.2, WR-RD Digital Twin v1.0→v1.1, methode_lbp v1.0→v1.1, prompt_lbp v1.0→v1.1, Fiche_outil_LBP v1.0→v1.1, taxonomie. | (à commit) |
 
 ## Prochaines etapes
 
