@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 26-04-2026 — Capture R-044 (format date JJ-MM-YYYY transverse), R-041 appliquée sur WR-RD Problématiques + Problématiques sandbox (suite ajout sections 4.3 / 4.5 par Leonard), bulk update 25 WR-RD `created_at` ISO → JJ-MM-YYYY, Template WR-RD bumped v1.2.0 → v1.3.0.
+> Derniere mise a jour : 26-04-2026 — Sweep transverse dates ISO → JJ-MM-YYYY (180 fichiers, 244 lignes converties dans refs/ + vault) + 28 manuels Twin Notion enrichis avec URL WR-RD (propriété `Lien vers le doc WR-RD (.md)` renseignée sur les 28 fiches Manuels Twin actifs).
 
 ## Phase actuelle
 
@@ -39,7 +39,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 
 ## Etat de la migration Twin v2
 
-### Docs migres dans le vault (phases 2-3) - 2026-04-24
+### Docs migres dans le vault (phases 2-3) - 24-04-2026
 
 | Dossier | Etat | Archives |
 |---------|------|----------|
@@ -119,7 +119,7 @@ Phase 5 en cours : indexation Notion par mini-batchs avec dry-run par doc.
 
 - **Commit unifié** des batchs A1+A2+A3+A4+B+C + R-038 + R-039 + D-013 + housekeeping
 - **Pré-Phase 6 résiduel** : Leonard ajoute manuellement sur Notion les descriptions des 2 propriétés URL de la BDD "Manuels de BDD" (`Lien vers le manuel de BDD (.md)` et `Lien vers le doc WR-RD (.md)`) — DDL Notion ne supporte pas la description.
-- **Phase 6 TERMINÉE 2026-04-26** : 28 WR-RD générés (22 manuels Twin actifs + 6 sandboxes), Template v1.2.0, WF-013 documenté dans `refs/WORKFLOWS_LBP.md`.
+- **Phase 6 TERMINÉE 26-04-2026** : 28 WR-RD générés (22 manuels Twin actifs + 6 sandboxes), Template v1.2.0, WF-013 documenté dans `refs/WORKFLOWS_LBP.md`.
 - **Suites Phase 6** :
   - Investiguer les 5 anomalies signalées par le sous-agent côté manuels parents (sections absentes ou non applicables) : sont-elles intentionnelles ou des manques à combler ?
   - Renseigner sur Notion la propriété `Lien vers le doc WR-RD (.md)` pour les 28 fiches manuels Twin (URL Drive de chaque WR-RD) — workflow WF-011 + WF-013 étape 7.

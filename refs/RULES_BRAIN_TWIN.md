@@ -94,11 +94,11 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - Fragments de placeholders non résolus (`[[NOM_OBJET]]`, `<INSTR>...</INSTR>`)
   - Texte tronqué visible (phrases coupées en milieu, comme "décin collective" au lieu de "décisions et de la performance collective")
 - **Exemples détectés** :
-  - ❌ Note vault `concept - Repères communs.md` : `Ils peuvent être symboliques [...] fonctionnels:contentReference[oaicite:5]{index=5}iguïtés en rendant visibles des attentes communes.` (artefact de citation + texte tronqué) — corrigé manuellement à l'indexation Notion (batch C, 2026-04-25)
+  - ❌ Note vault `concept - Repères communs.md` : `Ils peuvent être symboliques [...] fonctionnels:contentReference[oaicite:5]{index=5}iguïtés en rendant visibles des attentes communes.` (artefact de citation + texte tronqué) — corrigé manuellement à l'indexation Notion (batch C, 25-04-2026)
   - ❌ Note vault `concept - Soft skill.md` : `qualité des interactions, des décin collective.` (texte tronqué)
 - **Outillage suggéré** : grep de motifs avant publication, ou contrôle automatique dans pipeline d'indexation.
 - **Conséquence si violation** : doc à corriger en source (vault) ET en cible (Notion) ; relire systématiquement la sortie de tout générateur IA avant intégration.
-- **Découverte** : 2026-04-25, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
+- **Découverte** : 25-04-2026, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
 
 #### R-044 : Format de date `JJ-MM-YYYY` (transverse LBP)
 
@@ -113,7 +113,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ✅ `| 26-04-2026 | Création du doc | v0.1.0 |` (ligne de log)
   - ❌ `created_at: "2026-04-26"` (format ISO interdit en texte clair)
   - ❌ `created_at: "26/04/2026"` (slash interdit)
-- **Découverte** : 2026-04-26, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
+- **Découverte** : 26-04-2026, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
 
 ---
 
@@ -163,8 +163,8 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ✅ Structure du doc final sacrée et lisible (numérotation commence à `1`, jamais à `0` pour des instructions).
   - ✅ Une seule règle de cleanup suffit : `SUPPRIMER tous les commentaires HTML @INSTR-*`.
   - ✅ Pas de risque de contamination structurelle ni d'oubli de suppression.
-- **Migration effectuée** : 2026-04-26 — 6 templates corrigés (Template Manuel de BDD - Digital Twin v6.1.0→v6.2.0 ; Template WR-RD - Digital Twin v1.0.0→v1.1.0 ; template-methode_lbp v1.0.0→v1.1.0 ; Template-prompt_lbp v1.0.0→v1.1.0 ; Template-Fiche_outil_LBP v1.0.0→v1.1.0 ; template-taxonomie). Le 7e cas (`# 0) Meta de la brick` dans `Template méta de Brick.md`) est conservé car c'est une vraie section structurelle du doc final.
-- **Découverte** : 2026-04-26, Leonard, après revue des templates Manuel de BDD - Digital Twin v6.1.0 et WR-RD - Digital Twin v1.0.0.
+- **Migration effectuée** : 26-04-2026 — 6 templates corrigés (Template Manuel de BDD - Digital Twin v6.1.0→v6.2.0 ; Template WR-RD - Digital Twin v1.0.0→v1.1.0 ; template-methode_lbp v1.0.0→v1.1.0 ; Template-prompt_lbp v1.0.0→v1.1.0 ; Template-Fiche_outil_LBP v1.0.0→v1.1.0 ; template-taxonomie). Le 7e cas (`# 0) Meta de la brick` dans `Template méta de Brick.md`) est conservé car c'est une vraie section structurelle du doc final.
+- **Découverte** : 26-04-2026, Leonard, après revue des templates Manuel de BDD - Digital Twin v6.1.0 et WR-RD - Digital Twin v1.0.0.
 
 ### 2.3 Indexation Notion (doc → BDD)
 
@@ -183,7 +183,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Why** : Éviter toute divergence entre le contenu du doc et ses propriétés Notion. Les propriétés sont dérivées, pas inventées.
 - **How to apply** : Avant de créer ou mettre à jour une entrée Notion, l'agent doit **lire l'intégralité du doc Markdown correspondant**. Les propriétés sont dérivées du contenu. Si une propriété ne peut pas être dérivée du doc de façon non-ambiguë, laisser vide et signaler plutôt qu'inventer. Respecter les contraintes de format portées par **la description de chaque propriété Notion** (qui fait office d'instructions d'écriture).
 - **Exemples** : ✅ `Définition` remplie avec 3-10 lignes extraites/synthétisées du doc (car la description Notion impose 3-10 lignes) / ❌ `Définition` générée de toutes pièces par l'agent
-- **Découverte** : 2026-04-24, Leonard, avant indexation Twin v2
+- **Découverte** : 24-04-2026, Leonard, avant indexation Twin v2
 
 #### R-030 : Double indexation d'une note de concept
 
@@ -195,7 +195,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   2. Une entrée dans `Glossaire LBP` avec les propriétés sémantiques (Type concept, Domaine, Définition, Règles d'usage, etc.)
   3. Lier l'entrée Glossaire → Registre via la relation `est documenté par (notes de concept)`
   4. Si applicable, lier également Glossaire → Méthodes (`est mis en oeuvre par`) et/ou Glossaire → Manuels de BDD (`est modélisé par`)
-- **Découverte** : 2026-04-24, Leonard, avant indexation Twin v2
+- **Découverte** : 24-04-2026, Leonard, avant indexation Twin v2
 
 #### R-031 : Alignement du code unique entre note de concept et glossaire
 
@@ -203,7 +203,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Statut** : Actif
 - **Why** : Traçabilité stable et navigation cohérente. Un même concept doit avoir le **même code** dans les deux BDD.
 - **How to apply** : Le `Code unique` d'une entrée dans `Registre des notes de concept` et l'entrée correspondante dans `Glossaire LBP` doivent être strictement identiques (ex: `CPT.CAP.LBP.ACTIF` dans les deux). Ce code provient du doc Markdown source (propriété ou convention du template).
-- **Découverte** : 2026-04-24
+- **Découverte** : 24-04-2026
 
 #### R-033 : Les descriptions de propriétés Notion sont des mini-prompts de remplissage
 
@@ -216,7 +216,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - Valeurs strictes pour les select/multi-select (ex: "valeurs strictes: Core; Motor")
   - Interdictions (ex: "ne pas inclure de contenu client")
 - **Exemples** : ✅ Pour `Code unique` d'une taxo, la description impose format `NAMESPACE.FAMILLE.LBP` MAJUSCULES alignée au mini-doc → valeur dérivée du nom de fichier .md / ❌ Inventer un code libre
-- **Découverte** : 2026-04-24. À faire évoluer quand les docs d'instructions d'écriture dédiés existeront pour les BDD Brain (aujourd'hui seules les BDD Twin en ont, cf. `Clefs de lectures/TWIN - Instructions écriture + clefs de lecture/`).
+- **Découverte** : 24-04-2026. À faire évoluer quand les docs d'instructions d'écriture dédiés existeront pour les BDD Brain (aujourd'hui seules les BDD Twin en ont, cf. `Clefs de lectures/TWIN - Instructions écriture + clefs de lecture/`).
 
 #### R-035 : Ordre d'indexation inter-types (graphe de dépendances)
 
@@ -230,7 +230,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   4. **Méthodes, Agents, Prompts, Logic blocks, Outils externes, Templates de bricks** (consomment Glossaire, Manuels, Docs méta)
 - **Généralise R-034** : R-034 dit "créer puis relier" au sein d'un batch. R-035 étend à l'échelle inter-types.
 - **Exemples** : ✅ Indexer ASSET.SUBTYPE → puis Manuel Actifs peut référencer ASSET.SUBTYPE dans sa création / ❌ Indexer Manuel Actifs d'abord avec relation vide vers ASSET.SUBTYPE, puis revenir plus tard (dette)
-- **Découverte** : 2026-04-24, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
+- **Découverte** : 24-04-2026, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
 
 #### R-037 : Lecture complète du doc obligatoire avant indexation (pas de raccourci frontmatter)
 
@@ -243,7 +243,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - **Manuel de BDD** : sections 1 (identité), 2 (périmètre/frontières), 3 (rôle systémique), 4 (modèle de données) → Description + Valeur ajoutée + Usages IA
   - **Glossaire** (dérivé de note de concept via R-030) : lire la note de concept ET le doc auquel elle fait référence pour synthétiser
 - **Exemples** : ✅ Lire `ORG.CONTEXTE.LBP.md` en entier pour en tirer une Description source qui mentionne "qualifie le contexte organisationnel d'un poste par niveau de périmètre ; règles : choisir 1 seule valeur, ne pas typer un collectif ou une organisation avec cette taxo" / ❌ Se contenter du `summary:` du frontmatter qui dit juste "Qualifie le contexte d'ancrage d'un poste"
-- **Découverte** : 2026-04-24, Leonard, après batch A1 où raccourci frontmatter-only a produit des descriptions jugées pauvres
+- **Découverte** : 24-04-2026, Leonard, après batch A1 où raccourci frontmatter-only a produit des descriptions jugées pauvres
 
 #### R-034 : Ordonnancement création puis relation (2 passes)
 
@@ -255,7 +255,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   2. **Passe 2 — Relations** : établir les relations entre entrées créées dans la passe 1
   3. En pratique : regrouper les doc par "type sans dépendance" en premier (ex: taxonomies), puis types dépendants (ex: manuels qui référencent taxonomies), puis types couvrant le graphe (ex: glossaire qui pointe vers manuels)
 - **Exemples** : ✅ Créer Manuel Actifs + Taxo ASSET.SUBTYPE → puis relier Manuel → Taxo / ❌ Tenter de créer le Manuel avec relation vers Taxo qui n'existe pas encore
-- **Découverte** : 2026-04-24, lors du dry-run mini-batch 0
+- **Découverte** : 24-04-2026, lors du dry-run mini-batch 0
 
 #### R-032 : Mise à jour plutôt que création pour une entrée existante
 
@@ -267,12 +267,12 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - **Mettre à jour le lien source** si le chemin Drive a changé
   - **Ne pas changer le `Code unique`** (stable par R-005)
   - Si le doc v2 porte un **nom ou code différent** de la v1, alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2** (R-036)
-- **Découverte** : 2026-04-24
+- **Découverte** : 24-04-2026
 
 #### R-036 : Le Code unique est l'identité ; MAJ en place tant que le code est stable
 
 - **Portée** : Brain (indexation)
-- **Statut** : Actif (révisé 2026-04-25 par Leonard)
+- **Statut** : Actif (révisé 25-04-2026 par Leonard)
 - **Why** : Le `Code unique` est l'identité stable de l'objet ; le `Nom canonique` n'est qu'un libellé éditable. Tant que le code est inchangé, l'entité est la même — seul son libellé / sa description / son URL évoluent. Préserver l'entrée existante préserve aussi ses relations Notion entrantes (rollups, références d'autres BDD), ses ID Notion stables, et évite de polluer le Registre avec des doublons archivés.
 - **How to apply** :
   - **Code identique** (même si le nom canonique change, peu importe l'amplitude du changement) → **mise à jour en place** de l'entrée existante (Nom, Description, URL Drive, Aliases, etc.). Pas d'archivage.
@@ -282,8 +282,8 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ✅ ORG.DEP_LEVEL.LBP → COL.DEP_LEVEL.LBP (code change suite à scission UO→Orga+Collectif) → archive v1 + création v2
   - ✅ ACT.CANDIDATE_TYPE.LBP → ACT.CONSOLIDATION_TARGET.LBP (TOKEN change) → archive v1 + création v2
 - **Conséquence** : Registre propre, IDs Notion stables, relations préservées. La trace des évolutions de libellés vit dans l'historique Notion (créé/last edited) et le journal git.
-- **Note historique** : version initiale (2026-04-24) imposait archive+create dès que le nom changeait — révisée le 2026-04-25 après détection de 25 doublons inutiles dans batchs A1+A2 (correctifs appliqués).
-- **Découverte / révision** : 2026-04-25, Leonard, après examen des batchs A1+A2
+- **Note historique** : version initiale (24-04-2026) imposait archive+create dès que le nom changeait — révisée le 25-04-2026 après détection de 25 doublons inutiles dans batchs A1+A2 (correctifs appliqués).
+- **Découverte / révision** : 25-04-2026, Leonard, après examen des batchs A1+A2
 
 #### R-038 : Identifiant pivot par type d'objet (taxonomies = code, autres = nom)
 
@@ -299,7 +299,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ✅ Manuel "Actifs" (anciennement "Ressources") : doublon détecté par nom (après normalisation) — pas par code, qui peut avoir changé
   - ❌ Tester un doublon de manuel uniquement par code : risque de rater une refonte de nom + code, ou de créer un faux doublon si le code a évolué
 - **Conséquence** : R-036 reste valable mais son champ pivot dépend du type d'objet. Cette règle préfigure la procédure de réconciliation pour les batchs B (Manuels) et C (Notes concept + Glossaire).
-- **Découverte** : 2026-04-25, Leonard, après correction des 25 doublons A1+A2 — précision donnée pour anticiper les batchs Manuels et Notes concept.
+- **Découverte** : 25-04-2026, Leonard, après correction des 25 doublons A1+A2 — précision donnée pour anticiper les batchs Manuels et Notes concept.
 
 ### 2.4 Gouvernance des taxonomies
 
@@ -332,14 +332,14 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Why** : Éviter qu'un "grenier global" à la racine du vault gonfle sans fin et rende l'archivage illisible. Garder l'archive proche de son contexte thématique.
 - **How to apply** : Chaque dossier thématique (`Manuels de BDD/Digital Twin/`, `Notes de Concept/`, `Taxonomies/`, `Logic Blocks/`, `Docs Méta LBP/`) a son propre sous-dossier `archives/`. Le git garde l'historique complet des déplacements — pas besoin de doublons dans le vault.
 - **Exemples** : ✅ `Notes de Concept/archives/concept - Ressource.md` / ❌ `ARCHIVES/Notes de Concept/...`
-- **Découverte** : 2026-04-24, conception arborescence cible pour refonte Twin v2 (D-010)
+- **Découverte** : 24-04-2026, conception arborescence cible pour refonte Twin v2 (D-010)
 
 ### 2.7 Conventions de nommage
 
 #### R-027 : Conventions de nommage des fichiers Brain/Twin
 
 - **Portée** : Transverse
-- **Statut** : Actif (révisé 2026-04-26 : préfixe `Concept` capitalisé pour aligner avec R-043 ; em dash banni partout)
+- **Statut** : Actif (révisé 26-04-2026 : préfixe `Concept` capitalisé pour aligner avec R-043 ; em dash banni partout)
 - **Why** : Homogénéité visuelle dans Obsidian, compatibilité clavier, interopérabilité inter-outils, cohérence fichier ↔ frontmatter (R-043).
 - **How to apply** :
   - **Séparateur** : tiret simple `-` (jamais tiret cadratin `—`, jamais underscore). S'applique aux noms de fichiers ET aux champs `title` du frontmatter.
@@ -357,8 +357,8 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ❌ `Manuel de BDD — Actifs.md` (em dash banni)
   - ❌ `concept - Actif.md` (préfixe minuscule legacy)
   - ❌ `BDD_ACTIFS.md` (underscore)
-- **Migration 2026-04-26** : 87 fichiers vault renommés en bulk + 100 frontmatters harmonisés (em dash → dash ASCII) lors de la cleanup Phase 6.
-- **Découverte** : 2026-04-24, standardisation lors de la migration Twin v2 (D-011) ; révisée 2026-04-26 pour intégrer R-043 et bannir l'em dash dans les filenames.
+- **Migration 26-04-2026** : 87 fichiers vault renommés en bulk + 100 frontmatters harmonisés (em dash → dash ASCII) lors de la cleanup Phase 6.
+- **Découverte** : 24-04-2026, standardisation lors de la migration Twin v2 (D-011) ; révisée 26-04-2026 pour intégrer R-043 et bannir l'em dash dans les filenames.
 
 #### R-043 : Cohérence stricte filename ↔ frontmatter `title`
 
@@ -375,7 +375,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ✅ Fichier `Concept - Input - Output (LBP).md` ↔ `title: "Concept - Input / Output (LBP)"` (le `/` est autorisé dans le title, remplacé par ` - ` dans le filename).
   - ❌ Fichier `BDD - AGENTS LBP.md` ↔ `title: "Manuel de BDD - Agents LBP"` (mismatch ; à corriger en renommant le fichier).
 - **Conséquence si violation** : navigation incohérente (le titre vu en haut du doc diffère du nom dans l'arborescence), liens cross-doc fragiles, perte de confiance dans l'identité des fichiers.
-- **Découverte** : 2026-04-26, Leonard, après audit de 114 mismatches dans le vault (manuels Brain en `BDD - X` au lieu de `Manuel de BDD - X`, notes en `concept - X` au lieu de `Concept - X`, manuels Twin avec em dash dans le title).
+- **Découverte** : 26-04-2026, Leonard, après audit de 114 mismatches dans le vault (manuels Brain en `BDD - X` au lieu de `Manuel de BDD - X`, notes en `concept - X` au lieu de `Concept - X`, manuels Twin avec em dash dans le title).
 
 ### 2.10 Relations inter-BDD Brain
 
@@ -402,7 +402,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - À l'inverse : aucune modification du WR-RD ne doit remonter "à reculons" dans le manuel sans passer par une décision éditoriale explicite côté manuel.
 - **Outillage suggéré** : à terme, un script de génération automatique du WR-RD à partir du manuel parent (extraction des 9 colonnes des sous-sections 4.1 à 4.5). Phase 6 / 6bis.
 - **Conséquence si violation** : WR-RD désaligné = agents qui produisent des données non conformes au manuel = pollution silencieuse du Twin client. À détecter au plus tôt par audit régulier.
-- **Découverte** : 2026-04-26, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
+- **Découverte** : 26-04-2026, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
 
 #### R-042 : QA stricte d'égalité entre WR-RD et section 4 du manuel parent
 
@@ -416,13 +416,13 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Contrôle** : avant tout commit / publication d'un WR-RD, faire un diff avec la section 4 du manuel parent sur les 9 colonnes retenues. Aucun écart non-typographique ne doit subsister.
 - **Outillage suggéré** : script de diff automatique manuel ↔ WR-RD à terme, avec alerte sur les cellules divergentes.
 - **Conséquence si violation** : voir R-041 — désalignement silencieux entre les deux artefacts, lecture incohérente côté agents et humains.
-- **Découverte** : 2026-04-26, Leonard, après les 3 premiers WR-RD instanciés.
+- **Découverte** : 26-04-2026, Leonard, après les 3 premiers WR-RD instanciés.
 
 ---
 
 ## 3. Règles Digital Twin
 
-*Règles spécifiques à la gouvernance des BDD instanciées du Digital Twin. Source principale : Panorama V2 v3 (2026-04-22).*
+*Règles spécifiques à la gouvernance des BDD instanciées du Digital Twin. Source principale : Panorama V2 v3 (22-04-2026).*
 
 ### 3.1 Ontologie des objets
 
@@ -624,7 +624,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   3. Mettre à jour le doc dérivé si asymétrie
   4. Consigner la MAJ dans les logs du doc dérivé
 - **Exemples** : ✅ On renomme le champ "Rôles officiels" en "Postes" dans le manuel → on met à jour `écriture + lecture - Rôles officiels.md` (ou on le renomme/recrée en `Postes`) / ❌ On modifie un manuel sans vérifier le doc dérivé
-- **Découverte** : 2026-04-24, confirmé par Leonard
+- **Découverte** : 24-04-2026, confirmé par Leonard
 
 ### 5.6 Consolidation et promotion (sandbox → officielle)
 

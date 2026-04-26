@@ -3,7 +3,7 @@
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 2026-04-25 — ajout D-013 (traçabilité de version de template d'instanciation)
+> Dernière mise à jour : 25-04-2026 — ajout D-013 (traçabilité de version de template d'instanciation)
 
 ---
 
@@ -38,7 +38,7 @@
 
 ### D-002 : Scission UO → Organisation + Collectif
 
-- **Date** : 2026-04-22 (formalisée dans Panorama V2 v3)
+- **Date** : 22-04-2026 (formalisée dans Panorama V2 v3)
 - **Statut** : Adoptée (changements faits par Leonard, intégration dans le vault à venir)
 - **Portée** : Twin
 - **Contexte** : La BDD `Unités Organisationnelles` mélangeait deux natures d'objets ontologiquement distinctes — entités juridiques instituées et groupements humains opérants. Cette confusion produisait des analyses imprécises (ex: un "département" rangé au même niveau qu'une "SA").
@@ -58,7 +58,7 @@
 
 ### D-003 : Renommage Ressources → Actifs
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin + Brain (propagation dans docs)
 - **Contexte** : Le terme "Ressources" était ambigu — confondu avec "ressources humaines", "ressources financières", ou simple support. Il ne traduisait pas la nature gouvernable et administrable de l'objet.
@@ -76,7 +76,7 @@
 
 ### D-004 : Renommage Rôles officiels → Postes
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : Avec "Rôles officiels", un individu se retrouvait avec plusieurs rôles rattachés, générant du bruit et de la confusion entre fonction formelle et responsabilités multiples. Le terme "rôle" était aussi flou (officiel vs informel, formel vs opératoire).
@@ -94,7 +94,7 @@
 
 ### D-005 : Création de la BDD Initiatives organisationnelles
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : Le Twin ne portait pas explicitement les **efforts temporaires structurés** (projets, programmes, pilotes, chantiers). Ces objets finissaient dilués dans Événements, Actions détectées ou Processus — chacun étant une distorsion.
@@ -112,7 +112,7 @@
 
 ### D-006 : Création de la BDD edge Relations inter-organisations
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : Avec la scission UO → Organisation + Collectif (D-002), les relations structurantes entre organisations (coopération, fourniture, dépendance, régulation, co-développement, fusion) nécessitaient un porteur dédié.
@@ -128,7 +128,7 @@
 
 ### D-007 : Création de 6 sandboxes spécialisées
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : Les consolidations précoces polluaient le graphe officiel. Il manquait des sas d'exploration pour tester hypothèses et formulations sans engager la couche officielle.
@@ -153,7 +153,7 @@
 
 ### D-008 : Tableau maître canonique à 29 BDD
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : L'architecture du Twin avait évolué sans carte unique à jour. Il manquait un référentiel obligatoire auquel arbitrer toute création/modification/archivage de BDD.
@@ -178,7 +178,7 @@
 
 ### D-009 : Chaînes de transformation de la connaissance comme paradigme de lecture
 
-- **Date** : 2026-04-22
+- **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
 - **Contexte** : Le Twin était lu "table par table" ce qui masquait sa vraie valeur : la transformation progressive de la connaissance (preuve → qualification → consolidation → lecture → pilotage → action).
@@ -210,7 +210,7 @@
 
 ### D-010 : Arborescence cible d'Architecture data (v2)
 
-- **Date** : 2026-04-24
+- **Date** : 24-04-2026
 - **Statut** : Adoptée (appliquée dans dossier temporaire ; migration vers vault à venir)
 - **Portée** : Transverse (Brain + Twin)
 - **Contexte** : La refonte Twin v2 produit ~200 nouveaux docs (22 manuels officiels + 6 sandboxes + ~74 notes de concept + ~96 taxonomies + 1 nouveau template). Il faut définir une arborescence cible évolutive avant migration vers le vault Architecture data, pour obtenir des URLs Drive stables avant indexation Notion.
@@ -237,7 +237,7 @@
 
 ### D-012 : Séquence de migration Twin v2 vers Architecture data (7 phases)
 
-- **Date** : 2026-04-24
+- **Date** : 24-04-2026
 - **Statut** : Adoptée
 - **Portée** : Transverse (Brain + Twin + Mission Ops)
 - **Contexte** : Après validation de l'arborescence cible (D-010) et des conventions de nommage (D-011), il fallait séquencer la migration de ~200 nouveaux docs + archivage de leurs v1 + refonte ciblée de l'arborescence existante. Objectif : avoir vault et Drive alignés AVANT l'indexation Notion (une seule passe avec URLs).
@@ -262,7 +262,7 @@
 
 ### D-011 : Conventions de nommage des fichiers Brain/Twin
 
-- **Date** : 2026-04-24
+- **Date** : 24-04-2026
 - **Statut** : Adoptée
 - **Portée** : Transverse
 - **Contexte** : Les anciens fichiers utilisaient différentes conventions (casse CAPITALES, tirets simples). Les nouveaux docs générés arrivaient avec tiret cadratin `—`. Il faut trancher pour éviter les disparités dans le vault.
@@ -277,12 +277,12 @@
 - **Conséquences** :
   - ✅ Compatibilité clavier et interopérabilité avec tout outil
   - ✅ Homogénéité visuelle dans Obsidian
-  - ⚠️ Les 28 nouveaux manuels Twin v2 ont été renommés (tiret cadratin → tiret simple) dans le dossier temporaire le 2026-04-24
+  - ⚠️ Les 28 nouveaux manuels Twin v2 ont été renommés (tiret cadratin → tiret simple) dans le dossier temporaire le 24-04-2026
 - **Règles associées** : R-027
 
 ### D-013 : Traçabilité de version de template d'instanciation
 
-- **Date** : 2026-04-25
+- **Date** : 25-04-2026
 - **Statut** : Adoptée
 - **Portée** : Brain (Manuels de BDD ; étendable à Notes concept, Glossaire, Bricks ultérieurement)
 - **Contexte** : Les templates d'instanciation LBP évoluent (template Manuel de BDD désormais en v6.1.0 = standard Twin v2). Les manuels générés via d'anciens templates restent valides mais structurellement différents (sections, frontmatter, vocabulaires). Sans traçabilité explicite, on ne peut pas distinguer les manuels conformes au standard courant des manuels legacy à migrer, ni piloter les migrations futures de templates.
@@ -305,7 +305,7 @@
 
 ### D-014 : Colocalisation des docs WR-RD avec leurs manuels de BDD parents
 
-- **Date** : 2026-04-26
+- **Date** : 26-04-2026
 - **Statut** : Adoptée (provisoire — naming "WR-RD" à reconfirmer après discussion sur leur rôle exact)
 - **Portée** : Brain — organisation du vault Architecture data
 - **Contexte** : Les docs « Instructions d'écriture + Clefs de lecture » (un par BDD du Brain/Twin/Mission Ops) étaient stockés dans un dossier global `Architecture data/Clefs de lectures/` à la racine du vault. Cette localisation détachait les docs WR-RD de leurs manuels parents, créait une asymétrie avec la nouvelle architecture par groupe (`Manuels de BDD/{Brain, Digital Twin, Mission Ops}/`), et rendait moins évidente la traçabilité « un manuel ↔ ses docs dérivés ». Suite à la refonte Twin v2, tous les docs WR-RD existants étaient désalignés avec les nouvelles specs et devaient être archivés.
@@ -317,7 +317,7 @@
   - Chaque WR-RD a un `00 - archives/` pour ses propres anciennes versions (cohérent avec D-015).
   - Suppression du dossier `Clefs de lectures/` de la racine après migration.
   - Naming "WR-RD" provisoire : à rediscuter quand on précisera le rôle de ces docs (qui peut évoluer face aux nouveaux manuels Twin v2).
-- **Migration effective (2026-04-26)** :
+- **Migration effective (26-04-2026)** :
   - 39 docs Twin (anciens « Clefs de lecture » + plus récents « écriture + lecture ») archivés dans `Manuels de BDD/Digital Twin/WR-RD/00 - archives/` car désalignés avec les nouvelles specs Twin v2.
   - 2 docs Sources d'informations (Mission Ops) laissés ACTIFS dans `Manuels de BDD/Mission Ops/WR-RD/` car Mission Ops n'a pas encore été refondu.
   - `Manuels de BDD/Brain/WR-RD/` : créé vide pour la cohérence (les BDD Brain seront aussi manipulées par des agents et auront leurs WR-RD à terme).
@@ -331,12 +331,12 @@
 
 ### D-015 : Convention de nommage `00 - archives/` pour les dossiers d'archives
 
-- **Date** : 2026-04-26
+- **Date** : 26-04-2026
 - **Statut** : Adoptée
 - **Portée** : Transverse — organisation visuelle de l'arborescence vault Architecture data
 - **Contexte** : Le vault contient 12 dossiers `archives/` répartis dans toute l'arborescence (un par grand dossier de docs : Taxonomies, Méthodes, Notes de Concept, Manuels de BDD/{Brain,Digital Twin,Mission Ops}, etc.). En tri alphabétique standard, ces dossiers se mélangeaient avec les sous-dossiers actifs (parfois en milieu de liste), rendant moins immédiat le repérage de la zone "actuel vs historique" lors de la navigation.
 - **Choix retenu** : préfixer tous les dossiers d'archives par `00 - ` → renommage `archives/` → `00 - archives/`. Le préfixe `00 - ` garantit que ces dossiers remontent en haut de chaque liste (tri alpha standard) sans confusion possible avec un dossier actif.
-- **Migration effective (2026-04-26)** : 12 dossiers renommés en une passe :
+- **Migration effective (26-04-2026)** : 12 dossiers renommés en une passe :
   - `Taxonomies/00 - archives/`
   - `Méthodes/00 - archives/`
   - `Prompts/00 - archives/`
@@ -358,7 +358,7 @@
 
 ### D-016 : Rôle, contenu et format des docs WR-RD (Write Rules / Read Keys)
 
-- **Date** : 2026-04-26
+- **Date** : 26-04-2026
 - **Statut** : Adoptée
 - **Portée** : Brain (template d'instanciation) + Twin / Brain / Mission Ops (docs instanciés). Complète D-014 (colocalisation WR-RD avec leurs manuels parents).
 - **Contexte** : Suite à la refonte Twin v2 (Phase 5), il fallait définir la place exacte des docs « Instructions d'écriture + Clefs de lecture » (renommés WR-RD) dans l'écosystème agentique LBP, où coexistent : system prompts (identité agent), prompts maîtres (par opération), logic blocks (par opération × BDD), manuels de BDD (référence design exhaustive), descriptions de propriétés Notion (mini-prompts inline). Le risque était soit de doublonner avec les logic blocks, soit de re-générer une doctrine déjà tenue par le manuel parent.
@@ -379,7 +379,7 @@
     - Description Notion ≤280 (par champ) → mini-prompt synthétique inline pour saisie rapide directement dans Notion.
   - **9 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples.
   - **3 colonnes du manuel NON reprises** : Portée (info de design), Nature de production (implicite dans Type), Prérequis Must/Should/Nice (stratégie de complétion, pas contrat strict).
-  - **Révision 2026-04-26** : la colonne "Utilité pour le Digital Twin" a été réintégrée (initialement exclue v1.0.0 → réintroduite v1.2.0 du Template WR-RD). Argument : elle donne aux agents le sens opératoire de chaque champ (pourquoi ce champ existe, ce qu'il rend possible) sans bruit additionnel — un agent qui sait *pourquoi* écrit/lit mieux qu'un agent qui ne sait que *quoi*.
+  - **Révision 26-04-2026** : la colonne "Utilité pour le Digital Twin" a été réintégrée (initialement exclue v1.0.0 → réintroduite v1.2.0 du Template WR-RD). Argument : elle donne aux agents le sens opératoire de chaque champ (pourquoi ce champ existe, ce qu'il rend possible) sans bruit additionnel — un agent qui sait *pourquoi* écrit/lit mieux qu'un agent qui ne sait que *quoi*.
   - **5 sections cibles** miroir des sous-sections 4.1 à 4.5 du manuel : Génériques / Spécifiques / Relations + jumelles + rollups / 5D / Calculée. Sections 4 et 5 supprimées dans le doc instancié si la BDD n'a ni couche 5D ni couche calculée.
   - **Naming** : fichier `WR-RD - [Nom de la BDD].md` (miroir de `Manuel de BDD - [Nom de la BDD].md`) ; code unique `WRRD_[NOM_TOKEN]` (cohérent avec `DBMAN_[NOM_TOKEN]`).
   - **Frontmatter minimal** : `target_bdd_canonical_name`, `target_bdd_code`, `parent_manual`, `wr_rd_code`, `domain`, `version`, `template_version`, `created_at`, `tags`. Pas de `status` (géré hors document).
@@ -405,7 +405,7 @@
 
 ### D-001 : Trio Drive + Obsidian + Git comme stack documentaire
 
-- **Date** : 2026-04-07
+- **Date** : 07-04-2026
 - **Statut** : Appliquée
 - **Portée** : Transverse
 - **Contexte** : Besoin de stockage cloud (partage équipe), d'édition locale ergonomique, et de versioning fiable.

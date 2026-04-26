@@ -1,6 +1,6 @@
 # SPECS — Architecture Brain LBP
 
-> Source de vérité : schémas Notion live, fetchés le 2026-04-07.
+> Source de vérité : schémas Notion live, fetchés le 07-04-2026.
 > Ce fichier documente l'écosystème complet des BDD Brain et leurs interconnexions.
 
 ---

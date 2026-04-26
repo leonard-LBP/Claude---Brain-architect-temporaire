@@ -4,7 +4,7 @@
 > Ce fichier recense les workflows propres à notre collaboration en session Claude (cadre méta de travail, pas écosystème LBP métier).
 > Les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Twin, Mission Ops) sont dans `WORKFLOWS_LBP.md`.
 > Ce fichier ne fait **pas partie** du bundle LBP final.
-> Dernière mise à jour : 2026-04-26 — création par scission depuis l'ancien `WORKFLOWS.md`.
+> Dernière mise à jour : 26-04-2026 — création par scission depuis l'ancien `WORKFLOWS.md`.
 
 ---
 

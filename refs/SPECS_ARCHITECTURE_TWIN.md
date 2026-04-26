@@ -4,7 +4,7 @@
 > Source doctrinale : `Panorama V2 — Macro-architecture, chaînes de valeur et logique analytique du Digital Twin LBP v3`.
 > **Note** : `Sources d'informations` n'est PAS une BDD Twin mais une BDD **Mission Ops** (comme `Meetings`, `Actions LBP`, `Bricks`). Le Panorama l'inclut dans son tableau maître parce qu'elle joue un rôle de satellite de traçabilité pour les objets Twin, mais son instance opérationnelle vit en Mission Ops.
 > Les schémas Notion détaillés (champs, propriétés, relations) vivent dans les **Manuels de BDD** (vault Architecture data). Ce fichier porte la vue d'ensemble structurante.
-> Dernière mise à jour : 2026-04-24 — retrait de Sources d'informations (Mission Ops)
+> Dernière mise à jour : 24-04-2026 — retrait de Sources d'informations (Mission Ops)
 
 ---
 

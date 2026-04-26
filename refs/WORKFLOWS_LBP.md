@@ -4,7 +4,7 @@
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.
 > Les workflows propres à notre collaboration Claude (démarrage de session, etc.) sont dans `SESSION_WORKFLOWS.md`.
 > Chaque workflow a un ID stable pour référence.
-> Dernière mise à jour : 2026-04-26 — scission depuis l'ancien `WORKFLOWS.md` (qui mélangeait LBP et session).
+> Dernière mise à jour : 26-04-2026 — scission depuis l'ancien `WORKFLOWS.md` (qui mélangeait LBP et session).
 
 ---
 
@@ -25,7 +25,7 @@
 
 ## WF-011 : Récupérer l'URL Drive d'un fichier local
 
-**Statut** : Actif (découvert 2026-04-24, mini-batch 0 Twin v2)
+**Statut** : Actif (découvert 24-04-2026, mini-batch 0 Twin v2)
 
 ### Contexte
 
@@ -154,7 +154,7 @@ Vérifier que les entrées sont bien créées et reliées. Commit dans git (refs
 
 ## WF-013 : Générer un WR-RD à partir d'un Manuel de BDD
 
-**Statut** : Actif (formalisé 2026-04-26 après instanciation test de 3 WR-RD : Actifs, Pratiques organisationnelles, Journal des signaux)
+**Statut** : Actif (formalisé 26-04-2026 après instanciation test de 3 WR-RD : Actifs, Pratiques organisationnelles, Journal des signaux)
 
 ### Contexte
 

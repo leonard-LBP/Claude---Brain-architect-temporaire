@@ -2,7 +2,7 @@
 
 > Vue macro transverse de l'écosystème — à relire au début de chaque conversation pour re-contextualisation rapide.
 > Pour le détail des BDD : voir `SPECS_ARCHITECTURE_BRAIN.md` (Brain) et `SPECS_ARCHITECTURE_TWIN.md` (Twin).
-> Dernière mise à jour : 2026-04-24 — refonte après Panorama V2 v3 (nouvelle architecture Twin)
+> Dernière mise à jour : 24-04-2026 — refonte après Panorama V2 v3 (nouvelle architecture Twin)
 
 ## 1. Vue macro
 
