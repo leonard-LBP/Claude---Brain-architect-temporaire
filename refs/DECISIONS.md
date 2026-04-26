@@ -377,8 +377,9 @@
     - **WR-RD (par BDD) → tableau champ-par-champ : format d'écriture + sens de lecture (extraction stricte du manuel parent).**
     - Manuel de BDD (par BDD) → design conceptuel exhaustif, relations, gouvernance, narratif, invariants, traçabilité structurelle.
     - Description Notion ≤280 (par champ) → mini-prompt synthétique inline pour saisie rapide directement dans Notion.
-  - **8 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Exemples.
-  - **4 colonnes du manuel NON reprises** : Portée (info de design), Nature de production (implicite dans Type), Prérequis Must/Should/Nice (stratégie de complétion, pas contrat strict), Utilité pour le Digital Twin (pédagogie pour le brain architect).
+  - **9 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples.
+  - **3 colonnes du manuel NON reprises** : Portée (info de design), Nature de production (implicite dans Type), Prérequis Must/Should/Nice (stratégie de complétion, pas contrat strict).
+  - **Révision 2026-04-26** : la colonne "Utilité pour le Digital Twin" a été réintégrée (initialement exclue v1.0.0 → réintroduite v1.2.0 du Template WR-RD). Argument : elle donne aux agents le sens opératoire de chaque champ (pourquoi ce champ existe, ce qu'il rend possible) sans bruit additionnel — un agent qui sait *pourquoi* écrit/lit mieux qu'un agent qui ne sait que *quoi*.
   - **5 sections cibles** miroir des sous-sections 4.1 à 4.5 du manuel : Génériques / Spécifiques / Relations + jumelles + rollups / 5D / Calculée. Sections 4 et 5 supprimées dans le doc instancié si la BDD n'a ni couche 5D ni couche calculée.
   - **Naming** : fichier `WR-RD - [Nom de la BDD].md` (miroir de `Manuel de BDD - [Nom de la BDD].md`) ; code unique `WRRD_[NOM_TOKEN]` (cohérent avec `DBMAN_[NOM_TOKEN]`).
   - **Frontmatter minimal** : `target_bdd_canonical_name`, `target_bdd_code`, `parent_manual`, `wr_rd_code`, `domain`, `version`, `template_version`, `created_at`, `tags`. Pas de `status` (géré hors document).
