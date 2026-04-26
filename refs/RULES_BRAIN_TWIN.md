@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 26-04-2026 — Ajout R-044 (format date JJ-MM-YYYY transverse LBP)
+> Dernière mise à jour : 26-04-2026 — Ajout R-045 à R-048 (génération des BDD Twin sur Notion : source = manuel, ordre de création, ordering propriétés, naming)
 
 ---
 
@@ -574,6 +574,55 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   2. **Niveau 2 — ce qui se passe** : actions, pratiques, processus, signaux, enjeux, transformations
   3. **Niveau 3 — ce que cela signifie et ce qu'il faut en faire** : problématiques, capacités, principes, modulateurs, OKR, indicateurs
 - **Découverte** : Panorama V2 v3, §14.3
+
+### 3.7 Génération des BDD Twin sur Notion
+
+#### R-045 : Source de vérité pour la génération d'une BDD = Manuel parent
+
+- **Portée** : Twin (génération initiale ou refonte d'une BDD Notion)
+- **Statut** : Actif
+- **Why** : Le manuel a 12 colonnes (vs 9 dans le WR-RD) — notamment **Portée**, **Nature de production** (Saisie / Calculé / Dérivé) et **Forme logique** détaillée. Ces champs sont indispensables pour générer correctement (ex. distinguer une formule d'une saisie, une relation native d'une jumelle texte, un rollup d'une propriété directe). Le WR-RD est une projection runtime, pas un canon de génération.
+- **How to apply** : Toute génération de BDD Notion ou refonte de schéma repose strictement sur la section 4 du manuel parent (4.1 à 4.5). Le WR-RD n'est consulté qu'en runtime par les agents. Si un écart apparaît entre manuel et WR-RD, c'est le manuel qui prime (cohérent avec R-041 / R-042).
+- **Découverte** : 26-04-2026, Phase 6.5 — préparation génération des 28 BDD Twin v2 sur Notion.
+
+#### R-046 : Ordre de création des éléments d'une BDD sur Notion
+
+- **Portée** : Twin (toute création de BDD ou ajout massif de propriétés relationnelles/calculées)
+- **Statut** : Actif
+- **Why** : Les contraintes Notion impliquent des dépendances strictes :
+  - une **relation bidirectionnelle** ne peut exister que si les deux BDD cibles existent
+  - un **rollup** ne peut exister que si la relation source qu'il agrège existe
+  - une **propriété multi-select avec taxonomie** doit avoir ses options peuplées au moment de la création (sinon Notion les crée à la volée à partir du contenu)
+- **How to apply** : Suivre l'ordre suivant pour générer un ensemble cohérent de BDD :
+  1. **Créer toutes les BDD vides** (pleine page sous la page hôte) — uniquement le titre
+  2. **Ajouter les propriétés natives non-relationnelles** (texte, sélection, multi-sélection avec valeurs taxonomiques peuplées, date, number) dans l'ordre d'ordering R-047
+  3. **Créer les relations bidirectionnelles** (les 2 BDD existent désormais) ; cas particulier : `Sources d'informations` est le seul lien **monodirectionnel** (le Twin référence Sources sans miroir côté Sources)
+  4. **Créer les rollups** (les relations sources existent désormais)
+  5. **Réordonner les propriétés** selon R-047 si l'ordre s'est dégradé après ajouts post-création
+- **Exception monodirectionnalité** : la relation `Source(s) d'information` côté Twin est mono — pas de propriété miroir côté Sources d'informations.
+- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
+
+#### R-047 : Convention d'ordering des propriétés Notion (Twin)
+
+- **Portée** : Twin (toute BDD du Digital Twin)
+- **Statut** : Actif
+- **Why** : Lisibilité des fiches dans Notion. Les propriétés métier importantes doivent rester en haut ; les propriétés de gouvernance / journal / traçabilité, peu consultées au quotidien, sont reléguées en bas. Cohérence visuelle entre les 28 BDD Twin.
+- **How to apply** : Quatre blocs séquentiels :
+  1. **Bloc 1 — Tête générique** (5 props, ordre fixe) : `Nom` · `Aliases` · `Description` · `Statut de l'objet` · `Erreurs de transcription`
+  2. **Bloc 2 — Corpus** (variable, par BDD) : Propriétés spécifiques (4.2) · Couche 5D (4.4) · Relations + jumelles textes (4.3) · Rollups & calculés natifs (4.5). L'ordre intra-bloc suit celui du manuel parent.
+  3. **Bloc 3 — Queue générique** (~12 props, ordre fixe) : `Exemples concrets` · `Commentaires libres` · `Notes du consultant` · `Confidentialité (option)` · `Indices observés` · `Indices d'existence de l'objet` · `Created Date` · `Last Updated Date` · `Logs / Révisions LBP` · `Merge Notes` · `Merge Flags`
+  4. **Bloc 4 — Sources** (2 props, fin de schéma) : `Source(s) d'information (texte)` · `Source(s) d'information` (relation monodirectionnelle vers `Sources d'informations`)
+- **Renommage des natives Notion** : `Created Date` et `Last Updated Date` réutilisent les propriétés natives Notion `Created time` / `Last edited time` mais sont **renommées** pour rester cohérent avec la nomenclature des manuels.
+- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
+
+#### R-048 : Naming d'une BDD Notion = nom canonique simple
+
+- **Portée** : Twin
+- **Statut** : Actif
+- **Why** : La BDD Notion représente l'objet métier (ex. `Actifs`), pas le doc qui le décrit (`Manuel de BDD - Actifs.md`). Confondre les deux dans le titre Notion crée une confusion durable et casse la cohérence avec les manuels qui pointent vers la BDD via `Nom de la BDD Notion`.
+- **How to apply** : Le titre d'une BDD Notion = **nom canonique simple** au pluriel et avec accents (ex. `Actifs`, `Collectifs`, `Pratiques organisationnelles`, `Événements`, `Problématiques sandbox`). Aucun préfixe `Manuel de BDD - `, aucun suffixe descriptif. Le nom canonique du manuel et le titre de la BDD doivent matcher 1:1.
+- **Exemples** : ✅ `Actifs` / ❌ `Manuel de BDD - Actifs` / ❌ `BDD Actifs Twin v2`
+- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
 
 ---
 

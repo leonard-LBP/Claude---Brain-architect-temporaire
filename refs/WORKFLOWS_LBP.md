@@ -19,7 +19,8 @@
 | WF-003 | Archiver un doc Brain (vault + Notion) | À formaliser |
 | WF-008 | Propagation d'impacts après modification | À formaliser |
 | WF-009 | Migration d'une BDD XXX | À formaliser |
-| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 2026-04-26 après 3 instanciations test) |
+| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 26-04-2026 après 3 instanciations test) |
+| WF-014 | Générer une BDD Twin sur Notion à partir de son Manuel | Actif (cadrage 26-04-2026, Phase 6.5) |
 
 ---
 
@@ -258,6 +259,80 @@ Tracer dans `ECOSYSTEM-STATE.md` (journal de session) la création/mise à jour 
 - **D-014** : colocalisation WR-RD avec leur manuel parent.
 - **D-016** : rôle, contenu et format des WR-RD.
 - **WF-011** : récupérer l'URL Drive du fichier .md du WR-RD pour la propriété Notion.
+
+---
+
+## WF-014 : Générer une BDD Twin sur Notion à partir de son Manuel
+
+**Statut** : Actif (cadrage 26-04-2026, Phase 6.5 — préparation génération des 28 BDD Twin v2)
+
+### Contexte
+
+Générer une BDD du Digital Twin sur Notion à partir de son manuel parent (source de vérité, R-045). Le manuel contient toute la spécification : propriétés génériques, spécifiques, 5D, relations, rollups, taxonomies référencées. Ce workflow s'applique à **chaque BDD individuellement**, mais quand on génère un ensemble cohérent (les 28 BDD Twin v2), il s'orchestre sous une boucle de phases globales pour respecter R-046 (relations bidirectionnelles → impossible avant que les 2 BDD existent ; rollups → impossible avant que les relations existent).
+
+### Étapes (mode batch sur N BDD)
+
+#### Phase 0 — Cadrage
+1. Identifier la page hôte Notion (où les BDD seront posées en pleine page).
+2. Confirmer le périmètre des BDD à générer (ex. les 28 manuels Twin v2).
+3. Vérifier que les manuels parents sont à jour et conformes (R-027 naming, R-042 alignement WR-RD).
+
+#### Phase 1 — Extraction du manifest
+1. Pour chaque manuel, parser la section 4 (`4.1` à `4.5`) en JSON structuré :
+   - `properties.natives` : type, taxonomie référencée, ordre, bloc d'ordering (R-047)
+   - `properties.relations` : BDD cible, propriété miroir, jumelle texte associée, monodirectionnelle ? (cas `Sources d'informations`)
+   - `properties.rollups` : relation source, propriété cible, agrégation
+2. Pour chaque taxonomie référencée, lire le `.md` correspondant dans `Taxonomies/` et extraire les valeurs canoniques (codes + libellés). Gestion `Niveau: category` (5 dims pour ORG5D) vs `Niveau: taxon` (10 sous-dims pour ORG5D).
+3. Validation interne du manifest :
+   - Toute relation bidirectionnelle référence une BDD cible présente dans le manifest et a une propriété miroir cohérente côté cible.
+   - Tout rollup référence une relation source qui existe dans la BDD courante.
+   - Toute taxo référencée existe et a au moins une valeur extraite.
+
+#### Phase 2 — Création des BDD vides
+1. Créer N BDD pleine page sous la page hôte, **avec uniquement le titre** (R-048 : nom canonique simple).
+2. Stocker l'ID Notion de chaque BDD créée pour usage ultérieur (relations + rollups).
+
+#### Phase 3 — Propriétés natives non-relationnelles
+1. Pour chaque BDD, ajouter dans l'ordre R-047 :
+   - **Bloc 1 (tête)** : Nom (title) · Aliases · Description · Statut de l'objet (select avec taxo `OBJ.STATUT.LBP`) · Erreurs de transcription
+   - **Bloc 2 (corpus)** : propriétés spécifiques (4.2) · 5D (4.4) · rollups & calculés natifs (4.5 hors rollups relationnels) · jumelles textes (sans les relations elles-mêmes, ajoutées en Phase 4)
+   - **Bloc 3 (queue)** : propriétés génériques de fin (Exemples concrets, Commentaires libres, Notes du consultant, Confidentialité, Indices observés, Indices d'existence, Created Date [native renommée], Last Updated Date [native renommée], Logs/Révisions LBP, Merge Notes, Merge Flags)
+   - **Bloc 4 (sources)** : Source(s) d'information (texte) — la relation arrive Phase 4
+2. Pour les select/multi-select avec taxo, peupler les options à la création (à partir des valeurs taxos du manifest).
+
+#### Phase 4 — Relations
+1. Pour chaque relation bidirectionnelle du manifest, créer la propriété relation côté BDD source (Notion crée automatiquement la propriété miroir côté cible) ; renommer la miroir conformément au manuel.
+2. Cas spécial monodirectionnel : `Source(s) d'information` côté Twin ne crée **pas** de miroir côté `Sources d'informations` (R-046 exception).
+3. QA après Phase 4 : pour chaque relation bidirectionnelle, vérifier le miroir côté cible (nom + cardinalité conformes au manuel).
+
+#### Phase 5 — Rollups
+1. Pour chaque rollup du manifest, créer la propriété rollup en référençant la relation source + la propriété cible + l'agrégation.
+2. QA après Phase 5 : tous les rollups documentés dans la section 4.5 du manuel sont créés.
+
+#### Phase 6 — Réordonnancement final + QA
+1. Vérifier que l'ordre final des propriétés respecte R-047 (les ajouts post-création peuvent l'avoir dégradé). Réordonner si besoin.
+2. QA finale par BDD :
+   - Nombre de propriétés cohérent avec le manuel.
+   - Toutes les options taxos peuplées correctement.
+   - Aucune propriété "fantôme" (créée par Notion à la volée, non documentée dans le manuel).
+3. Mettre à jour la fiche du Manuel correspondant dans la BDD `Manuels de BDD` Notion : renseigner `Lien vers la BDD Notion` (URL de la nouvelle BDD).
+
+### Notes opérationnelles
+
+- **Idempotence** : le manifest est l'artefact de référence. Si on doit recommencer un batch, on rejoue le même manifest (versionable).
+- **Rollback** : sur la page test, on peut détruire et recréer. À ne pas faire sur des BDD contenant déjà des données.
+- **Ordre intra-Phase 2** : peu importe pour les BDD vides, mais pour la lisibilité on suit l'ordre fonctionnel (socle structurel d'abord, puis extraction → analytique → sandboxes).
+- **Sandboxes** : Phase 4 et 5 sont quasi-vides pour les sandboxes (R-014 : pas de relations réelles sauf `Sources d'informations`).
+- **Taxo ORG5D.DIM.LBP** : 5 dimensions au niveau `category`, 10 sous-dimensions au niveau `taxon` (2 sous-dims par dim).
+
+### Règles et décisions liées
+
+- **R-045** : source = manuel parent.
+- **R-046** : ordre de création (DBs → props → relations → rollups → ordering).
+- **R-047** : convention d'ordering en 4 blocs.
+- **R-048** : naming BDD = nom canonique simple.
+- **R-014** : sandboxes — pas de relations réelles sauf Sources.
+- **R-019** : architecture en 5 couches d'une BDD bien spécifiée.
 
 ---
 
