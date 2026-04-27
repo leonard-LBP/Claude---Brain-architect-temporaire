@@ -165,42 +165,42 @@
       "data_source_id": "9219d493-5a4e-41be-a651-abc0c35e4b82",
       "url": "https://www.notion.so/26ea3ad130b04cd2a32e022d4b8edeea",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     },
     "OKR sandbox": {
       "database_id": "442887a9-de92-49d1-b7a8-c80b7528357e",
       "data_source_id": "2b24d7bf-95a6-4bec-9a67-e9846edc0e33",
       "url": "https://www.notion.so/442887a9de9249d1b7a8c80b7528357e",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     },
     "Pratiques organisationnelles sandbox": {
       "database_id": "c5694c2a-603a-406a-807e-49bcbdd228b5",
       "data_source_id": "e6b8d99a-5400-416c-8206-cd16d2f8c279",
       "url": "https://www.notion.so/c5694c2a603a406a807e49bcbdd228b5",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     },
     "Principes organisationnels sandbox": {
       "database_id": "a9476f33-3c63-4c4f-83f7-0f40ffbb862c",
       "data_source_id": "25480353-1673-4e22-8612-0161b87757e2",
       "url": "https://www.notion.so/a9476f333c634c4f83f70f40ffbb862c",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     },
     "Problématiques sandbox": {
       "database_id": "b97d70cf-159e-4b1a-a052-beb54e183211",
       "data_source_id": "24b457fd-3e01-404b-9db1-d50eaef59e62",
       "url": "https://www.notion.so/b97d70cf159e4b1aa052beb54e183211",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     },
     "Processus candidats sandbox": {
       "database_id": "6f73d1a1-af80-469e-a376-514154120bc6",
       "data_source_id": "34dbabd2-982e-40d7-81e3-7801235ccfb8",
       "url": "https://www.notion.so/6f73d1a1af80469ea376514154120bc6",
       "category": "sandbox",
-      "ui_family": "Lab"
+      "ui_family": "Objets candidats"
     }
   },
   "external_dependencies": {
@@ -220,7 +220,7 @@
       "Moteur",
       "Pilotage",
       "Ancrages",
-      "Lab"
+      "Objets candidats"
     ],
     "members": {
       "Langage": [
@@ -257,7 +257,7 @@
         "Capacités organisationnelles",
         "Modulateurs"
       ],
-      "Lab": [
+      "Objets candidats": [
         "Capacités métier candidates sandbox",
         "OKR sandbox",
         "Pratiques organisationnelles sandbox",

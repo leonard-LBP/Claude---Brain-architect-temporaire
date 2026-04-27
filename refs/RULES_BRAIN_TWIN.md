@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 27-04-2026 — Ajout R-049 (déclaration obligatoire `ui_family` pour toute BDD Twin, prisme UI/UX D-017)
+> Dernière mise à jour : 27-04-2026 — Ajout R-049 (déclaration obligatoire `ui_family` pour toute BDD Twin, prisme UI/UX D-017) ; valeur `Lab` → `Objets candidats` après arbitrage Leonard.
 
 ---
 
@@ -628,19 +628,22 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 
 - **Portée** : Twin
 - **Statut** : Actif
-- **Why** : D-017 a adopté un prisme `ui_family` orienté utilisateur (app LBP) en 7 valeurs (Langage, Structure, Cadres, Moteur, Pilotage, Ancrages, Lab). Sans déclaration explicite et systématique de cette famille pour chaque BDD, l'app et le Brain peuvent diverger silencieusement, ce qui casse la cohérence UX/source de vérité.
+- **Why** : D-017 a adopté un prisme `ui_family` orienté utilisateur (app LBP) en 7 valeurs (Langage, Structure, Cadres, Moteur, Pilotage, Ancrages, Objets candidats). Sans déclaration explicite et systématique de cette famille pour chaque BDD, l'app et le Brain peuvent diverger silencieusement, ce qui casse la cohérence UX/source de vérité.
 - **How to apply** : Toute BDD du Twin (officielle ou sandbox) doit déclarer son `ui_family` dans :
   1. **Frontmatter du manuel parent** (champ `ui_family` parmi les 7 valeurs canoniques). Ex. : `ui_family: "Structure"`.
   2. **Registre Notion `Manuels de BDD`** (propriété select `Famille UI` avec les 7 valeurs).
   3. **bdd_registry.json** (Phase 6.5 et artefacts ultérieurs de génération) : champ `ui_family`.
   4. **Nouvelle BDD** : la déclaration `ui_family` est obligatoire dès la création du manuel parent ; aucune BDD ne peut être indexée Notion sans ce champ.
-- **Valeurs canoniques** (strictes, casse exacte) : `Langage`, `Structure`, `Cadres`, `Moteur`, `Pilotage`, `Ancrages`, `Lab`.
+- **Valeurs canoniques** (strictes, casse exacte) : `Langage`, `Structure`, `Cadres`, `Moteur`, `Pilotage`, `Ancrages`, `Objets candidats`.
+- **Note** : `Objets candidats` est en **2 mots** intentionnellement (les 6 autres sont en 1 mot). Cette dissonance typographique signale que cette famille n'est pas un prisme de l'entreprise comme les autres, mais un **statut d'objet** (en cours de qualification). Détail dans D-017.
 - **Hors scope** : les WR-RD ne portent **pas** ce champ (le WR-RD est un artefact runtime agent ; l'UX n'est pas son rôle).
 - **Exemples** :
   - ✅ `ui_family: "Structure"` (Organisations, Collectifs, Postes, Individus, Relations inter-organisations)
-  - ✅ `ui_family: "Lab"` (toutes les sandboxes)
-  - ❌ `ui_family: "lab"` (casse non canonique)
+  - ✅ `ui_family: "Objets candidats"` (toutes les sandboxes)
+  - ❌ `ui_family: "objets candidats"` (casse non canonique — la 1ère lettre doit être majuscule)
   - ❌ `ui_family: "Sandboxes"` (valeur non canonique)
+  - ❌ `ui_family: "Candidats"` (valeur non canonique — `Candidats` seul a été écarté car ambigu, voir D-017)
+  - ❌ `ui_family: "Lab"` (valeur initiale temporaire abandonnée le 27-04-2026)
 - **Découverte** : 27-04-2026, Leonard, après mise en place visuelle sur la page Notion `BDD test - 26/04/2026 - Digital Twin update`.
 
 ---

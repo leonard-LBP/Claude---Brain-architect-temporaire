@@ -404,7 +404,7 @@
 - **Date** : 27-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin (et propagation app LBP)
-- **Contexte** : Les BDD du Twin disposent déjà de plusieurs prismes de classification techniques (`architecture_family` : socle_structurel, extraction_factuelle, analytique, sandbox, etc. ; `knowledge_regime` ; `officiality_regime`). Ces prismes sont utiles pour la gouvernance interne mais **opaques pour l'utilisateur final** de l'app LBP. Le besoin : disposer d'un prisme **orienté utilisateur** qui donne un sens narratif à l'organisation des BDD ("Qui existe", "Quels mots", "Quels cadres", "Ce qui met en mouvement", "Ce qui ancre durablement", "Comment on pilote", "Et un Lab pour explorer").
+- **Contexte** : Les BDD du Twin disposent déjà de plusieurs prismes de classification techniques (`architecture_family` : socle_structurel, extraction_factuelle, analytique, sandbox, etc. ; `knowledge_regime` ; `officiality_regime`). Ces prismes sont utiles pour la gouvernance interne mais **opaques pour l'utilisateur final** de l'app LBP. Le besoin : disposer d'un prisme **orienté utilisateur** qui donne un sens narratif à l'organisation des BDD ("Qui existe", "Quels mots", "Quels cadres", "Ce qui met en mouvement", "Ce qui ancre durablement", "Comment on pilote", "Et des objets candidats pour court-circuiter la déduction quand la source les exprime déjà").
 - **Options envisagées** :
   1. Réutiliser un prisme existant comme `architecture_family` côté UI → rejeté : trop technique, vocabulaire interne LBP.
   2. Créer un prisme dédié `ui_family` orthogonal aux autres → **retenu**.
@@ -416,7 +416,8 @@
   - **Moteur** — *Ce qui met l'organisation en mouvement, produit, transforme et stabilise le fonctionnement réel* (5 BDD : Actions détectées, Processus candidats, Processus, Pratiques organisationnelles, Initiatives organisationnelles)
   - **Pilotage** — *Les sujets à traiter, les objectifs, les mesures et la trajectoire de pilotage* (5 BDD : Enjeux, Problématiques, OKR, Indicateurs, Journal des signaux)
   - **Ancrages** — *Ce qui oriente, soutient, amplifie ou freine durablement l'action organisationnelle* (3 BDD : Principes organisationnels, Capacités organisationnelles, Modulateurs)
-  - **Lab** — *Les objets exploratoires, candidats ou en test avant stabilisation* (6 BDD sandbox)
+  - **Objets candidats** — *Les objets organisationnels saisis directement quand la source les exprime explicitement, en complément des BDD-sas qui les déduisent par croisement (Enjeux → Problématiques+OKR ; Actions détectées → Pratiques+Initiatives+Processus candidats). Court-circuit opportuniste de la déduction.* (6 BDD sandbox)
+- **Note typographique** : `Objets candidats` est intentionnellement en **2 mots** alors que les 6 autres familles sont en 1 mot. Cette dissonance typographique est **assumée** : elle signale visuellement que cette famille n'est pas un prisme de l'entreprise comme les autres, mais un statut d'objet (en cours de qualification). Le terme `Candidats` seul a été écarté car ambigu dans un contexte entreprise (pourrait évoquer des candidatures RH).
 - **Conséquences** :
   - ✅ Cohérence app ↔ Brain : la classification utilisée par l'app LBP est documentée dans le Brain, source de vérité.
   - ✅ Prisme **complémentaire** (non substitutif) aux autres : `architecture_family`, `knowledge_regime`, `officiality_regime` restent inchangés et servent la gouvernance technique.
