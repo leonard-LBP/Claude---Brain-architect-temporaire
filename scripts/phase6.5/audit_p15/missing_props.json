@@ -1,0 +1,62 @@
+{
+  "Actifs": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 22
+  },
+  "Organisations": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 27
+  },
+  "Collectifs": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 31
+  },
+  "Postes": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 11
+  },
+  "Individus": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 24
+  },
+  "Environnements": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 27
+  },
+  "Événements": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 20
+  },
+  "Relations inter-organisations": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 11
+  },
+  "Actions détectées": {
+    "has_advanced_note": false,
+    "missing": [],
+    "excluded_count": 18
+  },
+  "Enjeux": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 17
+  },
+  "Journal des signaux": {
+    "has_advanced_note": false,
+    "missing": [],
+    "excluded_count": 11
+  },
+  "Glossaire spécifique": {
+    "has_advanced_note": true,
+    "missing": [],
+    "excluded_count": 5
+  }
+}

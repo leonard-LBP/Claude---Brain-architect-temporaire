@@ -1,0 +1,673 @@
+{
+  "Actifs": {
+    "expected_count": 42,
+    "notion_count": 57,
+    "missing": [
+      {
+        "name": "Dépendance externe de l’actif",
+        "sec": "4.5",
+        "type": "Formule"
+      },
+      {
+        "name": "Vulnérabilité nette de l’actif",
+        "sec": "4.5",
+        "type": "Formule"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Actions détectées": {
+    "expected_count": 44,
+    "notion_count": 57,
+    "missing": [
+      {
+        "name": "Pression opératoire de l’action",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Nécessité pour la production du jour`, `Scope d’interaction` et `Intensité de collaboration`)"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Lien vers la note avancée"
+    ]
+  },
+  "Capacités métier candidates sandbox": {
+    "expected_count": 35,
+    "notion_count": 32,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Écart de maturité de la capacité",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Maturité actuelle` et `Maturité cible`)"
+      },
+      {
+        "name": "Valeur stratégique de la capacité métier",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Distinctivité` et `Criticité stratégique de la capacité`)"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Capacités organisationnelles": {
+    "expected_count": 36,
+    "notion_count": 47,
+    "missing": [
+      {
+        "name": "présente les conditions de montée par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les fragilités par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Collectifs": {
+    "expected_count": 47,
+    "notion_count": 60,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Exemples concrets",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Commentaires libres",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Notes du consultant",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Indices observés",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Indices d’existence de l’objet",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Logs / Révisions LBP",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Merge Notes",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Merge Flags",
+        "sec": "4.1",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [
+      "Sous-dimensions (5D) impactées par les enjeux exprimés",
+      "Sous-dimensions (5D) impactées par les problématiques affectantes",
+      "Sous-dimensions (5D) lues par les indicateurs qui mesurent le collectif",
+      "Sous-dimensions (5D) travaillées par les pratiques mises en œuvre",
+      "Sous-dimensions (5D) visées par les OKR portés"
+    ],
+    "generics_missing": [
+      "Description",
+      "Commentaires libres",
+      "Notes du consultant",
+      "Exemples concrets",
+      "Indices observés",
+      "Indices d'existence de l'objet",
+      "Logs / Révisions LBP",
+      "Merge Notes",
+      "Merge Flags"
+    ]
+  },
+  "Enjeux": {
+    "expected_count": 42,
+    "notion_count": 56,
+    "missing": [],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Environnements": {
+    "expected_count": 51,
+    "notion_count": 71,
+    "missing": [
+      {
+        "name": "Pression contextuelle nette",
+        "sec": "4.5",
+        "type": "Formule"
+      },
+      {
+        "name": "Régime d’environnement",
+        "sec": "4.5",
+        "type": "Formule"
+      }
+    ],
+    "extras_in_notion": [
+      "Sous-dimensions (5D) au cœur des capacités influencées",
+      "Sous-dimensions (5D) impactées par les enjeux contextualisés",
+      "Sous-dimensions (5D) impactées par les problématiques concernées",
+      "Types de collectifs concernés",
+      "Types de pratiques concernées",
+      "Types d’actifs hébergés"
+    ],
+    "generics_missing": []
+  },
+  "Glossaire spécifique": {
+    "expected_count": 30,
+    "notion_count": 22,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Exemples concrets",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Commentaires libres",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Notes du consultant",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Indices observés",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Indices d’existence de l’objet",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Logs / Révisions LBP",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Merge Notes",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Merge Flags",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Expressions proches / termes associés",
+        "sec": "4.2",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Commentaires libres",
+      "Notes du consultant",
+      "Exemples concrets",
+      "Indices observés",
+      "Indices d'existence de l'objet",
+      "Logs / Révisions LBP",
+      "Merge Notes",
+      "Merge Flags"
+    ]
+  },
+  "Indicateurs": {
+    "expected_count": 41,
+    "notion_count": 52,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Nature de couverture 5D",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "reflète les phénomènes par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "Individus": {
+    "expected_count": 41,
+    "notion_count": 58,
+    "missing": [],
+    "extras_in_notion": [
+      "Familles métiers des postes occupés",
+      "Sous-dimensions (5D) impactées par les enjeux exprimés",
+      "Sous-dimensions (5D) impactées par les environnements concernés",
+      "Sous-dimensions (5D) servies par les postes occupés",
+      "Sous-dimensions (5D) travaillées par les pratiques participées",
+      "Types de pratiques auxquelles l’individu participe"
+    ],
+    "generics_missing": []
+  },
+  "Initiatives organisationnelles": {
+    "expected_count": 48,
+    "notion_count": 64,
+    "missing": [
+      {
+        "name": "Statut temporel de l’initiative",
+        "sec": "4.5",
+        "type": "Formule"
+      },
+      {
+        "name": "Nature d’engagement de l’initiative",
+        "sec": "4.5",
+        "type": "Formule"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Journal des signaux": {
+    "expected_count": 31,
+    "notion_count": 39,
+    "missing": [],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Lien vers la note avancée"
+    ]
+  },
+  "Modulateurs": {
+    "expected_count": 35,
+    "notion_count": 44,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Amplitude potentielle d’impact du modulateur",
+        "sec": "4.5",
+        "type": "Formule (comptage de multi-sélections à partir de `Types de pratiques impactés (générique) — effet fort`, `— effet moyen`, `— effet faible`)"
+      },
+      {
+        "name": "Risque de plafond systémique",
+        "sec": "4.5",
+        "type": "Formule (catégorisation à partir de `Maturité observée (valeur)`, `Confiance d’évaluation (0–5)` et de l’amplitude potentielle d’impact calculée à partir des types de pratiques impactés)"
+      }
+    ],
+    "extras_in_notion": [
+      "Description (définition avancée)"
+    ],
+    "generics_missing": [
+      "Description",
+      "Merge Notes",
+      "Merge Flags",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "OKR sandbox": {
+    "expected_count": 35,
+    "notion_count": 34,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "OKR": {
+    "expected_count": 37,
+    "notion_count": 47,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets attendus par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Organisations": {
+    "expected_count": 53,
+    "notion_count": 76,
+    "missing": [],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Postes": {
+    "expected_count": 38,
+    "notion_count": 46,
+    "missing": [],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Pratiques organisationnelles sandbox": {
+    "expected_count": 47,
+    "notion_count": 41,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets durables par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets de bord par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "Poids structurant de la pratique",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Scope d’interaction`, `Récurrence`, `Horizon de valeur` et `Maturité de la pratique`)"
+      },
+      {
+        "name": "Stabilité opératoire de la pratique",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Maturité de la pratique` et `Récurrence`)"
+      },
+      {
+        "name": "Nature de levier de la pratique",
+        "sec": "4.5",
+        "type": "Formule (catégorisation à partir de `Type de pratique`, `Intention dominante` et `Horizon de valeur`)"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "Pratiques organisationnelles": {
+    "expected_count": 53,
+    "notion_count": 68,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets durables par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets de bord par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "Poids structurant de la pratique",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Scope d’interaction`, `Récurrence`, `Horizon de valeur` et `Maturité de la pratique`)"
+      },
+      {
+        "name": "Stabilité opératoire de la pratique",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Maturité de la pratique` et `Récurrence`)"
+      },
+      {
+        "name": "Nature de levier de la pratique",
+        "sec": "4.5",
+        "type": "Formule (catégorisation à partir de `Type de pratique`, `Intention dominante` et `Horizon de valeur`)"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description"
+    ]
+  },
+  "Principes organisationnels sandbox": {
+    "expected_count": 32,
+    "notion_count": 31,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "Principes organisationnels": {
+    "expected_count": 32,
+    "notion_count": 41,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Problématiques sandbox": {
+    "expected_count": 53,
+    "notion_count": 52,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "Problématiques": {
+    "expected_count": 53,
+    "notion_count": 65,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les causalités par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les impacts observés par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les risques projetés à horizon 0–12 mois par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les risques projetés à horizon supérieur à 12 mois par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les tensions inter-sous-dimensions (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Processus candidats sandbox": {
+    "expected_count": 37,
+    "notion_count": 35,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "Charge de coordination du processus",
+        "sec": "4.5",
+        "type": "Formule (calcul local à partir de `Scope d’interaction` et `Récurrence apparente`)"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Lien vers la note avancée"
+    ]
+  },
+  "Processus candidats": {
+    "expected_count": 36,
+    "notion_count": 40,
+    "missing": [
+      {
+        "name": "présente les fragilités par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets de dysfonctionnement par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Lien vers la note avancée",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Processus": {
+    "expected_count": 45,
+    "notion_count": 59,
+    "missing": [
+      {
+        "name": "Description",
+        "sec": "4.1",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les fragilités par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "présente les effets de dysfonctionnement par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": [
+      "Description",
+      "Source(s) d'information (texte)"
+    ]
+  },
+  "Relations inter-organisations": {
+    "expected_count": 28,
+    "notion_count": 33,
+    "missing": [
+      {
+        "name": "présente les effets du lien par sous-dimension (5D)",
+        "sec": "4.4",
+        "type": "Texte long"
+      },
+      {
+        "name": "Statut temporel du lien",
+        "sec": "4.5",
+        "type": "Formule"
+      },
+      {
+        "name": "Ancienneté du lien",
+        "sec": "4.5",
+        "type": "Formule"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": []
+  },
+  "Événements": {
+    "expected_count": 46,
+    "notion_count": 61,
+    "missing": [
+      {
+        "name": "Position temporelle courante (calculée)",
+        "sec": "4.5",
+        "type": "Formule"
+      }
+    ],
+    "extras_in_notion": [],
+    "generics_missing": []
+  }
+}
