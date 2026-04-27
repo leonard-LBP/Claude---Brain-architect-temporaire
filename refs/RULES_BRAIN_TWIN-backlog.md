@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — ajout réflexion articulation propriétés select BDD `Manuels de BDD` (transversale Brain/Twin/Mission Ops)
+> Dernière mise à jour : 27-04-2026 — ajout 2 entrées Phase 6.5 : nettoyage libellés taxos (virgules/apostrophes) + formalisation taxo `Statut relationnel`.
 
 ---
 
@@ -44,6 +44,21 @@
   - **Pré-requis** : avoir d'abord **revu et structuré les manuels Brain et Mission Ops** (à ce jour seul le Twin a été refondu Twin v2). On ne peut pas trancher la doctrine d'articulation sans connaître les besoins de classification des autres domaines.
   - **Quand** : après refonte des manuels Brain et Mission Ops. À ce moment-là, traiter d'un coup : `Type fonctionnel`, `Famille UI` (D-017), et toute autre propriété select candidate.
   - **Lien** : D-017 (familles UI/UX), R-049 (déclaration `ui_family`), Phase 6.5 actuelle (les frontmatters Twin reçoivent `ui_family` mais la propagation Notion attend cette réflexion).
+
+- [27-04-2026] **Nettoyage des libellés d'options taxonomiques pour compatibilité Notion DDL**
+  - **Contexte** : la Phase 6.5 (création des 28 BDD Twin sur Notion via `update_data_source`) a révélé que **certains libellés d'options multi_select** dans les manuels de BDD Twin v2 contiennent des **virgules** (ex. `'SI, données & outillage'`, `'Risques, conformité & sécurité'`) ou des **apostrophes droites devant être échappées** (`d\'interface`). Ces libellés sont rejetés ou mal parsés par le DDL Notion (les virgules ferment les options ; les apostrophes échappées ne passent pas le parseur).
+  - **Symptômes** : DDL bloqué, sub-agent qui a corrigé manuellement en remplaçant `,` → ` -` et `\'` → apostrophe typographique `'`. Concernées : `OKR`, `OKR sandbox`, `Problématiques`, `Problématiques sandbox`, `Pratiques organisationnelles`, `Pratiques organisationnelles sandbox`. Cf. `ECOSYSTEM-STATE.md` pour la liste exacte.
+  - **Portée potentielle** : Transverse Twin (toutes les taxos référencées par les manuels Twin et utilisées comme select/multi_select sur Notion).
+  - **Pistes** :
+    1. Audit des taxos pour identifier toutes les options contenant `,` ou `'` droite. Renommer les options dans les `.md` de taxos + propager dans les manuels Twin + WR-RD (R-041 / R-042).
+    2. Améliorer le script `build_phase3_ddl.py` pour échapper correctement les virgules (impossible côté DDL Notion) et les apostrophes (utiliser apostrophe typographique systématiquement).
+    3. Décider d'une convention : pas de `,` dans les libellés d'options taxonomiques ; préférer ` - ` ou ` / `.
+  - **Quand** : à traiter avant la prochaine génération massive de BDD ou avant tout export du bundle taxos vers d'autres outils.
+
+- [27-04-2026] **Taxonomie `Statut relationnel` (Relations inter-organisations) à formaliser**
+  - **Contexte** : la propriété `Statut relationnel` du manuel `Relations inter-organisations` est typée `Sélection` mais **aucune taxonomie n'est référencée** (le manifest a extrait `SELECT()` vide). En Phase 6.5 (création BDD Notion), cette propriété a été dégradée en `RICH_TEXT` provisoirement.
+  - **Portée potentielle** : Twin (BDD Relations inter-organisations).
+  - **Action requise** : définir la taxonomie `ORG_REL.STATUT.LBP` (ou équivalent) avec les valeurs canoniques (ex. `actif`, `en cours d'évaluation`, `interrompu`, `terminé`, etc.), créer le `.md` taxonomie, mettre à jour le manuel + WR-RD, puis re-typer la propriété Notion en SELECT.
 
 ---
 

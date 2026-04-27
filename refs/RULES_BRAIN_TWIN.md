@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 27-04-2026 — Ajout R-049 (déclaration obligatoire `ui_family` pour toute BDD Twin, prisme UI/UX D-017) ; valeur `Lab` → `Objets candidats` après arbitrage Leonard.
+> Dernière mise à jour : 27-04-2026 — R-051 (ordering UI Notion via `update_view SHOW` plutôt que par ordre des `ADD COLUMN`, suite à la découverte sur le pilote Actifs).
 
 ---
 
@@ -607,13 +607,22 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Portée** : Twin (toute BDD du Digital Twin)
 - **Statut** : Actif
 - **Why** : Lisibilité des fiches dans Notion. Les propriétés métier importantes doivent rester en haut ; les propriétés de gouvernance / journal / traçabilité, peu consultées au quotidien, sont reléguées en bas. Cohérence visuelle entre les 28 BDD Twin.
-- **How to apply** : Quatre blocs séquentiels :
-  1. **Bloc 1 — Tête générique** (5 props, ordre fixe) : `Nom` · `Aliases` · `Description` · `Statut de l'objet` · `Erreurs de transcription`
-  2. **Bloc 2 — Corpus** (variable, par BDD) : Propriétés spécifiques (4.2) · Couche 5D (4.4) · Relations + jumelles textes (4.3) · Rollups & calculés natifs (4.5). L'ordre intra-bloc suit celui du manuel parent.
-  3. **Bloc 3 — Queue générique** (~12 props, ordre fixe) : `Exemples concrets` · `Commentaires libres` · `Notes du consultant` · `Confidentialité (option)` · `Indices observés` · `Indices d'existence de l'objet` · `Created Date` · `Last Updated Date` · `Logs / Révisions LBP` · `Merge Notes` · `Merge Flags`
-  4. **Bloc 4 — Sources** (2 props, fin de schéma) : `Source(s) d'information (texte)` · `Source(s) d'information` (relation monodirectionnelle vers `Sources d'informations`)
+- **How to apply** : **Sept blocs séquentiels** (ordre R-047 v2.2, révisée 27-04-2026 après pilote Actifs) :
+  1. **Bloc 1 — Tête générique** (5 props, ordre fixe) : `Nom` · `Statut de l'objet` · `Aliases` · `Erreurs de transcription` (conditionnelle, présente uniquement si dans le manuel) · `Description`.
+  2. **Bloc 2 — Corpus métier**, avec **ordre interne strict** :
+     - **2a. Propriétés spécifiques** (4.2)
+     - **2b. Couche 5D** regroupée intégralement (4.4 — natives + jumelles 5D si existent)
+     - **2c. Jumelles textes seules** (4.3 jumelles uniquement, **sans les relations**)
+     - **2d. Calculés natifs** (4.5 hors rollups relationnels) — formules locales.
+  3. **Bloc 3 — Queue générique** (~11-12 props, ordre fixe) : `Lien vers la note avancée` (URL, conditionnelle, R-050) · `Exemples concrets` · `Commentaires libres` · `Notes du consultant` · `Confidentialité (option)` (conditionnelle) · `Indices observés` · `Indices d'existence de l'objet` · `Created Date` · `Last Updated Date` · `Logs / Révisions LBP` · `Merge Notes` · `Merge Flags`
+  4. **Bloc 4 — Sources textuelles** (1 prop) : `Source(s) d'information (texte)` (RICH_TEXT). La relation monodirectionnelle `Source(s) d'information` est différée (création de la BDD `Sources d'informations` plus tard sur la même page Notion).
+  5. **Bloc 5 — Relations sortantes** (Passe 2 globale, après que les 28 BDD ont leur Passe 1 finie) : toutes les relations bidirectionnelles documentées en 4.3, créées via `RELATION('target_ds', DUAL 'mirror_name' 'mirror_id')`. Notion crée automatiquement les miroirs côté BDD cibles (qui apparaîtront en bloc 7 côté cible).
+  6. **Bloc 6 — Rollups & couche calculée relationnelle** (Passe 3 globale, après les relations) : tous les rollups documentés en 4.3 et 4.5.
+  7. **Bloc 7 — Miroirs reçus** (créés automatiquement par Notion lors de la Passe 2 des **autres** BDD) : propriétés relation miroir des relations bidir entrantes. Ces props apparaissent en bout de schéma au moment où une autre BDD nous référence.
 - **Renommage des natives Notion** : `Created Date` et `Last Updated Date` réutilisent les propriétés natives Notion `Created time` / `Last edited time` mais sont **renommées** pour rester cohérent avec la nomenclature des manuels.
-- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
+- **Justification doctrinale du décalage relations/rollups en queue (Bloc 5+)** : sémantiquement défendable — relations et rollups forment la **couche calculée et le graphe dérivé** (lecture analytique secondaire), pas une saisie directe par humain. Les voir en bout de schéma signale visuellement leur nature dérivée et complète la lecture `[Identité] → [Substance métier] → [Gestion] → [Traçabilité sources] → [Graphe + Couche calculée]`.
+- **Justification du découplage jumelle ↔ relation (R-047 v2.2)** : le couplage par paires (R-047 v2) garantissait l'adjacence jumelle+relation **sur la BDD courante**, mais polluait toutes les autres BDD avec un miroir prématuré (avant que leurs propres props natives ne soient créées), cassant leur ordering futur. Le découplage (jumelle en Passe 1, relation en Passe 2 globale) sacrifie l'adjacence locale au profit d'un **ordering global cohérent sur les 28 BDD**. Trade-off accepté.
+- **Découverte** : 26-04-2026, Leonard, Phase 6.5. **R-047 v2 (27-04-2026)** : Bloc 1 ordonné (Statut avant Aliases), couplage jumelles+relations, Bloc 5 rollups en queue. **R-047 v2.1 (27-04-2026)** : ajout `Lien vers la note avancée` en tête Bloc 3. **R-047 v2.2 (27-04-2026)** : découplage jumelles+relations (jumelles seules en Bloc 2c Passe 1, relations en Bloc 5 Passe 2 globale), ajout Bloc 6 rollups + Bloc 7 miroirs reçus.
 
 #### R-048 : Naming d'une BDD Notion = nom canonique simple
 
@@ -644,6 +653,41 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ❌ `ui_family: "Sandboxes"` (valeur non canonique)
   - ❌ `ui_family: "Candidats"` (valeur non canonique — `Candidats` seul a été écarté car ambigu, voir D-017)
   - ❌ `ui_family: "Lab"` (valeur initiale temporaire abandonnée le 27-04-2026)
+
+#### R-051 : Ordering des propriétés Notion via `update_view SHOW` (et non via l'ordre des `ADD COLUMN`)
+
+- **Portée** : Twin (toute génération ou modification d'une BDD Notion)
+- **Statut** : Actif
+- **Why** : L'ordre des `ADD COLUMN` dans une salve DDL **ne détermine pas** l'ordre d'affichage côté UI Notion. Notion affiche les colonnes selon le tableau `displayProperties` de chaque vue, qui par défaut suit un ordre alphabétique automatique sur les vues nouvellement modifiées (notamment après DROP+ADD). Vouloir préserver l'ordre R-047 v2.2 via l'ordre des ADD COLUMN est donc **vain et coûteux** (chronophage, fragile aux miroirs créés par les relations bidir, exige des passes successives lourdes). La bonne approche : **séparer création des propriétés (ordre indifférent) et ordering UI (1 appel `update_view` final par BDD)**.
+- **How to apply** :
+  1. Pour la création/ajout de propriétés sur une BDD Notion : utiliser `update_data_source` avec une salve DDL **dans n'importe quel ordre** (peu importe).
+  2. Pour configurer l'ordre d'affichage final : appeler `update_view` sur la vue concernée avec la directive `SHOW "prop1", "prop2", ...` listant **toutes** les propriétés visibles dans l'ordre voulu (R-047 v2.2 pour les BDD Twin).
+  3. Effectuer cet appel `SHOW` **une seule fois par BDD à la toute fin** du workflow (après Passes natives + relations + rollups + formules + Sources mono), pour éviter de devoir le rappeler à chaque passe intermédiaire.
+- **Conséquence sur le workflow** : R-047 v2.2 décrit l'ordre **cible final** ; WF-014 v3 séquence les passes techniques (relations après natives, rollups après relations) ; R-051 garantit que l'ordering UI final est conforme **indépendamment** de l'ordre de création.
+- **Effets de bord** : si une nouvelle propriété est créée après le `SHOW` final (ex. ajout d'une relation oubliée), elle apparaît en queue de la vue. Il faut alors relancer `update_view SHOW` pour la repositionner.
+- **Outillage suggéré** : générer la liste `SHOW` par BDD à partir du manifest + des règles R-047 v2.2 (ordre fixe Bloc 1 et Bloc 3 ; ordre du manuel pour Bloc 2 ; ordre stable pour Bloc 4 / 5 / 6).
+- **Découverte** : 27-04-2026, Leonard, après pilote Actifs — l'IA Notion a démontré qu'elle pouvait réordonner via `displayProperties`, et l'outil MCP `notion-update-view` expose la même capacité via la directive `SHOW`. Test concluant sur `_TEST_ORDRE` et Actifs.
+
+#### R-050 : Propriété conditionnelle `Lien vers la note avancée` (URL)
+
+- **Portée** : Twin (BDD à objets stabilisés)
+- **Statut** : Actif
+- **Why** : Compléter l'identité structurée d'un objet par un **lien vers une note approfondie** (Brick de connaissance générée via les Templates de Bricks LBP). Cela donne aux agents et consultants un canal d'approfondissement narratif (profil avancé d'un individu, d'une organisation, d'un actif, etc.) qui complète les propriétés structurées sans alourdir la fiche. Cf. D-018 pour le lien doctrinal Bricks ↔ Notes avancées.
+- **How to apply** :
+  1. **Type Notion** : URL.
+  2. **Position dans le schéma** : tête du Bloc 3 (queue générique), juste avant `Exemples concrets` (R-047 v2.1).
+  3. **Inclusion conditionnelle** : la propriété est présente uniquement si la BDD désigne des **objets institutionnels stabilisés et durables**. Elle est **absente** dans :
+     - Les BDD sandbox (objets en cours de stabilisation/test).
+     - Les BDD de candidats (ex. Processus candidats — objets en cours de qualification).
+     - Les BDD de signaux/actions/traces (Journal des signaux, Actions détectées) — l'objet est une trace, pas une entité durable méritant une note narrative.
+     - Les BDD d'indicateurs (sur-documentation inutile sur des mesures).
+  4. **Mécanisme d'inclusion** : chaque manuel Twin déclare dans son frontmatter `has_advanced_note: true | false`. Le template manuel BDD lit ce champ pour décider d'inclure ou non la propriété en section 4.1.
+  5. **Instructions d'écriture** : "Renseigner, si elle existe, l'URL d'une note avancée (Brick de connaissance) qui approfondit l'objet (analyse détaillée, carte causale, profil organisationnel/individu, documents associés) ; laisser vide si non pertinent ; utiliser des liens stables."
+  6. **Source de remplissage** : consultant.
+- **Liste actuelle (Twin v2)** des BDD `has_advanced_note: true` (18) : Organisations, Collectifs, Postes, Individus, Actifs, Environnements, Événements, Relations inter-organisations, Glossaire spécifique, Initiatives organisationnelles, Modulateurs, Capacités organisationnelles, OKR, Pratiques organisationnelles, Principes organisationnels, Problématiques, Processus, Enjeux.
+- **Liste actuelle (Twin v2)** des BDD `has_advanced_note: false` (10) : 6 sandboxes + Processus candidats + Journal des signaux + Actions détectées + Indicateurs.
+- **Exemples** : ✅ `https://notion.so/Profil-Organisationnel-Numalis-...` / ❌ propriété présente sur fiche `OKR sandbox` (sandbox = exclu).
+- **Découverte** : 27-04-2026, Leonard, Phase 6.5 — propriété oubliée lors de la refonte Twin v2 et redécouverte au moment d'attaquer la Phase 3 propriétés natives. Présente dans l'ancien template (archivé `00 - archives/template-db-manual.md`, ligne 353) sous le nom `Lien vers la note avancée`.
 - **Découverte** : 27-04-2026, Leonard, après mise en place visuelle sur la page Notion `BDD test - 26/04/2026 - Digital Twin update`.
 
 ---

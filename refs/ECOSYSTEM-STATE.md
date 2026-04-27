@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 26-04-2026 — Sweep transverse dates ISO → JJ-MM-YYYY (180 fichiers, 244 lignes converties dans refs/ + vault) + 28 manuels Twin Notion enrichis avec URL WR-RD (propriété `Lien vers le doc WR-RD (.md)` renseignée sur les 28 fiches Manuels Twin actifs).
+> Derniere mise a jour : 27-04-2026 — Phase 6.5 Passe 1 terminée (28/28 BDD Twin Notion équipées des propriétés natives non-relationnelles, ~1041 props, ordering R-047 v2.2 via `update_view SHOW`). Captures : R-051 (ordering Notion via update_view), C-009 (annonce explicite propagation Manuel ↔ WR-RD). Dette technique en backlog : nettoyage virgules/apostrophes dans taxos + formalisation taxo `Statut relationnel`.
 
 ## Phase actuelle
 

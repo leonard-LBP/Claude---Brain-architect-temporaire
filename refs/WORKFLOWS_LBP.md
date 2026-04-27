@@ -264,7 +264,7 @@ Tracer dans `ECOSYSTEM-STATE.md` (journal de session) la création/mise à jour 
 
 ## WF-014 : Générer une BDD Twin sur Notion à partir de son Manuel
 
-**Statut** : Actif (cadrage 26-04-2026, Phase 6.5 — préparation génération des 28 BDD Twin v2)
+**Statut** : Actif (cadrage 26-04-2026, Phase 6.5 — préparation génération des 28 BDD Twin v2). **Révisé 27-04-2026 (WF-014 v3)** : 3 passes globales séparées (natives → relations → rollups). Ce découplage évite la pollution croisée des BDD par les miroirs créés trop tôt (cf. R-047 v2.2 justification).
 
 ### Contexte
 
@@ -292,30 +292,55 @@ Générer une BDD du Digital Twin sur Notion à partir de son manuel parent (sou
 1. Créer N BDD pleine page sous la page hôte, **avec uniquement le titre** (R-048 : nom canonique simple).
 2. Stocker l'ID Notion de chaque BDD créée pour usage ultérieur (relations + rollups).
 
-#### Phase 3 — Propriétés natives non-relationnelles
-1. Pour chaque BDD, ajouter dans l'ordre R-047 :
-   - **Bloc 1 (tête)** : Nom (title) · Aliases · Description · Statut de l'objet (select avec taxo `OBJ.STATUT.LBP`) · Erreurs de transcription
-   - **Bloc 2 (corpus)** : propriétés spécifiques (4.2) · 5D (4.4) · rollups & calculés natifs (4.5 hors rollups relationnels) · jumelles textes (sans les relations elles-mêmes, ajoutées en Phase 4)
-   - **Bloc 3 (queue)** : propriétés génériques de fin (Exemples concrets, Commentaires libres, Notes du consultant, Confidentialité, Indices observés, Indices d'existence, Created Date [native renommée], Last Updated Date [native renommée], Logs/Révisions LBP, Merge Notes, Merge Flags)
-   - **Bloc 4 (sources)** : Source(s) d'information (texte) — la relation arrive Phase 4
-2. Pour les select/multi-select avec taxo, peupler les options à la création (à partir des valeurs taxos du manifest).
+#### Passe 1 — Schéma natif (toutes les BDD, props non-relationnelles)
+> **Révision WF-014 v3 (27-04-2026, après pilote Actifs)** : la Passe 1 du v2 fusionnait natives + relations en une seule salve par BDD. Cela créait des miroirs prématurés sur les autres BDD (avant que leurs propres natives soient créées), cassant leur ordering. Solution v3 : **3 passes globales séparées**. Passe 1 = natives **sans relations** sur toutes les 28 BDD ; Passe 2 = relations bidir sur toutes les 28 BDD ; Passe 3 = rollups.
 
-#### Phase 4 — Relations
-1. Pour chaque relation bidirectionnelle du manifest, créer la propriété relation côté BDD source (Notion crée automatiquement la propriété miroir côté cible) ; renommer la miroir conformément au manuel.
-2. Cas spécial monodirectionnel : `Source(s) d'information` côté Twin ne crée **pas** de miroir côté `Sources d'informations` (R-046 exception).
-3. QA après Phase 4 : pour chaque relation bidirectionnelle, vérifier le miroir côté cible (nom + cardinalité conformes au manuel).
+Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statements ADD COLUMN dans cet ordre R-047 v2 strict :
 
-#### Phase 5 — Rollups
-1. Pour chaque rollup du manifest, créer la propriété rollup en référençant la relation source + la propriété cible + l'agrégation.
-2. QA après Phase 5 : tous les rollups documentés dans la section 4.5 du manuel sont créés.
+1. **Bloc 1 — Tête** (5 props, ordre fixe) :
+   `Nom` (title, déjà créé en Phase 2) · `Statut de l'objet` (select OBJ.STATUT.LBP) · `Aliases` · `Erreurs de transcription` (si dans le manuel) · `Description`
 
-#### Phase 6 — Réordonnancement final + QA
-1. Vérifier que l'ordre final des propriétés respecte R-047 (les ajouts post-création peuvent l'avoir dégradé). Réordonner si besoin.
-2. QA finale par BDD :
-   - Nombre de propriétés cohérent avec le manuel.
-   - Toutes les options taxos peuplées correctement.
-   - Aucune propriété "fantôme" (créée par Notion à la volée, non documentée dans le manuel).
-3. Mettre à jour la fiche du Manuel correspondant dans la BDD `Manuels de BDD` Notion : renseigner `Lien vers la BDD Notion` (URL de la nouvelle BDD).
+2. **Bloc 2 — Corpus métier** :
+   - **2a. Spécifiques** (4.2)
+   - **2b. 5D regroupée** (4.4 — natives + jumelles 5D si existent)
+   - **2c. Jumelles textes seules** (4.3 — RICH_TEXT, **sans les relations**)
+   - **2d. Calculés natifs** (4.5 hors rollups) — formules locales. Différé si Leonard valide.
+
+3. **Bloc 3 — Queue gestion** (~11-12 props, ordre fixe) :
+   `Lien vers la note avancée` (URL, conditionnelle, R-050) · `Exemples concrets` · `Commentaires libres` · `Notes du consultant` · `Confidentialité (option)` (si applicable) · `Indices observés` · `Indices d'existence de l'objet` · `Created Date` (CREATED_TIME native renommée) · `Last Updated Date` (LAST_EDITED_TIME native renommée) · `Logs / Révisions LBP` · `Merge Notes` · `Merge Flags`
+
+4. **Bloc 4 — Sources textuelles** (1 prop) :
+   `Source(s) d'information (texte)` (RICH_TEXT). La relation monodirectionnelle `Source(s) d'information` est différée (création de la BDD `Sources d'informations` plus tard sur la même page Notion).
+
+**Pour les select/multi-select avec taxo** : peupler les options à la création (libellés Notion + couleurs depuis le manifest taxos).
+
+#### Passe 2 — Relations bidirectionnelles (toutes BDD, après Passe 1 globale)
+> Les relations sont créées **après** que les 28 BDD ont leurs schémas natifs propres. Notion crée alors automatiquement les miroirs côté BDD cibles, mais leur position en bout de schéma est cohérente (Bloc 7 — Miroirs reçus de R-047 v2.2).
+
+1. Pour chaque BDD, exécuter une salve `update_data_source` avec les ADD COLUMN relations bidir :
+   - Syntaxe : `RELATION('target_ds_id', DUAL 'mirror_name' 'mirror_id')` (DUAL = bidirectionnelle)
+   - Pas la relation mono `Source(s) d'information` (différée).
+2. QA après Passe 2 : pour chaque relation bidir, vérifier le miroir côté cible (nom + cardinalité conformes au manuel).
+
+**Pour les sandboxes (R-014)** : Passe 2 quasi-vide (sauf relation Sources d'informations qui sera mono, créée plus tard).
+
+#### Passe 3 — Rollups (toutes BDD, après Passe 2 globale)
+> Les rollups dépendent des relations sources + des propriétés cibles côté BDD cible. Comme les Passes 1 + 2 ont peuplé toutes les BDD, on peut créer les rollups sans risque de référence vide. Ils sont ajoutés en **queue du schéma** (Bloc 6 R-047 v2.2), sémantiquement défendable comme couche calculée dérivée.
+
+1. Pour chaque BDD, exécuter une salve `update_data_source` avec les ADD COLUMN ROLLUP :
+   - Syntaxe : `ROLLUP('source_relation', 'target_property', 'function')`
+2. QA après Passe 3 : pas d'erreur "propriété cible introuvable".
+
+#### Passe finale — Sources d'informations + Calculés natifs différés
+1. Créer la BDD `Sources d'informations` sur la même page Notion (section Mission Ops).
+2. Ajouter sur chaque BDD Twin la relation mono `Source(s) d'information` vers la BDD Sources d'informations.
+3. Si les formules ont été différées, les ajouter (queue de schéma, acceptable).
+
+#### QA finale par BDD
+1. Nombre de propriétés cohérent avec le manuel.
+2. Toutes les options taxos peuplées correctement (libellés + couleurs).
+3. Aucune propriété "fantôme" (créée par Notion à la volée, non documentée dans le manuel).
+4. Mettre à jour la fiche du Manuel correspondant dans la BDD `Manuels de BDD` Notion : renseigner `Lien vers la BDD Notion` (URL de la nouvelle BDD).
 
 ### Notes opérationnelles
 
@@ -329,7 +354,7 @@ Générer une BDD du Digital Twin sur Notion à partir de son manuel parent (sou
 
 - **R-045** : source = manuel parent.
 - **R-046** : ordre de création (DBs → props → relations → rollups → ordering).
-- **R-047** : convention d'ordering en 4 blocs.
+- **R-047** (v2.2, 27-04-2026) : convention d'ordering en **7 blocs**, jumelles textes (Bloc 2c) et relations (Bloc 5) découplées en passes séparées pour préserver l'ordering global des 28 BDD (contrainte Notion DDL : pas de réordonnancement, et création d'une relation bidir crée automatiquement le miroir côté cible).
 - **R-048** : naming BDD = nom canonique simple.
 - **R-014** : sandboxes — pas de relations réelles sauf Sources.
 - **R-019** : architecture en 5 couches d'une BDD bien spécifiée.

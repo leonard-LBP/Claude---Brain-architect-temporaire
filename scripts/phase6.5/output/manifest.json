@@ -153,6 +153,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -2350,6 +2363,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -2949,6 +2975,19 @@
             "taxo_codes": [
               "OBJ.CONFIDENTIALITE.LBP"
             ],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
             "section": "4.1"
@@ -4013,6 +4052,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -4833,6 +4885,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
@@ -5867,6 +5932,19 @@
               "OBJ.CONFIDENTIALITE.LBP"
             ],
             "taxo_niveau": "taxon",
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
             "block": 3,
             "section": "4.1"
           },
@@ -7058,6 +7136,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -7924,6 +8015,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
@@ -9459,6 +9563,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -10618,6 +10735,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -11312,6 +11442,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -11501,7 +11644,7 @@
           },
           {
             "name": "Site web principal",
-            "category": "unknown",
+            "category": "url",
             "type_raw": "URL",
             "portee": "Conditionnel",
             "cardinality": "0..1",
@@ -12426,6 +12569,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
@@ -13702,6 +13858,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
@@ -15160,6 +15329,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -16504,6 +16686,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,
@@ -18690,6 +18885,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -19555,6 +19763,19 @@
             "section": "4.1"
           },
           {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
             "name": "Created Date",
             "category": "date",
             "type_raw": "Date",
@@ -20060,6 +20281,19 @@
             "cardinality": "0..N",
             "nature": "Saisie",
             "forme_logique": "Log structuré",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 3,
+            "section": "4.1"
+          },
+          {
+            "name": "Lien vers la note avancée",
+            "category": "url",
+            "type_raw": "URL",
+            "portee": "Générique",
+            "cardinality": "0..1",
+            "nature": "Saisie",
+            "forme_logique": "URL stable",
             "taxo_codes": [],
             "taxo_niveau": null,
             "block": 3,

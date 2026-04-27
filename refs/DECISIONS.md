@@ -3,7 +3,7 @@
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 27-04-2026 — ajout D-017 (familles UI/UX comme prisme transverse)
+> Dernière mise à jour : 27-04-2026 — ajout D-018 (Bricks de connaissance comme Notes avancées des objets Twin, lien avec R-050)
 
 ---
 
@@ -418,6 +418,27 @@
   - **Ancrages** — *Ce qui oriente, soutient, amplifie ou freine durablement l'action organisationnelle* (3 BDD : Principes organisationnels, Capacités organisationnelles, Modulateurs)
   - **Objets candidats** — *Les objets organisationnels saisis directement quand la source les exprime explicitement, en complément des BDD-sas qui les déduisent par croisement (Enjeux → Problématiques+OKR ; Actions détectées → Pratiques+Initiatives+Processus candidats). Court-circuit opportuniste de la déduction.* (6 BDD sandbox)
 - **Note typographique** : `Objets candidats` est intentionnellement en **2 mots** alors que les 6 autres familles sont en 1 mot. Cette dissonance typographique est **assumée** : elle signale visuellement que cette famille n'est pas un prisme de l'entreprise comme les autres, mais un statut d'objet (en cours de qualification). Le terme `Candidats` seul a été écarté car ambigu dans un contexte entreprise (pourrait évoquer des candidatures RH).
+
+---
+
+### D-018 : Bricks de connaissance comme Notes avancées des objets Twin
+
+- **Date** : 27-04-2026
+- **Statut** : Adoptée
+- **Portée** : Twin + écosystème Bricks
+- **Contexte** : Les fiches structurées du Twin (propriétés natives + relations + 5D) donnent une vue **quasi-tabulaire** d'un objet. Mais certains objets méritent une **profondeur narrative** : profil organisationnel d'une Organisation, profil détaillé d'un Individu, carte causale d'une Problématique, dossier complet d'un Actif critique, etc. Cette profondeur ne peut pas être portée par les propriétés structurées sans casser la lisibilité de la fiche. Or l'écosystème LBP dispose déjà d'un mécanisme adapté : les **Bricks** (livrables instanciés depuis des Templates de Bricks).
+- **Options envisagées** :
+  1. Ajouter des champs texte longs supplémentaires dans la fiche pour porter la profondeur → rejeté : alourdit la fiche, pas de format imposé, pas de réutilisabilité.
+  2. Créer un nouvel objet "Note avancée" comme BDD séparée → rejeté : doublon avec les Bricks existants.
+  3. **Réutiliser les Bricks** comme support des Notes avancées et lier la fiche Twin via une URL → **retenu**.
+- **Choix retenu** : Une **Note avancée** d'un objet Twin = un **Brick de connaissance** instancié depuis un Template de Brick approprié (ex. `Template Brick - Profil organisationnel`, `Template Brick - Profil - Collectifs & Individus`). La fiche Twin de l'objet contient une propriété URL `Lien vers la note avancée` (R-050) qui pointe vers ce Brick. Les agents qui accompagnent le consultant peuvent consulter ces Bricks à la demande (focus contextuel).
+- **Conséquences** :
+  - ✅ Cohérence avec l'écosystème Bricks existant (pas de nouvel objet à inventer).
+  - ✅ Profondeur narrative découplée de la fiche structurée (lisibilité préservée).
+  - ✅ Réutilisation des Templates de Bricks pour homogénéiser les Notes avancées.
+  - ⚠ Restriction : les Notes avancées ne sont produites **que pour des objets stabilisés** (cf. R-050 — exclusion sandbox, candidats, signaux, actions, indicateurs). On ne sur-documente pas un objet en cours de qualification.
+  - 🔜 Identifier ou créer les Templates de Bricks "profil avancé" pour chaque type d'objet (Organisation, Collectif, Individu, Poste, Actif, Environnement, Événement, etc.).
+- **Règles associées** : R-050 (déclaration de la propriété `Lien vers la note avancée`), R-047 v2.1 (position dans l'ordering).
 - **Conséquences** :
   - ✅ Cohérence app ↔ Brain : la classification utilisée par l'app LBP est documentée dans le Brain, source de vérité.
   - ✅ Prisme **complémentaire** (non substitutif) aux autres : `architecture_family`, `knowledge_regime`, `officiality_regime` restent inchangés et servent la gouvernance technique.

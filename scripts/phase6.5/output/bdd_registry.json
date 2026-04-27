@@ -11,196 +11,224 @@
       "data_source_id": "8e398c8d-bf0d-4fec-b393-61a10c557d57",
       "url": "https://www.notion.so/02bbb8b8c16949d5ae85af122744adfc",
       "category": "socle_structurel",
-      "ui_family": "Cadres"
+      "ui_family": "Cadres",
+      "view_id": "79f513fa-74c4-4557-a473-598ebaf27181"
     },
     "Organisations": {
       "database_id": "f430f0e1-4487-4e95-b023-de12fff06cc9",
       "data_source_id": "ceaf07f7-0809-4428-8d31-9db52d87bf33",
       "url": "https://www.notion.so/f430f0e144874e95b023de12fff06cc9",
       "category": "socle_structurel",
-      "ui_family": "Structure"
+      "ui_family": "Structure",
+      "view_id": "ceea7d8d-1d01-451e-8ae4-daa68a3240a7"
     },
     "Collectifs": {
       "database_id": "8273d7ce-cb47-4cee-b518-32b50a9774a4",
       "data_source_id": "86af5eb1-d46d-4d8b-ae69-cfc4488fc262",
       "url": "https://www.notion.so/8273d7cecb474ceeb51832b50a9774a4",
       "category": "socle_structurel",
-      "ui_family": "Structure"
+      "ui_family": "Structure",
+      "view_id": "fd2549fc-1a04-4806-8e5c-e67d431d3b4b"
     },
     "Postes": {
       "database_id": "824c38b8-a543-48c7-a1eb-62db612edf0c",
       "data_source_id": "d1871545-d33e-481c-9813-ce15336aac67",
       "url": "https://www.notion.so/824c38b8a54348c7a1eb62db612edf0c",
       "category": "socle_structurel",
-      "ui_family": "Structure"
+      "ui_family": "Structure",
+      "view_id": "2c78ce3d-c773-41a2-9669-fba2b22372ef"
     },
     "Individus": {
       "database_id": "0654479a-8e71-4db4-b53d-f8164c9488e8",
       "data_source_id": "fd19eb5d-b866-4b38-9bb9-20e3c3c683ae",
       "url": "https://www.notion.so/0654479a8e714db4b53df8164c9488e8",
       "category": "socle_structurel",
-      "ui_family": "Structure"
+      "ui_family": "Structure",
+      "view_id": "6464727a-cca9-43a7-a43d-e8254ac3699a"
     },
     "Environnements": {
       "database_id": "a5fe13ee-059c-4e56-afef-d1ddf636d4ba",
       "data_source_id": "51eaf391-05b3-4276-b8f5-6010dc8a0287",
       "url": "https://www.notion.so/a5fe13ee059c4e56afefd1ddf636d4ba",
       "category": "socle_structurel",
-      "ui_family": "Cadres"
+      "ui_family": "Cadres",
+      "view_id": "6b294c80-3c3a-4ee8-bf13-cf4904d10ad3"
     },
     "Événements": {
       "database_id": "dbae74f1-f39c-4768-8325-b9520421c00e",
       "data_source_id": "e5aaaac9-5eb3-4bcc-a10a-73e9891100da",
       "url": "https://www.notion.so/dbae74f1f39c47688325b9520421c00e",
       "category": "socle_structurel",
-      "ui_family": "Cadres"
+      "ui_family": "Cadres",
+      "view_id": "96781e5c-39c1-4597-97ae-af0594c15847"
     },
     "Relations inter-organisations": {
       "database_id": "77ee6f72-5212-4534-91cf-ad29c8aabd7d",
       "data_source_id": "e87dade3-7806-466b-961d-6c0449857d99",
       "url": "https://www.notion.so/77ee6f725212453491cfad29c8aabd7d",
       "category": "socle_structurel",
-      "ui_family": "Structure"
+      "ui_family": "Structure",
+      "view_id": "4e71c9ba-355f-446b-a399-cfafd9ef5a38"
     },
     "Actions détectées": {
       "database_id": "8d5463cc-7ec8-4732-8961-1f3f411a05f8",
       "data_source_id": "eefcb09b-253c-46e6-b67c-7a5d28863ff0",
       "url": "https://www.notion.so/8d5463cc7ec8473289611f3f411a05f8",
       "category": "extraction_factuelle",
-      "ui_family": "Moteur"
+      "ui_family": "Moteur",
+      "view_id": "8d14ab3f-8f38-46fd-a045-6c7fb004895b"
     },
     "Enjeux": {
       "database_id": "d87489b8-06b8-4f3a-9806-2685e5c91b07",
       "data_source_id": "eecdfc29-cedf-481f-8cd4-4d0ae52e23cc",
       "url": "https://www.notion.so/d87489b806b84f3a98062685e5c91b07",
       "category": "extraction_factuelle",
-      "ui_family": "Pilotage"
+      "ui_family": "Pilotage",
+      "view_id": "b727265f-eb11-4653-91fd-4a52f27f5db8"
     },
     "Journal des signaux": {
       "database_id": "1f1de119-8ea6-4522-ae6d-4de335ed99a6",
       "data_source_id": "9f429a5c-518d-4e13-a57e-10c5ede57e86",
       "url": "https://www.notion.so/1f1de1198ea64522ae6d4de335ed99a6",
       "category": "extraction_factuelle",
-      "ui_family": "Pilotage"
+      "ui_family": "Pilotage",
+      "view_id": "a2ce0e72-c0a8-42aa-9872-1b7e4500da4b"
     },
     "Glossaire spécifique": {
       "database_id": "02990aa5-ba54-4aab-bbd4-5b72827d2641",
       "data_source_id": "f2d74c98-b041-4fd8-b56a-8946e76cd817",
       "url": "https://www.notion.so/02990aa5ba544aabbbd45b72827d2641",
       "category": "semantique",
-      "ui_family": "Langage"
+      "ui_family": "Langage",
+      "view_id": "4b5282dc-4b3e-4359-a2ce-7997f5616965"
     },
     "Initiatives organisationnelles": {
       "database_id": "724fb060-1bc5-4c70-813a-ca3b4d6d0ee6",
       "data_source_id": "02a9770a-a9cd-43aa-90aa-90f11f5523cf",
       "url": "https://www.notion.so/724fb0601bc54c70813aca3b4d6d0ee6",
       "category": "mouvement",
-      "ui_family": "Moteur"
+      "ui_family": "Moteur",
+      "view_id": "0a7d47b6-9ff3-4053-8e34-cbf7fa8839e9"
     },
     "Modulateurs": {
       "database_id": "f7c33915-ca84-4979-ab9e-f2496ca333b9",
       "data_source_id": "2172c9b9-c0e5-47eb-942d-5894a553f82a",
       "url": "https://www.notion.so/f7c33915ca844979ab9ef2496ca333b9",
       "category": "pivot",
-      "ui_family": "Ancrages"
+      "ui_family": "Ancrages",
+      "view_id": "c68cc1f6-c950-4f57-9742-50029caa6427"
     },
     "Processus candidats": {
       "database_id": "9cbb5b29-0aee-49d9-8608-9df12ace9ab6",
       "data_source_id": "8f11ed44-18dc-4e89-9baa-70e3c849e253",
       "url": "https://www.notion.so/9cbb5b290aee49d986089df12ace9ab6",
       "category": "observation",
-      "ui_family": "Moteur"
+      "ui_family": "Moteur",
+      "view_id": "c3e4493c-a10c-41ba-90d2-23eb4b379d9e"
     },
     "Capacités organisationnelles": {
       "database_id": "ccd9e6bb-e153-47c7-a6f2-87533e63b90e",
       "data_source_id": "f1d7dbaa-c054-4d07-ab28-fbe800c3002c",
       "url": "https://www.notion.so/ccd9e6bbe15347c7a6f287533e63b90e",
       "category": "analytique",
-      "ui_family": "Ancrages"
+      "ui_family": "Ancrages",
+      "view_id": "92b216db-459b-4c10-ac5f-c95938019e7b"
     },
     "Indicateurs": {
       "database_id": "f148d9e4-22c8-46c8-8b65-9ad026c2972d",
       "data_source_id": "fe9b200f-97c7-4805-9710-5a821d538d0b",
       "url": "https://www.notion.so/f148d9e422c846c88b659ad026c2972d",
       "category": "analytique",
-      "ui_family": "Pilotage"
+      "ui_family": "Pilotage",
+      "view_id": "c263b3ad-c8b0-496c-8715-eb93e5292ed8"
     },
     "OKR": {
       "database_id": "27a22863-1f07-430c-a2b2-c4f769c9bc71",
       "data_source_id": "09e20d61-0443-4b25-a8f4-fe8f57024637",
       "url": "https://www.notion.so/27a228631f07430ca2b2c4f769c9bc71",
       "category": "analytique",
-      "ui_family": "Pilotage"
+      "ui_family": "Pilotage",
+      "view_id": "d4b13432-e2db-41f8-8dd8-8e8a1f775f40"
     },
     "Pratiques organisationnelles": {
       "database_id": "5f4ec59a-5f46-44fe-815b-63c58be96d3f",
       "data_source_id": "00e31d97-9ae0-4304-b821-71d41aead7b6",
       "url": "https://www.notion.so/5f4ec59a5f4644fe815b63c58be96d3f",
       "category": "analytique",
-      "ui_family": "Moteur"
+      "ui_family": "Moteur",
+      "view_id": "9afe0cb2-e214-4a27-b492-e870c288f9ac"
     },
     "Principes organisationnels": {
       "database_id": "9f83b71e-dd0c-44d0-a6b9-1a16425cecdc",
       "data_source_id": "00349e89-05d9-4dfd-be7c-534e7844da88",
       "url": "https://www.notion.so/9f83b71edd0c44d0a6b91a16425cecdc",
       "category": "analytique",
-      "ui_family": "Ancrages"
+      "ui_family": "Ancrages",
+      "view_id": "a61f55fe-0b45-4c94-8c79-cc069a25f74c"
     },
     "Problématiques": {
       "database_id": "258c8b5b-c125-42ae-af13-3247f92514d9",
       "data_source_id": "e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
       "url": "https://www.notion.so/258c8b5bc12542aeaf133247f92514d9",
       "category": "analytique",
-      "ui_family": "Pilotage"
+      "ui_family": "Pilotage",
+      "view_id": "4eb16220-757a-48be-a2cc-d76f43c05182"
     },
     "Processus": {
       "database_id": "1ad86156-6aa2-48a3-bb5a-a18d292dacf9",
       "data_source_id": "d7cf0f34-efe1-467e-8912-65f61a4a1f14",
       "url": "https://www.notion.so/1ad861566aa248a3bb5aa18d292dacf9",
       "category": "analytique",
-      "ui_family": "Moteur"
+      "ui_family": "Moteur",
+      "view_id": "d03d5461-4006-46fa-8ce5-02f7a9808761"
     },
     "Capacités métier candidates sandbox": {
       "database_id": "26ea3ad1-30b0-4cd2-a32e-022d4b8edeea",
       "data_source_id": "9219d493-5a4e-41be-a651-abc0c35e4b82",
       "url": "https://www.notion.so/26ea3ad130b04cd2a32e022d4b8edeea",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "348a1e9a-523c-4ae8-bed7-70cdd4824b54"
     },
     "OKR sandbox": {
       "database_id": "442887a9-de92-49d1-b7a8-c80b7528357e",
       "data_source_id": "2b24d7bf-95a6-4bec-9a67-e9846edc0e33",
       "url": "https://www.notion.so/442887a9de9249d1b7a8c80b7528357e",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "24450e5d-3740-4238-9b25-738e8ec50dfb"
     },
     "Pratiques organisationnelles sandbox": {
       "database_id": "c5694c2a-603a-406a-807e-49bcbdd228b5",
       "data_source_id": "e6b8d99a-5400-416c-8206-cd16d2f8c279",
       "url": "https://www.notion.so/c5694c2a603a406a807e49bcbdd228b5",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "d1277f7e-2803-4928-8871-97967e7dea8d"
     },
     "Principes organisationnels sandbox": {
       "database_id": "a9476f33-3c63-4c4f-83f7-0f40ffbb862c",
       "data_source_id": "25480353-1673-4e22-8612-0161b87757e2",
       "url": "https://www.notion.so/a9476f333c634c4f83f70f40ffbb862c",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "332b91ef-0125-43ec-b7e7-62754f60849b"
     },
     "Problématiques sandbox": {
       "database_id": "b97d70cf-159e-4b1a-a052-beb54e183211",
       "data_source_id": "24b457fd-3e01-404b-9db1-d50eaef59e62",
       "url": "https://www.notion.so/b97d70cf159e4b1aa052beb54e183211",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "a35ef3d0-b21d-427f-8252-a5a48fa9055e"
     },
     "Processus candidats sandbox": {
       "database_id": "6f73d1a1-af80-469e-a376-514154120bc6",
       "data_source_id": "34dbabd2-982e-40d7-81e3-7801235ccfb8",
       "url": "https://www.notion.so/6f73d1a1af80469ea376514154120bc6",
       "category": "sandbox",
-      "ui_family": "Objets candidats"
+      "ui_family": "Objets candidats",
+      "view_id": "f624e9cc-c0e3-4909-8269-6d2c8a2e670f"
     }
   },
   "external_dependencies": {

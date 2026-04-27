@@ -132,6 +132,10 @@ def classify_field(row):
     if type_ in ("Number", "Nombre"):
         return "number", {}
 
+    # URL (e.g. Lien vers la note avancée)
+    if type_ == "URL":
+        return "url", {}
+
     # Select / Multi-select
     if type_ == "Sélection":
         return "select", {}
@@ -163,8 +167,9 @@ HEAD_GENERIC = [
     "Erreurs de transcription",
 ]
 
-# Bloc 3 — queue générique
+# Bloc 3 — queue générique (R-047 v2.1 : Lien vers la note avancée en tête)
 TAIL_GENERIC = [
+    "Lien vers la note avancée",  # R-050, conditionnel, tête du Bloc 3
     "Exemples concrets",
     "Commentaires libres",
     "Notes du consultant",
