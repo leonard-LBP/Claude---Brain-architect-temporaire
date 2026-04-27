@@ -1,0 +1,293 @@
+[
+  {
+    "bdd": "Actifs",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Actions détectées",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Capacités métier candidates sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Capacités organisationnelles",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Collectifs",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Enjeux",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Environnements",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Glossaire spécifique",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Indicateurs",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Individus",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Initiatives organisationnelles",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Journal des signaux",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Modulateurs",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "OKR sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "OKR",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Organisations",
+    "missing_added": [
+      {
+        "name": "profil 5D d’exposition (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "profil 5D d’action / transformation (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "profil 5D normatif (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "profil 5D de pilotage (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "profil 5D de mesure (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "profil 5D d’expression indirecte (agrégé)",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "Sous-dimensions (5D) impactées par les problématiques affectantes",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "Sous-dimensions (5D) travaillées par les pratiques observées",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "Sous-dimensions (5D) visées par les OKR portés",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "Sous-dimensions (5D) lues par les indicateurs qui mesurent l’organisation",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      },
+      {
+        "name": "Sous-dimensions (5D) impactées par les enjeux exprimés indirectement",
+        "section": "4.3",
+        "status": "added",
+        "wrrd_section": "3"
+      }
+    ],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Postes",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Pratiques organisationnelles sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Pratiques organisationnelles",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Principes organisationnels sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Principes organisationnels",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Problématiques sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Problématiques",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Processus candidats sandbox",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Processus candidats",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Processus",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Relations inter-organisations",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  },
+  {
+    "bdd": "Événements",
+    "missing_added": [],
+    "type_mismatches": [],
+    "wrrd_missing": false,
+    "manuel_missing": false,
+    "error": null
+  }
+]

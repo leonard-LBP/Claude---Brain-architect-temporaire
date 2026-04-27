@@ -1,0 +1,56 @@
+[
+  {
+    "bdd": "Glossaire spécifique",
+    "ds": "f2d74c98-b041-4fd8-b56a-8946e76cd817",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT; ADD COLUMN \"Exemples concrets\" RICH_TEXT; ADD COLUMN \"Commentaires libres\" RICH_TEXT; ADD COLUMN \"Notes du consultant\" RICH_TEXT; ADD COLUMN \"Indices observés\" RICH_TEXT; ADD COLUMN \"Indices d’existence de l’objet\" RICH_TEXT; ADD COLUMN \"Logs / Révisions LBP\" RICH_TEXT; ADD COLUMN \"Merge Notes\" RICH_TEXT; ADD COLUMN \"Merge Flags\" RICH_TEXT; ADD COLUMN \"Expressions proches / termes associés\" RICH_TEXT",
+    "n": 10
+  },
+  {
+    "bdd": "Indicateurs",
+    "ds": "fe9b200f-97c7-4805-9710-5a821d538d0b",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "Modulateurs",
+    "ds": "2172c9b9-c0e5-47eb-942d-5894a553f82a",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "OKR sandbox",
+    "ds": "2b24d7bf-95a6-4bec-9a67-e9846edc0e33",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "OKR",
+    "ds": "09e20d61-0443-4b25-a8f4-fe8f57024637",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "Pratiques organisationnelles",
+    "ds": "00e31d97-9ae0-4304-b821-71d41aead7b6",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "Principes organisationnels",
+    "ds": "00349e89-05d9-4dfd-be7c-534e7844da88",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "Problématiques",
+    "ds": "e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  },
+  {
+    "bdd": "Processus",
+    "ds": "d7cf0f34-efe1-467e-8912-65f61a4a1f14",
+    "ddl": "ADD COLUMN \"Description\" RICH_TEXT",
+    "n": 1
+  }
+]

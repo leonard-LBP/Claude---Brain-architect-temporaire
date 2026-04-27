@@ -1,0 +1,274 @@
+{
+  "Glossaire spécifique": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Exemples concrets",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Commentaires libres",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Notes du consultant",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Indices observés",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Indices d’existence de l’objet",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Logs / Révisions LBP",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Merge Notes",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Merge Flags",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    },
+    {
+      "name": "Expressions proches / termes associés",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.2",
+      "taxonomies": [],
+      "portee": "Conditionnel"
+    }
+  ],
+  "Indicateurs": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "Modulateurs": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "OKR sandbox": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "OKR": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "Organisations": [
+    {
+      "name": "Sous-dimensions (5D) impactées par les problématiques affectantes",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Sous-dimensions (5D) travaillées par les pratiques observées",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Sous-dimensions (5D) visées par les OKR portés",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Sous-dimensions (5D) lues par les indicateurs qui mesurent l’organisation",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    }
+  ],
+  "Pratiques organisationnelles": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "Principes organisationnels": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "Problématiques": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ],
+  "Processus candidats sandbox": [
+    {
+      "name": "mobilise (actifs)",
+      "type": "RELATION",
+      "raw_type": "Relation (support implicite du WR/RD ; BDD cible : Actifs ; propriété miroir non explicitée en V1 sandbox)",
+      "section": "4.3",
+      "taxonomies": [],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "agrège (actions détectées)",
+      "type": "ROLLUP",
+      "raw_type": "Relation (support implicite de rollups ; BDD cible : Actions détectées ; propriété miroir non explicitée en V1 sandbox)",
+      "section": "4.3",
+      "taxonomies": [],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Intentions principales des actions agrégées",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Intention principale` ; BDD source : `Actions détectées`)",
+      "section": "4.3",
+      "taxonomies": [
+        "ACT.INTENT.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Domaines d’impact des actions agrégées",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Domaines d’impact` ; BDD source : `Actions détectées`)",
+      "section": "4.3",
+      "taxonomies": [
+        "ACT.IMPACT_DOMAIN.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Dimensions (5D) travaillées par les actions agrégées",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur la dimension (5D)` ; BDD source : `Actions détectées`)",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Sous-dimensions (5D) travaillées par les actions agrégées",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Actions détectées`)",
+      "section": "4.3",
+      "taxonomies": [
+        "ORG5D.DIM.LBP"
+      ],
+      "portee": "Conditionnel"
+    },
+    {
+      "name": "Types d’actifs mobilisés",
+      "type": "ROLLUP",
+      "raw_type": "Agrégation / rollup (relation : `mobilise (actifs)` → propriété source : `Type d’actif` ; BDD source : `Actifs`)",
+      "section": "4.3",
+      "taxonomies": [
+        "ASSET.SUBTYPE.LBP"
+      ],
+      "portee": "Conditionnel"
+    }
+  ],
+  "Processus": [
+    {
+      "name": "Description",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1",
+      "taxonomies": [],
+      "portee": "Générique"
+    }
+  ]
+}

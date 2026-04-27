@@ -1,0 +1,170 @@
+{
+  "Actifs": {
+    "n_props": 60,
+    "n_expected_notion": 57,
+    "n_expected_wrrd": 60,
+    "has_advanced_note": true
+  },
+  "Actions détectées": {
+    "n_props": 59,
+    "n_expected_notion": 57,
+    "n_expected_wrrd": 59,
+    "has_advanced_note": false
+  },
+  "Capacités métier candidates sandbox": {
+    "n_props": 35,
+    "n_expected_notion": 33,
+    "n_expected_wrrd": 35,
+    "has_advanced_note": false
+  },
+  "Capacités organisationnelles": {
+    "n_props": 49,
+    "n_expected_notion": 49,
+    "n_expected_wrrd": 49,
+    "has_advanced_note": true
+  },
+  "Collectifs": {
+    "n_props": 76,
+    "n_expected_notion": 69,
+    "n_expected_wrrd": 76,
+    "has_advanced_note": true
+  },
+  "Enjeux": {
+    "n_props": 57,
+    "n_expected_notion": 56,
+    "n_expected_wrrd": 57,
+    "has_advanced_note": true
+  },
+  "Environnements": {
+    "n_props": 74,
+    "n_expected_notion": 71,
+    "n_expected_wrrd": 74,
+    "has_advanced_note": true
+  },
+  "Glossaire spécifique": {
+    "n_props": 33,
+    "n_expected_notion": 32,
+    "n_expected_wrrd": 33,
+    "has_advanced_note": true
+  },
+  "Indicateurs": {
+    "n_props": 56,
+    "n_expected_notion": 55,
+    "n_expected_wrrd": 56,
+    "has_advanced_note": false
+  },
+  "Individus": {
+    "n_props": 63,
+    "n_expected_notion": 58,
+    "n_expected_wrrd": 63,
+    "has_advanced_note": true
+  },
+  "Initiatives organisationnelles": {
+    "n_props": 67,
+    "n_expected_notion": 64,
+    "n_expected_wrrd": 67,
+    "has_advanced_note": true
+  },
+  "Journal des signaux": {
+    "n_props": 40,
+    "n_expected_notion": 39,
+    "n_expected_wrrd": 40,
+    "has_advanced_note": false
+  },
+  "Modulateurs": {
+    "n_props": 47,
+    "n_expected_notion": 45,
+    "n_expected_wrrd": 47,
+    "has_advanced_note": true
+  },
+  "OKR sandbox": {
+    "n_props": 36,
+    "n_expected_notion": 35,
+    "n_expected_wrrd": 36,
+    "has_advanced_note": false
+  },
+  "OKR": {
+    "n_props": 49,
+    "n_expected_notion": 49,
+    "n_expected_wrrd": 49,
+    "has_advanced_note": true
+  },
+  "Organisations": {
+    "n_props": 90,
+    "n_expected_notion": 82,
+    "n_expected_wrrd": 90,
+    "has_advanced_note": true
+  },
+  "Postes": {
+    "n_props": 47,
+    "n_expected_notion": 46,
+    "n_expected_wrrd": 47,
+    "has_advanced_note": true
+  },
+  "Pratiques organisationnelles sandbox": {
+    "n_props": 48,
+    "n_expected_notion": 44,
+    "n_expected_wrrd": 48,
+    "has_advanced_note": false
+  },
+  "Pratiques organisationnelles": {
+    "n_props": 75,
+    "n_expected_notion": 71,
+    "n_expected_wrrd": 75,
+    "has_advanced_note": true
+  },
+  "Principes organisationnels sandbox": {
+    "n_props": 33,
+    "n_expected_notion": 32,
+    "n_expected_wrrd": 33,
+    "has_advanced_note": false
+  },
+  "Principes organisationnels": {
+    "n_props": 42,
+    "n_expected_notion": 42,
+    "n_expected_wrrd": 42,
+    "has_advanced_note": true
+  },
+  "Problématiques sandbox": {
+    "n_props": 54,
+    "n_expected_notion": 53,
+    "n_expected_wrrd": 54,
+    "has_advanced_note": false
+  },
+  "Problématiques": {
+    "n_props": 71,
+    "n_expected_notion": 71,
+    "n_expected_wrrd": 71,
+    "has_advanced_note": true
+  },
+  "Processus candidats sandbox": {
+    "n_props": 45,
+    "n_expected_notion": 43,
+    "n_expected_wrrd": 45,
+    "has_advanced_note": false
+  },
+  "Processus candidats": {
+    "n_props": 42,
+    "n_expected_notion": 42,
+    "n_expected_wrrd": 42,
+    "has_advanced_note": false
+  },
+  "Processus": {
+    "n_props": 62,
+    "n_expected_notion": 62,
+    "n_expected_wrrd": 62,
+    "has_advanced_note": true
+  },
+  "Relations inter-organisations": {
+    "n_props": 37,
+    "n_expected_notion": 34,
+    "n_expected_wrrd": 37,
+    "has_advanced_note": true
+  },
+  "Événements": {
+    "n_props": 63,
+    "n_expected_notion": 61,
+    "n_expected_wrrd": 63,
+    "has_advanced_note": true
+  }
+}
