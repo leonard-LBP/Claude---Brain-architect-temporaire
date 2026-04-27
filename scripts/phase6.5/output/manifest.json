@@ -1364,88 +1364,6 @@
             "section": "4.3"
           },
           {
-            "name": "Types de pratiques alimentées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (pratiques organisationnelles) → Type de pratique)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques alimentées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (pratiques organisationnelles) → agit principalement sur les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Niveaux de process des processus candidats alimentés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (processus candidats) → Niveau de process)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Intentions dominantes des processus candidats alimentés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (processus candidats) → Intention dominante)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’initiatives alimentées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (initiatives organisationnelles) → Type d’initiative)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les initiatives alimentées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (initiatives organisationnelles) → Sous-dimension(s) 5D principalement travaillées)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "agit principalement sur la dimension (5D)",
             "category": "select",
             "type_raw": "Sélection",
@@ -1644,7 +1562,102 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Types de pratiques alimentées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (pratiques organisationnelles) → Type de pratique)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (pratiques organisationnelles)",
+            "target_property": "Type de pratique"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques alimentées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (pratiques organisationnelles) → agit principalement sur les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (pratiques organisationnelles)",
+            "target_property": "agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Niveaux de process des processus candidats alimentés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (processus candidats) → Niveau de process)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (processus candidats)",
+            "target_property": "Niveau de process"
+          },
+          {
+            "name": "Intentions dominantes des processus candidats alimentés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (processus candidats) → Intention dominante)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (processus candidats)",
+            "target_property": "Intention dominante"
+          },
+          {
+            "name": "Types d’initiatives alimentées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (initiatives organisationnelles) → Type d’initiative)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (initiatives organisationnelles)",
+            "target_property": "Type d’initiative"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les initiatives alimentées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (initiatives organisationnelles) → Sous-dimension(s) 5D principalement travaillées)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (initiatives organisationnelles)",
+            "target_property": "Sous-dimension(s"
+          }
+        ],
         "text_twins": [
           {
             "name": "concerne (organisations) (texte)",
@@ -2555,96 +2568,6 @@
             "section": "4.2"
           },
           {
-            "name": "Types de pratiques alimentant la capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est alimentée par (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "PRA.TYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques alimentant la capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est alimentée par (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques révélant l’écart de capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `écart révélé par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) visées par les OKR ciblant la capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est ciblée par (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les initiatives renforçant la capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est renforcée par (initiatives organisationnelles)` → propriété source : `Sous-dimension(s) 5D principalement travaillées` ; BDD source : `Initiatives organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) lues par les indicateurs mesurant la capacité",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est mesurée par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "Sous-dimension(s) 5D cœur de la capacité",
             "category": "multi_select",
             "type_raw": "Multi-sélection",
@@ -2796,7 +2719,110 @@
             "bidirectional": true
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Types de pratiques alimentant la capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est alimentée par (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "PRA.TYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est alimentée par (pratiques organisationnelles)`",
+            "target_property": "propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques alimentant la capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est alimentée par (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est alimentée par (pratiques organisationnelles)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques révélant l’écart de capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `écart révélé par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `écart révélé par (problématiques)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) visées par les OKR ciblant la capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est ciblée par (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est ciblée par (OKR)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les initiatives renforçant la capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est renforcée par (initiatives organisationnelles)` → propriété source : `Sous-dimension(s) 5D principalement travaillées` ; BDD source : `Initiatives organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est renforcée par (initiatives organisationnelles)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) lues par les indicateurs mesurant la capacité",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est mesurée par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est mesurée par (indicateurs)`",
+            "target_property": "propriété source : `lit principalement les sous-dimensions (5D"
+          }
+        ],
         "text_twins": [
           {
             "name": "concerne (organisations) (texte)",
@@ -3202,169 +3228,6 @@
             "taxo_niveau": null,
             "block": 4,
             "section": "4.3"
-          },
-          {
-            "name": "profil 5D de contribution (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Spécifique",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D d’exposition (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Spécifique",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D de dépendance structurelle (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Spécifique",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D de pilotage (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Conditionnel",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D de mesure (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Conditionnel",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques mises en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `met en œuvre (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques affectantes",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est affecté par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les enjeux exprimés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `exprime (enjeux)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Enjeux`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) visées par les OKR portés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `porte (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) lues par les indicateurs qui mesurent le collectif",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est mesuré par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Principes organisationnels incarnés via les pratiques mises en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup indirect (relation : `met en œuvre (pratiques organisationnelles)` → propriété source : `met en œuvre (principes organisationnels)` ; BDD intermédiaire : `Pratiques organisationnelles` ; BDD source finale : `Principes organisationnels`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de noms de principes",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
           }
         ],
         "relations": [
@@ -3675,7 +3538,188 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "profil 5D de contribution (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Spécifique",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D d’exposition (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Spécifique",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D de dépendance structurelle (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Spécifique",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D de pilotage (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Conditionnel",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D de mesure (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Conditionnel",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques mises en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `met en œuvre (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `met en œuvre (pratiques organisationnelles)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques affectantes",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est affecté par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `est affecté par (problématiques)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les enjeux exprimés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `exprime (enjeux)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Enjeux`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `exprime (enjeux)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) visées par les OKR portés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `porte (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `porte (OKR)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) lues par les indicateurs qui mesurent le collectif",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est mesuré par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `est mesuré par (indicateurs)`",
+            "target_property": "propriété source : `lit principalement les sous-dimensions (5D"
+          },
+          {
+            "name": "Principes organisationnels incarnés via les pratiques mises en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup indirect (relation : `met en œuvre (pratiques organisationnelles)` → propriété source : `met en œuvre (principes organisationnels)` ; BDD intermédiaire : `Pratiques organisationnelles` ; BDD source finale : `Principes organisationnels`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de noms de principes",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `met en œuvre (pratiques organisationnelles)`",
+            "target_property": "propriété source : `met en œuvre (principes organisationnels"
+          }
+        ],
         "text_twins": [
           {
             "name": "est enfant de (collectifs) (texte)",
@@ -4298,96 +4342,6 @@
             "section": "4.3"
           },
           {
-            "name": "Natures des signaux signalant l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → Nature du signal)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "SIG.NATURE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Registres des signaux signalant l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → Registre du signal)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "SIG.REGISTRE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) portées par les signaux signalant l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → porte principalement sur les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’événements contextualisant l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (est contextualisé par (événements) → Type d’événement)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "EVT.TYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques issues de l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (se consolide en (problématiques) → impacte les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) visées par les OKR traduisant l’enjeu",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (se traduit en (OKR) → Sous-dimension(s) 5D principalement visées)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "est observé principalement dans la dimension (5D)",
             "category": "select",
             "type_raw": "Sélection",
@@ -4633,7 +4587,110 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Natures des signaux signalant l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → Nature du signal)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "SIG.NATURE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "est signalé par (journal des signaux)",
+            "target_property": "Nature du signal"
+          },
+          {
+            "name": "Registres des signaux signalant l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → Registre du signal)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "SIG.REGISTRE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "est signalé par (journal des signaux)",
+            "target_property": "Registre du signal"
+          },
+          {
+            "name": "Sous-dimensions (5D) portées par les signaux signalant l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (est signalé par (journal des signaux) → porte principalement sur les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "est signalé par (journal des signaux)",
+            "target_property": "porte principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Types d’événements contextualisant l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (est contextualisé par (événements) → Type d’événement)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "EVT.TYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "est contextualisé par (événements)",
+            "target_property": "Type d’événement"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques issues de l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (se consolide en (problématiques) → impacte les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "se consolide en (problématiques)",
+            "target_property": "impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) visées par les OKR traduisant l’enjeu",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (se traduit en (OKR) → Sous-dimension(s) 5D principalement visées)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "se traduit en (OKR)",
+            "target_property": "Sous-dimension(s"
+          }
+        ],
         "text_twins": [
           {
             "name": "est exprimé par (organisations) (texte)",
@@ -6573,81 +6630,6 @@
             "section": "4.3"
           },
           {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques mesurées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `mesure (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) au cœur des capacités mesurées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `mesure (capacités organisationnelles)` → propriété source : `Sous-dimension(s) 5D cœur de la capacité` ; BDD source : `Capacités organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques mesurées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `mesure (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) visées par les OKR mesurés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `mesure l’atteinte de (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) dominantes des principes suivis",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `suit (principes organisationnels)` → propriété source : `Sous-dimension(s) 5D dominantes` ; BDD source : `Principes organisationnels`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "lit principalement les dimensions (5D)",
             "category": "multi_select",
             "type_raw": "Multi-sélection",
@@ -6850,7 +6832,93 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques mesurées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `mesure (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `mesure (pratiques organisationnelles)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) au cœur des capacités mesurées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `mesure (capacités organisationnelles)` → propriété source : `Sous-dimension(s) 5D cœur de la capacité` ; BDD source : `Capacités organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `mesure (capacités organisationnelles)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques mesurées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `mesure (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `mesure (problématiques)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) visées par les OKR mesurés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `mesure l’atteinte de (OKR)` → propriété source : `Sous-dimension(s) 5D principalement visées` ; BDD source : `OKR`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `mesure l’atteinte de (OKR)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) dominantes des principes suivis",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `suit (principes organisationnels)` → propriété source : `Sous-dimension(s) 5D dominantes` ; BDD source : `Principes organisationnels`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `suit (principes organisationnels)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          }
+        ],
         "text_twins": [
           {
             "name": "mesure la performance de (organisations) (texte)",
@@ -7355,152 +7423,6 @@
             "taxo_niveau": null,
             "block": 4,
             "section": "4.3"
-          },
-          {
-            "name": "profil 5D d’intervention (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Spécifique",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D d’exposition (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Spécifique",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D d’expression (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Conditionnel",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "profil 5D de dépendance fonctionnelle (agrégé)",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup multi-source",
-            "portee": "Conditionnel",
-            "cardinality": "0..N",
-            "nature": "Calculé",
-            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.4"
-          },
-          {
-            "name": "Sous-dimensions (5D) servies par les postes occupés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `occupe (postes)` → propriété source : `sert principalement les sous-dimensions (5D)` ; BDD source : `Postes`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques participées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `participe à (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les environnements concernés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est concerné par (environnements)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Environnements`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les enjeux exprimés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `exprime (enjeux)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Enjeux`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Familles métiers des postes occupés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `occupe (postes)` → propriété source : `Famille métier` ; BDD source : `Postes`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
-          },
-          {
-            "name": "Types de pratiques auxquelles l’individu participe",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `participe à (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.5"
           }
         ],
         "relations": [
@@ -7709,7 +7631,170 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "profil 5D d’intervention (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Spécifique",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D d’exposition (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Spécifique",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D d’expression (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Conditionnel",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "profil 5D de dépendance fonctionnelle (agrégé)",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup multi-source",
+            "portee": "Conditionnel",
+            "cardinality": "0..N",
+            "nature": "Calculé",
+            "forme_logique": "Liste consolidée de sous-dimensions 5D distinctes, priorisées",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.4",
+            "raw_type": "Agrégation / rollup multi-source"
+          },
+          {
+            "name": "Sous-dimensions (5D) servies par les postes occupés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `occupe (postes)` → propriété source : `sert principalement les sous-dimensions (5D)` ; BDD source : `Postes`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `occupe (postes)`",
+            "target_property": "propriété source : `sert principalement les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques participées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `participe à (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `participe à (pratiques organisationnelles)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les environnements concernés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est concerné par (environnements)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Environnements`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `est concerné par (environnements)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les enjeux exprimés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `exprime (enjeux)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Enjeux`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `exprime (enjeux)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Familles métiers des postes occupés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `occupe (postes)` → propriété source : `Famille métier` ; BDD source : `Postes`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `occupe (postes)`",
+            "target_property": "propriété source : `Famille métier` ; BDD source : `Postes`"
+          },
+          {
+            "name": "Types de pratiques auxquelles l’individu participe",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `participe à (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.5",
+            "source_relation": "relation : `participe à (pratiques organisationnelles)`",
+            "target_property": "propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`"
+          }
+        ],
         "text_twins": [
           {
             "name": "est affilié à (organisations) (texte)",
@@ -9210,77 +9295,6 @@
             "section": "4.3"
           },
           {
-            "name": "Types d’expression des enjeux alimentés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (enjeux) → Type d’expression)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Domaines des enjeux alimentés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (enjeux) → Domaine(s) de l’enjeu)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les enjeux alimentés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (enjeux) → impacte les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’événements signalés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (signale (événements) → Type d’événement)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "EVT.TYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Criticité des événements signalés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (signale (événements) → Criticité de l’événement (1–5))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques ordinales",
-            "taxo_codes": [
-              "SCALE.CRITICALITY.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "est observé principalement dans la dimension (5D)",
             "category": "select",
             "type_raw": "Sélection",
@@ -9381,7 +9395,89 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Types d’expression des enjeux alimentés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (enjeux) → Type d’expression)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (enjeux)",
+            "target_property": "Type d’expression"
+          },
+          {
+            "name": "Domaines des enjeux alimentés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (enjeux) → Domaine(s) de l’enjeu)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (enjeux)",
+            "target_property": "Domaine(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les enjeux alimentés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (enjeux) → impacte les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (enjeux)",
+            "target_property": "impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Types d’événements signalés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (signale (événements) → Type d’événement)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "EVT.TYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "signale (événements)",
+            "target_property": "Type d’événement"
+          },
+          {
+            "name": "Criticité des événements signalés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (signale (événements) → Criticité de l’événement (1–5))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques ordinales",
+            "taxo_codes": [
+              "SCALE.CRITICALITY.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "signale (événements)",
+            "target_property": "Criticité de l’événement (1–5"
+          }
+        ],
         "text_twins": [
           {
             "name": "concerne (organisations) (texte)",
@@ -12879,66 +12975,6 @@
             "section": "4.3"
           },
           {
-            "name": "Compétences hard dominantes des occupants",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est occupé par (individus)` → propriété source : `Compétences hard dominantes` ; BDD source : `Individus`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de libellés canoniques",
-            "taxo_codes": [
-              "SKILL.HARD.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Compétences soft dominantes des occupants",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est occupé par (individus)` → propriété source : `Compétences soft dominantes` ; BDD source : `Individus`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de libellés canoniques",
-            "taxo_codes": [
-              "SKILL.SOFT.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’initiatives sponsorisées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `sponsorise (initiatives organisationnelles)` → propriété source : `Type d’initiative` ; BDD source : `Initiatives organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "INIT.TYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les initiatives sponsorisées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `sponsorise (initiatives organisationnelles)` → propriété source : `Sous-dimension(s) 5D principalement travaillées` ; BDD source : `Initiatives organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "sert principalement les sous-dimensions (5D)",
             "category": "multi_select",
             "type_raw": "Multi-sélection",
@@ -13056,7 +13092,76 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Compétences hard dominantes des occupants",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est occupé par (individus)` → propriété source : `Compétences hard dominantes` ; BDD source : `Individus`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de libellés canoniques",
+            "taxo_codes": [
+              "SKILL.HARD.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est occupé par (individus)`",
+            "target_property": "propriété source : `Compétences hard dominantes` ; BDD source : `Individus`"
+          },
+          {
+            "name": "Compétences soft dominantes des occupants",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est occupé par (individus)` → propriété source : `Compétences soft dominantes` ; BDD source : `Individus`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de libellés canoniques",
+            "taxo_codes": [
+              "SKILL.SOFT.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est occupé par (individus)`",
+            "target_property": "propriété source : `Compétences soft dominantes` ; BDD source : `Individus`"
+          },
+          {
+            "name": "Types d’initiatives sponsorisées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `sponsorise (initiatives organisationnelles)` → propriété source : `Type d’initiative` ; BDD source : `Initiatives organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "INIT.TYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `sponsorise (initiatives organisationnelles)`",
+            "target_property": "propriété source : `Type d’initiative` ; BDD source : `Initiatives organisationnelles`"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les initiatives sponsorisées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `sponsorise (initiatives organisationnelles)` → propriété source : `Sous-dimension(s) 5D principalement travaillées` ; BDD source : `Initiatives organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `sponsorise (initiatives organisationnelles)`",
+            "target_property": "propriété source : `Sous-dimension(s"
+          }
+        ],
         "text_twins": [
           {
             "name": "est rattaché à (organisations) (texte)",
@@ -14127,96 +14232,6 @@
             "section": "4.3"
           },
           {
-            "name": "Types d’actifs mobilisés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (mobilise (actifs) → Type d’actif)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ASSET.SUBTYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) dominantes des principes mis en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (met en œuvre (principes organisationnels) → Sous-dimension(s) 5D dominantes)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) au cœur des capacités alimentées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (alimente (capacités organisationnelles) → Sous-dimension(s) 5D cœur de la capacité)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) servies par les processus mis en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (met en œuvre (processus) → sert principalement les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques influencées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (influence (problématiques) → impacte les sous-dimensions (5D))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) associées aux modulateurs à effet fort",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (est sous l’effet fort de (modulateurs) → Sous-dimension(s) 5D associée(s) (valeur))",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "agit principalement sur la dimension (5D)",
             "category": "select",
             "type_raw": "Sélection",
@@ -14536,7 +14551,110 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Types d’actifs mobilisés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (mobilise (actifs) → Type d’actif)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ASSET.SUBTYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "mobilise (actifs)",
+            "target_property": "Type d’actif"
+          },
+          {
+            "name": "Sous-dimensions (5D) dominantes des principes mis en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (met en œuvre (principes organisationnels) → Sous-dimension(s) 5D dominantes)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "met en œuvre (principes organisationnels)",
+            "target_property": "Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) au cœur des capacités alimentées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (alimente (capacités organisationnelles) → Sous-dimension(s) 5D cœur de la capacité)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "alimente (capacités organisationnelles)",
+            "target_property": "Sous-dimension(s"
+          },
+          {
+            "name": "Sous-dimensions (5D) servies par les processus mis en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (met en œuvre (processus) → sert principalement les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "met en œuvre (processus)",
+            "target_property": "sert principalement les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques influencées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (influence (problématiques) → impacte les sous-dimensions (5D))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "influence (problématiques)",
+            "target_property": "impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) associées aux modulateurs à effet fort",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (est sous l’effet fort de (modulateurs) → Sous-dimension(s) 5D associée(s) (valeur))",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "est sous l’effet fort de (modulateurs)",
+            "target_property": "Sous-dimension(s"
+          }
+        ],
         "text_twins": [
           {
             "name": "est observée dans (organisations) (texte)",
@@ -15530,79 +15648,6 @@
             "section": "4.2"
           },
           {
-            "name": "Types de pratiques de mise en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est mis en œuvre par (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "PRA.TYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les pratiques de mise en œuvre",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est mis en œuvre par (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) impactées par les problématiques de tension",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est mis en tension par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) lues par les indicateurs de suivi",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est suivi par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’usage des indicateurs de suivi",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `est suivi par (indicateurs)` → propriété source : `Type d’usage de l’indicateur` ; BDD source : `Indicateurs`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs locales",
-            "taxo_codes": [],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "Sous-dimension(s) 5D dominantes",
             "category": "multi_select",
             "type_raw": "Multi-sélection",
@@ -15721,7 +15766,91 @@
             "bidirectional": true
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Types de pratiques de mise en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est mis en œuvre par (pratiques organisationnelles)` → propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "PRA.TYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est mis en œuvre par (pratiques organisationnelles)`",
+            "target_property": "propriété source : `Type de pratique` ; BDD source : `Pratiques organisationnelles`"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les pratiques de mise en œuvre",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est mis en œuvre par (pratiques organisationnelles)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Pratiques organisationnelles`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est mis en œuvre par (pratiques organisationnelles)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) impactées par les problématiques de tension",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est mis en tension par (problématiques)` → propriété source : `impacte les sous-dimensions (5D)` ; BDD source : `Problématiques`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est mis en tension par (problématiques)`",
+            "target_property": "propriété source : `impacte les sous-dimensions (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) lues par les indicateurs de suivi",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est suivi par (indicateurs)` → propriété source : `lit principalement les sous-dimensions (5D)` ; BDD source : `Indicateurs`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est suivi par (indicateurs)`",
+            "target_property": "propriété source : `lit principalement les sous-dimensions (5D"
+          },
+          {
+            "name": "Types d’usage des indicateurs de suivi",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `est suivi par (indicateurs)` → propriété source : `Type d’usage de l’indicateur` ; BDD source : `Indicateurs`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs locales",
+            "taxo_codes": [],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `est suivi par (indicateurs)`",
+            "target_property": "propriété source : `Type d’usage de l’indicateur` ; BDD source : `Indicateurs`"
+          }
+        ],
         "text_twins": [
           {
             "name": "s’applique à (organisations) (texte)",
@@ -17887,81 +18016,6 @@
             "section": "4.3"
           },
           {
-            "name": "Intentions principales des actions agrégées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Intention principale` ; BDD source : `Actions détectées`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ACT.INTENT.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Domaines d’impact des actions agrégées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Domaines d’impact` ; BDD source : `Actions détectées`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ACT.IMPACT_DOMAIN.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Dimensions (5D) travaillées par les actions agrégées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur la dimension (5D)` ; BDD source : `Actions détectées`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Sous-dimensions (5D) travaillées par les actions agrégées",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Actions détectées`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ORG5D.DIM.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
-            "name": "Types d’actifs mobilisés",
-            "category": "unknown",
-            "type_raw": "Agrégation / rollup (relation : `mobilise (actifs)` → propriété source : `Type d’actif` ; BDD source : `Actifs`)",
-            "portee": "Conditionnel",
-            "cardinality": "1..1",
-            "nature": "Calculé",
-            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
-            "taxo_codes": [
-              "ASSET.SUBTYPE.LBP"
-            ],
-            "taxo_niveau": null,
-            "block": 2,
-            "section": "4.3"
-          },
-          {
             "name": "sert principalement la dimension (5D)",
             "category": "select",
             "type_raw": "Sélection",
@@ -18089,7 +18143,93 @@
             "bidirectional": false
           }
         ],
-        "rollups": [],
+        "rollups": [
+          {
+            "name": "Intentions principales des actions agrégées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Intention principale` ; BDD source : `Actions détectées`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ACT.INTENT.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `agrège (actions détectées)`",
+            "target_property": "propriété source : `Intention principale` ; BDD source : `Actions détectées`"
+          },
+          {
+            "name": "Domaines d’impact des actions agrégées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `Domaines d’impact` ; BDD source : `Actions détectées`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ACT.IMPACT_DOMAIN.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `agrège (actions détectées)`",
+            "target_property": "propriété source : `Domaines d’impact` ; BDD source : `Actions détectées`"
+          },
+          {
+            "name": "Dimensions (5D) travaillées par les actions agrégées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur la dimension (5D)` ; BDD source : `Actions détectées`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `agrège (actions détectées)`",
+            "target_property": "propriété source : `agit principalement sur la dimension (5D"
+          },
+          {
+            "name": "Sous-dimensions (5D) travaillées par les actions agrégées",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `agrège (actions détectées)` → propriété source : `agit principalement sur les sous-dimensions (5D)` ; BDD source : `Actions détectées`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ORG5D.DIM.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `agrège (actions détectées)`",
+            "target_property": "propriété source : `agit principalement sur les sous-dimensions (5D"
+          },
+          {
+            "name": "Types d’actifs mobilisés",
+            "category": "rollup",
+            "type_raw": "Agrégation / rollup (relation : `mobilise (actifs)` → propriété source : `Type d’actif` ; BDD source : `Actifs`)",
+            "portee": "Conditionnel",
+            "cardinality": "1..1",
+            "nature": "Calculé",
+            "forme_logique": "Liste dédoublonnée de valeurs taxonomiques",
+            "taxo_codes": [
+              "ASSET.SUBTYPE.LBP"
+            ],
+            "taxo_niveau": null,
+            "block": 2,
+            "section": "4.3",
+            "source_relation": "relation : `mobilise (actifs)`",
+            "target_property": "propriété source : `Type d’actif` ; BDD source : `Actifs`"
+          }
+        ],
         "text_twins": [
           {
             "name": "concerne (organisations) (texte)",

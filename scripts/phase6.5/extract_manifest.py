@@ -92,9 +92,9 @@ def classify_field(row):
     cardinality = row.get("Cardinalité / multiplicité", "")
     nature = row.get("Nature de production", "")
 
-    # Rollup
-    if type_.startswith("Rollup"):
-        m = re.match(r"Rollup \((.+?) → (.+?)\)", type_)
+    # Rollup (manuel utilise parfois "Rollup (...)" ou "Agrégation / rollup ...")
+    if type_.startswith("Rollup") or type_.startswith("Agrégation"):
+        m = re.match(r"(?:Rollup|Agrégation(?: / rollup)?(?: \w+)?) \((.+?) → (.+?)\)", type_)
         if m:
             source_relation = m.group(1).strip()
             target_property = m.group(2).strip()
