@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — ajout 4 entrées Mission Ops (template v5.1.0, doctrine agnostique backend, divergence frontmatter Twin/Mission Ops, WR-RD à générer, idées créatives reportées).
+> Dernière mise à jour : 27-04-2026 — sortie historique de l'entrée "WR-RD Mission Ops à générer" : ✅ template + 4 WR-RD créés.
 
 ---
 
@@ -38,11 +38,6 @@
     3. **Régressions volontaires v5.0.0+** (suppressions de Vues / Workflows / Paramétrage backend / Gouvernance opérationnelle / Checklist QA) : la doctrine "manuel = spec stable" suppose que des **playbooks et prompts** prennent le relais opérationnel. À auditer : ces playbooks/prompts existent-ils déjà ou faut-il les créer ?
   - **Portée potentielle** : Mission Ops (template) + écosystème playbooks.
   - **Quand** : après usage en condition réelle des 4 premiers manuels Mission Ops + génération des BDDs (Phase 6.5+).
-
-- [27-04-2026] **WR-RD Mission Ops à générer après validation des manuels et BDDs**
-  - **Contexte** : Les WR-RD (Writing Reading - Reference Doc) Mission Ops n'existent pas encore (alors que les WR-RD Twin existent dans `Manuels de BDD\Digital Twin\WR-RD\`). Le template WR-RD existe (`Templates d'instanciation\Template - WR-RD - Digital Twin.md`) — possiblement à adapter pour Mission Ops. Les R-041/R-042 imposent la propagation Manuel ↔ WR-RD ; pour Mission Ops, ce sera une **génération initiale** plutôt qu'une propagation incrémentale.
-  - **Portée potentielle** : Mission Ops (couche WR-RD).
-  - **Quand** : après validation complète des 4 manuels Mission Ops + génération des 4 BDDs sur Notion + premier usage en condition réelle. Annoncer C-009 à chaque génération.
 
 - [27-04-2026] **Bug `extract_manifest.py` (Phase 6.5) — props natives manquantes + SELECT sans taxo mal typés**
   - **Contexte** : lors de la phase 6.5 de génération du Twin Notion, 4 rollups orphelins ont émergé après la création des propriétés natives via DDL. Diagnostic : le manifest produit par `scripts/phase6.5/extract_manifest.py` (i) **omettait 2 propriétés natives** de la BDD Individus — `Compétences hard dominantes` et `Compétences soft dominantes` (typées `Texte long` dans le manuel mais avec une taxo SKILL.HARD.LBP / SKILL.SOFT.LBP qui implique en fait un `multi_select` Notion), et (ii) **typait `Type d'usage de l'indicateur` (BDD Indicateurs) en `unknown`** parce que la propriété est un `select` sans taxonomie globale rattachée. Conséquence : 4 rollups (2 sur Postes vers Individus, 1 sur OKR vers Indicateurs, 1 sur Principes organisationnels vers Indicateurs) ont échoué car ils pointaient sur des propriétés source inexistantes dans Notion. Fix manuel appliqué le 27-04-2026 (ajout des 3 props + retry des 4 rollups).
@@ -114,4 +109,4 @@
 
 *Quand une règle est formalisée dans RULES.md, on la déplace ici avec une note rapide, pour tracer le cycle.*
 
-*(vide pour l'instant)*
+- **[27-04-2026 → résolue 27-04-2026]** WR-RD Mission Ops à générer : ✅ Template `Template - WR-RD - Mission Ops.md` v1.0.0 créé + 4 WR-RD générés (Sources d'informations, Meetings, Actions LBP, Bricks). Doctrine agnostique backend respectée (0 mention Notion). Sortie du backlog avant même formalisation R-XXX (résolution rapide via délivrable concret).
