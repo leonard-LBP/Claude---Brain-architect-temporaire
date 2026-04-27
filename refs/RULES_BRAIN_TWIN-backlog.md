@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — ajout entrée Phase 6.5 : bug `extract_manifest.py` (props natives omises + select sans taxo en `unknown`) et doctrine SELECT sans taxo globale.
+> Dernière mise à jour : 27-04-2026 — ajout 4 entrées Mission Ops (template v5.1.0, doctrine agnostique backend, divergence frontmatter Twin/Mission Ops, WR-RD à générer, idées créatives reportées).
 
 ---
 
@@ -18,6 +18,31 @@
 ---
 
 ## Règles en attente
+
+- [27-04-2026] **Doctrine "manuels et templates de BDD agnostiques du backend"**
+  - **Contexte** : Lors de la revue du nouveau template Mission Ops v5.1.0, Leonard a explicitement demandé qu'**aucune mention de Notion (ou tout autre backend spécifique) ne figure dans les templates et manuels de BDD**. Notion est un outil transitoire, pas durable. Les manuels doivent rester vrais quel que soit le backend (Notion aujourd'hui, autre demain). Application immédiate : suppression des `Libellé Notion ou libellé canonique unique` → `Libellé canonique unique` dans les 4 manuels Mission Ops + audit `purpose` du nouveau template (lui-même déjà conforme).
+  - **Portée potentielle** : Transverse Brain + Twin + Mission Ops (toute la couche manuels et templates).
+  - **À formaliser comme R-XXX** : possible règle "manuels et templates restent agnostiques du backend ; les conventions de typage parlent en termes structurels (`Sélection`, `Multi-sélection`, `Texte long`, `Relation bidirectionnelle`, etc.) sans référencer un outil particulier".
+  - **Bloquant à lever** : auditer les manuels Twin et le template Twin pour vérifier qu'aucune mention de Notion ne traîne ; si oui, propager le nettoyage.
+
+- [27-04-2026] **Divergence Twin / Mission Ops sur frontmatter — décision à expliciter**
+  - **Contexte** : Le template Twin v6.3.0 inclut `ui_family` (R-049), `officiality_regime`, `has_advanced_note` (R-050), `aliases` dans son frontmatter. Le template Mission Ops v5.1.0 ne les inclut pas (décision Leonard 27-04-2026 : pas de convergence sur ces champs).
+  - **Portée potentielle** : Transverse Brain (cohérence des frontmatter entre couches Brain / Twin / Mission Ops).
+  - **À formaliser** : soit documenter explicitement pourquoi ces champs ne s'appliquent pas à Mission Ops (ex. pas d'UI dédiée, pas de notion de sandbox/pivot pour Mission Ops, pas de note avancée séparée), soit les ajouter avec valeurs par défaut sobres si la pratique le justifie un jour.
+  - **Quand** : lors d'une revue cross-couches Brain/Twin/Mission Ops, après stabilisation de Mission Ops.
+
+- [27-04-2026] **Idées créatives reportées — enrichissements template Mission Ops**
+  - **Contexte** : Lors de la revue du nouveau template Mission Ops v5.1.0, 3 enrichissements ont été pressentis mais reportés au backlog (décision Leonard : "pas pour l'instant") :
+    1. **Doctrine `knowledge_regime`** documentée dans le template avec critères de choix entre les 3 valeurs canoniques (`preuve_source`, `qualification_structuree`, `pilotage_action`). Actuellement les 4 manuels Mission Ops utilisent les 3 valeurs sans doctrine partagée explicite côté template — les règles existent mais peuvent gagner en clarté pédagogique.
+    2. **Checklist d'intégrité finale** dans le template (5-10 items GO/NO-GO avant génération de la BDD : frontmatter complet, sections 1-8 présentes, miroirs relationnels cohérents, etc.). Substitut léger à la "Section 9 Checklist QA" supprimée volontairement du template.
+    3. **Régressions volontaires v5.0.0+** (suppressions de Vues / Workflows / Paramétrage backend / Gouvernance opérationnelle / Checklist QA) : la doctrine "manuel = spec stable" suppose que des **playbooks et prompts** prennent le relais opérationnel. À auditer : ces playbooks/prompts existent-ils déjà ou faut-il les créer ?
+  - **Portée potentielle** : Mission Ops (template) + écosystème playbooks.
+  - **Quand** : après usage en condition réelle des 4 premiers manuels Mission Ops + génération des BDDs (Phase 6.5+).
+
+- [27-04-2026] **WR-RD Mission Ops à générer après validation des manuels et BDDs**
+  - **Contexte** : Les WR-RD (Writing Reading - Reference Doc) Mission Ops n'existent pas encore (alors que les WR-RD Twin existent dans `Manuels de BDD\Digital Twin\WR-RD\`). Le template WR-RD existe (`Templates d'instanciation\Template - WR-RD - Digital Twin.md`) — possiblement à adapter pour Mission Ops. Les R-041/R-042 imposent la propagation Manuel ↔ WR-RD ; pour Mission Ops, ce sera une **génération initiale** plutôt qu'une propagation incrémentale.
+  - **Portée potentielle** : Mission Ops (couche WR-RD).
+  - **Quand** : après validation complète des 4 manuels Mission Ops + génération des 4 BDDs sur Notion + premier usage en condition réelle. Annoncer C-009 à chaque génération.
 
 - [27-04-2026] **Bug `extract_manifest.py` (Phase 6.5) — props natives manquantes + SELECT sans taxo mal typés**
   - **Contexte** : lors de la phase 6.5 de génération du Twin Notion, 4 rollups orphelins ont émergé après la création des propriétés natives via DDL. Diagnostic : le manifest produit par `scripts/phase6.5/extract_manifest.py` (i) **omettait 2 propriétés natives** de la BDD Individus — `Compétences hard dominantes` et `Compétences soft dominantes` (typées `Texte long` dans le manuel mais avec une taxo SKILL.HARD.LBP / SKILL.SOFT.LBP qui implique en fait un `multi_select` Notion), et (ii) **typait `Type d'usage de l'indicateur` (BDD Indicateurs) en `unknown`** parce que la propriété est un `select` sans taxonomie globale rattachée. Conséquence : 4 rollups (2 sur Postes vers Individus, 1 sur OKR vers Indicateurs, 1 sur Principes organisationnels vers Indicateurs) ont échoué car ils pointaient sur des propriétés source inexistantes dans Notion. Fix manuel appliqué le 27-04-2026 (ajout des 3 props + retry des 4 rollups).
