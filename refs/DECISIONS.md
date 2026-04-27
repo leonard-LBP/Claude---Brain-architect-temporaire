@@ -3,7 +3,7 @@
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 25-04-2026 — ajout D-013 (traçabilité de version de template d'instanciation)
+> Dernière mise à jour : 27-04-2026 — ajout D-017 (familles UI/UX comme prisme transverse)
 
 ---
 
@@ -396,6 +396,34 @@
   - 🔜 Notion : sur la BDD "Manuels de BDD", renommer la propriété URL existante "Lien vers le doc du manuel" → "Lien vers le manuel de BDD (.md)" ; ajouter une nouvelle propriété URL "Lien vers le doc WR-RD (.md)".
   - 🔜 Manuel parent "BDD - MANUELS DE BDD.md" : ajouter ces 2 propriétés dans la section 3.2 (champs) et la section 7 (propriétés spécifiques) avec instructions d'écriture / clefs de lecture autonomes.
   - 🔜 Phase 6 : générer 22 WR-RD à partir des 22 manuels Twin v2 actifs + 6 sandboxes (extraction automatique souhaitable).
+
+---
+
+### D-017 : Familles UI/UX comme prisme transverse de classification des BDD Twin
+
+- **Date** : 27-04-2026
+- **Statut** : Adoptée
+- **Portée** : Twin (et propagation app LBP)
+- **Contexte** : Les BDD du Twin disposent déjà de plusieurs prismes de classification techniques (`architecture_family` : socle_structurel, extraction_factuelle, analytique, sandbox, etc. ; `knowledge_regime` ; `officiality_regime`). Ces prismes sont utiles pour la gouvernance interne mais **opaques pour l'utilisateur final** de l'app LBP. Le besoin : disposer d'un prisme **orienté utilisateur** qui donne un sens narratif à l'organisation des BDD ("Qui existe", "Quels mots", "Quels cadres", "Ce qui met en mouvement", "Ce qui ancre durablement", "Comment on pilote", "Et un Lab pour explorer").
+- **Options envisagées** :
+  1. Réutiliser un prisme existant comme `architecture_family` côté UI → rejeté : trop technique, vocabulaire interne LBP.
+  2. Créer un prisme dédié `ui_family` orthogonal aux autres → **retenu**.
+  3. Mapping ad hoc dans le code app sans formalisation Brain → rejeté : risque de divergence app ↔ Brain, perte de cohérence sémantique.
+- **Choix retenu** : Adopter une classification dédiée `ui_family` en **7 valeurs** :
+  - **Langage** — *Les mots, termes métier, acronymes et définitions propres à l'organisation* (1 BDD : Glossaire spécifique)
+  - **Structure** — *Qui existe, qui porte quoi, comment la structure humaine et institutionnelle est organisée* (5 BDD : Organisations, Relations inter-organisations, Collectifs, Individus, Postes)
+  - **Cadres** — *Les cadres, supports, objets et situations qui conditionnent l'action* (3 BDD : Environnements, Actifs, Événements)
+  - **Moteur** — *Ce qui met l'organisation en mouvement, produit, transforme et stabilise le fonctionnement réel* (5 BDD : Actions détectées, Processus candidats, Processus, Pratiques organisationnelles, Initiatives organisationnelles)
+  - **Pilotage** — *Les sujets à traiter, les objectifs, les mesures et la trajectoire de pilotage* (5 BDD : Enjeux, Problématiques, OKR, Indicateurs, Journal des signaux)
+  - **Ancrages** — *Ce qui oriente, soutient, amplifie ou freine durablement l'action organisationnelle* (3 BDD : Principes organisationnels, Capacités organisationnelles, Modulateurs)
+  - **Lab** — *Les objets exploratoires, candidats ou en test avant stabilisation* (6 BDD sandbox)
+- **Conséquences** :
+  - ✅ Cohérence app ↔ Brain : la classification utilisée par l'app LBP est documentée dans le Brain, source de vérité.
+  - ✅ Prisme **complémentaire** (non substitutif) aux autres : `architecture_family`, `knowledge_regime`, `officiality_regime` restent inchangés et servent la gouvernance technique.
+  - ⚠ Charge de propagation : chaque manuel Twin doit recevoir un champ frontmatter `ui_family` (28 manuels à enrichir).
+  - ⚠ Charge Notion : la BDD `Manuels de BDD` doit recevoir une propriété `Famille UI` (select) avec les 7 valeurs.
+  - 🔜 La page Notion `BDD test - 26/04/2026 - Digital Twin update` utilise déjà cette classification (titres de groupes appliqués par Leonard 27-04-2026) — sert de référence visuelle.
+- **Règles associées** : R-049 (déclaration obligatoire `ui_family` dans tout artefact Twin).
 
 ---
 

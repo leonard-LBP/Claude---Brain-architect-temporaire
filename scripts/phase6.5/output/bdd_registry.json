@@ -10,175 +10,261 @@
       "database_id": "02bbb8b8-c169-49d5-ae85-af122744adfc",
       "data_source_id": "8e398c8d-bf0d-4fec-b393-61a10c557d57",
       "url": "https://www.notion.so/02bbb8b8c16949d5ae85af122744adfc",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Cadres"
     },
     "Organisations": {
       "database_id": "f430f0e1-4487-4e95-b023-de12fff06cc9",
       "data_source_id": "ceaf07f7-0809-4428-8d31-9db52d87bf33",
       "url": "https://www.notion.so/f430f0e144874e95b023de12fff06cc9",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Structure"
     },
     "Collectifs": {
       "database_id": "8273d7ce-cb47-4cee-b518-32b50a9774a4",
       "data_source_id": "86af5eb1-d46d-4d8b-ae69-cfc4488fc262",
       "url": "https://www.notion.so/8273d7cecb474ceeb51832b50a9774a4",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Structure"
     },
     "Postes": {
       "database_id": "824c38b8-a543-48c7-a1eb-62db612edf0c",
       "data_source_id": "d1871545-d33e-481c-9813-ce15336aac67",
       "url": "https://www.notion.so/824c38b8a54348c7a1eb62db612edf0c",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Structure"
     },
     "Individus": {
       "database_id": "0654479a-8e71-4db4-b53d-f8164c9488e8",
       "data_source_id": "fd19eb5d-b866-4b38-9bb9-20e3c3c683ae",
       "url": "https://www.notion.so/0654479a8e714db4b53df8164c9488e8",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Structure"
     },
     "Environnements": {
       "database_id": "a5fe13ee-059c-4e56-afef-d1ddf636d4ba",
       "data_source_id": "51eaf391-05b3-4276-b8f5-6010dc8a0287",
       "url": "https://www.notion.so/a5fe13ee059c4e56afefd1ddf636d4ba",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Cadres"
     },
     "Événements": {
       "database_id": "dbae74f1-f39c-4768-8325-b9520421c00e",
       "data_source_id": "e5aaaac9-5eb3-4bcc-a10a-73e9891100da",
       "url": "https://www.notion.so/dbae74f1f39c47688325b9520421c00e",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Cadres"
     },
     "Relations inter-organisations": {
       "database_id": "77ee6f72-5212-4534-91cf-ad29c8aabd7d",
       "data_source_id": "e87dade3-7806-466b-961d-6c0449857d99",
       "url": "https://www.notion.so/77ee6f725212453491cfad29c8aabd7d",
-      "category": "socle_structurel"
+      "category": "socle_structurel",
+      "ui_family": "Structure"
     },
     "Actions détectées": {
       "database_id": "8d5463cc-7ec8-4732-8961-1f3f411a05f8",
       "data_source_id": "eefcb09b-253c-46e6-b67c-7a5d28863ff0",
       "url": "https://www.notion.so/8d5463cc7ec8473289611f3f411a05f8",
-      "category": "extraction_factuelle"
+      "category": "extraction_factuelle",
+      "ui_family": "Moteur"
     },
     "Enjeux": {
       "database_id": "d87489b8-06b8-4f3a-9806-2685e5c91b07",
       "data_source_id": "eecdfc29-cedf-481f-8cd4-4d0ae52e23cc",
       "url": "https://www.notion.so/d87489b806b84f3a98062685e5c91b07",
-      "category": "extraction_factuelle"
+      "category": "extraction_factuelle",
+      "ui_family": "Pilotage"
     },
     "Journal des signaux": {
       "database_id": "1f1de119-8ea6-4522-ae6d-4de335ed99a6",
       "data_source_id": "9f429a5c-518d-4e13-a57e-10c5ede57e86",
       "url": "https://www.notion.so/1f1de1198ea64522ae6d4de335ed99a6",
-      "category": "extraction_factuelle"
+      "category": "extraction_factuelle",
+      "ui_family": "Pilotage"
     },
     "Glossaire spécifique": {
       "database_id": "02990aa5-ba54-4aab-bbd4-5b72827d2641",
       "data_source_id": "f2d74c98-b041-4fd8-b56a-8946e76cd817",
       "url": "https://www.notion.so/02990aa5ba544aabbbd45b72827d2641",
-      "category": "semantique"
+      "category": "semantique",
+      "ui_family": "Langage"
     },
     "Initiatives organisationnelles": {
       "database_id": "724fb060-1bc5-4c70-813a-ca3b4d6d0ee6",
       "data_source_id": "02a9770a-a9cd-43aa-90aa-90f11f5523cf",
       "url": "https://www.notion.so/724fb0601bc54c70813aca3b4d6d0ee6",
-      "category": "mouvement"
+      "category": "mouvement",
+      "ui_family": "Moteur"
     },
     "Modulateurs": {
       "database_id": "f7c33915-ca84-4979-ab9e-f2496ca333b9",
       "data_source_id": "2172c9b9-c0e5-47eb-942d-5894a553f82a",
       "url": "https://www.notion.so/f7c33915ca844979ab9ef2496ca333b9",
-      "category": "pivot"
+      "category": "pivot",
+      "ui_family": "Ancrages"
     },
     "Processus candidats": {
       "database_id": "9cbb5b29-0aee-49d9-8608-9df12ace9ab6",
       "data_source_id": "8f11ed44-18dc-4e89-9baa-70e3c849e253",
       "url": "https://www.notion.so/9cbb5b290aee49d986089df12ace9ab6",
-      "category": "observation"
+      "category": "observation",
+      "ui_family": "Moteur"
     },
     "Capacités organisationnelles": {
       "database_id": "ccd9e6bb-e153-47c7-a6f2-87533e63b90e",
       "data_source_id": "f1d7dbaa-c054-4d07-ab28-fbe800c3002c",
       "url": "https://www.notion.so/ccd9e6bbe15347c7a6f287533e63b90e",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Ancrages"
     },
     "Indicateurs": {
       "database_id": "f148d9e4-22c8-46c8-8b65-9ad026c2972d",
       "data_source_id": "fe9b200f-97c7-4805-9710-5a821d538d0b",
       "url": "https://www.notion.so/f148d9e422c846c88b659ad026c2972d",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Pilotage"
     },
     "OKR": {
       "database_id": "27a22863-1f07-430c-a2b2-c4f769c9bc71",
       "data_source_id": "09e20d61-0443-4b25-a8f4-fe8f57024637",
       "url": "https://www.notion.so/27a228631f07430ca2b2c4f769c9bc71",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Pilotage"
     },
     "Pratiques organisationnelles": {
       "database_id": "5f4ec59a-5f46-44fe-815b-63c58be96d3f",
       "data_source_id": "00e31d97-9ae0-4304-b821-71d41aead7b6",
       "url": "https://www.notion.so/5f4ec59a5f4644fe815b63c58be96d3f",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Moteur"
     },
     "Principes organisationnels": {
       "database_id": "9f83b71e-dd0c-44d0-a6b9-1a16425cecdc",
       "data_source_id": "00349e89-05d9-4dfd-be7c-534e7844da88",
       "url": "https://www.notion.so/9f83b71edd0c44d0a6b91a16425cecdc",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Ancrages"
     },
     "Problématiques": {
       "database_id": "258c8b5b-c125-42ae-af13-3247f92514d9",
       "data_source_id": "e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
       "url": "https://www.notion.so/258c8b5bc12542aeaf133247f92514d9",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Pilotage"
     },
     "Processus": {
       "database_id": "1ad86156-6aa2-48a3-bb5a-a18d292dacf9",
       "data_source_id": "d7cf0f34-efe1-467e-8912-65f61a4a1f14",
       "url": "https://www.notion.so/1ad861566aa248a3bb5aa18d292dacf9",
-      "category": "analytique"
+      "category": "analytique",
+      "ui_family": "Moteur"
     },
     "Capacités métier candidates sandbox": {
       "database_id": "26ea3ad1-30b0-4cd2-a32e-022d4b8edeea",
       "data_source_id": "9219d493-5a4e-41be-a651-abc0c35e4b82",
       "url": "https://www.notion.so/26ea3ad130b04cd2a32e022d4b8edeea",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     },
     "OKR sandbox": {
       "database_id": "442887a9-de92-49d1-b7a8-c80b7528357e",
       "data_source_id": "2b24d7bf-95a6-4bec-9a67-e9846edc0e33",
       "url": "https://www.notion.so/442887a9de9249d1b7a8c80b7528357e",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     },
     "Pratiques organisationnelles sandbox": {
       "database_id": "c5694c2a-603a-406a-807e-49bcbdd228b5",
       "data_source_id": "e6b8d99a-5400-416c-8206-cd16d2f8c279",
       "url": "https://www.notion.so/c5694c2a603a406a807e49bcbdd228b5",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     },
     "Principes organisationnels sandbox": {
       "database_id": "a9476f33-3c63-4c4f-83f7-0f40ffbb862c",
       "data_source_id": "25480353-1673-4e22-8612-0161b87757e2",
       "url": "https://www.notion.so/a9476f333c634c4f83f70f40ffbb862c",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     },
     "Problématiques sandbox": {
       "database_id": "b97d70cf-159e-4b1a-a052-beb54e183211",
       "data_source_id": "24b457fd-3e01-404b-9db1-d50eaef59e62",
       "url": "https://www.notion.so/b97d70cf159e4b1aa052beb54e183211",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     },
     "Processus candidats sandbox": {
       "database_id": "6f73d1a1-af80-469e-a376-514154120bc6",
       "data_source_id": "34dbabd2-982e-40d7-81e3-7801235ccfb8",
       "url": "https://www.notion.so/6f73d1a1af80469ea376514154120bc6",
-      "category": "sandbox"
+      "category": "sandbox",
+      "ui_family": "Lab"
     }
   },
   "external_dependencies": {
     "Sources d'informations": {
       "data_source_id": "TO_FETCH",
       "note": "BDD existante hors-périmètre. À résoudre lors de Phase 4 pour la relation monodirectionnelle Twin → Sources."
+    }
+  },
+  "ui_family_classification": {
+    "source": "D-017 — décision Leonard 27-04-2026",
+    "rule_ref": "R-049",
+    "purpose": "Prisme UI/UX (app LBP) pour organiser les BDD côté utilisateur. Complémentaire (pas substitutif) aux prismes architecture_family, knowledge_regime, officiality_regime.",
+    "values": [
+      "Langage",
+      "Structure",
+      "Cadres",
+      "Moteur",
+      "Pilotage",
+      "Ancrages",
+      "Lab"
+    ],
+    "members": {
+      "Langage": [
+        "Glossaire spécifique"
+      ],
+      "Structure": [
+        "Organisations",
+        "Relations inter-organisations",
+        "Collectifs",
+        "Individus",
+        "Postes"
+      ],
+      "Cadres": [
+        "Environnements",
+        "Actifs",
+        "Événements"
+      ],
+      "Moteur": [
+        "Actions détectées",
+        "Processus candidats",
+        "Processus",
+        "Pratiques organisationnelles",
+        "Initiatives organisationnelles"
+      ],
+      "Pilotage": [
+        "Enjeux",
+        "Problématiques",
+        "OKR",
+        "Indicateurs",
+        "Journal des signaux"
+      ],
+      "Ancrages": [
+        "Principes organisationnels",
+        "Capacités organisationnelles",
+        "Modulateurs"
+      ],
+      "Lab": [
+        "Capacités métier candidates sandbox",
+        "OKR sandbox",
+        "Pratiques organisationnelles sandbox",
+        "Principes organisationnels sandbox",
+        "Problématiques sandbox",
+        "Processus candidats sandbox"
+      ]
     }
   }
 }
