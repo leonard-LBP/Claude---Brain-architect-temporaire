@@ -1,0 +1,87 @@
+{
+  "Postes": {
+    "data_source_id": "d1871545-d33e-481c-9813-ce15336aac67",
+    "ddl": "ADD COLUMN \"Compétences hard dominantes des occupants\" ROLLUP('est occupé par (individus)', 'Compétences hard dominantes', 'show_unique');\nADD COLUMN \"Compétences soft dominantes des occupants\" ROLLUP('est occupé par (individus)', 'Compétences soft dominantes', 'show_unique');\nADD COLUMN \"Types d’initiatives sponsorisées\" ROLLUP('sponsorise (initiatives organisationnelles)', 'Type d’initiative', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les initiatives sponsorisées\" ROLLUP('sponsorise (initiatives organisationnelles)', 'Sous-dimension(s) 5D principalement travaillées', 'show_unique')",
+    "n": 4
+  },
+  "Individus": {
+    "data_source_id": "fd19eb5d-b866-4b38-9bb9-20e3c3c683ae",
+    "ddl": "ADD COLUMN \"Sous-dimensions (5D) servies par les postes occupés\" ROLLUP('occupe (postes)', 'sert principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques participées\" ROLLUP('participe à (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les environnements concernés\" ROLLUP('est concerné par (environnements)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les enjeux exprimés\" ROLLUP('exprime (enjeux)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Familles métiers des postes occupés\" ROLLUP('occupe (postes)', 'Famille métier', 'show_unique');\nADD COLUMN \"Types de pratiques auxquelles l’individu participe\" ROLLUP('participe à (pratiques organisationnelles)', 'Type de pratique', 'show_unique')",
+    "n": 6
+  },
+  "Environnements": {
+    "data_source_id": "51eaf391-05b3-4276-b8f5-6010dc8a0287",
+    "ddl": "ADD COLUMN \"Types d’actifs hébergés\" ROLLUP('héberge (actifs)', 'Type d’actif', 'show_unique');\nADD COLUMN \"Types de collectifs concernés\" ROLLUP('concerne (collectifs)', 'Type de collectif', 'show_unique');\nADD COLUMN \"Types de pratiques concernées\" ROLLUP('concerne (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les enjeux contextualisés\" ROLLUP('contextualise (enjeux)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques concernées\" ROLLUP('concerne (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités influencées\" ROLLUP('influence (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique')",
+    "n": 6
+  },
+  "Événements": {
+    "data_source_id": "e5aaaac9-5eb3-4bcc-a10a-73e9891100da",
+    "ddl": "ADD COLUMN \"Types de collectifs concernés\" ROLLUP('concerne (collectifs)', 'Type de collectif', 'show_unique');\nADD COLUMN \"Types d’actifs concernés\" ROLLUP('concerne (actifs)', 'Type d’actif', 'show_unique');\nADD COLUMN \"Types d’initiatives jalonnées\" ROLLUP('jalonne (initiatives organisationnelles)', 'Type d’initiative', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les enjeux contextualisés\" ROLLUP('contextualise (enjeux)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques contextualisées\" ROLLUP('contextualise (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs affectés\" ROLLUP('affecte (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique')",
+    "n": 6
+  },
+  "Relations inter-organisations": {
+    "data_source_id": "e87dade3-7806-466b-961d-6c0449857d99",
+    "ddl": "ADD COLUMN \"Type d’organisation de la source\" ROLLUP('a pour source (organisations)', 'Type d’organisation', 'show_unique');\nADD COLUMN \"Type d’organisation de la cible\" ROLLUP('a pour cible (organisations)', 'Type d’organisation', 'show_unique');\nADD COLUMN \"Secteur / domaine d’activité principal de la source\" ROLLUP('a pour source (organisations)', 'Secteur / domaine d’activité principal', 'show_unique');\nADD COLUMN \"Secteur / domaine d’activité principal de la cible\" ROLLUP('a pour cible (organisations)', 'Secteur / domaine d’activité principal', 'show_unique');\nADD COLUMN \"Pays / juridiction principale de la source\" ROLLUP('a pour source (organisations)', 'Pays / juridiction principale', 'show_unique');\nADD COLUMN \"Pays / juridiction principale de la cible\" ROLLUP('a pour cible (organisations)', 'Pays / juridiction principale', 'show_unique')",
+    "n": 6
+  },
+  "Actions détectées": {
+    "data_source_id": "eefcb09b-253c-46e6-b67c-7a5d28863ff0",
+    "ddl": "ADD COLUMN \"Types de pratiques alimentées\" ROLLUP('alimente (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques alimentées\" ROLLUP('alimente (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Niveaux de process des processus candidats alimentés\" ROLLUP('alimente (processus candidats)', 'Niveau de process', 'show_unique');\nADD COLUMN \"Intentions dominantes des processus candidats alimentés\" ROLLUP('alimente (processus candidats)', 'Intention dominante', 'show_unique');\nADD COLUMN \"Types d’initiatives alimentées\" ROLLUP('alimente (initiatives organisationnelles)', 'Type d’initiative', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les initiatives alimentées\" ROLLUP('alimente (initiatives organisationnelles)', 'Sous-dimension(s) 5D principalement travaillées', 'show_unique')",
+    "n": 6
+  },
+  "Enjeux": {
+    "data_source_id": "eecdfc29-cedf-481f-8cd4-4d0ae52e23cc",
+    "ddl": "ADD COLUMN \"Natures des signaux signalant l’enjeu\" ROLLUP('est signalé par (journal des signaux)', 'Nature du signal', 'show_unique');\nADD COLUMN \"Registres des signaux signalant l’enjeu\" ROLLUP('est signalé par (journal des signaux)', 'Registre du signal', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) portées par les signaux signalant l’enjeu\" ROLLUP('est signalé par (journal des signaux)', 'porte principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’événements contextualisant l’enjeu\" ROLLUP('est contextualisé par (événements)', 'Type d’événement', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques issues de l’enjeu\" ROLLUP('se consolide en (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) visées par les OKR traduisant l’enjeu\" ROLLUP('se traduit en (OKR)', 'Sous-dimension(s) 5D principalement visées', 'show_unique')",
+    "n": 6
+  },
+  "Journal des signaux": {
+    "data_source_id": "9f429a5c-518d-4e13-a57e-10c5ede57e86",
+    "ddl": "ADD COLUMN \"Types d’expression des enjeux alimentés\" ROLLUP('alimente (enjeux)', 'Type d’expression', 'show_unique');\nADD COLUMN \"Domaines des enjeux alimentés\" ROLLUP('alimente (enjeux)', 'Domaine(s) de l’enjeu', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les enjeux alimentés\" ROLLUP('alimente (enjeux)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’événements signalés\" ROLLUP('signale (événements)', 'Type d’événement', 'show_unique');\nADD COLUMN \"Criticité des événements signalés\" ROLLUP('signale (événements)', 'Criticité de l’événement (1–5)', 'show_unique')",
+    "n": 5
+  },
+  "Initiatives organisationnelles": {
+    "data_source_id": "02a9770a-a9cd-43aa-90aa-90f11f5523cf",
+    "ddl": "ADD COLUMN \"Types d’actifs concernés\" ROLLUP('concerne (actifs)', 'Type d’actif', 'show_unique');\nADD COLUMN \"Familles métiers des postes sponsors\" ROLLUP('est sponsorisée par (postes)', 'Famille métier', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques adressées\" ROLLUP('adresse (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) visées par les OKR auxquels l’initiative contribue\" ROLLUP('contribue à (OKR)', 'Sous-dimension(s) 5D principalement visées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités renforcées\" ROLLUP('renforce (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique')",
+    "n": 5
+  },
+  "Modulateurs": {
+    "data_source_id": "2172c9b9-c0e5-47eb-942d-5894a553f82a",
+    "ddl": "ADD COLUMN \"Types de pratiques sous effet fort\" ROLLUP('a un effet fort sur (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques sous effet fort\" ROLLUP('a un effet fort sur (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types de pratiques mettant le modulateur en évidence\" ROLLUP('est mis en évidence par (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques mettant le modulateur en évidence\" ROLLUP('est mis en évidence par (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’actifs concernés\" ROLLUP('porte sur (actifs)', 'Type d’actif', 'show_unique')",
+    "n": 5
+  },
+  "Capacités organisationnelles": {
+    "data_source_id": "f1d7dbaa-c054-4d07-ab28-fbe800c3002c",
+    "ddl": "ADD COLUMN \"Types de pratiques alimentant la capacité\" ROLLUP('est alimentée par (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques alimentant la capacité\" ROLLUP('est alimentée par (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques révélant l’écart de capacité\" ROLLUP('écart révélé par (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) visées par les OKR ciblant la capacité\" ROLLUP('est ciblée par (OKR)', 'Sous-dimension(s) 5D principalement visées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les initiatives renforçant la capacité\" ROLLUP('est renforcée par (initiatives organisationnelles)', 'Sous-dimension(s) 5D principalement travaillées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs mesurant la capacité\" ROLLUP('est mesurée par (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique')",
+    "n": 6
+  },
+  "Indicateurs": {
+    "data_source_id": "fe9b200f-97c7-4805-9710-5a821d538d0b",
+    "ddl": "ADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques mesurées\" ROLLUP('mesure (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités mesurées\" ROLLUP('mesure (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques mesurées\" ROLLUP('mesure (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) visées par les OKR mesurés\" ROLLUP('mesure l’atteinte de (OKR)', 'Sous-dimension(s) 5D principalement visées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) dominantes des principes suivis\" ROLLUP('suit (principes organisationnels)', 'Sous-dimension(s) 5D dominantes', 'show_unique')",
+    "n": 5
+  },
+  "OKR": {
+    "data_source_id": "09e20d61-0443-4b25-a8f4-fe8f57024637",
+    "ddl": "ADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques adressées\" ROLLUP('adresse (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités renforcées\" ROLLUP('renforce (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les initiatives au service de l’OKR\" ROLLUP('est servi par (initiatives organisationnelles)', 'Sous-dimension(s) 5D principalement travaillées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs qui mesurent l’OKR\" ROLLUP('est mesuré par (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’usage des indicateurs qui mesurent l’OKR\" ROLLUP('est mesuré par (indicateurs)', 'Type d’usage de l’indicateur', 'show_unique')",
+    "n": 5
+  },
+  "Pratiques organisationnelles": {
+    "data_source_id": "00e31d97-9ae0-4304-b821-71d41aead7b6",
+    "ddl": "ADD COLUMN \"Types d’actifs mobilisés\" ROLLUP('mobilise (actifs)', 'Type d’actif', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) dominantes des principes mis en œuvre\" ROLLUP('met en œuvre (principes organisationnels)', 'Sous-dimension(s) 5D dominantes', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités alimentées\" ROLLUP('alimente (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) servies par les processus mis en œuvre\" ROLLUP('met en œuvre (processus)', 'sert principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques influencées\" ROLLUP('influence (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) associées aux modulateurs à effet fort\" ROLLUP('est sous l’effet fort de (modulateurs)', 'Sous-dimension(s) 5D associée(s) (valeur)', 'show_unique')",
+    "n": 6
+  },
+  "Principes organisationnels": {
+    "data_source_id": "00349e89-05d9-4dfd-be7c-534e7844da88",
+    "ddl": "ADD COLUMN \"Types de pratiques de mise en œuvre\" ROLLUP('est mis en œuvre par (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques de mise en œuvre\" ROLLUP('est mis en œuvre par (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques de tension\" ROLLUP('est mis en tension par (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs de suivi\" ROLLUP('est suivi par (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’usage des indicateurs de suivi\" ROLLUP('est suivi par (indicateurs)', 'Type d’usage de l’indicateur', 'show_unique')",
+    "n": 5
+  },
+  "Problématiques": {
+    "data_source_id": "e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
+    "ddl": "ADD COLUMN \"Types d’expression des enjeux d’origine\" ROLLUP('provient de (enjeux)', 'Type d’expression', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les enjeux d’origine\" ROLLUP('provient de (enjeux)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) au cœur des capacités en écart\" ROLLUP('révèle un écart de (capacités organisationnelles)', 'Sous-dimension(s) 5D cœur de la capacité', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) visées par les OKR adressant la problématique\" ROLLUP('est adressée par (OKR)', 'Sous-dimension(s) 5D principalement visées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les initiatives adressant la problématique\" ROLLUP('est adressée par (initiatives organisationnelles)', 'Sous-dimension(s) 5D principalement travaillées', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs mesurant la problématique\" ROLLUP('est mesurée par (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique')",
+    "n": 6
+  },
+  "Processus": {
+    "data_source_id": "d7cf0f34-efe1-467e-8912-65f61a4a1f14",
+    "ddl": "ADD COLUMN \"Types de pratiques de mise en œuvre\" ROLLUP('est mis en œuvre via (pratiques organisationnelles)', 'Type de pratique', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) travaillées par les pratiques de mise en œuvre\" ROLLUP('est mis en œuvre via (pratiques organisationnelles)', 'agit principalement sur les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) impactées par les problématiques affectantes\" ROLLUP('est affecté par (problématiques)', 'impacte les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) lues par les indicateurs de mesure\" ROLLUP('est mesuré par (indicateurs)', 'lit principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Sous-dimensions (5D) soutenues par les actifs utilisés\" ROLLUP('utilise (actifs)', 'soutient principalement les sous-dimensions (5D)', 'show_unique');\nADD COLUMN \"Types d’actifs utilisés\" ROLLUP('utilise (actifs)', 'Type d’actif', 'show_unique')",
+    "n": 6
+  }
+}

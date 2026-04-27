@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — ajout entrée Phase 6.5 : filtrer `category` vs `taxon` dans génération options select.
+> Dernière mise à jour : 27-04-2026 — ajout entrée Phase 6.5 : bug `extract_manifest.py` (props natives omises + select sans taxo en `unknown`) et doctrine SELECT sans taxo globale.
 
 ---
 
@@ -18,6 +18,18 @@
 ---
 
 ## Règles en attente
+
+- [27-04-2026] **Bug `extract_manifest.py` (Phase 6.5) — props natives manquantes + SELECT sans taxo mal typés**
+  - **Contexte** : lors de la phase 6.5 de génération du Twin Notion, 4 rollups orphelins ont émergé après la création des propriétés natives via DDL. Diagnostic : le manifest produit par `scripts/phase6.5/extract_manifest.py` (i) **omettait 2 propriétés natives** de la BDD Individus — `Compétences hard dominantes` et `Compétences soft dominantes` (typées `Texte long` dans le manuel mais avec une taxo SKILL.HARD.LBP / SKILL.SOFT.LBP qui implique en fait un `multi_select` Notion), et (ii) **typait `Type d'usage de l'indicateur` (BDD Indicateurs) en `unknown`** parce que la propriété est un `select` sans taxonomie globale rattachée. Conséquence : 4 rollups (2 sur Postes vers Individus, 1 sur OKR vers Indicateurs, 1 sur Principes organisationnels vers Indicateurs) ont échoué car ils pointaient sur des propriétés source inexistantes dans Notion. Fix manuel appliqué le 27-04-2026 (ajout des 3 props + retry des 4 rollups).
+  - **Portée potentielle** : Transverse (script de génération + doctrine de typage Notion à partir des manuels).
+  - **Deux problèmes distincts à formaliser** :
+    1. **Bug script** : le script doit (a) reconnaître qu'une propriété typée `Texte long` mais associée à une taxonomie codée se traduit en `multi_select` (ou `select` selon cardinalité) côté Notion ; (b) ne pas marquer en `unknown` les `select` sans taxo globale — détecter ce cas explicitement et journaliser pour arbitrage humain.
+    2. **Doctrine SELECT sans taxo globale** : que faire des propriétés select dont les options ne sont pas couvertes par une taxonomie LBP (ex. `Type d'usage de l'indicateur` avec `officiel/proxy/potentiel/KR/alerte`, `Statut relationnel` côté Relations inter-orgas) ? Trois options : (i) créer des micro-taxos LBP dédiées (formalisation forte), (ii) accepter des conventions locales mission-by-mission documentées dans le manuel uniquement, (iii) hybride — taxo LBP pour les propriétés stables transverses, conventions locales pour les propriétés contextuelles. Choix à arbitrer avant la prochaine génération massive.
+  - **Bloquant à lever avant formalisation** :
+    - Recenser toutes les propriétés `select` / `multi_select` actuellement dans les manuels Twin sans taxo globale rattachée
+    - Décider de la doctrine (taxos LBP vs conventions locales vs hybride)
+    - Mettre à jour `extract_manifest.py` pour gérer correctement les deux cas (taxo référencée → multi_select; pas de taxo → demander arbitrage ou utiliser convention locale)
+    - Vérifier qu'aucun autre manuel Twin ne contient de prop similaire encore non détectée
 
 - [25-04-2026] **Logique unifiée des codes uniques pour tous les docs Brain / Motor**
   - **Contexte** : émerge des batchs A1-C de la Phase 5. On a aujourd'hui un patchwork de formats : taxonomies en `XXX.YYY.LBP` (3 segments points), notes de concept en `CPT.CAT.LBP.NOM` (4 segments points), quelques codes Notion historiques en `CPT_TOKEN_TOKEN` (underscores) ou `CPT-TOKEN` (tirets, format recommandé dans la description Notion mais peu appliqué). Manuels de BDD : `DBMAN_NOM`. Plus l'écosystème grossit, plus ce mélange devient illisible et coûteux à maintenir.
