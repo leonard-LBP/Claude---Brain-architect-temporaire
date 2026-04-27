@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — sortie historique de l'entrée "WR-RD Mission Ops à générer" : ✅ template + 4 WR-RD créés.
+> Dernière mise à jour : 27-04-2026 — entrée "Doctrine Indices réservés aux BDDs d'objets, pas aux containers" (Sources d'informations sans `Indices observés` / `Indices d'existence de l'objet`).
 
 ---
 
@@ -102,6 +102,18 @@
     3. Mettre à jour `build_phase3_ddl.py` pour filtrer `Type de nœud == taxon` lors de la génération des options.
     4. Optionnel : ajouter une vérification au pre-commit / WR-RD pour signaler ce cas.
   - **Quand** : avant la prochaine génération massive de BDD ou lors d'un refactor du script DDL.
+
+- [27-04-2026] **Doctrine `Indices observés` / `Indices d'existence de l'objet` réservés aux BDDs d'objets, pas aux containers d'indices**
+  - **Contexte** : Leonard a retiré `Indices observés` et `Indices d'existence de l'objet` de la BDD `Sources d'informations` (Mission Ops) en faisant remarquer que les sources sont **les contenants** des indices, pas les objets que les indices décrivent. Demander des indices d'existence sur une fiche Source est circulaire (la source est sa propre preuve via `Lien vers document original`, `Nom du fichier original`, etc.). Ces 2 props ont sens pour les objets Twin (Actifs, Capacités, Enjeux, Problématiques…) où elles documentent comment on sait que l'objet existe et ce qu'on a observé à son sujet — mais pas pour Sources d'informations qui est elle-même la preuve.
+  - **Portée potentielle** : pour l'instant identifié uniquement sur **Sources d'informations** (Mission Ops). À surveiller si la même logique s'applique à d'autres BDDs containers d'indices (ex. `Journal des signaux` Twin ? — à vérifier ; possiblement non car le Journal est consommateur des sources, pas un container natif).
+  - **Décision Leonard (27-04-2026)** : ne **pas** capturer en règle R-XXX formelle pour l'instant, le cas ne concerne que Sources d'informations. Garder en backlog au cas où le pattern se généraliserait.
+  - **Action immédiate effectuée** : suppression des 2 props sur Notion + propagation manuel + WR-RD (sections 4.1, 8.1, 8.2 + invariants 7.3 + références dans `Notes du consultant`). Doctrine émergente : *"Une BDD container d'indices/preuves n'a pas besoin de logguer ses propres indices d'existence."*
+
+- [28-04-2026] **Self-relation Notion DDL : un seul `ADD COLUMN ... RELATION(self_ds, DUAL ...)` suffit (et NON deux croisés)**
+  - **Contexte** : pendant Pass 2.3 Mission Ops (génération self-rel `appartient à (activité)` ↔ `contient (actions)` côté Actions LBP, et `est dérivée de` ↔ `a pour dérivés` côté Sources d'informations), le pattern initial du prompt était `2 ADD COLUMN avec DUAL croisés` (un par sens). Résultat : **4 colonnes créées au lieu de 2** car chaque ADD avec DUAL crée la prop ET son miroir auto.
+  - **Règle empirique pressentie** : pour une self-relation Notion via DDL, **un seul `ADD COLUMN "PropA" RELATION(self_ds_id, DUAL 'PropMiroir' 'prop_miroir_internal')` suffit** — Notion auto-crée la prop miroir interne. Le pattern `2 ADD croisés` est faux pour ce moteur.
+  - **À formaliser** : R-XXX dans `RULES_BRAIN_TWIN.md` section DDL Notion / phase 6.5 ou WF-014 (workflow de génération BDD) si confirmé sur d'autres self-rel. Documenter aussi dans le prompt-cadre de génération.
+  - **Action effectuée** : pattern correctif appliqué (DROP des 4 colonnes parasites côté Actions LBP et côté Sources, recréation propre).
 
 ---
 

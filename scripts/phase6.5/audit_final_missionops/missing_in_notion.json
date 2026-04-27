@@ -1,0 +1,26 @@
+{
+  "Actions LBP": [
+    {
+      "name": "Notes consultant",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1"
+    }
+  ],
+  "Bricks": [
+    {
+      "name": "Notes consultant",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1"
+    }
+  ],
+  "Meetings": [
+    {
+      "name": "Notes consultant",
+      "type": "RICH_TEXT",
+      "raw_type": "Texte long",
+      "section": "4.1"
+    }
+  ]
+}

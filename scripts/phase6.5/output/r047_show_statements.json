@@ -54,6 +54,7 @@
       "est utilisé par (collectifs)",
       "est utilisé par (processus)",
       "est utilisé pour réaliser (actions détectées)",
+      "Source(s) d’information",
       "Sous-dimensions (5D) associées aux modulateurs concernant l’actif",
       "Sous-dimensions (5D) servies par les processus utilisant l’actif",
       "Sous-dimensions (5D) travaillées par les initiatives concernant l’actif",
@@ -126,7 +127,8 @@
         "est rattaché à (organisations)",
         "est utilisé par (collectifs)",
         "est utilisé par (processus)",
-        "est utilisé pour réaliser (actions détectées)"
+        "est utilisé pour réaliser (actions détectées)",
+        "Source(s) d’information"
       ],
       "6": [
         "Sous-dimensions (5D) associées aux modulateurs concernant l’actif",
@@ -137,8 +139,8 @@
       ]
     },
     "stats": {
-      "total_live": 57,
-      "total_show": 57,
+      "total_live": 58,
+      "total_show": 58,
       "bloc1": 5,
       "bloc2a": 8,
       "bloc2b": 3,
@@ -146,7 +148,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 12,
+      "bloc5": 13,
       "bloc6": 5
     },
     "warnings": []
@@ -229,7 +231,8 @@
       "met en œuvre (pratiques organisationnelles)",
       "porte (initiatives organisationnelles)",
       "porte (OKR)",
-      "porte (principes organisationnels)"
+      "porte (principes organisationnels)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -320,13 +323,14 @@
         "met en œuvre (pratiques organisationnelles)",
         "porte (initiatives organisationnelles)",
         "porte (OKR)",
-        "porte (principes organisationnels)"
+        "porte (principes organisationnels)",
+        "Source(s) d’information"
       ],
       "6": []
     },
     "stats": {
-      "total_live": 76,
-      "total_show": 76,
+      "total_live": 77,
+      "total_show": 77,
       "bloc1": 5,
       "bloc2a": 11,
       "bloc2b": 0,
@@ -334,7 +338,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 24,
+      "bloc5": 25,
       "bloc6": 0
     },
     "warnings": []
@@ -405,6 +409,7 @@
       "met en œuvre (pratiques organisationnelles)",
       "porte (actions détectées)",
       "porte (OKR)",
+      "Source(s) d’information",
       "utilise (actifs)",
       "Sous-dimensions (5D) impactées par les enjeux exprimés",
       "Sous-dimensions (5D) impactées par les problématiques affectantes",
@@ -489,6 +494,7 @@
         "met en œuvre (pratiques organisationnelles)",
         "porte (actions détectées)",
         "porte (OKR)",
+        "Source(s) d’information",
         "utilise (actifs)"
       ],
       "6": [
@@ -500,8 +506,8 @@
       ]
     },
     "stats": {
-      "total_live": 69,
-      "total_show": 69,
+      "total_live": 70,
+      "total_show": 70,
       "bloc1": 5,
       "bloc2a": 12,
       "bloc2b": 0,
@@ -509,7 +515,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 17,
+      "bloc5": 18,
       "bloc6": 5
     },
     "warnings": []
@@ -558,6 +564,7 @@
       "est occupé par (individus)",
       "est rattaché à (collectifs)",
       "est rattaché à (organisations)",
+      "Source(s) d’information",
       "sponsorise (initiatives organisationnelles)",
       "Compétences hard dominantes des occupants",
       "Compétences soft dominantes des occupants",
@@ -620,6 +627,7 @@
         "est occupé par (individus)",
         "est rattaché à (collectifs)",
         "est rattaché à (organisations)",
+        "Source(s) d’information",
         "sponsorise (initiatives organisationnelles)"
       ],
       "6": [
@@ -630,8 +638,8 @@
       ]
     },
     "stats": {
-      "total_live": 46,
-      "total_show": 46,
+      "total_live": 47,
+      "total_show": 47,
       "bloc1": 5,
       "bloc2a": 15,
       "bloc2b": 2,
@@ -639,7 +647,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 4,
+      "bloc5": 5,
       "bloc6": 4
     },
     "warnings": []
@@ -699,6 +707,7 @@
       "participe à (pratiques organisationnelles)",
       "réalise (processus candidats)",
       "réalise (processus)",
+      "Source(s) d’information",
       "Familles métiers des postes occupés",
       "Sous-dimensions (5D) impactées par les enjeux exprimés",
       "Sous-dimensions (5D) impactées par les environnements concernés",
@@ -771,7 +780,8 @@
         "participe à (initiatives organisationnelles)",
         "participe à (pratiques organisationnelles)",
         "réalise (processus candidats)",
-        "réalise (processus)"
+        "réalise (processus)",
+        "Source(s) d’information"
       ],
       "6": [
         "Familles métiers des postes occupés",
@@ -783,8 +793,8 @@
       ]
     },
     "stats": {
-      "total_live": 58,
-      "total_show": 58,
+      "total_live": 59,
+      "total_show": 59,
       "bloc1": 5,
       "bloc2a": 12,
       "bloc2b": 0,
@@ -792,7 +802,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 11,
+      "bloc5": 12,
       "bloc6": 6
     },
     "warnings": []
@@ -865,6 +875,7 @@
       "est voisin de (environnements)",
       "héberge (actifs)",
       "influence (capacités organisationnelles)",
+      "Source(s) d’information",
       "Sous-dimensions (5D) au cœur des capacités influencées",
       "Sous-dimensions (5D) impactées par les enjeux contextualisés",
       "Sous-dimensions (5D) impactées par les problématiques concernées",
@@ -951,7 +962,8 @@
         "est enfant de (environnements)",
         "est voisin de (environnements)",
         "héberge (actifs)",
-        "influence (capacités organisationnelles)"
+        "influence (capacités organisationnelles)",
+        "Source(s) d’information"
       ],
       "6": [
         "Sous-dimensions (5D) au cœur des capacités influencées",
@@ -963,8 +975,8 @@
       ]
     },
     "stats": {
-      "total_live": 71,
-      "total_show": 71,
+      "total_live": 72,
+      "total_show": 72,
       "bloc1": 5,
       "bloc2a": 9,
       "bloc2b": 7,
@@ -972,7 +984,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 16,
+      "bloc5": 17,
       "bloc6": 6
     },
     "warnings": []
@@ -1035,6 +1047,7 @@
       "contextualise (problématiques)",
       "est signalé par (journal des signaux)",
       "jalonne (initiatives organisationnelles)",
+      "Source(s) d’information",
       "Sous-dimensions (5D) impactées par les enjeux contextualisés",
       "Sous-dimensions (5D) impactées par les problématiques contextualisées",
       "Sous-dimensions (5D) lues par les indicateurs affectés",
@@ -1111,7 +1124,8 @@
         "contextualise (enjeux)",
         "contextualise (problématiques)",
         "est signalé par (journal des signaux)",
-        "jalonne (initiatives organisationnelles)"
+        "jalonne (initiatives organisationnelles)",
+        "Source(s) d’information"
       ],
       "6": [
         "Sous-dimensions (5D) impactées par les enjeux contextualisés",
@@ -1123,8 +1137,8 @@
       ]
     },
     "stats": {
-      "total_live": 61,
-      "total_show": 61,
+      "total_live": 62,
+      "total_show": 62,
       "bloc1": 5,
       "bloc2a": 12,
       "bloc2b": 5,
@@ -1132,7 +1146,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 10,
+      "bloc5": 11,
       "bloc6": 6
     },
     "warnings": []
@@ -1168,6 +1182,7 @@
       "Source(s) d’information (texte)",
       "a pour cible (organisations)",
       "a pour source (organisations)",
+      "Source(s) d’information",
       "Pays / juridiction principale de la cible",
       "Pays / juridiction principale de la source",
       "Secteur / domaine d’activité principal de la cible",
@@ -1217,7 +1232,8 @@
       ],
       "5": [
         "a pour cible (organisations)",
-        "a pour source (organisations)"
+        "a pour source (organisations)",
+        "Source(s) d’information"
       ],
       "6": [
         "Pays / juridiction principale de la cible",
@@ -1229,8 +1245,8 @@
       ]
     },
     "stats": {
-      "total_live": 34,
-      "total_show": 34,
+      "total_live": 35,
+      "total_show": 35,
       "bloc1": 5,
       "bloc2a": 5,
       "bloc2b": 2,
@@ -1238,7 +1254,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 2,
+      "bloc5": 3,
       "bloc6": 6
     },
     "warnings": []
@@ -1296,6 +1312,7 @@
       "est portée par (collectifs)",
       "est réalisée par (individus)",
       "se déroule dans (environnements)",
+      "Source(s) d’information",
       "utilise (actifs)",
       "Intentions dominantes des processus candidats alimentés",
       "Niveaux de process des processus candidats alimentés",
@@ -1369,6 +1386,7 @@
         "est portée par (collectifs)",
         "est réalisée par (individus)",
         "se déroule dans (environnements)",
+        "Source(s) d’information",
         "utilise (actifs)"
       ],
       "6": [
@@ -1381,8 +1399,8 @@
       ]
     },
     "stats": {
-      "total_live": 57,
-      "total_show": 57,
+      "total_live": 58,
+      "total_show": 58,
       "bloc1": 5,
       "bloc2a": 16,
       "bloc2b": 2,
@@ -1390,7 +1408,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 8,
+      "bloc5": 9,
       "bloc6": 6
     },
     "warnings": []
@@ -1448,6 +1466,7 @@
       "se consolide en (problématiques)",
       "se situe dans (environnements)",
       "se traduit en (OKR)",
+      "Source(s) d’information",
       "Natures des signaux signalant l’enjeu",
       "Registres des signaux signalant l’enjeu",
       "Sous-dimensions (5D) impactées par les problématiques issues de l’enjeu",
@@ -1519,7 +1538,8 @@
         "est signalé par (journal des signaux)",
         "se consolide en (problématiques)",
         "se situe dans (environnements)",
-        "se traduit en (OKR)"
+        "se traduit en (OKR)",
+        "Source(s) d’information"
       ],
       "6": [
         "Natures des signaux signalant l’enjeu",
@@ -1531,8 +1551,8 @@
       ]
     },
     "stats": {
-      "total_live": 56,
-      "total_show": 56,
+      "total_live": 57,
+      "total_show": 57,
       "bloc1": 4,
       "bloc2a": 11,
       "bloc2b": 6,
@@ -1540,7 +1560,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 8,
+      "bloc5": 9,
       "bloc6": 6
     },
     "warnings": []
@@ -1582,6 +1602,7 @@
       "alimente (enjeux)",
       "concerne (organisations)",
       "signale (événements)",
+      "Source(s) d’information",
       "Criticité des événements signalés",
       "Domaines des enjeux alimentés",
       "Sous-dimensions (5D) impactées par les enjeux alimentés",
@@ -1636,7 +1657,8 @@
       "5": [
         "alimente (enjeux)",
         "concerne (organisations)",
-        "signale (événements)"
+        "signale (événements)",
+        "Source(s) d’information"
       ],
       "6": [
         "Criticité des événements signalés",
@@ -1647,8 +1669,8 @@
       ]
     },
     "stats": {
-      "total_live": 39,
-      "total_show": 39,
+      "total_live": 40,
+      "total_show": 40,
       "bloc1": 4,
       "bloc2a": 10,
       "bloc2b": 2,
@@ -1656,7 +1678,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 3,
+      "bloc5": 4,
       "bloc6": 5
     },
     "warnings": []
@@ -1685,6 +1707,7 @@
       "Last Updated Date",
       "Source(s) d’information (texte)",
       "est propre à (organisations)",
+      "Source(s) d’information",
       "termes liés (glossaire spécifique)"
     ],
     "blocks": {
@@ -1722,13 +1745,14 @@
       ],
       "5": [
         "est propre à (organisations)",
+        "Source(s) d’information",
         "termes liés (glossaire spécifique)"
       ],
       "6": []
     },
     "stats": {
-      "total_live": 22,
-      "total_show": 22,
+      "total_live": 23,
+      "total_show": 23,
       "bloc1": 4,
       "bloc2a": 9,
       "bloc2b": 0,
@@ -1736,7 +1760,7 @@
       "bloc2d": 0,
       "bloc3": 4,
       "bloc4": 1,
-      "bloc5": 2,
+      "bloc5": 3,
       "bloc6": 0
     },
     "warnings": []
@@ -1803,6 +1827,7 @@
       "mobilise (individus)",
       "renforce (capacités organisationnelles)",
       "se déploie dans (environnements)",
+      "Source(s) d’information",
       "Familles métiers des postes sponsors",
       "Sous-dimensions (5D) au cœur des capacités renforcées",
       "Sous-dimensions (5D) impactées par les problématiques adressées",
@@ -1882,7 +1907,8 @@
         "est sponsorisée par (postes)",
         "mobilise (individus)",
         "renforce (capacités organisationnelles)",
-        "se déploie dans (environnements)"
+        "se déploie dans (environnements)",
+        "Source(s) d’information"
       ],
       "6": [
         "Familles métiers des postes sponsors",
@@ -1893,8 +1919,8 @@
       ]
     },
     "stats": {
-      "total_live": 64,
-      "total_show": 64,
+      "total_live": 65,
+      "total_show": 65,
       "bloc1": 5,
       "bloc2a": 11,
       "bloc2b": 4,
@@ -1902,7 +1928,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 13,
+      "bloc5": 14,
       "bloc6": 5
     },
     "warnings": []
@@ -1950,6 +1976,7 @@
       "est mis en évidence par (pratiques organisationnelles)",
       "est évalué pour (organisations)",
       "porte sur (actifs)",
+      "Source(s) d’information",
       "Sous-dimensions (5D) travaillées par les pratiques mettant le modulateur en évidence",
       "Sous-dimensions (5D) travaillées par les pratiques sous effet fort",
       "Types d’actifs concernés",
@@ -2010,7 +2037,8 @@
         "a un effet moyen sur (pratiques organisationnelles)",
         "est mis en évidence par (pratiques organisationnelles)",
         "est évalué pour (organisations)",
-        "porte sur (actifs)"
+        "porte sur (actifs)",
+        "Source(s) d’information"
       ],
       "6": [
         "Sous-dimensions (5D) travaillées par les pratiques mettant le modulateur en évidence",
@@ -2021,8 +2049,8 @@
       ]
     },
     "stats": {
-      "total_live": 45,
-      "total_show": 45,
+      "total_live": 46,
+      "total_show": 46,
       "bloc1": 3,
       "bloc2a": 11,
       "bloc2b": 3,
@@ -2030,7 +2058,7 @@
       "bloc2d": 0,
       "bloc3": 10,
       "bloc4": 1,
-      "bloc5": 6,
+      "bloc5": 7,
       "bloc6": 5
     },
     "warnings": []
@@ -2347,6 +2375,7 @@
       "mesure l’atteinte de (OKR)",
       "mesure la performance de (collectifs)",
       "mesure la performance de (organisations)",
+      "Source(s) d’information",
       "suit (principes organisationnels)",
       "Sous-dimensions (5D) au cœur des capacités mesurées",
       "Sous-dimensions (5D) dominantes des principes suivis",
@@ -2417,6 +2446,7 @@
         "mesure l’atteinte de (OKR)",
         "mesure la performance de (collectifs)",
         "mesure la performance de (organisations)",
+        "Source(s) d’information",
         "suit (principes organisationnels)"
       ],
       "6": [
@@ -2428,8 +2458,8 @@
       ]
     },
     "stats": {
-      "total_live": 54,
-      "total_show": 54,
+      "total_live": 55,
+      "total_show": 55,
       "bloc1": 3,
       "bloc2a": 13,
       "bloc2b": 4,
@@ -2437,7 +2467,7 @@
       "bloc2d": 0,
       "bloc3": 10,
       "bloc4": 1,
-      "bloc5": 9,
+      "bloc5": 10,
       "bloc6": 5
     },
     "warnings": []
@@ -2645,6 +2675,7 @@
       "met en œuvre (processus)",
       "mobilise (actifs)",
       "se déploie dans (environnements)",
+      "Source(s) d’information",
       "Sous-dimensions (5D) associées aux modulateurs à effet fort",
       "Sous-dimensions (5D) au cœur des capacités alimentées",
       "Sous-dimensions (5D) dominantes des principes mis en œuvre",
@@ -2730,7 +2761,8 @@
         "met en œuvre (principes organisationnels)",
         "met en œuvre (processus)",
         "mobilise (actifs)",
-        "se déploie dans (environnements)"
+        "se déploie dans (environnements)",
+        "Source(s) d’information"
       ],
       "6": [
         "Sous-dimensions (5D) associées aux modulateurs à effet fort",
@@ -2742,8 +2774,8 @@
       ]
     },
     "stats": {
-      "total_live": 70,
-      "total_show": 70,
+      "total_live": 71,
+      "total_show": 71,
       "bloc1": 4,
       "bloc2a": 12,
       "bloc2b": 5,
@@ -2751,7 +2783,7 @@
       "bloc2d": 0,
       "bloc3": 12,
       "bloc4": 1,
-      "bloc5": 15,
+      "bloc5": 16,
       "bloc6": 6
     },
     "warnings": []
@@ -3360,7 +3392,8 @@
       "Logs / Révisions LBP",
       "Merge Notes",
       "Merge Flags",
-      "Source(s) d’information (texte)"
+      "Source(s) d’information (texte)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -3410,12 +3443,14 @@
       "4": [
         "Source(s) d’information (texte)"
       ],
-      "5": [],
+      "5": [
+        "Source(s) d’information"
+      ],
       "6": []
     },
     "stats": {
-      "total_live": 34,
-      "total_show": 34,
+      "total_live": 35,
+      "total_show": 35,
       "bloc1": 4,
       "bloc2a": 11,
       "bloc2b": 3,
@@ -3423,7 +3458,7 @@
       "bloc2d": 0,
       "bloc3": 10,
       "bloc4": 1,
-      "bloc5": 0,
+      "bloc5": 1,
       "bloc6": 0
     },
     "warnings": []
@@ -3474,7 +3509,8 @@
       "Logs / Révisions LBP",
       "Merge Notes",
       "Merge Flags",
-      "Source(s) d’information (texte)"
+      "Source(s) d’information (texte)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -3534,12 +3570,14 @@
       "4": [
         "Source(s) d’information (texte)"
       ],
-      "5": [],
+      "5": [
+        "Source(s) d’information"
+      ],
       "6": []
     },
     "stats": {
-      "total_live": 44,
-      "total_show": 44,
+      "total_live": 45,
+      "total_show": 45,
       "bloc1": 5,
       "bloc2a": 12,
       "bloc2b": 5,
@@ -3547,7 +3585,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 0,
+      "bloc5": 1,
       "bloc6": 0
     },
     "warnings": []
@@ -3586,7 +3624,8 @@
       "Logs / Révisions LBP",
       "Merge Notes",
       "Merge Flags",
-      "Source(s) d’information (texte)"
+      "Source(s) d’information (texte)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -3634,12 +3673,14 @@
       "4": [
         "Source(s) d’information (texte)"
       ],
-      "5": [],
+      "5": [
+        "Source(s) d’information"
+      ],
       "6": []
     },
     "stats": {
-      "total_live": 32,
-      "total_show": 32,
+      "total_live": 33,
+      "total_show": 33,
       "bloc1": 5,
       "bloc2a": 9,
       "bloc2b": 2,
@@ -3647,7 +3688,7 @@
       "bloc2d": 0,
       "bloc3": 10,
       "bloc4": 1,
-      "bloc5": 0,
+      "bloc5": 1,
       "bloc6": 0
     },
     "warnings": []
@@ -3707,7 +3748,8 @@
       "Logs / Révisions LBP",
       "Merge Notes",
       "Merge Flags",
-      "Source(s) d’information (texte)"
+      "Source(s) d’information (texte)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -3776,12 +3818,14 @@
       "4": [
         "Source(s) d’information (texte)"
       ],
-      "5": [],
+      "5": [
+        "Source(s) d’information"
+      ],
       "6": []
     },
     "stats": {
-      "total_live": 53,
-      "total_show": 53,
+      "total_live": 54,
+      "total_show": 54,
       "bloc1": 5,
       "bloc2a": 15,
       "bloc2b": 9,
@@ -3789,7 +3833,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 0,
+      "bloc5": 1,
       "bloc6": 0
     },
     "warnings": []
@@ -3832,7 +3876,8 @@
       "Logs / Révisions LBP",
       "Merge Notes",
       "Merge Flags",
-      "Source(s) d’information (texte)"
+      "Source(s) d’information (texte)",
+      "Source(s) d’information"
     ],
     "blocks": {
       "1": [
@@ -3884,12 +3929,14 @@
       "4": [
         "Source(s) d’information (texte)"
       ],
-      "5": [],
+      "5": [
+        "Source(s) d’information"
+      ],
       "6": []
     },
     "stats": {
-      "total_live": 36,
-      "total_show": 36,
+      "total_live": 37,
+      "total_show": 37,
       "bloc1": 5,
       "bloc2a": 11,
       "bloc2b": 4,
@@ -3897,7 +3944,7 @@
       "bloc2d": 0,
       "bloc3": 11,
       "bloc4": 1,
-      "bloc5": 0,
+      "bloc5": 1,
       "bloc6": 0
     },
     "warnings": []

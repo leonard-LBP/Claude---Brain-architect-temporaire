@@ -56,7 +56,8 @@
     "est utilisé pour réaliser (actions détectées) (texte)": "text",
     "fragilise les sous-dimensions (5D) en cas d'indisponibilité": "multi_select",
     "présente les effets d'indisponibilité par sous-dimension (5D)": "text",
-    "soutient principalement les sous-dimensions (5D)": "multi_select"
+    "soutient principalement les sous-dimensions (5D)": "multi_select",
+    "Source(s) d’information": "relation"
   },
   "Organisations": {
     "Activité / offre principale": "text",
@@ -134,7 +135,8 @@
     "porte (initiatives organisationnelles)": "relation",
     "porte (initiatives organisationnelles) (texte)": "text",
     "porte (principes organisationnels)": "relation",
-    "porte (principes organisationnels) (texte)": "text"
+    "porte (principes organisationnels) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Collectifs": {
     "Aliases": "text",
@@ -205,7 +207,8 @@
     "porte (actions détectées)": "relation",
     "porte (actions détectées) (texte)": "text",
     "utilise (actifs)": "relation",
-    "utilise (actifs) (texte)": "text"
+    "utilise (actifs) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Postes": {
     "Aliases": "text",
@@ -253,7 +256,8 @@
     "sert principalement les sous-dimensions (5D)": "multi_select",
     "sponsorise (initiatives organisationnelles)": "relation",
     "sponsorise (initiatives organisationnelles) (texte)": "text",
-    "État de couverture du poste": "text"
+    "État de couverture du poste": "text",
+    "Source(s) d’information": "relation"
   },
   "Individus": {
     "Aliases": "text",
@@ -313,7 +317,8 @@
     "réalise (processus candidats)": "relation",
     "réalise (processus candidats) (texte)": "text",
     "réalise (processus)": "relation",
-    "réalise (processus) (texte)": "text"
+    "réalise (processus) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Environnements": {
     "Aliases": "text",
@@ -386,7 +391,8 @@
     "présente les effets par sous-dimension (5D)": "text",
     "présente les menaces par sous-dimension (5D)": "text",
     "présente les opportunités par sous-dimension (5D)": "text",
-    "présente les tensions inter-sous-dimensions (5D)": "text"
+    "présente les tensions inter-sous-dimensions (5D)": "text",
+    "Source(s) d’information": "relation"
   },
   "Événements": {
     "Aliases": "text",
@@ -449,7 +455,8 @@
     "jalonne (initiatives organisationnelles) (texte)": "text",
     "présente les bascules par sous-dimension (5D)": "text",
     "présente les impacts anticipés par sous-dimension (5D)": "text",
-    "présente les impacts observés par sous-dimension (5D)": "text"
+    "présente les impacts observés par sous-dimension (5D)": "text",
+    "Source(s) d’information": "relation"
   },
   "Relations inter-organisations": {
     "Aliases": "text",
@@ -485,7 +492,8 @@
     "a pour source (organisations)": "relation",
     "a pour source (organisations) (texte)": "text",
     "agit principalement sur les sous-dimensions (5D)": "multi_select",
-    "présente les effets du lien par sous-dimension (5D)": "text"
+    "présente les effets du lien par sous-dimension (5D)": "text",
+    "Source(s) d’information": "relation"
   },
   "Actions détectées": {
     "Aliases": "text",
@@ -544,7 +552,8 @@
     "se déroule dans (environnements)": "relation",
     "se déroule dans (environnements) (texte)": "text",
     "utilise (actifs)": "relation",
-    "utilise (actifs) (texte)": "text"
+    "utilise (actifs) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Enjeux": {
     "Aliases": "text",
@@ -602,7 +611,8 @@
     "se situe dans (environnements)": "relation",
     "se situe dans (environnements) (texte)": "text",
     "se traduit en (OKR)": "relation",
-    "se traduit en (OKR) (texte)": "text"
+    "se traduit en (OKR) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Journal des signaux": {
     "Aliases": "text",
@@ -643,7 +653,8 @@
     "est observé principalement dans la dimension (5D)": "select",
     "porte principalement sur les sous-dimensions (5D)": "multi_select",
     "signale (événements)": "relation",
-    "signale (événements) (texte)": "text"
+    "signale (événements) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Glossaire spécifique": {
     "Aliases": "text",
@@ -667,7 +678,8 @@
     "est propre à (organisations) (texte)": "text",
     "termes liés (glossaire spécifique)": "relation",
     "termes liés (glossaire spécifique) (texte)": "text",
-    "Équivalence Glossaire LBP (si applicable)": "text"
+    "Équivalence Glossaire LBP (si applicable)": "text",
+    "Source(s) d’information": "relation"
   },
   "Initiatives organisationnelles": {
     "Aliases": "text",
@@ -733,7 +745,8 @@
     "renforce (capacités organisationnelles)": "relation",
     "renforce (capacités organisationnelles) (texte)": "text",
     "se déploie dans (environnements)": "relation",
-    "se déploie dans (environnements) (texte)": "text"
+    "se déploie dans (environnements) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Modulateurs": {
     "Aliases": "text",
@@ -756,7 +769,6 @@
     "Notes du consultant": "text",
     "Observables (signaux concrets)": "text",
     "Signes observés dans l’organisation": "text",
-    "Source(s) d’information (texte)": "text",
     "Sous-dimension(s) 5D associée(s) (valeur)": "multi_select",
     "Sous-dimensions (5D) travaillées par les pratiques mettant le modulateur en évidence": "rollup",
     "Sous-dimensions (5D) travaillées par les pratiques sous effet fort": "rollup",
@@ -807,7 +819,6 @@
     "Preuve de terminé plausible": "text",
     "Récurrence apparente": "select",
     "Scope d’interaction": "select",
-    "Source(s) d’information (texte)": "text",
     "Statut de l’objet": "select",
     "agrège (actions détectées)": "relation",
     "agrège (actions détectées) (texte)": "text",
@@ -852,7 +863,6 @@
     "Notes du consultant": "text",
     "Périmètre dominant d’exercice": "select",
     "Signes de présence dans l’organisation": "text",
-    "Source(s) d’information (texte)": "text",
     "Sous-dimension(s) 5D cœur de la capacité": "multi_select",
     "Sous-dimensions (5D) impactées par les problématiques révélant l’écart de capacité": "rollup",
     "Sous-dimensions (5D) lues par les indicateurs mesurant la capacité": "rollup",
@@ -933,7 +943,8 @@
     "mesure l’atteinte de (OKR) (texte)": "text",
     "reflète les phénomènes par sous-dimension (5D)": "text",
     "suit (principes organisationnels)": "relation",
-    "suit (principes organisationnels) (texte)": "text"
+    "suit (principes organisationnels) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "OKR": {
     "Aliases": "text",
@@ -1056,7 +1067,8 @@
     "présente les effets de bord par sous-dimension (5D)": "text",
     "présente les effets durables par sous-dimension (5D)": "text",
     "se déploie dans (environnements)": "relation",
-    "se déploie dans (environnements) (texte)": "text"
+    "se déploie dans (environnements) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Principes organisationnels": {
     "Aliases": "text",
@@ -1309,7 +1321,8 @@
     "est porté par (organisations) (texte)": "text",
     "est servi par (initiatives organisationnelles) (texte)": "text",
     "présente les effets attendus par sous-dimension (5D)": "text",
-    "renforce (capacités organisationnelles) (texte)": "text"
+    "renforce (capacités organisationnelles) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Pratiques organisationnelles sandbox": {
     "Aliases": "text",
@@ -1355,7 +1368,8 @@
     "mobilise (actifs) (texte)": "text",
     "présente les effets de bord par sous-dimension (5D)": "text",
     "présente les effets durables par sous-dimension (5D)": "text",
-    "se déploie dans (environnements) (texte)": "text"
+    "se déploie dans (environnements) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Principes organisationnels sandbox": {
     "Aliases": "text",
@@ -1389,7 +1403,8 @@
     "est suivi par (indicateurs) (texte)": "text",
     "présente les zones de désalignement par sous-dimension (5D)": "text",
     "s’applique à (collectifs) (texte)": "text",
-    "s’applique à (organisations) (texte)": "text"
+    "s’applique à (organisations) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Problématiques sandbox": {
     "Aliases": "text",
@@ -1444,7 +1459,8 @@
     "présente les risques projetés à horizon supérieur à 12 mois par sous-dimension (5D)": "text",
     "présente les tensions inter-sous-dimensions (5D)": "text",
     "révèle un écart de (capacités organisationnelles) (texte)": "text",
-    "se déploie dans (environnements) (texte)": "text"
+    "se déploie dans (environnements) (texte)": "text",
+    "Source(s) d’information": "relation"
   },
   "Processus candidats sandbox": {
     "Aliases": "text",
@@ -1482,6 +1498,7 @@
     "présente les fragilités pressenties par sous-dimension (5D)": "text",
     "se déploie dans (environnements) (texte)": "text",
     "sert principalement la dimension (5D)": "select",
-    "sert principalement les sous-dimensions (5D)": "multi_select"
+    "sert principalement les sous-dimensions (5D)": "multi_select",
+    "Source(s) d’information": "relation"
   }
 }

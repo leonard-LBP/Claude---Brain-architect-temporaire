@@ -1,0 +1,58 @@
+[
+  {
+    "bdd": "Actions LBP",
+    "manuel_count": 30,
+    "wrrd_count": 32,
+    "missing_in_wrrd": [],
+    "extra_in_wrrd": [
+      {
+        "name": "Created Date"
+      },
+      {
+        "name": "Last Updated Date"
+      }
+    ]
+  },
+  {
+    "bdd": "Bricks",
+    "manuel_count": 21,
+    "wrrd_count": 23,
+    "missing_in_wrrd": [],
+    "extra_in_wrrd": [
+      {
+        "name": "Created Date"
+      },
+      {
+        "name": "Last Updated Date"
+      }
+    ]
+  },
+  {
+    "bdd": "Meetings",
+    "manuel_count": 24,
+    "wrrd_count": 26,
+    "missing_in_wrrd": [],
+    "extra_in_wrrd": [
+      {
+        "name": "Created Date"
+      },
+      {
+        "name": "Last Updated Date"
+      }
+    ]
+  },
+  {
+    "bdd": "Sources d’informations",
+    "manuel_count": 28,
+    "wrrd_count": 30,
+    "missing_in_wrrd": [],
+    "extra_in_wrrd": [
+      {
+        "name": "Created Date"
+      },
+      {
+        "name": "Last Updated Date"
+      }
+    ]
+  }
+]

@@ -229,13 +229,54 @@
       "category": "sandbox",
       "ui_family": "Objets candidats",
       "view_id": "f624e9cc-c0e3-4909-8269-6d2c8a2e670f"
+    },
+    "Sources d’informations": {
+      "database_id": "d74148c7-1d4d-45d1-b2ec-a3596fc8f59b",
+      "data_source_id": "1d2931c9-8331-47cb-8a37-372f6c6270bb",
+      "url": "https://www.notion.so/d74148c71d4d45d1b2eca3596fc8f59b",
+      "category": "mission_ops",
+      "ui_family": "Sources",
+      "view_id": "70b8dbc6-e845-4ba2-a4d6-2f496fedb793",
+      "mission_ops_family": "source_registry",
+      "knowledge_regime": "preuve_source",
+      "execution_tracking": false
+    },
+    "Meetings": {
+      "database_id": "bb74d83f-8a7b-453c-a201-69d9395207bc",
+      "data_source_id": "ea568e88-225d-460d-aabc-b0b084401bf4",
+      "url": "https://www.notion.so/bb74d83f8a7b453ca20169d9395207bc",
+      "category": "mission_ops",
+      "ui_family": "Sources",
+      "view_id": "371f59c3-c76e-4342-8426-ae26d315fdd3",
+      "mission_ops_family": "meetings",
+      "knowledge_regime": "ops",
+      "execution_tracking": true
+    },
+    "Actions LBP": {
+      "database_id": "f20b1d07-4de6-45b8-9a82-8a40e50187eb",
+      "data_source_id": "7ce1bae7-522d-4c82-b068-e9cd262c0cc1",
+      "url": "https://www.notion.so/f20b1d074de645b89a828a40e50187eb",
+      "category": "mission_ops",
+      "ui_family": "Sources",
+      "view_id": "12ab4d39-70ab-47c1-9db1-7eac5318ca08",
+      "mission_ops_family": "actions",
+      "knowledge_regime": "ops",
+      "execution_tracking": true
+    },
+    "Bricks": {
+      "database_id": "ce7841b7-b74f-467d-8b2f-4a610d012109",
+      "data_source_id": "29c320d2-09a5-4ecf-aa65-4c7baf1a06b0",
+      "url": "https://www.notion.so/ce7841b7b74f467d8b2f4a610d012109",
+      "category": "mission_ops",
+      "ui_family": "Sources",
+      "view_id": "dc527c86-0f26-4dc4-9ae2-8e1ecc629cd3",
+      "mission_ops_family": "bricks",
+      "knowledge_regime": "ops",
+      "execution_tracking": true
     }
   },
   "external_dependencies": {
-    "Sources d'informations": {
-      "data_source_id": "TO_FETCH",
-      "note": "BDD existante hors-périmètre. À résoudre lors de Phase 4 pour la relation monodirectionnelle Twin → Sources."
-    }
+    "_note": "Sources d’informations + Meetings + Actions LBP + Bricks créées le 27-04-2026."
   },
   "ui_family_classification": {
     "source": "D-017 — décision Leonard 27-04-2026",

@@ -1,0 +1,30 @@
+{
+  "Actions LBP": {
+    "n_props": 32,
+    "n_expected_notion": 29,
+    "n_expected_wrrd": 32,
+    "n_pass4_deferred": 3,
+    "has_advanced_note": true
+  },
+  "Bricks": {
+    "n_props": 23,
+    "n_expected_notion": 23,
+    "n_expected_wrrd": 23,
+    "n_pass4_deferred": 0,
+    "has_advanced_note": true
+  },
+  "Meetings": {
+    "n_props": 26,
+    "n_expected_notion": 26,
+    "n_expected_wrrd": 26,
+    "n_pass4_deferred": 0,
+    "has_advanced_note": true
+  },
+  "Sources d’informations": {
+    "n_props": 30,
+    "n_expected_notion": 30,
+    "n_expected_wrrd": 30,
+    "n_pass4_deferred": 0,
+    "has_advanced_note": true
+  }
+}

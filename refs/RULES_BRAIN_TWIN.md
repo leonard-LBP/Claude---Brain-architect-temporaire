@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 27-04-2026 — R-051 (ordering UI Notion via `update_view SHOW` plutôt que par ordre des `ADD COLUMN`, suite à la découverte sur le pilote Actifs).
+> Dernière mise à jour : 27-04-2026 — R-052 (apostrophe typographique uniforme U+2019 dans tous les noms de propriété/BDD/texte affiché ; ASCII U+0027 strictement réservée au code).
 
 ---
 
@@ -114,6 +114,22 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ❌ `created_at: "2026-04-26"` (format ISO interdit en texte clair)
   - ❌ `created_at: "26/04/2026"` (slash interdit)
 - **Découverte** : 26-04-2026, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
+
+#### R-052 : Apostrophe typographique uniforme (U+2019) dans les noms
+
+- **Portée** : Transverse à tout l'écosystème LBP — tous les noms de propriété, de BDD, de vue, et tout texte affiché aux utilisateurs (vault Obsidian, BDDs Notion, manuels, WR-RD, templates, taxonomies, frontmatters textuels). Concerne aussi bien le scope LBP que le scope Session.
+- **Statut** : Actif
+- **Why** : Unicode définit deux apostrophes visuellement quasi identiques mais incompatibles pour le matching strict — l'apostrophe ASCII droite `'` (U+0027) et l'apostrophe typographique courbe `’` (U+2019). Sur Notion, créer une colonne `"Statut de l'objet"` (ASCII) et `"Statut de l'objet"` (typo) crée **deux propriétés distinctes** sans alerte ; idem côté manuels où une recherche/un diff strict produit des faux négatifs. C'est un trou de symétrie silencieux qui contamine l'audit Manuel ↔ Notion ↔ WR-RD.
+- **How to apply** : Tous les noms de propriété, de BDD, de vue, et tout texte affiché utilisent l'apostrophe typographique `’` (U+2019). L'apostrophe ASCII `'` (U+0027) est strictement réservée au code (scripts Python, JSON, DDL SQL, regex) et ne doit **jamais** apparaître dans un nom affiché. En pratique :
+  - Obsidian (autocorrect actif par défaut) : la conversion est automatique, RAS.
+  - Notion : vérifier visuellement à chaque création de propriété, ou normaliser via `RENAME COLUMN` après création par DDL si le code source contenait un `'` ASCII.
+  - Scripts Python générant du DDL : préférer `'’'` ou `’` littéral dans les chaînes destinées à Notion.
+  - Outils de diff/audit : normaliser Unicode-insensible (déjà appliqué dans `parse_manuel.py` et `diff_manuel_notion.py` via `s.replace("’", "'").lower()`).
+- **Exemples** :
+  - ✅ `Statut de l'objet`, `Critère observable d'existence`, `Source(s) d'information (texte)`
+  - ❌ `Statut de l'objet`, `Source(s) d'information (texte)` (ASCII U+0027 dans un nom affiché)
+- **Conséquence si violation** : faux négatifs en audit (props non détectées comme dupliquées), divergence silencieuse Manuel ↔ Notion, retrievers / agents ne matchent pas le nom attendu.
+- **Découverte** : 27-04-2026, Leonard, après création par DDL de `Source(s) d'information (texte)` sur la BDD Capacités métier candidates sandbox avec apostrophe ASCII alors que le reste du schéma utilisait la typographique. Renommage immédiat puis formalisation de la règle.
 
 ---
 

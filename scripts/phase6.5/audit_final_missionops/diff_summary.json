@@ -1,0 +1,34 @@
+[
+  {
+    "bdd": "Actions LBP",
+    "manuel_expected": 29,
+    "notion_actual": 29,
+    "missing": 1,
+    "extras": 1,
+    "pass4_deferred": 3
+  },
+  {
+    "bdd": "Bricks",
+    "manuel_expected": 23,
+    "notion_actual": 23,
+    "missing": 1,
+    "extras": 1,
+    "pass4_deferred": 0
+  },
+  {
+    "bdd": "Meetings",
+    "manuel_expected": 26,
+    "notion_actual": 26,
+    "missing": 1,
+    "extras": 1,
+    "pass4_deferred": 0
+  },
+  {
+    "bdd": "Sources d’informations",
+    "manuel_expected": 30,
+    "notion_actual": 31,
+    "missing": 0,
+    "extras": 1,
+    "pass4_deferred": 0
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "Actions LBP": [
+    {
+      "name": "Notes du consultant",
+      "type": "text"
+    }
+  ],
+  "Bricks": [
+    {
+      "name": "Notes du consultant",
+      "type": "text"
+    }
+  ],
+  "Meetings": [
+    {
+      "name": "Notes du consultant",
+      "type": "text"
+    }
+  ],
+  "Sources d’informations": [
+    {
+      "name": "a pour dérivés (sources d’informations) (texte)",
+      "type": "text"
+    }
+  ]
+}
