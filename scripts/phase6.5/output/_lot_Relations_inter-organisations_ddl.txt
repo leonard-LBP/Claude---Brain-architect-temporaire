@@ -1,0 +1,24 @@
+ADD COLUMN "Statut de l’objet" SELECT('Brouillon':gray, 'Validé':green, 'À revoir':yellow, 'Archivé':brown);
+ADD COLUMN "Aliases" RICH_TEXT;
+ADD COLUMN "Erreurs de transcription" RICH_TEXT;
+ADD COLUMN "Description" RICH_TEXT;
+ADD COLUMN "Nature de relation" SELECT('Échange économique ou opérationnel':blue, 'Fournit à':blue, 'Distribue pour':blue, 'Intègre pour':blue, 'Opère pour':blue, 'Sous-traite pour':blue, 'Coopération ou co-construction':green, 'Coopère avec':green, 'Co-développe avec':green, 'Partenariat stratégique avec':green, 'Alliance avec':green, 'Consortium avec':green, 'Contrôle, gouvernance ou influence':purple, 'Détient':purple, 'Finance':purple, 'Exerce une tutelle sur':purple, 'Pilote pour':purple, 'Régulation, conformité ou autorisation':red, 'Régule':red, 'Certifie':red, 'Autorise':red, 'Audite':red, 'Positionnement de marché':orange, 'Concurrence avec':orange, 'Se substitue à':orange, 'Est complémentaire de':orange, 'Transformation structurelle':yellow, 'Rapprochement en étude avec':yellow, 'Acquiert':yellow, 'Cède à':yellow);
+ADD COLUMN "Statut relationnel" SELECT();
+ADD COLUMN "Périmètre / objet du lien" RICH_TEXT;
+ADD COLUMN "Date de début" DATE;
+ADD COLUMN "Date de fin" DATE;
+ADD COLUMN "agit principalement sur les sous-dimensions (5D)" MULTI_SELECT('Culture (5D)':blue, 'Structure (5D)':blue, 'Apprentissage collectif (5D)':yellow, 'Communautés de pratiques (5D)':yellow, 'Hard skills (5D)':orange, 'Soft skills (5D)':orange, 'Système d’information (SI) (5D)':purple, 'Système de connaissances (5D)':purple, 'Leadership stratégique (5D)':green, 'Écosystème externe (5D)':green);
+ADD COLUMN "a pour source (organisations) (texte)" RICH_TEXT;
+ADD COLUMN "a pour cible (organisations) (texte)" RICH_TEXT;
+ADD COLUMN "Lien vers la note avancée" URL;
+ADD COLUMN "Exemples concrets" RICH_TEXT;
+ADD COLUMN "Commentaires libres" RICH_TEXT;
+ADD COLUMN "Notes du consultant" RICH_TEXT;
+ADD COLUMN "Indices observés" RICH_TEXT;
+ADD COLUMN "Indices d’existence de l’objet" RICH_TEXT;
+ADD COLUMN "Created Date" CREATED_TIME;
+ADD COLUMN "Last Updated Date" LAST_EDITED_TIME;
+ADD COLUMN "Logs / Révisions LBP" RICH_TEXT;
+ADD COLUMN "Merge Notes" RICH_TEXT;
+ADD COLUMN "Merge Flags" RICH_TEXT;
+ADD COLUMN "Source(s) d’information (texte)" RICH_TEXT

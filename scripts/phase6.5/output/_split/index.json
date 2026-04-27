@@ -1,0 +1,236 @@
+[
+  {
+    "i": 0,
+    "name": "Organisations",
+    "data_source_id": "ceaf07f7-0809-4428-8d31-9db52d87bf33",
+    "view_id": "ceea7d8d-1d01-451e-8ae4-daa68a3240a7",
+    "n_props": 51,
+    "ddl_file": "00_ddl.txt",
+    "show_file": "00_show.txt"
+  },
+  {
+    "i": 1,
+    "name": "Collectifs",
+    "data_source_id": "86af5eb1-d46d-4d8b-ae69-cfc4488fc262",
+    "view_id": "fd2549fc-1a04-4806-8e5c-e67d431d3b4b",
+    "n_props": 37,
+    "ddl_file": "01_ddl.txt",
+    "show_file": "01_show.txt"
+  },
+  {
+    "i": 2,
+    "name": "Postes",
+    "data_source_id": "d1871545-d33e-481c-9813-ce15336aac67",
+    "view_id": "2c78ce3d-c773-41a2-9669-fba2b22372ef",
+    "n_props": 37,
+    "ddl_file": "02_ddl.txt",
+    "show_file": "02_show.txt"
+  },
+  {
+    "i": 3,
+    "name": "Individus",
+    "data_source_id": "fd19eb5d-b866-4b38-9bb9-20e3c3c683ae",
+    "view_id": "6464727a-cca9-43a7-a43d-e8254ac3699a",
+    "n_props": 38,
+    "ddl_file": "03_ddl.txt",
+    "show_file": "03_show.txt"
+  },
+  {
+    "i": 4,
+    "name": "Environnements",
+    "data_source_id": "51eaf391-05b3-4276-b8f5-6010dc8a0287",
+    "view_id": "6b294c80-3c3a-4ee8-bf13-cf4904d10ad3",
+    "n_props": 48,
+    "ddl_file": "04_ddl.txt",
+    "show_file": "04_show.txt"
+  },
+  {
+    "i": 5,
+    "name": "Événements",
+    "data_source_id": "e5aaaac9-5eb3-4bcc-a10a-73e9891100da",
+    "view_id": "96781e5c-39c1-4597-97ae-af0594c15847",
+    "n_props": 44,
+    "ddl_file": "05_ddl.txt",
+    "show_file": "05_show.txt"
+  },
+  {
+    "i": 6,
+    "name": "Relations inter-organisations",
+    "data_source_id": "e87dade3-7806-466b-961d-6c0449857d99",
+    "view_id": "4e71c9ba-355f-446b-a399-cfafd9ef5a38",
+    "n_props": 24,
+    "ddl_file": "06_ddl.txt",
+    "show_file": "06_show.txt"
+  },
+  {
+    "i": 7,
+    "name": "Actions détectées",
+    "data_source_id": "eefcb09b-253c-46e6-b67c-7a5d28863ff0",
+    "view_id": "8d14ab3f-8f38-46fd-a045-6c7fb004895b",
+    "n_props": 42,
+    "ddl_file": "07_ddl.txt",
+    "show_file": "07_show.txt"
+  },
+  {
+    "i": 8,
+    "name": "Enjeux",
+    "data_source_id": "eecdfc29-cedf-481f-8cd4-4d0ae52e23cc",
+    "view_id": "b727265f-eb11-4653-91fd-4a52f27f5db8",
+    "n_props": 41,
+    "ddl_file": "08_ddl.txt",
+    "show_file": "08_show.txt"
+  },
+  {
+    "i": 9,
+    "name": "Journal des signaux",
+    "data_source_id": "9f429a5c-518d-4e13-a57e-10c5ede57e86",
+    "view_id": "a2ce0e72-c0a8-42aa-9872-1b7e4500da4b",
+    "n_props": 30,
+    "ddl_file": "09_ddl.txt",
+    "show_file": "09_show.txt"
+  },
+  {
+    "i": 10,
+    "name": "Initiatives organisationnelles",
+    "data_source_id": "02a9770a-a9cd-43aa-90aa-90f11f5523cf",
+    "view_id": "0a7d47b6-9ff3-4053-8e34-cbf7fa8839e9",
+    "n_props": 45,
+    "ddl_file": "10_ddl.txt",
+    "show_file": "10_show.txt"
+  },
+  {
+    "i": 11,
+    "name": "Modulateurs",
+    "data_source_id": "2172c9b9-c0e5-47eb-942d-5894a553f82a",
+    "view_id": "c68cc1f6-c950-4f57-9742-50029caa6427",
+    "n_props": 31,
+    "ddl_file": "11_ddl.txt",
+    "show_file": "11_show.txt"
+  },
+  {
+    "i": 12,
+    "name": "Processus candidats",
+    "data_source_id": "8f11ed44-18dc-4e89-9baa-70e3c849e253",
+    "view_id": "c3e4493c-a10c-41ba-90d2-23eb4b379d9e",
+    "n_props": 33,
+    "ddl_file": "12_ddl.txt",
+    "show_file": "12_show.txt"
+  },
+  {
+    "i": 13,
+    "name": "Capacités organisationnelles",
+    "data_source_id": "f1d7dbaa-c054-4d07-ab28-fbe800c3002c",
+    "view_id": "92b216db-459b-4c10-ac5f-c95938019e7b",
+    "n_props": 30,
+    "ddl_file": "13_ddl.txt",
+    "show_file": "13_show.txt"
+  },
+  {
+    "i": 14,
+    "name": "Indicateurs",
+    "data_source_id": "fe9b200f-97c7-4805-9710-5a821d538d0b",
+    "view_id": "c263b3ad-c8b0-496c-8715-eb93e5292ed8",
+    "n_props": 36,
+    "ddl_file": "14_ddl.txt",
+    "show_file": "14_show.txt"
+  },
+  {
+    "i": 15,
+    "name": "OKR",
+    "data_source_id": "09e20d61-0443-4b25-a8f4-fe8f57024637",
+    "view_id": "d4b13432-e2db-41f8-8dd8-8e8a1f775f40",
+    "n_props": 34,
+    "ddl_file": "15_ddl.txt",
+    "show_file": "15_show.txt"
+  },
+  {
+    "i": 16,
+    "name": "Pratiques organisationnelles",
+    "data_source_id": "00e31d97-9ae0-4304-b821-71d41aead7b6",
+    "view_id": "9afe0cb2-e214-4a27-b492-e870c288f9ac",
+    "n_props": 46,
+    "ddl_file": "16_ddl.txt",
+    "show_file": "16_show.txt"
+  },
+  {
+    "i": 17,
+    "name": "Principes organisationnels",
+    "data_source_id": "00349e89-05d9-4dfd-be7c-534e7844da88",
+    "view_id": "a61f55fe-0b45-4c94-8c79-cc069a25f74c",
+    "n_props": 30,
+    "ddl_file": "17_ddl.txt",
+    "show_file": "17_show.txt"
+  },
+  {
+    "i": 18,
+    "name": "Problématiques",
+    "data_source_id": "e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
+    "view_id": "4eb16220-757a-48be-a2cc-d76f43c05182",
+    "n_props": 46,
+    "ddl_file": "18_ddl.txt",
+    "show_file": "18_show.txt"
+  },
+  {
+    "i": 19,
+    "name": "Processus",
+    "data_source_id": "d7cf0f34-efe1-467e-8912-65f61a4a1f14",
+    "view_id": "d03d5461-4006-46fa-8ce5-02f7a9808761",
+    "n_props": 41,
+    "ddl_file": "19_ddl.txt",
+    "show_file": "19_show.txt"
+  },
+  {
+    "i": 20,
+    "name": "Capacités métier candidates sandbox",
+    "data_source_id": "9219d493-5a4e-41be-a651-abc0c35e4b82",
+    "view_id": "348a1e9a-523c-4ae8-bed7-70cdd4824b54",
+    "n_props": 31,
+    "ddl_file": "20_ddl.txt",
+    "show_file": "20_show.txt"
+  },
+  {
+    "i": 21,
+    "name": "OKR sandbox",
+    "data_source_id": "2b24d7bf-95a6-4bec-9a67-e9846edc0e33",
+    "view_id": "24450e5d-3740-4238-9b25-738e8ec50dfb",
+    "n_props": 33,
+    "ddl_file": "21_ddl.txt",
+    "show_file": "21_show.txt"
+  },
+  {
+    "i": 22,
+    "name": "Pratiques organisationnelles sandbox",
+    "data_source_id": "e6b8d99a-5400-416c-8206-cd16d2f8c279",
+    "view_id": "d1277f7e-2803-4928-8871-97967e7dea8d",
+    "n_props": 40,
+    "ddl_file": "22_ddl.txt",
+    "show_file": "22_show.txt"
+  },
+  {
+    "i": 23,
+    "name": "Principes organisationnels sandbox",
+    "data_source_id": "25480353-1673-4e22-8612-0161b87757e2",
+    "view_id": "332b91ef-0125-43ec-b7e7-62754f60849b",
+    "n_props": 30,
+    "ddl_file": "23_ddl.txt",
+    "show_file": "23_show.txt"
+  },
+  {
+    "i": 24,
+    "name": "Problématiques sandbox",
+    "data_source_id": "24b457fd-3e01-404b-9db1-d50eaef59e62",
+    "view_id": "a35ef3d0-b21d-427f-8252-a5a48fa9055e",
+    "n_props": 51,
+    "ddl_file": "24_ddl.txt",
+    "show_file": "24_show.txt"
+  },
+  {
+    "i": 25,
+    "name": "Processus candidats sandbox",
+    "data_source_id": "34dbabd2-982e-40d7-81e3-7801235ccfb8",
+    "view_id": "f624e9cc-c0e3-4909-8269-6d2c8a2e670f",
+    "n_props": 34,
+    "ddl_file": "25_ddl.txt",
+    "show_file": "25_show.txt"
+  }
+]

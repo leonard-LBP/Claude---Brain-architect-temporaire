@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — ajout 2 entrées Phase 6.5 : nettoyage libellés taxos (virgules/apostrophes) + formalisation taxo `Statut relationnel`.
+> Dernière mise à jour : 27-04-2026 — ajout entrée Phase 6.5 : filtrer `category` vs `taxon` dans génération options select.
 
 ---
 
@@ -59,6 +59,17 @@
   - **Contexte** : la propriété `Statut relationnel` du manuel `Relations inter-organisations` est typée `Sélection` mais **aucune taxonomie n'est référencée** (le manifest a extrait `SELECT()` vide). En Phase 6.5 (création BDD Notion), cette propriété a été dégradée en `RICH_TEXT` provisoirement.
   - **Portée potentielle** : Twin (BDD Relations inter-organisations).
   - **Action requise** : définir la taxonomie `ORG_REL.STATUT.LBP` (ou équivalent) avec les valeurs canoniques (ex. `actif`, `en cours d'évaluation`, `interrompu`, `terminé`, etc.), créer le `.md` taxonomie, mettre à jour le manuel + WR-RD, puis re-typer la propriété Notion en SELECT.
+
+- [27-04-2026] **Filtrer les nœuds `category` lors de la génération des options select Notion**
+  - **Contexte** : la Phase 6.5 a révélé que `build_phase3_ddl.py` (et possiblement les scripts amont d'extraction) **aplatit la hiérarchie taxonomique** (`category` + `taxon`) en options Notion `SELECT/MULTI_SELECT`. Or les `category` sont des **familles parentes** non destinées à être sélectionnables comme valeur de fiche — seuls les `taxon` doivent l'être.
+  - **Symptôme observé** : doublon `Autre` (category `ENJ.EXPRESSION.LBP.VALENCE_AUTRE`) vs `Autre type d'expression` (taxon `ENJ.EXPRESSION.LBP.AUTRE`) dans la BDD `Enjeux`. Corrigé manuellement par DROP de l'option `Autre` côté Notion.
+  - **Portée potentielle** : Transverse Twin (toutes les BDD utilisant des taxos hiérarchiques category+taxon comme select/multi_select). Anomalie probablement isolée pour l'instant (audit des 28 BDD n'en a relevé qu'une), mais le script génère structurellement le risque.
+  - **Action requise** :
+    1. Auditer toutes les taxos pour identifier celles avec mélange `category` + `taxon`.
+    2. Vérifier dans Notion si d'autres BDD ont des category leakées comme options.
+    3. Mettre à jour `build_phase3_ddl.py` pour filtrer `Type de nœud == taxon` lors de la génération des options.
+    4. Optionnel : ajouter une vérification au pre-commit / WR-RD pour signaler ce cas.
+  - **Quand** : avant la prochaine génération massive de BDD ou lors d'un refactor du script DDL.
 
 ---
 
