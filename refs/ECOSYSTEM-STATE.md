@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — création `Template - WR-RD - Brain.md` v1.0 + génération des 11 WR-RD Brain par instanciation stricte. Capture C-011 (mise à jour systématique de ECOSYSTEM-STATE après chaque phase).
+> Dernière mise à jour : 28-04-2026 — création taxo `JOB.COVERAGE` + ALTER Notion BDD Postes (Twin) + 11 `Lien vers le doc WR-RD (.md)` posés sur les fiches Brain de la BDD Notion `Manuels de BDD`. Audit transverse taxonomies validé : 87/87 référencées présentes, JOB.COVERAGE était la seule manquante.
 
 ## Phase actuelle
 
-**Génération des WR-RD Brain terminée. Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (mise à jour des entrées existantes plutôt qu'archivage+recréation).**
+**Suite WR-RD Brain : taxo JOB.COVERAGE créée et synchronisée Notion (Postes), 11 Lien WR-RD posés. Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (mise à jour des entrées existantes plutôt qu'archivage+recréation).**
 
 ### Phases terminées (chronologie)
 
@@ -21,6 +21,9 @@
 | Phase 7 | 24 instances migrées au canon (20 Templates de Bricks + 3 Méthodes + 1 Doc méta playbook) | Codes `TPL_BRK_*`, `MET_*`, `CHRT_*` |
 | Création `Template - WR-RD - Brain.md` v1.0 | 1 template `TPL_WRRD_BR` | Aligné sur templates Twin et Mission Ops, adapté aux spécificités Brain (pas de couche 5D, pas de jumelles texte R-058) |
 | Génération des 11 WR-RD Brain | 11 fichiers `WR-RD - X.md` dans `Manuels de BDD/Brain/WR-RD/` | Extraction stricte depuis manuels parents (R-041/R-042). Section couche calculée supprimée partout (rollups Brain tous relationnels). |
+| Audit transverse taxonomies | 87/87 référencées présentes ; 1 manquante détectée (`JOB.COVERAGE`) ; 14 orphelines à arbitrer plus tard | Rapport via agent + grep cross-manuels |
+| Création `JOB.COVERAGE` | 1 taxo (BDD Postes Twin) — 6 valeurs (Couvert / Partiellement couvert / Vacant / Sur-couvert (doublon) / En transition / Gelé) | Au canon R-054 + ALTER Notion `État de couverture du poste` SET SELECT |
+| 11 `Lien WR-RD` posés sur Notion | 11 fiches BDD `Manuels de BDD` mises à jour avec URL Drive du WR-RD Brain correspondant | Via WF-011 (lecture SQLite Drive locale) + notion-update-page |
 
 #### Détail Phase 6.5 (refonte templates secondaires)
 
