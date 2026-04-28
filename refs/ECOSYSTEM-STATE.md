@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — fin de session après Phase 7 (24 instances migrées au canon Brain) + sync DDL Notion Brain (~26 actions sur les 11 BDDs) + captures R-053→R-059 et D-019.
+> Dernière mise à jour : 28-04-2026 — création `Template - WR-RD - Brain.md` v1.0 + génération des 11 WR-RD Brain par instanciation stricte. Capture C-011 (mise à jour systématique de ECOSYSTEM-STATE après chaque phase).
 
 ## Phase actuelle
 
-**Migration au canon Brain — Phases 4 à 7 terminées. Sync DDL Notion Brain terminée. Prochaine étape : Template WR-RD Brain → 11 WR-RD Brain → indexation Markdown au canon dans Notion Brain.**
+**Génération des WR-RD Brain terminée. Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (mise à jour des entrées existantes plutôt qu'archivage+recréation).**
 
 ### Phases terminées (chronologie)
 
@@ -19,6 +19,8 @@
 | Audit transverse Notion ↔ Manuels Brain | Rapport `scripts/notion_brain_audit/audit_notion_brain.md` | A déclenché la sync DDL |
 | Sync DDL Notion BDDs Brain | ~26 actions sur les 11 BDDs Brain | Voir détail ci-dessous |
 | Phase 7 | 24 instances migrées au canon (20 Templates de Bricks + 3 Méthodes + 1 Doc méta playbook) | Codes `TPL_BRK_*`, `MET_*`, `CHRT_*` |
+| Création `Template - WR-RD - Brain.md` v1.0 | 1 template `TPL_WRRD_BR` | Aligné sur templates Twin et Mission Ops, adapté aux spécificités Brain (pas de couche 5D, pas de jumelles texte R-058) |
+| Génération des 11 WR-RD Brain | 11 fichiers `WR-RD - X.md` dans `Manuels de BDD/Brain/WR-RD/` | Extraction stricte depuis manuels parents (R-041/R-042). Section couche calculée supprimée partout (rollups Brain tous relationnels). |
 
 #### Détail Phase 6.5 (refonte templates secondaires)
 
@@ -56,6 +58,7 @@
 - **R-058** — interdiction des jumelles texte sur les BDDs Brain
 - **R-059** — hygiène d’écriture des docs Brain (pas de bruit historique ni de spéculation future)
 - **D-019** — Brain = environnement documentaire en évolution ; Core+Motor unifié au niveau modèle de données ; isolation stricte Brain ↔ MO/Twin
+- **C-011** (CLAUDE.md) — mise à jour systématique de `ECOSYSTEM-STATE.md` à chaque fin de phase, avant le commit de la phase
 
 ## Etat du Brain (11 BDD) — post-sync DDL
 
@@ -77,10 +80,8 @@
 
 **Court terme — chantier Brain au canon Notion** :
 
-1. **Re-audit BDDs Notion Brain** (vérification post-sync) — confirmer que les ~26 actions DDL ont bien produit l’état attendu.
-2. **Création `Template - WR-RD - Brain.md`** — aligner sur les 2 templates WR-RD existants (`Digital Twin`, `Mission Ops`).
-3. **Génération des 11 WR-RD Brain** — un par BDD du Brain.
-4. **Indexation des Markdown au canon dans les BDDs Notion Brain** — **mise à jour des entrées existantes** plutôt qu’archivage+recréation (préservation des relations Notion existantes).
+1. **Indexation des Markdown au canon dans les BDDs Notion Brain** — **mise à jour des entrées existantes** plutôt qu’archivage+recréation (préservation des relations Notion existantes).
+2. **Renseigner les `Lien vers le doc WR-RD (.md)`** dans la BDD Manuels de BDD pour les 11 manuels Brain (chaque manuel pointera vers son WR-RD).
 
 **Moyen terme** :
 
