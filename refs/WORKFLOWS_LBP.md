@@ -4,7 +4,7 @@
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.
 > Les workflows propres à notre collaboration Claude (démarrage de session, etc.) sont dans `SESSION_WORKFLOWS.md`.
 > Chaque workflow a un ID stable pour référence.
-> Dernière mise à jour : 26-04-2026 — scission depuis l'ancien `WORKFLOWS.md` (qui mélangeait LBP et session).
+> Dernière mise à jour : 28-04-2026 — ajout WF-015, WF-016, WF-017.
 
 ---
 
@@ -19,8 +19,11 @@
 | WF-003 | Archiver un doc Brain (vault + Notion) | À formaliser |
 | WF-008 | Propagation d'impacts après modification | À formaliser |
 | WF-009 | Migration d'une BDD XXX | À formaliser |
-| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 26-04-2026 après 3 instanciations test) |
+| WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 26-04-2026 après 3 instanciations test ; applicable au Brain dès création de `Template - WR-RD - Brain.md`) |
 | WF-014 | Générer une BDD Twin sur Notion à partir de son Manuel | Actif (cadrage 26-04-2026, Phase 6.5) |
+| WF-015 | Migration au canon d’un type de doc Brain (frontmatter R-054 / R-055 / R-056) | Actif (formalisé 28-04-2026 après Phases 4-7) |
+| WF-016 | Audit transverse Notion ↔ Manuels Brain | Actif (formalisé 28-04-2026) |
+| WF-017 | Sync DDL Notion BDD Brain à partir des écarts d’audit | Actif (formalisé 28-04-2026) |
 
 ---
 
@@ -358,6 +361,129 @@ Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statem
 - **R-048** : naming BDD = nom canonique simple.
 - **R-014** : sandboxes — pas de relations réelles sauf Sources.
 - **R-019** : architecture en 5 couches d'une BDD bien spécifiée.
+
+---
+
+## WF-015 : Migration au canon d’un type de doc Brain (frontmatter R-054 / R-055 / R-056)
+
+**Statut** : Actif (formalisé 28-04-2026 après Phases 4 à 7 — 318 docs migrés).
+
+### Contexte
+
+Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instances de templates, etc.) au canon frontmatter : codification universelle (R-054 — préfixes `BRK_`, `MET_`, `TPL_BRK_`, `CHRT_`, `DBMAN_`, `WRRD_`, `LGBLK_`, `PROMPT_`, `OUT_`, `AGENT_`…), 3 zones balisées (R-055 — Identité / Méta-gouvernance / Spec d’usage), versioning `X.Y` sans PATCH (R-056).
+
+### Méthode (pattern script idempotent)
+
+**1. Inventaire** — lister tous les docs du type cible (glob sur le dossier ou liste explicite).
+
+**2. Parse frontmatter** — pour chaque doc : lire le frontmatter YAML, extraire l’état actuel.
+
+**3. Calcul du frontmatter cible** — appliquer les règles :
+- Génération du `code` selon R-054 (préfixe + token MAJUSCULES_UNDERSCORE).
+- Réorganisation en 3 zones (R-055).
+- Normalisation du `version` en `X.Y` (R-056). Si forme legacy `"DATE vX.Y.Z"` détectée : split en `version` + `created_at`.
+- Normalisation des dates en `JJ-MM-YYYY` (R-044).
+- Normalisation des apostrophes en typographiques `’` (R-052) dans les chaînes de description.
+
+**4. Mode `--dry-run`** — produire un rapport diff par doc (avant / après) sans écrire. Permet revue avant application.
+
+**5. Mode `--apply`** — écrire les frontmatters normalisés. Idempotent : un second passage ne doit produire aucun diff.
+
+**6. QA post-migration** — re-lire un échantillon, vérifier la conformité aux 3 règles. Vérifier l’absence d’artefacts.
+
+**7. Commit unifié** — un commit par phase de migration, message clair (volume + type cible).
+
+### Volumes de référence (Phases 4-7)
+
+| Phase | Type | Volume |
+|---|---|---|
+| 4 | Manuels de BDD | 43 |
+| 5 | WR-RD | 32 |
+| 6 | Notes de concept | 72 (split anti-pattern `version` géré) |
+| 7 | Instances (Templates de Bricks + Méthodes + Doc méta) | 24 |
+
+### Out of scope
+
+- Logic Blocks (101) + Prompts (76) : différés en Phase 7 bis car obsolètes vs Twin v2 (refonte/regen plus que migration).
+
+---
+
+## WF-016 : Audit transverse Notion ↔ Manuels Brain
+
+**Statut** : Actif (formalisé 28-04-2026 — rapport de référence : `scripts/notion_brain_audit/audit_notion_brain.md`).
+
+### Contexte
+
+Vérifier que les 11 BDDs Brain Notion sont alignées avec leurs manuels parents (section 4 du manuel = vérité, R-045). Produit un rapport d’écarts qui alimente WF-017 (sync DDL).
+
+### Méthode
+
+**1. Fetch des 11 data sources Notion** — via `mcp__...__notion-fetch` sur chaque BDD Brain : récupérer la liste exhaustive des propriétés (nom, type, options pour les select/multi-select).
+
+**2. Parse de la section schéma de chaque manuel parent** — lire la ou les sections du manuel qui décrivent les propriétés Notion attendues (génériques, spécifiques, relations, rollups, taxonomies référencées).
+
+**3. Comparaison ligne à ligne** — pour chaque propriété attendue côté manuel, vérifier sa présence côté Notion (nom exact, type exact, options exactes pour les select). Pour chaque propriété présente côté Notion, vérifier qu’elle est documentée dans le manuel.
+
+**4. Classification des écarts** :
+- **MANQUE** : présent manuel, absent Notion → ADD à prévoir.
+- **OBSOLÈTE** : présent Notion, absent manuel → DROP à prévoir.
+- **MISMATCH TYPE** : type différent → CONVERT à prévoir (ex : text → rollup).
+- **MISMATCH OPTIONS** : valeurs select divergentes → ALTER à prévoir.
+- **CASSE / TYPO / ACCENTS** : nom différent à la marge → RENAME à prévoir.
+- **JUMELLE TEXTE INTERDITE (R-058)** : DROP à prévoir.
+
+**5. Rapport markdown par BDD** — score (Conforme / Mineur / Majeur / Critique) + liste des écarts classés + recommandations DDL.
+
+**6. Synthèse transverse** — tableau récap des 11 BDDs, total d’actions DDL nécessaires.
+
+### Application 28-04-2026
+
+11 BDDs auditées, ~26 actions DDL identifiées et appliquées via WF-017.
+
+---
+
+## WF-017 : Sync DDL Notion BDD Brain à partir des écarts d’audit
+
+**Statut** : Actif (formalisé 28-04-2026 — appliqué sur les 11 BDDs Brain).
+
+### Contexte
+
+Appliquer sur Notion les actions DDL identifiées par WF-016. Limitation Notion API : pas de réordonnancement après création, donc l’ordre d’ajout matter. Pas de description sur les nouvelles propriétés via DDL (à compléter à la main).
+
+### Pattern d’actions DDL
+
+| Action | Quand | Exemple |
+|---|---|---|
+| **DROP** | Propriété obsolète (ex : `actif` Prompts), redondante (ex : `Type fonctionnel (BDD décrite)` Manuels — D-019), interdite (jumelles texte Logic blocks — R-058) | DROP `actif` |
+| **ADD select / multi-select** | Propriété manquante avec taxo | ADD `Domaine(s) d’usage` multi-select avec 4 options (Core / Motor / Digital Twin / Mission Ops) |
+| **ADD url** | Lien source manquant | ADD `System prompt (lien source)` URL (Agents LBP) |
+| **ALTER options** | Valeurs select divergentes ou casse à harmoniser | ALTER `Statut de déploiement` (5 valeurs `PROMPT.DEPLOY_STATUS`), harmonisation casse `Domaine(s) d’usage` |
+| **RENAME** | Casse / accents / apostrophes (R-052 / R-044 / typo) | `Statut de l'objet` → `Statut de l’objet` ; `Valeur ajoutee` → `Valeur ajoutée` ; `Entrees attendues` → `Entrées attendues` |
+| **CONVERT text → rollup** | Champ texte à transformer en rollup via une relation existante | 8 conversions (Méthodes 2, Templates 2, Agents 4) |
+| **CREATE rollup** | Rollup manquant alors que la relation source existe | 3 rollups Outils externes (Agents/Méthodes/Templates mobilisés via prompts) |
+
+### Étapes
+
+**1. Préparer le batch DDL par BDD** depuis le rapport d’audit (WF-016).
+
+**2. Gérer les taxos vides** — si une option select doit être ajoutée mais la taxo Notion est vide, peupler les options à partir du manifest taxos (libellés + couleurs depuis le `.md` de la taxo dans `Taxonomies/`).
+
+**3. Exécuter via `notion-update-data-source`** — une salve par BDD, opérations groupées dans l’ordre :
+   1. RENAME (préparation)
+   2. DROP (nettoyage)
+   3. ALTER options (correction)
+   4. ADD natives (compléments)
+   5. CONVERT / CREATE rollups (couche dérivée — nécessite que les relations sources existent)
+
+**4. Vérification post-DDL** — re-fetch la data source, comparer avec le manuel parent. Score doit être Conforme.
+
+**5. Compléter les descriptions à la main** (limite API Notion) — pour les propriétés ajoutées, écrire la description sur la fiche Notion.
+
+**6. Tracer dans ECOSYSTEM-STATE.md** — chronologie des actions par BDD.
+
+### Application 28-04-2026
+
+~26 actions DDL appliquées sur les 11 BDDs Brain. Toutes les BDDs en Conforme post-sync.
 
 ---
 

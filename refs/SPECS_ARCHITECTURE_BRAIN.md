@@ -1,6 +1,7 @@
 # SPECS — Architecture Brain LBP
 
-> Source de vérité : schémas Notion live, fetchés le 07-04-2026.
+> Source de vérité : schémas Notion live, fetchés le 07-04-2026 ; détails BDD non rafraîchis depuis (sections 3.x à mettre à jour lors d’un re-fetch).
+> Dernière mise à jour : 28-04-2026 — sync DDL Notion Brain + capture D-019, R-058, R-059.
 > Ce fichier documente l'écosystème complet des BDD Brain et leurs interconnexions.
 
 ---
@@ -9,7 +10,13 @@
 
 Le Brain est la **couche de gouvernance documentaire de LBP**. Il contient les 11 BDD Notion qui définissent le vocabulaire, les méthodes, les prompts, les templates et les règles qui régissent l'ensemble de l'écosystème (Digital Twin, Mission Ops, etc.).
 
-Le Brain est **autonome et indépendant** — aucune relation Notion ne le lie directement aux BDD Digital Twin ou Mission Ops. L'héritage se fait via les **Manuels de BDD** qui documentent les schémas des BDD opérationnelles.
+Le Brain est **autonome et indépendant** — aucune relation Notion ne le lie directement aux BDD Digital Twin ou Mission Ops (**isolation stricte, D-019**). L'héritage se fait via les **Manuels de BDD** qui documentent les schémas des BDD opérationnelles.
+
+**D-019 — Brain unifié au niveau modèle de données.** Les zones Core / Motor sont conservées comme étiquette de discours mais ne sont plus une partition stricte des BDDs : l’appartenance fonctionnelle d’un objet est portée par la propriété `Domaine(s) d’usage` (multi-select Core / Motor / Digital Twin / Mission Ops) sur les 5 BDDs Motor. Les BDDs Core (Glossaire, Notes de concept, Taxonomies) **n’ont pas** cette propriété, étant transverses par nature.
+
+**R-058 — Pas de jumelles texte sur Brain.** Les jumelles texte (champ texte doublonnant une relation Notion) sont **interdites** sur les BDDs Brain (autorisées sur Twin, expérimentales sur Mission Ops). Conséquence : 2 jumelles texte DROP sur Logic blocks le 28-04-2026.
+
+**R-059 — Hygiène d’écriture des docs Brain.** Chaque doc = source de vérité brute à l’instant t : pas de bruit historique ni de spéculation future dans le corps des docs.
 
 ### Principes fondamentaux
 
@@ -53,12 +60,26 @@ Toutes les BDD Brain partagent un socle commun :
 | Propriété | Type | Description |
 |-----------|------|-------------|
 | `Nom canonique` | title | Intitulé lisible et stable |
-| `Code unique` | text | Identifiant MAJUSCULES stable (format variable par BDD) |
-| `Statut de l'objet` | select | `Brouillon` / `Validé` / `À revoir` / `Archivé` |
+| `Code unique` | text | Identifiant MAJUSCULES stable (format par BDD, R-054) |
+| `Statut de l’objet` | select | `Brouillon` / `Validé` / `À revoir` / `Archivé` |
 | `Created Date` | created_time ou date | Date de création automatique |
 | `Last Updated Date` | last_edited_time ou date | Date de dernière modification |
 
 > Les 11 BDD utilisent les mêmes valeurs exactes : `Brouillon`, `Validé`, `À revoir`, `Archivé`.
+
+### `Domaine(s) d’usage` — propriété commune aux 5 BDDs Motor (D-019)
+
+Depuis la sync DDL du 28-04-2026, les 5 BDDs Motor portent une propriété `Domaine(s) d’usage` (multi-select : `Core` / `Motor` / `Digital Twin` / `Mission Ops`) :
+
+| BDD Motor | `Domaine(s) d’usage` |
+|---|---|
+| Méthodes LBP | présent (ADD 28-04-2026) |
+| Templates de Bricks | présent (ADD 28-04-2026) |
+| Agents LBP | présent (ADD 28-04-2026) |
+| Outils externes | présent (ADD 28-04-2026) |
+| Prompts LBP | présent (déjà présent ; casse harmonisée 28-04-2026) |
+
+Les **BDDs Core** (Glossaire LBP, Notes de concept, Taxonomies) **n’ont pas** cette propriété : elles sont transverses par nature et leur domaine d’usage n’a pas de sens à l’échelle de la BDD.
 
 ### Propriété "Lien source"
 

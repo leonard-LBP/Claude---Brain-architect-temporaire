@@ -2,7 +2,7 @@
 
 > Vue macro transverse de l'écosystème — à relire au début de chaque conversation pour re-contextualisation rapide.
 > Pour le détail des BDD : voir `SPECS_ARCHITECTURE_BRAIN.md` (Brain) et `SPECS_ARCHITECTURE_TWIN.md` (Twin).
-> Dernière mise à jour : 24-04-2026 — refonte après Panorama V2 v3 (nouvelle architecture Twin)
+> Dernière mise à jour : 28-04-2026 — refresh post-Phase 7 + sync DDL Notion Brain + captures R-053→R-059 et D-019.
 
 ## 1. Vue macro
 
@@ -92,6 +92,17 @@ Cf. décisions D-002 à D-009 dans `refs/DECISIONS.md`.
 | Carte informelle | Tableau maître canonique 29 BDD | D-008 |
 | Lecture table par table | Chaînes de transformation de la connaissance | D-009 |
 
+## 6 bis. Brain comme environnement documentaire en évolution (D-019)
+
+Le Brain est unifié au niveau du **modèle de données** : la distinction Core / Motor n’est plus une partition stricte des BDDs mais reste une étiquette de discours, matérialisée dans la propriété `Domaine(s) d’usage` (multi-select : Core / Motor / Digital Twin / Mission Ops) sur les 5 BDDs Motor (Méthodes, Templates, Agents, Outils, Prompts).
+
+Conséquences appliquées (sync DDL 28-04-2026) :
+
+- DROP de la propriété `Type fonctionnel (BDD décrite)` sur la BDD `Manuels de BDD` (devenue redondante avec `Domaine(s) d’usage`).
+- ADD de `Domaine(s) d’usage` sur les 4 BDDs Motor qui ne l’avaient pas (Méthodes, Templates, Agents, Outils).
+- **Isolation stricte** Brain ↔ Mission Ops/Twin : aucune relation Notion directe entre une BDD Brain et une BDD MO/Twin. Le pont reste les Manuels de BDD (cross-zone) qui documentent les schémas.
+- **Pas de jumelles texte sur Brain (R-058)** : autorisées sur Twin, expérimentales sur Mission Ops, **interdites sur Brain**. 2 jumelles texte ont été DROP sur Logic blocks.
+
 ## 7. Cycle de vie d'un doc Brain
 
 ```
@@ -101,20 +112,35 @@ Template (Docs méta) → instanciation (placeholders + @INSTR) → cleanup → 
 
 ## 8. Templates disponibles (dans Docs Méta LBP)
 
+État au 28-04-2026 — refonte v2.0 effectuée Phase 6.5 + ajout Template Manuel BDD Brain en v1.1.
+
+**Templates au canon (v2.0 / v1.1)**
+
 | Template | Génère |
 |----------|--------|
-| template-db-manual.md | Manuels de BDD (extraction directe + Brain) |
-| template-db-manual-post_traitement.md | Manuels de BDD (post-traitement DT) |
-| template-db-manual-mission_ops.md | Manuels de BDD (Mission Ops) |
-| template-note_concept_lbp.md | Notes de concept |
-| template-methode_lbp.md | Méthodes LBP |
-| Template-prompt_lbp.md | Prompts LBP |
-| template-prompt_maitre_lbp.md | Prompts maîtres |
-| Template de system prompt.md | System prompts |
-| template-meta_logic_block_lbp.md | Logic blocks |
-| Template-Fiche_outil_LBP.md | Fiches Outils externes |
-| Template méta de Brick.md | Templates de Bricks |
-| template-taxonomie.md | Taxonomies |
+| `Template - Manuel de BDD - Digital Twin.md` | Manuels de BDD Twin |
+| `Template - Manuel de BDD - Mission Ops.md` | Manuels de BDD Mission Ops |
+| `Template - Manuel de BDD - Brain.md` (v1.1, nouveau) | Manuels de BDD Brain |
+| `Template - WR-RD - Digital Twin.md` | WR-RD Twin |
+| `Template - WR-RD - Mission Ops.md` | WR-RD Mission Ops |
+| `Template - Note de concept.md` | Notes de concept |
+| `Template - Taxonomie.md` (v2.0) | Taxonomies |
+| `Template - Méthode LBP.md` (v2.0, refondu Phase 6.5) | Méthodes LBP |
+| `Template - Outil externe.md` (v2.0, refondu Phase 6.5) | Fiches Outils externes |
+| `Template - Template de Brick.md` (v2.0, méta-template, refondu Phase 6.5) | Templates de Bricks |
+
+**Templates legacy à refondre (Phase 7 bis)**
+
+| Template | Génère |
+|----------|--------|
+| `Template de system prompt.md` | System prompts |
+| `template-prompt_maitre_lbp.md` | Prompts maîtres |
+| `Template-prompt_lbp.md` | Prompts LBP |
+| `template-meta_logic_block_lbp.md` | Logic blocks |
+
+**À créer (court terme)**
+
+- `Template - WR-RD - Brain.md` (pour aligner sur les 2 WR-RD Twin / Mission Ops, en vue des 11 WR-RD Brain).
 
 ## 9. Chemins d'accès
 
@@ -136,19 +162,26 @@ Template (Docs méta) → instanciation (placeholders + @INSTR) → cleanup → 
 
 ## 10. Anomalies / dettes connues
 
-### Héritées de v1 (non traitées)
-1. Glossaire : ~50% des concepts en Brouillon, sans code unique
-2. Glossaire : "est lié à (concepts)" est un champ texte, pas une relation
-3. 3 relations Glossaire sans miroir exposé (vers Méthodes, Manuels, concepts)
-4. Logic blocks : lien Drive en text au lieu d'url
-5. Instructions d'écriture / clefs de lecture non indexées comme objets Brain
-6. 6 BDD "XXX" à migrer (ancienne archi)
-7. Pipeline : full rebuild uniquement (pas de sync incrémentale)
-8. Brain Studio : 100% mock
+### Actives
 
-### Nées de la refonte v2 du Twin
-9. Prompts maîtres et logic blocks référencent encore l'ancienne architecture Twin (UO, Ressources, Rôles officiels) → obsolètes
-10. Nouveaux manuels de BDD Twin v2 créés hors vault → à intégrer dans `Architecture data/Manuels de BDD/Digital Twin/`
-11. Nouvelles taxonomies et notes de concept (Postes, Collectifs, Actifs, Initiatives) créées hors vault → à intégrer
-12. BDD Notion du Twin actuelles désalignées avec la v2 → à régénérer à partir des nouveaux manuels
-13. Archivage formel des anciens docs Twin (UO, Ressources, Rôles officiels) à prévoir
+1. Glossaire : "est lié à (concepts)" reste un champ texte, pas une relation Notion (anomalie héritée v1, non traitée).
+2. Logic blocks : `Lien Drive du logic block` toujours en `text` au lieu de `url` (héritée v1).
+3. Pipeline de régénération Brain : full rebuild uniquement, pas de sync incrémentale.
+4. Brain Studio (frontend) : 100% mock.
+5. Prompts maîtres (76) et Logic Blocks (101) : obsolètes vs Twin v2 et hors canon — refonte/regen reportée à **Phase 7 bis**.
+6. ~275 docs ont `summary` / `purpose` en TODO (à remplir par moi avec vision globale).
+7. Audit nettoyage backticks abusifs (R-057) à passer en transverse.
+8. 6 BDD "XXX" à migrer (ancienne archi).
+
+### Résolues récemment (avril 2026)
+
+- **Migration au canon de 318 docs Brain** (43 manuels + 32 WR-RD + 72 notes de concept + 96 taxonomies + 24 instances Phase 7) avec frontmatter R-054 / R-055 / R-056.
+- **Sync DDL Notion Brain** : ~26 actions sur les 11 BDDs (DROP/ADD/ALTER/RENAME), 8 conversions text→rollup, 3 rollups manquants créés sur Outils externes.
+- **R-058 — Suppression des jumelles texte sur Brain** : 2 jumelles DROP sur Logic blocks.
+- **D-019 — DROP `Type fonctionnel (BDD décrite)`** sur Manuels de BDD (devenu redondant avec `Domaine(s) d’usage`).
+- **R-053 — Convention de renaming des docs archivés** appliquée (suffix `(archivé v<X> le JJ-MM-YYYY)`).
+- **R-052 — Apostrophes typographiques** : harmonisation Notion (Logic blocks `Statut de l’objet`).
+- **Refonte v2.0 de 4 templates secondaires** (Phase 6.5).
+- **Migration au canon des manuels Twin v2 + WR-RD Twin v2** (Phases 4-5).
+- **Nouveaux manuels Twin v2, taxos, notes de concept** : intégrés dans `Architecture data/...` (plus hors vault).
+- **Glossaire** : refonte massive en cours via les phases canon ; ~50% Brouillon en cours de résorption.
