@@ -1,0 +1,334 @@
+{
+  "metadata": {
+    "audit_date": "27-04-2026",
+    "vault_root": "H:\\Drive partagés\\LBP - shared\\Architecture data\\",
+    "scope": "Tous fichiers .md hors 00 - archives/",
+    "method": "Lecture seule, échantillonnage représentatif pour catégories volumineuses (taxos, concepts)",
+    "level_definitions": {
+      "A": "Frontmatter du template-doc lui-même (title, doc_type=template, version du template, etc.)",
+      "B": "Modèle de frontmatter à reproduire dans les docs instanciés depuis le template"
+    }
+  },
+  "templates": [
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template - Manuel de BDD - Digital Twin.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=6.3.0", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": false,
+      "level_B_location": "Aucun bloc FRONTMATTER_INSTANCE explicite ; settings et notes seulement",
+      "anomaly": "B absent : pas de gabarit YAML d'instance"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template - Manuel de BDD - Mission Ops.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=5.1.0", "date_creation", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": false,
+      "level_B_location": "Aucun bloc FRONTMATTER_INSTANCE explicite",
+      "anomaly": "B absent : pas de gabarit YAML d'instance"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template - WR-RD - Digital Twin.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.3.0", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc <!-- @INSTR-START: FRONTMATTER_INSTANCE --> ligne 71",
+      "anomaly": null
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template - WR-RD - Mission Ops.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.0.0", "date_creation", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc <!-- @INSTR-START: FRONTMATTER_INSTANCE --> ligne 74",
+      "anomaly": null
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-taxonomie.md",
+      "level_A_fields": ["canonical_name", "namespace_code", "summary", "is_open", "open_policy", "scale_kind", "is_ordinal", "selection_mode", "cardinality", "aliases", "keywords", "detection_clues"],
+      "level_A_coherent": false,
+      "level_B_present": "merged_into_A",
+      "level_B_location": "Le frontmatter en tête EST le modèle d'instance (avec commentaires # explicites à conserver)",
+      "anomaly": "ANOMALIE MAJEURE : pas de niveau (A) propre. Le template-doc n'a aucune métadonnée le décrivant lui-même (pas de title, doc_type=template, version du template)."
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-note_concept_lbp.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.1.1", "tags"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc <!-- INSTR-START: FRONTMATTER_NOTE_INSTANCE --> ligne 40",
+      "anomaly": null
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-methode_lbp.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.1.0", "status=prêt", "tags"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc <!-- INSTR-START: FRONTMATTER --> ligne 14",
+      "anomaly": "B utilise type/titre/statut au lieu de doc_type/title/status (incohérence transverse)"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-prompt_maitre_lbp.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.1.0", "tags"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc INSTR ligne 51-66 + SECOND BLOC YAML --- ligne 67-79 hors commentaire HTML",
+      "anomaly": "ANOMALIE FORME : second bloc YAML lignes 67-79 dans le corps non encapsulé en commentaire = double frontmatter visuel"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-meta_logic_block_lbp.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.1.0", "tags"],
+      "level_A_coherent": true,
+      "level_B_present": true,
+      "level_B_location": "Bloc INSTR ligne 52-67 + SECOND BLOC YAML --- ligne 68-80",
+      "anomaly": "ANOMALIE FORME : double frontmatter visuel identique à template-prompt_maitre_lbp"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template de system prompt.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.0.0", "tags"],
+      "level_A_coherent": true,
+      "level_B_present": "partial",
+      "level_B_location": "Bloc <!-- INSTR-START: FRONTMATTER --> ligne 35-44 (texte descriptif, pas un YAML)",
+      "anomaly": "B sous-spécifié : pas de YAML modèle copiable, juste une liste de champs en prose"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template-Fiche_outil_LBP.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=1.1.0", "status=prêt", "tags", "cleanup_rules"],
+      "level_A_coherent": true,
+      "level_B_present": false,
+      "level_B_location": "Aucun bloc dédié",
+      "anomaly": "B absent"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template-prompt_lbp.md",
+      "level_A_fields": ["title=template-prompt-lbp", "doc_type=template", "purpose", "version=1.1.0", "status=prêt", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": false,
+      "level_B_location": "Pas de bloc YAML modèle ; placeholders documentés en settings",
+      "anomaly": "B absent comme bloc dédié"
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template méta de Brick.md",
+      "level_A_fields": ["title contenant {{placeholders}}", "doc_type=brick (PAS template)", "brick_type", "purpose", "version=0.1.0", "status=draft", "mission", "client_alias", "timeframe", "scope", "inputs_structured", "inputs_unstructured", "methods_refs", "output_format", "intended_audience", "primary_questions", "tags"],
+      "level_A_coherent": false,
+      "level_B_present": "merged_into_A",
+      "level_B_location": "Le frontmatter en tête EST le modèle d'instance d'une brick",
+      "anomaly": "ANOMALIE MAJEURE : pas de niveau (A) propre. doc_type=brick au lieu de template. title avec placeholders {{...}}. Le template-doc lui-même n'a aucune métadonnée."
+    },
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-db-manual-mission_ops.md",
+      "level_A_fields": ["title", "doc_type=template", "purpose", "version=0.3.0", "status=draft", "tags", "cleanup_rules", "notes"],
+      "level_A_coherent": true,
+      "level_B_present": "partial",
+      "level_B_location": "YAML décrit en texte brut au sein du commentaire INSTR-START: GUIDE_GLOBAL lignes 33-41",
+      "anomaly": "Coexiste avec Template - Manuel de BDD - Mission Ops.md v5.1.0 → doublon suspect, peut-être ancienne génération à archiver"
+    }
+  ],
+  "instances": {
+    "manuels_twin": {
+      "count": 28,
+      "fields_observed": ["title", "doc_type=db_manual", "purpose", "version", "template_version=6.1.0", "bdd_canonical_name", "object_type", "architecture_family", "ui_family", "knowledge_regime", "officiality_regime", "has_advanced_note", "tags"],
+      "missing_vs_canon": ["code (DBMAN_xxx)", "created_at/date_creation"],
+      "issues": [
+        "template_version 6.1.0 obsolète (template actuel = 6.3.0)",
+        "Pas de champ code DBMAN_xxx (asymétrie vs Mission Ops)",
+        "Pas de date de création (asymétrie vs Mission Ops)"
+      ]
+    },
+    "manuels_missionops": {
+      "count": 4,
+      "files": ["Manuel de BDD - Actions LBP.md", "Manuel de BDD - Bricks.md", "Manuel de BDD - Meetings.md", "Manuel de BDD - Sources d'informations.md"],
+      "fields_observed": ["title", "doc_type=db_manual", "purpose", "version", "template_version=5.1.0", "date_creation", "code", "bdd_canonical_name", "object_type", "architecture_scope", "mission_ops_family", "knowledge_regime", "execution_tracking", "tags"],
+      "issues": [
+        "date_creation au format ISO YYYY-MM-DD viole R-044 (devrait être JJ-MM-YYYY)",
+        "Champ nommé date_creation alors que Twin utilise created_at"
+      ]
+    },
+    "wrrd_twin": {
+      "count": 28,
+      "fields_observed": ["title", "doc_type=wr_rd", "target_bdd_canonical_name", "target_bdd_code", "parent_manual", "wr_rd_code", "domain", "version", "template_version=1.2.0", "created_at (JJ-MM-YYYY)", "tags"],
+      "issues": [
+        "template_version 1.2.0 obsolète (template actuel = 1.3.0)"
+      ]
+    },
+    "wrrd_missionops": {
+      "count": 4,
+      "files": ["WR-RD - Actions LBP.md", "WR-RD - Bricks.md", "WR-RD - Meetings.md", "WR-RD - Sources d'informations.md"],
+      "fields_observed": ["title", "doc_type=wr_rd", "target_bdd_canonical_name", "target_bdd_code", "parent_manual", "wr_rd_code", "domain", "version", "template_version=1.0.0", "date_creation (YYYY-MM-DD)", "tags"],
+      "issues": [
+        "date_creation au format ISO viole R-044",
+        "Champ date_creation au lieu de created_at (asymétrie WR-RD Twin)"
+      ]
+    },
+    "taxonomies": {
+      "count_estimated": 96,
+      "sample": ["ASSET.SUBTYPE.LBP.md", "COL.TYPE.LBP.md", "INDIC.TIME_ROLE.LBP.md"],
+      "fields_observed": ["canonical_name", "namespace_code", "summary", "is_open", "open_policy", "scale_kind", "is_ordinal", "selection_mode", "cardinality", "aliases", "keywords", "detection_clues"],
+      "missing_vs_canon": ["title", "doc_type=taxonomy", "version", "tags"],
+      "issues": [
+        "Pas de title/doc_type/version au niveau doc (cohérent avec template mais lacune de gouvernance)",
+        "Hétérogénéité : commentaires # conservés ou supprimés selon les fichiers",
+        "DOUBLON CRITIQUE : INDIC.TIME_ROLE.LBP.md existe à la racine du vault ET dans Taxonomies/, frontmatter divergents",
+        "Frontmatter mal fermé (double ---) dans Taxonomies/INDIC.TIME_ROLE.LBP.md lignes 25-27"
+      ]
+    },
+    "notes_concept": {
+      "count_estimated": 72,
+      "sample": ["Concept - Actif.md", "Concept - Brick.md", "Concept - Connaissance.md"],
+      "fields_observed": ["title", "doc_type=concept", "concept_code", "canonical_name", "summary", "aliases", "keywords", "detection_clues", "anti_confusions", "version", "tags"],
+      "issues": [
+        "Format version mixte : '07-04-2026 v0.5.0' mélange date et semver dans un seul champ"
+      ]
+    },
+    "methodes": {
+      "count": 3,
+      "fields_observed": ["type=methode_lbp", "id (METH_xxx)", "titre", "purpose", "version", "statut"],
+      "issues": [
+        "type/titre/statut au lieu de doc_type/title/status (divergence transverse mais conforme au template)"
+      ]
+    },
+    "prompts_maitres_twin": {
+      "count": 9,
+      "fields_observed": ["title", "doc_type=master_prompt", "prompt_code", "canonical_name", "target_function", "intended_agent", "summary", "aliases", "status", "version", "tags"],
+      "issues": []
+    },
+    "system_prompts_agents": {
+      "count_estimated": 8,
+      "sample": ["PRMPT-SYS_BRAIN-ARCHITECT.md"],
+      "fields_observed": ["title", "doc_type=system_prompt", "agent", "prompt_code", "purpose", "version", "status", "tags"],
+      "issues": []
+    },
+    "logic_blocks": {
+      "count_estimated": 20,
+      "sample": ["Logic block - Refactor - Problématiques.md"],
+      "fields_observed": ["title", "doc_type=logic_block", "logic_block_code", "canonical_name", "operation", "target_scope", "summary", "aliases", "status", "version", "tags"],
+      "issues": []
+    },
+    "templates_de_bricks": {
+      "count_estimated": 12,
+      "sample": ["Template Brick - Profil - Organisation.md", "Template Brick - Visualisation - Carte de causalité (Mermaid).md", "Template Brick - Enjeux pré-identifiés.md"],
+      "fields_observed": ["type=template_brick", "id (TPL_BRICK_xxx)", "version", "title", "purpose", "format"],
+      "issues": [
+        "type au lieu de doc_type",
+        "Pas de tags, pas de status, pas de created_at",
+        "Frontmatter très minimaliste, divergent du reste du vault"
+      ]
+    }
+  },
+  "other_meta_docs": [
+    {
+      "path": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Doctrines & playbooks\\PLAYBOOK — Macro-architecture et fonctionnement de l'écosystème LBP v2.md",
+      "fields_observed": ["title", "version", "status", "audience", "purpose", "tags"],
+      "issues": ["Pas de doc_type (devrait être 'playbook')"]
+    }
+  ],
+  "common_ground_actuel": [
+    "title (sauf taxonomies, méthodes [titre], templates de bricks ok)",
+    "version (présent partout)",
+    "purpose (très majoritaire)",
+    "tags (très majoritaire)",
+    "doc_type (majoritaire ; absent des taxonomies, méthodes [type], templates de bricks [type])"
+  ],
+  "common_ground_recommande": [
+    "title",
+    "doc_type (uniformisation : retirer 'type' au profit de 'doc_type' partout)",
+    "code (ou champ pivot métier : concept_code, prompt_code, etc.)",
+    "version (semver pur)",
+    "template_version (traçabilité)",
+    "created_at (canon unique, format JJ-MM-YYYY R-044)",
+    "status",
+    "tags",
+    "purpose|summary"
+  ],
+  "anomalies_prioritaires": [
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-taxonomie.md",
+      "issue": "Pas de niveau (A) propre. Le frontmatter en tête est le modèle d'instance (B). Le template-doc n'a aucune métadonnée le décrivant lui-même.",
+      "priority": "high",
+      "impact": "1 template + ~96 taxonomies sans title/doc_type/version au niveau doc"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template méta de Brick.md",
+      "issue": "Pas de niveau (A) propre. Frontmatter avec placeholders {{...}} et doc_type='brick' au lieu de 'template'.",
+      "priority": "high",
+      "impact": "Template-doc invisible dans la BDD Docs méta"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\INDIC.TIME_ROLE.LBP.md (RACINE) + Taxonomies\\INDIC.TIME_ROLE.LBP.md",
+      "issue": "DOUBLON : 2 versions du même fichier avec frontmatter divergents. La version Taxonomies/ a un double --- (lignes 25-27) cassant la fermeture du frontmatter.",
+      "priority": "high",
+      "impact": "Confusion sur la version officielle, frontmatter potentiellement mal parsé"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Manuels de BDD\\Mission Ops\\**\\*.md (8 fichiers)",
+      "issue": "date_creation au format ISO YYYY-MM-DD viole R-044 (qui impose JJ-MM-YYYY). Asymétrie de nommage : date_creation côté Mission Ops vs created_at côté Twin WR-RD.",
+      "priority": "high",
+      "impact": "Non-conformité R-044 + asymétrie transverse"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Manuels de BDD\\Digital Twin\\Manuel de BDD - *.md (28 fichiers)",
+      "issue": "template_version: 6.1.0 alors que le template actuel est 6.3.0 → 2 versions de retard.",
+      "priority": "medium",
+      "impact": "Traçabilité de génération désalignée"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Manuels de BDD\\Digital Twin\\WR-RD\\WR-RD - *.md (28 fichiers)",
+      "issue": "template_version: 1.2.0 alors que le template actuel est 1.3.0.",
+      "priority": "medium",
+      "impact": "Idem"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Manuels de BDD\\Digital Twin\\Manuel de BDD - *.md (28 fichiers)",
+      "issue": "Absence du champ code (DBMAN_xxx) qui est présent côté Mission Ops.",
+      "priority": "medium",
+      "impact": "Asymétrie Twin vs Mission Ops"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-prompt_maitre_lbp.md ; template-meta_logic_block_lbp.md",
+      "issue": "Double bloc YAML --- visuel : le second YAML lignes 67+ n'est pas encapsulé dans un commentaire HTML INSTR.",
+      "priority": "medium",
+      "impact": "Ambiguïté de lecture et risque de double parsing par certains outils"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\Template - Manuel de BDD - Digital Twin.md ; Template - Manuel de BDD - Mission Ops.md ; Template-Fiche_outil_LBP.md ; Template-prompt_lbp.md ; Template de system prompt.md",
+      "issue": "Pas de bloc FRONTMATTER_INSTANCE explicite avec un YAML modèle copiable.",
+      "priority": "medium",
+      "impact": "Le générateur (humain ou agent) doit deviner les champs (B) à reproduire"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Notes de Concept\\Concept - *.md (~72 fichiers)",
+      "issue": "Format version mixte ex. '07-04-2026 v0.5.0' mélange date + semver dans un seul champ.",
+      "priority": "low",
+      "impact": "Anti-pattern, à séparer en version + created_at"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Taxonomies\\*.LBP.md (~96 fichiers)",
+      "issue": "Hétérogénéité : commentaires # conservés ou supprimés. Le template recommande de les garder.",
+      "priority": "low",
+      "impact": "Cosmétique mais inégal"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Méthodes\\*.md (3 fichiers)",
+      "issue": "Champs type/titre/statut au lieu de doc_type/title/status (divergence transverse).",
+      "priority": "low",
+      "impact": "Indexation/agents : nécessite mapping spécifique"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\Templates de Bricks\\**\\*.md (~12 fichiers)",
+      "issue": "Champ type=template_brick au lieu de doc_type=template, pas de tags, pas de status.",
+      "priority": "low",
+      "impact": "Divergence intra-vault"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Templates d'instanciation\\template-db-manual-mission_ops.md",
+      "issue": "Coexiste avec Template - Manuel de BDD - Mission Ops.md v5.1.0 — doublon suspect, probable ancienne génération.",
+      "priority": "low",
+      "impact": "Confusion sur le template officiel à utiliser"
+    },
+    {
+      "file": "H:\\Drive partagés\\LBP - shared\\Architecture data\\00 - Docs méta\\Doctrines & playbooks\\PLAYBOOK — Macro-architecture et fonctionnement de l'écosystème LBP v2.md",
+      "issue": "Absence de doc_type (devrait être 'playbook' ou 'doctrine').",
+      "priority": "low",
+      "impact": "Mineur"
+    }
+  ]
+}

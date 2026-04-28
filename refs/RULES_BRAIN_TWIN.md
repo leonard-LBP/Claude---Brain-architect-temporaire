@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 28-04-2026 — R-053 (convention de renaming des docs archivés : suffix `(archivé v<X> le JJ-MM-YYYY)` dans filename + alignement title frontmatter R-043 ; double signal avec `00 - archives/`).
+> Dernière mise à jour : 28-04-2026 — R-054 (codification universelle des objets Brain : grammaire 1 préfixe+underscore pour la majorité, grammaire 2 hiérarchique-point pour les taxonomies, grammaire 3 héritée pour les taxons ; table de préfixes avec 19 types ; 8 règles transverses ; suffix LBP supprimé) + R-055 (frontmatter canon Brain en 3 zones balisées : Identité / Méta-gouvernance / Spec d'usage ; champs obligatoires ; status hors frontmatter ; règle obligatoire `updated_at` à chaque modif) + R-056 (grammaire de versioning `MAJOR.MINOR` à 2 niveaux ; règles de bump claires ; migration des `X.Y.Z` actuels par troncation du PATCH ; cascade sur R-053 et R-055).
 
 ---
 
@@ -137,7 +137,7 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 - **Statut** : Actif
 - **Why** : Le statut actif/archivé d'un doc dépendait jusqu'ici uniquement de son **dossier** (`00 - archives/`). Risque concret : un agent (ou un humain) qui recherche par nom (`Glob "**/Manuel de BDD - Actifs.md"`, search Obsidian/Drive) tombe sur 1 actif + N archivés homonymes et peut confondre / citer une version archivée comme source vérifiée. C'est un trou de discoverability silencieux qui peut générer des erreurs.
 - **How to apply** :
-  - **Format de renaming** : `<nom canonique> (archivé v<X> le JJ-MM-YYYY).md` si la version est connue, sinon `<nom canonique> (archivé le JJ-MM-YYYY).md`
+  - **Format de renaming** : `<nom canonique> (archivé v<X> le JJ-MM-YYYY).md` si la version est connue, sinon `<nom canonique> (archivé le JJ-MM-YYYY).md`. Le format de version `<X>` suit **R-056** (grammaire `MAJOR.MINOR`).
   - **3 actions atomiques** lors de l'archivage :
     1. **Filename** : ajouter le suffix `(archivé [v<X> le ]JJ-MM-YYYY)` avant l'extension
     2. **`title` frontmatter** : aligner sur le filename (R-043, cohérence filename ↔ title)
@@ -153,10 +153,272 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - Doc archivé plusieurs fois (v1 puis v2) : 2 fichiers cohabitent sans collision (`...(archivé v1.0.0 le X).md` + `...(archivé v2.0.0 le Y).md`)
   - Doc sans frontmatter : renommer filename uniquement, pas d'alignement title
   - Doc avec nom déjà ambigu (`Sans titre.md`) : flag manuel, ne pas auto-renommer
-- **Regex de validation** : `\(archivé( v[\d.]+)? le (\d{2}-\d{2}-\d{4})\)\.md$`
+- **Regex de validation** : `\(archivé( v\d+\.\d+)? le (\d{2}-\d{2}-\d{4})\)\.md$` (post R-056 : version au format `MAJOR.MINOR`)
 - **Date forfaitaire pour rétroactif** : `26-04-2026` (date du sweep d'archivage massif Phase 1-4 documenté dans `ECOSYSTEM-STATE.md`).
 - **Conséquence si violation** : confusion de search, citation d'archives obsolètes comme sources vérifiées, erreurs silencieuses dans les pipelines IA qui consomment le vault.
 - **Découverte** : 28-04-2026, Leonard, en préparant le chantier d'indexation Brain. Formalisation immédiate avant migration des 212 fichiers déjà archivés.
+
+#### R-054 : Codification universelle des objets Brain
+
+- **Portée** : Transverse à tout l'écosystème Brain — manuels de BDD, WR-RD, taxonomies, notes de concept, templates, prompts, logic blocks, méthodes, docs méta, agents, outils externes, entries de glossaire. Phase 2 prévue pour Twin / Mission Ops (instances de mission).
+- **Statut** : Actif
+- **Why** : Aujourd'hui les codes coexistent en 6+ conventions différentes (`DBMAN_X`, `CPT.X.LBP.Y`, `OBJ.STATUT.LBP`, `TPL_BRICK_X`, `METH_X`, etc.) avec mix de séparateurs (`_`, `.`, `-`) et suffix `LBP` parfois présent, parfois absent. Beaucoup de docs n'ont aucun code. Sans grammaire unifiée, les agents de maintenance et d'exploitation ne peuvent ni filtrer fiable par regex ni vérifier l'unicité cross-écosystème ni tracer les lignées template → instance.
+- **How to apply** : Tout doc Brain porte un `code` dans son frontmatter, conforme à l'une des deux grammaires ci-dessous selon son type.
+
+##### Grammaire 1 — Format général (tous les types de docs sauf taxonomies)
+
+```
+<PREFIXE>_<IDENTIFIANT>
+```
+
+- `<PREFIXE>` : 2-7 chars MAJUSCULES, identifie le type de doc selon la table de préfixes.
+- `<IDENTIFIANT>` : alphanumérique MAJUSCULES, slug court issu du nom canonique du doc, séparateur interne `_` autorisé.
+- Exemples : `DBMAN_TW_ACTIFS`, `CPT_SOFT_SKILL`, `PRMPT_M_REFACTOR`, `LGBLK_T_PRBC_PRBC`, `METH_CARTE_CAUSALITE`.
+
+##### Grammaire 2 — Cas spécial taxonomies (format hiérarchique)
+
+```
+<NAMESPACE>.<TAXO>
+```
+
+- `<NAMESPACE>` : MAJUSCULES, racine du namespace (ex. `OBJ`, `CAP`, `ORG5D`, `META`, `BRICK`, `MET`, `OUT`, `AGENT`, `PROMPT`, `PLATFORM`).
+- `<TAXO>` : MAJUSCULES, nom de la taxonomie au sein du namespace, peut contenir `_` (ex. `STATUT`, `FAMILY`, `ARCH_ROLE`, `DEPLOY_STATUS`).
+- Exemples : `OBJ.STATUT`, `CAP.FAMILY`, `PROMPT.ARCH_ROLE`, `META.FAMILY`, `LGBLK.FAMILY`.
+
+**Justification du cas spécial** : les taxonomies ont une structure hiérarchique intrinsèque (`namespace.taxo`) qui est leur identité même, pas une description. Le namespace joue déjà le rôle de classifieur de premier niveau — équivalent fonctionnel d'un préfixe. Un agent voit `OBJ.STATUT` (format `XXX.YYY` avec point) → c'est sans ambiguïté une taxonomie.
+
+##### Grammaire 3 — Codes de taxons (valeurs taxonomiques)
+
+```
+<NAMESPACE>.<TAXO>.<VALEUR>
+```
+
+- Hérite du code de la taxonomie parente, ajoute `.<VALEUR>`.
+- `<VALEUR>` : MAJUSCULES, peut contenir `_`.
+- Exemples : `OBJ.STATUT.BROUILLON`, `OBJ.STATUT.VALIDE`, `CAP.FAMILY.SOFT`, `META.FAMILY.CHARTS`.
+
+##### Table de préfixes (Grammaire 1)
+
+| Préfixe | Type de doc Brain | Taxo de référence | Sous-typage interne |
+|---|---|---|---|
+| `DBMAN_TW` | Manuel de BDD (Twin) | `DOC.TYPE` + `DBMAN.SCOPE.TWIN` | — |
+| `DBMAN_MO` | Manuel de BDD (Mission Ops) | + `DBMAN.SCOPE.MISSION_OPS` | — |
+| `DBMAN_BR` | Manuel de BDD (Brain) | + `DBMAN.SCOPE.BRAIN` | — |
+| `WRRD_TW` | WR-RD (Twin) | `DOC.TYPE.WR_RD` + scope | — |
+| `WRRD_MO` | WR-RD (Mission Ops) | idem | — |
+| `CPT` | Note de concept | `DOC.TYPE.NOTE_CONCEPT` | — |
+| `TPL` | Template d'instanciation | `DOC.TYPE.TEMPLATE_INSTANCIATION` | — |
+| `TPL_BRICK` | Template de Brick | `DOC.TYPE.TEMPLATE_BRICK` | `BRICK.FAMILY` |
+| `PRMPT_M` | Prompt maître | `DOC.TYPE.PROMPT` | `PROMPT.ARCH_ROLE.PROMPT_MAITRE` |
+| `PRMPT_S` | System prompt | idem | `PROMPT.ARCH_ROLE.SYSTEM_PROMPT` |
+| `PRMPT_U` | Prompt d'exécution | idem | `PROMPT.ARCH_ROLE.PROMPT_EXECUTION` |
+| `PRMPT_T` | Template prompt | idem | `PROMPT.ARCH_ROLE.TEMPLATE_PROMPT` |
+| `LGBLK` | Logic block | `DOC.TYPE.LOGIC_BLOCK` | `LGBLK.FAMILY` (à créer) |
+| `METH` | Méthode | `DOC.TYPE.METHODE` | `MET.FAMILY` |
+| `CHRT` | Doc méta (charte / doctrine / playbook) | `DOC.TYPE.DOC_META` | `META.FAMILY` (8 valeurs) |
+| `AGT` | Agent LBP | `DOC.TYPE.AGENT` | `AGENT.FAMILY` |
+| `OUT` | Outil externe | `DOC.TYPE.OUTIL_EXTERNE` | `OUT.FAMILY` |
+| `GLO` | Entry de glossaire | `DOC.TYPE.GLOSSAIRE_ENTRY` | — |
+| (cas spécial) | Taxonomie | `DOC.TYPE.TAXONOMIE` | code = `<NAMESPACE>.<TAXO>` (Grammaire 2) |
+
+##### 8 règles transverses
+
+1. **Stabilité absolue** : un code donné est immuable. Pour "renommer" un objet, on en crée un nouveau et on archive l'ancien (R-053).
+2. **Pas de date dans les codes** (jamais). La date est un attribut de l'objet (`created_at`, `updated_at`, etc.), pas une composante de son identité.
+3. **Pas de famille / sous-famille variable dans le code** : sauf namespace stable des taxonomies. Famille = propriété frontmatter / BDD, pas dans le code.
+4. **Pas de rattachement multi-contexte** dans le code : le code reflète le contexte de création canonique. Les rattachements multiples (multi-orga, multi-mission) sont gérés via propriétés relationnelles.
+5. **Casse** : MAJUSCULES partout (dans le code).
+6. **Séparateur** : selon la grammaire — `_` pour Grammaire 1, `.` pour Grammaires 2 et 3.
+7. **Pas de suffix `LBP`** : implicite, l'écosystème est entièrement LBP. Allègement.
+8. **Unicité globale cross-écosystème** : aucun code ne doit collisionner avec un autre, tous types et scopes confondus.
+
+##### `template_code` dans le frontmatter
+
+Tout doc généré depuis un template porte dans son frontmatter (zone Méta-gouvernance, cf. R-055) :
+- `template_code` : le code du template d'origine (ex. `TPL_DBMAN_TW`)
+- `template_version` : version semver du template au moment de la génération (ex. `6.3.0`)
+
+Permet l'audit de lignée structurelle (*"tous les docs avec `template_code: TPL_DBMAN_TW` doivent avoir `template_version >= 6.3.0`"*).
+
+##### Phase 2 — Extension Twin / Mission Ops (à appliquer plus tard)
+
+Pour les objets d'instance (créés dans le cadre d'une mission client), grammaire étendue :
+
+```
+<PREFIXE_TYPE>_<CLIENT>_<MISSIONID>_<SLUG>
+```
+
+- `<CLIENT>` : code court 3-4 chars (`NUM`, `RC`, `KARI`)
+- `<MISSIONID>` : code compact `M01`, `M02`...
+- `<SLUG>` : MAJUSCULES, underscore autorisé dans le slug
+
+Préfixes proposés (à figer en Phase 2) :
+
+| Préfixe | Type | Exemple |
+|---|---|---|
+| `BRK` | Brick (instance) | `BRK_NUM_M02_PROFIL_ORG` |
+| `MTG` | Meeting | `MTG_NUM_M02_KICKOFF1` |
+| `ACT` | Action LBP | `ACT_NUM_M02_PREP_KICKOFF` |
+| `SRC` | Source d'information | `SRC_NUM_M02_ENTRETIEN_CFO` |
+| `IND` | Individu | `IND_NUM_M02_JDUPONT` |
+| `ORG` | Organisation | `ORG_NUM_M02_NUMALIS` |
+| `ACTF` | Actif | `ACTF_NUM_M02_CONTRAT_X` |
+| etc. | (à compléter par BDD Twin) | |
+
+##### Conséquence si violation
+
+Faux positifs en audit, codes dupliqués, références cross-écosystème cassées, agents ne pouvant filtrer fiable par regex, ruptures de lignée template → instance.
+
+##### Découverte
+
+28-04-2026, Leonard, en préparation du chantier de migration globale. Capturé après audit ciblé des taxonomies Brain et arbitrages collaboratifs sur la grammaire (sub-agent `taxos_brain_audit.md`).
+
+#### R-055 : Frontmatter canon des docs Brain (3 zones balisées)
+
+- **Portée** : Transverse à tout doc Brain instancié dans l'écosystème (manuels, WR-RD, taxos, notes de concept, templates, prompts, logic blocks, méthodes, docs méta, agents, outils externes, glossaire).
+- **Statut** : Actif
+- **Why** : Le frontmatter sert simultanément 3 publics distincts (agents de gouvernance, agents de maintenance, agents d'usage qui consomment le doc) qui n'ont pas les mêmes besoins. Sans structure claire, le frontmatter devient une soupe illisible et les agents se mélangent les pinceaux. La structure en 3 zones balisées rend explicite la sépration des préoccupations sans rien retirer du frontmatter.
+- **How to apply** : Tout frontmatter Brain est structuré en **3 zones balisées par commentaires YAML** :
+
+```yaml
+---
+# === Identité ===
+title: "..."
+doc_type: ...
+code: "..."
+
+# === Méta-gouvernance ===
+version: "1.0"            # format X.Y (R-056)
+template_code: "..."
+template_version: "X.Y"   # format X.Y (R-056)
+created_at: "JJ-MM-YYYY"
+updated_at: "JJ-MM-YYYY"
+
+# === Spec d'usage ===
+summary: "..."
+purpose: "..."
+tags: [...]
+# + champs spécifiques au type (canonical_name, namespace_code, scale_kind,
+#   bdd_canonical_name, object_type, target_bdd_canonical_name, etc.)
+---
+```
+
+##### Champs obligatoires
+
+| Zone | Champ | Type | Notes |
+|---|---|---|---|
+| Identité | `title` | string | affichage humain |
+| Identité | `doc_type` | enum | discriminant agent (`db_manual`, `wr_rd`, `taxonomy`, `concept`, `template`, `master_prompt`, `system_prompt`, `prompt_execution`, `template_prompt`, `logic_block`, `methode`, `doc_meta`, `agent`, `outil_externe`, `glossaire_entry`) |
+| Identité | `code` | string | conforme R-054 |
+| Méta-gouvernance | `version` | string | format `MAJOR.MINOR` selon **R-056** (ex. `"1.0"`, pas de PATCH) |
+| Méta-gouvernance | `template_code` | string | code du template d'origine (R-054) — obligatoire pour docs générés depuis un template |
+| Méta-gouvernance | `template_version` | string | format `MAJOR.MINOR` selon **R-056**, version du template au moment de la génération |
+| Méta-gouvernance | `created_at` | string | format JJ-MM-YYYY (R-044) |
+| Méta-gouvernance | `updated_at` | string | format JJ-MM-YYYY (R-044) — **règle obligatoire** : à bumper à chaque modification, même mineure |
+| Spec d'usage | `summary` | string | description courte du **contenu** ("qu'est-ce que c'est") |
+| Spec d'usage | `purpose` | string | raison d'être / objectif fonctionnel ("à quoi ça sert") |
+| Spec d'usage | `tags` | list | indexation |
+
+##### Hors frontmatter (volontairement)
+
+- **`status`** : vit en BDD Brain uniquement. Statut bouge agilement (brouillon → à revoir → validé → archivé), maintenir le doublon frontmatter ↔ BDD est coûteux et non rigoureux. La BDD est plus appropriée pour ce champ qui change vite.
+- **`Logs / Révisions LBP`** : vit en BDD Brain (champ propre) ou git log. Verbose, multi-lignes, mauvais candidat pour le frontmatter.
+
+##### Champs spécifiques par type (dans Spec d'usage)
+
+| Type | Champs additionnels |
+|---|---|
+| Manuel BDD | `bdd_canonical_name`, `object_type`, `architecture_family/scope`, `knowledge_regime`, `officiality_regime`, `has_advanced_note` (Twin), `mission_ops_family`, `execution_tracking` (Mission Ops) |
+| WR-RD | `target_bdd_canonical_name`, `target_bdd_code`, `parent_manual`, `wr_rd_code`, `domain` |
+| Taxonomie | `canonical_name`, `namespace_code`, `is_open`, `open_policy`, `scale_kind`, `is_ordinal`, `selection_mode`, `cardinality`, `aliases`, `keywords`, `detection_clues` |
+| Note de concept | `concept_code`, `canonical_name`, `aliases`, `keywords`, `detection_clues`, `anti_confusions` |
+| Prompt | `prompt_code`, `target_function`, `intended_agent` |
+| Logic block | `logic_block_code`, `operation`, `target_scope` |
+
+Note : pour les taxonomies, `code` (zone Identité) et `canonical_name` peuvent être redondants (`OBJ.STATUT` partout). C'est volontaire pour cohérence transverse.
+
+##### Règle obligatoire `updated_at`
+
+À chaque modification d'un doc (même mineure : correction typo, ajout d'un mot, mise à jour d'un exemple), le champ `updated_at` du frontmatter doit être bumpé à la date du jour (format JJ-MM-YYYY, R-044).
+
+Pour fiabilisation future : un hook git pre-commit peut être ajouté pour bumper automatiquement la date sur les fichiers modifiés.
+
+##### Conséquence si violation
+
+Frontmatter incohérent entre docs, agents qui ne trouvent pas les champs attendus, audit Brain ↔ vault impossible, perte de la traçabilité de lignée template.
+
+##### Découverte
+
+28-04-2026, Leonard, après audit factuel des frontmatter de toutes les typologies (sub-agent `frontmatter_audit_report.md`) qui a révélé 3 anomalies majeures, 5 templates sans bloc B, double frontmatter visuel sur 2 templates, et asymétries Twin / Mission Ops (`created_at` vs `date_creation`, R-044 violée côté Mission Ops, `code` absent des manuels Twin).
+
+#### R-056 : Grammaire de versioning des docs Brain (`X.Y`)
+
+- **Portée** : Transverse à tout doc Brain (manuels, WR-RD, taxos, notes de concept, templates, prompts, logic blocks, méthodes, docs méta, agents, outils externes, glossaire). Concerne le champ `version` du frontmatter (R-055).
+- **Statut** : Actif
+- **Why** : Avant cette règle, le versioning des docs LBP était incohérent (généré au fil de l'eau par différents agents, mix de formats `1.0.0`, `0.3.0`, `07-04-2026 v0.5.0` mélangeant date et semver). Le format semver complet `X.Y.Z` (3 niveaux) est inutilement complexe pour des docs (le PATCH est typique des APIs où les bug fixes sont sémantiquement distincts des features — pour un doc, "correction de typo" et "ajout d'une phrase" peuvent toutes deux être MINOR sans gain à les distinguer).
+- **How to apply** : Tout doc Brain porte une `version` au format `<MAJOR>.<MINOR>` (2 niveaux, pas de PATCH).
+
+##### Format
+
+```
+<MAJOR>.<MINOR>
+```
+
+- Entiers naturels, séparés par `.`
+- Pas de zéro-padding (`1.0`, pas `01.00`)
+- Pas de PATCH (3e niveau interdit dans les docs Brain)
+
+##### Règles de bump
+
+**MAJOR bump** (`X` → `X+1.0`) : refonte structurelle
+- Ajout, suppression ou réorganisation de sections H1 ou H2
+- Changement du frontmatter structurel (champs obligatoires changent)
+- Changement du sens canonique du doc (`purpose` / `summary` réécrit)
+- Migration vers un nouveau template avec `template_version` MAJOR différent
+- Pour un template : signale que **les docs générés depuis les versions précédentes deviennent stale et doivent être migrés**
+
+**MINOR bump** (`X.Y` → `X.Y+1`) : enrichissement compatible
+- Corrections de typos, fautes, ajustements éditoriaux
+- Ajouts de contenu dans une section existante
+- Enrichissements de tableaux, exemples
+- Mises à jour de taxonomies citées
+- Toute modification qui n'altère pas la structure ni le sens canonique
+
+##### Création
+
+À la création d'un doc, `version` initiale = `1.0` (pas `0.1`, pas `0.0`).
+
+##### Cas spécifique des templates
+
+Pour un template, le MAJOR bump est **structurellement important** : il indique que les docs générés à partir des versions précédentes doivent être migrés (mise à jour structurelle). Le `template_version` dans le frontmatter des docs générés (R-055) permet d'auditer mécaniquement la lignée et de détecter les docs stale.
+
+##### Migration des versions existantes
+
+Pour les docs déjà existants qui portent un format `X.Y.Z`, la migration consiste à **tronquer le PATCH** (sans bumper) :
+
+| Version actuelle | Version migrée |
+|---|---|
+| `1.0.0` | `1.0` |
+| `0.3.0` | `0.3` |
+| `6.3.0` | `6.3` |
+| `5.1.0` | `5.1` |
+| `07-04-2026 v0.5.0` (anti-pattern) | `0.5` + `created_at: "07-04-2026"` séparé |
+
+C'est une migration de format pure (pas un changement de contenu) : la version reste la même, juste reformattée.
+
+##### Impacts cascade sur autres règles
+
+- **R-053** (filename des archives) : le suffix `(archivé v<X> le JJ-MM-YYYY)` utilise désormais le format `X.Y` (au lieu de `X.Y.Z`). Migration des 212 archives existantes : tronquer le PATCH dans les filenames.
+- **R-055** (frontmatter canon) : le champ `version` suit R-056 (`X.Y`).
+- **`template_version`** : suit également R-056 (`X.Y`).
+
+##### Conséquence si violation
+
+Versions illisibles ou ambiguës, audit de lignée template impossible, agents incapables de distinguer refonte et correction.
+
+##### Découverte
+
+28-04-2026, Leonard, en challengeant la convention semver `X.Y.Z` héritée par défaut. Constat : aucune convention de versioning n'a jamais été formalisée dans LBP, les versions actuelles ont été générées à la volée par différents agents sans règle commune, donc on n'est pas tenu de suivre semver. Décision : passer à `X.Y` plus simple et adapté aux docs.
 
 ---
 

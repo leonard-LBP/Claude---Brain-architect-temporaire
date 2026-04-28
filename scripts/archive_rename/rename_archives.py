@@ -1,18 +1,20 @@
-"""Renomme les fichiers archivés du vault Architecture data selon R-053.
+"""Renomme les fichiers archivés du vault Architecture data selon R-053 + R-056.
 
-Format cible : `<nom> (archivé v<X> le JJ-MM-YYYY).md` ou `<nom> (archivé le JJ-MM-YYYY).md`
+Format cible (R-053 + R-056) :
+  - Avec version : `<nom> (archivé v<X.Y> le JJ-MM-YYYY).md` (format MAJOR.MINOR)
+  - Sans version : `<nom> (archivé le JJ-MM-YYYY).md`
+
+Le script gère 3 cas :
+1. Fichier non encore archivé (sans suffix) → ajoute le suffix complet (R-053 initial)
+2. Fichier archivé avec version `X.Y.Z` (legacy avant R-056) → tronque le PATCH (`X.Y.Z` → `X.Y`)
+3. Fichier déjà au format R-053 + R-056 (`X.Y` ou sans version) → skip
 
 Spec :
 - Glob récursif sous `H:\\Drive partagés\\LBP - shared\\Architecture data` des fichiers
   dans un dossier `00 - archives/`.
-- Skip si filename match déjà la regex de validation R-053.
-- Sinon :
-  - Parse frontmatter YAML simple pour extraire `version:` si présent.
-  - Construit le nouveau filename.
-  - Aligne le `title:` du frontmatter (R-043) sur le nouveau nom canonique.
-  - Renomme le fichier.
+- Migration de la version dans le filename ET dans le `title` du frontmatter (R-043).
 - Mode --dry-run par défaut. --apply pour exécuter.
-- Date forfaitaire : 26-04-2026 (sweep Phase 1-4).
+- Date forfaitaire pour les nouveaux : 26-04-2026 (sweep Phase 1-4).
 
 Usage :
   python rename_archives.py            # dry-run (par défaut)
@@ -28,8 +30,11 @@ sys.stdout.reconfigure(encoding="utf-8")
 VAULT_ROOT = Path(r"H:\Drive partagés\LBP - shared\Architecture data")
 ARCHIVE_DATE = "26-04-2026"
 
-# Regex R-053 : filename déjà conforme
-ALREADY_CONFORM_RE = re.compile(r"\(archivé( v[\d.]+)? le (\d{2}-\d{2}-\d{4})\)\.md$")
+# Regex R-053 + R-056 : filename strictement conforme (X.Y ou pas de version)
+ALREADY_CONFORM_RE = re.compile(r"\(archivé( v\d+\.\d+)? le (\d{2}-\d{2}-\d{4})\)\.md$")
+
+# Regex legacy R-053 pré-R-056 : filename archivé avec format X.Y.Z (à migrer)
+LEGACY_XYZ_IN_FILENAME_RE = re.compile(r"\(archivé v(\d+)\.(\d+)\.(\d+) le (\d{2}-\d{2}-\d{4})\)\.md$")
 
 # Frontmatter parsing (simple, suffit pour notre cas)
 FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
@@ -88,11 +93,48 @@ def process_file(path, apply_mode):
         "reason": "",
     }
 
-    # Skip si déjà conforme
+    # Skip si déjà strictement conforme R-053 + R-056
     if ALREADY_CONFORM_RE.search(filename):
         log["reason"] = "already conform"
         return log
 
+    # Cas 2 : filename archivé legacy X.Y.Z → tronquer le PATCH (migration R-056)
+    legacy_match = LEGACY_XYZ_IN_FILENAME_RE.search(filename)
+    if legacy_match:
+        major, minor, patch, date = legacy_match.groups()
+        new_stem = stem[: legacy_match.start()] + f"(archivé v{major}.{minor} le {date})"
+        new_filename = new_stem + ".md"
+        new_path = path.parent / new_filename
+        log["new_filename"] = new_filename
+        log["version"] = f"{major}.{minor}.{patch} → {major}.{minor}"
+        log["action"] = "MIGRATE_R056"
+        log["reason"] = "truncate PATCH per R-056"
+
+        # Lire pour aligner title si frontmatter présent
+        try:
+            content = path.read_text(encoding="utf-8")
+        except Exception as e:
+            log["action"] = "ERROR"
+            log["reason"] = f"read failed: {e}"
+            return log
+        frontmatter, body = parse_frontmatter(content)
+        log["has_frontmatter"] = frontmatter is not None
+        new_content = None
+        if frontmatter:
+            new_frontmatter = update_title_in_frontmatter(frontmatter, new_stem)
+            new_content = f"---\n{new_frontmatter}\n---\n{body}"
+
+        if apply_mode:
+            if new_path.exists():
+                log["action"] = "ERROR"
+                log["reason"] = "target exists, collision"
+                return log
+            if new_content is not None:
+                path.write_text(new_content, encoding="utf-8")
+            path.rename(new_path)
+        return log
+
+    # Cas 1 : fichier non encore archivé (pas de suffix) → ajouter le suffix complet
     # Lire le contenu pour parser le frontmatter
     try:
         content = path.read_text(encoding="utf-8")
@@ -104,6 +146,11 @@ def process_file(path, apply_mode):
     frontmatter, body = parse_frontmatter(content)
     log["has_frontmatter"] = frontmatter is not None
     version = extract_version(frontmatter) if frontmatter else None
+    # Tronquer en X.Y si X.Y.Z détecté (cohérence R-056)
+    if version:
+        parts = version.split(".")
+        if len(parts) >= 2:
+            version = f"{parts[0]}.{parts[1]}"
     log["version"] = version
 
     # Build new filename
@@ -155,7 +202,7 @@ def main():
     print(f"Fichiers archivés détectés : {len(archived_files)}\n")
 
     logs = []
-    counts = {"RENAME": 0, "SKIP": 0, "ERROR": 0}
+    counts = {"RENAME": 0, "MIGRATE_R056": 0, "SKIP": 0, "ERROR": 0}
     with_version = 0
     without_frontmatter = 0
 
@@ -170,9 +217,10 @@ def main():
 
     # Résumé
     print(f"== Résumé ==")
-    print(f"  RENAME : {counts.get('RENAME', 0)}")
-    print(f"  SKIP   : {counts.get('SKIP', 0)} (déjà conformes)")
-    print(f"  ERROR  : {counts.get('ERROR', 0)}")
+    print(f"  RENAME       : {counts.get('RENAME', 0)} (premier archivage)")
+    print(f"  MIGRATE_R056 : {counts.get('MIGRATE_R056', 0)} (X.Y.Z → X.Y)")
+    print(f"  SKIP         : {counts.get('SKIP', 0)} (déjà conformes)")
+    print(f"  ERROR        : {counts.get('ERROR', 0)}")
     print(f"  Avec version frontmatter : {with_version}")
     print(f"  Sans frontmatter         : {without_frontmatter}\n")
 
