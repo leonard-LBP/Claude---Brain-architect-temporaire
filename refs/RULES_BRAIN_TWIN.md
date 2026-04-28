@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 28-04-2026 — R-058 (aucune jumelle texte sur les BDDs Brain) + R-059 (hygiène d'écriture des docs Brain : pas de bruit historique ni de spéculation future ; chaque doc = source de vérité brute à l'instant t, autonome pour les agents en retrieval) + D-019 dans `DECISIONS.md` (Brain = environnement documentaire en évolution Core+Motor ; isolation stricte Brain ↔ Mission Ops/Twin). Découvertes lors de l'audit transverse Notion ↔ Manuels Brain.
+> Dernière mise à jour : 29-04-2026 — R-060 (hygiène d'écriture des champs `summary` et `purpose` du frontmatter Brain : `summary` = description neutre du quoi, `purpose` = verbe à l'infinitif décrivant la fonction ; lisible humain ET agent, formulation neutre sur le consommateur, anti-patterns « aider un agent à » proscrits). Découverte lors de la rédaction des 10 purpose taxos canoniques de référence (Phase 0a).
 
 ---
 
@@ -475,6 +475,47 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
   - Difficulté pour un humain de relire le doc et savoir "ce qui est vrai aujourd'hui".
   - Pollution sémantique : le doc devient un mélange de documentation et de log de chantier.
 - **Découverte** : 28-04-2026, Leonard, après détection que mes propositions de mises à jour de manuels Brain incluaient des "notes de version" expliquant ce qui changeait par rapport à la version précédente — exactement le bruit historique que cette règle interdit. Capture immédiate.
+
+---
+
+#### R-060 : Hygiène d'écriture des champs `summary` et `purpose` du frontmatter Brain
+
+- **Portée** : Tous les docs Brain (manuels de BDD, taxonomies, notes de concept, méthodes, prompts, agents, outils externes, templates de bricks, docs méta, WR-RD, logic blocks, glossaire, etc.). Concerne les deux champs `summary` et `purpose` du frontmatter R-055.
+- **Statut** : Actif
+- **Why** : Les champs `summary` et `purpose` sont consommés à la fois par les **agents en retrieval** (qui décident s'ils doivent ouvrir le doc complet) et par les **humains** (consultants, brain architect, twin architect) qui parcourent les BDDs Notion. Une formulation orientée « aider un agent à… » est à la fois (a) redondante (le system prompt de chaque agent le briefe déjà sur le fait qu'il consommera ces champs), (b) excluante (un humain doit aussi pouvoir lire et comprendre la fonction sans se sentir étranger), (c) bavarde (trois mots de chaque purpose sont consommés par le rappel agent au lieu d'aller à la fonction). Une formulation neutre et universelle sert tous les lecteurs sans distinction et reste plus dense.
+- **How to apply** :
+
+##### Distinction conceptuelle `summary` vs `purpose`
+
+| Champ | Réponse à | Forme |
+|---|---|---|
+| `summary` | « **Qu'est-ce que c'est ?** » (le quoi) | Description neutre du périmètre, du contenu, de la nature de l'objet documenté. Phrase nominale ou descriptive : « Référentiel transverse… », « Lexique canonique… », « Hub d'orchestration… », « Échelle ordinale 0-5… » |
+| `purpose` | « **À quoi ça sert ?** » (le pourquoi / la fonction) | **Verbe à l'infinitif en tête** décrivant la fonction. « Classer… », « Filtrer… », « Qualifier… », « Distinguer… », « Router… », « Discriminer… » |
+
+##### Forme des deux champs
+
+- **1 à 3 phrases concentrées** : ≤300 caractères pour `summary`, ≤500 caractères pour `purpose`.
+- **Lisible par humain ET par agent** — formulation neutre sur le consommateur. Ne jamais se référer explicitement à « l'agent », « le consultant », « les utilisateurs », etc. dans ces champs.
+- **Articulations** avec d'autres taxos / objets quand cela évite des confusions courantes : « à ne pas confondre avec X », « complète Y sans s'y substituer », « distincte des dimensions Z gérées ailleurs ».
+- **Pas de jargon d'implémentation** dans le `purpose` : pas de « Notion », « rollup », « relation bidirectionnelle », « update_data_source ». Ces détails relèvent du manuel détaillé, pas du purpose. Le purpose reste fonctionnel, pas technique.
+- **Apostrophes typographiques** `’` (R-052).
+
+##### Anti-patterns à proscrire
+
+- ❌ « Aider un agent à classer X » → ✅ « Classer X »
+- ❌ « Permet aux agents et aux consultants de » → ✅ « Permettre de » ou direct verbe infinitif
+- ❌ « Cette taxonomie permet de… » (auto-référence superflue) → ✅ aller direct à la fonction (le sujet implicite est l'objet documenté)
+- ❌ « Sert dans la BDD Notion via update_data_source » (technique) → ✅ rester au niveau fonctionnel
+- ❌ Public cible explicite (« pour les consultants », « pour les agents d'analyse ») → ✅ neutre
+
+##### Exemple avant/après (taxo `JOB.COVERAGE`)
+
+**Avant (à proscrire)** : « Aider un agent à classer la situation de couverture d'un poste sans confondre poste vacant et poste inexistant, et sans confondre statut documentaire de la fiche (OBJ.STATUT) et état opérationnel de couverture. Sert au pilotage RH, à l'identification des risques de continuité, et à la traçabilité des transitions d'occupants. »
+
+**Après (canon)** : « Qualifier la situation réelle de couverture d'un poste à un instant donné. Distinguer un poste effectivement tenu, partiellement tenu, vacant, en transition d'occupant ou volontairement gelé — sans confondre avec le statut documentaire de la fiche (OBJ.STATUT). Sert au pilotage RH, à l'identification des risques de continuité, et à la traçabilité des transitions d'occupants. »
+
+- **Conséquence si violation** : champs trop bavards (mots consommés par le rappel agent), exclusion implicite des lecteurs humains, asymétrie d'écriture entre docs Brain (certains s'adressent à l'agent, d'autres pas), perte de densité informationnelle.
+- **Découverte** : 29-04-2026, Leonard, lors de la rédaction des 8 premiers `purpose` de taxos canoniques de référence (Phase 0a). Tous commençaient par « Aider un agent à… ». Leonard a signalé que c'était redondant (system prompt agent gère l'orientation) et excluant (un humain doit aussi pouvoir lire). Capture immédiate avec reformulation des 10 purpose déjà rédigés.
 
 ---
 
