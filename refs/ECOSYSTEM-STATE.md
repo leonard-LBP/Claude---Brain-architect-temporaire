@@ -70,9 +70,57 @@
 
 **Backlog enrichi** (28-04-2026) :
 - **Chantier P** — Tri massif `Prompts/` + `Logic Blocks/` + création des 3 fiches `Agents LBP` (Brain architect, Twin architect, KONTEXT) ; mise à jour des system prompts/prompts maîtres/logic blocks pour cohérence Twin v2 + D-019 + D-021. À traiter avant indexation Notion de ces 3 BDDs.
-- **Chantier M** — Réactualisation PLAYBOOK macro-archi v2 (post-Phases 4-7, R-053→R-059, D-019/020/021) + tri des entrées Notion `Docs méta LBP` sans Markdown actif.
+- **Chantier M** — Réactualisation PLAYBOOK macro-archi v2 + tri des entrées Notion `Docs méta LBP` sans Markdown actif. **Réflexion bundle** : produire un bundle de docs méta dédiés à chaque ensemble de doctrines/règles/chartes avec périmètre bien défini par doc (maintenable, améliorable, durable).
 - **Convention** : "Statut de l'objet vide = à créer" (induction Méthodes LBP, à confirmer transverse).
 - **Patterns techniques DDL Notion** : multi-select string JSON-encoded, types `CREATED_TIME`/`LAST_EDITED_TIME` (DDL fonctionnels mais non documentés), statements séquentiels en API séparés.
+- **Propriété "Maître"** — figement d'une entité avérée Twin pour gouvernance dédoublonnage : entité maître = entité d'accueil en cas de fusion (les autres sont archivées dedans). À cogiter pendant Phase B.
+
+---
+
+## Plan global — vue d'ensemble (28-04-2026)
+
+### Phase A — Indexation Brain restante (4 BDDs, ~270 entrées)
+
+A1. **Manuels de BDD** (43 entrées) — partiellement fait au Lot 3, reste les autres propriétés à dériver des manuels
+A2. **Templates de bricks** (20 entrées)
+A3. **Glossaire LBP + Registre des notes de concept** (72 + 72, double indexation cohérente)
+A4. **Registre des taxonomies** (102 entrées)
+
+→ **Out of scope court terme** : Prompts LBP (Chantier P), Registre des logic blocks (Chantier P), Agents LBP (Chantier P + D-021), Docs méta LBP (Chantier M).
+
+### Phase B — Tests fonctionnels Twin + Mission Ops
+
+B1. Création **fausses entités test** sur les 28 BDDs Twin
+B2. Création **fausses entités test** sur les 4 BDDs Mission Ops
+B3. **Validation combo Twin + Mission Ops** : instanciation actions de mission, fixation RDV, génération bricks, mise à jour Twin
+B4. **Réflexion ordonnancement de remplissage** : intra-BDD (dans quel ordre remplir les propriétés d'une fiche ?) + inter-BDD (qu'est-ce qu'on remplit d'abord quand on extrait des infos d'un document ?)
+B5. **Cogitation propriété "Maître"** (cf. backlog) : si elle se révèle utile pendant les tests, formaliser en R-XXX ou D-XXX
+
+### Phase C — Audit final symétrie + figement Brain
+
+C1. Audit ultime symétrie manuels Brain ↔ BDDs Notion (dernier passage)
+C2. Correction des écarts résiduels éventuels
+C3. **Figement / freeze** du Brain (état stable de référence)
+
+### Phase D — Chantier M (Docs méta — bundle réfléchi)
+
+D1. Réflexion bundle docs méta : recensement des ensembles thématiques (architecture macro, codification, cycle de vie docs, doctrine isolation agents, gouvernance, etc.) + définition du périmètre de chaque doc
+D2. Production du **bundle de docs méta** (un doc par périmètre, au canon, articulés sans recouvrement)
+D3. Tri des entrées Notion `Docs méta LBP` (refondre ou archiver)
+D4. Indexation Notion BDD Docs méta LBP
+
+### Phase E — Chantier P (Prompts / Logic Blocks / Agents)
+
+E1. Tri massif des dossiers `Prompts/` et `Logic Blocks/` (séparer ancien du code app vs docs de travail)
+E2. Mise à jour des system prompts / prompts maîtres / logic blocks (cohérence Twin v2 + D-019 + D-021)
+E3. Création des 3 fiches Agents LBP (Brain architect, Twin architect, KONTEXT) au canon
+E4. Indexation Notion BDDs Prompts + Logic Blocks + Agents
+
+### Phase F — Hors-scope ponctuel (à programmer)
+
+F1. Remplissage `summary` / `purpose` TODO (~275 docs : 43 manuels + 64 WR-RD + 72 notes + 96 taxos)
+F2. Audit nettoyage backticks abusifs (R-057)
+F3. Phase 7 bis : refonte structurelle des 101 logic blocks + 76 prompts (post-Chantier P)
 
 ## Etat du Brain (11 BDD) — post-sync DDL
 
