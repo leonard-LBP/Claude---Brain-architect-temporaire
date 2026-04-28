@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 28-04-2026 — convention v1.1 pour les futurs templates d'instanciation (pattern macro consolidé `TEMPLATE_USAGE_GUIDE` + tableaux Modèle/Exemple simulé). Templates Phase 1 existants conservés en pattern v1.0.
+> Dernière mise à jour : 28-04-2026 — ajout 4 entrées : Chantier P (Prompts/Logic Blocks/Agents), Chantier M (réactualisation docs méta), convention "Statut vide = à créer", patterns techniques DDL Notion (multi-select JSON-encoded, CREATED_TIME/LAST_EDITED_TIME, statements séquentiels en API séparés).
 
 ---
 
@@ -127,6 +127,41 @@
     - Pragmatisme > perfection : ne pas refondre ce qui fonctionne pour aligner formellement.
   - **Convention pour les futurs templates** : pattern v1.1 = `TEMPLATE_USAGE_GUIDE` consolidé en tête + `SECTION_X_GUIDE` par section + tableaux **Modèle**/**Exemple simulé** dans les sections structurantes. Référence : `Template - Manuel de BDD - Brain.md` v1.1.
   - **Statut** : convention adoptée (pas formalisée comme R-XXX dure car c'est un guideline d'évolution, pas une contrainte). Si un futur template ne suit pas ce pattern, ce n'est pas une violation — juste une non-conformité à la convention recommandée.
+
+---
+
+- [28-04-2026] **Chantier P — Tri massif Prompts / Logic Blocks / Agents avant indexation Notion**
+  - **Contexte** : Les dossiers `Prompts/` et `Logic Blocks/` du vault contiennent un mix non trié : (a) anciens system prompts / prompts maîtres / logic blocks que Leonard avait produits, (b) extraits du code de l'app LBP (prompts/chartes dispersés que l'agent dev a extraits en .md pour visibilité), (c) nouveaux docs de travail (system prompts / prompts maîtres / logic blocks destinés à Brain architect / Twin architect / KONTEXT). La BDD `Agents LBP` est vide (aucune fiche encore) et doit recevoir les 3 fiches agents (D-021).
+  - **Portée** : Brain — BDDs `Prompts LBP`, `Registre des logic blocks`, `Agents LBP` (out of scope indexation court terme).
+  - **Action requise** :
+    1. Tri des dossiers `Prompts/` et `Logic Blocks/` : séparer (a) « image à un instant t » des prompts répartis dans le code app (à conserver comme référence ou archiver) (b) docs de travail nouveaux (à mettre au canon).
+    2. Mise à jour des system prompts / prompts maîtres / logic blocks pour cohérence avec Twin v2, D-019 (Brain unifié), D-021 (3 agents).
+    3. Création des 3 fiches `Agents LBP` (Brain architect, Twin architect, KONTEXT).
+    4. Indexation Notion BDDs Prompts + Logic blocks + Agents.
+  - **Quand** : après finalisation des autres BDDs Brain indexées.
+
+- [28-04-2026] **Chantier M — Réactualisation des docs méta hors templates**
+  - **Contexte** : (a) `PLAYBOOK — Macro-architecture v2` (dans `Architecture data > 00 - docs méta > doctrines & playbooks`, code `CHRT_PLAYBOOK_MACRO_ARCHI_LBP`, doc_type `DOC_META`) doit être réactualisé après les changements récents (Phases 4-7, R-053→R-059, D-019, D-020, D-021, sync Notion Brain, refonte 4 templates secondaires…). Il était à jour au 27-04-2026 mais beaucoup de doctrines ont évolué depuis. (b) La BDD Notion `Docs méta LBP` contient plusieurs entités indexées sans équivalent Markdown actuel dans `Architecture data` (ex : Bible des objets, etc.) — désuets et à réactualiser considérablement.
+  - **Portée** : Brain — Docs méta LBP.
+  - **Action requise** :
+    1. Réactualisation du PLAYBOOK macro-archi v2 → v3 ?
+    2. Audit des entrées Notion `Docs méta LBP` sans Markdown actif : trier (réactualiser ou archiver).
+    3. Indexation Notion BDD Docs méta LBP.
+  - **Quand** : après finalisation de la majorité des autres indexations Brain.
+
+- [28-04-2026] **Convention "Statut de l'objet vide = à créer"**
+  - **Contexte** : Leonard utilise la BDD `Méthodes LBP` Notion comme to-do/mémo : il y crée des entrées avec juste un nom et même pas de `Statut de l'objet`. Convention d'induction : statut vide = "à créer" (pas même brouillon). Origine : 28-04-2026 (calibration indexation Méthodes LBP).
+  - **Portée potentielle** : transverse Brain (à vérifier avec autres BDDs si même convention applicable).
+  - **À formaliser** : règle R-XXX si la convention est confirmée transverse, ou note doctrinale si reste spécifique à Méthodes LBP. Bloquant à lever : audit transverse pour voir si d'autres BDDs Brain ont des entrées sans statut.
+
+- [28-04-2026] **Patterns techniques DDL Notion (à documenter dans WF-XXX)**
+  - **Contexte** : plusieurs patterns techniques découverts pendant la sync DDL Notion qui méritent d'être documentés pour réutilisation.
+  - **Patterns à formaliser** :
+    1. **Multi-select via `update_page`** : passer la valeur en **string JSON-encoded** (`"property": "[\"value1\", \"value2\"]"`), pas en array natif. Notion retourne un array natif au fetch.
+    2. **Types `CREATED_TIME` / `LAST_EDITED_TIME` en DDL** : fonctionnent (testé 28-04-2026 sur 5 BDDs Motor) bien que non documentés dans la liste des types simples de l'aide DDL Notion. Permettent de convertir une prop `date` (saisie manuelle) en prop système auto-remplie.
+    3. **Statements multiples dans une même salve `update_data_source`** : ne s'exécutent **pas séquentiellement** quand un statement dépend du résultat du précédent (ex : `RENAME A→B; RENAME B→C` → 2e échoue car B n'existe pas en début de salve). Faire 2 calls API distincts pour les chaînes de dépendances.
+  - **Portée** : Transverse — script de génération/sync Notion.
+  - **À formaliser** : documenter dans `WORKFLOWS_LBP.md` WF-XXX (à enrichir WF-017 ou créer un WF-018 dédié aux patterns DDL Notion).
 
 ---
 

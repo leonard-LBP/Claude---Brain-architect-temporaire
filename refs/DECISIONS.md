@@ -498,6 +498,35 @@
 
 ---
 
+### D-021 : Architecture des 3 agents LBP — Brain architect / Twin architect / KONTEXT
+
+- **Date** : 28-04-2026
+- **Statut** : Adoptée
+- **Portée** : Transverse écosystème LBP (Brain + Twin + Mission Ops)
+- **Contexte** : LBP a besoin d'une architecture d'agents claire pour distinguer (a) qui fait évoluer le Brain (méta-LBP, hors mission), (b) qui modélise/met à jour le Twin d'un client (peuplement, refactor), (c) qui pilote l'exécution d'une mission côté consultant utilisateur. Sans frontières d'isolation explicites, risque que des opérations de mission contaminent le Brain (modifications accidentelles pendant une prestation), ou que le Brain soit sur-utilisé comme outil de mission au lieu d'être consulté en lecture.
+- **Options envisagées** :
+  1. Un seul agent généraliste qui fait tout → rejeté : pas de séparation des responsabilités, risque de modifs Brain pendant une mission.
+  2. Deux agents (Brain architect + agent mission unique) → rejeté : confond modélisation Twin et pilotage mission.
+  3. **Trois agents avec frontières d'isolation explicites** → **retenu**.
+- **Choix retenu** :
+  1. **Brain architect** : opérations d'évolution sur le Brain (création/modif/refonte de manuels, taxos, méthodes, prompts, templates, agents, outils, logic blocks, docs méta). C'est l'agent méta-LBP — il fait évoluer l'écosystème documentaire.
+  2. **Twin architect** : opérations sur le Twin d'un client (peuplement, refactor, dédoublonnage, complétion, mise à jour des objets Twin, génération de relations, qualification d'objets candidats).
+  3. **KONTEXT** (nom provisoire) : agent central côté consultant utilisateur. Gère les Mission Ops : instanciation d'actions de mission, fixation de RDV, génération de livrables/bricks, mise à jour du Twin via délégation à Twin architect.
+- **Frontière d'isolation infranchissable** : KONTEXT **ne peut pas** appeler Brain architect. Justification doctrinale : pendant une prestation, le Brain est **utilisé** (lecture des prompts, méthodes, outils, templates) mais **n'évolue pas**. L'évolution du Brain est une activité méta-LBP (gouvernance documentaire), pas une activité de mission. Cette frontière garantit la stabilité du Brain pendant les missions et évite les modifs accidentelles.
+- **Délégations autorisées** :
+  - KONTEXT → Twin architect : ✅ (mise à jour du Twin client = activité de mission légitime)
+  - KONTEXT → Brain architect : ❌ (interdit)
+  - Twin architect → Brain architect : à arbitrer ultérieurement (probable interdit pour la même raison ; à confirmer si le besoin émerge)
+- **Conséquences** :
+  - ✅ Stabilité du Brain pendant les missions.
+  - ✅ Séparation claire des responsabilités (Brain = méta, Twin = client, Mission = exécution).
+  - ✅ 3 agents = 3 fiches dans la BDD `Agents LBP` (à créer après Phase 7 bis / chantier P de tri Prompts+Logic blocks+Agents).
+  - ⚠ Le nom `KONTEXT` est provisoire — à arbitrer avant publication finale.
+  - ⚠ Cette doctrine bloque toute évolution du Brain en cours de mission. Si un agent identifie un besoin d'évolution Brain, il doit le **flagguer** comme remontée à traiter par Brain architect hors mission, pas le faire lui-même.
+- **Règles associées** : à venir (R-XXX sur les frontières d'isolation des agents, à formaliser quand les 3 fiches Agents seront créées).
+
+---
+
 ## 3. Décisions de mise en œuvre
 
 *Décisions techniques/pratiques (outillage, stockage, versioning).*
