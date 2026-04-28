@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — création taxo `JOB.COVERAGE` + ALTER Notion BDD Postes (Twin) + 11 `Lien vers le doc WR-RD (.md)` posés sur les fiches Brain de la BDD Notion `Manuels de BDD`. Audit transverse taxonomies validé : 87/87 référencées présentes, JOB.COVERAGE était la seule manquante.
+> Dernière mise à jour : 28-04-2026 — capture **D-020** (propagation `Version du template` à toutes les BDDs Brain, type RICH_TEXT). Sync Notion : ADD `Version du template` sur 10 BDDs Brain + ALTER Manuels de BDD (select→text), RENAME `Lien vers le doc du manuel` → `Lien vers le manuel de BDD (.md)`, RENAME apostrophe Logic blocks (typo U+2019). 22 fichiers Markdown enrichis (10 manuels Brain + 11 WR-RD + 3 props Méthodes documentées). Lot 3 audit-correction : 21 entrées Notion désynchronisées corrigées (URL Drive + 7 renames d'entrées) + 7 archivages V1 orphelins.
 
 ## Phase actuelle
 
-**Suite WR-RD Brain : taxo JOB.COVERAGE créée et synchronisée Notion (Postes), 11 Lien WR-RD posés. Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (mise à jour des entrées existantes plutôt qu'archivage+recréation).**
+**Conformité Notion ↔ Manuels Brain finalisée (structure schémas + Liens manuels au Drive). Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (création/MAJ des entrées pour refléter le contenu canon des docs Markdown — gros chantier ~313 entrées).**
 
 ### Phases terminées (chronologie)
 
@@ -24,6 +24,9 @@
 | Audit transverse taxonomies | 87/87 référencées présentes ; 1 manquante détectée (`JOB.COVERAGE`) ; 14 orphelines à arbitrer plus tard | Rapport via agent + grep cross-manuels |
 | Création `JOB.COVERAGE` | 1 taxo (BDD Postes Twin) — 6 valeurs (Couvert / Partiellement couvert / Vacant / Sur-couvert (doublon) / En transition / Gelé) | Au canon R-054 + ALTER Notion `État de couverture du poste` SET SELECT |
 | 11 `Lien WR-RD` posés sur Notion | 11 fiches BDD `Manuels de BDD` mises à jour avec URL Drive du WR-RD Brain correspondant | Via WF-011 (lecture SQLite Drive locale) + notion-update-page |
+| Capture **D-020** + Lot 1 DDL | ADD `Version du template` (RICH_TEXT) sur 10 BDDs Brain + ALTER Manuels de BDD (select→text) + RENAME `Lien vers le doc du manuel` → `Lien vers le manuel de BDD (.md)` + RENAME apostrophe Logic blocks (typo U+2019) | 14 actions DDL Notion réussies |
+| Lot 2 (manuels + WR-RD) | Documentation `Version du template` ajoutée à 10 manuels Brain + propagée à 11 WR-RD Brain. 3 props Méthodes (`Erreurs fréquentes / anti-patterns`, `Quand l'utiliser`, `Variantes & adaptations`) documentées dans Manuel + WR-RD Méthodes. | 22 fichiers Markdown enrichis |
+| Lot 3 (audit-correction Lien manuel) | 21 entrées Notion `Manuels de BDD` désynchronisées corrigées (URL Drive posée, 7 renames de Nom canonique) + 7 archivages V1 orphelins (Insights, Impacts de Modulateurs, Rôles officiels, Ressources, Unités Organisationnelles, Appartenances, Edges) | Script réutilisable `scripts/get_manuels_urls.py` |
 
 #### Détail Phase 6.5 (refonte templates secondaires)
 
@@ -62,6 +65,7 @@
 - **R-059** — hygiène d’écriture des docs Brain (pas de bruit historique ni de spéculation future)
 - **D-019** — Brain = environnement documentaire en évolution ; Core+Motor unifié au niveau modèle de données ; isolation stricte Brain ↔ MO/Twin
 - **C-011** (CLAUDE.md) — mise à jour systématique de `ECOSYSTEM-STATE.md` à chaque fin de phase, avant le commit de la phase
+- **D-020** (DECISIONS.md) — propagation de la propriété `Version du template` (RICH_TEXT, type texte libre format X.Y) à toutes les BDDs Brain ; permet l'audit mécanique des docs stale lors de bumps majeurs de templates
 
 ## Etat du Brain (11 BDD) — post-sync DDL
 

@@ -473,6 +473,31 @@
 
 ---
 
+### D-020 : Propagation de la propriété `Version du template` à toutes les BDDs Brain
+
+- **Date** : 28-04-2026
+- **Statut** : Adoptée
+- **Portée** : 11 BDDs Brain (transverse)
+- **Contexte** : Aujourd'hui seule la BDD `Manuels de BDD` porte une propriété `Version du template` qui trace la version du template d'instanciation utilisé pour produire le manuel décrit (introduite avec D-018 / R-049 lors de la migration Twin v2). Or chaque BDD Brain indexe des docs qui sont eux aussi générés depuis un template (notes de concept ← `Template - Note de concept` ; taxos ← `Template - Taxonomie` ; méthodes ← `Template - Méthode LBP` ; templates de bricks ← `Template - Template de Brick` ; etc.). À chaque bump majeur d'un template, les docs générés depuis les versions précédentes deviennent stale et doivent être migrés (R-056). Sans propriété qui trace la lignée de génération, l'audit mécanique des docs stale est impossible.
+- **Options envisagées** :
+  1. Maintenir la propriété uniquement sur Manuels de BDD → rejeté : laisse les autres BDDs Brain sans audit possible de lignée.
+  2. Étendre à toutes les 11 BDDs Brain → **retenu**.
+  3. Stocker uniquement dans le frontmatter Markdown sans Notion → rejeté : Notion est l'interface principale de gouvernance, les vues filtrées par version doivent être possibles directement.
+- **Choix retenu** : ajouter la propriété `Version du template` sur les **10 BDDs Brain** qui ne la portent pas encore (Docs méta LBP, Glossaire LBP, Registre des notes de concept, Registre des taxonomies, Méthodes LBP, Prompts LBP, Templates de bricks, Agents LBP, Outils externes, Registre des logic blocks). La BDD `Manuels de BDD` la porte déjà.
+  - **Type** : `RICH_TEXT` (texte libre), pas `select`. Justification (Leonard 28-04-2026) : un select obligerait l'agent Brain architect à créer en permanence de nouvelles options à chaque bump de template, créant une accumulation illisible. Un texte libre suit la convention R-056 (`X.Y`) et peut être audité par regex sans pollution du schéma.
+  - **Forme attendue** : `X.Y` (R-056), reflétant la valeur du frontmatter `template_version` du doc Markdown source.
+  - **Mode de remplissage** : `consultant` ou `agent IA` lors de l'instanciation/mise à jour du doc. À défaut de connaissance, laisser vide (mieux que d'inventer).
+- **Conséquences** :
+  - ✅ Audit mécanique possible des docs stale lors de bumps majeurs de templates (filtrer Notion par `Version du template ≠ <version courante>`).
+  - ✅ Cohérence transverse Brain — toutes les BDDs portent la même méta-info.
+  - ✅ Convention R-056 (versioning X.Y) directement consommable côté Notion.
+  - ⚠ Charge de propagation : 10 manuels Brain à enrichir + 11 WR-RD à propager (R-041/R-042).
+  - ⚠ Charge de saisie : les ~310 entrées existantes des BDDs Brain devront être progressivement enrichies de leur version. Pour les nouveaux docs : la valeur est posée à la création.
+  - ⚠ La BDD `Manuels de BDD` qui portait la propriété en `select` doit être convertie en `RICH_TEXT` pour cohérence transverse.
+- **Règles associées** : R-055 (frontmatter canon), R-056 (versioning X.Y), R-049 (déclaration `template_version` dans le frontmatter).
+
+---
+
 ## 3. Décisions de mise en œuvre
 
 *Décisions techniques/pratiques (outillage, stockage, versioning).*
