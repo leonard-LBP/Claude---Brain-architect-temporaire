@@ -494,7 +494,7 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
 
 ##### Forme des deux champs
 
-- **1 à 3 phrases concentrées** : ≤300 caractères pour `summary`, ≤500 caractères pour `purpose`.
+- **1 à 3 phrases concentrées** : **≤400 caractères** pour `summary` comme pour `purpose` (plafond unifié, arbitré 29-04-2026).
 - **Lisible par humain ET par agent** — formulation neutre sur le consommateur. Ne jamais se référer explicitement à « l'agent », « le consultant », « les utilisateurs », etc. dans ces champs.
 - **Articulations** avec d'autres taxos / objets quand cela évite des confusions courantes : « à ne pas confondre avec X », « complète Y sans s'y substituer », « distincte des dimensions Z gérées ailleurs ».
 - **Pas de jargon d'implémentation** dans le `purpose` : pas de « Notion », « rollup », « relation bidirectionnelle », « update_data_source ». Ces détails relèvent du manuel détaillé, pas du purpose. Le purpose reste fonctionnel, pas technique.
