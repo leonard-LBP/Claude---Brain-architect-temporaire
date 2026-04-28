@@ -1,0 +1,263 @@
+{
+  "audit_metadata": {
+    "date": "2026-04-27",
+    "scope": "11 manuels Brain (lecture seule)",
+    "base_path": "H:/Drive partagés/LBP - shared/Architecture data/Manuels de BDD/Brain/"
+  },
+  "manuels": {
+    "Manuels de BDD": {
+      "file": "Manuel de BDD - Manuels de BDD.md",
+      "frontmatter": {
+        "title": "Manuel de BDD - Manuels de BDD",
+        "doc_type": "db_manual",
+        "purpose": "Spécifier la BDD Notion « Manuels de BDD » : catalogue interne des manuels de bases Notion de l'écosystème LBP",
+        "version": "0.2.0",
+        "status": "draft",
+        "tags": ["notion","db_manual","core_brain","motor_brain","catalogue","manuels_bdd","lbp"]
+      },
+      "h1_sections": [
+        "1) Introduction et Contexte",
+        "2) Définition et rôle dans l'écosystème LBP",
+        "3) Architecture et structuration",
+        "4) Relations",
+        "5) Usages des taxonomies",
+        "6) Automatisations, formules, rollups",
+        "7) Paramétrage Notion - Ordre de mise en place",
+        "8) Gouvernance et maintenance",
+        "9) Checklist QA (GO / NO-GO)",
+        "10) Exemples d'utilisation",
+        "11) Bonnes pratiques et points de vigilance"
+      ],
+      "h2_sections": ["1.1 Objet et finalité","1.2 Périmètre","2.1 Définition officielle","2.2 Rôle et utilité","3.1 Règles générales de remplissage","3.2 Champs (tableau unique)","3.3 Vues Notion recommandées","3.4 Workflows Motor Brain","5.1 Principe","5.2 Tableau","11.1 Bonnes pratiques","11.2 Points de vigilance"],
+      "scope_brain": "Core+Motor (catalogue)",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Domaine(s) d'usage","Type fonctionnel (BDD décrite)","Version du template","Nom de la BDD Notion","Lien vers la BDD Notion","Lien vers le manuel de BDD (.md)","Lien vers le doc WR-RD (.md)","utilise (taxonomies)"],
+      "rollups": [],
+      "code_prefix": "DBMAN_",
+      "taxos_consumed": ["OBJ.STATUT"],
+      "relations": [
+        {"name": "utilise (taxonomies)", "target": "Registre des taxonomies", "mirror": "est utilisée dans (manuels de BDD)", "direction": "bidir"}
+      ]
+    },
+    "Registre des taxonomies": {
+      "file": "Manuel de BDD - Registre des taxonomies.md",
+      "frontmatter": {
+        "title": "Manuel de BDD - Registre des taxonomies",
+        "doc_type": "db_manual",
+        "purpose": "registre pivot des taxonomies LBP",
+        "version": "0.2.0",
+        "status": "draft",
+        "tags": ["notion","db_manual","core_brain","motor_brain","registry","taxonomies","lbp"]
+      },
+      "h1_sections": ["1)","2)","3)","4)","5)","6)","7)","8)","9)","10)","11)"],
+      "scope_brain": "Core+Motor (registre pivot)",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Description (source)","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Ouverture","Nature sémantique","Mode de sélection","Niveaux autorisés","Lien doc taxonomie (source)","Description courte (usage)"],
+      "rollups": ["Domaine(s) d'usage (via manuels)"],
+      "code_prefix": "NAMESPACE.FAMILLE",
+      "taxos_consumed": ["OBJ.STATUT"],
+      "relations": [
+        {"name": "est utilisée dans (manuels de BDD)", "target": "Manuels de BDD", "mirror": "utilise (taxonomies)", "direction": "bidir"}
+      ]
+    },
+    "Prompts LBP": {
+      "file": "Manuel de BDD - Prompts LBP.md",
+      "frontmatter": {
+        "title": "Manuel de BDD - Prompts LBP",
+        "doc_type": "db_manual",
+        "version": "0.3.0",
+        "status": "draft",
+        "tags": ["notion","db_manual","motor_brain","prompts_lbp","lbp"]
+      },
+      "h1_sections": ["1)","2)","3)","4)","5)","6)","7)","8)","9)","10)","11)"],
+      "scope_brain": "Motor (HUB central)",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Description","Domaine(s) d'usage","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Type de prompt","Rôle architectural","Mode du prompt","Statut de déploiement","Environnement(s) de déploiement","Version(s) de plateforme","Code registry","Objectif opérationnel","Entrées attendues","Règles d'usage","Autoriser recherche web","Lien prompt (source)"],
+      "rollups": ["Familles bricks (via templates)","Familles méthodes (via méthodes)","Familles outils (via outils)","Familles docs méta (via docs méta)"],
+      "code_prefix": "PROMPT-",
+      "taxos_consumed": ["OBJ.STATUT","PROMPT.TYPE","PROMPT.ARCH_ROLE","PROMPT.DEPLOY_STATUS","PLATFORM.ENV"],
+      "relations": [
+        {"name": "utilise (Templates de bricks)", "target": "Templates de bricks", "mirror": "est utilisé dans (Prompts LBP)", "direction": "bidir"},
+        {"name": "utilise (Méthodes LBP)", "target": "Méthodes LBP", "mirror": "est utilisé dans (Prompts LBP)", "direction": "bidir"},
+        {"name": "utilise (Docs méta LBP)", "target": "Docs méta LBP", "mirror": "est utilisé dans (Prompts LBP)", "direction": "bidir"},
+        {"name": "utilise (Outils externes)", "target": "Outils externes", "mirror": "est utilisé dans (Prompts LBP)", "direction": "bidir"},
+        {"name": "utilise (Logic blocks)", "target": "Registre des logic blocks", "mirror": "est utilisé dans (Prompts LBP)", "direction": "bidir"},
+        {"name": "est utilisé par (Agents LBP)", "target": "Agents LBP", "mirror": "utilise (Prompts LBP)", "direction": "bidir"}
+      ]
+    },
+    "Templates de bricks": {
+      "file": "Manuel de BDD - Templates de bricks.md",
+      "frontmatter": {"version": "0.2.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","templates_bricks","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Domaine(s) d'usage","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Famille de brick générée","Created Date","Last Updated Date"],
+      "properties_specific": ["Lien vers fichier template (source)","est utilisé dans (Prompts LBP)"],
+      "rollups": ["Méthodes (via Prompts)","Outils externes (via Prompts)"],
+      "code_prefix": "TPL-BRICK_",
+      "taxos_consumed": ["OBJ.STATUT","BRICK.FAMILY"],
+      "relations": [
+        {"name": "est utilisé dans (Prompts LBP)", "target": "Prompts LBP", "mirror": "utilise (Templates de bricks)", "direction": "bidir"}
+      ]
+    },
+    "Méthodes LBP": {
+      "file": "Manuel de BDD - Méthodes LBP.md",
+      "frontmatter": {"version": "0.2.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","methodes_lbp","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Domaine(s) d'usage","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Famille (Méthode)","Created Date","Last Updated Date"],
+      "properties_specific": ["Objectif opérationnel","Entrées attendues","Règles d'usage","Sorties attendues (nature)","Déroulé (overview)","Lien méthode (source)","est utilisé dans (Prompts LBP)"],
+      "rollups": ["Outils externes mobilisés (via prompts)","Templates de bricks mobilisés (via prompts)"],
+      "code_prefix": "MET-",
+      "taxos_consumed": ["OBJ.STATUT","MET.FAMILY"],
+      "relations": [
+        {"name": "est utilisé dans (Prompts LBP)", "target": "Prompts LBP", "mirror": "utilise (Méthodes LBP)", "direction": "bidir"}
+      ]
+    },
+    "Outils externes": {
+      "file": "Manuel de BDD - Outils externes.md",
+      "frontmatter": {"version": "0.2.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","outils_externes","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Domaine(s) d'usage","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Famille (Outil externe)","Nature","Entrées attendues","Sorties produites","Mode d'emploi (IA)","Gabarit de sortie (IA)","Lien source","est utilisé dans (Prompts LBP)"],
+      "rollups": ["Agents mobilisés (via prompts)","Méthodes mobilisées (via prompts)","Templates de bricks mobilisés (via prompts)"],
+      "code_prefix": "OUT-",
+      "taxos_consumed": ["OBJ.STATUT","OUT.FAMILY"],
+      "relations": [
+        {"name": "est utilisé dans (Prompts LBP)", "target": "Prompts LBP", "mirror": "utilise (Outils externes)", "direction": "bidir"}
+      ]
+    },
+    "Docs méta LBP": {
+      "file": "Manuel de BDD - Docs méta LBP.md",
+      "frontmatter": {"version": "0.2.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","docs_meta_lbp","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Famille (Doc méta)","Mots-clés de déclenchement","Périmètre d'application","Objets encadrés (overview)","Règles clés (overview)","Quand l'appliquer","Lien doc méta (source)","est utilisé dans (Prompts LBP)"],
+      "rollups": ["Agents mobilisés (via prompts)","Outils externes mobilisés (via prompts)","Templates de bricks mobilisés (via prompts)","Méthodes mobilisées (via prompts)"],
+      "code_prefix": "META-",
+      "taxos_consumed": ["OBJ.STATUT","META.FAMILY"],
+      "relations": [
+        {"name": "est utilisé dans (Prompts LBP)", "target": "Prompts LBP", "mirror": "utilise (Docs méta LBP)", "direction": "bidir"}
+      ]
+    },
+    "Agents LBP": {
+      "file": "Manuel de BDD - Agents LBP.md",
+      "frontmatter": {"version": "0.2.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","agents_lbp","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Domaine(s) d'usage","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Famille (Agent)","Fonctions (overview)","Périmètre et exclusions (overview)","Garde-fous (overview)","Qualité et limites (overview)","System prompt (lien source)","utilise (Prompts LBP)"],
+      "rollups": ["Méthodes mobilisées (via prompts)","Docs méta mobilisés (via prompts)","Outils externes mobilisés (via prompts)","Templates de bricks mobilisés (via prompts)"],
+      "code_prefix": "AGENT-",
+      "taxos_consumed": ["OBJ.STATUT","AGENT.FAMILY"],
+      "relations": [
+        {"name": "utilise (Prompts LBP)", "target": "Prompts LBP", "mirror": "est utilisé par (Agents LBP)", "direction": "bidir", "note": "Cas particulier: Agents = consommateur de prompts (sens inverse vs autres spokes)"}
+      ]
+    },
+    "Registre des logic blocks": {
+      "file": "Manuel de BDD - Registre des logic blocks.md",
+      "frontmatter": {"version": "0.1.0", "status": "draft", "tags": ["notion","db_manual","motor_brain","logic_blocks","lbp"]},
+      "scope_brain": "Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Description","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Lien Drive du logic block","est utilisé dans (Prompts LBP)","s'applique à (Manuels de BDD)"],
+      "rollups": ["Nb prompts liés","Nb manuels adressés"],
+      "code_prefix": "LGBLK_",
+      "taxos_consumed": ["OBJ.STATUT"],
+      "relations": [
+        {"name": "est utilisé dans (Prompts LBP)", "target": "Prompts LBP", "mirror": "utilise (Logic blocks)", "direction": "bidir"},
+        {"name": "s'applique à (Manuels de BDD)", "target": "Manuels de BDD", "mirror": null, "direction": "monodir", "note": "Anomalie: relation spoke→spoke vers Manuels de BDD, hors doctrine hub-and-spoke"}
+      ]
+    },
+    "Registre des notes de concept": {
+      "file": "Manuel de BDD - Registre des notes de concept.md",
+      "frontmatter": {"version": "0.1.0", "status": "draft", "tags": ["notion","db_manual","core_brain","notes_de_concept","lbp"]},
+      "scope_brain": "Core (registre minimal)",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Created Date","Last Updated Date"],
+      "properties_specific": ["Lien note concept (source)","documente (Glossaire LBP)"],
+      "rollups": ["Domaine(s) d'usage (rollup)"],
+      "code_prefix": "CPT-",
+      "taxos_consumed": ["OBJ.STATUT"],
+      "relations": [
+        {"name": "documente (Glossaire LBP)", "target": "Glossaire LBP", "mirror": "est documenté par (notes de concept)", "direction": "miroir technique"}
+      ],
+      "particularity": "Manuel volontairement minimaliste (pas de Description, Aliases, Valeur ajoutée LBP, Usages IA potentiels)"
+    },
+    "Glossaire LBP": {
+      "file": "Manuel de BDD - Glossaire LBP.md",
+      "frontmatter": {"version": "0.1.0", "status": "draft", "tags": ["notion","db_manual","core_brain","motor_brain","glossaire_lbp","lbp"]},
+      "scope_brain": "Core+Motor",
+      "properties_generic": ["Nom canonique","Code unique","Statut de l'objet","Définition","Valeur ajoutée LBP","Usages IA potentiels","Aliases","Created Date","Last Updated Date"],
+      "properties_specific": ["Domaine d'usage","Type de concept","Équivalent langage courant","Règles d'usage et pièges","Mots clés","BDD concernées (texte)","est documenté par (notes de concept)","est mis en oeuvre par (méthodes LBP)","est modélisé par (Manuels de BDD)","est lié à (concepts)"],
+      "rollups": ["Lien note concept (rollup)"],
+      "code_prefix": "CPT-",
+      "taxos_consumed": ["OBJ.STATUT"],
+      "relations": [
+        {"name": "est documenté par (notes de concept)", "target": "Registre des notes de concept", "mirror": "non exposée", "direction": "monodir"},
+        {"name": "est mis en oeuvre par (méthodes LBP)", "target": "Méthodes LBP", "mirror": "non exposée", "direction": "monodir", "note": "Hors doctrine hub-and-spoke: relation directe vers spoke Méthodes"},
+        {"name": "est modélisé par (Manuels de BDD)", "target": "Manuels de BDD", "mirror": "non exposée", "direction": "monodir"},
+        {"name": "est lié à (concepts)", "target": "Glossaire LBP", "mirror": "auto", "direction": "auto-relation bidir"}
+      ],
+      "particularity": "Doctrine relationnelle distincte (monodirectionnel, miroirs non exposés) — exception assumée"
+    }
+  },
+  "synthesis": {
+    "structure_h1_canonique": [
+      "1) Introduction et Contexte",
+      "2) Définition et rôle dans l'écosystème LBP",
+      "3) Architecture et structuration",
+      "4) Relations",
+      "5) Usages des taxonomies",
+      "6) Automatisations, formules, rollups",
+      "7) Paramétrage Notion - Ordre de mise en place",
+      "8) Gouvernance et maintenance",
+      "9) Checklist QA (GO / NO-GO)",
+      "10) Exemples d'utilisation",
+      "11) Bonnes pratiques et points de vigilance"
+    ],
+    "note": "Tous les 11 manuels respectent la structure H1 canonique 11 sections. Différences mineures dans les H2 (workflow Core Brain vs Motor Brain selon le scope).",
+    "properties_strictly_generic_11_11": [
+      "Nom canonique","Code unique","Statut de l'objet","Created Date","Last Updated Date"
+    ],
+    "properties_quasi_generic_10_11": [
+      "Description (absent dans Registre des notes de concept)",
+      "Aliases (absent dans Registre des notes de concept)",
+      "Valeur ajoutée LBP (absent dans Registre des notes de concept)",
+      "Usages IA potentiels (absent dans Registre des notes de concept)"
+    ],
+    "properties_partially_generic": [
+      "Domaine(s) d'usage (multi-select Core/Motor/Digital Twin/Mission Ops): 7/11 (Manuels, Prompts, Templates, Méthodes, Outils, Agents, +variante Glossaire qui limite à Core/Motor)",
+      "Famille (X) (taxo dédiée niveau taxon): 6/11 (Templates=BRICK.FAMILY, Méthodes=MET.FAMILY, Outils=OUT.FAMILY, Docs méta=META.FAMILY, Agents=AGENT.FAMILY, +Glossaire utilise Type de concept à la place)"
+    ],
+    "code_prefix_pattern": {
+      "DBMAN_": "Manuels de BDD",
+      "PROMPT-": "Prompts LBP",
+      "TPL-BRICK_": "Templates de bricks",
+      "MET-": "Méthodes LBP",
+      "OUT-": "Outils externes",
+      "META-": "Docs méta LBP",
+      "AGENT-": "Agents LBP",
+      "LGBLK_": "Logic blocks",
+      "CPT-": "Notes de concept + Glossaire (partagé)",
+      "NAMESPACE.FAMILLE": "Registre des taxonomies (format spécial)"
+    },
+    "taxos_transverses": {
+      "OBJ.STATUT": "11/11 (universelle)"
+    },
+    "taxos_specifiques_par_manuel": {
+      "Templates de bricks": ["BRICK.FAMILY"],
+      "Méthodes LBP": ["MET.FAMILY"],
+      "Outils externes": ["OUT.FAMILY"],
+      "Docs méta LBP": ["META.FAMILY"],
+      "Agents LBP": ["AGENT.FAMILY"],
+      "Prompts LBP": ["PROMPT.TYPE","PROMPT.ARCH_ROLE","PROMPT.DEPLOY_STATUS","PLATFORM.ENV"]
+    },
+    "doctrine_hub_and_spoke": {
+      "hub": "Prompts LBP",
+      "spokes_classiques_5": ["Templates de bricks","Méthodes LBP","Outils externes","Docs méta LBP","Registre des logic blocks"],
+      "relation_hub_to_spoke": "utilise (X)",
+      "relation_spoke_to_hub": "est utilisé dans (Prompts LBP)",
+      "exception_agents": "Agents LBP utilisent les Prompts (sens inverse): Agents.utilise (Prompts LBP) ↔ Prompts.est utilisé par (Agents LBP)",
+      "exceptions_doctrine": [
+        "Logic blocks: relation supplémentaire s'applique à (Manuels de BDD) — spoke vers spoke monodir",
+        "Glossaire LBP: relations monodirectionnelles vers Notes de concept, Méthodes, Manuels (miroirs non exposés)",
+        "Manuels de BDD ↔ Registre des taxonomies: relation transversale Brain bidir, hors hub Prompts (justifiée par QA)"
+      ]
+    }
+  }
+}

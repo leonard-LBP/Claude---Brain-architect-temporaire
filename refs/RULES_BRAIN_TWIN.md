@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 28-04-2026 — R-054 (codification universelle des objets Brain : grammaire 1 préfixe+underscore pour la majorité, grammaire 2 hiérarchique-point pour les taxonomies, grammaire 3 héritée pour les taxons ; table de préfixes avec 19 types ; 8 règles transverses ; suffix LBP supprimé) + R-055 (frontmatter canon Brain en 3 zones balisées : Identité / Méta-gouvernance / Spec d'usage ; champs obligatoires ; status hors frontmatter ; règle obligatoire `updated_at` à chaque modif ; `doc_type` = token MAJUSCULES de la taxo `DOC.TYPE`) + R-056 (grammaire de versioning `MAJOR.MINOR` à 2 niveaux ; règles de bump claires ; migration des `X.Y.Z` actuels par troncation du PATCH ; cascade sur R-053 et R-055). Refonte du template-taxonomie en `Template - Taxonomie.md` v2.0 (ancien archivé). Création des 3 taxos socles : `DOC.TYPE` (référentiel des 13 types de docs Brain), `DBMAN.SCOPE` (TWIN/MISSION_OPS/BRAIN), `LGBLK.FAMILY` (TRANSFORMATION/VALIDATION/ROUTAGE/CALCUL/AGREGATION, fermée).
+> Dernière mise à jour : 28-04-2026 — R-057 (discipline d'usage des backticks Markdown : réservés aux tokens techniques littéraux, interdits pour mise en évidence générale ; cas particulier du `-->` dans un commentaire HTML qui ferme le commentaire prématurément). Découverte lors de la refonte des templates v2.0 (Phase 6.5).
 
 ---
 
@@ -419,6 +419,24 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
 ##### Découverte
 
 28-04-2026, Leonard, en challengeant la convention semver `X.Y.Z` héritée par défaut. Constat : aucune convention de versioning n'a jamais été formalisée dans LBP, les versions actuelles ont été générées à la volée par différents agents sans règle commune, donc on n'est pas tenu de suivre semver. Décision : passer à `X.Y` plus simple et adapté aux docs.
+
+---
+
+#### R-057 : Discipline d'usage des backticks Markdown
+
+- **Portée** : Transverse à tous les docs Markdown LBP (manuels de BDD, WR-RD, taxonomies, notes de concept, templates, méthodes, prompts, logic blocks, chartes, playbooks, docs méta).
+- **Statut** : Actif
+- **Why** : Les backticks `` ` `` ont une fonction Markdown précise : signaler un **token technique littéral** (rendu en `monospace`). Mais ils ont été utilisés sans discipline dans plusieurs docs (notamment manuels de BDD existants) — parfois autour de mots du langage courant pour de la mise en évidence générale, parfois aléatoirement. Conséquences : (a) bruit visuel, (b) confusion entre identifiant technique et prose, (c) perte de la valeur sémantique de la convention.
+- **How to apply** : les backticks sont **réservés** aux usages suivants (liste fermée) :
+  - Nom d'une propriété, d'une variable, d'un champ : `created_at`, `brick_type`, `purpose`
+  - Valeur de taxo / code de doc : `BRICK.PROFIL_ORGA`, `BRK_PROFIL_ORGA_001`, `DOC.TYPE`
+  - Fragment de syntaxe / commande / regex : `<!-- @INSTR-START -->`, `grep -E "@INSTR"`, `[A-Z]+_[A-Z]+`
+  - Nom de fichier / chemin : `Template - Méthode LBP.md`, `refs/RULES_BRAIN_TWIN.md`
+  - Nom de bloc / section technique : `TEMPLATE_USAGE_GUIDE`, `SECTION_X_GUIDE`
+- **Interdits** : mise en évidence générale dans la prose (utiliser `**gras**` pour insister, `*italique*` pour nuancer ou citer un terme), encadrer un mot du langage courant, encadrer une phrase entière.
+- **Cas particulier** : à l'intérieur d'un commentaire HTML `<!-- ... -->`, ne **jamais** écrire la séquence `-->` littérale (même entourée de backticks), car le parseur HTML ferme le commentaire avant que Markdown n'agisse. Solution : sortir l'exemple à citer hors du commentaire HTML (cf. convention de structuration des templates v1.1+).
+- **Conséquence si violation** : bruit visuel, confusion lecture, et dans le cas du `-->` dans un commentaire : commentaire HTML cassé en plein milieu, instructions exposées en zone visible.
+- **Découverte** : 28-04-2026, Leonard, en repérant que le `` `<!-- @INSTR-START ... @INSTR-END -->` `` cité dans la procédure de purge finale d'un template cassait le périmètre du commentaire HTML englobant. Discussion menant aussi à formaliser l'usage discipliné des backticks au-delà du seul cas du `-->`.
 
 ---
 
