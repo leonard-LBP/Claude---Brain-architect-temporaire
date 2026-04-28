@@ -77,14 +77,26 @@
 
 ---
 
-## Plan global — vue d'ensemble (28-04-2026)
+## Plan global — vue d'ensemble (28-04-2026, ré-ordonné)
+
+### Phase 0 (préalable) — Remplissage `summary` / `purpose` AVANT indexation
+
+**Doctrine Leonard 28-04-2026** : remplir les `summary` / `purpose` des docs au canon **avant** d'indexer Notion (sinon on indexe des champs vides). Sous-étapes en miroir des BDDs à indexer ensuite :
+
+0a. **Taxonomies** (96-102 docs) — `purpose` à écrire pour chaque taxo (les `summary` sont déjà partiellement présents)
+0b. **Manuels de BDD** (43 docs) — `summary` à écrire (pour compléter avant Phase A1)
+0c. **WR-RD** (32 docs Twin + 4 MO + 11 Brain = 47 docs) — `summary` à écrire si vide
+0d. **Notes de concept** (72 docs) — `purpose` à écrire si vide
+0e. **Templates de bricks** (20 docs) — `summary` à écrire si vide
+
+→ **Markdown-only**, aucun coût Notion. Peut être fait pendant les pauses Notion.
 
 ### Phase A — Indexation Brain restante (4 BDDs, ~270 entrées)
 
-A1. **Manuels de BDD** (43 entrées) — partiellement fait au Lot 3, reste les autres propriétés à dériver des manuels
-A2. **Templates de bricks** (20 entrées)
-A3. **Glossaire LBP + Registre des notes de concept** (72 + 72, double indexation cohérente)
-A4. **Registre des taxonomies** (102 entrées)
+A1. **Manuels de BDD** (43 entrées) — partiellement fait au Lot 3, reste les autres propriétés à dériver des manuels (préalable 0b)
+A2. **Templates de bricks** (20 entrées) (préalable 0e)
+A3. **Glossaire LBP + Registre des notes de concept** (72 + 72, double indexation cohérente) (préalable 0d)
+A4. **Registre des taxonomies** (102 entrées) (préalable 0a)
 
 → **Out of scope court terme** : Prompts LBP (Chantier P), Registre des logic blocks (Chantier P), Agents LBP (Chantier P + D-021), Docs méta LBP (Chantier M).
 
