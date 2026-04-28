@@ -482,65 +482,76 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
 
 - **Portée** : Tous les docs Brain (manuels de BDD, taxonomies, notes de concept, méthodes, prompts, agents, outils externes, templates de bricks, docs méta, WR-RD, logic blocks, glossaire, etc.). Concerne les deux champs `summary` et `purpose` du frontmatter R-055.
 - **Statut** : Actif
-- **Why** : Les champs `summary` et `purpose` sont consommés à la fois par les **agents en retrieval** (qui décident s'ils doivent ouvrir le doc complet) et par les **humains** qui parcourent les BDDs. Mal écrits, ils dupliquent l'information portée par d'autres champs structurés (couplage), réénumèrent les valeurs (couplage avec la section 3 du fichier), citent d'autres objets par leur code (couplage avec un objet externe susceptible d'évoluer), ou se chevauchent l'un l'autre (« Qualifie X... » dans summary + « Qualifier X... » dans purpose = doublon stérile). Une discipline stricte de **non-redondance** + **distinction nette des rôles des deux champs** assure densité informationnelle, robustesse aux évolutions, et lisibilité indépendante de chaque champ.
+- **Why** : Les champs `summary` et `purpose` sont consommés à la fois par les **agents en retrieval** (qui décident s'ils doivent ouvrir le doc complet) et par les **humains** qui parcourent les BDDs. Trois pièges détruisent leur valeur : (1) **doublon** entre les deux champs (rotation grammaticale stérile), (2) **couplages fragiles** (énumération des valeurs, citation d'objets voisins par leur code ou leur libellé, duplication de qualificatifs déjà portés par d'autres champs du frontmatter), (3) **exploitations métier en aval arbitraires** dans `purpose` (« pour la priorisation », « pour le diagnostic », « pour la transformation »...) qui figent un consommateur parmi N. Une discipline stricte sur ces 3 axes assure densité, robustesse aux évolutions, et lisibilité indépendante.
 - **How to apply** :
 
 ##### Distinction conceptuelle `summary` vs `purpose`
 
 | Champ | Répond à | Contenu attendu | Forme |
 |---|---|---|---|
-| `summary` | « **Qu'est-ce que c'est ?** » | Nature de l'objet (Référentiel / Échelle / Lexique / Cadre / Hub...) + axe ou dimension qu'il découpe + distinguo conceptuel par rapport aux objets voisins | Phrase nominale, lisible isolément quand extraite seule (vue Notion, snippet API). Ex : « Référentiel des grands types de mandats qu'un poste peut porter dans une organisation, distinct de sa famille métier et de sa séniorité. » |
-| `purpose` | « **À quoi ça sert ?** » | Action principale qu'on accomplit avec l'objet, et raison d'usage | **Verbe à l'infinitif en tête**. Ex : « Qualifier le mandat dominant d'un poste pour analyser la répartition des mandats dans une organisation. » |
+| `summary` | « **Qu'est-ce que c'est ?** » (description pédagogique, dans l'absolu) | Nature de l'objet (Référentiel / Échelle / Lexique / Cadre...) + axe ou dimension qu'il découpe. **Auto-suffisant** : aucune référence à un objet voisin. | Phrase nominale, lisible isolément. Ex : « Référentiel des grands types de mandats qu'un poste peut porter dans une organisation. » |
+| `purpose` | « **À quoi ça sert ?** » (raison d'être structurelle dans l'écosystème LBP) | Action principale qu'on accomplit avec l'objet + **effet structurel direct** sur les objets ainsi qualifiés. **Pas d'exploitation métier en aval**. | **Verbe à l'infinitif en tête**, pattern « *Verbe + objet, pour + effet structurel direct (+ lest descriptif neutre éventuel)* ». Ex : « Qualifier un poste par son mandat dominant, pour cartographier de façon stable et lisible la nature des responsabilités tenues dans une organisation, indépendamment des intitulés de poste locaux. » |
+
+##### Doctrine d'autonomie (zéro citation d'objet voisin)
+
+Ni `summary` ni `purpose` ne citent jamais d'autres objets de l'écosystème — **ni par leur code, ni par leur libellé conceptuel, ni par référence indirecte** (« distinct de X », « complète Y », « à ne pas confondre avec Z »). Les distinguos cross-objets ont leur place dédiée en **section 6 du fichier** (« Cohérence & impacts croisés »), point d'autorité unique. `summary` et `purpose` décrivent l'objet **dans l'absolu**, comme une définition pédagogique autonome.
 
 ##### Doctrine de non-redondance (DRY)
-
-Ni `summary` ni `purpose` ne doivent dupliquer une information déjà portée ailleurs — ni dans **l'autre champ** du couple, ni dans **un autre champ structuré du frontmatter**, ni dans **la section 3 du fichier** (valeurs/taxons), ni dans **un autre objet externe** (taxo voisine, manuel de BDD, propriété Notion).
 
 | Type de redondance interdite | Exemple à proscrire | Pourquoi |
 |---|---|---|
 | Doublon `summary` ↔ `purpose` | summary: « Qualifie X selon Y... » + purpose: « Qualifier X selon Y... » | Rotation grammaticale stérile |
-| Énumération des valeurs/taxons | « ...direction, management, expert, opérationnel, support... » | La section 3 du fichier est le point d'autorité unique. Un changement de taxon imposerait de toucher 3 endroits. |
-| Code d'une autre taxo / manuel / objet | « ...distinct de JOB.FAMILLE et SCALE.MATURITY » | Renommage ou refonte de l'objet cité = asymétrie silencieuse. ✓ Acceptable : nommer le **concept** en langage naturel (« distinct de la famille métier et de la séniorité »). |
+| Énumération des valeurs/taxons | « ...direction, management, expert, opérationnel, support... » | La section 3 du fichier est le point d'autorité unique. Couplage : un changement de taxon imposerait de toucher 3 endroits. |
+| Citation d'un objet voisin (code OU libellé) | « ...JOB.FAMILLE », « ...la famille métier », « ...complète la séniorité » | Couplage avec un objet susceptible d'évoluer (renommage, refonte, suppression). Les distinguos vivent en section 6. |
 | Nom de BDD ou de propriété d'instanciation | « ...via le champ `Famille (Doc méta)` de la BDD Notion » | Couplage avec le backend (Notion = transitoire). Le doc reste **agnostique du backend**. |
 | Qualificatifs déjà portés par un champ structuré | « Référentiel **fermé nominal mono-sélection** des... » | `is_open`, `scale_kind`, `selection_mode`, `cardinality` portent déjà ces infos. Garder seulement la **nature de l'objet** (Référentiel / Échelle / Lexique / Cadre) dans le summary. |
+
+##### Doctrine d'effet structurel direct (purpose)
+
+Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu'elle qualifie — **pas les exploitations en aval** qui consomment cet effet. Cas d'usage métier interdits : priorisation, diagnostic, transformation, recommandation, audit, allocation, pilotage.
+
+✅ Effets structurels directs autorisés (intrinsèques à l'objet) : *cartographier, rendre comparable, qualifier de façon homogène, ancrer dans le temps, tracer, hiérarchiser, positionner, distinguer, normaliser, classer, catégoriser*.
+
+✅ Lest descriptif neutre autorisé pour enrichir sans surspécifier : qualificatifs de l'effet (*stable, lisible, partagé, homogène, transverse, fiable*), ancrage descriptif neutre (*indépendamment des intitulés locaux, entre objets de natures différentes, dans le temps, à un instant donné*).
 
 ##### Forme des deux champs
 
 - **≤400 caractères** chacun (plafond unifié).
 - **Lisible isolément** : `summary` comme `purpose` doivent rester compréhensibles s'ils sont extraits seuls (sans le reste du frontmatter, sans le corps du fichier).
 - **Lisible par humain ET par agent** — formulation neutre sur le consommateur. Ne jamais se référer explicitement à « l'agent », « le consultant », « les utilisateurs » dans ces champs.
-- **Pas de jargon d'implémentation** : ni « Notion », « rollup », « update_data_source », ni nom de propriété backend. Reste fonctionnel.
+- **Pas de jargon d'implémentation** : ni « Notion », « rollup », « update_data_source », ni nom de propriété backend.
 - **Apostrophes typographiques** `’` (R-052).
 
-##### Anti-patterns à proscrire
+##### Anti-patterns à proscrire (synthèse)
 
 - ❌ « Aider un agent à classer X » → ✅ « Classer X »
-- ❌ « Permet aux agents et aux consultants de... » → ✅ verbe infinitif direct
-- ❌ « Cette taxonomie permet de... » (auto-référence superflue) → ✅ aller direct à la fonction
-- ❌ summary : « Qualifie X selon Y » + purpose : « Qualifier X selon Y » → ✅ summary nominal, purpose action distincte
-- ❌ Énumération des valeurs en prose dans summary ou purpose → ✅ la section 3 du fichier est le point d'autorité
-- ❌ Codes d'objets externes (`OBJ.STATUT`, `JOB.FAMILLE`) → ✅ « le statut documentaire de la fiche », « la famille métier »
+- ❌ « Cette taxonomie permet de... » → ✅ aller direct à la fonction
+- ❌ summary : « Qualifie X selon Y » + purpose : « Qualifier X selon Y » → ✅ summary nominal, purpose action + effet structurel
+- ❌ Énumération des valeurs en prose → ✅ la section 3 du fichier est le point d'autorité
+- ❌ Citation d'objet voisin (code OU libellé : `JOB.FAMILLE`, « la famille métier ») → ✅ section 6 « Cohérence & impacts croisés »
 - ❌ Public cible explicite (« pour les consultants ») → ✅ neutre
 - ❌ Qualificatifs déjà portés par un champ structuré du frontmatter → ✅ DRY
+- ❌ Exploitation métier en aval (« pour la priorisation », « pour le diagnostic », « pour la transformation ») → ✅ effet structurel direct
 
-##### Exemple canonique (taxo `ORG.ROLE`)
+##### Exemples canoniques (3 cas hétérogènes validés 29-04-2026)
 
-**Avant (à proscrire)** :
-- summary : « Qualifie un poste selon son mandat organisationnel : direction, management, expert, opérationnel, support, gouvernance, autre. Sert à analyser la répartition des mandats (pilotage vs exécution vs support) sans confondre avec la famille métier ni la séniorité. »
-- purpose : « Qualifier le mandat organisationnel d'un poste (direction, management, expert, opérationnel, support, gouvernance, autre). Analyser la répartition pilotage/exécution/support sans confondre avec la famille métier ni la séniorité. »
+**Cas nominal — `ORG.ROLE`** (mono, fermé)
+- summary : « Référentiel des grands types de mandats qu'un poste peut porter dans une organisation. »
+- purpose : « Qualifier un poste par son mandat dominant, pour cartographier de façon stable et lisible la nature des responsabilités tenues dans une organisation, indépendamment des intitulés de poste locaux. »
 
-→ Doublon `summary` ↔ `purpose` (rotation grammaticale), énumération des valeurs (couplage section 3), summary commence par un verbe d'action conjugué (« Qualifie... »).
+**Cas ordinal — `SCALE.CRITICALITY`** (1-5, mono, fermé)
+- summary : « Échelle 1-5 de gravité des conséquences attendues d'un objet en cas de non-traitement ou de matérialisation. »
+- purpose : « Positionner un objet sur une échelle de gravité, pour rendre comparable la sévérité des conséquences attendues entre objets de natures différentes, avec une lecture homogène et partagée. »
 
-**Après (canon)** :
-- summary : « Référentiel des grands types de mandats qu'un poste peut porter dans une organisation, distinct de sa famille métier et de sa séniorité. »
-- purpose : « Qualifier le mandat dominant d'un poste pour analyser la répartition des mandats dans une organisation. »
+**Cas hiérarchique — `ASSET.SUBTYPE`** (mono, fermé)
+- summary : « Cadre de classification des actifs non humains mobilisés ou produits par le système étudié, organisé par familles puis sous-types. »
+- purpose : « Classer un actif non humain par sa famille puis son sous-type, pour qualifier le portefeuille observé de façon homogène, lisible et stable dans le temps. »
 
-→ Summary = phrase nominale qui pose l'objet et l'axe ; purpose = action distincte ; aucun couplage avec les valeurs ou les codes voisins.
-
-- **Conséquence si violation** : couplage fragile (renommage / suppression de taxons ou de codes voisins → asymétries silencieuses), redondance entre champs (mots gaspillés), exclusion implicite des lecteurs humains, perte de densité informationnelle.
+- **Conséquence si violation** : couplage fragile (renommage/suppression d'objets voisins → asymétries silencieuses), redondance stérile entre champs, surspécification arbitraire des cas d'usage, perte de densité informationnelle.
 - **Découverte** :
-  - 29-04-2026 (initial) : Leonard signale que tous mes purpose commençaient par « Aider un agent à... » — redondant et excluant.
-  - 29-04-2026 (durcie) : Leonard signale, après le repassage de 102 taxos, que summary et purpose étaient quasi-jumeaux, énuméraient les valeurs, et citaient des codes externes. Doctrine de non-redondance ajoutée et exemple canonique refait sur ORG.ROLE.
+  - 29-04-2026 (v1) : Leonard signale que tous mes purpose commençaient par « Aider un agent à... » — redondant et excluant.
+  - 29-04-2026 (v2) : après refonte de 102 taxos, Leonard signale doublon summary↔purpose, énumération des valeurs, citation de codes externes. Ajout doctrine DRY et exemple canon ORG.ROLE.
+  - 29-04-2026 (v3, version actuelle) : durcissement final après itération sur 3 cas test. Suppression totale des références à des objets voisins (même en libellé conceptuel), suppression des exploitations métier en aval dans purpose, ajout du pattern « verbe + objet + pour + effet structurel direct + lest descriptif neutre ».
 
 ---
 
