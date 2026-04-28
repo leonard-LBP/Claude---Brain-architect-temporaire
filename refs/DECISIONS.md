@@ -449,6 +449,30 @@
 
 ---
 
+### D-019 : Brain = environnement documentaire en évolution (Core+Motor) ; isolation Brain ↔ Mission Ops/Twin
+
+- **Date** : 28-04-2026
+- **Statut** : Adoptée
+- **Portée** : Brain (transverse à toutes ses BDDs) + frontière avec Mission Ops et Digital Twin
+- **Contexte** : L'écosystème LBP distingue 4 grands environnements : `Core` (concepts, glossaire, taxonomies), `Motor` (méthodes, prompts, agents, templates, outils, logic blocks), `Digital Twin` (modélisation des organisations clients), `Mission Ops` (pilotage des missions et bricks produites). Les frontières Mission Ops ↔ Digital Twin sont nettes. En revanche, **côté Core et Motor, les contenus se mélangent en pratique** : la BDD Prompts LBP référence aussi bien des prompts qui manipulent le Twin d'un client que des prompts qui opèrent sur le Brain ; la BDD Manuels de BDD contient les manuels de toutes les BDDs (Brain + Twin + Mission Ops) ; la BDD Registre des taxonomies référence des taxos qui servent à toutes les BDDs. Tenter de cloisonner Core et Motor dans le modèle de données crée des sous-typages artificiels (cf. déséquilibre observé sur `Type fonctionnel` de la BDD Manuels de BDD : Digital Twin sur-subdivisé, Core/Motor/Mission Ops sans sous-familles).
+- **Options envisagées** :
+  1. Maintenir la distinction Core/Motor au niveau modèle de données (props `Type fonctionnel` ou équivalent par BDD) → rejeté : génère des sous-typages déséquilibrés et impose des arbitrages artificiels (un prompt qui génère une brick mission est-il Motor ou Mission Ops ?).
+  2. Fusionner Core et Motor dans un "Brain" unifié au niveau modèle de données, en conservant la nuance Core/Motor au niveau **discours/documentation** uniquement → **retenu**.
+  3. Mapping Core/Motor en taxo séparée à appliquer manuellement → rejeté : redondant avec `DBMAN.SCOPE` qui couvre déjà ce besoin pour les manuels.
+- **Choix retenu** :
+  1. **Brain = environnement documentaire en évolution** (les 11 BDDs Brain). Au niveau modèle de données, Core et Motor ne sont pas distingués : ce sont des **étiquettes de discours** utiles pour parler de l'écosystème, pas des prismes de classification structurels.
+  2. **La nuance Core/Motor reste pertinente dans les `Domaine(s) d'usage`** des objets Motor Brain (Méthodes, Templates, Agents, Outils, Prompts) : un objet peut viser `Core`, `Motor`, `Digital Twin` ou `Mission Ops` selon ce qu'il sert. La taxo `DOMAIN.USAGE` (ou équivalent multi-select) reste à 4 valeurs.
+  3. **Isolation stricte Brain ↔ Mission Ops/Twin** : aucune relation Notion entre une BDD Brain et une BDD Mission Ops ou Digital Twin. Justification : les BDDs Mission Ops et Digital Twin sont **instanciées à chaque mission** (espaces clients distincts), tandis que les BDDs Brain sont **uniques et persistantes** (l'écosystème documentaire LBP). Lier une BDD Brain à une instance MO/Twin créerait une dépendance impossible à matérialiser proprement.
+- **Conséquences** :
+  - ✅ Suppression de la propriété `Type fonctionnel` côté BDD Manuels de BDD (Notion + manuel).
+  - ✅ La BDD Manuels de BDD ne porte plus de sous-typage par environnement (Core/Motor/Twin/MO) — le scope est déjà capturé par `DBMAN.SCOPE` (taxo créée Phase 1f).
+  - ✅ Cohérence sur `Domaine(s) d'usage` : conservé sur les 5 BDDs Motor Brain (Méthodes, Templates, Agents, Outils, Prompts).
+  - ⚠ Lorsqu'on parle "du Brain" en doctrine ou en règles, on parle de **l'environnement documentaire** (les 11 BDDs Brain + leurs docs) — pas des BDDs instanciées en mission.
+  - ⚠ Les bricks produites en mission (BDD Bricks Mission Ops) ne sont **pas** des objets Brain malgré leur valeur cognitive — elles vivent dans l'instance Mission Ops.
+- **Règles associées** : R-058 (interdiction jumelles texte sur Brain — corollaire de l'isolation et de la rigueur structurelle attendue côté Brain).
+
+---
+
 ## 3. Décisions de mise en œuvre
 
 *Décisions techniques/pratiques (outillage, stockage, versioning).*

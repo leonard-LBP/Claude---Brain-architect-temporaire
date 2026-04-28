@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 28-04-2026 — R-057 (discipline d'usage des backticks Markdown : réservés aux tokens techniques littéraux, interdits pour mise en évidence générale ; cas particulier du `-->` dans un commentaire HTML qui ferme le commentaire prématurément). Découverte lors de la refonte des templates v2.0 (Phase 6.5).
+> Dernière mise à jour : 28-04-2026 — R-058 (aucune jumelle texte sur les BDDs Brain) + R-059 (hygiène d'écriture des docs Brain : pas de bruit historique ni de spéculation future ; chaque doc = source de vérité brute à l'instant t, autonome pour les agents en retrieval) + D-019 dans `DECISIONS.md` (Brain = environnement documentaire en évolution Core+Motor ; isolation stricte Brain ↔ Mission Ops/Twin). Découvertes lors de l'audit transverse Notion ↔ Manuels Brain.
 
 ---
 
@@ -437,6 +437,44 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
 - **Cas particulier** : à l'intérieur d'un commentaire HTML `<!-- ... -->`, ne **jamais** écrire la séquence `-->` littérale (même entourée de backticks), car le parseur HTML ferme le commentaire avant que Markdown n'agisse. Solution : sortir l'exemple à citer hors du commentaire HTML (cf. convention de structuration des templates v1.1+).
 - **Conséquence si violation** : bruit visuel, confusion lecture, et dans le cas du `-->` dans un commentaire : commentaire HTML cassé en plein milieu, instructions exposées en zone visible.
 - **Découverte** : 28-04-2026, Leonard, en repérant que le `` `<!-- @INSTR-START ... @INSTR-END -->` `` cité dans la procédure de purge finale d'un template cassait le périmètre du commentaire HTML englobant. Discussion menant aussi à formaliser l'usage discipliné des backticks au-delà du seul cas du `-->`.
+
+---
+
+#### R-058 : Aucune jumelle texte sur les BDDs Brain
+
+- **Portée** : Les 11 BDDs Brain (Core + Motor : Glossaire LBP, Notes de concept, Taxonomies, Manuels de BDD, Docs méta LBP, Méthodes LBP, Prompts LBP, Templates de bricks, Agents LBP, Outils externes, Registre des logic blocks). **Hors scope** : BDDs Digital Twin (les jumelles texte y sont **autorisées et utiles**, cf. R-039 et conventions Twin) ; BDDs Mission Ops (usage **expérimental** à valider, non interdit pour l'instant).
+- **Statut** : Actif
+- **Why** : Une "jumelle texte" est une propriété texte qui duplique manuellement le contenu d'une relation native (ex : sur la BDD Logic blocks, la relation `est utilisé dans (Prompts LBP)` côté Notion + un champ texte `est utilisé dans (Prompts LBP) [texte]` qui répète à la main les noms des prompts liés). Côté Twin, ces jumelles servent à **capter des indices** dans des champs textes pour aider à la connexion logique d'objets quand la relation native échoue ou n'est pas encore créée. **Côté Brain**, ce besoin n'existe pas : les objets Brain sont créés et gérés de manière déterministe par les agents/consultants à partir de leurs manuels respectifs ; il n'y a pas d'indices textuels à interpréter. Une jumelle texte sur une BDD Brain est donc **toujours redondante avec une relation native** et introduit : (a) une dette de double saisie, (b) un risque silencieux de désynchronisation entre la relation native et son écho texte, (c) une charge cognitive sans contrepartie pour les agents en retrieval.
+- **How to apply** :
+  - Aucune propriété de type `text` ou `rich_text` portant un nom dérivé d'une relation existante (ex : `<rel> [texte]`, `<rel> (texte)`) sur une BDD Brain.
+  - Si une jumelle texte est détectée sur une BDD Brain (audit ou découverte ad hoc), action : **DROP** côté Notion + retrait éventuel du manuel s'il en faisait mention.
+  - À l'inverse, **ne pas chercher à créer** des jumelles texte sur les BDDs Brain dans une logique de "filet de sécurité" — l'isolation Brain ↔ Twin/MO (D-019) garantit que les relations Brain sont peu nombreuses et bien maîtrisées, donc le risque de relation cassée est faible.
+- **Cas particulier Mission Ops** : usage expérimental autorisé pour tester si elles produisent des infos complémentaires utiles (capture d'indices sur les bricks/sources/meetings). À ré-évaluer après une mission complète.
+- **Conséquence si violation** :
+  - Doublonnage du modèle, sources de vérité multiples pour la même info.
+  - Désynchronisation silencieuse (relation modifiée mais pas le texte, ou inverse).
+  - Pollution des audits Manuel ↔ Notion (champ Notion non documenté = faux positif).
+- **Découverte** : 28-04-2026, Leonard, lors de l'audit transverse Notion ↔ Manuels Brain (Phase 6.5 post-commit). Détection sur la BDD Registre des logic blocks de 2 jumelles texte (`est utilisé dans (Prompts LBP) [texte]`, `s'applique à (Manuels de BDD) [texte]`) en conflit avec la règle 3.1 du manuel Logic blocks. Décision Leonard : interdire la pratique sur Brain, conserver Twin (où elle est utile), tester Mission Ops.
+
+---
+
+#### R-059 : Hygiène d'écriture des docs Brain — pas de bruit historique ni de spéculation future
+
+- **Portée** : Tous les docs de l'écosystème Brain LBP (Core + Motor) : manuels de BDD, WR-RD, notes de concept, taxonomies, templates, méthodes LBP, prompts, logic blocks, fiches agents, fiches outils externes, glossaires LBP. **Hors scope** : docs de session (`refs/`, `CLAUDE.md`, `DECISIONS.md`, backlog) qui ont vocation à porter justement l'historique et les hypothèses ; docs Mission Ops (où le journal de mission peut faire partie du livrable) ; docs Digital Twin (où certaines mentions de timeline mission sont structurellement utiles).
+- **Statut** : Actif
+- **Why** : Chaque doc Brain est consommé par des **agents en retrieval** qui n'ont pas connaissance du contexte historique de l'écosystème (sauf l'agent Brain architect qui pilote l'évolution). Pour qu'un agent puisse lire un manuel, une note de concept ou un template et **agir correctement à partir de ce seul doc**, il faut que le doc soit **autonome** : une source de vérité brute à l'instant t. Toute mention historique ("précédemment ce champ s'appelait X", "en V2 on faisait Y") ou spéculative ("à terme on pourrait", "piste à creuser", "amélioration future") crée du **bruit** : (a) charge cognitive inutile, (b) ambiguïté sur ce qui est canon vs ce qui est obsolète/futur, (c) risque que l'agent se base sur une version périmée ou non validée.
+- **How to apply** : dans tout doc Brain, **interdiction** d'écrire :
+  - **Mentions historiques** : "anciennement", "avant la V3", "ce champ s'appelait X", "on a supprimé Y", "migration depuis Z"
+  - **Spéculations futures** : "à terme", "à voir plus tard", "piste à creuser", "amélioration potentielle", "TODO pour le futur", "à étudier"
+  - **États transitoires** : "en cours de finalisation", "version provisoire", "draft à valider" (le statut vit dans le frontmatter ou la BDD, pas dans le corps)
+- **Où vit l'historique** : commits Git (changelog), `refs/DECISIONS.md` (pourquoi tel choix structurant), backlog (`refs/RULES_BRAIN_TWIN-backlog.md` pour les règles pressenties).
+- **Où vivent les pistes futures** : `refs/RULES_BRAIN_TWIN-backlog.md`, TodoWrite de session, ou notes personnelles de Leonard. Pas dans les docs Brain publiés.
+- **Cas accepté** : un doc peut citer **explicitement** une règle (ex : R-058) ou une décision (ex : D-019) **comme référentiel canonique courant** — ce n'est pas une mention historique, c'est une déclaration de conformité.
+- **Conséquence si violation** :
+  - Agents en retrieval qui hésitent entre deux versions, choisissent mal, ou propagent l'incertitude.
+  - Difficulté pour un humain de relire le doc et savoir "ce qui est vrai aujourd'hui".
+  - Pollution sémantique : le doc devient un mélange de documentation et de log de chantier.
+- **Découverte** : 28-04-2026, Leonard, après détection que mes propositions de mises à jour de manuels Brain incluaient des "notes de version" expliquant ce qui changeait par rapport à la version précédente — exactement le bruit historique que cette règle interdit. Capture immédiate.
 
 ---
 
