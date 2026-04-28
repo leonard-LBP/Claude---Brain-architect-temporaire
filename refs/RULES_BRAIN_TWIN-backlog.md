@@ -2,7 +2,7 @@
 
 > Zone tampon pour les règles pressenties ou mentionnées en passant, qui ne sont pas encore prêtes à être formalisées dans `RULES.md`.
 > Quand une règle du backlog est mûre, on la sort d'ici et on l'insère dans `RULES.md` avec un ID stable `R-XXX`.
-> Dernière mise à jour : 27-04-2026 — entrée "Doctrine Indices réservés aux BDDs d'objets, pas aux containers" (Sources d'informations sans `Indices observés` / `Indices d'existence de l'objet`).
+> Dernière mise à jour : 28-04-2026 — convention v1.1 pour les futurs templates d'instanciation (pattern macro consolidé `TEMPLATE_USAGE_GUIDE` + tableaux Modèle/Exemple simulé). Templates Phase 1 existants conservés en pattern v1.0.
 
 ---
 
@@ -114,6 +114,19 @@
   - **Règle empirique pressentie** : pour une self-relation Notion via DDL, **un seul `ADD COLUMN "PropA" RELATION(self_ds_id, DUAL 'PropMiroir' 'prop_miroir_internal')` suffit** — Notion auto-crée la prop miroir interne. Le pattern `2 ADD croisés` est faux pour ce moteur.
   - **À formaliser** : R-XXX dans `RULES_BRAIN_TWIN.md` section DDL Notion / phase 6.5 ou WF-014 (workflow de génération BDD) si confirmé sur d'autres self-rel. Documenter aussi dans le prompt-cadre de génération.
   - **Action effectuée** : pattern correctif appliqué (DROP des 4 colonnes parasites côté Actions LBP et côté Sources, recréation propre).
+
+- [28-04-2026] **Convention v1.1 pour les futurs templates d'instanciation (pattern d'organisation des INSTR)**
+  - **Contexte** : audit interne sur l'organisation des blocs `<!-- @INSTR-START: ... @INSTR-END -->` dans les templates Phase 1 a révélé deux patterns possibles :
+    - **Pattern v1.0** (templates existants Phase 1) : multi-blocs INSTR successifs au début (SETTINGS, FRONTMATTER_INSTANCE, FRONTMATTER_CONTROLLED_VOCAB, FRONTMATTER_DECISION_RULES, FRONTMATTER_EXAMPLES, GLOBAL_DOCTRINE, WRITING_AND_READING_DOCTRINE, parfois COLUMN_DEFINITIONS, EXAMPLE_ROWS, etc.) puis `SECTION_X_GUIDE` avant chaque section H1. Pattern qui fonctionne et est éprouvé.
+    - **Pattern v1.1** (Template Brain v1.1) : un seul bloc macro consolidé `<!-- @INSTR-START: TEMPLATE_USAGE_GUIDE -->` en tête (avec doctrine globale + vocabulaires contrôlés + frontmatter B + exemples + purge finale en sous-sections numérotées), puis `SECTION_X_GUIDE` court par section + tableaux **Modèle types de champs** + **Exemple simulé** dans des blocs INSTR pour les sections structurantes (§3.2 / §4 / §5).
+  - **Décision Leonard (28-04-2026)** : adoption du pattern v1.1 **uniquement pour les futurs templates créés**. Les 5 templates Phase 1 existants (Manuel Twin v7.0, Manuel MO v6.0, WR-RD Twin v2.0, WR-RD MO v2.0, Note de concept v2.0, Taxonomie v2.0) sont **conservés en pattern v1.0** car ils fonctionnent et la refonte aurait un coût (~3-3h30) pour un gain marginal. Migration vers pattern v1.1 uniquement à l'occasion d'une refonte structurelle naturelle d'un de ces templates.
+  - **Justification** :
+    - Les LLM modernes (Claude Opus 4 = 1M tokens) ne perdent pas leurs instructions à 1000 lignes. La fragmentation des INSTR est plus théorique que pratique.
+    - Les WR-RD sont des copies strictes du manuel parent (R-041/R-042) → pas besoin d'instructions élaborées dans leur template, c'est au manuel d'être rigoureux.
+    - Les manuels existants servent eux-mêmes d'exemples vivants → moins besoin de mettre des exemples dans les templates.
+    - Pragmatisme > perfection : ne pas refondre ce qui fonctionne pour aligner formellement.
+  - **Convention pour les futurs templates** : pattern v1.1 = `TEMPLATE_USAGE_GUIDE` consolidé en tête + `SECTION_X_GUIDE` par section + tableaux **Modèle**/**Exemple simulé** dans les sections structurantes. Référence : `Template - Manuel de BDD - Brain.md` v1.1.
+  - **Statut** : convention adoptée (pas formalisée comme R-XXX dure car c'est un guideline d'évolution, pas une contrainte). Si un futur template ne suit pas ce pattern, ce n'est pas une violation — juste une non-conformité à la convention recommandée.
 
 ---
 
