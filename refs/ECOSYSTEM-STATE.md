@@ -1,7 +1,16 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis a jour apres chaque changement.
-> Derniere mise a jour : 27-04-2026 — Phase 6.5 Passe 1 terminée (28/28 BDD Twin Notion équipées des propriétés natives non-relationnelles, ~1041 props, ordering R-047 v2.2 via `update_view SHOW`). Captures : R-051 (ordering Notion via update_view), C-009 (annonce explicite propagation Manuel ↔ WR-RD). Dette technique en backlog : nettoyage virgules/apostrophes dans taxos + formalisation taxo `Statut relationnel`.
+> Derniere mise a jour : 28-04-2026 — Phase 6.5 Mission Ops **TERMINÉE** : 4 BDDs Mission Ops sur Notion (Sources d'informations, Meetings, Actions LBP, Bricks), 6 paires bidir DUAL + 2 self-rel + 2 monodir vers Twin, 12 SELECT instanciés depuis taxos, R-047 v2.2 appliqué, audit final 0 dette résiduelle. Captures : R-052 (apostrophe typographique U+2019). Backlog : doctrine Indices réservés aux objets pas containers + pattern self-rel DDL (1 ADD suffit). Pass 4 Actions LBP (rollups + formula 4.5) volontairement différée.
+
+## À faire demain (29-04-2026)
+
+**Chantier indexation Brain — gros dossier "tout doit être super clean"** :
+1. **Plan d'indexation à présenter** dès l'arrivée demain : comment indexer dans le Brain les nouveaux docs Twin v2 + Mission Ops (manuels, WR-RD, taxos, notes de concept) avec **archivage propre** des anciens docs côté Architecture data **et** côté BDDs Brain (pas juste vault).
+2. **Investigation Template Taxonomies** : possible asymétrie — son frontmatter ressemblerait plutôt à un "exemple de frontmatter attendu dans les taxos générées" qu'au frontmatter du template lui-même. À comparer avec les autres templates (Manuel de BDD Twin, Manuel de BDD Mission Ops, WR-RD Twin, WR-RD Mission Ops).
+3. **Question harmonisation frontmatter docs méta (Brain)** : ouverte — vu la variété des docs qui cohabitent dans la BDD Docs méta (chartes, playbooks, templates, etc.), l'harmonisation peut ne pas être une bonne idée. À arbitrer.
+4. **Taxonomies manquantes** : il en manque possiblement 1 ou 2 qu'on avait dit "on fera plus tard". À vérifier vs backlog (cf. entrée `Statut relationnel` notamment, et autres taxos pressenties).
+5. **Convention de renaming des docs archivés** (idée Leonard 28-04-2026) : aujourd'hui le statut actif/archivé d'un doc dépend uniquement de son dossier (`00 - archives/`). Risque : agent qui cherche un doc par nom peut tomber sur la version archivée et la confondre avec l'active (collision de noms entre actif et archivé fréquente). À arbitrer : convention de suffix dans le filename, ex. `Manuel de BDD - Actifs (archivé 28-04-2026).md` ou `Manuel de BDD - Actifs.archive-28-04-2026.md`. Décision a impact sur ~150+ fichiers déjà archivés (à renommer rétroactivement) + R-043 (cohérence filename ↔ title — donc title du frontmatter à aligner aussi). Probablement candidate **règle R-XXX** si validée.
 
 ## Phase actuelle
 

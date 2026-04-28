@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 27-04-2026 — R-052 (apostrophe typographique uniforme U+2019 dans tous les noms de propriété/BDD/texte affiché ; ASCII U+0027 strictement réservée au code).
+> Dernière mise à jour : 28-04-2026 — R-053 (convention de renaming des docs archivés : suffix `(archivé v<X> le JJ-MM-YYYY)` dans filename + alignement title frontmatter R-043 ; double signal avec `00 - archives/`).
 
 ---
 
@@ -130,6 +130,33 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
   - ❌ `Statut de l'objet`, `Source(s) d'information (texte)` (ASCII U+0027 dans un nom affiché)
 - **Conséquence si violation** : faux négatifs en audit (props non détectées comme dupliquées), divergence silencieuse Manuel ↔ Notion, retrievers / agents ne matchent pas le nom attendu.
 - **Découverte** : 27-04-2026, Leonard, après création par DDL de `Source(s) d'information (texte)` sur la BDD Capacités métier candidates sandbox avec apostrophe ASCII alors que le reste du schéma utilisait la typographique. Renommage immédiat puis formalisation de la règle.
+
+#### R-053 : Convention de renaming des docs archivés (suffix dans filename)
+
+- **Portée** : Transverse à tout le vault `Architecture data/` — manuels de BDD, WR-RD, taxonomies, notes de concept, templates, méthodes, prompts, logic blocks, chartes, playbooks, et tout doc Markdown susceptible d'être archivé.
+- **Statut** : Actif
+- **Why** : Le statut actif/archivé d'un doc dépendait jusqu'ici uniquement de son **dossier** (`00 - archives/`). Risque concret : un agent (ou un humain) qui recherche par nom (`Glob "**/Manuel de BDD - Actifs.md"`, search Obsidian/Drive) tombe sur 1 actif + N archivés homonymes et peut confondre / citer une version archivée comme source vérifiée. C'est un trou de discoverability silencieux qui peut générer des erreurs.
+- **How to apply** :
+  - **Format de renaming** : `<nom canonique> (archivé v<X> le JJ-MM-YYYY).md` si la version est connue, sinon `<nom canonique> (archivé le JJ-MM-YYYY).md`
+  - **3 actions atomiques** lors de l'archivage :
+    1. **Filename** : ajouter le suffix `(archivé [v<X> le ]JJ-MM-YYYY)` avant l'extension
+    2. **`title` frontmatter** : aligner sur le filename (R-043, cohérence filename ↔ title)
+    3. **Déplacement** : vers `00 - archives/` du dossier parent (pratique existante, double signal conservé)
+  - **Date** : format JJ-MM-YYYY (R-044), date réelle d'archivage du jour
+  - **Version** : extraite du frontmatter `version:` quand présente (semver `1.0.0` → `v1.0.0` dans le suffix), omise sinon
+- **Exemples** :
+  - ✅ `Manuel de BDD - Actifs (archivé v1.0.0 le 26-04-2026).md` (version connue)
+  - ✅ `concept - Soft skill (archivé le 26-04-2026).md` (version absente)
+  - ✅ `OBJ.STATUT.LBP (archivé le 26-04-2026).md`
+  - ❌ `Manuel de BDD - Actifs.md` dans `00 - archives/` (filename non renommé — état pré-R-053)
+- **Edge cases** :
+  - Doc archivé plusieurs fois (v1 puis v2) : 2 fichiers cohabitent sans collision (`...(archivé v1.0.0 le X).md` + `...(archivé v2.0.0 le Y).md`)
+  - Doc sans frontmatter : renommer filename uniquement, pas d'alignement title
+  - Doc avec nom déjà ambigu (`Sans titre.md`) : flag manuel, ne pas auto-renommer
+- **Regex de validation** : `\(archivé( v[\d.]+)? le (\d{2}-\d{2}-\d{4})\)\.md$`
+- **Date forfaitaire pour rétroactif** : `26-04-2026` (date du sweep d'archivage massif Phase 1-4 documenté dans `ECOSYSTEM-STATE.md`).
+- **Conséquence si violation** : confusion de search, citation d'archives obsolètes comme sources vérifiées, erreurs silencieuses dans les pipelines IA qui consomment le vault.
+- **Découverte** : 28-04-2026, Leonard, en préparant le chantier d'indexation Brain. Formalisation immédiate avant migration des 212 fichiers déjà archivés.
 
 ---
 
