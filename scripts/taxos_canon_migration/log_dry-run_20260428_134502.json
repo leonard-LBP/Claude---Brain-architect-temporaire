@@ -1,0 +1,405 @@
+{
+  "mode": "DRY-RUN",
+  "counts": {
+    "skip_filename_not_lbp_pattern": 96,
+    "skip_already_canon_socle": 3
+  },
+  "entries": [
+    {
+      "file": "ACT.CONSOLIDATION_TARGET.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ACT.IMPACT_DOMAIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ACT.INTENT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "AGENT.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ASSET.LIFECYCLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ASSET.PROVENANCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ASSET.SUBSTITUTABILITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ASSET.SUBTYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "BRICK.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "CAP.DISTINCTIVITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "CAP.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "CAP.NATURE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.DEP_LEVEL.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.FORMALITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.ORIENTATION.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.TEMPO_CLASS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.TEMPO_VAR.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.TEMPORALITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "COL.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "DBMAN.SCOPE.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "DOC.TYPE.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "EMO.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENJ.DOMAIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENJ.EXPRESSION.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENJ.HORIZON.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENV.CONTROLLABILITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENV.PESTEL.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENV.SUBTYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ENV.VOLATILITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.ORIGIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.RECURRENCE_CLASS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.TIME_GRAIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.TIME_PRECISION.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.TIME_STATUS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "EVT.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "GLO.CAT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "IMPACT.NATURE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "IND.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.DOMAIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.FREQ.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.NATURE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.SCOPE_APPLI.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.TIME_ROLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INDIC.UNIT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INIT.DRIVER.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INIT.PHASE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INIT.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "INS.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "JOB.FAMILLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "JOB.SENIORITE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "LGBLK.FAMILY.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "MET.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "META.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "MTG.EXEC_STATUS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "MTG.FORMAT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "MTG.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OBJ.CONFIDENTIALITE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OBJ.STATUT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OPS.ACTION_FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OPS.ACTION_ITEM_TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OPS.RESPONSIBLE_MAIN.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OPS.STATUS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG.CONTEXTE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG.JURISDICTION.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG.ROLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG.SECTEUR.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG5D.DIM.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "ORG_REL.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "OUT.FAMILY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PLATFORM.ENV.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PRA.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PROC.NIVEAU.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PROMPT.ARCH_ROLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PROMPT.DEPLOY_STATUS.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "PROMPT.TYPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.ALIGNMENT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.COLLAB_INTENSITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.CONFIDENCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.COVERAGE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.CRITICALITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.GRANULARITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.IMPACT_INTENSITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.INFLUENCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.MATURITY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.NECESSITY_TODAY.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.PROCESSISATION.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.RECURRENCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.SAILLANCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.SCOPE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SCALE.VALUE_HORIZON.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SIG.NATURE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SIG.REGISTRE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SKILL.HARD.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SKILL.SOFT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SRC.EXTRACT_TARGET.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SRC.FORMAT.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "SRC.PROVENANCE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    },
+    {
+      "file": "STAKEHOLDER.ROLE.md",
+      "status": "skip_filename_not_lbp_pattern"
+    }
+  ]
+}

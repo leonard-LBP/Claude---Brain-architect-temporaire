@@ -1,0 +1,483 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-28",
+    "mode": "DRY-RUN",
+    "total_files_scanned": 75,
+    "total_files_modified": 0,
+    "total_lbp_strips": 0,
+    "total_citations": 2777,
+    "unique_codes_count": 93
+  },
+  "unique_codes": [
+    "ACT.CONSOLIDATION_TARGET",
+    "ACT.IMPACT_DOMAIN",
+    "ACT.INTENT",
+    "AGENT.FAMILY",
+    "ASSET.LIFECYCLE",
+    "ASSET.PROVENANCE",
+    "ASSET.SUBSTITUTABILITY",
+    "ASSET.SUBTYPE",
+    "BRICK.FAMILY",
+    "CAP.DISTINCTIVITY",
+    "CAP.FAMILY",
+    "CAP.NATURE",
+    "COL.FORMALITY",
+    "COL.ORIENTATION",
+    "COL.TEMPORALITY",
+    "COL.TEMPO_CLASS",
+    "COL.TEMPO_VAR",
+    "COL.TYPE",
+    "EMO.TYPE",
+    "ENJ.DOMAIN",
+    "ENJ.EXPRESSION",
+    "ENJ.HORIZON",
+    "ENV.CONTROLLABILITY",
+    "ENV.PESTEL",
+    "ENV.SUBTYPE",
+    "ENV.VOLATILITY",
+    "EVT.ORIGIN",
+    "EVT.RECURRENCE_CLASS",
+    "EVT.TIME_GRAIN",
+    "EVT.TIME_PRECISION",
+    "EVT.TYPE",
+    "GLO.CAT",
+    "IND.TYPE",
+    "INDIC.DOMAIN",
+    "INDIC.FREQ",
+    "INDIC.NATURE",
+    "INDIC.SCOPE_APPLI",
+    "INDIC.TIME_ROLE",
+    "INDIC.UNIT",
+    "INIT.DRIVER",
+    "INIT.PHASE",
+    "INIT.TYPE",
+    "JOB.COVERAGE",
+    "JOB.FAMILLE",
+    "JOB.SENIORITE",
+    "MET.FAMILY",
+    "META.FAMILY",
+    "MOD.DECISION_CLARITY",
+    "MOD.KNOWLEDGE_QUALITY",
+    "MOD.SUJET",
+    "MTG.FORMAT",
+    "MTG.TYPE",
+    "NAMESPACE.FAMILLE",
+    "OBJ.CONFIDENTIALITE",
+    "OBJ.STATUT",
+    "OPS.ACTION_FAMILY",
+    "OPS.ACTION_ITEM_TYPE",
+    "OPS.EXEC_STATUS",
+    "OPS.RESPONSIBLE_MAIN",
+    "OPS.STATUS",
+    "ORG.JURISDICTION",
+    "ORG.SECTEUR",
+    "ORG.TYPE",
+    "ORG5D.DIM",
+    "ORG_REL.TYPE",
+    "OUT.FAMILY",
+    "PLATFORM.ENV",
+    "PRA.TYPE",
+    "PROC.NIVEAU",
+    "PROMPT.ARCH_ROLE",
+    "PROMPT.DEPLOY_STATUS",
+    "PROMPT.TYPE",
+    "SCALE.ALIGNMENT",
+    "SCALE.COLLAB_INTENSITY",
+    "SCALE.CONFIDENCE",
+    "SCALE.COVERAGE",
+    "SCALE.CRITICALITY",
+    "SCALE.GRANULARITY",
+    "SCALE.IMPACT_INTENSITY",
+    "SCALE.MATURITY",
+    "SCALE.NECESSITY_TODAY",
+    "SCALE.PROCESSISATION",
+    "SCALE.RECURRENCE",
+    "SCALE.SAILLANCE",
+    "SCALE.SCOPE",
+    "SCALE.VALUE_HORIZON",
+    "SIG.NATURE",
+    "SIG.REGISTRE",
+    "SKILL.HARD",
+    "SKILL.SOFT",
+    "SRC.EXTRACT_TARGET",
+    "SRC.FORMAT",
+    "SRC.PROVENANCE"
+  ],
+  "per_file_strips": [
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Actifs.md",
+      "lbp_strips": 0,
+      "citations_count": 44
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Actions détectées.md",
+      "lbp_strips": 0,
+      "citations_count": 67
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Capacités métier candidates sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 46
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Capacités organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 62
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Collectifs.md",
+      "lbp_strips": 0,
+      "citations_count": 54
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Enjeux.md",
+      "lbp_strips": 0,
+      "citations_count": 64
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Environnements.md",
+      "lbp_strips": 0,
+      "citations_count": 70
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Glossaire spécifique.md",
+      "lbp_strips": 0,
+      "citations_count": 12
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Indicateurs.md",
+      "lbp_strips": 0,
+      "citations_count": 55
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Individus.md",
+      "lbp_strips": 0,
+      "citations_count": 25
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Initiatives organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 52
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Journal des signaux.md",
+      "lbp_strips": 0,
+      "citations_count": 38
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Modulateurs.md",
+      "lbp_strips": 0,
+      "citations_count": 61
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - OKR sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 32
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - OKR.md",
+      "lbp_strips": 0,
+      "citations_count": 37
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Organisations.md",
+      "lbp_strips": 0,
+      "citations_count": 39
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Postes.md",
+      "lbp_strips": 0,
+      "citations_count": 51
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Pratiques organisationnelles sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 66
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Pratiques organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 57
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Principes organisationnels sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 29
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Principes organisationnels.md",
+      "lbp_strips": 0,
+      "citations_count": 37
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Problématiques sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 72
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Problématiques.md",
+      "lbp_strips": 0,
+      "citations_count": 74
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Processus candidats sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 61
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Processus candidats.md",
+      "lbp_strips": 0,
+      "citations_count": 54
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Processus.md",
+      "lbp_strips": 0,
+      "citations_count": 65
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Relations inter-organisations.md",
+      "lbp_strips": 0,
+      "citations_count": 38
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/Manuel de BDD - Événements.md",
+      "lbp_strips": 0,
+      "citations_count": 73
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Actifs.md",
+      "lbp_strips": 0,
+      "citations_count": 33
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Actions détectées.md",
+      "lbp_strips": 0,
+      "citations_count": 50
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Capacités métier candidates sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 36
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Capacités organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 48
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Collectifs.md",
+      "lbp_strips": 0,
+      "citations_count": 42
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Enjeux.md",
+      "lbp_strips": 0,
+      "citations_count": 48
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Environnements.md",
+      "lbp_strips": 0,
+      "citations_count": 54
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Glossaire spécifique.md",
+      "lbp_strips": 0,
+      "citations_count": 9
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Indicateurs.md",
+      "lbp_strips": 0,
+      "citations_count": 42
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Individus.md",
+      "lbp_strips": 0,
+      "citations_count": 20
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Initiatives organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 39
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Journal des signaux.md",
+      "lbp_strips": 0,
+      "citations_count": 27
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Modulateurs.md",
+      "lbp_strips": 0,
+      "citations_count": 44
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - OKR sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 24
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - OKR.md",
+      "lbp_strips": 0,
+      "citations_count": 28
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Organisations.md",
+      "lbp_strips": 0,
+      "citations_count": 34
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Postes.md",
+      "lbp_strips": 0,
+      "citations_count": 40
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Pratiques organisationnelles sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 51
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Pratiques organisationnelles.md",
+      "lbp_strips": 0,
+      "citations_count": 57
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Principes organisationnels sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 22
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Principes organisationnels.md",
+      "lbp_strips": 0,
+      "citations_count": 26
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Problématiques sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 54
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Problématiques.md",
+      "lbp_strips": 0,
+      "citations_count": 60
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Processus candidats sandbox.md",
+      "lbp_strips": 0,
+      "citations_count": 44
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Processus candidats.md",
+      "lbp_strips": 0,
+      "citations_count": 42
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Processus.md",
+      "lbp_strips": 0,
+      "citations_count": 50
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Relations inter-organisations.md",
+      "lbp_strips": 0,
+      "citations_count": 27
+    },
+    {
+      "file": "Manuels de BDD/Digital Twin/WR-RD/WR-RD - Événements.md",
+      "lbp_strips": 0,
+      "citations_count": 57
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/Manuel de BDD - Actions LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 18
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/Manuel de BDD - Bricks.md",
+      "lbp_strips": 0,
+      "citations_count": 10
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/Manuel de BDD - Meetings.md",
+      "lbp_strips": 0,
+      "citations_count": 13
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/Manuel de BDD - Sources d’informations.md",
+      "lbp_strips": 0,
+      "citations_count": 18
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/WR-RD/WR-RD - Actions LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 13
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/WR-RD/WR-RD - Bricks.md",
+      "lbp_strips": 0,
+      "citations_count": 7
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/WR-RD/WR-RD - Meetings.md",
+      "lbp_strips": 0,
+      "citations_count": 9
+    },
+    {
+      "file": "Manuels de BDD/Mission Ops/WR-RD/WR-RD - Sources d’informations.md",
+      "lbp_strips": 0,
+      "citations_count": 12
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Agents LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 14
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Docs méta LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 14
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Glossaire LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 11
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Manuels de BDD.md",
+      "lbp_strips": 0,
+      "citations_count": 13
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Méthodes LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 12
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Outils externes.md",
+      "lbp_strips": 0,
+      "citations_count": 16
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Prompts LBP.md",
+      "lbp_strips": 0,
+      "citations_count": 17
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Registre des logic blocks.md",
+      "lbp_strips": 0,
+      "citations_count": 5
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Registre des notes de concept.md",
+      "lbp_strips": 0,
+      "citations_count": 9
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Registre des taxonomies.md",
+      "lbp_strips": 0,
+      "citations_count": 9
+    },
+    {
+      "file": "Manuels de BDD/Brain/Manuel de BDD - Templates de bricks.md",
+      "lbp_strips": 0,
+      "citations_count": 14
+    }
+  ]
+}

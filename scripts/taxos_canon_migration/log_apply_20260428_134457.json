@@ -1,0 +1,885 @@
+{
+  "mode": "APPLY",
+  "counts": {
+    "migrated": 96,
+    "skip_already_canon_socle": 3
+  },
+  "entries": [
+    {
+      "file": "ACT.CONSOLIDATION_TARGET.LBP.md",
+      "status": "migrated",
+      "new_filename": "ACT.CONSOLIDATION_TARGET.md",
+      "namespace_code_new": "ACT",
+      "code_new": "ACT.CONSOLIDATION_TARGET",
+      "purpose_added": true,
+      "body_lbp_strips": 45
+    },
+    {
+      "file": "ACT.IMPACT_DOMAIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "ACT.IMPACT_DOMAIN.md",
+      "namespace_code_new": "ACT",
+      "code_new": "ACT.IMPACT_DOMAIN",
+      "purpose_added": true,
+      "body_lbp_strips": 29
+    },
+    {
+      "file": "ACT.INTENT.LBP.md",
+      "status": "migrated",
+      "new_filename": "ACT.INTENT.md",
+      "namespace_code_new": "ACT",
+      "code_new": "ACT.INTENT",
+      "purpose_added": true,
+      "body_lbp_strips": 36
+    },
+    {
+      "file": "AGENT.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "AGENT.FAMILY.md",
+      "namespace_code_new": "AGENT",
+      "code_new": "AGENT.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 33
+    },
+    {
+      "file": "ASSET.LIFECYCLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ASSET.LIFECYCLE.md",
+      "namespace_code_new": "ASSET",
+      "code_new": "ASSET.LIFECYCLE",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "ASSET.PROVENANCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ASSET.PROVENANCE.md",
+      "namespace_code_new": "ASSET",
+      "code_new": "ASSET.PROVENANCE",
+      "purpose_added": true,
+      "body_lbp_strips": 42
+    },
+    {
+      "file": "ASSET.SUBSTITUTABILITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "ASSET.SUBSTITUTABILITY.md",
+      "namespace_code_new": "ASSET",
+      "code_new": "ASSET.SUBSTITUTABILITY",
+      "purpose_added": true,
+      "body_lbp_strips": 32
+    },
+    {
+      "file": "ASSET.SUBTYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ASSET.SUBTYPE.md",
+      "namespace_code_new": "ASSET",
+      "code_new": "ASSET.SUBTYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 110
+    },
+    {
+      "file": "BRICK.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "BRICK.FAMILY.md",
+      "namespace_code_new": "BRICK",
+      "code_new": "BRICK.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 29
+    },
+    {
+      "file": "CAP.DISTINCTIVITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "CAP.DISTINCTIVITY.md",
+      "namespace_code_new": "CAP",
+      "code_new": "CAP.DISTINCTIVITY",
+      "purpose_added": true,
+      "body_lbp_strips": 31
+    },
+    {
+      "file": "CAP.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "CAP.FAMILY.md",
+      "namespace_code_new": "CAP",
+      "code_new": "CAP.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 34
+    },
+    {
+      "file": "CAP.NATURE.LBP.md",
+      "status": "migrated",
+      "new_filename": "CAP.NATURE.md",
+      "namespace_code_new": "CAP",
+      "code_new": "CAP.NATURE",
+      "purpose_added": true,
+      "body_lbp_strips": 32
+    },
+    {
+      "file": "COL.DEP_LEVEL.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.DEP_LEVEL.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.DEP_LEVEL",
+      "purpose_added": true,
+      "body_lbp_strips": 39
+    },
+    {
+      "file": "COL.FORMALITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.FORMALITY.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.FORMALITY",
+      "purpose_added": true,
+      "body_lbp_strips": 37
+    },
+    {
+      "file": "COL.ORIENTATION.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.ORIENTATION.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.ORIENTATION",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "COL.TEMPO_CLASS.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.TEMPO_CLASS.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.TEMPO_CLASS",
+      "purpose_added": true,
+      "body_lbp_strips": 39
+    },
+    {
+      "file": "COL.TEMPO_VAR.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.TEMPO_VAR.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.TEMPO_VAR",
+      "purpose_added": true,
+      "body_lbp_strips": 34
+    },
+    {
+      "file": "COL.TEMPORALITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.TEMPORALITY.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.TEMPORALITY",
+      "purpose_added": true,
+      "body_lbp_strips": 40
+    },
+    {
+      "file": "COL.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "COL.TYPE.md",
+      "namespace_code_new": "COL",
+      "code_new": "COL.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 68
+    },
+    {
+      "file": "DBMAN.SCOPE.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "DOC.TYPE.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "EMO.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "EMO.TYPE.md",
+      "namespace_code_new": "EMO",
+      "code_new": "EMO.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 61
+    },
+    {
+      "file": "ENJ.DOMAIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENJ.DOMAIN.md",
+      "namespace_code_new": "ENJ",
+      "code_new": "ENJ.DOMAIN",
+      "purpose_added": true,
+      "body_lbp_strips": 56
+    },
+    {
+      "file": "ENJ.EXPRESSION.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENJ.EXPRESSION.md",
+      "namespace_code_new": "ENJ",
+      "code_new": "ENJ.EXPRESSION",
+      "purpose_added": true,
+      "body_lbp_strips": 43
+    },
+    {
+      "file": "ENJ.HORIZON.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENJ.HORIZON.md",
+      "namespace_code_new": "ENJ",
+      "code_new": "ENJ.HORIZON",
+      "purpose_added": true,
+      "body_lbp_strips": 36
+    },
+    {
+      "file": "ENV.CONTROLLABILITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENV.CONTROLLABILITY.md",
+      "namespace_code_new": "ENV",
+      "code_new": "ENV.CONTROLLABILITY",
+      "purpose_added": true,
+      "body_lbp_strips": 37
+    },
+    {
+      "file": "ENV.PESTEL.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENV.PESTEL.md",
+      "namespace_code_new": "ENV",
+      "code_new": "ENV.PESTEL",
+      "purpose_added": true,
+      "body_lbp_strips": 43
+    },
+    {
+      "file": "ENV.SUBTYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENV.SUBTYPE.md",
+      "namespace_code_new": "ENV",
+      "code_new": "ENV.SUBTYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 112
+    },
+    {
+      "file": "ENV.VOLATILITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "ENV.VOLATILITY.md",
+      "namespace_code_new": "ENV",
+      "code_new": "ENV.VOLATILITY",
+      "purpose_added": true,
+      "body_lbp_strips": 35
+    },
+    {
+      "file": "EVT.ORIGIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.ORIGIN.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.ORIGIN",
+      "purpose_added": true,
+      "body_lbp_strips": 28
+    },
+    {
+      "file": "EVT.RECURRENCE_CLASS.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.RECURRENCE_CLASS.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.RECURRENCE_CLASS",
+      "purpose_added": true,
+      "body_lbp_strips": 36
+    },
+    {
+      "file": "EVT.TIME_GRAIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.TIME_GRAIN.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.TIME_GRAIN",
+      "purpose_added": true,
+      "body_lbp_strips": 42
+    },
+    {
+      "file": "EVT.TIME_PRECISION.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.TIME_PRECISION.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.TIME_PRECISION",
+      "purpose_added": true,
+      "body_lbp_strips": 35
+    },
+    {
+      "file": "EVT.TIME_STATUS.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.TIME_STATUS.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.TIME_STATUS",
+      "purpose_added": true,
+      "body_lbp_strips": 17
+    },
+    {
+      "file": "EVT.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "EVT.TYPE.md",
+      "namespace_code_new": "EVT",
+      "code_new": "EVT.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 83
+    },
+    {
+      "file": "GLO.CAT.LBP.md",
+      "status": "migrated",
+      "new_filename": "GLO.CAT.md",
+      "namespace_code_new": "GLO",
+      "code_new": "GLO.CAT",
+      "purpose_added": true,
+      "body_lbp_strips": 31
+    },
+    {
+      "file": "IMPACT.NATURE.LBP.md",
+      "status": "migrated",
+      "new_filename": "IMPACT.NATURE.md",
+      "namespace_code_new": "IMPACT",
+      "code_new": "IMPACT.NATURE",
+      "purpose_added": true,
+      "body_lbp_strips": 31
+    },
+    {
+      "file": "IND.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "IND.TYPE.md",
+      "namespace_code_new": "IND",
+      "code_new": "IND.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 54
+    },
+    {
+      "file": "INDIC.DOMAIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.DOMAIN.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.DOMAIN",
+      "purpose_added": true,
+      "body_lbp_strips": 52
+    },
+    {
+      "file": "INDIC.FREQ.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.FREQ.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.FREQ",
+      "purpose_added": true,
+      "body_lbp_strips": 30
+    },
+    {
+      "file": "INDIC.NATURE.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.NATURE.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.NATURE",
+      "purpose_added": true,
+      "body_lbp_strips": 24
+    },
+    {
+      "file": "INDIC.SCOPE_APPLI.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.SCOPE_APPLI.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.SCOPE_APPLI",
+      "purpose_added": true,
+      "body_lbp_strips": 52
+    },
+    {
+      "file": "INDIC.TIME_ROLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.TIME_ROLE.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.TIME_ROLE",
+      "purpose_added": true,
+      "body_lbp_strips": 15
+    },
+    {
+      "file": "INDIC.UNIT.LBP.md",
+      "status": "migrated",
+      "new_filename": "INDIC.UNIT.md",
+      "namespace_code_new": "INDIC",
+      "code_new": "INDIC.UNIT",
+      "purpose_added": true,
+      "body_lbp_strips": 22
+    },
+    {
+      "file": "INIT.DRIVER.LBP.md",
+      "status": "migrated",
+      "new_filename": "INIT.DRIVER.md",
+      "namespace_code_new": "INIT",
+      "code_new": "INIT.DRIVER",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "INIT.PHASE.LBP.md",
+      "status": "migrated",
+      "new_filename": "INIT.PHASE.md",
+      "namespace_code_new": "INIT",
+      "code_new": "INIT.PHASE",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "INIT.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "INIT.TYPE.md",
+      "namespace_code_new": "INIT",
+      "code_new": "INIT.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 37
+    },
+    {
+      "file": "INS.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "INS.TYPE.md",
+      "namespace_code_new": "INS",
+      "code_new": "INS.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 40
+    },
+    {
+      "file": "JOB.FAMILLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "JOB.FAMILLE.md",
+      "namespace_code_new": "JOB",
+      "code_new": "JOB.FAMILLE",
+      "purpose_added": true,
+      "body_lbp_strips": 73
+    },
+    {
+      "file": "JOB.SENIORITE.LBP.md",
+      "status": "migrated",
+      "new_filename": "JOB.SENIORITE.md",
+      "namespace_code_new": "JOB",
+      "code_new": "JOB.SENIORITE",
+      "purpose_added": true,
+      "body_lbp_strips": 26
+    },
+    {
+      "file": "LGBLK.FAMILY.md",
+      "status": "skip_already_canon_socle"
+    },
+    {
+      "file": "MET.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "MET.FAMILY.md",
+      "namespace_code_new": "MET",
+      "code_new": "MET.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 68
+    },
+    {
+      "file": "META.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "META.FAMILY.md",
+      "namespace_code_new": "META",
+      "code_new": "META.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "MTG.EXEC_STATUS.LBP.md",
+      "status": "migrated",
+      "new_filename": "MTG.EXEC_STATUS.md",
+      "namespace_code_new": "MTG",
+      "code_new": "MTG.EXEC_STATUS",
+      "purpose_added": true,
+      "body_lbp_strips": 29
+    },
+    {
+      "file": "MTG.FORMAT.LBP.md",
+      "status": "migrated",
+      "new_filename": "MTG.FORMAT.md",
+      "namespace_code_new": "MTG",
+      "code_new": "MTG.FORMAT",
+      "purpose_added": true,
+      "body_lbp_strips": 23
+    },
+    {
+      "file": "MTG.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "MTG.TYPE.md",
+      "namespace_code_new": "MTG",
+      "code_new": "MTG.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 38
+    },
+    {
+      "file": "OBJ.CONFIDENTIALITE.LBP.md",
+      "status": "migrated",
+      "new_filename": "OBJ.CONFIDENTIALITE.md",
+      "namespace_code_new": "OBJ",
+      "code_new": "OBJ.CONFIDENTIALITE",
+      "purpose_added": true,
+      "body_lbp_strips": 20
+    },
+    {
+      "file": "OBJ.STATUT.LBP.md",
+      "status": "migrated",
+      "new_filename": "OBJ.STATUT.md",
+      "namespace_code_new": "OBJ",
+      "code_new": "OBJ.STATUT",
+      "purpose_added": true,
+      "body_lbp_strips": 12
+    },
+    {
+      "file": "OPS.ACTION_FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "OPS.ACTION_FAMILY.md",
+      "namespace_code_new": "OPS",
+      "code_new": "OPS.ACTION_FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 43
+    },
+    {
+      "file": "OPS.ACTION_ITEM_TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "OPS.ACTION_ITEM_TYPE.md",
+      "namespace_code_new": "OPS",
+      "code_new": "OPS.ACTION_ITEM_TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 20
+    },
+    {
+      "file": "OPS.RESPONSIBLE_MAIN.LBP.md",
+      "status": "migrated",
+      "new_filename": "OPS.RESPONSIBLE_MAIN.md",
+      "namespace_code_new": "OPS",
+      "code_new": "OPS.RESPONSIBLE_MAIN",
+      "purpose_added": true,
+      "body_lbp_strips": 27
+    },
+    {
+      "file": "OPS.STATUS.LBP.md",
+      "status": "migrated",
+      "new_filename": "OPS.STATUS.md",
+      "namespace_code_new": "OPS",
+      "code_new": "OPS.STATUS",
+      "purpose_added": true,
+      "body_lbp_strips": 21
+    },
+    {
+      "file": "ORG.CONTEXTE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG.CONTEXTE.md",
+      "namespace_code_new": "ORG",
+      "code_new": "ORG.CONTEXTE",
+      "purpose_added": true,
+      "body_lbp_strips": 30
+    },
+    {
+      "file": "ORG.JURISDICTION.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG.JURISDICTION.md",
+      "namespace_code_new": "ORG",
+      "code_new": "ORG.JURISDICTION",
+      "purpose_added": true,
+      "body_lbp_strips": 40
+    },
+    {
+      "file": "ORG.ROLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG.ROLE.md",
+      "namespace_code_new": "ORG",
+      "code_new": "ORG.ROLE",
+      "purpose_added": true,
+      "body_lbp_strips": 33
+    },
+    {
+      "file": "ORG.SECTEUR.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG.SECTEUR.md",
+      "namespace_code_new": "ORG",
+      "code_new": "ORG.SECTEUR",
+      "purpose_added": true,
+      "body_lbp_strips": 116
+    },
+    {
+      "file": "ORG.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG.TYPE.md",
+      "namespace_code_new": "ORG",
+      "code_new": "ORG.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 52
+    },
+    {
+      "file": "ORG5D.DIM.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG5D.DIM.md",
+      "namespace_code_new": "ORG5D",
+      "code_new": "ORG5D.DIM",
+      "purpose_added": true,
+      "body_lbp_strips": 73
+    },
+    {
+      "file": "ORG_REL.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "ORG_REL.TYPE.md",
+      "namespace_code_new": "ORG_REL",
+      "code_new": "ORG_REL.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 106
+    },
+    {
+      "file": "OUT.FAMILY.LBP.md",
+      "status": "migrated",
+      "new_filename": "OUT.FAMILY.md",
+      "namespace_code_new": "OUT",
+      "code_new": "OUT.FAMILY",
+      "purpose_added": true,
+      "body_lbp_strips": 40
+    },
+    {
+      "file": "PLATFORM.ENV.LBP.md",
+      "status": "migrated",
+      "new_filename": "PLATFORM.ENV.md",
+      "namespace_code_new": "PLATFORM",
+      "code_new": "PLATFORM.ENV",
+      "purpose_added": true,
+      "body_lbp_strips": 48
+    },
+    {
+      "file": "PRA.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "PRA.TYPE.md",
+      "namespace_code_new": "PRA",
+      "code_new": "PRA.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 115
+    },
+    {
+      "file": "PROC.NIVEAU.LBP.md",
+      "status": "migrated",
+      "new_filename": "PROC.NIVEAU.md",
+      "namespace_code_new": "PROC",
+      "code_new": "PROC.NIVEAU",
+      "purpose_added": true,
+      "body_lbp_strips": 14
+    },
+    {
+      "file": "PROMPT.ARCH_ROLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "PROMPT.ARCH_ROLE.md",
+      "namespace_code_new": "PROMPT",
+      "code_new": "PROMPT.ARCH_ROLE",
+      "purpose_added": true,
+      "body_lbp_strips": 47
+    },
+    {
+      "file": "PROMPT.DEPLOY_STATUS.LBP.md",
+      "status": "migrated",
+      "new_filename": "PROMPT.DEPLOY_STATUS.md",
+      "namespace_code_new": "PROMPT",
+      "code_new": "PROMPT.DEPLOY_STATUS",
+      "purpose_added": true,
+      "body_lbp_strips": 49
+    },
+    {
+      "file": "PROMPT.TYPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "PROMPT.TYPE.md",
+      "namespace_code_new": "PROMPT",
+      "code_new": "PROMPT.TYPE",
+      "purpose_added": true,
+      "body_lbp_strips": 34
+    },
+    {
+      "file": "SCALE.ALIGNMENT.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.ALIGNMENT.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.ALIGNMENT",
+      "purpose_added": true,
+      "body_lbp_strips": 49
+    },
+    {
+      "file": "SCALE.COLLAB_INTENSITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.COLLAB_INTENSITY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.COLLAB_INTENSITY",
+      "purpose_added": true,
+      "body_lbp_strips": 25
+    },
+    {
+      "file": "SCALE.CONFIDENCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.CONFIDENCE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.CONFIDENCE",
+      "purpose_added": true,
+      "body_lbp_strips": 22
+    },
+    {
+      "file": "SCALE.COVERAGE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.COVERAGE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.COVERAGE",
+      "purpose_added": true,
+      "body_lbp_strips": 20
+    },
+    {
+      "file": "SCALE.CRITICALITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.CRITICALITY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.CRITICALITY",
+      "purpose_added": true,
+      "body_lbp_strips": 23
+    },
+    {
+      "file": "SCALE.GRANULARITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.GRANULARITY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.GRANULARITY",
+      "purpose_added": true,
+      "body_lbp_strips": 22
+    },
+    {
+      "file": "SCALE.IMPACT_INTENSITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.IMPACT_INTENSITY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.IMPACT_INTENSITY",
+      "purpose_added": true,
+      "body_lbp_strips": 32
+    },
+    {
+      "file": "SCALE.INFLUENCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.INFLUENCE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.INFLUENCE",
+      "purpose_added": true,
+      "body_lbp_strips": 30
+    },
+    {
+      "file": "SCALE.MATURITY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.MATURITY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.MATURITY",
+      "purpose_added": true,
+      "body_lbp_strips": 37
+    },
+    {
+      "file": "SCALE.NECESSITY_TODAY.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.NECESSITY_TODAY.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.NECESSITY_TODAY",
+      "purpose_added": true,
+      "body_lbp_strips": 28
+    },
+    {
+      "file": "SCALE.PROCESSISATION.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.PROCESSISATION.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.PROCESSISATION",
+      "purpose_added": true,
+      "body_lbp_strips": 23
+    },
+    {
+      "file": "SCALE.RECURRENCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.RECURRENCE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.RECURRENCE",
+      "purpose_added": true,
+      "body_lbp_strips": 24
+    },
+    {
+      "file": "SCALE.SAILLANCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.SAILLANCE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.SAILLANCE",
+      "purpose_added": true,
+      "body_lbp_strips": 26
+    },
+    {
+      "file": "SCALE.SCOPE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.SCOPE.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.SCOPE",
+      "purpose_added": true,
+      "body_lbp_strips": 41
+    },
+    {
+      "file": "SCALE.VALUE_HORIZON.LBP.md",
+      "status": "migrated",
+      "new_filename": "SCALE.VALUE_HORIZON.md",
+      "namespace_code_new": "SCALE",
+      "code_new": "SCALE.VALUE_HORIZON",
+      "purpose_added": true,
+      "body_lbp_strips": 35
+    },
+    {
+      "file": "SIG.NATURE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SIG.NATURE.md",
+      "namespace_code_new": "SIG",
+      "code_new": "SIG.NATURE",
+      "purpose_added": true,
+      "body_lbp_strips": 36
+    },
+    {
+      "file": "SIG.REGISTRE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SIG.REGISTRE.md",
+      "namespace_code_new": "SIG",
+      "code_new": "SIG.REGISTRE",
+      "purpose_added": true,
+      "body_lbp_strips": 26
+    },
+    {
+      "file": "SKILL.HARD.LBP.md",
+      "status": "migrated",
+      "new_filename": "SKILL.HARD.md",
+      "namespace_code_new": "SKILL",
+      "code_new": "SKILL.HARD",
+      "purpose_added": true,
+      "body_lbp_strips": 174
+    },
+    {
+      "file": "SKILL.SOFT.LBP.md",
+      "status": "migrated",
+      "new_filename": "SKILL.SOFT.md",
+      "namespace_code_new": "SKILL",
+      "code_new": "SKILL.SOFT",
+      "purpose_added": true,
+      "body_lbp_strips": 90
+    },
+    {
+      "file": "SRC.EXTRACT_TARGET.LBP.md",
+      "status": "migrated",
+      "new_filename": "SRC.EXTRACT_TARGET.md",
+      "namespace_code_new": "SRC",
+      "code_new": "SRC.EXTRACT_TARGET",
+      "purpose_added": true,
+      "body_lbp_strips": 44
+    },
+    {
+      "file": "SRC.FORMAT.LBP.md",
+      "status": "migrated",
+      "new_filename": "SRC.FORMAT.md",
+      "namespace_code_new": "SRC",
+      "code_new": "SRC.FORMAT",
+      "purpose_added": true,
+      "body_lbp_strips": 23
+    },
+    {
+      "file": "SRC.PROVENANCE.LBP.md",
+      "status": "migrated",
+      "new_filename": "SRC.PROVENANCE.md",
+      "namespace_code_new": "SRC",
+      "code_new": "SRC.PROVENANCE",
+      "purpose_added": true,
+      "body_lbp_strips": 19
+    },
+    {
+      "file": "STAKEHOLDER.ROLE.LBP.md",
+      "status": "migrated",
+      "new_filename": "STAKEHOLDER.ROLE.md",
+      "namespace_code_new": "STAKEHOLDER",
+      "code_new": "STAKEHOLDER.ROLE",
+      "purpose_added": true,
+      "body_lbp_strips": 33
+    }
+  ]
+}
