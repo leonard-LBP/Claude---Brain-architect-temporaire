@@ -3,7 +3,7 @@
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 28-04-2026 — R-054 (codification universelle des objets Brain : grammaire 1 préfixe+underscore pour la majorité, grammaire 2 hiérarchique-point pour les taxonomies, grammaire 3 héritée pour les taxons ; table de préfixes avec 19 types ; 8 règles transverses ; suffix LBP supprimé) + R-055 (frontmatter canon Brain en 3 zones balisées : Identité / Méta-gouvernance / Spec d'usage ; champs obligatoires ; status hors frontmatter ; règle obligatoire `updated_at` à chaque modif) + R-056 (grammaire de versioning `MAJOR.MINOR` à 2 niveaux ; règles de bump claires ; migration des `X.Y.Z` actuels par troncation du PATCH ; cascade sur R-053 et R-055).
+> Dernière mise à jour : 28-04-2026 — R-054 (codification universelle des objets Brain : grammaire 1 préfixe+underscore pour la majorité, grammaire 2 hiérarchique-point pour les taxonomies, grammaire 3 héritée pour les taxons ; table de préfixes avec 19 types ; 8 règles transverses ; suffix LBP supprimé) + R-055 (frontmatter canon Brain en 3 zones balisées : Identité / Méta-gouvernance / Spec d'usage ; champs obligatoires ; status hors frontmatter ; règle obligatoire `updated_at` à chaque modif ; `doc_type` = token MAJUSCULES de la taxo `DOC.TYPE`) + R-056 (grammaire de versioning `MAJOR.MINOR` à 2 niveaux ; règles de bump claires ; migration des `X.Y.Z` actuels par troncation du PATCH ; cascade sur R-053 et R-055). Refonte du template-taxonomie en `Template - Taxonomie.md` v2.0 (ancien archivé). Création des 3 taxos socles : `DOC.TYPE` (référentiel des 13 types de docs Brain), `DBMAN.SCOPE` (TWIN/MISSION_OPS/BRAIN), `LGBLK.FAMILY` (TRANSFORMATION/VALIDATION/ROUTAGE/CALCUL/AGREGATION, fermée).
 
 ---
 
@@ -308,7 +308,7 @@ tags: [...]
 | Zone | Champ | Type | Notes |
 |---|---|---|---|
 | Identité | `title` | string | affichage humain |
-| Identité | `doc_type` | enum | discriminant agent (`db_manual`, `wr_rd`, `taxonomy`, `concept`, `template`, `master_prompt`, `system_prompt`, `prompt_execution`, `template_prompt`, `logic_block`, `methode`, `doc_meta`, `agent`, `outil_externe`, `glossaire_entry`) |
+| Identité | `doc_type` | enum | **token MAJUSCULES** correspondant à un taxon de la taxonomie `DOC.TYPE` (sans le préfixe `DOC.TYPE.`). Valeurs autorisées : `MANUEL_BDD`, `WR_RD`, `NOTE_CONCEPT`, `TAXONOMIE`, `TEMPLATE_INSTANCIATION`, `TEMPLATE_BRICK`, `PROMPT`, `LOGIC_BLOCK`, `METHODE`, `DOC_META`, `AGENT`, `OUTIL_EXTERNE`, `GLOSSAIRE_ENTRY`. Validation regex : `^[A-Z_]+$`. Permet à un agent de retrouver mécaniquement le taxon `DOC.TYPE.<valeur>` dans la taxonomie `DOC.TYPE`. |
 | Identité | `code` | string | conforme R-054 |
 | Méta-gouvernance | `version` | string | format `MAJOR.MINOR` selon **R-056** (ex. `"1.0"`, pas de PATCH) |
 | Méta-gouvernance | `template_code` | string | code du template d'origine (R-054) — obligatoire pour docs générés depuis un template |
