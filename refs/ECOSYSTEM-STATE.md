@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — calibration indexation Brain réussie sur BDD Méthodes LBP : 2 méthodes au canon indexées (CAR et CCP 5D), 21 propriétés/méthode remplies, pattern multi-select Notion validé (string JSON-encoded). Méthode CCP V1 archivée (R-053).
+> Dernière mise à jour : 28-04-2026 — calibration indexation Brain réussie sur BDD Méthodes LBP + correctif transverse `Created Date`/`Last Updated Date` (5 BDDs Motor Brain : Méthodes, Prompts, Agents, Outils externes, Docs méta) : conversion type `date` → `created_time` / `last_edited_time` (auto-remplis). Patterns Notion DDL validés : multi-select (string JSON-encoded), CREATED_TIME / LAST_EDITED_TIME comme types DDL.
 
 ## Phase actuelle
 
