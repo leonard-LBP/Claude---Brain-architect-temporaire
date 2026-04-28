@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — capture **D-020** (propagation `Version du template` à toutes les BDDs Brain, type RICH_TEXT). Sync Notion : ADD `Version du template` sur 10 BDDs Brain + ALTER Manuels de BDD (select→text), RENAME `Lien vers le doc du manuel` → `Lien vers le manuel de BDD (.md)`, RENAME apostrophe Logic blocks (typo U+2019). 22 fichiers Markdown enrichis (10 manuels Brain + 11 WR-RD + 3 props Méthodes documentées). Lot 3 audit-correction : 21 entrées Notion désynchronisées corrigées (URL Drive + 7 renames d'entrées) + 7 archivages V1 orphelins.
+> Dernière mise à jour : 28-04-2026 — calibration indexation Brain réussie sur BDD Méthodes LBP : 2 méthodes au canon indexées (CAR et CCP 5D), 21 propriétés/méthode remplies, pattern multi-select Notion validé (string JSON-encoded). Méthode CCP V1 archivée (R-053).
 
 ## Phase actuelle
 
-**Conformité Notion ↔ Manuels Brain finalisée (structure schémas + Liens manuels au Drive). Prochaine étape : indexation des Markdown au canon dans les BDDs Notion Brain (création/MAJ des entrées pour refléter le contenu canon des docs Markdown — gros chantier ~313 entrées).**
+**Calibration indexation Brain validée sur Méthodes LBP. Prochaine étape : indexation des autres BDDs Brain (Manuels de BDD, Templates de bricks, Glossaire LBP + Notes de concept en double indexation, Registre des taxonomies). Out of scope court terme : Prompts LBP, Logic blocks, Agents LBP (chantier P : tri massif à venir) ; Docs méta LBP (chantier M : réactualisation PLAYBOOK).**
 
 ### Phases terminées (chronologie)
 
