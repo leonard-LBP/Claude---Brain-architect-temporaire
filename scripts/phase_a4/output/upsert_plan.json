@@ -1,0 +1,708 @@
+{
+  "plan": [
+    {
+      "action": "update",
+      "code": "ACT.CONSOLIDATION_TARGET",
+      "code_lbp_old": "ACT.CONSOLIDATION_TARGET.LBP",
+      "uuid": "34ce1a18653c81708b27c02f83df189e",
+      "drive_file": "ACT.CONSOLIDATION_TARGET.md"
+    },
+    {
+      "action": "update",
+      "code": "ACT.IMPACT_DOMAIN",
+      "code_lbp_old": "ACT.IMPACT_DOMAIN.LBP",
+      "uuid": "09f7ed1649584a25844ba365d615d766",
+      "drive_file": "ACT.IMPACT_DOMAIN.md"
+    },
+    {
+      "action": "update",
+      "code": "ACT.INTENT",
+      "code_lbp_old": "ACT.INTENT.LBP",
+      "uuid": "53292d988d674a89897b79dc9a261046",
+      "drive_file": "ACT.INTENT.md"
+    },
+    {
+      "action": "update",
+      "code": "AGENT.FAMILY",
+      "code_lbp_old": "AGENT.FAMILY.LBP",
+      "uuid": "3a4469c32ba14d9796ee5e8823d5c32c",
+      "drive_file": "AGENT.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "ASSET.LIFECYCLE",
+      "code_lbp_old": "ASSET.LIFECYCLE.LBP",
+      "uuid": "34ce1a18653c813280cce685944d459c",
+      "drive_file": "ASSET.LIFECYCLE.md"
+    },
+    {
+      "action": "update",
+      "code": "ASSET.PROVENANCE",
+      "code_lbp_old": "ASSET.PROVENANCE.LBP",
+      "uuid": "34ce1a18653c81a4bd8efe7a720eaec5",
+      "drive_file": "ASSET.PROVENANCE.md"
+    },
+    {
+      "action": "update",
+      "code": "ASSET.SUBSTITUTABILITY",
+      "code_lbp_old": "ASSET.SUBSTITUTABILITY.LBP",
+      "uuid": "34ce1a18653c817fa00aef62d3c1ad4f",
+      "drive_file": "ASSET.SUBSTITUTABILITY.md"
+    },
+    {
+      "action": "update",
+      "code": "ASSET.SUBTYPE",
+      "code_lbp_old": "ASSET.SUBTYPE.LBP",
+      "uuid": "34ce1a18653c81788204ea59f9666014",
+      "drive_file": "ASSET.SUBTYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "BRICK.FAMILY",
+      "code_lbp_old": "BRICK.FAMILY.LBP",
+      "uuid": "1a077b7de21c4888a4293aeb2ffa8c80",
+      "drive_file": "BRICK.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "CAP.DISTINCTIVITY",
+      "code_lbp_old": "CAP.DISTINCTIVITY.LBP",
+      "uuid": "68aadeac44ee4c449c9caeb81fee0ed0",
+      "drive_file": "CAP.DISTINCTIVITY.md"
+    },
+    {
+      "action": "update",
+      "code": "CAP.FAMILY",
+      "code_lbp_old": "CAP.FAMILY.LBP",
+      "uuid": "5c4d5b369d1241bca401205173c48044",
+      "drive_file": "CAP.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "CAP.NATURE",
+      "code_lbp_old": "CAP.NATURE.LBP",
+      "uuid": "74b5d4903b2345c09852be95e732e956",
+      "drive_file": "CAP.NATURE.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.DEP_LEVEL",
+      "code_lbp_old": "COL.DEP_LEVEL.LBP",
+      "uuid": "34ce1a18653c8155b62fe20d4a668ba2",
+      "drive_file": "COL.DEP_LEVEL.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.FORMALITY",
+      "code_lbp_old": "COL.FORMALITY.LBP",
+      "uuid": "34ce1a18653c8160b574d522bf240d7a",
+      "drive_file": "COL.FORMALITY.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.ORIENTATION",
+      "code_lbp_old": "COL.ORIENTATION.LBP",
+      "uuid": "34ce1a18653c81ab91b6d4bb9c9358e2",
+      "drive_file": "COL.ORIENTATION.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.TEMPORALITY",
+      "code_lbp_old": "COL.TEMPORALITY.LBP",
+      "uuid": "34ce1a18653c816689a2e390d3a94d99",
+      "drive_file": "COL.TEMPORALITY.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.TEMPO_CLASS",
+      "code_lbp_old": "COL.TEMPO_CLASS.LBP",
+      "uuid": "34ce1a18653c81d1b3a7f1790bcab89f",
+      "drive_file": "COL.TEMPO_CLASS.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.TEMPO_VAR",
+      "code_lbp_old": "COL.TEMPO_VAR.LBP",
+      "uuid": "34ce1a18653c8160b693e3b9b3aa6c45",
+      "drive_file": "COL.TEMPO_VAR.md"
+    },
+    {
+      "action": "update",
+      "code": "COL.TYPE",
+      "code_lbp_old": "COL.TYPE.LBP",
+      "uuid": "34ce1a18653c81a3a415f430600d2584",
+      "drive_file": "COL.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "EMO.TYPE",
+      "code_lbp_old": "EMO.TYPE.LBP",
+      "uuid": "52abdd8232bf479fa676104bee11230e",
+      "drive_file": "EMO.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "ENJ.DOMAIN",
+      "code_lbp_old": "ENJ.DOMAIN.LBP",
+      "uuid": "1df2a345cbeb497b886a0f7f1d47f755",
+      "drive_file": "ENJ.DOMAIN.md"
+    },
+    {
+      "action": "update",
+      "code": "ENJ.EXPRESSION",
+      "code_lbp_old": "ENJ.EXPRESSION.LBP",
+      "uuid": "7ad70abed6c64aec9d42aaaaea253e8c",
+      "drive_file": "ENJ.EXPRESSION.md"
+    },
+    {
+      "action": "update",
+      "code": "ENJ.HORIZON",
+      "code_lbp_old": "ENJ.HORIZON.LBP",
+      "uuid": "2fd0b03f83ce49eeaee8abf2f7b0ae4a",
+      "drive_file": "ENJ.HORIZON.md"
+    },
+    {
+      "action": "update",
+      "code": "ENV.CONTROLLABILITY",
+      "code_lbp_old": "ENV.CONTROLLABILITY.LBP",
+      "uuid": "34ce1a18653c81eba395fef567dabf2b",
+      "drive_file": "ENV.CONTROLLABILITY.md"
+    },
+    {
+      "action": "update",
+      "code": "ENV.PESTEL",
+      "code_lbp_old": "ENV.PESTEL.LBP",
+      "uuid": "f84d064c08e34b2e924feb2a60fa1624",
+      "drive_file": "ENV.PESTEL.md"
+    },
+    {
+      "action": "update",
+      "code": "ENV.SUBTYPE",
+      "code_lbp_old": "ENV.SUBTYPE.LBP",
+      "uuid": "b400674b5e0d4435ab34f2023488bbda",
+      "drive_file": "ENV.SUBTYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "ENV.VOLATILITY",
+      "code_lbp_old": "ENV.VOLATILITY.LBP",
+      "uuid": "34ce1a18653c8178a2d5c8b14f6c0c00",
+      "drive_file": "ENV.VOLATILITY.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.ORIGIN",
+      "code_lbp_old": "EVT.ORIGIN.LBP",
+      "uuid": "34ce1a18653c8107b134e4d80a416046",
+      "drive_file": "EVT.ORIGIN.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.RECURRENCE_CLASS",
+      "code_lbp_old": "EVT.RECURRENCE_CLASS.LBP",
+      "uuid": "34ce1a18653c81c8be9ef5edacd8cfa0",
+      "drive_file": "EVT.RECURRENCE_CLASS.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.TIME_GRAIN",
+      "code_lbp_old": "EVT.TIME_GRAIN.LBP",
+      "uuid": "702337743a5b4a12afcb22985667f6e3",
+      "drive_file": "EVT.TIME_GRAIN.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.TIME_PRECISION",
+      "code_lbp_old": "EVT.TIME_PRECISION.LBP",
+      "uuid": "34ce1a18653c817097b3f817e9fd78c8",
+      "drive_file": "EVT.TIME_PRECISION.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.TIME_STATUS",
+      "code_lbp_old": "EVT.TIME_STATUS.LBP",
+      "uuid": "2831db0fcc0f411891c2f777e60f0620",
+      "drive_file": "EVT.TIME_STATUS.md"
+    },
+    {
+      "action": "update",
+      "code": "EVT.TYPE",
+      "code_lbp_old": "EVT.TYPE.LBP",
+      "uuid": "c82114411c78472a97c761d1da544546",
+      "drive_file": "EVT.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "GLO.CAT",
+      "code_lbp_old": "GLO.CAT.LBP",
+      "uuid": "32fb0263c6804335a6860103e452902b",
+      "drive_file": "GLO.CAT.md"
+    },
+    {
+      "action": "update",
+      "code": "IMPACT.NATURE",
+      "code_lbp_old": "IMPACT.NATURE.LBP",
+      "uuid": "74fefb1e61524f2c8d92121a5417ee0c",
+      "drive_file": "IMPACT.NATURE.md"
+    },
+    {
+      "action": "update",
+      "code": "IND.TYPE",
+      "code_lbp_old": "IND.TYPE.LBP",
+      "uuid": "932e0e8b648b4b11925125e3d7672df6",
+      "drive_file": "IND.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.DOMAIN",
+      "code_lbp_old": "INDIC.DOMAIN.LBP",
+      "uuid": "8515f6a8804d409cb9796f5278456d2e",
+      "drive_file": "INDIC.DOMAIN.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.FREQ",
+      "code_lbp_old": "INDIC.FREQ.LBP",
+      "uuid": "98600cdbf9c04931b83d9ec57841ec9a",
+      "drive_file": "INDIC.FREQ.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.NATURE",
+      "code_lbp_old": "INDIC.NATURE.LBP",
+      "uuid": "74fe4f7757044be29fd2f00702965fc4",
+      "drive_file": "INDIC.NATURE.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.SCOPE_APPLI",
+      "code_lbp_old": "INDIC.SCOPE_APPLI.LBP",
+      "uuid": "87219ab9fb424c77a8ec12976c750158",
+      "drive_file": "INDIC.SCOPE_APPLI.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.TIME_ROLE",
+      "code_lbp_old": "INDIC.TIME_ROLE.LBP",
+      "uuid": "34de1a18653c8112834ee3b59afc97fb",
+      "drive_file": "INDIC.TIME_ROLE.md"
+    },
+    {
+      "action": "update",
+      "code": "INDIC.UNIT",
+      "code_lbp_old": "INDIC.UNIT.LBP",
+      "uuid": "af15f01425344aaa899b3551ab8769c0",
+      "drive_file": "INDIC.UNIT.md"
+    },
+    {
+      "action": "update",
+      "code": "INIT.DRIVER",
+      "code_lbp_old": "INIT.DRIVER.LBP",
+      "uuid": "34ce1a18653c81b2a7f2e8e6b8e9e2c5",
+      "drive_file": "INIT.DRIVER.md"
+    },
+    {
+      "action": "update",
+      "code": "INIT.PHASE",
+      "code_lbp_old": "INIT.PHASE.LBP",
+      "uuid": "34ce1a18653c810f98e5d65c5dd3f21b",
+      "drive_file": "INIT.PHASE.md"
+    },
+    {
+      "action": "update",
+      "code": "INIT.TYPE",
+      "code_lbp_old": "INIT.TYPE.LBP",
+      "uuid": "34ce1a18653c81b497eeff26d47d01df",
+      "drive_file": "INIT.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "INS.TYPE",
+      "code_lbp_old": "INS.TYPE.LBP",
+      "uuid": "659dea88baa64a67af242ac60959de50",
+      "drive_file": "INS.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "JOB.FAMILLE",
+      "code_lbp_old": "JOB.FAMILLE.LBP",
+      "uuid": "ff1769876ccd4cffb6779dcc57fd7150",
+      "drive_file": "JOB.FAMILLE.md"
+    },
+    {
+      "action": "update",
+      "code": "JOB.SENIORITE",
+      "code_lbp_old": "JOB.SENIORITE.LBP",
+      "uuid": "66f6b36afbd545ccac2148a4ee8eede2",
+      "drive_file": "JOB.SENIORITE.md"
+    },
+    {
+      "action": "update",
+      "code": "MET.FAMILY",
+      "code_lbp_old": "MET.FAMILY.LBP",
+      "uuid": "3ba68e03c76548da82bae28d4aa33267",
+      "drive_file": "MET.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "META.FAMILY",
+      "code_lbp_old": "META.FAMILY.LBP",
+      "uuid": "b859bcd6002e44b7858f4bf0997390fd",
+      "drive_file": "META.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "MTG.EXEC_STATUS",
+      "code_lbp_old": "MTG.EXEC_STATUS.LBP",
+      "uuid": "34de1a18653c8171bb41d0033effbf6d",
+      "drive_file": "MTG.EXEC_STATUS.md"
+    },
+    {
+      "action": "update",
+      "code": "MTG.FORMAT",
+      "code_lbp_old": "MTG.FORMAT.LBP",
+      "uuid": "d9c1cbd5776f423eb96ae474874cf05d",
+      "drive_file": "MTG.FORMAT.md"
+    },
+    {
+      "action": "update",
+      "code": "MTG.TYPE",
+      "code_lbp_old": "MTG.TYPE.LBP",
+      "uuid": "757b142bddff4547997bbbc63316ee0a",
+      "drive_file": "MTG.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "OBJ.CONFIDENTIALITE",
+      "code_lbp_old": "OBJ.CONFIDENTIALITE.LBP",
+      "uuid": "c52249841b094263897179fa6e486ee1",
+      "drive_file": "OBJ.CONFIDENTIALITE.md"
+    },
+    {
+      "action": "update",
+      "code": "OBJ.STATUT",
+      "code_lbp_old": "OBJ.STATUT.LBP",
+      "uuid": "6050fc5d5e384cec81ec200ae7027332",
+      "drive_file": "OBJ.STATUT.md"
+    },
+    {
+      "action": "update",
+      "code": "OPS.ACTION_FAMILY",
+      "code_lbp_old": "OPS.ACTION_FAMILY.LBP",
+      "uuid": "f2d33e15e4a3462d98aa4d4ae0f0f4b9",
+      "drive_file": "OPS.ACTION_FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "OPS.ACTION_ITEM_TYPE",
+      "code_lbp_old": "OPS.ACTION_ITEM_TYPE.LBP",
+      "uuid": "17788900999144b3a6182a90189b8bdc",
+      "drive_file": "OPS.ACTION_ITEM_TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "OPS.RESPONSIBLE_MAIN",
+      "code_lbp_old": "OPS.RESPONSIBLE_MAIN.LBP",
+      "uuid": "e2a942888c8a4c8abcbbf885d8634d88",
+      "drive_file": "OPS.RESPONSIBLE_MAIN.md"
+    },
+    {
+      "action": "update",
+      "code": "OPS.STATUS",
+      "code_lbp_old": "OPS.STATUS.LBP",
+      "uuid": "dafc22c7f7054d1fb41eb03ae78b16b7",
+      "drive_file": "OPS.STATUS.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG.CONTEXTE",
+      "code_lbp_old": "ORG.CONTEXTE.LBP",
+      "uuid": "b3bc419505fd46c79b92f39b53ac9c1e",
+      "drive_file": "ORG.CONTEXTE.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG.JURISDICTION",
+      "code_lbp_old": "ORG.JURISDICTION.LBP",
+      "uuid": "3ee4c413333d48c7b0fcae6420804bb0",
+      "drive_file": "ORG.JURISDICTION.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG.ROLE",
+      "code_lbp_old": "ORG.ROLE.LBP",
+      "uuid": "a7a1033140494f7db00f19409a0e7693",
+      "drive_file": "ORG.ROLE.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG.SECTEUR",
+      "code_lbp_old": "ORG.SECTEUR.LBP",
+      "uuid": "0d434ad2b8354534adae9c2174f51875",
+      "drive_file": "ORG.SECTEUR.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG.TYPE",
+      "code_lbp_old": "ORG.TYPE.LBP",
+      "uuid": "34ce1a18653c819ba7e8f8bc830f8dc5",
+      "drive_file": "ORG.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG5D.DIM",
+      "code_lbp_old": "ORG5D.DIM.LBP",
+      "uuid": "8abc584292f34bf4a172c04244bf9288",
+      "drive_file": "ORG5D.DIM.md"
+    },
+    {
+      "action": "update",
+      "code": "ORG_REL.TYPE",
+      "code_lbp_old": "ORG_REL.TYPE.LBP",
+      "uuid": "34ce1a18653c813f867aed69cb547705",
+      "drive_file": "ORG_REL.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "OUT.FAMILY",
+      "code_lbp_old": "OUT.FAMILY.LBP",
+      "uuid": "3ce18a57154446bbb1c4c0093a79b18c",
+      "drive_file": "OUT.FAMILY.md"
+    },
+    {
+      "action": "update",
+      "code": "PLATFORM.ENV",
+      "code_lbp_old": "PLATFORM.ENV.LBP",
+      "uuid": "1946b1296c2e4aa8bc6ba69fa52c2cc4",
+      "drive_file": "PLATFORM.ENV.md"
+    },
+    {
+      "action": "update",
+      "code": "PRA.TYPE",
+      "code_lbp_old": "PRA.TYPE.LBP",
+      "uuid": "f302f7cfe1d241588ad0f8c27c1aa827",
+      "drive_file": "PRA.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "PROC.NIVEAU",
+      "code_lbp_old": "PROC.NIVEAU.LBP",
+      "uuid": "3ba8fc17f12d4d66ba7ac9f42aa96f02",
+      "drive_file": "PROC.NIVEAU.md"
+    },
+    {
+      "action": "update",
+      "code": "PROMPT.ARCH_ROLE",
+      "code_lbp_old": "PROMPT.ARCH_ROLE.LBP",
+      "uuid": "56abb7b55da84027b52969b3256c59dd",
+      "drive_file": "PROMPT.ARCH_ROLE.md"
+    },
+    {
+      "action": "update",
+      "code": "PROMPT.DEPLOY_STATUS",
+      "code_lbp_old": "PROMPT.DEPLOY_STATUS.LBP",
+      "uuid": "9668cc8dcebf41879581e901dabcdb87",
+      "drive_file": "PROMPT.DEPLOY_STATUS.md"
+    },
+    {
+      "action": "update",
+      "code": "PROMPT.TYPE",
+      "code_lbp_old": "PROMPT.TYPE.LBP",
+      "uuid": "7c69fdaf09534fe3b507a1cab334cdd9",
+      "drive_file": "PROMPT.TYPE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.ALIGNMENT",
+      "code_lbp_old": "SCALE.ALIGNMENT.LBP",
+      "uuid": "9e5b871519274c3297e0f5f6935728d8",
+      "drive_file": "SCALE.ALIGNMENT.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.COLLAB_INTENSITY",
+      "code_lbp_old": "SCALE.COLLAB_INTENSITY.LBP",
+      "uuid": "3e44a004416b4edd8040bd77d500588f",
+      "drive_file": "SCALE.COLLAB_INTENSITY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.CONFIDENCE",
+      "code_lbp_old": "SCALE.CONFIDENCE.LBP",
+      "uuid": "0739d013c81d46baa4569caf70683293",
+      "drive_file": "SCALE.CONFIDENCE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.COVERAGE",
+      "code_lbp_old": "SCALE.COVERAGE.LBP",
+      "uuid": "34de1a18653c818ea33fdbb5fa828fdd",
+      "drive_file": "SCALE.COVERAGE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.CRITICALITY",
+      "code_lbp_old": "SCALE.CRITICALITY.LBP",
+      "uuid": "9e6e0c8c65a94dee82dc431728ab4b48",
+      "drive_file": "SCALE.CRITICALITY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.GRANULARITY",
+      "code_lbp_old": "SCALE.GRANULARITY.LBP",
+      "uuid": "39883e3d59674b2a8bf839dd334d13a7",
+      "drive_file": "SCALE.GRANULARITY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.IMPACT_INTENSITY",
+      "code_lbp_old": "SCALE.IMPACT_INTENSITY.LBP",
+      "uuid": "d5fc00e9785e41fdbbda61de5fd1d352",
+      "drive_file": "SCALE.IMPACT_INTENSITY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.INFLUENCE",
+      "code_lbp_old": "SCALE.INFLUENCE.LBP",
+      "uuid": "bdca3a1b2a914fb2bcce1ae7392f4953",
+      "drive_file": "SCALE.INFLUENCE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.MATURITY",
+      "code_lbp_old": "SCALE.MATURITY.LBP",
+      "uuid": "c69230587358499081d7732819826607",
+      "drive_file": "SCALE.MATURITY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.NECESSITY_TODAY",
+      "code_lbp_old": "SCALE.NECESSITY_TODAY.LBP",
+      "uuid": "830565e2871f4ee1a6f99149ea78012e",
+      "drive_file": "SCALE.NECESSITY_TODAY.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.PROCESSISATION",
+      "code_lbp_old": "SCALE.PROCESSISATION.LBP",
+      "uuid": "4e7e3ef25dab425cb7502b69ba290bbf",
+      "drive_file": "SCALE.PROCESSISATION.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.RECURRENCE",
+      "code_lbp_old": "SCALE.RECURRENCE.LBP",
+      "uuid": "5f77cdf6a6064468b1adbe40c59bbcb3",
+      "drive_file": "SCALE.RECURRENCE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.SAILLANCE",
+      "code_lbp_old": "SCALE.SAILLANCE.LBP",
+      "uuid": "d8345e3053464137a119661d1ca2ea88",
+      "drive_file": "SCALE.SAILLANCE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.SCOPE",
+      "code_lbp_old": "SCALE.SCOPE.LBP",
+      "uuid": "da25b42e5ff14035a3bcbcf4e39e57ba",
+      "drive_file": "SCALE.SCOPE.md"
+    },
+    {
+      "action": "update",
+      "code": "SCALE.VALUE_HORIZON",
+      "code_lbp_old": "SCALE.VALUE_HORIZON.LBP",
+      "uuid": "eed296907bc34815a363d17a971c050b",
+      "drive_file": "SCALE.VALUE_HORIZON.md"
+    },
+    {
+      "action": "update",
+      "code": "SIG.NATURE",
+      "code_lbp_old": "SIG.NATURE.LBP",
+      "uuid": "2e5f7bccf08940f6840b22df592483ad",
+      "drive_file": "SIG.NATURE.md"
+    },
+    {
+      "action": "update",
+      "code": "SIG.REGISTRE",
+      "code_lbp_old": "SIG.REGISTRE.LBP",
+      "uuid": "1b821083e43e4b018419068f06174f1c",
+      "drive_file": "SIG.REGISTRE.md"
+    },
+    {
+      "action": "update",
+      "code": "SKILL.HARD",
+      "code_lbp_old": "SKILL.HARD.LBP",
+      "uuid": "9642c2d568cc4c8faf8758f04fb352ba",
+      "drive_file": "SKILL.HARD.md"
+    },
+    {
+      "action": "update",
+      "code": "SKILL.SOFT",
+      "code_lbp_old": "SKILL.SOFT.LBP",
+      "uuid": "5f2d6cfe69c641abab5c45f3469314bf",
+      "drive_file": "SKILL.SOFT.md"
+    },
+    {
+      "action": "update",
+      "code": "SRC.EXTRACT_TARGET",
+      "code_lbp_old": "SRC.EXTRACT_TARGET.LBP",
+      "uuid": "ebfa1f3d5d284f88a4c99739b40e8f20",
+      "drive_file": "SRC.EXTRACT_TARGET.md"
+    },
+    {
+      "action": "update",
+      "code": "SRC.FORMAT",
+      "code_lbp_old": "SRC.FORMAT.LBP",
+      "uuid": "f58fc5e7d9cf4b3c86362a634ca2e5ce",
+      "drive_file": "SRC.FORMAT.md"
+    },
+    {
+      "action": "update",
+      "code": "SRC.PROVENANCE",
+      "code_lbp_old": "SRC.PROVENANCE.LBP",
+      "uuid": "a1567d5a424d473fa00a469db7c5e637",
+      "drive_file": "SRC.PROVENANCE.md"
+    },
+    {
+      "action": "update",
+      "code": "STAKEHOLDER.ROLE",
+      "code_lbp_old": "STAKEHOLDER.ROLE.LBP",
+      "uuid": "18d258cb51fb4bf0b3adb3941638a0c9",
+      "drive_file": "STAKEHOLDER.ROLE.md"
+    },
+    {
+      "action": "create",
+      "code": "BRAIN.LAYER",
+      "drive_file": "BRAIN.LAYER.md"
+    },
+    {
+      "action": "create",
+      "code": "BRAIN.SUBTYPE",
+      "drive_file": "BRAIN.SUBTYPE.md"
+    },
+    {
+      "action": "create",
+      "code": "DBMAN.SCOPE",
+      "drive_file": "DBMAN.SCOPE.md"
+    },
+    {
+      "action": "create",
+      "code": "DOC.TYPE",
+      "drive_file": "DOC.TYPE.md"
+    },
+    {
+      "action": "create",
+      "code": "JOB.COVERAGE",
+      "drive_file": "JOB.COVERAGE.md"
+    },
+    {
+      "action": "create",
+      "code": "LGBLK.FAMILY",
+      "drive_file": "LGBLK.FAMILY.md"
+    }
+  ],
+  "notion_only": [],
+  "duplicates": []
+}

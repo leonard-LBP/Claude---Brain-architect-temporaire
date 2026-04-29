@@ -1,0 +1,96 @@
+Alignement intention ↔ pratiques|Validé|SCALE.ALIGNMENT.LBP|9e5b871519274c3297e0f5f6935728d8|https://drive.google.com/file/d/1DG5lmaiR44cccIvxWbbUSBKXsyevcbX9/view
+Bande de séniorité (rôle)|Validé|JOB.SENIORITE.LBP|66f6b36afbd545ccac2148a4ee8eede2|https://drive.google.com/file/d/1LxPlimnmqAtFsNVormlm9-om8tOg2LGK/view
+Catégorie du terme (Glossaire spécifique)|Validé|GLO.CAT.LBP|32fb0263c6804335a6860103e452902b|https://drive.google.com/file/d/1WuxuteVrg0GcXpBq2A7oIuZrJMqdlbdP/view
+Cible probable de consolidation de l'action détectée|Validé|ACT.CONSOLIDATION_TARGET.LBP|34ce1a18653c81708b27c02f83df189e|https://drive.google.com/file/d/1RFSIfqz92Xi72bJJTozMWQye2HmvvgQb/view
+Cible(s) d'extraction recommandée(s)|Validé|SRC.EXTRACT_TARGET.LBP|ebfa1f3d5d284f88a4c99739b40e8f20|https://drive.google.com/file/d/14hrJLxwG3V_qQt3PSiDbcUrg5PHBZmSa/view
+Classe de récurrence de l'événement|Validé|EVT.RECURRENCE_CLASS.LBP|34ce1a18653c81c8be9ef5edacd8cfa0|https://drive.google.com/file/d/1tilcLgPxhNnJ2i0CbWIosVqHJKZz8s2T/view
+Contexte d'ancrage organisationnel d'un poste|Validé|ORG.CONTEXTE.LBP|b3bc419505fd46c79b92f39b53ac9c1e|https://drive.google.com/file/d/16IRqisfSqYcXe4dm20Y4ieDNHUZScMdL/view
+Criticité (échelle LBP)|Validé|SCALE.CRITICALITY.LBP|9e6e0c8c65a94dee82dc431728ab4b48|https://drive.google.com/file/d/1Uavh3vByuWPg4sewhjiq6lkPXkWcXifk/view
+Cycle de vie / statut d'usage de l'actif|Validé|ASSET.LIFECYCLE.LBP|34ce1a18653c813280cce685944d459c|https://drive.google.com/file/d/1yu_7_8pB3B-ceehZfNb-F4fIItqpTaHY/view
+Dimensions 5D (Matrice LBP)|Validé|ORG5D.DIM.LBP|8abc584292f34bf4a172c04244bf9288|https://drive.google.com/file/d/1cKdKhWZRXaCwceqOUSRZh2qFJg6wQqrl/view
+Distinctivité de capacité métier (standard/spéciale)|Validé|CAP.DISTINCTIVITY.LBP|68aadeac44ee4c449c9caeb81fee0ed0|https://drive.google.com/file/d/1Da75lAiSpbhavKs1kC2A_Pkg3gYSSj57/view
+Domaine d'enjeu / de problématique|Validé|ENJ.DOMAIN.LBP|1df2a345cbeb497b886a0f7f1d47f755|https://drive.google.com/file/d/1vBe_ccQc0aAiP359DW13BKHM3YJfyCZ6/view
+Domaine d'impact de l'action|Validé|ACT.IMPACT_DOMAIN.LBP|09f7ed1649584a25844ba365d615d766|https://drive.google.com/file/d/1yN-W5BNmrdYDfjM8Jo_2ZyV-BRlAnEax/view
+Domaine d'un indicateur|Validé|INDIC.DOMAIN.LBP|8515f6a8804d409cb9796f5278456d2e|https://drive.google.com/file/d/1MSzDkiw1vlx9xIeEk3KfDlqJ9oXfWsKK/view
+Environnement de déploiement plateforme (LBP)|Validé|PLATFORM.ENV.LBP|1946b1296c2e4aa8bc6ba69fa52c2cc4|https://drive.google.com/file/d/1qjJCcd91K-rJTvE63tIQoMUtRWkX4i7m/view
+Famille d'action LBP (Mission Ops)|Validé|OPS.ACTION_FAMILY.LBP|f2d33e15e4a3462d98aa4d4ae0f0f4b9|https://drive.google.com/file/d/1OkBbWsCmPTCIyweo4M7X8ncWiIjOZ4Wf/view
+Famille d'agent (LBP)|Validé|AGENT.FAMILY.LBP|3a4469c32ba14d9796ee5e8823d5c32c|https://drive.google.com/file/d/138mTA_yOJUJDI2gfNw6drNGn_yNl7Mjd/view
+Famille d'outil externe (Motor Brain)|Validé|OUT.FAMILY.LBP|3ce18a57154446bbb1c4c0093a79b18c|https://drive.google.com/file/d/1QpoIF0JpMP-iFyQQMPok5prL5VFzgccC/view
+Famille de Brick (LBP)|Validé|BRICK.FAMILY.LBP|1a077b7de21c4888a4293aeb2ffa8c80|https://drive.google.com/file/d/13mMt1l1pEzsQMti1GZUptHglzNOe3Pt-/view
+Famille de capacité organisationnelle|Validé|CAP.FAMILY.LBP|5c4d5b369d1241bca401205173c48044|https://drive.google.com/file/d/1Z2KefN9bivh8mGZtvG7lWCMLLq-Igsw_/view
+Famille de doc méta (LBP)|Validé|META.FAMILY.LBP|b859bcd6002e44b7858f4bf0997390fd|https://drive.google.com/file/d/1D-KFXyGb_Pzk-uCOhlrETLTPi3TXsSL3/view
+Famille de méthode (LBP)|Validé|MET.FAMILY.LBP|3ba68e03c76548da82bae28d4aa33267|https://drive.google.com/file/d/1PjhY04zkexuFJXZhphGHZZMc7Cg3f9UY/view
+Famille métier (rôle)|Validé|JOB.FAMILLE.LBP|ff1769876ccd4cffb6779dcc57fd7150|https://drive.google.com/file/d/1YKK2a20VtEvwZZ6Spak-2yZv5TAdGqi9/view
+Format de meeting (Mission Ops)|Validé|MTG.FORMAT.LBP|d9c1cbd5776f423eb96ae474874cf05d|https://drive.google.com/file/d/1keCCu1US79R_lCIKCJtnt0HG2zy4kwAC/view
+Format d'origine d'une source d'information|Validé|SRC.FORMAT.LBP|f58fc5e7d9cf4b3c86362a634ca2e5ce|https://drive.google.com/file/d/1TwPDvZMSlCgQShR8dvLqq9SGHdrgmVFd/view
+Fréquence de mise à jour d'un indicateur|Validé|INDIC.FREQ.LBP|98600cdbf9c04931b83d9ec57841ec9a|https://drive.google.com/file/d/1Caql-Hm0Z5TRGFQjI2Kt00egDT-WC1fH/view
+Granularité de l'action (échelle LBP)|Validé|SCALE.GRANULARITY.LBP|39883e3d59674b2a8bf839dd334d13a7|https://drive.google.com/file/d/1e2udhXP2Cj48OVr27yWVJi5fr4cjepw2/view
+Granularité temporelle d'un événement|Validé|EVT.TIME_GRAIN.LBP|702337743a5b4a12afcb22985667f6e3|https://drive.google.com/file/d/15TH_4Y4RAtc4RCPJj02Dh1JpDKLdnpWd/view
+Hard Skills (individus)|Validé|SKILL.HARD.LBP|9642c2d568cc4c8faf8758f04fb352ba|https://drive.google.com/file/d/10yqeAXgtESyT1pZMtHLG6dzIyDKkGFU8/view
+Horizon de valeur de l'action|Validé|SCALE.VALUE_HORIZON.LBP|eed296907bc34815a363d17a971c050b|https://drive.google.com/file/d/1F5mOCbfKTJrZ5_H4INd_4qsFKwn9icSn/view
+Horizon temporel de l'enjeu / de la problématique|Validé|ENJ.HORIZON.LBP|2fd0b03f83ce49eeaee8abf2f7b0ae4a|https://drive.google.com/file/d/1HcHRWw06_n7aiPK_pAbFE2-OrdI6Xh7E/view
+Influence structurelle (échelle LBP)|Validé|SCALE.INFLUENCE.LBP|bdca3a1b2a914fb2bcce1ae7392f4953|https://drive.google.com/file/d/1R9MVOLnJbGXBdj57wo8rDDv-ZW-kASHd/view
+Intensité de collaboration|Validé|SCALE.COLLAB_INTENSITY.LBP|3e44a004416b4edd8040bd77d500588f|https://drive.google.com/file/d/1y_nKHLDHc57Vom1TXik-lkvAcB0ePxeX/view
+Intensité d'impact (échelle LBP)|Validé|SCALE.IMPACT_INTENSITY.LBP|d5fc00e9785e41fdbbda61de5fd1d352|https://drive.google.com/file/d/14ICDNO2rmUcFsjFrQ9IqyZrPQqJtQcKD/view
+Intention de l'action|Validé|ACT.INTENT.LBP|53292d988d674a89897b79dc9a261046|https://drive.google.com/file/d/1-ERYN0oV6y6pfYLQUveH0A7HytMgIu-S/view
+Juridiction / pays de référence (organisation)|Validé|ORG.JURISDICTION.LBP|3ee4c413333d48c7b0fcae6420804bb0|https://drive.google.com/file/d/1x9-YdwL07l8rI3EFpiyk4y1RW_Dpw2e0/view
+Mandat organisationnel du poste|Validé|ORG.ROLE.LBP|a7a1033140494f7db00f19409a0e7693|https://drive.google.com/file/d/1nLTv1q47AI-xsj0JrAKN3p7tn1BLQJbg/view
+Maîtrisabilité / contrôlabilité de l'environnement|Validé|ENV.CONTROLLABILITY.LBP|34ce1a18653c81eba395fef567dabf2b|https://drive.google.com/file/d/1afhlq2xVBGPlmb1XQAPi0ngiWbgxWjwT/view
+Mode de provenance / d'obtention de l'actif|Validé|ASSET.PROVENANCE.LBP|34ce1a18653c81a4bd8efe7a720eaec5|https://drive.google.com/file/d/1oWcFflb2PZgLCQ8p60MC-5DMPAHLHyxt/view
+Moteur principal de l'initiative|Validé|INIT.DRIVER.LBP|34ce1a18653c81b2a7f2e8e6b8e9e2c5|https://drive.google.com/file/d/1tPs1NpjkVM0cy7Agx9urGKiOYOJO8VC3/view
+Nature de capacité (soft/hard)|Validé|CAP.NATURE.LBP|74b5d4903b2345c09852be95e732e956|https://drive.google.com/file/d/1NKlFJhlSE-Iv32XVCAcmVX2d1nq_8xaV/view
+Nature de couverture|Validé|SCALE.COVERAGE.LBP|34de1a18653c818ea33fdbb5fa828fdd|https://drive.google.com/file/d/1EqBpMuOV64vq3nG97P1lTQXwyhHOZ-gj/view
+Nature de l'impact (typologie LBP)|Validé|IMPACT.NATURE.LBP|74fefb1e61524f2c8d92121a5417ee0c|https://drive.google.com/file/d/1HmTX_ujmdEDCmBmCqJn51Pcs291nwGhy/view
+Nature dominante de la relation inter-organisations|Validé|ORG_REL.TYPE.LBP|34ce1a18653c813f867aed69cb547705|https://drive.google.com/file/d/1f_NKfC5llkPrElioirp53bJw-QyM3ei4/view
+Nature du signal|Validé|SIG.NATURE.LBP|2e5f7bccf08940f6840b22df592483ad|https://drive.google.com/file/d/1Yz5UpjmLUzWjPKodmeREIftE7mijOGnC/view
+Nature d'un indicateur|Validé|INDIC.NATURE.LBP|74fe4f7757044be29fd2f00702965fc4|https://drive.google.com/file/d/1U3M4dn9kMQ8ip97ySZ9W4niqj-hEwNup/view
+Niveau de confiance dans l'information|Validé|SCALE.CONFIDENCE.LBP|0739d013c81d46baa4569caf70683293|https://drive.google.com/file/d/1DwkNYH7IwGeLVyETEetU6v4XCRSVD8wZ/view
+Niveau de confidentialité (objet)|Validé|OBJ.CONFIDENTIALITE.LBP|c52249841b094263897179fa6e486ee1|https://drive.google.com/file/d/1io3hZQTKeAI30YmJX1bKxmcIDr8b6U0s/view
+Niveau de dépendances du collectif|Validé|COL.DEP_LEVEL.LBP|34ce1a18653c8155b62fe20d4a668ba2|https://drive.google.com/file/d/1kilIaKhlAWVBCmgc0UkISFayI4UXXOu-/view
+Niveau de formalisation du collectif|Validé|COL.FORMALITY.LBP|34ce1a18653c8160b574d522bf240d7a|https://drive.google.com/file/d/1ZzVIzwgw7TEQAFC00J3lSllkf06D2T-8/view
+Niveau de processisation de l'action|Validé|SCALE.PROCESSISATION.LBP|4e7e3ef25dab425cb7502b69ba290bbf|https://drive.google.com/file/d/1lItKLxFArRLLXnlS_nBKAIf_guI4xQqH/view
+Niveau de processus|Validé|PROC.NIVEAU.LBP|3ba8fc17f12d4d66ba7ac9f42aa96f02|https://drive.google.com/file/d/1l-_HaHgiW5AkZVnZQsSS9utKl2Q8lQv3/view
+Nécessité de l'action pour la production du jour|Validé|SCALE.NECESSITY_TODAY.LBP|830565e2871f4ee1a6f99149ea78012e|https://drive.google.com/file/d/1gKdwjT0Bt1uoFe2kvCYYvZ0ioavLHerB/view
+Orientation dominante de collectif|Validé|COL.ORIENTATION.LBP|34ce1a18653c81ab91b6d4bb9c9358e2|https://drive.google.com/file/d/1D-jhy2UMwDmjUuXlfSLts8ozcPTeZA2q/view
+Origine de l'événement|Validé|EVT.ORIGIN.LBP|34ce1a18653c8107b134e4d80a416046|https://drive.google.com/file/d/1ArKiP2xp4YwpILLJQXe5MfDqoWOdeTXC/view
+PESTEL (facteurs d'environnement externe)|Validé|ENV.PESTEL.LBP|f84d064c08e34b2e924feb2a60fa1624|https://drive.google.com/file/d/1R_b9lT9cjdbk8TU3LIHxl8_Nly4Jk5_d/view
+Phase d'initiative organisationnelle|Validé|INIT.PHASE.LBP|34ce1a18653c810f98e5d65c5dd3f21b|https://drive.google.com/file/d/1qz3XyTNvrOBFLMUGTdDMfoBrAiDTvmEB/view
+Provenance de la source d'information|Validé|SRC.PROVENANCE.LBP|a1567d5a424d473fa00a469db7c5e637|https://drive.google.com/file/d/1wettUio8U_5oWiWgqOiXdN56fstMPl8Y/view
+Précision temporelle de l'événement|Validé|EVT.TIME_PRECISION.LBP|34ce1a18653c817097b3f817e9fd78c8|https://drive.google.com/file/d/1jMS1_Z6Ik85yedZ0MneK5SW9s5M57Tba/view
+Périmètre d'application d'un indicateur|Validé|INDIC.SCOPE_APPLI.LBP|87219ab9fb424c77a8ec12976c750158|https://drive.google.com/file/d/1cfjFFgp5eoOZ2RM1uJ52rjQEiFve-F-p/view
+Registre du signal (Journal des signaux)|Validé|SIG.REGISTRE.LBP|1b821083e43e4b018419068f06174f1c|https://drive.google.com/file/d/1JYO3VZK7dySizheCOhYKFyqZMDeRTbHV/view
+Responsable principal (Mission Ops)|Validé|OPS.RESPONSIBLE_MAIN.LBP|e2a942888c8a4c8abcbbf885d8634d88|https://drive.google.com/file/d/1M8VvKUaC6ymx0pF7VL4fHJJfIYUG3uxZ/view
+Récurrence de l'action|Validé|SCALE.RECURRENCE.LBP|5f77cdf6a6064468b1adbe40c59bbcb3|https://drive.google.com/file/d/11vE7-3F7t8UogGOHa9205IXBYShHhHJg/view
+Rôle architectural des prompts (LBP)|Validé|PROMPT.ARCH_ROLE.LBP|56abb7b55da84027b52969b3256c59dd|https://drive.google.com/file/d/1DAED2h_fdN-XAZ-JjJ27YpOZGnKjt6Fr/view
+Rôle relationnel vis-à-vis de l'organisation focale|Validé|STAKEHOLDER.ROLE.LBP|18d258cb51fb4bf0b3adb3941638a0c9|https://drive.google.com/file/d/1M7kJ6zIaPVRiCdIgWc14oyqitEiJ2wHX/view
+Rôle temporel d'un indicateur (leading / lagging)|Validé|INDIC.TIME_ROLE.LBP|34de1a18653c8112834ee3b59afc97fb|https://drive.google.com/file/d/1rniCFy4W72SVJDxeDGo9h1YB6E_B_NvR/view
+Scope d'interaction|Validé|SCALE.SCOPE.LBP|da25b42e5ff14035a3bcbcf4e39e57ba|https://drive.google.com/file/d/1BUzRg1wGIraw8-0K6VS8eK-bf7d7lva2/view
+Secteur / domaine d'activité d'organisation|Validé|ORG.SECTEUR.LBP|0d434ad2b8354534adae9c2174f51875|https://drive.google.com/file/d/1jS_snG2spB13fWy9OdL8xDQWqP1nrCej/view
+Soft Skills (individus)|Validé|SKILL.SOFT.LBP|5f2d6cfe69c641abab5c45f3469314bf|https://drive.google.com/file/d/1pJfbgex6fao0cAwSDiYojSe8E4Y7wHFp/view
+Statut d'exécution - Meetings (Mission Ops)|Validé|MTG.EXEC_STATUS.LBP|34de1a18653c8171bb41d0033effbf6d|https://drive.google.com/file/d/1WjObb_2D8qgbzGiLJwd641eMSaCkeUUW/view
+Statut de déploiement des prompts (LBP)|Validé|PROMPT.DEPLOY_STATUS.LBP|9668cc8dcebf41879581e901dabcdb87|https://drive.google.com/file/d/1E6GTs0EPASvO72Y2I-rbAEAXDryoiEZn/view
+Statut de l'objet|Validé|OBJ.STATUT.LBP|6050fc5d5e384cec81ec200ae7027332|https://drive.google.com/file/d/1LbGeq5JCxavhwId_94Cl3YqytIfdjVXr/view
+Statut d'exécution (Mission Ops)|Validé|OPS.STATUS.LBP|dafc22c7f7054d1fb41eb03ae78b16b7|https://drive.google.com/file/d/1-szBVR0Cw4ZtEGFMAhcNo7nCcCpi3Vtl/view
+Statut temporel d'un événement|Validé|EVT.TIME_STATUS.LBP|2831db0fcc0f411891c2f777e60f0620|https://drive.google.com/file/d/1I04T06XY7dEMkeBcAIqWpbXOJVXmlSZ2/view
+Substituabilité / réversibilité de l'actif|Validé|ASSET.SUBSTITUTABILITY.LBP|34ce1a18653c817fa00aef62d3c1ad4f|https://drive.google.com/file/d/1qKMkPp-6btyzswnHtlaz00a-vXzDlvXW/view
+Tempo du collectif — classe|Validé|COL.TEMPO_CLASS.LBP|34ce1a18653c81d1b3a7f1790bcab89f|https://drive.google.com/file/d/1FWv4c4tn7XWDFj-WwVkmS2PSCXP_5SR0/view
+Tempo du collectif — variabilité|Validé|COL.TEMPO_VAR.LBP|34ce1a18653c8160b693e3b9b3aa6c45|https://drive.google.com/file/d/1qCxlSFnMXuivb3ZCo1NhugzLOyZpOr3U/view
+Temporalité de collectif|Validé|COL.TEMPORALITY.LBP|34ce1a18653c816689a2e390d3a94d99|https://drive.google.com/file/d/1ZxAWhcZCX3arZpbpBbeP-GUPcfXTDzYB/view
+Type / sous-type d'actif|Validé|ASSET.SUBTYPE.LBP|34ce1a18653c81788204ea59f9666014|https://drive.google.com/file/d/1fathWqrhU919P301kTgWauXMaNmetzyY/view
+Type / sous-type d'environnement|Validé|ENV.SUBTYPE.LBP|b400674b5e0d4435ab34f2023488bbda|https://drive.google.com/file/d/1YdN_fhrK7EvKLnwXG5H5qq7tXGpwSaxk/view
+Type d'entrée - Actions LBP (Mission Ops)|Validé|OPS.ACTION_ITEM_TYPE.LBP|17788900999144b3a6182a90189b8bdc|https://drive.google.com/file/d/1T5bfomp_53bC_uk4K6fHIL8eOef9zymj/view
+Type d'expression d'un enjeu|Validé|ENJ.EXPRESSION.LBP|7ad70abed6c64aec9d42aaaaea253e8c|https://drive.google.com/file/d/1nzmtj8Ezw9at2r9MVi-ggaHLkYzvfXnn/view
+Type d'individu (relation à l'organisation)|Validé|IND.TYPE.LBP|932e0e8b648b4b11925125e3d7672df6|https://drive.google.com/file/d/1-GLz5OeouYD70Sh_t81jW5H7BjXfNg9j/view
+Type d'initiative organisationnelle|Validé|INIT.TYPE.LBP|34ce1a18653c81b497eeff26d47d01df|https://drive.google.com/file/d/1P_EHvVw2AiVQPmfEv1xtXfI-P7sPZBHl/view
+Type d'émotion (Journal des signaux)|Validé|EMO.TYPE.LBP|52abdd8232bf479fa676104bee11230e|https://drive.google.com/file/d/16GQrHensPa0iyA_cRxmraecAdM2WMbk2/view
+Type de collectif|Validé|COL.TYPE.LBP|34ce1a18653c81a3a415f430600d2584|https://drive.google.com/file/d/1TyHhi-0b_7JnWfRnUh6dkgmdyQ9cj7bL/view
+Type de meeting (Mission Ops)|Validé|MTG.TYPE.LBP|757b142bddff4547997bbbc63316ee0a|https://drive.google.com/file/d/1ZayuRFgpop63PEEyFUo1baMz4jPBSFyu/view
+Type de pratique|Validé|PRA.TYPE.LBP|f302f7cfe1d241588ad0f8c27c1aa827|https://drive.google.com/file/d/1PeMa3VOVhoicCoa6lK39vKYib8xEOyxw/view
+Type de prompt (LBP)|Validé|PROMPT.TYPE.LBP|7c69fdaf09534fe3b507a1cab334cdd9|https://drive.google.com/file/d/1e1NfFM0gRkoS4Ns5GqlzVuGktsWniNLj/view
+Type d'insight|Validé|INS.TYPE.LBP|659dea88baa64a67af242ac60959de50|https://drive.google.com/file/d/1plIFt2-q7MqpKuhdT5iaQhZ2vDbm0knf/view
+Type d'organisation|Validé|ORG.TYPE.LBP|34ce1a18653c819ba7e8f8bc830f8dc5|https://drive.google.com/file/d/1-qLU402iD18rLYS6DjQ5KWZcBJpq3tOL/view
+Type d'événement|Validé|EVT.TYPE.LBP|c82114411c78472a97c761d1da544546|https://drive.google.com/file/d/1DlhxW9hW7lLXzK2VlZ0JUiAujFIxa30E/view
+Unité de mesure d'un indicateur|Validé|INDIC.UNIT.LBP|af15f01425344aaa899b3551ab8769c0|https://drive.google.com/file/d/1DcJhUmmEiWiOrMkJXLKkjB-U2JcduhrA/view
+Volatilité / instabilité de l'environnement|Validé|ENV.VOLATILITY.LBP|34ce1a18653c8178a2d5c8b14f6c0c00|https://drive.google.com/file/d/1mHpRI-zxYsvqf7QfXft6Tt0Vk24skDzq/view
+Échelle de maturité|Validé|SCALE.MATURITY.LBP|c69230587358499081d7732819826607|https://drive.google.com/file/d/1H-vIeb5YooyfDZAkRACVcS8pQ26PaSnh/view
+Échelle de saillance perçue d'un signal|Validé|SCALE.SAILLANCE.LBP|d8345e3053464137a119661d1ca2ea88|https://drive.google.com/file/d/1ZSlqKkDcger2AhltZz8VfsoGhlA7fO_G/view

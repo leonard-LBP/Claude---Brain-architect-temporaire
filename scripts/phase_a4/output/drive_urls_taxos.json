@@ -1,0 +1,410 @@
+{
+  "ACT.CONSOLIDATION_TARGET.md": {
+    "drive_id": "1RiZlKJWuWl5vyiEgTHoWO7SNRYizwj95",
+    "url": "https://drive.google.com/file/d/1RiZlKJWuWl5vyiEgTHoWO7SNRYizwj95/view"
+  },
+  "ACT.IMPACT_DOMAIN.md": {
+    "drive_id": "1f7CZ-V-GvnmHXHKDHmF1f2s-4XACkH9m",
+    "url": "https://drive.google.com/file/d/1f7CZ-V-GvnmHXHKDHmF1f2s-4XACkH9m/view"
+  },
+  "ACT.INTENT.md": {
+    "drive_id": "1C-16y-75VTwy2Ie76VU1tpundgoONLRy",
+    "url": "https://drive.google.com/file/d/1C-16y-75VTwy2Ie76VU1tpundgoONLRy/view"
+  },
+  "AGENT.FAMILY.md": {
+    "drive_id": "1pdNn91CQlfNrbgrQYmL1oPqAwoAHuWkb",
+    "url": "https://drive.google.com/file/d/1pdNn91CQlfNrbgrQYmL1oPqAwoAHuWkb/view"
+  },
+  "ASSET.LIFECYCLE.md": {
+    "drive_id": "1ID10vN47HP2OGAt39M9d53wNckq18u0l",
+    "url": "https://drive.google.com/file/d/1ID10vN47HP2OGAt39M9d53wNckq18u0l/view"
+  },
+  "ASSET.PROVENANCE.md": {
+    "drive_id": "1potMaBmjqjyD20aII-UJM19CFtREC8TH",
+    "url": "https://drive.google.com/file/d/1potMaBmjqjyD20aII-UJM19CFtREC8TH/view"
+  },
+  "ASSET.SUBSTITUTABILITY.md": {
+    "drive_id": "1gf-HMoVLRGF9KPBxnUK85ijbV5Xoptf3",
+    "url": "https://drive.google.com/file/d/1gf-HMoVLRGF9KPBxnUK85ijbV5Xoptf3/view"
+  },
+  "ASSET.SUBTYPE.md": {
+    "drive_id": "1t6bMg3C24xOAkrj8pS4tlEuvnW5Reiwq",
+    "url": "https://drive.google.com/file/d/1t6bMg3C24xOAkrj8pS4tlEuvnW5Reiwq/view"
+  },
+  "BRAIN.LAYER.md": {
+    "drive_id": "1rIwkf8EehmZhy0FqXScVzzZcFSgAi04e",
+    "url": "https://drive.google.com/file/d/1rIwkf8EehmZhy0FqXScVzzZcFSgAi04e/view"
+  },
+  "BRAIN.SUBTYPE.md": {
+    "drive_id": "1m3a0mBFaqimc7p71Xcln9jMWf6OOuW_X",
+    "url": "https://drive.google.com/file/d/1m3a0mBFaqimc7p71Xcln9jMWf6OOuW_X/view"
+  },
+  "BRICK.FAMILY.md": {
+    "drive_id": "1VHh3I1qLw8fkihEfRHapUMMZ00hnNEHL",
+    "url": "https://drive.google.com/file/d/1VHh3I1qLw8fkihEfRHapUMMZ00hnNEHL/view"
+  },
+  "CAP.DISTINCTIVITY.md": {
+    "drive_id": "10Ttm0qWVR9U6a-P7WNqPjvJanUZ7ZYDb",
+    "url": "https://drive.google.com/file/d/10Ttm0qWVR9U6a-P7WNqPjvJanUZ7ZYDb/view"
+  },
+  "CAP.FAMILY.md": {
+    "drive_id": "1W_h5CxUGdZlCb7Kut97Ruc9YJRPunccF",
+    "url": "https://drive.google.com/file/d/1W_h5CxUGdZlCb7Kut97Ruc9YJRPunccF/view"
+  },
+  "CAP.NATURE.md": {
+    "drive_id": "19TeGMjw-j48mzU5IT7mmAPBcpBmySjAf",
+    "url": "https://drive.google.com/file/d/19TeGMjw-j48mzU5IT7mmAPBcpBmySjAf/view"
+  },
+  "COL.DEP_LEVEL.md": {
+    "drive_id": "1xiViubns8g_-GBRBAYhqUmV8Bd_eerQB",
+    "url": "https://drive.google.com/file/d/1xiViubns8g_-GBRBAYhqUmV8Bd_eerQB/view"
+  },
+  "COL.FORMALITY.md": {
+    "drive_id": "1DVZmRYEDnNe9tGiNhZ0oICK0voGeZ_8b",
+    "url": "https://drive.google.com/file/d/1DVZmRYEDnNe9tGiNhZ0oICK0voGeZ_8b/view"
+  },
+  "COL.ORIENTATION.md": {
+    "drive_id": "1LqKv6qU1Vf3NpAkDvWecZLoS6qA6Oe2l",
+    "url": "https://drive.google.com/file/d/1LqKv6qU1Vf3NpAkDvWecZLoS6qA6Oe2l/view"
+  },
+  "COL.TEMPORALITY.md": {
+    "drive_id": "1kpJAvMCSkRXaanmOrn_JXDU5Cz-HXgZU",
+    "url": "https://drive.google.com/file/d/1kpJAvMCSkRXaanmOrn_JXDU5Cz-HXgZU/view"
+  },
+  "COL.TEMPO_CLASS.md": {
+    "drive_id": "15LuW3EY8u0rL8sbPm4dpCdEjfFpmx1ot",
+    "url": "https://drive.google.com/file/d/15LuW3EY8u0rL8sbPm4dpCdEjfFpmx1ot/view"
+  },
+  "COL.TEMPO_VAR.md": {
+    "drive_id": "1xFVYAI4xK0j0ccqlp51G3usxAUvznpNa",
+    "url": "https://drive.google.com/file/d/1xFVYAI4xK0j0ccqlp51G3usxAUvznpNa/view"
+  },
+  "COL.TYPE.md": {
+    "drive_id": "1cb2WE_vgzcboyCyuVEhSKyb3FZE-uIVb",
+    "url": "https://drive.google.com/file/d/1cb2WE_vgzcboyCyuVEhSKyb3FZE-uIVb/view"
+  },
+  "DBMAN.SCOPE.md": {
+    "drive_id": "1fYKjDWnqo_OY6ugbBKiUV_45J-AxN0zz",
+    "url": "https://drive.google.com/file/d/1fYKjDWnqo_OY6ugbBKiUV_45J-AxN0zz/view"
+  },
+  "DOC.TYPE.md": {
+    "drive_id": "1KYJu6R5YW-bNPBFCWU_dM_CcDt5Fvw4V",
+    "url": "https://drive.google.com/file/d/1KYJu6R5YW-bNPBFCWU_dM_CcDt5Fvw4V/view"
+  },
+  "EMO.TYPE.md": {
+    "drive_id": "1fMEMoOany5z68YBJNkarh3Y9rF2ZaChl",
+    "url": "https://drive.google.com/file/d/1fMEMoOany5z68YBJNkarh3Y9rF2ZaChl/view"
+  },
+  "ENJ.DOMAIN.md": {
+    "drive_id": "1DJeQ_LUEnVRCLK2oOK_3kM72F_iUm_2a",
+    "url": "https://drive.google.com/file/d/1DJeQ_LUEnVRCLK2oOK_3kM72F_iUm_2a/view"
+  },
+  "ENJ.EXPRESSION.md": {
+    "drive_id": "1voU6_CTgXmb77ffz_L0eaSK7pr56LeXl",
+    "url": "https://drive.google.com/file/d/1voU6_CTgXmb77ffz_L0eaSK7pr56LeXl/view"
+  },
+  "ENJ.HORIZON.md": {
+    "drive_id": "1dwD_xuIoMbUMGZxcG5BIFfFH7rcPMb2l",
+    "url": "https://drive.google.com/file/d/1dwD_xuIoMbUMGZxcG5BIFfFH7rcPMb2l/view"
+  },
+  "ENV.CONTROLLABILITY.md": {
+    "drive_id": "1ovgbrvX14_GS_bxgjSHHU7YbYbyuCvmg",
+    "url": "https://drive.google.com/file/d/1ovgbrvX14_GS_bxgjSHHU7YbYbyuCvmg/view"
+  },
+  "ENV.PESTEL.md": {
+    "drive_id": "1PV0JUfDmxGyS4NjPwiHFRt3wt6BLNe14",
+    "url": "https://drive.google.com/file/d/1PV0JUfDmxGyS4NjPwiHFRt3wt6BLNe14/view"
+  },
+  "ENV.SUBTYPE.md": {
+    "drive_id": "1HbbRYKI5EnyygzXlIRougaW2a2Y87x4m",
+    "url": "https://drive.google.com/file/d/1HbbRYKI5EnyygzXlIRougaW2a2Y87x4m/view"
+  },
+  "ENV.VOLATILITY.md": {
+    "drive_id": "1JgKSjhlzFWt6OxkOPt4xXynBeCisoXwv",
+    "url": "https://drive.google.com/file/d/1JgKSjhlzFWt6OxkOPt4xXynBeCisoXwv/view"
+  },
+  "EVT.ORIGIN.md": {
+    "drive_id": "1LspU6yLe0Z-CzjrUaYvnuHBx8frGortn",
+    "url": "https://drive.google.com/file/d/1LspU6yLe0Z-CzjrUaYvnuHBx8frGortn/view"
+  },
+  "EVT.RECURRENCE_CLASS.md": {
+    "drive_id": "1HVUkNyb0y9_2UA8-Wk5GETE16C448bmg",
+    "url": "https://drive.google.com/file/d/1HVUkNyb0y9_2UA8-Wk5GETE16C448bmg/view"
+  },
+  "EVT.TIME_GRAIN.md": {
+    "drive_id": "1cpOO2YsAqXzFp42xAYCIbN4CZWuvarrl",
+    "url": "https://drive.google.com/file/d/1cpOO2YsAqXzFp42xAYCIbN4CZWuvarrl/view"
+  },
+  "EVT.TIME_PRECISION.md": {
+    "drive_id": "1QXnWEwC8BvG0u5t8FbqRGc24j_Frbv8Z",
+    "url": "https://drive.google.com/file/d/1QXnWEwC8BvG0u5t8FbqRGc24j_Frbv8Z/view"
+  },
+  "EVT.TIME_STATUS.md": {
+    "drive_id": "1lHk9faK9GpYiAQQ8GZ84UnochcPR6HAV",
+    "url": "https://drive.google.com/file/d/1lHk9faK9GpYiAQQ8GZ84UnochcPR6HAV/view"
+  },
+  "EVT.TYPE.md": {
+    "drive_id": "1tBmeIaZvtabLsHuWvuoD6ws04QjwhNK0",
+    "url": "https://drive.google.com/file/d/1tBmeIaZvtabLsHuWvuoD6ws04QjwhNK0/view"
+  },
+  "GLO.CAT.md": {
+    "drive_id": "1ASYpbROIrypUKrMByWCFuhnK5PHCujfL",
+    "url": "https://drive.google.com/file/d/1ASYpbROIrypUKrMByWCFuhnK5PHCujfL/view"
+  },
+  "IMPACT.NATURE.md": {
+    "drive_id": "14x2ePug--ZxB7BwL7qf4GL7sYeewBzVH",
+    "url": "https://drive.google.com/file/d/14x2ePug--ZxB7BwL7qf4GL7sYeewBzVH/view"
+  },
+  "IND.TYPE.md": {
+    "drive_id": "1PlcqIkORFyPrFhFqCb03sFkVECWIyWEj",
+    "url": "https://drive.google.com/file/d/1PlcqIkORFyPrFhFqCb03sFkVECWIyWEj/view"
+  },
+  "INDIC.DOMAIN.md": {
+    "drive_id": "1rdYxx1AQYtUoAVPkmOikkvSJ0fb8l48k",
+    "url": "https://drive.google.com/file/d/1rdYxx1AQYtUoAVPkmOikkvSJ0fb8l48k/view"
+  },
+  "INDIC.FREQ.md": {
+    "drive_id": "1GfsCIWAh3peZkXUkVsLk0ONMX4zTUSqv",
+    "url": "https://drive.google.com/file/d/1GfsCIWAh3peZkXUkVsLk0ONMX4zTUSqv/view"
+  },
+  "INDIC.NATURE.md": {
+    "drive_id": "1jeCHufjEOAtW0cKvnBu-7NZdQkqLdohN",
+    "url": "https://drive.google.com/file/d/1jeCHufjEOAtW0cKvnBu-7NZdQkqLdohN/view"
+  },
+  "INDIC.SCOPE_APPLI.md": {
+    "drive_id": "1o40Rw92NkpCRqyJBToBZShTRvcX5v7Zg",
+    "url": "https://drive.google.com/file/d/1o40Rw92NkpCRqyJBToBZShTRvcX5v7Zg/view"
+  },
+  "INDIC.TIME_ROLE.md": {
+    "drive_id": "1oeVriyDcyJzmSJvp-XHviCM7Ql_A7kwC",
+    "url": "https://drive.google.com/file/d/1oeVriyDcyJzmSJvp-XHviCM7Ql_A7kwC/view"
+  },
+  "INDIC.UNIT.md": {
+    "drive_id": "14Wgmoj7hbrbdWIqA6A0PnyiO2d7ggYVm",
+    "url": "https://drive.google.com/file/d/14Wgmoj7hbrbdWIqA6A0PnyiO2d7ggYVm/view"
+  },
+  "INIT.DRIVER.md": {
+    "drive_id": "1u1cN_LqVSQht7MZdEEIRiIzjhFl5TY2x",
+    "url": "https://drive.google.com/file/d/1u1cN_LqVSQht7MZdEEIRiIzjhFl5TY2x/view"
+  },
+  "INIT.PHASE.md": {
+    "drive_id": "1fn3n38LrNyINZuGttEOaS5NOC7vXcgmy",
+    "url": "https://drive.google.com/file/d/1fn3n38LrNyINZuGttEOaS5NOC7vXcgmy/view"
+  },
+  "INIT.TYPE.md": {
+    "drive_id": "1o3ERjp2fJ_VWxqaiUZyhg84qrC0y4CPm",
+    "url": "https://drive.google.com/file/d/1o3ERjp2fJ_VWxqaiUZyhg84qrC0y4CPm/view"
+  },
+  "INS.TYPE.md": {
+    "drive_id": "1fosVPHzxXdGhOjUMMcZo5OXAQfGhgD-h",
+    "url": "https://drive.google.com/file/d/1fosVPHzxXdGhOjUMMcZo5OXAQfGhgD-h/view"
+  },
+  "JOB.COVERAGE.md": {
+    "drive_id": "1FuF6Su7wzM4WzXNPiRXtUTcYZiXq53l-",
+    "url": "https://drive.google.com/file/d/1FuF6Su7wzM4WzXNPiRXtUTcYZiXq53l-/view"
+  },
+  "JOB.FAMILLE.md": {
+    "drive_id": "1d7H428wzFJj7ckodLfTSgJxkXb1MtS0B",
+    "url": "https://drive.google.com/file/d/1d7H428wzFJj7ckodLfTSgJxkXb1MtS0B/view"
+  },
+  "JOB.SENIORITE.md": {
+    "drive_id": "1eCMC-LieVQ8WRgNw2MlCI8oeHpWpgEPg",
+    "url": "https://drive.google.com/file/d/1eCMC-LieVQ8WRgNw2MlCI8oeHpWpgEPg/view"
+  },
+  "LGBLK.FAMILY.md": {
+    "drive_id": "1ZLkrZ0OU9kUf9wFc9PsIOQKXuGYYSuVe",
+    "url": "https://drive.google.com/file/d/1ZLkrZ0OU9kUf9wFc9PsIOQKXuGYYSuVe/view"
+  },
+  "MET.FAMILY.md": {
+    "drive_id": "1ntwsSSzaf1GcMybvMWzzr14i5NG88d4O",
+    "url": "https://drive.google.com/file/d/1ntwsSSzaf1GcMybvMWzzr14i5NG88d4O/view"
+  },
+  "META.FAMILY.md": {
+    "drive_id": "14iOhJB_Ch2lKIDKbN-uteji0f76PiIG0",
+    "url": "https://drive.google.com/file/d/14iOhJB_Ch2lKIDKbN-uteji0f76PiIG0/view"
+  },
+  "MTG.EXEC_STATUS.md": {
+    "drive_id": "1ZblPgvLjTAgATBQBRmSw5zu6dV0krRUH",
+    "url": "https://drive.google.com/file/d/1ZblPgvLjTAgATBQBRmSw5zu6dV0krRUH/view"
+  },
+  "MTG.FORMAT.md": {
+    "drive_id": "1U11Mxm5KGtc3NHuBm0dYGmchJN-TONlQ",
+    "url": "https://drive.google.com/file/d/1U11Mxm5KGtc3NHuBm0dYGmchJN-TONlQ/view"
+  },
+  "MTG.TYPE.md": {
+    "drive_id": "1qjNND_-h7IK3X2PQXTws4wOTAVQiuSc7",
+    "url": "https://drive.google.com/file/d/1qjNND_-h7IK3X2PQXTws4wOTAVQiuSc7/view"
+  },
+  "OBJ.CONFIDENTIALITE.md": {
+    "drive_id": "1g7Lnie9lKbpl9qW2vHwjd7cwLoq6izTp",
+    "url": "https://drive.google.com/file/d/1g7Lnie9lKbpl9qW2vHwjd7cwLoq6izTp/view"
+  },
+  "OBJ.STATUT.md": {
+    "drive_id": "1YwrjwMyi55M9wAZ0zsSvlVO5Wf64eW2-",
+    "url": "https://drive.google.com/file/d/1YwrjwMyi55M9wAZ0zsSvlVO5Wf64eW2-/view"
+  },
+  "OPS.ACTION_FAMILY.md": {
+    "drive_id": "1syswiCGnku5dHZvYUIi7YTO1zhLU1eHW",
+    "url": "https://drive.google.com/file/d/1syswiCGnku5dHZvYUIi7YTO1zhLU1eHW/view"
+  },
+  "OPS.ACTION_ITEM_TYPE.md": {
+    "drive_id": "1HZfk50JPylYYwqV1zaHAVq-J-W2DRGPm",
+    "url": "https://drive.google.com/file/d/1HZfk50JPylYYwqV1zaHAVq-J-W2DRGPm/view"
+  },
+  "OPS.RESPONSIBLE_MAIN.md": {
+    "drive_id": "1cWL42IB7pxGSykB4ODg4WNTd71nVsu-E",
+    "url": "https://drive.google.com/file/d/1cWL42IB7pxGSykB4ODg4WNTd71nVsu-E/view"
+  },
+  "OPS.STATUS.md": {
+    "drive_id": "15YOYi8GHcYP36dErLjr8PlnzvfWnQt1X",
+    "url": "https://drive.google.com/file/d/15YOYi8GHcYP36dErLjr8PlnzvfWnQt1X/view"
+  },
+  "ORG.CONTEXTE.md": {
+    "drive_id": "1B-wWmpSy0jSFeNRQw6cHYKlJCvl8ZdwG",
+    "url": "https://drive.google.com/file/d/1B-wWmpSy0jSFeNRQw6cHYKlJCvl8ZdwG/view"
+  },
+  "ORG.JURISDICTION.md": {
+    "drive_id": "1BCqY05XlPkjj4ILGi878UgCZ5hbjCV74",
+    "url": "https://drive.google.com/file/d/1BCqY05XlPkjj4ILGi878UgCZ5hbjCV74/view"
+  },
+  "ORG.ROLE.md": {
+    "drive_id": "1iIBKRLKviJkxfmWS0eipN5AuZ4ojRsU3",
+    "url": "https://drive.google.com/file/d/1iIBKRLKviJkxfmWS0eipN5AuZ4ojRsU3/view"
+  },
+  "ORG.SECTEUR.md": {
+    "drive_id": "1SenH86YxkCtojy3q8ZrMlbFRwBIlyrZf",
+    "url": "https://drive.google.com/file/d/1SenH86YxkCtojy3q8ZrMlbFRwBIlyrZf/view"
+  },
+  "ORG.TYPE.md": {
+    "drive_id": "18N_t05kS_kHbw1qX3PTW4T7grqE4WhVL",
+    "url": "https://drive.google.com/file/d/18N_t05kS_kHbw1qX3PTW4T7grqE4WhVL/view"
+  },
+  "ORG5D.DIM.md": {
+    "drive_id": "1YhnzWt45Qdm00wo-1NLOCK-Id81yxA2A",
+    "url": "https://drive.google.com/file/d/1YhnzWt45Qdm00wo-1NLOCK-Id81yxA2A/view"
+  },
+  "ORG_REL.TYPE.md": {
+    "drive_id": "1KkcEYYV4JfSuQDhdGXMzPTSfiBdK4EZu",
+    "url": "https://drive.google.com/file/d/1KkcEYYV4JfSuQDhdGXMzPTSfiBdK4EZu/view"
+  },
+  "OUT.FAMILY.md": {
+    "drive_id": "1EafeP4aZSY2Ekj8m2SSxPYxNNhFuNwCu",
+    "url": "https://drive.google.com/file/d/1EafeP4aZSY2Ekj8m2SSxPYxNNhFuNwCu/view"
+  },
+  "PLATFORM.ENV.md": {
+    "drive_id": "10vst9qMhGF4yKWtcOiHPwybgXulDgNJ-",
+    "url": "https://drive.google.com/file/d/10vst9qMhGF4yKWtcOiHPwybgXulDgNJ-/view"
+  },
+  "PRA.TYPE.md": {
+    "drive_id": "1rwVRCGiJ-9-X0HrnLPirkJpLAPnHi4yn",
+    "url": "https://drive.google.com/file/d/1rwVRCGiJ-9-X0HrnLPirkJpLAPnHi4yn/view"
+  },
+  "PROC.NIVEAU.md": {
+    "drive_id": "1EC3Gnrd8NdeB9NRPYnh8Il5mXL2clCf8",
+    "url": "https://drive.google.com/file/d/1EC3Gnrd8NdeB9NRPYnh8Il5mXL2clCf8/view"
+  },
+  "PROMPT.ARCH_ROLE.md": {
+    "drive_id": "1Be88TKcLJ2Bv5gnSZ0q9qEjBcX8CmUqm",
+    "url": "https://drive.google.com/file/d/1Be88TKcLJ2Bv5gnSZ0q9qEjBcX8CmUqm/view"
+  },
+  "PROMPT.DEPLOY_STATUS.md": {
+    "drive_id": "1K39ZMOqJ_pgf_aSoAoK5IAXM3CdGWRzJ",
+    "url": "https://drive.google.com/file/d/1K39ZMOqJ_pgf_aSoAoK5IAXM3CdGWRzJ/view"
+  },
+  "PROMPT.TYPE.md": {
+    "drive_id": "13t0cfKvjTvF2kzfbQyUMsZV1NyxKBLHT",
+    "url": "https://drive.google.com/file/d/13t0cfKvjTvF2kzfbQyUMsZV1NyxKBLHT/view"
+  },
+  "SCALE.ALIGNMENT.md": {
+    "drive_id": "1KyEmPFASmknmgts06zWRXnE9LXK429NX",
+    "url": "https://drive.google.com/file/d/1KyEmPFASmknmgts06zWRXnE9LXK429NX/view"
+  },
+  "SCALE.COLLAB_INTENSITY.md": {
+    "drive_id": "1HSIiEt-xlZ3hs7DeFIv_c57oTJhOjHOQ",
+    "url": "https://drive.google.com/file/d/1HSIiEt-xlZ3hs7DeFIv_c57oTJhOjHOQ/view"
+  },
+  "SCALE.CONFIDENCE.md": {
+    "drive_id": "1atcvOd9wkpL1DpEHHlK72FxCVMFMKkoF",
+    "url": "https://drive.google.com/file/d/1atcvOd9wkpL1DpEHHlK72FxCVMFMKkoF/view"
+  },
+  "SCALE.COVERAGE.md": {
+    "drive_id": "1SJv8TsVMcZUbGm457u8smpidat7OIrUI",
+    "url": "https://drive.google.com/file/d/1SJv8TsVMcZUbGm457u8smpidat7OIrUI/view"
+  },
+  "SCALE.CRITICALITY.md": {
+    "drive_id": "1wpqY4tTz1IiJ9P4kKLM479OT9HGFNztt",
+    "url": "https://drive.google.com/file/d/1wpqY4tTz1IiJ9P4kKLM479OT9HGFNztt/view"
+  },
+  "SCALE.GRANULARITY.md": {
+    "drive_id": "1IdDEMA7EGTeYgOrng771gYYYvllKsr6E",
+    "url": "https://drive.google.com/file/d/1IdDEMA7EGTeYgOrng771gYYYvllKsr6E/view"
+  },
+  "SCALE.IMPACT_INTENSITY.md": {
+    "drive_id": "1UDWuNWMkucWd0FxDsdoqErd2RjDasW6B",
+    "url": "https://drive.google.com/file/d/1UDWuNWMkucWd0FxDsdoqErd2RjDasW6B/view"
+  },
+  "SCALE.INFLUENCE.md": {
+    "drive_id": "1DdRV2wB1uMJxgQL33jTBacssMWu8BG0a",
+    "url": "https://drive.google.com/file/d/1DdRV2wB1uMJxgQL33jTBacssMWu8BG0a/view"
+  },
+  "SCALE.MATURITY.md": {
+    "drive_id": "1IkYtGsDM-4kZ5BK56068QOtxjJc6UaSY",
+    "url": "https://drive.google.com/file/d/1IkYtGsDM-4kZ5BK56068QOtxjJc6UaSY/view"
+  },
+  "SCALE.NECESSITY_TODAY.md": {
+    "drive_id": "1NQSv-0WSTJvY0OiyRi_lHW9S_zbxJ0kH",
+    "url": "https://drive.google.com/file/d/1NQSv-0WSTJvY0OiyRi_lHW9S_zbxJ0kH/view"
+  },
+  "SCALE.PROCESSISATION.md": {
+    "drive_id": "1uZXMGHeqhM5dxiXP2gX-SA9Is23K9xhI",
+    "url": "https://drive.google.com/file/d/1uZXMGHeqhM5dxiXP2gX-SA9Is23K9xhI/view"
+  },
+  "SCALE.RECURRENCE.md": {
+    "drive_id": "1OiH0_W7kNV7dqOjmyajoeXx4VpoQquOj",
+    "url": "https://drive.google.com/file/d/1OiH0_W7kNV7dqOjmyajoeXx4VpoQquOj/view"
+  },
+  "SCALE.SAILLANCE.md": {
+    "drive_id": "1q68TWl1eJNrflY3_bksXm4pewfvDAibO",
+    "url": "https://drive.google.com/file/d/1q68TWl1eJNrflY3_bksXm4pewfvDAibO/view"
+  },
+  "SCALE.SCOPE.md": {
+    "drive_id": "1yUve7RHui9AfD9aLILcKo2NIlUSLI2om",
+    "url": "https://drive.google.com/file/d/1yUve7RHui9AfD9aLILcKo2NIlUSLI2om/view"
+  },
+  "SCALE.VALUE_HORIZON.md": {
+    "drive_id": "1qLgcj6ATJcHfTiXCI4DYKfRwmG1q_qju",
+    "url": "https://drive.google.com/file/d/1qLgcj6ATJcHfTiXCI4DYKfRwmG1q_qju/view"
+  },
+  "SIG.NATURE.md": {
+    "drive_id": "1OTt42wOE5p1vAOFHkP-f2ogYTFgpGggk",
+    "url": "https://drive.google.com/file/d/1OTt42wOE5p1vAOFHkP-f2ogYTFgpGggk/view"
+  },
+  "SIG.REGISTRE.md": {
+    "drive_id": "1OINiI-XRUjuNYlFZzed6WHD-qv1_utGd",
+    "url": "https://drive.google.com/file/d/1OINiI-XRUjuNYlFZzed6WHD-qv1_utGd/view"
+  },
+  "SKILL.HARD.md": {
+    "drive_id": "1JmFB0LC-jB2KcBisvvV-caonZYZ788zl",
+    "url": "https://drive.google.com/file/d/1JmFB0LC-jB2KcBisvvV-caonZYZ788zl/view"
+  },
+  "SKILL.SOFT.md": {
+    "drive_id": "1SwtcpWqmrDfQRLVvK2y1TTGsBnDbSI5j",
+    "url": "https://drive.google.com/file/d/1SwtcpWqmrDfQRLVvK2y1TTGsBnDbSI5j/view"
+  },
+  "SRC.EXTRACT_TARGET.md": {
+    "drive_id": "1eGuyUSG0GUOot78u_dqH3UyU9acEVgC7",
+    "url": "https://drive.google.com/file/d/1eGuyUSG0GUOot78u_dqH3UyU9acEVgC7/view"
+  },
+  "SRC.FORMAT.md": {
+    "drive_id": "1Nf5E1b5TCegqKijooRBHp4uvaUe2o3hF",
+    "url": "https://drive.google.com/file/d/1Nf5E1b5TCegqKijooRBHp4uvaUe2o3hF/view"
+  },
+  "SRC.PROVENANCE.md": {
+    "drive_id": "1pg2YbMM-QD0QAd5RKIHJ0ySj_4TgLEER",
+    "url": "https://drive.google.com/file/d/1pg2YbMM-QD0QAd5RKIHJ0ySj_4TgLEER/view"
+  },
+  "STAKEHOLDER.ROLE.md": {
+    "drive_id": "1BLaUx3S9UmMY59wz1Lzj2qKJrbNSOUL1",
+    "url": "https://drive.google.com/file/d/1BLaUx3S9UmMY59wz1Lzj2qKJrbNSOUL1/view"
+  }
+}
