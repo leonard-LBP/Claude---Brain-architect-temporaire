@@ -437,9 +437,23 @@
     "file": "Digital Twin\\Manuel de BDD - Pratiques organisationnelles.md",
     "scope": "Twin",
     "title": "Manuel de BDD - Pratiques organisationnelles",
-    "section": null,
-    "codes": [],
-    "n_codes": 0
+    "section": 6,
+    "codes": [
+      "ACT.IMPACT_DOMAIN",
+      "ACT.INTENT",
+      "ASSET.SUBTYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.COLLAB_INTENSITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE",
+      "SCALE.VALUE_HORIZON"
+    ],
+    "n_codes": 13
   },
   {
     "file": "Digital Twin\\Manuel de BDD - Principes organisationnels sandbox.md",
