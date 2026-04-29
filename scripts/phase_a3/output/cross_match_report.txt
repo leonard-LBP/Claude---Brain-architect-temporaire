@@ -1,0 +1,42 @@
+Drive only (no Glossaire match):  24
+   - CPT_ASSET_ACTIF  [Concept - Actif.md]
+   - CPT_BRAIN_LOGIC_BLOCK  [Concept - Logic block.md]
+   - CPT_DIAG_ENJEU  [Concept - Enjeu.md]
+   - CPT_DYN_INITIATIVE_ORGANISATIONNELLE  [Concept - Initiative organisationnelle.md]
+   - CPT_GOV_MANUEL_BDD  [Concept - Manuel de BDD.md]
+   - CPT_GOV_TAXONOMIE  [Concept - Taxonomie.md]
+   - CPT_GUIDANCE_ECRITURE_LECTURE  [Concept - Instructions d’écriture et clefs de lecture.md]
+   - CPT_GUIDANCE_PROMPT_MAITRE  [Concept - Prompt maître.md]
+   - CPT_GUIDANCE_SYSTEM_PROMPT  [Concept - System prompt.md]
+   - CPT_MOD_MODULATEUR  [Concept - Modulateur.md]
+   - CPT_MOTOR_TEMPLATE_BRICK  [Concept - Template de brick.md]
+   - CPT_PROC_INPUT_OUTPUT_PROCESSUS  [Concept - Input - Output (Processus).md]
+   - CPT_REL_RELATION_INTER_ORGANISATIONS  [Concept - Relation inter-organisations.md]
+   - CPT_STRUCT_COLLECTIF  [Concept - Collectif.md]
+   - CPT_STRUCT_POSTE  [Concept - Poste.md]
+   - CPT_SYS_APPROCHE_SYSTEMIQUE  [Concept - Approche systémique.md]
+   - CPT_SYS_TENSION_CREATRICE  [Concept - Tension créatrice.md]
+   - CPT_TIME_TEMPO  [Concept - Tempo (LBP).md]
+   - CPT_TWIN_DECOUVERTE_OBJETS  [Concept - Découverte d’objets.md]
+   - CPT_TWIN_DEDOUBLONNAGE  [Concept - Dédoublonnage.md]
+   - CPT_TWIN_REFACTOR  [Concept - Refactor.md]
+   - CPT_TWIN_RELATIONS_MAKER  [Concept - Relations Maker.md]
+   - CPT_UNCERT_UNKNOWN_UNKNOWN  [Concept - Unknown unknown.md]
+   - CPT_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES  [Concept - Arbre à capacités organisationnelles.md]
+
+Glossaire only (orphan vs Drive): 2
+   - CPT_ASSET_RESSOURCE  (raw: CPT.ASSET.LBP.RESSOURCE)  "Ressource"
+   - CPT_STRUCT_ROLE_OFFICIEL  (raw: CPT.STRUCT.LBP.ROLE_OFFICIEL)  "Rôle officiel"
+
+Both (matched):                   48
+
+Glossaire entries WITHOUT code:   50 (placeholders "à créer")
+   - "Action"
+   - "Activité (Process)"
+   - "Apprentissage Collectif"
+   - "Apprentissage Organisationnel"
+   - "Balanced Score Card (BSC)"
+   - "Catalyseur"
+   - "Causalité Circulaire"
+   - "Chaîne de valeur"
+   ... and 42 more

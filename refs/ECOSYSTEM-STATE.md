@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase A2 (BDD Templates de bricks) close.** 20/20 entrées Notion (correspondant aux 20 templates Drive) alignées sur le canon : Code unique migré de `TPL-BRICK_*` (ancien) vers `TPL_BRK_*` (R-054), Version du template renseignée depuis le frontmatter Markdown (1.0/1.1/1.2). 1 renommage : `Profil - UO & Individus → Profil - Collectifs & Individus` (UO archivé en Phase 4). 5 entrées Notion vides V1 conservées intactes (convention LBP : entrée vide = à créer).
+> Dernière mise à jour : 29-04-2026 — **Phase A3 (BDD Glossaire LBP + BDD Registre des notes de concept) close (sync minimal structurel).** 47/72 concepts Markdown propagés sur Notion via 84 updates (sync minimal R-054 — `Code unique`, `Nom canonique`, `Aliases`, `Mots clés`, `Type de concept`, `Version du template`, `Lien note concept`). Rich-text préservé (Définition, Valeur ajoutée, Règles d'usage, Équivalent langage courant, Notes, Usages IA, Statut, Domaine — tous intacts) conformément doctrine "Notion = vue opératoire enrichie, pas miroir 1:1 du Markdown". 25 concepts Markdown sans entrée Notion → chantier création futur. 5 collisions Glossaire détectées (relations `documente` cassées : 2-4 Registre pointent vers même Glossaire) → repair manuel à programmer.
 
 ## Phase actuelle
 
-**Phase A2 close.** 20/20 templates Drive ↔ Notion alignés structurellement. 5 placeholders Notion sans correspondance Drive laissés intacts (à remplir plus tard, convention « entrée vide = à créer »). Audit narratif Description / Valeur ajoutée / Usages IA jugé non urgent : 18/20 entrées riches déjà conformes. Cumul A1+A2 : **63 entrées Notion mises à jour structurellement** (43 manuels + 20 templates) + 5 corrections d'anomalies. Prochaine étape : **Phase A3** (BDD Glossaire LBP + BDD Registre des notes de concept) ou **Phase A4** (Taxonomies, 102 taxos) selon arbitrage.
+**Phase A3 close (sync minimal).** 47/72 concepts couverts (3 calibration + 35 masse + 9 sub-phase e). 84 updates Notion exécutés sans erreur (39 Glossaire + 45 Registre). Cumul A1+A2+A3 : **147 entrées Notion mises à jour structurellement** (43 manuels + 20 templates + 84 entrées Glossaire/Registre). Captures règles : C-013 (push systématique), C-014 (apostrophes ASCII MCP Notion), C-015 (vocabulaire « notes de concept » vs « notes Drive »). Helper `scripts/lib/notion_keys.py` créé. Resolver Drive URLs `scripts/phase_a3/build_drive_url_resolver.py` (DriveFS sqlite) opérationnel. Prochaine étape : **Phase A4** (Taxonomies, 102 taxos) ou **Phase A3.bis** (création des 25 concepts Markdown sans entrée Notion + repair des 5 collisions Glossaire).
 
 ### Phases terminées (chronologie)
 

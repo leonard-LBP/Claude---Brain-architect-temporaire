@@ -1,0 +1,933 @@
+{
+  "updates": [
+    {
+      "file": "Concept - Approche systémique.md",
+      "canonical": "approche systemique",
+      "drive_code": "CPT_SYS_APPROCHE_SYSTEMIQUE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c805f848cf2b930d9764c",
+      "glossaire_url": "https://app.notion.com/p/2f8e1a18653c80058b8bf3e81f654655",
+      "current_code_notion": "CPT.SYS.LBP.APPROCHE_SYSTEMIQUE",
+      "glossaire_props": {
+        "Code unique": "CPT_SYS_APPROCHE_SYSTEMIQUE",
+        "Nom canonique": "Approche systémique",
+        "Aliases": "Pensée systémique; Lecture systémique; System thinking; Approche systémique (organisation)",
+        "Mots clés": "système; interactions; boucles; rétroaction; effets de bord; émergence; multi-causalité; temps; non-linéarité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_SYS_APPROCHE_SYSTEMIQUE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Arbre à capacités organisationnelles.md",
+      "canonical": "arbre a capacites organisationnelles",
+      "drive_code": "CPT_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c805f945dc3f5c012f411",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8098891aefa710f16801",
+      "current_code_notion": "CPT.VIZ.LBP.ARBRE_CAPACITES_ORGANISATIONNELLES",
+      "glossaire_props": {
+        "Code unique": "CPT_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES",
+        "Nom canonique": "Arbre à capacités organisationnelles",
+        "Aliases": "Arbre à capacités; Capability tree; Skill tree organisationnel; Arbre de leviers de capacités",
+        "Mots clés": "visualisation; capacité; graphe; arbre; leviers racine; pratiques; modulateurs; capacités habilitantes; capacités motrices; capacités métier spéciales",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Enjeu.md",
+      "canonical": "enjeu",
+      "drive_code": "CPT_DIAG_ENJEU",
+      "registre_url": "https://app.notion.com/p/30be1a18653c80eca12cdc2eee17d921",
+      "glossaire_url": "https://app.notion.com/p/2f8e1a18653c80ecbb79d00451e1f643",
+      "current_code_notion": "CPT.DIAG.LBP.ENJEU",
+      "glossaire_props": {
+        "Code unique": "CPT_DIAG_ENJEU",
+        "Nom canonique": "Enjeu",
+        "Aliases": "Sujet prioritaire; Point de tension; Opportunité; Risque; Besoin; Irritant",
+        "Mots clés": "constat; besoin; objectif; priorisation; criticité; certitude; horizon; domaine; traçabilité; 5D; PESTEL",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_DIAG_ENJEU",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Environnement.md",
+      "canonical": "environnement",
+      "drive_code": "CPT_CONTEXT_ENVIRONNEMENT",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80198151c819bc9c4eb9",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c805795bcf5ec43344f57",
+      "current_code_notion": "CPT.CONTEXT.LBP.ENVIRONNEMENT",
+      "glossaire_props": {
+        "Code unique": "CPT_CONTEXT_ENVIRONNEMENT",
+        "Nom canonique": "Environnement",
+        "Aliases": "Contexte; Cadre; Écosystème; Milieu; Cadre de travail",
+        "Mots clés": "cadre perçu; conditions d’action; exposition; contraintes; opportunités; risques; micro-contexte; macro-contexte",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_CONTEXT_ENVIRONNEMENT",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Environnements LBP.md",
+      "canonical": "environnements lbp",
+      "drive_code": "CPT_ARCH_ENVIRONNEMENTS",
+      "registre_url": "https://app.notion.com/p/30fe1a18653c80cda76ee62cf3601df3",
+      "glossaire_url": "https://app.notion.com/p/30fe1a18653c809194ccc92e3c9674de",
+      "current_code_notion": "CPT.ARCH.LBP.ENVIRONNEMENTS",
+      "glossaire_props": {
+        "Code unique": "CPT_ARCH_ENVIRONNEMENTS",
+        "Nom canonique": "Environnements LBP",
+        "Aliases": "Domaines LBP; Couches LBP; Espaces LBP; Environnements Core-Motor-DigitalTwin-MissionOps",
+        "Mots clés": "gouvernance; frontières; instanciation; réutilisabilité; maintenance; cohérence; séparation",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_ARCH_ENVIRONNEMENTS",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Gestion de la connaissance.md",
+      "canonical": "gestion de la connaissance",
+      "drive_code": "CPT_KM_GESTION_CONNAISSANCE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80c49239d37028365ec2",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8091ac63f225f1e22549",
+      "current_code_notion": "CPT.KM.LBP.GESTION_CONNAISSANCE",
+      "glossaire_props": {
+        "Code unique": "CPT_KM_GESTION_CONNAISSANCE",
+        "Nom canonique": "Gestion de la connaissance",
+        "Aliases": "Knowledge management; Management des connaissances",
+        "Mots clés": "connaissance; création de valeur; accessibilité; qualité; revue; usage; maintenance; obsolescence; workers",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_KM_GESTION_CONNAISSANCE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Glossaire LBP.md",
+      "canonical": "glossaire lbp",
+      "drive_code": "CPT_GOV_GLOSSAIRE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80ba9903de2b8ff852a2",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8052b1ccc88c4b424181",
+      "current_code_notion": "CPT.GOV.LBP.GLOSSAIRE",
+      "glossaire_props": {
+        "Code unique": "CPT_GOV_GLOSSAIRE",
+        "Nom canonique": "Glossaire LBP",
+        "Aliases": "Lexique LBP; Glossaire canonique LBP; Référentiel sémantique LBP",
+        "Mots clés": "gouvernance; sémantique; cohérence; concepts; définitions; observables; anti-confusions",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_GOV_GLOSSAIRE",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "collision_glossaire"
+      ]
+    },
+    {
+      "file": "Concept - Glossaire spécifique.md",
+      "canonical": "glossaire specifique",
+      "drive_code": "CPT_GOV_GLOSSAIRE_SPECIFIQUE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8085a15ecbbcd34d7285",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8052b1ccc88c4b424181",
+      "current_code_notion": "CPT.GOV.LBP.GLOSSAIRE_SPECIFIQUE",
+      "glossaire_props": {
+        "Code unique": "CPT_GOV_GLOSSAIRE_SPECIFIQUE",
+        "Nom canonique": "Glossaire spécifique",
+        "Aliases": "Glossaire spécifique entreprise; Lexique spécifique; Glossaire client; Glossaire organisationnel",
+        "Mots clés": "langage commun; jargon; acronymes; repères communs; alignement; onboarding; cohérence",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_GOV_GLOSSAIRE_SPECIFIQUE",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "collision_glossaire"
+      ]
+    },
+    {
+      "file": "Concept - Hard skill.md",
+      "canonical": "hard skill",
+      "drive_code": "CPT_SKILL_HARD_SKILL",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80b28db8fca4ed147af1",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8052b1ccc88c4b424181",
+      "current_code_notion": "CPT.SKILL.LBP.HARD_SKILL",
+      "glossaire_props": {
+        "Code unique": "CPT_SKILL_HARD_SKILL",
+        "Nom canonique": "Hard skill",
+        "Aliases": "Compétence technique; Compétence métier technique; Technical skill; Savoir-faire technique",
+        "Mots clés": "technique; enseignable; évaluable; preuve; méthode; outil; norme; reproductibilité; obsolescence; transférabilité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_SKILL_HARD_SKILL",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "collision_glossaire"
+      ]
+    },
+    {
+      "file": "Concept - Horizon temporel.md",
+      "canonical": "horizon temporel",
+      "drive_code": "CPT_TIME_HORIZON_TEMPOREL",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8010a68ee921ee744164",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8052b1ccc88c4b424181",
+      "current_code_notion": "CPT.TIME.LBP.HORIZON_TEMPOREL",
+      "glossaire_props": {
+        "Code unique": "CPT_TIME_HORIZON_TEMPOREL",
+        "Nom canonique": "Horizon temporel",
+        "Aliases": "Horizon; Fenêtre temporelle; Court terme; Moyen terme; Long terme; Échéance (fenêtre)",
+        "Mots clés": "fenêtre; mois; années; court terme; moyen terme; long terme; priorisation; roadmap; projection; alignement",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_TIME_HORIZON_TEMPOREL",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "collision_glossaire"
+      ]
+    },
+    {
+      "file": "Concept - Indicateur.md",
+      "canonical": "indicateur",
+      "drive_code": "CPT_MEASURE_INDICATEUR",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80d3b278cfd5e13714a8",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c804c8459c3f53e93d5fd",
+      "current_code_notion": "CPT.MEASURE.LBP.INDICATEUR",
+      "glossaire_props": {
+        "Code unique": "CPT_MEASURE_INDICATEUR",
+        "Nom canonique": "Indicateur",
+        "Aliases": "Métrique; KPI; KRI; Mesure; Signal quantifié",
+        "Mots clés": "mesure; phénomène; reproductible; comparabilité; pilotage; domaine; unité; fréquence; périmètre; rôle temporel; traçabilité; composite",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_MEASURE_INDICATEUR",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "collision_glossaire"
+      ]
+    },
+    {
+      "file": "Concept - Individu.md",
+      "canonical": "individu",
+      "drive_code": "CPT_TBD_INDIVIDU",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8045a2a2d745025c795a",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c804c8459c3f53e93d5fd",
+      "current_code_notion": "CPT.TBD.LBP.INDIVIDU",
+      "glossaire_props": {
+        "Code unique": "CPT_TBD_INDIVIDU",
+        "Nom canonique": "Individu",
+        "Aliases": "Personne; Acteur humain; Collaborateur; Intervenant; Interlocuteur",
+        "Mots clés": "personne physique; profil; responsabilités; contributions; relations; traçabilité; contexte",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_TBD_INDIVIDU",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Innovation (capacité motrice).md",
+      "canonical": "innovation (capacite motrice)",
+      "drive_code": "CPT_CAP_INNOVATION_MOTRICE",
+      "registre_url": "https://app.notion.com/p/30fe1a18653c80d188e8e9ca7897ca8b",
+      "glossaire_url": "https://app.notion.com/p/30fe1a18653c808bb0d8d7cbae9d033e",
+      "current_code_notion": "CPT.CAP.LBP.INNOVATION_MOTRICE",
+      "glossaire_props": {
+        "Code unique": "CPT_CAP_INNOVATION_MOTRICE",
+        "Nom canonique": "Innovation (capacité motrice)",
+        "Aliases": "Capacité d’innovation; Innovation utile et diffusée; Innovation soutenable (au sens moteur)",
+        "Mots clés": "nouveauté utile; implémentation; diffusion; portefeuille; stop or scale; expérimentation; exploration; exploitation; innovation ordinaire; apprentissage",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_CAP_INNOVATION_MOTRICE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Intelligence collective (capacité motrice).md",
+      "canonical": "intelligence collective (capacite motrice)",
+      "drive_code": "CPT_CAP_INTELLIGENCE_COLLECTIVE_MOTRICE",
+      "registre_url": "https://app.notion.com/p/30fe1a18653c801ca0adf65740331e65",
+      "glossaire_url": "https://app.notion.com/p/30fe1a18653c803b904af7c3334074b4",
+      "current_code_notion": "CPT.CAP.LBP.INTELLIGENCE_COLLECTIVE_MOTRICE",
+      "glossaire_props": {
+        "Code unique": "CPT_CAP_INTELLIGENCE_COLLECTIVE_MOTRICE",
+        "Nom canonique": "Intelligence collective (capacité motrice)",
+        "Aliases": "Intelligence collective; Cognition collective; Capacité de jugement collectif; Coordination cognitive et décisionnelle",
+        "Mots clés": "sensemaking; jugement collectif; décision; coordination transverse; adoption; résolution de problèmes; langage commun; désaccord productif; expertise; interfaces",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_CAP_INTELLIGENCE_COLLECTIVE_MOTRICE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - KPI.md",
+      "canonical": "kpi",
+      "drive_code": "CPT_MEASURE_KPI",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c805c9ebac1ff2b375ac8",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80fdb581e174c8cd1780",
+      "current_code_notion": "CPT.MEASURE.LBP.KPI",
+      "glossaire_props": {
+        "Code unique": "CPT_MEASURE_KPI",
+        "Nom canonique": "KPI",
+        "Aliases": "Key Performance Indicator; Indicateur clé de performance; Indicateur de pilotage",
+        "Mots clés": "indicateur; performance; pilotage; décision; cible; seuil; gouvernance; traçabilité; gaming",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_MEASURE_KPI",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Manuel de BDD.md",
+      "canonical": "manuel de bdd",
+      "drive_code": "CPT_GOV_MANUEL_BDD",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c800b98e5f247d432a537",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80d8837bd874349eec05",
+      "current_code_notion": "CPT.GOV.LBP.MANUEL_BDD",
+      "glossaire_props": {
+        "Code unique": "CPT_GOV_MANUEL_BDD",
+        "Nom canonique": "Manuel de BDD",
+        "Aliases": "Manuel de base de données; Spécification de BDD; Spécification de base; DB manual",
+        "Mots clés": "spécification; modèle de données; gouvernance; cohérence; contraintes; qualité; maintenance",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_GOV_MANUEL_BDD",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Modulateur.md",
+      "canonical": "modulateur",
+      "drive_code": "CPT_MOD_MODULATEUR",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80b68497c66c842a59a5",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8007b6cbf6d2f18def78",
+      "current_code_notion": "CPT.MOD.LBP.MODULATEUR",
+      "glossaire_props": {
+        "Code unique": "CPT_MOD_MODULATEUR",
+        "Nom canonique": "Modulateur",
+        "Aliases": "Condition d’effectivité; Règle du jeu (vécue); Facteur amplificateur/frein; Variable de contexte",
+        "Mots clés": "condition; effectivité; amplificateur; frein; pratique; observables; preuve; levier racine; causalité; diagnostic",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_MOD_MODULATEUR",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Méthode LBP.md",
+      "canonical": "methode lbp",
+      "drive_code": "CPT_METHOD_METHODE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c805da6c5e5ddad626b40",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c803b92f0d8308e2bbcb8",
+      "current_code_notion": "CPT.METHOD.LBP.METHODE",
+      "glossaire_props": {
+        "Code unique": "CPT_METHOD_METHODE",
+        "Nom canonique": "Méthode LBP",
+        "Aliases": "Méthode Little Big Picture; Démarche LBP; Protocole méthodologique LBP; Cadre opératoire LBP",
+        "Mots clés": "méthode; démarche; protocole; inputs génériques; outputs; reproductibilité; gouvernance",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_METHOD_METHODE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - OKR.md",
+      "canonical": "okr",
+      "drive_code": "CPT_PILOT_OKR",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80d4b014e2cb9ed5941a",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80e19a23ee691cfd5a99",
+      "current_code_notion": "CPT.PILOT.LBP.OKR",
+      "glossaire_props": {
+        "Code unique": "CPT_PILOT_OKR",
+        "Nom canonique": "OKR",
+        "Aliases": "Objectives and Key Results; Objectif et résultats clés; Objectif + KRs; Cadre OKR",
+        "Mots clés": "pilotage; alignement; objectif; résultat clé; cycle; mesure; indicateur; traçabilité; priorisation; confiance",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_PILOT_OKR",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Organisation.md",
+      "canonical": "organisation",
+      "drive_code": "CPT_STRUCT_ORGANISATION",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c800bae38f09bb297abd7",
+      "glossaire_url": null,
+      "current_code_notion": "CPT.STRUCT.LBP.ORGANISATION",
+      "glossaire_props": {
+        "Code unique": "CPT_STRUCT_ORGANISATION",
+        "Nom canonique": "Organisation",
+        "Aliases": "Entité; Acteur institutionnel; Entité organisée; Organisation formelle",
+        "Mots clés": "organisation; entité; acteur institutionnel; gouvernance; frontières; responsabilité; représentation; filiale; entreprise",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_STRUCT_ORGANISATION",
+        "Version du template": "2.0"
+      },
+      "flags": [
+        "no_glossaire_link_yet"
+      ]
+    },
+    {
+      "file": "Concept - Partie prenante.md",
+      "canonical": "partie prenante",
+      "drive_code": "CPT_GOV_PARTIE_PRENANTE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80acaf1af4404d92bc27",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8048997aeff75f988112",
+      "current_code_notion": "CPT.GOV.LBP.PARTIE_PRENANTE",
+      "glossaire_props": {
+        "Code unique": "CPT_GOV_PARTIE_PRENANTE",
+        "Nom canonique": "Partie prenante",
+        "Aliases": "Stakeholder; Acteur concerné; Acteur d’influence; Acteur impacté",
+        "Mots clés": "intérêt; attente; influence; impact; dépendance; légitimité; engagement; risque; opportunité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_GOV_PARTIE_PRENANTE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Performance opérationnelle (capacité motrice).md",
+      "canonical": "performance operationnelle (capacite motrice)",
+      "drive_code": "CPT_CAP_PERFORMANCE_OPERATIONNELLE_MOTRICE",
+      "registre_url": "https://app.notion.com/p/30fe1a18653c8046a427d90ff29fa31a",
+      "glossaire_url": "https://app.notion.com/p/30fe1a18653c80619c09d96a4dd7db67",
+      "current_code_notion": "CPT.CAP.LBP.PERFORMANCE_OPERATIONNELLE_MOTRICE",
+      "glossaire_props": {
+        "Code unique": "CPT_CAP_PERFORMANCE_OPERATIONNELLE_MOTRICE",
+        "Nom canonique": "Performance opérationnelle (capacité motrice)",
+        "Aliases": "Performance opérationnelle; Excellence opérationnelle (au sens moteur); Fiabilité opérationnelle soutenable",
+        "Mots clés": "fiabilité; soutenabilité; variabilité; robustesse; standards vivants; maîtrise des écarts; pilotage factuel; amélioration continue; résilience",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_CAP_PERFORMANCE_OPERATIONNELLE_MOTRICE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Philosophie (LBP).md",
+      "canonical": "philosophie (lbp)",
+      "drive_code": "CPT_3P_PHILOSOPHIE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8069814bf89bcbb46119",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c806d8d50dd3b9f61e89e",
+      "current_code_notion": "CPT.3P.LBP.PHILOSOPHIE",
+      "glossaire_props": {
+        "Code unique": "CPT_3P_PHILOSOPHIE",
+        "Nom canonique": "Philosophie (LBP)",
+        "Aliases": "Socle de sens; Philosophie organisationnelle; MVVR; Mission-Vision-Valeurs-Raison d’être",
+        "Mots clés": "mission; vision; valeurs; raison d’être; sens; cohérence; arbitrage; non-négociables; posture",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_3P_PHILOSOPHIE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Pratiques (organisation).md",
+      "canonical": "pratiques (organisation)",
+      "drive_code": "CPT_3P_PRATIQUES",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8006b155ecb76056798c",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80e8870eebf38365f36f",
+      "current_code_notion": "CPT.3P.LBP.PRATIQUES",
+      "glossaire_props": {
+        "Code unique": "CPT_3P_PRATIQUES",
+        "Nom canonique": "Pratiques (organisation)",
+        "Aliases": "Pratiques organisationnelles; Routines; Rituels; Méthodes de travail récurrentes; Ways of working; Patterns opérants",
+        "Mots clés": "récurrence; rituel; routine; pattern; observable; effets durables; coordination; alignement; apprentissage; robustesse",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_3P_PRATIQUES",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Principes (organisation).md",
+      "canonical": "principes (organisation)",
+      "drive_code": "CPT_3P_PRINCIPES",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c804eb3a7d5d0da125811",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c803fb148e27a9d16eec9",
+      "current_code_notion": "CPT.3P.LBP.PRINCIPES",
+      "glossaire_props": {
+        "Code unique": "CPT_3P_PRINCIPES",
+        "Nom canonique": "Principes (organisation)",
+        "Aliases": "Principes organisationnels; Intention-cible; Règles directrices; Guiding principles; Principes de fonctionnement",
+        "Mots clés": "intention; normatif; arbitrage; dilemme; cohérence; guidage; règle directrice; alignement; stabilité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_3P_PRINCIPES",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Problématique.md",
+      "canonical": "problematique",
+      "drive_code": "CPT_DIAG_PROBLEMATIQUE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c802282cec4dfe04e567e",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c8023b58ddbd9e67a6082",
+      "current_code_notion": "CPT.DIAG.LBP.PROBLEMATIQUE",
+      "glossaire_props": {
+        "Code unique": "CPT_DIAG_PROBLEMATIQUE",
+        "Nom canonique": "Problématique",
+        "Aliases": "Thème structurant; Problème structurel; Problème récurrent; Sujet majeur; Problème canonique",
+        "Mots clés": "consolidation; thème; enjeux; causalités; impacts; risques; priorisation; criticité; certitude; 5D; horizon; domaine; traçabilité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_DIAG_PROBLEMATIQUE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Processus.md",
+      "canonical": "processus",
+      "drive_code": "CPT_PROC_PROCESS",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80a998f9c2f9144b7693",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80e9a1a2d0d2d880973e",
+      "current_code_notion": "CPT.PROC.LBP.PROCESS",
+      "glossaire_props": {
+        "Code unique": "CPT_PROC_PROCESS",
+        "Nom canonique": "Processus",
+        "Aliases": "Process; Flux de travail; Chaîne de transformation; Workflow",
+        "Mots clés": "processus; activité; opération; étape; transformation; contrat; interface; inputs; outputs; preuve de terminé",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_PROC_PROCESS",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Repères communs.md",
+      "canonical": "reperes communs",
+      "drive_code": "CPT_ALIGN_REPERES_COMMUNS",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c8065b645e4a6e9b4252a",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c808e9bdbfc698369fecc",
+      "current_code_notion": "CPT.ALIGN.LBP.REPERES_COMMUNS",
+      "glossaire_props": {
+        "Code unique": "CPT_ALIGN_REPERES_COMMUNS",
+        "Nom canonique": "Repères communs",
+        "Aliases": "Repère collectif; Ancrage commun; Marqueur commun; Points de repère partagés; Références communes",
+        "Mots clés": "alignement; culture; coordination; sens; rituel; artefact; langage; cadence; identité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_ALIGN_REPERES_COMMUNS",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Soft skill.md",
+      "canonical": "soft skill",
+      "drive_code": "CPT_SKILL_SOFT_SKILL",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c801da553e0932fc40662",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80a69287ebafc89d58cb",
+      "current_code_notion": "CPT.SKILL.LBP.SOFT_SKILL",
+      "glossaire_props": {
+        "Code unique": "CPT_SKILL_SOFT_SKILL",
+        "Nom canonique": "Soft skill",
+        "Aliases": "Compétence comportementale; Compétence relationnelle; Savoir-être (opérationnalisé); Social skill; Interpersonal skill",
+        "Mots clés": "comportement observable; interaction; communication; collaboration; pensée critique; adaptabilité; preuve; contexte; biais; triangulation",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_SKILL_SOFT_SKILL",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Taxonomie.md",
+      "canonical": "taxonomie",
+      "drive_code": "CPT_GOV_TAXONOMIE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80098401ce7c29c03cce",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c802ba6d9fc278e7ba2c2",
+      "current_code_notion": "CPT.GOV.LBP.TAXONOMIE",
+      "glossaire_props": {
+        "Code unique": "CPT_GOV_TAXONOMIE",
+        "Nom canonique": "Taxonomie",
+        "Aliases": "Référentiel de valeurs; Liste de valeurs contrôlées; Vocabulaire contrôlé",
+        "Mots clés": "gouvernance; cohérence; valeurs contrôlées; qualification; comparabilité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_GOV_TAXONOMIE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Template de brick.md",
+      "canonical": "template de brick",
+      "drive_code": "CPT_MOTOR_TEMPLATE_BRICK",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80f38a83e5f28b280158",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80c0bc51eb7ce858ad1e",
+      "current_code_notion": "CPT.MOTOR.LBP.TEMPLATE_BRICK",
+      "glossaire_props": {
+        "Code unique": "CPT_MOTOR_TEMPLATE_BRICK",
+        "Nom canonique": "Template de brick",
+        "Aliases": "Modèle de brick; Gabarit de brick; Template brick; Template de brique",
+        "Mots clés": "standardisation; structure; instructions; qualité; réutilisation; production; modularité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_MOTOR_TEMPLATE_BRICK",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Tempo (LBP).md",
+      "canonical": "tempo (lbp)",
+      "drive_code": "CPT_TIME_TEMPO",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80328cbbf5fe4ca061e7",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80038a0fd144a5636105",
+      "current_code_notion": "CPT.TIME.LBP.TEMPO",
+      "glossaire_props": {
+        "Code unique": "CPT_TIME_TEMPO",
+        "Nom canonique": "Tempo (LBP)",
+        "Aliases": "Tempo organisationnel; Cadence organisationnelle; Rythme systémique; Cadence collective; Tempo Learning Loop",
+        "Mots clés": "cadence; rythme; synchronisation; régularité; boucles d’apprentissage; soutenabilité; coordination; prévisibilité; adaptation",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_TIME_TEMPO",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Tension créatrice.md",
+      "canonical": "tension creatrice",
+      "drive_code": "CPT_SYS_TENSION_CREATRICE",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c800599daea351ca6fbcc",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c80a2bf74fd829c66f2ef",
+      "current_code_notion": "CPT.SYS.LBP.TENSION_CREATRICE",
+      "glossaire_props": {
+        "Code unique": "CPT_SYS_TENSION_CREATRICE",
+        "Nom canonique": "Tension créatrice",
+        "Aliases": "Creative tension; Tension structurale; Écart créatif; Écart fécond",
+        "Mots clés": "écart; vision; réalité; énergie; apprentissage; transformation; soutenabilité; tension toxique; déni",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_SYS_TENSION_CREATRICE",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Unknown unknown.md",
+      "canonical": "unknown unknown",
+      "drive_code": "CPT_UNCERT_UNKNOWN_UNKNOWN",
+      "registre_url": "https://app.notion.com/p/30be1a18653c8062a855e2bd229361cd",
+      "glossaire_url": "https://app.notion.com/p/30be1a18653c80549568e1289cebeefc",
+      "current_code_notion": "CPT.UNCERT.LBP.UNKNOWN_UNKNOWN",
+      "glossaire_props": {
+        "Code unique": "CPT_UNCERT_UNKNOWN_UNKNOWN",
+        "Nom canonique": "Unknown unknown",
+        "Aliases": "Inconnu inconnu; Inconnaissance inconsciente; On ne sait pas qu’on ne sait pas; Unk-unk; Unknown unknowns",
+        "Mots clés": "incertitude; angle mort; surprise; hypothèses; scénarios; robustesse; résilience; biais; apprentissage",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_UNCERT_UNKNOWN_UNKNOWN",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    },
+    {
+      "file": "Concept - Événement.md",
+      "canonical": "evenement",
+      "drive_code": "CPT_TIME_EVENEMENT",
+      "registre_url": "https://app.notion.com/p/2f8e1a18653c80809867f6c5a8fe6ad6",
+      "glossaire_url": "https://app.notion.com/p/2f7e1a18653c805a83e2d87db65a6439",
+      "current_code_notion": "CPT.TIME.LBP.EVENEMENT",
+      "glossaire_props": {
+        "Code unique": "CPT_TIME_EVENEMENT",
+        "Nom canonique": "Événement",
+        "Aliases": "Jalon; Épisode; Période; Moment clé; Repère temporel",
+        "Mots clés": "timeline; chronologie; datable; statut temporel; granularité; type d’événement; repère; contextualisation; traçabilité",
+        "Type de concept": "Concept LBP",
+        "Version du template": "2.0"
+      },
+      "registre_props": {
+        "Code unique": "CPT_TIME_EVENEMENT",
+        "Version du template": "2.0"
+      },
+      "flags": []
+    }
+  ],
+  "unmatched": [
+    {
+      "file": "Concept - Actif.md",
+      "canonical": "actif",
+      "code": "CPT_ASSET_ACTIF"
+    },
+    {
+      "file": "Concept - Alignement (organisation).md",
+      "canonical": "alignement (organisation)",
+      "code": "CPT_ALIGN_ALIGNEMENT"
+    },
+    {
+      "file": "Concept - Apprentissage intégré au travail.md",
+      "canonical": "apprentissage integre au travail",
+      "code": "CPT_LEARN_APPRENTISSAGE_INTEGRE_TRAVAIL"
+    },
+    {
+      "file": "Concept - Asymétrie de connaissances.md",
+      "canonical": "asymetrie de connaissances",
+      "code": "CPT_GOV_ASYMETRIE_CONNAISSANCES"
+    },
+    {
+      "file": "Concept - Brick.md",
+      "canonical": "brick",
+      "code": "CPT_MOPS_BRICK"
+    },
+    {
+      "file": "Concept - Capacité générique.md",
+      "canonical": "capacite generique",
+      "code": "CPT_CAP_CAPACITE_GENERIQUE"
+    },
+    {
+      "file": "Concept - Capacité habilitante.md",
+      "canonical": "capacite habilitante",
+      "code": "CPT_CAP_CAPACITE_HABILITANTE"
+    },
+    {
+      "file": "Concept - Capacité motrice.md",
+      "canonical": "capacite motrice",
+      "code": "CPT_CAP_CAPACITE_MOTRICE"
+    },
+    {
+      "file": "Concept - Capacité métier.md",
+      "canonical": "capacite metier",
+      "code": "CPT_CAP_CAPACITE_METIER"
+    },
+    {
+      "file": "Concept - Capacité organisationnelle.md",
+      "canonical": "capacite organisationnelle",
+      "code": "CPT_CAP_CAPACITE_ORGANISATIONNELLE"
+    },
+    {
+      "file": "Concept - Cohérence (LBP).md",
+      "canonical": "coherence (lbp)",
+      "code": "CPT_ALIGN_COHERENCE"
+    },
+    {
+      "file": "Concept - Collectif.md",
+      "canonical": "collectif",
+      "code": "CPT_STRUCT_COLLECTIF"
+    },
+    {
+      "file": "Concept - Compétence.md",
+      "canonical": "competence",
+      "code": "CPT_SKILL_COMPETENCE"
+    },
+    {
+      "file": "Concept - Connaissance.md",
+      "canonical": "connaissance",
+      "code": "CPT_KNOW_CONNAISSANCE"
+    },
+    {
+      "file": "Concept - Contexte.md",
+      "canonical": "contexte",
+      "code": "CPT_GOV_CONTEXTE"
+    },
+    {
+      "file": "Concept - Digital Twin de l’organisation (LBP).md",
+      "canonical": "digital twin de l’organisation (lbp)",
+      "code": "CPT_DT_DIGITAL_TWIN_ORGA"
+    },
+    {
+      "file": "Concept - Découverte d’objets.md",
+      "canonical": "decouverte d’objets",
+      "code": "CPT_TWIN_DECOUVERTE_OBJETS"
+    },
+    {
+      "file": "Concept - Dédoublonnage.md",
+      "canonical": "dedoublonnage",
+      "code": "CPT_TWIN_DEDOUBLONNAGE"
+    },
+    {
+      "file": "Concept - Initiative organisationnelle.md",
+      "canonical": "initiative organisationnelle",
+      "code": "CPT_DYN_INITIATIVE_ORGANISATIONNELLE"
+    },
+    {
+      "file": "Concept - Input - Output (LBP).md",
+      "canonical": "input - output (lbp)",
+      "code": "CPT_GOV_INPUT_OUTPUT"
+    },
+    {
+      "file": "Concept - Input - Output (Processus).md",
+      "canonical": "input - output (processus)",
+      "code": "CPT_PROC_INPUT_OUTPUT_PROCESSUS"
+    },
+    {
+      "file": "Concept - Instructions d’écriture et clefs de lecture.md",
+      "canonical": "instructions d’ecriture et clefs de lecture",
+      "code": "CPT_GUIDANCE_ECRITURE_LECTURE"
+    },
+    {
+      "file": "Concept - Logic block.md",
+      "canonical": "logic block",
+      "code": "CPT_BRAIN_LOGIC_BLOCK"
+    },
+    {
+      "file": "Concept - Mad skill.md",
+      "canonical": "mad skill",
+      "code": "CPT_SKILL_MAD_SKILL"
+    },
+    {
+      "file": "Concept - Matrice des 5 Dimensions de l’Organisation (5D).md",
+      "canonical": "matrice des 5 dimensions de l’organisation (5d)",
+      "code": "CPT_ORG5D_MATRIX_5D"
+    },
+    {
+      "file": "Concept - Poste.md",
+      "canonical": "poste",
+      "code": "CPT_STRUCT_POSTE"
+    },
+    {
+      "file": "Concept - Prompt maître.md",
+      "canonical": "prompt maitre",
+      "code": "CPT_GUIDANCE_PROMPT_MAITRE"
+    },
+    {
+      "file": "Concept - Refactor.md",
+      "canonical": "refactor",
+      "code": "CPT_TWIN_REFACTOR"
+    },
+    {
+      "file": "Concept - Relation inter-organisations.md",
+      "canonical": "relation inter-organisations",
+      "code": "CPT_REL_RELATION_INTER_ORGANISATIONS"
+    },
+    {
+      "file": "Concept - Relations Maker.md",
+      "canonical": "relations maker",
+      "code": "CPT_TWIN_RELATIONS_MAKER"
+    },
+    {
+      "file": "Concept - Source de vérité.md",
+      "canonical": "source de verite",
+      "code": "CPT_GOV_SSOT"
+    },
+    {
+      "file": "Concept - Source d’information.md",
+      "canonical": "source d’information",
+      "code": "CPT_EVIDENCE_SOURCE_INFORMATION"
+    },
+    {
+      "file": "Concept - System prompt.md",
+      "canonical": "system prompt",
+      "code": "CPT_GUIDANCE_SYSTEM_PROMPT"
+    },
+    {
+      "file": "Concept - Vision partagée.md",
+      "canonical": "vision partagee",
+      "code": "CPT_ALIGN_VISION_PARTAGEE"
+    }
+  ],
+  "skipped_calibration": [
+    "Concept - 3P (Philosophie, Principes, Pratiques).md",
+    "Concept - Absorption (capacité motrice).md",
+    "Concept - Adaptation (capacité motrice).md"
+  ],
+  "stats": {
+    "to_update": 35,
+    "unmatched": 34,
+    "calibration_done": 3
+  }
+}

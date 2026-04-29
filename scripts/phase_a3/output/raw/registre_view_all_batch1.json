@@ -1,0 +1,7 @@
+{
+  "_note": "Phase A3.0 — first batch of Notion BDD 'Registre des notes de concept', view 'all'. Returned 100 entries with has_more=true. Source: notion-query-database-view on view 4616b029-8822-42bd-a560-1be680e6721c.",
+  "_data_source_url": "collection://4bd4e3a2-eda0-4ba4-8970-4ed1e4a30f7a",
+  "_view_url": "view://4616b029-8822-42bd-a560-1be680e6721c",
+  "_has_more": true,
+  "_count": 100
+}
