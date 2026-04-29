@@ -221,6 +221,24 @@ Ces règles sont mes engagements pour maintenir la lisibilité du document à me
 | `GLO` | Entry de glossaire | `DOC.TYPE.GLOSSAIRE_ENTRY` | — |
 | (cas spécial) | Taxonomie | `DOC.TYPE.TAXONOMIE` | code = `<NAMESPACE>.<TAXO>` (Grammaire 2) |
 
+##### Paire `CPT_*` ↔ `GLO_*` (note de concept ↔ entry de glossaire)
+
+Un même concept LBP est **double-représenté** dans l'écosystème :
+- comme **note de concept** (fichier Markdown source de vérité, indexée dans la BDD Registre des notes de concept) → code `CPT_<DOMAIN>_<TOKEN>`
+- comme **entry de glossaire** (fiche normative dans la BDD Glossaire LBP, vue opératoire enrichie) → code `GLO_<DOMAIN>_<TOKEN>`
+
+Les deux codes partagent **strictement le même `<DOMAIN>_<TOKEN>`**, ce qui matérialise la relation 1:1 entre la note et le glossaire :
+
+| Concept | Note (Registre) | Glossaire |
+|---|---|---|
+| Individu | `CPT_TBD_INDIVIDU` | `GLO_TBD_INDIVIDU` |
+| 3P | `CPT_FRAME_3P` | `GLO_FRAME_3P` |
+| Connaissance | `CPT_KNOW_CONNAISSANCE` | `GLO_KNOW_CONNAISSANCE` |
+
+**Doctrine** : le préfixe désigne le **type d'objet documentaire** (note Markdown vs fiche-glossaire normative), pas le concept. Le concept lui-même est désigné par le `<DOMAIN>_<TOKEN>` commun.
+
+**Frontmatter Markdown** des notes de concept : porte le code `CPT_*` dans le champ `code` (identité de la note). Le code `GLO_*` correspondant n'est pas matérialisé dans le frontmatter Markdown (il vit côté Notion uniquement).
+
 ##### 8 règles transverses
 
 1. **Stabilité absolue** : un code donné est immuable. Pour "renommer" un objet, on en crée un nouveau et on archive l'ancien (R-053).

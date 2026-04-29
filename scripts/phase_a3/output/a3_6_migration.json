@@ -1,0 +1,450 @@
+[
+  {
+    "glossaire_page_id": "2f8e1a18653c80058b8bf3e81f654655",
+    "old_code": "CPT_SYS_APPROCHE_SYSTEMIQUE",
+    "new_code": "GLO_SYS_APPROCHE_SYSTEMIQUE",
+    "name": "approche systemique",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8098891aefa710f16801",
+    "old_code": "CPT_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES",
+    "new_code": "GLO_VIZ_ARBRE_CAPACITES_ORGANISATIONNELLES",
+    "name": "arbre a capacites organisationnelles",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f8e1a18653c80ecbb79d00451e1f643",
+    "old_code": "CPT_DIAG_ENJEU",
+    "new_code": "GLO_DIAG_ENJEU",
+    "name": "enjeu",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c805795bcf5ec43344f57",
+    "old_code": "CPT_CONTEXT_ENVIRONNEMENT",
+    "new_code": "GLO_CONTEXT_ENVIRONNEMENT",
+    "name": "environnement",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c809194ccc92e3c9674de",
+    "old_code": "CPT_ARCH_ENVIRONNEMENTS",
+    "new_code": "GLO_ARCH_ENVIRONNEMENTS",
+    "name": "environnements lbp",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8091ac63f225f1e22549",
+    "old_code": "CPT_KM_GESTION_CONNAISSANCE",
+    "new_code": "GLO_KM_GESTION_CONNAISSANCE",
+    "name": "gestion de la connaissance",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c804c8459c3f53e93d5fd",
+    "old_code": "CPT_TBD_INDIVIDU",
+    "new_code": "GLO_TBD_INDIVIDU",
+    "name": "individu",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c808bb0d8d7cbae9d033e",
+    "old_code": "CPT_CAP_INNOVATION_MOTRICE",
+    "new_code": "GLO_CAP_INNOVATION_MOTRICE",
+    "name": "innovation (capacite motrice)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c803b904af7c3334074b4",
+    "old_code": "CPT_CAP_INTELLIGENCE_COLLECTIVE_MOTRICE",
+    "new_code": "GLO_CAP_INTELLIGENCE_COLLECTIVE_MOTRICE",
+    "name": "intelligence collective (capacite motrice)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80fdb581e174c8cd1780",
+    "old_code": "CPT_MEASURE_KPI",
+    "new_code": "GLO_MEASURE_KPI",
+    "name": "kpi",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80d8837bd874349eec05",
+    "old_code": "CPT_GOV_MANUEL_BDD",
+    "new_code": "GLO_GOV_MANUEL_BDD",
+    "name": "manuel de bdd",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8007b6cbf6d2f18def78",
+    "old_code": "CPT_MOD_MODULATEUR",
+    "new_code": "GLO_MOD_MODULATEUR",
+    "name": "modulateur",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c803b92f0d8308e2bbcb8",
+    "old_code": "CPT_METHOD_METHODE",
+    "new_code": "GLO_METHOD_METHODE",
+    "name": "methode lbp",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80e19a23ee691cfd5a99",
+    "old_code": "CPT_PILOT_OKR",
+    "new_code": "GLO_PILOT_OKR",
+    "name": "okr",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8048997aeff75f988112",
+    "old_code": "CPT_GOV_PARTIE_PRENANTE",
+    "new_code": "GLO_GOV_PARTIE_PRENANTE",
+    "name": "partie prenante",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80619c09d96a4dd7db67",
+    "old_code": "CPT_CAP_PERFORMANCE_OPERATIONNELLE_MOTRICE",
+    "new_code": "GLO_CAP_PERFORMANCE_OPERATIONNELLE_MOTRICE",
+    "name": "performance operationnelle (capacite motrice)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c806d8d50dd3b9f61e89e",
+    "old_code": "CPT_3P_PHILOSOPHIE",
+    "new_code": "GLO_3P_PHILOSOPHIE",
+    "name": "philosophie (lbp)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80e8870eebf38365f36f",
+    "old_code": "CPT_3P_PRATIQUES",
+    "new_code": "GLO_3P_PRATIQUES",
+    "name": "pratiques (organisation)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c803fb148e27a9d16eec9",
+    "old_code": "CPT_3P_PRINCIPES",
+    "new_code": "GLO_3P_PRINCIPES",
+    "name": "principes (organisation)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8023b58ddbd9e67a6082",
+    "old_code": "CPT_DIAG_PROBLEMATIQUE",
+    "new_code": "GLO_DIAG_PROBLEMATIQUE",
+    "name": "problematique",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80e9a1a2d0d2d880973e",
+    "old_code": "CPT_PROC_PROCESS",
+    "new_code": "GLO_PROC_PROCESS",
+    "name": "processus",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c808e9bdbfc698369fecc",
+    "old_code": "CPT_ALIGN_REPERES_COMMUNS",
+    "new_code": "GLO_ALIGN_REPERES_COMMUNS",
+    "name": "reperes communs",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80a69287ebafc89d58cb",
+    "old_code": "CPT_SKILL_SOFT_SKILL",
+    "new_code": "GLO_SKILL_SOFT_SKILL",
+    "name": "soft skill",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c802ba6d9fc278e7ba2c2",
+    "old_code": "CPT_GOV_TAXONOMIE",
+    "new_code": "GLO_GOV_TAXONOMIE",
+    "name": "taxonomie",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80c0bc51eb7ce858ad1e",
+    "old_code": "CPT_MOTOR_TEMPLATE_BRICK",
+    "new_code": "GLO_MOTOR_TEMPLATE_BRICK",
+    "name": "template de brick",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80038a0fd144a5636105",
+    "old_code": "CPT_TIME_TEMPO",
+    "new_code": "GLO_TIME_TEMPO",
+    "name": "tempo (lbp)",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80a2bf74fd829c66f2ef",
+    "old_code": "CPT_SYS_TENSION_CREATRICE",
+    "new_code": "GLO_SYS_TENSION_CREATRICE",
+    "name": "tension creatrice",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "30be1a18653c80549568e1289cebeefc",
+    "old_code": "CPT_UNCERT_UNKNOWN_UNKNOWN",
+    "new_code": "GLO_UNCERT_UNKNOWN_UNKNOWN",
+    "name": "unknown unknown",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c805a83e2d87db65a6439",
+    "old_code": "CPT_TIME_EVENEMENT",
+    "new_code": "GLO_TIME_EVENEMENT",
+    "name": "evenement",
+    "source": "a3_masse"
+  },
+  {
+    "glossaire_page_id": "34ce1a18653c8181b7ede2139f6f1eac",
+    "old_code": "CPT_ASSET_ACTIF",
+    "new_code": "GLO_ASSET_ACTIF",
+    "name": "Actif",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8074b046f7f4985ec5c4",
+    "old_code": "CPT_ALIGN_ALIGNEMENT",
+    "new_code": "GLO_ALIGN_ALIGNEMENT",
+    "name": "Alignement (organisation)",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80349b96f9676350465d",
+    "old_code": "CPT_LEARN_APPRENTISSAGE_INTEGRE_TRAVAIL",
+    "new_code": "GLO_LEARN_APPRENTISSAGE_INTEGRE_TRAVAIL",
+    "name": "Apprentissage intégré au travail",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c804aa136d5fe2068b18d",
+    "old_code": "CPT_GOV_ASYMETRIE_CONNAISSANCES",
+    "new_code": "GLO_GOV_ASYMETRIE_CONNAISSANCES",
+    "name": "Asymétrie de connaissances",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80049b43d8a3c7ba19aa",
+    "old_code": "CPT_MOPS_BRICK",
+    "new_code": "GLO_MOPS_BRICK",
+    "name": "Brick",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8013be4fc67fd6460d74",
+    "old_code": "CPT_CAP_CAPACITE_HABILITANTE",
+    "new_code": "GLO_CAP_CAPACITE_HABILITANTE",
+    "name": "Capacité habilitante",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80ebbca9dbb3d4b26fb1",
+    "old_code": "CPT_CAP_CAPACITE_MOTRICE",
+    "new_code": "GLO_CAP_CAPACITE_MOTRICE",
+    "name": "Capacité motrice",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "34de1a18653c8137be5ec4050716bf03",
+    "old_code": "CPT_STRUCT_COLLECTIF",
+    "new_code": "GLO_STRUCT_COLLECTIF",
+    "name": "Collectif",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c8060acb7e7e2f0112e53",
+    "old_code": "CPT_GOV_CONTEXTE",
+    "new_code": "GLO_GOV_CONTEXTE",
+    "name": "Contexte",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "c1414e80363a425bba89185c7e6ddb96",
+    "old_code": "CPT_TWIN_DECOUVERTE_OBJETS",
+    "new_code": "GLO_TWIN_DECOUVERTE_OBJETS",
+    "name": "Découverte d’objets",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "bad83ea00a4e4e0bb8f931ee92ff0b47",
+    "old_code": "CPT_TWIN_DEDOUBLONNAGE",
+    "new_code": "GLO_TWIN_DEDOUBLONNAGE",
+    "name": "Dédoublonnage",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "34de1a18653c81618dddf492e2f3daf5",
+    "old_code": "CPT_DYN_INITIATIVE_ORGANISATIONNELLE",
+    "new_code": "GLO_DYN_INITIATIVE_ORGANISATIONNELLE",
+    "name": "Initiative organisationnelle",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "34de1a18653c819ca977d02b1148a547",
+    "old_code": "CPT_PROC_INPUT_OUTPUT_PROCESSUS",
+    "new_code": "GLO_PROC_INPUT_OUTPUT_PROCESSUS",
+    "name": "Input - Output (Processus)",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "a219d258979e44979ad2f0899bc2e916",
+    "old_code": "CPT_GUIDANCE_ECRITURE_LECTURE",
+    "new_code": "GLO_GUIDANCE_ECRITURE_LECTURE",
+    "name": "Instructions d’écriture et clefs de lecture",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "325e1a18653c80068322f4c13c0979d9",
+    "old_code": "CPT_BRAIN_LOGIC_BLOCK",
+    "new_code": "GLO_BRAIN_LOGIC_BLOCK",
+    "name": "Logic block",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c800eaa89fc63fae582c7",
+    "old_code": "CPT_SKILL_MAD_SKILL",
+    "new_code": "GLO_SKILL_MAD_SKILL",
+    "name": "Mad skill",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "34de1a18653c8170804df17ee50cca07",
+    "old_code": "CPT_STRUCT_POSTE",
+    "new_code": "GLO_STRUCT_POSTE",
+    "name": "Poste",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "077e4833a77c46c29d6aca009b44806f",
+    "old_code": "CPT_GUIDANCE_PROMPT_MAITRE",
+    "new_code": "GLO_GUIDANCE_PROMPT_MAITRE",
+    "name": "Prompt maître",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "e7ca5ad220fa4b179ab06d188a7442ec",
+    "old_code": "CPT_TWIN_REFACTOR",
+    "new_code": "GLO_TWIN_REFACTOR",
+    "name": "Refactor",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "34de1a18653c8109b395debec4882da0",
+    "old_code": "CPT_REL_RELATION_INTER_ORGANISATIONS",
+    "new_code": "GLO_REL_RELATION_INTER_ORGANISATIONS",
+    "name": "Relation inter-organisations",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "bc2735e3194b443c962dc3c3daa20c1f",
+    "old_code": "CPT_TWIN_RELATIONS_MAKER",
+    "new_code": "GLO_TWIN_RELATIONS_MAKER",
+    "name": "Relations Maker",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80c191cbf450899f2081",
+    "old_code": "CPT_GOV_SSOT",
+    "new_code": "GLO_GOV_SSOT",
+    "name": "Source de vérité",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "4fde880c18b34e4589143c9478525aa8",
+    "old_code": "CPT_GUIDANCE_SYSTEM_PROMPT",
+    "new_code": "GLO_GUIDANCE_SYSTEM_PROMPT",
+    "name": "System prompt",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80178da9ed2817186ddb",
+    "old_code": "CPT_ALIGN_VISION_PARTAGEE",
+    "new_code": "GLO_ALIGN_VISION_PARTAGEE",
+    "name": "Vision partagée",
+    "source": "a3bis_new"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8013bc5be3b0a28d1cfc",
+    "old_code": "CPT_SKILL_COMPETENCE",
+    "new_code": "GLO_SKILL_COMPETENCE",
+    "name": "Compétence",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8066a193c671ac74e4f1",
+    "old_code": "CPT_ALIGN_COHERENCE",
+    "new_code": "GLO_ALIGN_COHERENCE",
+    "name": "Cohérence (LBP)",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c806c9221f410c063f1a2",
+    "old_code": "CPT_SKILL_HARD_SKILL",
+    "new_code": "GLO_SKILL_HARD_SKILL",
+    "name": "Hard skill",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8025943fefa82f7e6b8e",
+    "old_code": "CPT_GOV_GLOSSAIRE",
+    "new_code": "GLO_GOV_GLOSSAIRE",
+    "name": "Glossaire LBP",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c803397adf18d4568c8e3",
+    "old_code": "CPT_GOV_GLOSSAIRE_SPECIFIQUE",
+    "new_code": "GLO_GOV_GLOSSAIRE_SPECIFIQUE",
+    "name": "Glossaire spécifique",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80b1bc08c4809aeddd02",
+    "old_code": "CPT_MEASURE_INDICATEUR",
+    "new_code": "GLO_MEASURE_INDICATEUR",
+    "name": "Indicateur",
+    "source": "a3bis_collision_fix"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c8061bdfaede8485cc6ce",
+    "old_code": "CPT_FRAME_3P",
+    "name": "3P (Philosophie, Principes, Pratiques)",
+    "source": "a3_calibration",
+    "new_code": "GLO_FRAME_3P"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80dbaaaae47da27a3c3b",
+    "old_code": "CPT_CAP_ABSORPTION_MOTRICE",
+    "name": "Absorption (capacité motrice)",
+    "source": "a3_calibration",
+    "new_code": "GLO_CAP_ABSORPTION_MOTRICE"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c80419c35eed9bf723abe",
+    "old_code": "CPT_CAP_ADAPTATION_MOTRICE",
+    "name": "Adaptation (capacité motrice)",
+    "source": "a3_calibration",
+    "new_code": "GLO_CAP_ADAPTATION_MOTRICE"
+  },
+  {
+    "glossaire_page_id": "2f7e1a18653c80e2848ac28c2bc9fae7",
+    "old_code": "CPT_CAP_CAPACITE_GENERIQUE",
+    "name": "Capacité générique",
+    "source": "a3_ter",
+    "new_code": "GLO_CAP_CAPACITE_GENERIQUE"
+  },
+  {
+    "glossaire_page_id": "30fe1a18653c803985a6c383f1ce5692",
+    "old_code": "CPT_PROC_INPUT_OUTPUT_PROCESSUS",
+    "name": "Input/ Output (Processus) [archivé]",
+    "source": "a3_ter_archived",
+    "new_code": "GLO_PROC_INPUT_OUTPUT_PROCESSUS"
+  }
+]
