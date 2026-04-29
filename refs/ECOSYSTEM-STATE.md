@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase 0 (préliminaire) close** : refonte R-060 v3 des champs `summary` et `purpose` appliquée à 102 taxos + 11 manuels Brain + 72 notes de concept (185 fichiers au total), validation YAML automatisée 100% sur les 3 corpus. Brain prêt pour Phase A (indexation Notion).
+> Dernière mise à jour : 29-04-2026 — **Phase A1.1 close** (BDD Manuels de BDD côté Brain) : 11 entrées Notion mises à jour (Code unique préfixé BR_, Version du template 1.1, Lien vers la BDD Notion) + cas test Méthodes LBP refondu (Description + Usages IA recadrés en R-060 v3) + correction casse « Templates de Bricks » → « Templates de bricks ». Relations `utilise (taxonomies)` différées (à faire après mise à jour de toutes les BDDs cibles).
 
 ## Phase actuelle
 
-**Phase 0 (préliminaire) terminée.** Doctrine R-060 v3 (summary phrase nominale autonome ; purpose verbe à l'infinitif + effet structurel direct ; zéro citation d'objet voisin ; zéro énumération de valeurs ; zéro jargon backend ; ≤400 char) appliquée par scripts Python sur l'intégralité du Brain : **0a 102 taxos ✓ · 0b 11 manuels Brain ✓ · 0c 72 notes de concept ✓**. Prêt pour **Phase A (indexations Notion)**. Out of scope court terme : Prompts LBP, Logic blocks, Agents LBP (chantier P) ; Docs méta LBP (chantier M).
+**Phase A1.1 (BDD Manuels de BDD — entrées Brain) close.** Doctrine appliquée : (c) structurel strict + narratif diff. Source de remplissage : **WR-RD du manuel parent** (instructions d'écriture champ par champ, conformément au concept « Instructions d'écriture et clefs de lecture »). Les 11 entrées Brain dans la BDD Notion sont à jour structurellement ; un cas test (Méthodes LBP) sert de référence pour l'audit narratif optionnel A1.1c. Prochaine étape : **Phase 0b' (refonte R-060 v3 des 32 manuels Twin+MO)** puis **Phase A1.2 (32 entrées Twin+MO)**, ou directement **Phase A2** (Templates) selon arbitrage.
 
 ### Phases terminées (chronologie)
 
