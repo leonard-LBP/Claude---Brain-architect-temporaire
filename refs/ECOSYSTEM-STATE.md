@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase A1 (BDD Manuels de BDD) intégralement close.** 43/43 entrées Notion alignées avec le canon : 11 Brain (A1.1) + 32 Twin+MO (A1.2) avec Code unique préfixé selon scope (BR/TW/MO selon R-054), Version du template (1.1/7.0/6.0), Lien vers la BDD Notion. 4 corrections d'anomalie en passant : casse `Templates de Bricks → Templates de bricks`, nom BDD `Glossaire spécifique entreprise → Glossaire spécifique`, nom BDD `Sources d'Informations → Sources d'informations` (apostrophe ASCII + casse), URL Glossaire LBP (typo).
+> Dernière mise à jour : 29-04-2026 — **Phase A2 (BDD Templates de bricks) close.** 20/20 entrées Notion (correspondant aux 20 templates Drive) alignées sur le canon : Code unique migré de `TPL-BRICK_*` (ancien) vers `TPL_BRK_*` (R-054), Version du template renseignée depuis le frontmatter Markdown (1.0/1.1/1.2). 1 renommage : `Profil - UO & Individus → Profil - Collectifs & Individus` (UO archivé en Phase 4). 5 entrées Notion vides V1 conservées intactes (convention LBP : entrée vide = à créer).
 
 ## Phase actuelle
 
-**Phase A1 close.** 43/43 entrées de la BDD Notion `Manuels de BDD` à jour structurellement (Code + Version + Lien BDD), conformément aux instructions d'écriture du WR-RD parent. Doctrine appliquée : (c) structurel strict + narratif diff léger. Source de remplissage : **WR-RD** (instructions d'écriture champ par champ — concept « Instructions d'écriture et clefs de lecture »). Méthodes LBP refondue intégralement comme cas test canonique (Description + Usages IA recadrés en R-060 v3). Relations `utilise (taxonomies)` différées (Phase post-A2/A3). Prochaine étape : **Phase A2** (BDD Templates de bricks) ou **A1.x audit narratif** selon arbitrage.
+**Phase A2 close.** 20/20 templates Drive ↔ Notion alignés structurellement. 5 placeholders Notion sans correspondance Drive laissés intacts (à remplir plus tard, convention « entrée vide = à créer »). Audit narratif Description / Valeur ajoutée / Usages IA jugé non urgent : 18/20 entrées riches déjà conformes. Cumul A1+A2 : **63 entrées Notion mises à jour structurellement** (43 manuels + 20 templates) + 5 corrections d'anomalies. Prochaine étape : **Phase A3** (BDD Glossaire LBP + BDD Registre des notes de concept) ou **Phase A4** (Taxonomies, 102 taxos) selon arbitrage.
 
 ### Phases terminées (chronologie)
 
