@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase A3 + A3.bis closes.** 71/72 concepts couverts via 144 updates Notion (78 Glossaire + 60 Registre + 6 repairs collisions). Sync minimal R-054 sur 6 propriétés structurées (Code unique, Nom canonique, Aliases, Mots clés, Type de concept, Version du template) + relations Registre↔Glossaire repaireés. Rich-text (Définition, Valeur ajoutée, Règles d'usage, Équivalent langage courant, Notes, Usages IA) préservé conformément doctrine "Notion = vue opératoire enrichie, pas miroir 1:1 du Markdown". Seul concept absent du Glossaire : **Capacité générique** (à créer ultérieurement).
+> Dernière mise à jour : 29-04-2026 — **Phase A3 + A3.bis + A3.ter closes.** **72/72 concepts couverts** via 148 updates Notion (80 Glossaire + 62 Registre + 6 repairs collisions). Sync minimal R-054 sur 6 propriétés structurées (Code unique, Nom canonique, Aliases, Mots clés, Type de concept, Version du template) + relations Registre↔Glossaire repaireés. Rich-text (Définition, Valeur ajoutée, Règles d'usage, Équivalent langage courant, Notes, Usages IA) préservé conformément doctrine "Notion = vue opératoire enrichie, pas miroir 1:1 du Markdown". 2 doublons Notion détectés (Input/Output (Processus) sur Glossaire + Registre) → cleanup manuel à programmer.
 
 ## Phase actuelle
 
-**Phase A3 + A3.bis closes.** Cumul A1+A2+A3+A3.bis : **207 entrées Notion mises à jour structurellement** (43 manuels + 20 templates + 78 Glossaire + 60 Registre + 6 repairs). 71/72 concepts couverts. Captures règles : C-013 (push systématique), C-014 (apostrophes ASCII MCP Notion), C-015 (vocabulaire « notes de concept » vs « notes Drive »). Outils créés : `scripts/lib/notion_keys.py` (helper apostrophes), `scripts/phase_a3/build_drive_url_resolver.py` (DriveFS sqlite resolver), `scripts/phase_a3/a3bis_plan.py` (orchestration). Prochaine étape : **Phase A4** (Taxonomies, 102 taxos) + relations utilise (taxonomies) cross-BDDs.
+**Phase A3 + A3.bis + A3.ter closes.** Cumul A1+A2+A3 : **211 entrées Notion mises à jour structurellement** (43 manuels + 20 templates + 80 Glossaire + 62 Registre + 6 repairs). 72/72 concepts couverts. Captures règles : C-013 (push systématique), C-014 (apostrophes ASCII MCP Notion), C-015 (vocabulaire « notes de concept » vs « notes Drive »). Outils créés : `scripts/lib/notion_keys.py` (helper apostrophes), `scripts/phase_a3/build_drive_url_resolver.py` (DriveFS sqlite resolver), `scripts/phase_a3/a3bis_plan.py` (orchestration). Prochaine étape : **Phase A4** (Taxonomies, 102 taxos) + relations utilise (taxonomies) cross-BDDs.
 
 ### Phases terminées (chronologie)
 
