@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 28-04-2026 — calibration indexation Brain réussie sur BDD Méthodes LBP + correctif transverse `Created Date`/`Last Updated Date` (5 BDDs Motor Brain : Méthodes, Prompts, Agents, Outils externes, Docs méta) : conversion type `date` → `created_time` / `last_edited_time` (auto-remplis). Patterns Notion DDL validés : multi-select (string JSON-encoded), CREATED_TIME / LAST_EDITED_TIME comme types DDL.
+> Dernière mise à jour : 29-04-2026 — Phase 0 (préliminaire) en cours : refonte R-060 v3 des champs `summary` et `purpose` sur tout le Brain. Phases 0a et 0b v3 closes (102 taxos + 11 manuels Brain conformes, validation YAML automatisée). Reste 0c (72 notes de concept) avant Phase A (indexations Notion).
 
 ## Phase actuelle
 
-**Calibration indexation Brain validée sur Méthodes LBP. Prochaine étape : indexation des autres BDDs Brain (Manuels de BDD, Templates de bricks, Glossaire LBP + Notes de concept en double indexation, Registre des taxonomies). Out of scope court terme : Prompts LBP, Logic blocks, Agents LBP (chantier P : tri massif à venir) ; Docs méta LBP (chantier M : réactualisation PLAYBOOK).**
+**Phase 0 (préliminaire) — refonte R-060 v3 du Brain.** Doctrine `summary` (phrase nominale autonome) + `purpose` (verbe à l'infinitif + effet structurel direct, sans citation voisine ni jargon backend) appliquée par scripts Python en bulk avec validation YAML automatisée. **0a (102 taxos) ✓** + **0b (11 manuels Brain) ✓**. Reste **0c (72 notes de concept)** avant de pouvoir lancer la Phase A (indexations Notion). Out of scope court terme : Prompts LBP, Logic blocks, Agents LBP (chantier P) ; Docs méta LBP (chantier M).
 
 ### Phases terminées (chronologie)
 
