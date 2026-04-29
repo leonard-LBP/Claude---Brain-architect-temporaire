@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase 0b' close** : 32 manuels Twin+MO refondus en R-060 v3 (32/32 valides, validation YAML automatisée). Constat avant refonte : 32/32 avaient summary vide et un purpose boilerplate « Spécifier la BDD X... ». Maintenant 100 % du Brain (Brain + Twin + MO côté manuels = 43 fichiers ; + 102 taxos + 72 notes de concept = 217 fichiers Brain au total) est en R-060 v3.
+> Dernière mise à jour : 29-04-2026 — **Phase A1 (BDD Manuels de BDD) intégralement close.** 43/43 entrées Notion alignées avec le canon : 11 Brain (A1.1) + 32 Twin+MO (A1.2) avec Code unique préfixé selon scope (BR/TW/MO selon R-054), Version du template (1.1/7.0/6.0), Lien vers la BDD Notion. 4 corrections d'anomalie en passant : casse `Templates de Bricks → Templates de bricks`, nom BDD `Glossaire spécifique entreprise → Glossaire spécifique`, nom BDD `Sources d'Informations → Sources d'informations` (apostrophe ASCII + casse), URL Glossaire LBP (typo).
 
 ## Phase actuelle
 
-**Phase 0b' (refonte R-060 v3 des 32 manuels Twin+MO) close.** Méthode identique aux phases 0a/0b/0c : mapping Python `(folder, fname) → (summary, purpose)` + script de réécriture en bulk + validation YAML automatisée. Tous les summary décrivent l'objet de la BDD (Référentiel / Sandbox / Journal / Lexique / Pivot / Backlog / Index / Registre) en phrase nominale autonome ; tous les purposes sont en verbe à l'infinitif + effet structurel direct, sans citation d'autre BDD ni jargon backend. **L'ensemble du Brain (185 fichiers Phase 0) + les 32 manuels Twin+MO (Phase 0b') = 217 fichiers Brain en R-060 v3.** Prochaine étape : **Phase A1.2 (refresh des 32 entrées Twin+MO dans la BDD Notion)** ou **Phase A2** selon arbitrage.
+**Phase A1 close.** 43/43 entrées de la BDD Notion `Manuels de BDD` à jour structurellement (Code + Version + Lien BDD), conformément aux instructions d'écriture du WR-RD parent. Doctrine appliquée : (c) structurel strict + narratif diff léger. Source de remplissage : **WR-RD** (instructions d'écriture champ par champ — concept « Instructions d'écriture et clefs de lecture »). Méthodes LBP refondue intégralement comme cas test canonique (Description + Usages IA recadrés en R-060 v3). Relations `utilise (taxonomies)` différées (Phase post-A2/A3). Prochaine étape : **Phase A2** (BDD Templates de bricks) ou **A1.x audit narratif** selon arbitrage.
 
 ### Phases terminées (chronologie)
 
