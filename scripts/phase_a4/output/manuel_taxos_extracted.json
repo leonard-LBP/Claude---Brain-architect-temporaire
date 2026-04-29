@@ -1,0 +1,659 @@
+[
+  {
+    "file": "Brain\\Manuel de BDD - Agents LBP.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Agents LBP",
+    "section": 5,
+    "codes": [
+      "AGENT.FAMILY",
+      "OBJ.STATUT"
+    ],
+    "n_codes": 2
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Docs méta LBP.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Docs méta LBP",
+    "section": 5,
+    "codes": [
+      "META.FAMILY",
+      "OBJ.STATUT"
+    ],
+    "n_codes": 2
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Glossaire LBP.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Glossaire LBP",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT"
+    ],
+    "n_codes": 1
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Manuels de BDD.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Manuels de BDD",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT"
+    ],
+    "n_codes": 1
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Méthodes LBP.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Méthodes LBP",
+    "section": 5,
+    "codes": [
+      "MET.FAMILY",
+      "OBJ.STATUT"
+    ],
+    "n_codes": 2
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Outils externes.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Outils externes",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT",
+      "OUT.FAMILY"
+    ],
+    "n_codes": 2
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Prompts LBP.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Prompts LBP",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT",
+      "PLATFORM.ENV",
+      "PROMPT.ARCH_ROLE",
+      "PROMPT.DEPLOY_STATUS",
+      "PROMPT.TYPE"
+    ],
+    "n_codes": 5
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Registre des logic blocks.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Registre des logic blocks",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT"
+    ],
+    "n_codes": 1
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Registre des notes de concept.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Registre des notes de concept",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT"
+    ],
+    "n_codes": 1
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Registre des taxonomies.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Registre des taxonomies",
+    "section": 5,
+    "codes": [
+      "OBJ.STATUT"
+    ],
+    "n_codes": 1
+  },
+  {
+    "file": "Brain\\Manuel de BDD - Templates de bricks.md",
+    "scope": "Brain",
+    "title": "Manuel de BDD - Templates de bricks",
+    "section": 5,
+    "codes": [
+      "BRICK.FAMILY",
+      "OBJ.STATUT"
+    ],
+    "n_codes": 2
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Actifs.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Actifs",
+    "section": 6,
+    "codes": [
+      "ASSET.LIFECYCLE",
+      "ASSET.PROVENANCE",
+      "ASSET.SUBSTITUTABILITY",
+      "ASSET.SUBTYPE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 8
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Actions détectées.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Actions détectées",
+    "section": 6,
+    "codes": [
+      "ACT.CONSOLIDATION_TARGET",
+      "ACT.IMPACT_DOMAIN",
+      "ACT.INTENT",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.COLLAB_INTENSITY",
+      "SCALE.CONFIDENCE",
+      "SCALE.GRANULARITY",
+      "SCALE.NECESSITY_TODAY",
+      "SCALE.PROCESSISATION",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE",
+      "SCALE.VALUE_HORIZON"
+    ],
+    "n_codes": 14
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Capacités métier candidates sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Capacités métier candidates sandbox",
+    "section": 6,
+    "codes": [
+      "CAP.DISTINCTIVITY",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 7
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Capacités organisationnelles.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Capacités organisationnelles",
+    "section": 6,
+    "codes": [
+      "CAP.DISTINCTIVITY",
+      "CAP.FAMILY",
+      "CAP.NATURE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 10
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Collectifs.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Collectifs",
+    "section": 6,
+    "codes": [
+      "COL.FORMALITY",
+      "COL.ORIENTATION",
+      "COL.TEMPORALITY",
+      "COL.TEMPO_CLASS",
+      "COL.TEMPO_VAR",
+      "COL.TYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.MATURITY",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 11
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Enjeux.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Enjeux",
+    "section": 6,
+    "codes": [
+      "ENJ.DOMAIN",
+      "ENJ.EXPRESSION",
+      "ENJ.HORIZON",
+      "ENV.PESTEL",
+      "EVT.TYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CONFIDENCE",
+      "SCALE.CRITICALITY",
+      "SIG.NATURE",
+      "SIG.REGISTRE"
+    ],
+    "n_codes": 12
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Environnements.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Environnements",
+    "section": 6,
+    "codes": [
+      "ASSET.SUBTYPE",
+      "COL.TYPE",
+      "ENV.CONTROLLABILITY",
+      "ENV.PESTEL",
+      "ENV.SUBTYPE",
+      "ENV.VOLATILITY",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 11
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Glossaire spécifique.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Glossaire spécifique",
+    "section": 6,
+    "codes": [
+      "GLO.CAT",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT"
+    ],
+    "n_codes": 3
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Indicateurs.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Indicateurs",
+    "section": 6,
+    "codes": [
+      "INDIC.DOMAIN",
+      "INDIC.FREQ",
+      "INDIC.NATURE",
+      "INDIC.SCOPE_APPLI",
+      "INDIC.TIME_ROLE",
+      "INDIC.UNIT",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.COVERAGE"
+    ],
+    "n_codes": 9
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Individus.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Individus",
+    "section": 6,
+    "codes": [
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SKILL.HARD",
+      "SKILL.SOFT"
+    ],
+    "n_codes": 5
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Initiatives organisationnelles.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Initiatives organisationnelles",
+    "section": 6,
+    "codes": [
+      "INIT.DRIVER",
+      "INIT.PHASE",
+      "INIT.TYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 9
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Journal des signaux.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Journal des signaux",
+    "section": 6,
+    "codes": [
+      "EMO.TYPE",
+      "EVT.TYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CRITICALITY",
+      "SCALE.SAILLANCE",
+      "SIG.NATURE",
+      "SIG.REGISTRE"
+    ],
+    "n_codes": 9
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Modulateurs.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Modulateurs",
+    "section": 6,
+    "codes": [
+      "ASSET.SUBTYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.CONFIDENCE",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY"
+    ],
+    "n_codes": 8
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - OKR sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - OKR sandbox",
+    "section": 6,
+    "codes": [
+      "ENJ.DOMAIN",
+      "ENJ.HORIZON",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CONFIDENCE",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 6
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - OKR.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - OKR",
+    "section": 6,
+    "codes": [
+      "ENJ.DOMAIN",
+      "ENJ.HORIZON",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CONFIDENCE",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 6
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Organisations.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Organisations",
+    "section": 6,
+    "codes": [
+      "OBJ.STATUT",
+      "ORG.JURISDICTION",
+      "ORG.SECTEUR",
+      "ORG.TYPE",
+      "ORG5D.DIM"
+    ],
+    "n_codes": 5
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Postes.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Postes",
+    "section": 6,
+    "codes": [
+      "INIT.TYPE",
+      "JOB.COVERAGE",
+      "JOB.FAMILLE",
+      "JOB.SENIORITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SKILL.HARD",
+      "SKILL.SOFT"
+    ],
+    "n_codes": 8
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Pratiques organisationnelles sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Pratiques organisationnelles sandbox",
+    "section": 6,
+    "codes": [
+      "ACT.IMPACT_DOMAIN",
+      "ACT.INTENT",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.COLLAB_INTENSITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.MATURITY",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE",
+      "SCALE.VALUE_HORIZON"
+    ],
+    "n_codes": 12
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Pratiques organisationnelles.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Pratiques organisationnelles",
+    "section": null,
+    "codes": [],
+    "n_codes": 0
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Principes organisationnels sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Principes organisationnels sandbox",
+    "section": 6,
+    "codes": [
+      "ENV.PESTEL",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.ALIGNMENT",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 5
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Principes organisationnels.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Principes organisationnels",
+    "section": 6,
+    "codes": [
+      "ENV.PESTEL",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PRA.TYPE",
+      "SCALE.ALIGNMENT",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 6
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Problématiques sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Problématiques sandbox",
+    "section": 6,
+    "codes": [
+      "ENJ.DOMAIN",
+      "ENJ.HORIZON",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CONFIDENCE",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 8
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Problématiques.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Problématiques",
+    "section": 6,
+    "codes": [
+      "ENJ.DOMAIN",
+      "ENJ.EXPRESSION",
+      "ENJ.HORIZON",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CONFIDENCE",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 9
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Processus candidats sandbox.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Processus candidats sandbox",
+    "section": 6,
+    "codes": [
+      "ACT.IMPACT_DOMAIN",
+      "ACT.INTENT",
+      "ASSET.SUBTYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PROC.NIVEAU",
+      "SCALE.GRANULARITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.PROCESSISATION",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 12
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Processus candidats.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Processus candidats",
+    "section": 6,
+    "codes": [
+      "ACT.INTENT",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PROC.NIVEAU",
+      "SCALE.GRANULARITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.PROCESSISATION",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 9
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Processus.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Processus",
+    "section": 6,
+    "codes": [
+      "ACT.INTENT",
+      "ASSET.SUBTYPE",
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "PROC.NIVEAU",
+      "SCALE.GRANULARITY",
+      "SCALE.IMPACT_INTENSITY",
+      "SCALE.PROCESSISATION",
+      "SCALE.RECURRENCE",
+      "SCALE.SCOPE"
+    ],
+    "n_codes": 11
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Relations inter-organisations.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Relations inter-organisations",
+    "section": 6,
+    "codes": [
+      "OBJ.STATUT",
+      "ORG.JURISDICTION",
+      "ORG.SECTEUR",
+      "ORG.TYPE",
+      "ORG5D.DIM",
+      "ORG_REL.TYPE",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 7
+  },
+  {
+    "file": "Digital Twin\\Manuel de BDD - Événements.md",
+    "scope": "Twin",
+    "title": "Manuel de BDD - Événements",
+    "section": 6,
+    "codes": [
+      "ASSET.SUBTYPE",
+      "COL.TYPE",
+      "ENV.PESTEL",
+      "EVT.ORIGIN",
+      "EVT.RECURRENCE_CLASS",
+      "EVT.TIME_GRAIN",
+      "EVT.TIME_PRECISION",
+      "EVT.TYPE",
+      "INIT.TYPE",
+      "OBJ.STATUT",
+      "ORG5D.DIM",
+      "SCALE.CRITICALITY",
+      "SCALE.IMPACT_INTENSITY"
+    ],
+    "n_codes": 13
+  },
+  {
+    "file": "Mission Ops\\Manuel de BDD - Actions LBP.md",
+    "scope": "MO",
+    "title": "Manuel de BDD - Actions LBP",
+    "section": 6,
+    "codes": [
+      "OBJ.STATUT",
+      "OPS.ACTION_FAMILY",
+      "OPS.ACTION_ITEM_TYPE",
+      "OPS.RESPONSIBLE_MAIN",
+      "OPS.STATUS"
+    ],
+    "n_codes": 5
+  },
+  {
+    "file": "Mission Ops\\Manuel de BDD - Bricks.md",
+    "scope": "MO",
+    "title": "Manuel de BDD - Bricks",
+    "section": 6,
+    "codes": [
+      "BRICK.FAMILY",
+      "OBJ.STATUT",
+      "OPS.STATUS"
+    ],
+    "n_codes": 3
+  },
+  {
+    "file": "Mission Ops\\Manuel de BDD - Meetings.md",
+    "scope": "MO",
+    "title": "Manuel de BDD - Meetings",
+    "section": 6,
+    "codes": [
+      "MTG.FORMAT",
+      "MTG.TYPE",
+      "OBJ.STATUT",
+      "OPS.STATUS"
+    ],
+    "n_codes": 4
+  },
+  {
+    "file": "Mission Ops\\Manuel de BDD - Sources d’informations.md",
+    "scope": "MO",
+    "title": "Manuel de BDD - Sources d’informations",
+    "section": 6,
+    "codes": [
+      "OBJ.CONFIDENTIALITE",
+      "OBJ.STATUT",
+      "SCALE.CONFIDENCE",
+      "SRC.EXTRACT_TARGET",
+      "SRC.FORMAT",
+      "SRC.PROVENANCE"
+    ],
+    "n_codes": 6
+  }
+]

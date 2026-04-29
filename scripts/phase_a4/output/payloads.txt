@@ -1,0 +1,160 @@
+### Manuel de BDD - Docs méta LBP
+page_id: 6257523b25114dd4ac76fd8f331a4a58
+value: ["https://app.notion.com/p/b859bcd6002e44b7858f4bf0997390fd", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Glossaire LBP
+page_id: 72c2cd5bd2b6482eb8a35f0da4f709ec
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Manuels de BDD
+page_id: 5c8980ca01a54e24a4243d60ed114214
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Méthodes LBP
+page_id: 62b5b5c2cb8f4f699f9f65ba7d4257a0
+value: ["https://app.notion.com/p/3ba68e03c76548da82bae28d4aa33267", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Outils externes
+page_id: 78c560ee21234643bdd414f07a66a81f
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/3ce18a57154446bbb1c4c0093a79b18c"]
+
+### Manuel de BDD - Prompts LBP
+page_id: 0fd417747aa94bc798b779ab90e76c2c
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/1946b1296c2e4aa8bc6ba69fa52c2cc4", "https://app.notion.com/p/56abb7b55da84027b52969b3256c59dd", "https://app.notion.com/p/9668cc8dcebf41879581e901dabcdb87", "https://app.notion.com/p/7c69fdaf09534fe3b507a1cab334cdd9"]
+
+### Manuel de BDD - Registre des logic blocks
+page_id: c31d5be323fc45de88e9013d5de46258
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Registre des notes de concept
+page_id: 06aa7b362e844121ab18727a23c70efd
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Registre des taxonomies
+page_id: 493ca7633bb148c8850c4980f7fa3071
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Templates de bricks
+page_id: 10b04d272ad5476483c083ffd6b9663c
+value: ["https://app.notion.com/p/1a077b7de21c4888a4293aeb2ffa8c80", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Actions détectées
+page_id: 36313aa9592a49599b37aa8944ad0042
+value: ["https://app.notion.com/p/34ce1a18653c81708b27c02f83df189e", "https://app.notion.com/p/09f7ed1649584a25844ba365d615d766", "https://app.notion.com/p/53292d988d674a89897b79dc9a261046", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/3e44a004416b4edd8040bd77d500588f", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/39883e3d59674b2a8bf839dd334d13a7", "https://app.notion.com/p/830565e2871f4ee1a6f99149ea78012e", "https://app.notion.com/p/4e7e3ef25dab425cb7502b69ba290bbf", "https://app.notion.com/p/5f77cdf6a6064468b1adbe40c59bbcb3", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba", "https://app.notion.com/p/eed296907bc34815a363d17a971c050b"]
+
+### Manuel de BDD - Capacités métier candidates sandbox
+page_id: 34de1a18653c812fb351e658e3ac28a9
+value: ["https://app.notion.com/p/68aadeac44ee4c449c9caeb81fee0ed0", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/c69230587358499081d7732819826607", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Capacités organisationnelles
+page_id: ce8cb647c9f74021aedcd4f2f4b60cdc
+value: ["https://app.notion.com/p/68aadeac44ee4c449c9caeb81fee0ed0", "https://app.notion.com/p/5c4d5b369d1241bca401205173c48044", "https://app.notion.com/p/74b5d4903b2345c09852be95e732e956", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/f302f7cfe1d241588ad0f8c27c1aa827", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/c69230587358499081d7732819826607", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Collectifs
+page_id: 34de1a18653c81c38ff1e95be0803a53
+value: ["https://app.notion.com/p/34ce1a18653c8160b574d522bf240d7a", "https://app.notion.com/p/34ce1a18653c81ab91b6d4bb9c9358e2", "https://app.notion.com/p/34ce1a18653c816689a2e390d3a94d99", "https://app.notion.com/p/34ce1a18653c81d1b3a7f1790bcab89f", "https://app.notion.com/p/34ce1a18653c8160b693e3b9b3aa6c45", "https://app.notion.com/p/34ce1a18653c81a3a415f430600d2584", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/c69230587358499081d7732819826607", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Enjeux
+page_id: 524dac7db6014ca7843b824667eb5e1e
+value: ["https://app.notion.com/p/1df2a345cbeb497b886a0f7f1d47f755", "https://app.notion.com/p/7ad70abed6c64aec9d42aaaaea253e8c", "https://app.notion.com/p/2fd0b03f83ce49eeaee8abf2f7b0ae4a", "https://app.notion.com/p/f84d064c08e34b2e924feb2a60fa1624", "https://app.notion.com/p/c82114411c78472a97c761d1da544546", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/2e5f7bccf08940f6840b22df592483ad", "https://app.notion.com/p/1b821083e43e4b018419068f06174f1c"]
+
+### Manuel de BDD - Environnements
+page_id: 621016580d884051b6073d40f14fd3b4
+value: ["https://app.notion.com/p/34ce1a18653c81788204ea59f9666014", "https://app.notion.com/p/34ce1a18653c81a3a415f430600d2584", "https://app.notion.com/p/34ce1a18653c81eba395fef567dabf2b", "https://app.notion.com/p/f84d064c08e34b2e924feb2a60fa1624", "https://app.notion.com/p/b400674b5e0d4435ab34f2023488bbda", "https://app.notion.com/p/34ce1a18653c8178a2d5c8b14f6c0c00", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/f302f7cfe1d241588ad0f8c27c1aa827", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Glossaire spécifique
+page_id: cfc55e2f869d43a299a9775987677255
+value: ["https://app.notion.com/p/32fb0263c6804335a6860103e452902b", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332"]
+
+### Manuel de BDD - Indicateurs
+page_id: aeccac6d3c784e3c87ad36fe0d639e79
+value: ["https://app.notion.com/p/8515f6a8804d409cb9796f5278456d2e", "https://app.notion.com/p/98600cdbf9c04931b83d9ec57841ec9a", "https://app.notion.com/p/74fe4f7757044be29fd2f00702965fc4", "https://app.notion.com/p/87219ab9fb424c77a8ec12976c750158", "https://app.notion.com/p/34de1a18653c8112834ee3b59afc97fb", "https://app.notion.com/p/af15f01425344aaa899b3551ab8769c0", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/34de1a18653c818ea33fdbb5fa828fdd"]
+
+### Manuel de BDD - Individus
+page_id: 91e56d1a54064f50b36d4d9182a3d669
+value: ["https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9642c2d568cc4c8faf8758f04fb352ba", "https://app.notion.com/p/5f2d6cfe69c641abab5c45f3469314bf"]
+
+### Manuel de BDD - Initiatives organisationnelles
+page_id: 34de1a18653c814c9181f8c655c8e1d8
+value: ["https://app.notion.com/p/34ce1a18653c81b2a7f2e8e6b8e9e2c5", "https://app.notion.com/p/34ce1a18653c810f98e5d65c5dd3f21b", "https://app.notion.com/p/34ce1a18653c81b497eeff26d47d01df", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/c69230587358499081d7732819826607", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Journal des signaux
+page_id: 65c9cc706fd9481c8fa2f046bd30eef7
+value: ["https://app.notion.com/p/52abdd8232bf479fa676104bee11230e", "https://app.notion.com/p/c82114411c78472a97c761d1da544546", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d8345e3053464137a119661d1ca2ea88", "https://app.notion.com/p/2e5f7bccf08940f6840b22df592483ad", "https://app.notion.com/p/1b821083e43e4b018419068f06174f1c"]
+
+### Manuel de BDD - Modulateurs
+page_id: 06cabc5a8bda45a1b9f026cccd53339a
+value: ["https://app.notion.com/p/34ce1a18653c81788204ea59f9666014", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/f302f7cfe1d241588ad0f8c27c1aa827", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/c69230587358499081d7732819826607"]
+
+### Manuel de BDD - OKR sandbox
+page_id: 34de1a18653c81d4b4fafc79a879b693
+value: ["https://app.notion.com/p/1df2a345cbeb497b886a0f7f1d47f755", "https://app.notion.com/p/2fd0b03f83ce49eeaee8abf2f7b0ae4a", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - OKR
+page_id: 2909fa273e2b4841a6dbb33e9a28a6fc
+value: ["https://app.notion.com/p/1df2a345cbeb497b886a0f7f1d47f755", "https://app.notion.com/p/2fd0b03f83ce49eeaee8abf2f7b0ae4a", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Organisations
+page_id: 34de1a18653c81dfa80fd8b93c295553
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/3ee4c413333d48c7b0fcae6420804bb0", "https://app.notion.com/p/0d434ad2b8354534adae9c2174f51875", "https://app.notion.com/p/34ce1a18653c819ba7e8f8bc830f8dc5", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288"]
+
+### Manuel de BDD - Postes
+page_id: 34de1a18653c81559a5bc5ad62da06c2
+value: ["https://app.notion.com/p/34ce1a18653c81b497eeff26d47d01df", "https://app.notion.com/p/351e1a18653c81b38191e2009f63ab9e", "https://app.notion.com/p/ff1769876ccd4cffb6779dcc57fd7150", "https://app.notion.com/p/66f6b36afbd545ccac2148a4ee8eede2", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9642c2d568cc4c8faf8758f04fb352ba", "https://app.notion.com/p/5f2d6cfe69c641abab5c45f3469314bf"]
+
+### Manuel de BDD - Pratiques organisationnelles sandbox
+page_id: 34de1a18653c8100b8e4ee9a1c0a5a2c
+value: ["https://app.notion.com/p/09f7ed1649584a25844ba365d615d766", "https://app.notion.com/p/53292d988d674a89897b79dc9a261046", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/f302f7cfe1d241588ad0f8c27c1aa827", "https://app.notion.com/p/3e44a004416b4edd8040bd77d500588f", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/c69230587358499081d7732819826607", "https://app.notion.com/p/5f77cdf6a6064468b1adbe40c59bbcb3", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba", "https://app.notion.com/p/eed296907bc34815a363d17a971c050b"]
+
+### Manuel de BDD - Principes organisationnels sandbox
+page_id: 34de1a18653c8179b4b4e36dc8bb9f5f
+value: ["https://app.notion.com/p/f84d064c08e34b2e924feb2a60fa1624", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9e5b871519274c3297e0f5f6935728d8", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Principes organisationnels
+page_id: be5c66635e0947799a2778840c0a3467
+value: ["https://app.notion.com/p/f84d064c08e34b2e924feb2a60fa1624", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/f302f7cfe1d241588ad0f8c27c1aa827", "https://app.notion.com/p/9e5b871519274c3297e0f5f6935728d8", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Problématiques sandbox
+page_id: 34de1a18653c81ab8fbdeb717012b063
+value: ["https://app.notion.com/p/1df2a345cbeb497b886a0f7f1d47f755", "https://app.notion.com/p/2fd0b03f83ce49eeaee8abf2f7b0ae4a", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Problématiques
+page_id: 28c2ea668d714b9b9307ecc991f243f8
+value: ["https://app.notion.com/p/1df2a345cbeb497b886a0f7f1d47f755", "https://app.notion.com/p/7ad70abed6c64aec9d42aaaaea253e8c", "https://app.notion.com/p/2fd0b03f83ce49eeaee8abf2f7b0ae4a", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Processus candidats sandbox
+page_id: 34de1a18653c818aa0c0e678b428d1fd
+value: ["https://app.notion.com/p/09f7ed1649584a25844ba365d615d766", "https://app.notion.com/p/53292d988d674a89897b79dc9a261046", "https://app.notion.com/p/34ce1a18653c81788204ea59f9666014", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/3ba8fc17f12d4d66ba7ac9f42aa96f02", "https://app.notion.com/p/39883e3d59674b2a8bf839dd334d13a7", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/4e7e3ef25dab425cb7502b69ba290bbf", "https://app.notion.com/p/5f77cdf6a6064468b1adbe40c59bbcb3", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Processus candidats
+page_id: 34de1a18653c814593c1c22c9085c50e
+value: ["https://app.notion.com/p/53292d988d674a89897b79dc9a261046", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/3ba8fc17f12d4d66ba7ac9f42aa96f02", "https://app.notion.com/p/39883e3d59674b2a8bf839dd334d13a7", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/4e7e3ef25dab425cb7502b69ba290bbf", "https://app.notion.com/p/5f77cdf6a6064468b1adbe40c59bbcb3", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Processus
+page_id: 34de1a18653c81e4b335df04d5be4261
+value: ["https://app.notion.com/p/53292d988d674a89897b79dc9a261046", "https://app.notion.com/p/34ce1a18653c81788204ea59f9666014", "https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/3ba8fc17f12d4d66ba7ac9f42aa96f02", "https://app.notion.com/p/39883e3d59674b2a8bf839dd334d13a7", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352", "https://app.notion.com/p/4e7e3ef25dab425cb7502b69ba290bbf", "https://app.notion.com/p/5f77cdf6a6064468b1adbe40c59bbcb3", "https://app.notion.com/p/da25b42e5ff14035a3bcbcf4e39e57ba"]
+
+### Manuel de BDD - Relations inter-organisations
+page_id: 34de1a18653c8104b6d0e0cb5ab310a7
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/3ee4c413333d48c7b0fcae6420804bb0", "https://app.notion.com/p/0d434ad2b8354534adae9c2174f51875", "https://app.notion.com/p/34ce1a18653c819ba7e8f8bc830f8dc5", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/34ce1a18653c813f867aed69cb547705", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Événements
+page_id: 51bb21c54198467c8deded1f46643e6b
+value: ["https://app.notion.com/p/34ce1a18653c81788204ea59f9666014", "https://app.notion.com/p/34ce1a18653c81a3a415f430600d2584", "https://app.notion.com/p/f84d064c08e34b2e924feb2a60fa1624", "https://app.notion.com/p/34ce1a18653c8107b134e4d80a416046", "https://app.notion.com/p/34ce1a18653c81c8be9ef5edacd8cfa0", "https://app.notion.com/p/702337743a5b4a12afcb22985667f6e3", "https://app.notion.com/p/34ce1a18653c817097b3f817e9fd78c8", "https://app.notion.com/p/c82114411c78472a97c761d1da544546", "https://app.notion.com/p/34ce1a18653c81b497eeff26d47d01df", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/8abc584292f34bf4a172c04244bf9288", "https://app.notion.com/p/9e6e0c8c65a94dee82dc431728ab4b48", "https://app.notion.com/p/d5fc00e9785e41fdbbda61de5fd1d352"]
+
+### Manuel de BDD - Actions LBP
+page_id: d58399144daf408d8d0c1ae0f475f7cb
+value: ["https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/f2d33e15e4a3462d98aa4d4ae0f0f4b9", "https://app.notion.com/p/17788900999144b3a6182a90189b8bdc", "https://app.notion.com/p/e2a942888c8a4c8abcbbf885d8634d88", "https://app.notion.com/p/dafc22c7f7054d1fb41eb03ae78b16b7"]
+
+### Manuel de BDD - Bricks
+page_id: 4ec62966f4144770a3e3a21fa800e12c
+value: ["https://app.notion.com/p/1a077b7de21c4888a4293aeb2ffa8c80", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/dafc22c7f7054d1fb41eb03ae78b16b7"]
+
+### Manuel de BDD - Meetings
+page_id: 75d152e34ca54793837a2ac7f6c5fa32
+value: ["https://app.notion.com/p/d9c1cbd5776f423eb96ae474874cf05d", "https://app.notion.com/p/757b142bddff4547997bbbc63316ee0a", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/dafc22c7f7054d1fb41eb03ae78b16b7"]
+
+### Manuel de BDD - Sources d'informations
+page_id: d32eb86856a043bbb9015fa288dd6c3b
+value: ["https://app.notion.com/p/c52249841b094263897179fa6e486ee1", "https://app.notion.com/p/6050fc5d5e384cec81ec200ae7027332", "https://app.notion.com/p/0739d013c81d46baa4569caf70683293", "https://app.notion.com/p/ebfa1f3d5d284f88a4c99739b40e8f20", "https://app.notion.com/p/f58fc5e7d9cf4b3c86362a634ca2e5ce", "https://app.notion.com/p/a1567d5a424d473fa00a469db7c5e637"]
+
