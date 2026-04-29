@@ -1,11 +1,11 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 29-04-2026 — **Phase A1.1 close** (BDD Manuels de BDD côté Brain) : 11 entrées Notion mises à jour (Code unique préfixé BR_, Version du template 1.1, Lien vers la BDD Notion) + cas test Méthodes LBP refondu (Description + Usages IA recadrés en R-060 v3) + correction casse « Templates de Bricks » → « Templates de bricks ». Relations `utilise (taxonomies)` différées (à faire après mise à jour de toutes les BDDs cibles).
+> Dernière mise à jour : 29-04-2026 — **Phase 0b' close** : 32 manuels Twin+MO refondus en R-060 v3 (32/32 valides, validation YAML automatisée). Constat avant refonte : 32/32 avaient summary vide et un purpose boilerplate « Spécifier la BDD X... ». Maintenant 100 % du Brain (Brain + Twin + MO côté manuels = 43 fichiers ; + 102 taxos + 72 notes de concept = 217 fichiers Brain au total) est en R-060 v3.
 
 ## Phase actuelle
 
-**Phase A1.1 (BDD Manuels de BDD — entrées Brain) close.** Doctrine appliquée : (c) structurel strict + narratif diff. Source de remplissage : **WR-RD du manuel parent** (instructions d'écriture champ par champ, conformément au concept « Instructions d'écriture et clefs de lecture »). Les 11 entrées Brain dans la BDD Notion sont à jour structurellement ; un cas test (Méthodes LBP) sert de référence pour l'audit narratif optionnel A1.1c. Prochaine étape : **Phase 0b' (refonte R-060 v3 des 32 manuels Twin+MO)** puis **Phase A1.2 (32 entrées Twin+MO)**, ou directement **Phase A2** (Templates) selon arbitrage.
+**Phase 0b' (refonte R-060 v3 des 32 manuels Twin+MO) close.** Méthode identique aux phases 0a/0b/0c : mapping Python `(folder, fname) → (summary, purpose)` + script de réécriture en bulk + validation YAML automatisée. Tous les summary décrivent l'objet de la BDD (Référentiel / Sandbox / Journal / Lexique / Pivot / Backlog / Index / Registre) en phrase nominale autonome ; tous les purposes sont en verbe à l'infinitif + effet structurel direct, sans citation d'autre BDD ni jargon backend. **L'ensemble du Brain (185 fichiers Phase 0) + les 32 manuels Twin+MO (Phase 0b') = 217 fichiers Brain en R-060 v3.** Prochaine étape : **Phase A1.2 (refresh des 32 entrées Twin+MO dans la BDD Notion)** ou **Phase A2** selon arbitrage.
 
 ### Phases terminées (chronologie)
 
