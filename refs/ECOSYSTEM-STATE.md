@@ -1,7 +1,7 @@
 # Etat courant de l'ecosysteme LBP
 
 > Snapshot dynamique — mis à jour après chaque changement.
-> Dernière mise à jour : 30-04-2026 — **Phase B (test Twin DeepSecAI v0) — Vague 8 Pilotage close, commit intermédiaire.** Test fonctionnel Twin sur la nouvelle page test `352e1a18653c8079b1b6edd1c456aaeb`. Cumul **45 fiches** créées : 35 Twin originelles (vagues 1-7.2) + 2 Principes (7.3) + 2 Capacités métier candidates sandbox (7.4) + 2 Problématiques (8.1) + 2 OKR (8.2) + 2 Indicateurs (8.3). Doctrine WR-RD-first appliquée systématiquement (C-017). Vague 8 Pilotage = ✅ complète (10 fiches sur les 5 BDDs Pilotage : Principes/Capacités sandbox/Problématiques/OKR/Indicateurs). Reste vague 9 (Mission Ops final : 2 Meetings + 2 Actions LBP + 2 Bricks) + 10 (vérifs transverses) + post-test (`refs/TEST_TWIN_PLAYBOOK.md` + cogitation 'Régime de l'entité').
+> Dernière mise à jour : 30-04-2026 — **Phase B (test Twin DeepSecAI v0) close.** 51 fiches sur 17 BDDs Twin/MO mobilisées sur la page test `352e1a18653c8079b1b6edd1c456aaeb`. Vague 9 Mission Ops complète (2 Meetings + 2 Actions LBP + 2 Bricks). Vague 10 vérifs transverses : ✓ bidir auto-propagation Notion (Meeting↔Action, Action↔Brick, Source↔Brick), ✓ chaînes D-009 indicateurs (5 relations + correctif `mesure (problématiques)` post-audit). Playbook stabilisé : `refs/TEST_TWIN_PLAYBOOK.md`. Captures session : C-017 (lecture WR-RD obligatoire avant remplissage) + C-018 (vérifier régime BDD avant signaler anomalie). Reste post-test : (a) cogitation propriété 'Régime de l'entité', (b) Phase C audit final + figement Brain, (c) Phases D/E chantiers M et P.
 
 ## Phase actuelle
 
