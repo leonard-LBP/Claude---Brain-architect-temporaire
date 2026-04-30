@@ -25,8 +25,8 @@
 1. CLAUDE.md est lu automatiquement
 2. memory/ est lu automatiquement
 3. Si reprise de travail en cours → lire `refs/ECOSYSTEM-STATE.md`
-4. Si besoin de contexte architecture → lire `refs/ARCHITECTURE-DIGEST.md`
-5. Si opération prévue → consulter `refs/RULES_BRAIN_TWIN.md` et `refs/WORKFLOWS_LBP.md`
+4. Si besoin de contexte architecture → lire `refs/ARCHITECTURE_DIGEST_LBP.md`
+5. Si opération prévue → consulter `refs/RULES_LBP.md` et `refs/WORKFLOWS_LBP.md`
 6. Initialiser TodoWrite si tâches multiples
 
 ### Déclencheur

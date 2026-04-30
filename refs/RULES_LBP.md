@@ -449,7 +449,7 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
   - Nom d'une propriété, d'une variable, d'un champ : `created_at`, `brick_type`, `purpose`
   - Valeur de taxo / code de doc : `BRICK.PROFIL_ORGA`, `BRK_PROFIL_ORGA_001`, `DOC.TYPE`
   - Fragment de syntaxe / commande / regex : `<!-- @INSTR-START -->`, `grep -E "@INSTR"`, `[A-Z]+_[A-Z]+`
-  - Nom de fichier / chemin : `Template - Méthode LBP.md`, `refs/RULES_BRAIN_TWIN.md`
+  - Nom de fichier / chemin : `Template - Méthode LBP.md`, `refs/RULES_LBP.md`
   - Nom de bloc / section technique : `TEMPLATE_USAGE_GUIDE`, `SECTION_X_GUIDE`
 - **Interdits** : mise en évidence générale dans la prose (utiliser `**gras**` pour insister, `*italique*` pour nuancer ou citer un terme), encadrer un mot du langage courant, encadrer une phrase entière.
 - **Cas particulier** : à l'intérieur d'un commentaire HTML `<!-- ... -->`, ne **jamais** écrire la séquence `-->` littérale (même entourée de backticks), car le parseur HTML ferme le commentaire avant que Markdown n'agisse. Solution : sortir l'exemple à citer hors du commentaire HTML (cf. convention de structuration des templates v1.1+).
@@ -478,14 +478,14 @@ Versions illisibles ou ambiguës, audit de lignée template impossible, agents i
 
 #### R-059 : Hygiène d'écriture des docs Brain — pas de bruit historique ni de spéculation future
 
-- **Portée** : Tous les docs de l'écosystème Brain LBP (Core + Motor) : manuels de BDD, WR-RD, notes de concept, taxonomies, templates, méthodes LBP, prompts, logic blocks, fiches agents, fiches outils externes, glossaires LBP. **Hors scope** : docs de session (`refs/`, `CLAUDE.md`, `DECISIONS.md`, backlog) qui ont vocation à porter justement l'historique et les hypothèses ; docs Mission Ops (où le journal de mission peut faire partie du livrable) ; docs Digital Twin (où certaines mentions de timeline mission sont structurellement utiles).
+- **Portée** : Tous les docs de l'écosystème Brain LBP (Core + Motor) : manuels de BDD, WR-RD, notes de concept, taxonomies, templates, méthodes LBP, prompts, logic blocks, fiches agents, fiches outils externes, glossaires LBP. **Hors scope** : docs de session (`refs/`, `CLAUDE.md`, `DECISIONS_LBP.md`, backlog) qui ont vocation à porter justement l'historique et les hypothèses ; docs Mission Ops (où le journal de mission peut faire partie du livrable) ; docs Digital Twin (où certaines mentions de timeline mission sont structurellement utiles).
 - **Statut** : Actif
 - **Why** : Chaque doc Brain est consommé par des **agents en retrieval** qui n'ont pas connaissance du contexte historique de l'écosystème (sauf l'agent Brain architect qui pilote l'évolution). Pour qu'un agent puisse lire un manuel, une note de concept ou un template et **agir correctement à partir de ce seul doc**, il faut que le doc soit **autonome** : une source de vérité brute à l'instant t. Toute mention historique ("précédemment ce champ s'appelait X", "en V2 on faisait Y") ou spéculative ("à terme on pourrait", "piste à creuser", "amélioration future") crée du **bruit** : (a) charge cognitive inutile, (b) ambiguïté sur ce qui est canon vs ce qui est obsolète/futur, (c) risque que l'agent se base sur une version périmée ou non validée.
 - **How to apply** : dans tout doc Brain, **interdiction** d'écrire :
   - **Mentions historiques** : "anciennement", "avant la V3", "ce champ s'appelait X", "on a supprimé Y", "migration depuis Z"
   - **Spéculations futures** : "à terme", "à voir plus tard", "piste à creuser", "amélioration potentielle", "TODO pour le futur", "à étudier"
   - **États transitoires** : "en cours de finalisation", "version provisoire", "draft à valider" (le statut vit dans le frontmatter ou la BDD, pas dans le corps)
-- **Où vit l'historique** : commits Git (changelog), `refs/DECISIONS.md` (pourquoi tel choix structurant), backlog (`refs/RULES_BRAIN_TWIN-backlog.md` pour les règles pressenties).
+- **Où vit l'historique** : commits Git (changelog), `refs/DECISIONS_LBP.md` (pourquoi tel choix structurant), backlog (`refs/RULES_BRAIN_TWIN-backlog.md` pour les règles pressenties).
 - **Où vivent les pistes futures** : `refs/RULES_BRAIN_TWIN-backlog.md`, TodoWrite de session, ou notes personnelles de Leonard. Pas dans les docs Brain publiés.
 - **Cas accepté** : un doc peut citer **explicitement** une règle (ex : R-058) ou une décision (ex : D-019) **comme référentiel canonique courant** — ce n'est pas une mention historique, c'est une déclaration de conformité.
 - **Conséquence si violation** :
@@ -1016,7 +1016,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - Toute suppression doit y être arbitrée
   - Tout changement de régime architectural doit y être explicité
   - Toute sandbox doit être distinguée de sa BDD officielle cible
-- **Découverte** : Panorama V2 v3, §4.3. Tableau maître reproduit dans `refs/SPECS_ARCHITECTURE_TWIN.md`.
+- **Découverte** : Panorama V2 v3, §4.3. Tableau maître reproduit dans `refs/SPECS_ARCHITECTURE_TWIN_LBP.md`.
 
 ### 3.6 Lecture et traversées
 

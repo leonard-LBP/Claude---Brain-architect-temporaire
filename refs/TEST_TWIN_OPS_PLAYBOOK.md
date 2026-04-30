@@ -68,7 +68,7 @@ Audit cross-BDD : auto-propagation des relations bidir, rollups 5D, cohérence c
 
 **Découverte** : en vague 7.1 (Processus), j'ai signalé comme « anomalie DDL » l'absence de relation `Source(s) d'information` côté Processus. Leonard a corrigé : c'est intentionnel (régime « consolidé/dérivé » selon D-009), la traçabilité passe par les BDDs amont (Process candidats sandbox).
 
-**Règle stabilisée** : **C-018** — vérifier le régime de la BDD (extraction directe vs consolidation/dérivation) avant de juger une absence de relation comme anomalie. Lire WR-RD + chaînes D-009 dans `refs/DECISIONS.md` + R-012 (séparation des 4 régimes).
+**Règle stabilisée** : **C-018** — vérifier le régime de la BDD (extraction directe vs consolidation/dérivation) avant de juger une absence de relation comme anomalie. Lire WR-RD + chaînes D-009 dans `refs/DECISIONS_LBP.md` + R-012 (séparation des 4 régimes).
 
 ### 3.3 Calibration C-012 systématique
 

@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 > Ce fichier regit le comportement de Claude et le cadre de notre collaboration.
-> Les regles intrinseques a l'ecosysteme Brain/Twin sont dans `refs/RULES_BRAIN_TWIN.md` (IDs `R-XXX`).
+> Les regles intrinseques a l'ecosysteme Brain/Twin sont dans `refs/RULES_LBP.md` (IDs `R-XXX`).
 > Ici, les IDs sont `C-XXX` (C pour collaboration/Claude).
 
 ---
@@ -39,15 +39,16 @@
 
 ## 3. Documentation de reference
 
-A consulter selon le besoin ; `refs/ARCHITECTURE-DIGEST.md` a relire au debut de chaque conversation pour se recontextualiser.
+A consulter selon le besoin ; `refs/ARCHITECTURE_DIGEST_LBP.md` a relire au debut de chaque conversation pour se recontextualiser.
 
 **🟦 Scope LBP (bundle ecosysteme)**
-- `refs/ARCHITECTURE-DIGEST.md` — Synthese de l'architecture LBP
-- `refs/RULES_BRAIN_TWIN.md` — Regles intrinseques a l'ecosysteme (IDs R-XXX)
-- `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties a formaliser plus tard
-- `refs/DECISIONS.md` — Decisions architecturales (le pourquoi des choix, IDs D-XXX)
+- `refs/ARCHITECTURE_DIGEST_LBP.md` — Synthese de l'architecture LBP
+- `refs/RULES_LBP.md` — Regles intrinseques a l'ecosysteme (IDs R-XXX)
+- `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties a formaliser plus tard (Scope Session, hors bundle)
+- `refs/DECISIONS_LBP.md` — Decisions architecturales (le pourquoi des choix, IDs D-XXX)
 - `refs/WORKFLOWS_LBP.md` — Workflows operationnels LBP (IDs WF-XXX)
-- `refs/SPECS_ARCHITECTURE_BRAIN.md` — Specs detaillees des 11 BDD Brain (schemas Notion)
+- `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md` — Specs detaillees des 11 BDD Brain (schemas Notion)
+- `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` — Specs detaillees des BDD Twin
 
 **🟪 Scope Session (hors bundle, collaboration Claude/Leonard)**
 - `refs/SESSION_WORKFLOWS.md` — Workflows propres a notre collaboration en session (re-contextualisation, etc.)
@@ -71,7 +72,7 @@ A consulter selon le besoin ; `refs/ARCHITECTURE-DIGEST.md` a relire au debut de
 - **C-015 — Vocabulaire : éviter « Drive » pour désigner les fichiers Markdown du vault** : Les fichiers Markdown du vault Obsidian `Architecture data` sont stockés sous `H:\Drive partagés\` parce que Google Drive Desktop synchronise le dossier — mais ce sont des `.md` purs, source de vérité LBP, **pas** des fichiers Google Drive natifs (Docs, Sheets, etc.). Termes corrects : « notes de concept », « manuels de BDD », « WR-RD », « taxonomies », ou plus génériquement « source de vérité Markdown » / « vault Architecture data ». Termes à proscrire : « notes Drive », « fichiers Drive », « doc Drive » — ils suggèrent à tort un format Google natif et brouillent la distinction Markdown ↔ Notion. Les **liens** vers Google Drive (URLs `drive.google.com`) restent eux légitimement nommés ainsi car ils pointent l'API Drive. Découverte : 29-04-2026 (Phase A3.2, Leonard a flaggé l'imprécision « notes Drive »).
 - **C-016 — Mettre à jour les plans JSON après ajouts inline en sous-phase** : Quand on étend une sous-phase par des ajouts inline (entrées non prévues au plan initial, ex. concepts trouvés via search ad hoc et traités directement par tool calls sans repasser par le plan), **mettre à jour le JSON de plan** dans `scripts/.../output/` **dans la même unité de travail**. Sinon, les scripts de migration ultérieurs (qui consomment ce JSON comme source de vérité) vont consommer un plan obsolète et **manquer les ajouts**. Symptôme typique : audit final révèle que des entries n'ont pas reçu un traitement censé être systémique (ex. migration de code), parce qu'invisibles pour le script. Découverte : 29-04-2026 (Phase A3.6, 5 entrées Glossaire ratées par script `a3_6_migration.py` car `a3bis_plan.json` n'avait pas capté les ajouts inline de sub-phase A3.bis.e — détecté par Leonard via spot-check manuel).
 - **C-017 — Lire le WR-RD (et les `.md` taxos référencées) avant chaque vague de remplissage de BDD Notion** : Avant de remplir des fiches dans une BDD Notion (Twin, Mission Ops ou Brain), lire systématiquement le WR-RD correspondant (`Manuels de BDD/<Domain>/WR-RD/WR-RD - <Nom BDD>.md`) pour absorber les **Instructions d'écriture** champ par champ + les contraintes de format (longueur, anti-patterns documentés, valeurs canoniques de taxons attendues, format des Noms type `Nom (Type)` pour Collectifs / `Nom (Sous-type)` pour Actifs, etc.). **Lire aussi les `.md` des taxonomies référencées** (`Taxonomies/*.md`) pour vérifier les libellés canoniques exacts. **Sans cette double lecture, le remplissage devient un best-guess** depuis le seul schéma Notion (data-source-state) qui produit des asymétries systémiques (taxons mal choisis, formats de Nom non conformes, mauvaise lecture du niveau category vs taxon, dimensions 5D dispatchées à l'instinct). Articulation avec C-012 : la lecture WR-RD/taxo doit avoir lieu **avant** la calibration de la fiche n°1 ; la calibration valide ensuite l'application correcte des contraintes lues. Découverte : 30-04-2026 (Phase B test Twin DeepSecAI v0, 25 fiches créées en best-guess depuis schéma Notion + json deepsecai_v0 sans lecture WR-RD/taxos ; audit a posteriori a révélé 6 fiches au format Nom non conforme et plusieurs anti-patterns documentés ignorés).
-- **C-018 — Avant de juger une absence de relation comme anomalie : vérifier les chaînes de transformation (D-009) et le régime de la BDD** : Une BDD Twin/MO peut légitimement ne pas avoir de relation directe vers `Sources d'informations` si elle est de **régime « consolidé/dérivé »** plutôt que « extraction directe ». Les BDDs analytiques (Processus, Pratiques organisationnelles, Principes organisationnels, Capacités organisationnelles, Modulateurs, etc.) sont alimentées par d'autres BDDs amont (Actions détectées, Processus candidats sandbox, Enjeux, etc.) selon les chaînes de transformation **D-009**. La traçabilité vers les sources est donc **indirecte / transitive** via les BDDs amont, pas directe. **Avant de signaler une « anomalie DDL »** sur l'absence d'une relation `Source(s) d'information`, lire : (i) le WR-RD complet de la BDD pour comprendre son régime, (ii) les chaînes de transformation D-009 dans `refs/DECISIONS.md` et `refs/SPECS_ARCHITECTURE_TWIN.md`, (iii) **R-012** (séparation des 4 régimes de connaissance). Articulation avec C-017 : c'est l'extension du principe « lire le WR-RD avant remplissage » — la doctrine architecturale de la BDD doit être absorbée avant de juger ce qui manque. Découverte : 30-04-2026, Phase B Vague 7.1, lors de la création des 2 fiches Processus j'ai initialement signalé comme « anomalie DDL » l'absence de relation `Source(s) d'information` côté Processus, alors que c'est intentionnel et conforme à la doctrine LBP (régime consolidé, alimentation amont via Process candidats / Actions détectées). Leonard a corrigé.
+- **C-018 — Avant de juger une absence de relation comme anomalie : vérifier les chaînes de transformation (D-009) et le régime de la BDD** : Une BDD Twin/MO peut légitimement ne pas avoir de relation directe vers `Sources d'informations` si elle est de **régime « consolidé/dérivé »** plutôt que « extraction directe ». Les BDDs analytiques (Processus, Pratiques organisationnelles, Principes organisationnels, Capacités organisationnelles, Modulateurs, etc.) sont alimentées par d'autres BDDs amont (Actions détectées, Processus candidats sandbox, Enjeux, etc.) selon les chaînes de transformation **D-009**. La traçabilité vers les sources est donc **indirecte / transitive** via les BDDs amont, pas directe. **Avant de signaler une « anomalie DDL »** sur l'absence d'une relation `Source(s) d'information`, lire : (i) le WR-RD complet de la BDD pour comprendre son régime, (ii) les chaînes de transformation D-009 dans `refs/DECISIONS_LBP.md` et `refs/SPECS_ARCHITECTURE_TWIN_LBP.md`, (iii) **R-012** (séparation des 4 régimes de connaissance). Articulation avec C-017 : c'est l'extension du principe « lire le WR-RD avant remplissage » — la doctrine architecturale de la BDD doit être absorbée avant de juger ce qui manque. Découverte : 30-04-2026, Phase B Vague 7.1, lors de la création des 2 fiches Processus j'ai initialement signalé comme « anomalie DDL » l'absence de relation `Source(s) d'information` côté Processus, alors que c'est intentionnel et conforme à la doctrine LBP (régime consolidé, alimentation amont via Process candidats / Actions détectées). Leonard a corrigé.
 
 ---
 
@@ -100,10 +101,10 @@ Je te presente :
 
 | Ton arbitrage | Destination |
 |---|---|
-| "Regle fixe" intrinseque a l'ecosysteme | `refs/RULES_BRAIN_TWIN.md` avec ID R-XXX |
+| "Regle fixe" intrinseque a l'ecosysteme | `refs/RULES_LBP.md` avec ID R-XXX |
 | "Hypothese a confirmer" | `refs/RULES_BRAIN_TWIN-backlog.md` |
 | "Contextuel a notre collab" (comportement Claude, outillage) | `CLAUDE.md` avec ID C-XXX |
-| "Decision archi" (choix structurant) | `refs/DECISIONS.md` avec ID D-XXX |
+| "Decision archi" (choix structurant) | `refs/DECISIONS_LBP.md` avec ID D-XXX |
 | "Laisser pour plus tard" | rien, on avance |
 
 ### 5.4 Apres capture

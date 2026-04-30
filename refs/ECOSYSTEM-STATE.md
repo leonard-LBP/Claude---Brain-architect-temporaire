@@ -65,8 +65,8 @@
 - **R-059** — hygiène d’écriture des docs Brain (pas de bruit historique ni de spéculation future)
 - **D-019** — Brain = environnement documentaire en évolution ; Core+Motor unifié au niveau modèle de données ; isolation stricte Brain ↔ MO/Twin
 - **C-011** (CLAUDE.md) — mise à jour systématique de `ECOSYSTEM-STATE.md` à chaque fin de phase, avant le commit de la phase
-- **D-020** (DECISIONS.md) — propagation de la propriété `Version du template` (RICH_TEXT, type texte libre format X.Y) à toutes les BDDs Brain ; permet l'audit mécanique des docs stale lors de bumps majeurs de templates
-- **D-021** (DECISIONS.md) — Architecture des 3 agents LBP : Brain architect (évolution du Brain) / Twin architect (modélisation Twin client) / KONTEXT (Mission Ops, agent central consultant). Frontière d'isolation infranchissable : KONTEXT ⊥ Brain architect (le Brain est utilisé pendant les missions mais n'évolue pas). 3 fiches `Agents LBP` à créer post-Chantier P.
+- **D-020** (DECISIONS_LBP.md) — propagation de la propriété `Version du template` (RICH_TEXT, type texte libre format X.Y) à toutes les BDDs Brain ; permet l'audit mécanique des docs stale lors de bumps majeurs de templates
+- **D-021** (DECISIONS_LBP.md) — Architecture des 3 agents LBP : Brain architect (évolution du Brain) / Twin architect (modélisation Twin client) / KONTEXT (Mission Ops, agent central consultant). Frontière d'isolation infranchissable : KONTEXT ⊥ Brain architect (le Brain est utilisé pendant les missions mais n'évolue pas). 3 fiches `Agents LBP` à créer post-Chantier P.
 
 **Backlog enrichi** (28-04-2026) :
 - **Chantier P** — Tri massif `Prompts/` + `Logic Blocks/` + création des 3 fiches `Agents LBP` (Brain architect, Twin architect, KONTEXT) ; mise à jour des system prompts/prompts maîtres/logic blocks pour cohérence Twin v2 + D-019 + D-021. À traiter avant indexation Notion de ces 3 BDDs.

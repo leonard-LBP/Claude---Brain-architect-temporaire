@@ -195,5 +195,5 @@ Les schémas Notion complets (champs, relations, rollups, formules) sont portés
 
 - Source doctrinale complète : `Panorama V2 v3` (non encore intégré au vault)
 - Manuels de BDD : à intégrer dans `Architecture data/Manuels de BDD/Digital Twin/`
-- Règles gouvernant l'architecture : `refs/RULES_BRAIN_TWIN.md` section 3
-- Décisions structurantes : `refs/DECISIONS.md` D-002 à D-009
+- Règles gouvernant l'architecture : `refs/RULES_LBP.md` section 3
+- Décisions structurantes : `refs/DECISIONS_LBP.md` D-002 à D-009

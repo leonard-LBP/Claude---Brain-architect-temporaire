@@ -112,7 +112,7 @@
 - [28-04-2026] **Self-relation Notion DDL : un seul `ADD COLUMN ... RELATION(self_ds, DUAL ...)` suffit (et NON deux croisés)**
   - **Contexte** : pendant Pass 2.3 Mission Ops (génération self-rel `appartient à (activité)` ↔ `contient (actions)` côté Actions LBP, et `est dérivée de` ↔ `a pour dérivés` côté Sources d'informations), le pattern initial du prompt était `2 ADD COLUMN avec DUAL croisés` (un par sens). Résultat : **4 colonnes créées au lieu de 2** car chaque ADD avec DUAL crée la prop ET son miroir auto.
   - **Règle empirique pressentie** : pour une self-relation Notion via DDL, **un seul `ADD COLUMN "PropA" RELATION(self_ds_id, DUAL 'PropMiroir' 'prop_miroir_internal')` suffit** — Notion auto-crée la prop miroir interne. Le pattern `2 ADD croisés` est faux pour ce moteur.
-  - **À formaliser** : R-XXX dans `RULES_BRAIN_TWIN.md` section DDL Notion / phase 6.5 ou WF-014 (workflow de génération BDD) si confirmé sur d'autres self-rel. Documenter aussi dans le prompt-cadre de génération.
+  - **À formaliser** : R-XXX dans `RULES_LBP.md` section DDL Notion / phase 6.5 ou WF-014 (workflow de génération BDD) si confirmé sur d'autres self-rel. Documenter aussi dans le prompt-cadre de génération.
   - **Action effectuée** : pattern correctif appliqué (DROP des 4 colonnes parasites côté Actions LBP et côté Sources, recréation propre).
 
 - [28-04-2026] **Convention v1.1 pour les futurs templates d'instanciation (pattern d'organisation des INSTR)**

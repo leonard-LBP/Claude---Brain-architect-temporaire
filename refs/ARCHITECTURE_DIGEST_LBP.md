@@ -1,7 +1,7 @@
 # Architecture Digest — Ecosysteme LBP
 
 > Vue macro transverse de l'écosystème — à relire au début de chaque conversation pour re-contextualisation rapide.
-> Pour le détail des BDD : voir `SPECS_ARCHITECTURE_BRAIN.md` (Brain) et `SPECS_ARCHITECTURE_TWIN.md` (Twin).
+> Pour le détail des BDD : voir `SPECS_ARCHITECTURE_BRAIN_LBP.md` (Brain) et `SPECS_ARCHITECTURE_TWIN_LBP.md` (Twin).
 > Dernière mise à jour : 28-04-2026 — refresh post-Phase 7 + sync DDL Notion Brain + captures R-053→R-059 et D-019.
 
 ## 1. Vue macro
@@ -45,7 +45,7 @@ Pas tous les prompts passent par toute la pile. Pattern privilégié pour les op
 - **Motor** : Prompts LBP (HUB), Logic blocks, Méthodes, Templates de Bricks, Agents, Outils externes
 - **Cross-zone** : Manuels de BDD
 
-→ Détail : `refs/SPECS_ARCHITECTURE_BRAIN.md`
+→ Détail : `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md`
 
 ### Digital Twin v2 (28 BDD instanciées)
 
@@ -72,14 +72,14 @@ Pas tous les prompts passent par toute la pile. Pattern privilégié pour les op
 **6 sandboxes exploratoires** (pas de relations réelles sauf vers Sources d'informations)
 - Capacités métier candidates (sandbox), OKR (sandbox), Pratiques (sandbox), Principes (sandbox), Problématiques (sandbox), Processus candidats (sandbox)
 
-→ Détail, objets ontologiques, moteurs analytiques et chaînes de transformation : `refs/SPECS_ARCHITECTURE_TWIN.md`
+→ Détail, objets ontologiques, moteurs analytiques et chaînes de transformation : `refs/SPECS_ARCHITECTURE_TWIN_LBP.md`
 
 ### Mission Ops (4 BDD instanciées)
 - Sources d'informations, Meetings, Actions LBP, Bricks
 
 ## 6. Changements v1 → v2 du Digital Twin
 
-Cf. décisions D-002 à D-009 dans `refs/DECISIONS.md`.
+Cf. décisions D-002 à D-009 dans `refs/DECISIONS_LBP.md`.
 
 | Avant | Après | Décision |
 |-------|-------|----------|

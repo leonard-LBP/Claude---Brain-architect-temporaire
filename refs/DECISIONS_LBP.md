@@ -172,7 +172,7 @@
   - 6 sandboxes spécialisées
 - **Conséquences** :
   - ✅ Référence unique pour la gouvernance
-  - ✅ Création de `refs/SPECS_ARCHITECTURE_TWIN.md` qui reproduit le tableau
+  - ✅ Création de `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` qui reproduit le tableau
   - ⚠️ Discipline obligatoire : toute modification de l'archi doit être arbitrée à partir de la carte (R-025)
 - **Règles associées** : R-025
 
