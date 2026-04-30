@@ -1,4 +1,4 @@
-# Playbook — Test fonctionnel Twin DeepSecAI v0 (Phase B)
+# Playbook — Test fonctionnel Twin + Mission Ops DeepSecAI v0 (Phase B)
 
 > **Scope** : Session
 > **Date** : 30-04-2026
