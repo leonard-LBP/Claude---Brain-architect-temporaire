@@ -4,7 +4,7 @@
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.
 > Les workflows propres à notre collaboration Claude (démarrage de session, etc.) sont dans `SESSION_WORKFLOWS.md`.
 > Chaque workflow a un ID stable pour référence.
-> Dernière mise à jour : 28-04-2026 — ajout WF-015, WF-016, WF-017.
+> Dernière mise à jour : 30-04-2026 — formalisation WF-008 (propagation d'impacts après modification).
 
 ---
 
@@ -17,7 +17,7 @@
 | WF-001 | Créer un nouveau doc Brain | À formaliser |
 | WF-002 | Mettre à jour un doc Brain existant | À formaliser |
 | WF-003 | Archiver un doc Brain (vault + Notion) | À formaliser |
-| WF-008 | Propagation d'impacts après modification | À formaliser |
+| WF-008 | Propagation d'impacts après modification d'un doc/objet de l'écosystème | Actif (formalisé 30-04-2026) |
 | WF-009 | Migration d'une BDD XXX | À formaliser |
 | WF-013 | Générer un WR-RD à partir d'un Manuel de BDD | Actif (formalisé 26-04-2026 après 3 instanciations test ; applicable au Brain dès création de `Template - WR-RD - Brain.md`) |
 | WF-014 | Générer une BDD Twin sur Notion à partir de son Manuel | Actif (cadrage 26-04-2026, Phase 6.5) |
@@ -153,6 +153,162 @@ Vérifier que les entrées sont bien créées et reliées. Commit dans git (refs
 - **Identifiant pivot par type** : taxonomies = code, autres = nom canonique (R-038)
 
 ---
+
+## WF-008 : Propagation d'impacts après modification d'un doc/objet de l'écosystème
+
+**Statut** : Actif (formalisé 30-04-2026)
+
+### Contexte
+
+L'écosystème LBP est constitué de docs Markdown qui se citent et se propagent entre eux selon des règles strictes (R-001 source de vérité Markdown, R-041/R-042 propagation Manuel↔WR-RD, R-029 indexation Notion, R-031 paire `CPT/GLO`, R-053 archivage). Toute modification d'un doc structurant peut déclencher des **cascades obligatoires** que ce workflow rassemble en un seul pas-à-pas.
+
+**Principe directeur** : la propagation est **strictement descendante** (du doc source vers ses dérivés). Un dérivé ne corrige jamais en remontant — toute amélioration éditoriale repasse par le doc parent (R-041, R-042).
+
+### Cartographie des chaînes de propagation
+
+```
+[Source de vérité Markdown]
+        │
+        ├── Manuel de BDD ─→ WR-RD (section 4 → sections 1-5) ─→ Fiche Notion `Manuels de BDD` (lien WR-RD)
+        │
+        ├── Taxonomie .md ─→ Manuels qui la référencent (Section "Usages") ─→ WR-RD ─→ Notion (options select/multi-select)
+        │
+        ├── Template d'instanciation ─→ Toutes les instances qui l'utilisent (frontmatter + structure)
+        │
+        ├── Note de concept ─→ Glossaire LBP Notion + Registre des notes de concept Notion (paire CPT/GLO)
+        │
+        ├── Règle R-XXX (RULES_LBP) ─→ Docs concernés (manuels, WR-RD, templates) si la règle change un format
+        │
+        └── Décision D-XXX (DECISIONS_LBP) ─→ Mise à jour des règles R impactées + manuels concernés + ECOSYSTEM-STATE
+```
+
+### Étapes (workflow générique en 7 phases)
+
+#### Phase 1 — Identifier le **type de modification** et le **doc source**
+
+Avant de propager, classer la modification :
+- **Format** : changement de structure (frontmatter, sections, naming) → cascade large
+- **Contenu** : changement de wording dans un champ existant → cascade ciblée (souvent juste WR-RD ou Notion)
+- **Codification** : changement de code d'identification → cascade de tous les renvois (cf. WF étape de renames)
+- **Statut / archivage** : passage à archivé → propagation Notion + nettoyage des renvois
+
+#### Phase 2 — Cartographier les **dérivés directs** du doc source
+
+Selon le type de doc modifié, lister les dérivés à mettre à jour :
+
+| Doc source modifié | Dérivés directs à propager | Règle |
+|---|---|---|
+| **Manuel de BDD** (section 4) | WR-RD du même nom | R-041, R-042 |
+| **Manuel de BDD** (frontmatter / autres sections) | Fiche Notion `Manuels de BDD` (lien Drive, version, statut) | R-029, D-020 |
+| **WR-RD** (modification non triviale) | ⚠️ INTERDIT — repasser par le manuel parent | R-041 (interdiction propagation remontante) |
+| **Taxonomie .md** (valeurs canoniques) | (a) Manuels référençant la taxo (section "Usages des taxonomies") + (b) Notion DDL : ALTER options select/multi-select de toutes les BDDs concernées + (c) WR-RDs si la valeur impacte une instruction d'écriture | R-049, WF-017 |
+| **Template d'instanciation** | Toutes les instances existantes utilisant ce template (ré-évaluation au cas par cas) | R-056 (versioning), C-019 |
+| **Note de concept** (frontmatter) | Glossaire LBP Notion + Registre des notes de concept Notion | R-029, R-031 |
+| **Note de concept** (corps) | Lien Drive Notion uniquement (pas le contenu — Notion = miroir) | R-001, R-029 |
+| **Règle R-XXX** (création / modification) | RULES_LBP.md + ECOSYSTEM-STATE + docs concernés si format-impactant | R-001, C-007 |
+| **Décision D-XXX** | DECISIONS_LBP.md + RULES_LBP si dérivation R + ECOSYSTEM-STATE | R-001, C-007 |
+| **Convention session C-XXX** | CLAUDE.md + ECOSYSTEM-STATE | C-006 |
+
+#### Phase 3 — Propager **dans l'ordre strict** des dérivés
+
+Important : ne jamais sauter d'étape, ne jamais réordonner.
+
+1. **Markdown d'abord** : le doc dérivé Markdown (WR-RD, manuel impacté, template) est mis à jour avec QA stricte (R-042 pour WR-RD).
+2. **Versions bumpées** : si le contenu structurant change (R-056), bumper la version du dérivé. Mettre à jour `updated_at` dans le frontmatter.
+3. **Notion ensuite** : une fois le Markdown stable, aligner Notion (DDL si schéma, propriétés textuelles si contenu).
+4. **Renvois croisés** : si le doc modifié est cité ailleurs (autres docs Markdown, ECOSYSTEM-STATE, CLAUDE.md), grep + remplacement systématique (cf. patterns rename Étape 2 bundle docs méta).
+
+#### Phase 4 — QA après propagation
+
+- **WR-RD** : appliquer R-042 (égalité mot pour mot des 9 colonnes retenues avec section 4 du manuel parent).
+- **Notion** : re-fetch et comparer avec le manuel (WF-016 audit transverse).
+- **Renvois** : `grep -r "ancien_nom"` doit renvoyer 0 match (sauf dans archives explicites).
+- **Cohérence narrative** : relire le doc parent et son dérivé pour vérifier qu'aucune incohérence sémantique n'a été introduite.
+
+#### Phase 5 — Annonce explicite C-009
+
+Si la modification touche un Manuel et son WR-RD : **annoncer explicitement** dans la même réponse :
+> ✓ Manuel modifié : X manuel(s) · ✓ Propagation WR-RD : Y WR-RD mis à jour
+
+Ou explicitement « WR-RD non concerné car ... » (C-009). Sans cette annonce, la propagation est considérée non vérifiable.
+
+#### Phase 6 — Tracer dans ECOSYSTEM-STATE.md
+
+Mise à jour systématique du journal vivant (C-011) :
+- « Dernière mise à jour » avec date du jour
+- Section « Phase actuelle » si phase notable
+- Section « État du Brain » si volumétrie change
+- Pas de batch — un commit ECOSYSTEM-STATE par phase de propagation (C-011)
+
+#### Phase 7 — Commit + push (C-013)
+
+- Commit avec message explicite : `[Domain] [Action] [Volume] — propagation [doc source] → [dérivés]`
+- Push immédiat dans la même réponse (C-013)
+- Annoncer : « ✓ Push : N commit(s) poussé(s) sur origin/master »
+
+### Cas particuliers et edge cases
+
+#### Cas 1 — Modification de codification (R-054)
+
+Si on change un code stable (ex : `CPT_X` → `CPT_Y`), ce n'est jamais une modification simple : c'est un **archivage de l'ancien + création du nouveau** (R-053).
+
+1. Archiver l'ancienne entrée Notion (Statut → Archivé), pas de suppression
+2. Créer la nouvelle entrée avec le nouveau code
+3. Propager les renvois (grep + remplacement, cf. Étape 2 bundle docs méta)
+4. Si paire `CPT/GLO` (R-031), propagation aux 2 entrées Notion en miroir
+
+#### Cas 2 — Modification d'une taxonomie (cascade large)
+
+Une taxo est référencée par N manuels et M propriétés Notion. La propagation est :
+1. Mettre à jour la taxo `.md` (source de vérité) + Notion BDD `Registre des taxonomies` (lien Drive, version)
+2. Identifier les manuels qui la référencent (relation `utilise (taxonomies)`)
+3. Pour chaque manuel : mettre à jour la section "Usages des taxonomies" + propager au WR-RD si applicable
+4. Pour chaque BDD Notion qui utilise la taxo : ALTER options select (WF-017)
+5. Annoncer le volume total : « Taxo X mise à jour → N manuels + M BDDs Notion alignés »
+
+#### Cas 3 — Modification d'un template d'instanciation (cascade très large)
+
+Un bump majeur de template (X.Y → (X+1).0) ne propage pas automatiquement à toutes les instances. Au lieu de cela :
+1. Mettre à jour le template (source de vérité dans `00 - Docs méta/Templates d'instanciation/`)
+2. Mettre à jour la propriété Notion `Version du template` sur la fiche du template (D-020)
+3. **Marquer les instances comme stale** : audit mécanique des docs `.md` instances ayant un `template_version` inférieur (D-020)
+4. Planifier une phase de migration des instances (WF-015 si applicable)
+5. **Ne pas propager dans l'urgence** — c'est un chantier dédié
+
+#### Cas 4 — Modification d'une règle R-XXX qui change un format
+
+Cas le plus délicat : si R-052 (apostrophes typographiques) change, des dizaines de docs sont concernés.
+
+1. Mettre à jour la règle dans RULES_LBP.md (source)
+2. Identifier l'ensemble impacté (grep sur les caractères concernés ou pattern)
+3. Lancer un **WF-015** (migration au canon) si le pattern est massif
+4. Si le pattern est ciblé : propagation manuelle doc par doc avec QA
+
+### Anti-patterns à éviter
+
+- ❌ Propager Notion → Markdown (viole R-001)
+- ❌ Modifier un WR-RD pour corriger une coquille au lieu de remonter au manuel (viole R-041)
+- ❌ Sauter la phase ECOSYSTEM-STATE (viole C-011)
+- ❌ Propagation silencieuse sans annonce C-009 (manuel ↔ WR-RD)
+- ❌ Commit local sans push (viole C-013)
+- ❌ « Batch » de plusieurs phases en un seul commit ECOSYSTEM-STATE (perte de traçabilité incrémentale, C-011)
+
+### Articulation avec autres workflows
+
+- **WF-011** : récupérer URL Drive pour propager dans Notion
+- **WF-012** : indexer un doc dans sa BDD Notion (utilisé en Phase 3 de WF-008)
+- **WF-013** : générer/régénérer un WR-RD (cascade Manuel → WR-RD)
+- **WF-016** : audit transverse Notion ↔ Manuels (utilisé en Phase 4 QA)
+- **WF-017** : sync DDL Notion (utilisé en Phase 3 pour les changements DDL)
+
+### Règles fondatrices
+
+- **R-001** : source de vérité = Markdown
+- **R-041** : propagation Manuel → WR-RD obligatoire
+- **R-042** : QA stricte d'égalité WR-RD ↔ Manuel
+- **C-009** : annonce explicite de la propagation Manuel ↔ WR-RD
+- **C-011** : mise à jour systématique de ECOSYSTEM-STATE
+- **C-013** : push systématique après commit
 
 ---
 

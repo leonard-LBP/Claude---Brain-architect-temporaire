@@ -527,6 +527,71 @@
 
 ---
 
+### D-022 : Différenciation assumée des frontmatters Twin et Mission Ops
+
+- **Date** : 30-04-2026
+- **Statut** : Active
+- **Portée** : Architecture documentaire — Manuels de BDD Twin et Mission Ops
+- **Contexte** : Backlog 27-04-2026 a remonté une **divergence des frontmatters** entre les manuels Twin (template v6.3.0) et Mission Ops (template v5.1.0). Le Twin embarque `ui_family`, `officiality_regime`, `has_advanced_note`, `aliases` ; Mission Ops ne les embarque pas. Pas d'arbitrage formel jusqu'ici → asymétrie silencieuse entre templates, source potentielle de confusion pour les futurs nouveaux docs MO.
+- **Options envisagées** :
+  1. **Harmoniser** : ajouter les 4 champs aussi côté MO pour permettre un audit transverse unifié.
+  2. **Différencier explicitement** : assumer que Twin et MO ont des régimes de connaissance différents et que ces champs n'ont pas de sens en MO (statut **retenu**).
+  3. **Laisser flou** : le statu quo, sans formalisation (rejeté — viole la doctrine de clarté C-008).
+- **Choix retenu** : **Différenciation assumée**. Twin et MO sont deux domaines aux régimes de connaissance distincts :
+  - Twin = **ontologique** (taxonomies, dimensions 5D, relations sémantiques, régime des objets organisationnels). Les champs Twin spécifiques (`ui_family`, `officiality_regime`, `has_advanced_note`, `aliases`) reflètent cette nature : prisme UX (D-017), distinction officiel/sandbox (R-014), bricks comme notes avancées (D-018), aliases pour le dédoublonnage de concepts.
+  - Mission Ops = **opérationnel** (workflows de mission, livrables, traçabilité). Les champs Twin n'ont pas de pertinence en MO : pas de famille UI à classer, pas de régime officiel/sandbox (toutes les fiches MO sont opérationnelles par construction), pas de notes avancées (les bricks **sont** elles-mêmes des fiches MO), pas d'aliases (les noms d'occurrences MO sont uniques par construction — `MTG-XX-DATE`, `ACT-XX-NNN`).
+  → Conséquence : le frontmatter MO est plus mince, par design, et c'est correct.
+- **Conséquences** :
+  - ✅ Pas de champ vide systématique côté MO (ce qui aurait été inélégant et faux-positif pour les audits de complétude).
+  - ✅ Audit transverse à scope-aware : R-XXX et WF-XXX qui parlent du frontmatter doivent désormais préciser le scope (Brain / Twin / MO).
+  - ⚠ Documentation requise dans `DOCTRINE_LBP.md` (à créer) pour expliciter la divergence de régime aux nouveaux contributeurs et à Clément.
+  - ⚠ Si un nouveau champ doit être commun (ex. `code`, `version`, `created_at`, `updated_at`, `template_code`, `template_version`), il doit être présent **dans les deux** frontmatters et formalisé en R-XXX transverse.
+- **Règles associées** : R-054 (codification), R-055 (frontmatter en 3 zones balisées Brain), R-056 (versioning X.Y), C-008 (séparation des scopes en `refs/`).
+
+---
+
+### D-023 : Mission Ops co-égal Brain/Twin + stack technique Notion (Brain) / Supabase (Twin + Mission Ops)
+
+- **Date** : 30-04-2026
+- **Statut** : Active
+- **Portée** : Architecture transverse — gouvernance des 3 domaines + stack technique de production
+- **Contexte** : Audit 30-04-2026 a révélé l'absence de décision fondatrice formalisant **Mission Ops comme domaine co-égal** au Brain et au Twin. Toutes les D-002→D-021 couvrent essentiellement le Twin (scission UO, sandboxes, chaînes D-009, bricks comme notes avancées) et le Brain (Core+Motor unifié D-019, agents D-021). Mission Ops a été instancié (4 BDDs, test Phase B 30-04-2026) sans formalisation doctrinale. Par ailleurs, la **stack technique de production** n'a jamais été formalisée : la maquette actuelle est sur Notion pour Brain et Twin/MO, mais le déploiement cible est différencié (Notion pour Brain, Supabase pour Twin + MO).
+- **Options envisagées** :
+  1. **MO sous-domaine du Twin** : intégrer les 4 BDDs MO comme extension du Twin (rejeté — viole la séparation des régimes de connaissance et l'isolation Brain ↔ MO/Twin de D-019).
+  2. **MO co-égal Brain/Twin avec stack unifié Notion** : maquettage et production sur Notion (rejeté — Notion ne supporte pas les volumes de Mission Ops à grande échelle, ni les instanciations multi-mission par client, ni les performances de lecture/écriture nécessaires en production).
+  3. **MO co-égal Brain/Twin avec stack différencié** : Notion pour Brain (gouvernance, lent, manuel), Supabase pour Twin + MO (volumes, performance, instanciation client) (statut **retenu**).
+- **Choix retenu** :
+  1. **Mission Ops est un domaine co-égal au Brain et au Twin**, gouverné par 4 BDDs structurelles : `Sources d'informations`, `Meetings`, `Actions LBP`, `Bricks`. Chaque mission consultant instancie son propre périmètre Twin + MO ; le Brain est partagé et stable (D-019).
+  2. **Articulation entre les 3 domaines** :
+     - Brain ↔ Twin : isolation stricte (D-019). Le Brain fournit les manuels, taxonomies, méthodes, templates, prompts, agents, outils. Il **n'évolue pas** pendant les missions (D-021).
+     - Brain ↔ MO : isolation stricte (D-019). Le Brain fournit les templates de bricks (TPL_BRK_*) que MO instancie en bricks de mission.
+     - Twin ↔ MO : articulation via les **Bricks** (D-018) — les bricks MO documentent et alimentent les fiches Twin. Les `Sources d'informations` MO sont l'origine traçable des fiches Twin (régime « extraction directe » C-018).
+  3. **Stack technique cible** :
+     - **Brain = Notion** : volumétrie modérée (~200 docs Markdown actifs), gouvernance manuelle, navigation hypertexte, audit visuel. Notion suffit et apporte la richesse UX nécessaire à la gouvernance documentaire (relations, rollups, vues, filtres). Pas de migration prévue à court terme.
+     - **Twin + Mission Ops = Supabase** : volumétrie potentiellement importante (instanciation par client, fiches Twin pouvant atteindre des milliers par mission, bricks et meetings nombreux), performance lecture/écriture critique, schéma stable car validé via la maquette Notion test (Phase B 30-04). La maquette Notion actuelle de Twin+MO sera **portée** vers Supabase une fois le schéma figé.
+  4. **Pas de pont direct Brain ↔ Twin/MO** au niveau technique. Les seuls « ponts » conceptuels sont :
+     - **Bricks instanciées à partir des Templates de Bricks Brain** (référence par code template, pas relation technique cross-stack)
+     - **Templates de Bricks** lus depuis le Brain au moment de l'instanciation MO (lecture seule, snapshot conceptuel)
+- **Conséquences** :
+  - ✅ Mission Ops devient un domaine de premier niveau, avec sa propre doctrine, ses règles propres (à formaliser progressivement), et ses workflows propres (futurs WF-MO-XXX).
+  - ✅ Stack technique cible cohérente avec la nature de chaque domaine : Notion pour la gouvernance, Supabase pour la production.
+  - ✅ Le bundle de docs méta durables doit traiter les 3 domaines de façon symétrique : `SPECS_ARCHITECTURE_BRAIN_LBP.md` + `SPECS_ARCHITECTURE_TWIN_LBP.md` + `SPECS_ARCHITECTURE_MISSION_OPS_LBP.md` (à créer).
+  - ✅ Justifie la divergence assumée des frontmatters Twin/MO (D-022) — c'est un signe sain de différenciation des régimes.
+  - ⚠ La maquette Notion Twin+MO devient une **fixture de validation de schéma**, pas une prod. À documenter clairement dans `MIGRATION_REPORT_2026-04` pour Clément.
+  - ⚠ Le portage Twin+MO vers Supabase est un chantier ultérieur (post-Phase C) qui devra être cadré séparément (workflow dédié, gestion des migrations de données, gouvernance des schémas Supabase).
+  - ⚠ Le Brain reste sur Notion à court/moyen terme. Toute future migration éventuelle (12-18 mois) sera elle aussi un chantier dédié.
+  - ⚠ Pas de pont direct Brain↔Twin/MO : les agents (D-021) doivent intégrer cette frontière dans leur conception. KONTEXT lit le Brain (références conceptuelles : prompts, méthodes, templates) mais n'écrit pas dedans.
+- **Règles associées** :
+  - **R-014** : sandboxes Twin (relations dures uniquement avec Sources)
+  - **D-009** : chaînes de transformation de la connaissance (chaînes Source → AD → Process → ... structurent l'articulation MO ↔ Twin)
+  - **D-018** : bricks de connaissance comme notes avancées (articulation MO ↔ Twin)
+  - **D-019** : Brain isolé de Twin/MO
+  - **D-021** : 3 agents LBP avec frontières d'isolation
+  - **C-018** : régime des BDDs (extraction directe vs consolidé)
+  - À formaliser : R-XXX sur la stack technique de production (un par domaine si nécessaire).
+
+---
+
 ## 3. Décisions de mise en œuvre
 
 *Décisions techniques/pratiques (outillage, stockage, versioning).*
