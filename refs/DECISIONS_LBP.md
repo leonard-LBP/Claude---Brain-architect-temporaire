@@ -564,7 +564,7 @@
   1. **Mission Ops est un domaine co-égal au Brain et au Twin**, gouverné par 4 BDDs structurelles : `Sources d'informations`, `Meetings`, `Actions LBP`, `Bricks`. Chaque mission consultant instancie son propre périmètre Twin + MO ; le Brain est partagé et stable (D-019).
   2. **Articulation entre les 3 domaines** :
      - Brain ↔ Twin : isolation stricte (D-019). Le Brain fournit les manuels, taxonomies, méthodes, templates, prompts, agents, outils. Il **n'évolue pas** pendant les missions (D-021).
-     - Brain ↔ MO : isolation stricte (D-019). Le Brain fournit les templates de bricks (TPL_BRK_*) que MO instancie en bricks de mission.
+     - Brain ↔ MO : isolation stricte (D-019). Le Brain fournit les templates de bricks (TPL_BRICK_*) que MO instancie en bricks de mission.
      - Twin ↔ MO : articulation via les **Bricks** (D-018) — les bricks MO documentent et alimentent les fiches Twin. Les `Sources d'informations` MO sont l'origine traçable des fiches Twin (régime « extraction directe » C-018).
   3. **Stack technique cible** :
      - **Brain = Notion** : volumétrie modérée (~200 docs Markdown actifs), gouvernance manuelle, navigation hypertexte, audit visuel. Notion suffit et apporte la richesse UX nécessaire à la gouvernance documentaire (relations, rollups, vues, filtres). Pas de migration prévue à court terme.

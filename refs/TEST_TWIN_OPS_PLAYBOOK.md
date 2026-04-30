@@ -200,7 +200,7 @@ Le test a validé en pratique les chaînes de transformation D-009 :
 
 ### 6.3 Templates de bricks comme socle
 
-Les bricks créées (`TPL_BRK_MTG_INT_IND_CR`, `TPL_BRK_PRF_ORG`) ont été référencées dans le champ `Utilise aussi en inputs` mais pas reliées (les templates étant au Brain, pas au Twin). À cogiter : faut-il une relation `instancie (template)` côté Brick → Templates de bricks Brain ?
+Les bricks créées (`TPL_BRICK_MTG_INT_IND_CR`, `TPL_BRICK_PRF_ORG`) ont été référencées dans le champ `Utilise aussi en inputs` mais pas reliées (les templates étant au Brain, pas au Twin). À cogiter : faut-il une relation `instancie (template)` côté Brick → Templates de bricks Brain ?
 
 ---
 

@@ -22,7 +22,7 @@
 
 ### Les 3 articulations doctrinales
 
-1. **Brain → Mission Ops** : lecture seule. MO consomme les templates de bricks (`TPL_BRK_*`), les méthodes (`MET_*`), les prompts, les agents et les outils du Brain. Aucune écriture ascendante (D-019, D-021).
+1. **Brain → Mission Ops** : lecture seule. MO consomme les templates de bricks (`TPL_BRICK_*`), les méthodes (`METH_*`), les prompts (`PRMPT_*`), les agents (`AGT_*`) et les outils (`OUT_*`) du Brain. Aucune écriture ascendante (D-019, D-021).
 2. **Mission Ops ↔ Digital Twin** : articulation **par les Bricks** (D-018). Une brick MO peut être la « note avancée » d'une fiche Twin (profil organisationnel, analyse, livrable). Les `Sources d'informations` MO sont l'**origine traçable** des fiches Twin (régime « extraction directe » C-018).
 3. **Mission Ops ↔ Mission Ops** : intra-MO, les 4 BDDs ont des relations bidirectionnelles serrées (Meetings ↔ Actions ↔ Bricks ↔ Sources).
 
@@ -185,15 +185,15 @@ Mission Ops consomme plusieurs objets Brain, mais **n'écrit jamais** dedans (D-
 
 | Objet Brain consommé par MO | Usage en MO |
 |---|---|
-| `Templates de Bricks` (`TPL_BRK_*`) | Structure des bricks instanciées (D-018) |
-| `Méthodes LBP` (`MET_*`) | Cadre de conduite des actions (ex. méthode 3P) |
-| `Prompts` (`PROMPT_*`) | Instructions agents pour exécution actions |
-| `Agents LBP` (`AGENT_*`) | KONTEXT pour orchestration mission (D-021) |
+| `Templates de Bricks` (`TPL_BRICK_*`) | Structure des bricks instanciées (D-018) |
+| `Méthodes LBP` (`METH_*`) | Cadre de conduite des actions (ex. méthode 3P) |
+| `Prompts` (`PRMPT_*`) | Instructions agents pour exécution actions |
+| `Agents LBP` (`AGT_*`) | KONTEXT pour orchestration mission (D-021) |
 | `Outils externes` (`OUT_*`) | Outils mobilisés pendant les actions |
 | `Logic blocks` (`LGBLK_*`) | Blocs de raisonnement réutilisables |
 | `Glossaire LBP` + `Notes de concept` | Référentiel sémantique LBP |
 
-**Mécanique de consommation** : la référence se fait par **code stable** (R-054) — pas par relation cross-stack. Au moment de l'instanciation MO (création d'une brick par exemple), le code template (`TPL_BRK_PRF_ORG`) est inscrit en référence textuelle dans la fiche brick. La structure du template est **lue** depuis le Brain (lecture seule).
+**Mécanique de consommation** : la référence se fait par **code stable** (R-054) — pas par relation cross-stack. Au moment de l'instanciation MO (création d'une brick par exemple), le code template (`TPL_BRICK_PRF_ORG`) est inscrit en référence textuelle dans la fiche brick. La structure du template est **lue** depuis le Brain (lecture seule).
 
 **Frontière infranchissable** : KONTEXT (l'agent MO) **ne peut pas** appeler Brain architect (D-021). Si une évolution Brain est nécessaire, elle est **flaggée** comme remontée hors mission.
 
@@ -249,7 +249,7 @@ Sous `Manuels de BDD/Mission Ops/WR-RD/` :
 
 ### Templates de bricks consommés par Mission Ops
 
-Sous `Architecture data/Templates de bricks/` (Brain) — `TPL_BRK_*`. Liste de référence dans la BDD Notion `Templates de bricks` du Brain.
+Sous `Architecture data/Templates de bricks/` (Brain) — `TPL_BRICK_*`. Liste de référence dans la BDD Notion `Templates de bricks` du Brain.
 
 ### Apprentissages opérationnels
 

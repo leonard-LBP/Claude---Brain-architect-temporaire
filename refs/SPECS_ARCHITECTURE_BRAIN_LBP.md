@@ -41,7 +41,7 @@ Brain est de régime **doctrinal et stable**. Il évolue **par bumps** (refontes
 Le Brain est gouverné par **7 principes cardinaux** :
 
 1. **Source de vérité = doc Markdown** (R-001) — Notion = miroir d'application aligné via sync DDL périodiques.
-2. **Codification universelle** (R-054) — table de préfixes stable : `CPT_`, `MET_`, `TPL_BRK_`, `BRK_`, `CHRT_`, `DBMAN_`, `WRRD_`, `LGBLK_`, `PROMPT_`, `OUT_`, `AGENT_`.
+2. **Codification universelle** (R-054) — table de préfixes stable : `CPT_`, `GLO_`, `METH_`, `TPL_`, `TPL_BRICK_`, `CHRT_`, `DBMAN_TW/MO/BR_`, `WRRD_TW/MO/BR_`, `LGBLK_`, `PRMPT_M/S/U/T_`, `OUT_`, `AGT_`. Voir `CODIFICATION_LBP.md` pour la grammaire complète.
 3. **Frontmatter en 3 zones balisées** (R-055) — Identité / Méta-gouvernance / Spec d'usage.
 4. **Versioning X.Y sans PATCH** (R-056) — bumps significatifs uniquement.
 5. **Pas de jumelles texte sur Brain** (R-058) — interdiction des champs texte doublonnant une relation Notion (autorisées sur Twin, expérimentales sur MO).
@@ -54,15 +54,15 @@ Le Brain est gouverné par **7 principes cardinaux** :
 
 | # | BDD | Zone | Objet principal | Rôle | Codification |
 |---|---|---|---|---|---|
-| 1 | `Docs méta LBP` | ADMIN | Doctrine méta | Règles de gouvernance, conventions, workflows, QA du Brain lui-même | `META_<TOKEN>` |
+| 1 | `Docs méta LBP` | ADMIN | Doctrine méta | Règles de gouvernance, conventions, workflows, QA du Brain lui-même | `CHRT_<TOKEN>` |
 | 2 | `Glossaire LBP` | CORE | Concept canonique LBP | Vocabulaire de référence — chaque concept a définition, domaine, règles d'usage | `GLO_<TOKEN>` (paire avec `CPT_<TOKEN>`) |
 | 3 | `Registre des notes de concept` | CORE | Note détaillée d'un concept | Fiches détaillées des concepts LBP (paire avec Glossaire, R-031) | `CPT_<TOKEN>` |
 | 4 | `Registre des taxonomies` | CORE | Liste de valeurs contrôlée | Toutes les taxonomies (listes de valeurs) utilisées dans les BDDs Twin/MO/Brain | `<NAMESPACE>.<FAMILLE>` |
-| 5 | `Méthodes LBP` | MOTOR | Méthode d'analyse / production | Méthodes LBP (3P, etc.) — cadre conceptuel et procédural d'une activité | `MET_<TOKEN>` |
-| 6 | `Templates de Bricks` | MOTOR | Template de livrable MO | Moules pour les bricks instanciées par Mission Ops (D-018) | `TPL_BRK_<TOKEN>` |
-| 7 | `Agents LBP` | MOTOR | Agent LBP | 3 agents (Brain architect / Twin architect / KONTEXT) (D-021) | `AGENT_<TOKEN>` |
+| 5 | `Méthodes LBP` | MOTOR | Méthode d'analyse / production | Méthodes LBP (3P, etc.) — cadre conceptuel et procédural d'une activité | `METH_<TOKEN>` |
+| 6 | `Templates de Bricks` | MOTOR | Template de livrable MO | Moules pour les bricks instanciées par Mission Ops (D-018) | `TPL_BRICK_<TOKEN>` |
+| 7 | `Agents LBP` | MOTOR | Agent LBP | 3 agents (Brain architect / Twin architect / KONTEXT) (D-021) | `AGT_<TOKEN>` |
 | 8 | `Outils externes` | MOTOR | Outil externe utilisé par LBP | Catalogue des outils tiers mobilisés (Notion API, Drive, etc.) | `OUT_<TOKEN>` |
-| 9 | `Prompts LBP` | MOTOR | Prompt structurant | **HUB CENTRAL** — orchestre méthodes, logic blocks, templates, outils, docs méta, agents (6 relations sortantes) | `PROMPT_<TOKEN>` |
+| 9 | `Prompts LBP` | MOTOR | Prompt structurant | **HUB CENTRAL** — orchestre méthodes, logic blocks, templates, outils, docs méta, agents (6 relations sortantes) | `PRMPT_<TOKEN>` (sous-typé `PRMPT_M/S/U/T_*`) |
 | 10 | `Registre des logic blocks` | MOTOR | Bloc de raisonnement réutilisable | Blocs logiques modulaires utilisés par les prompts | `LGBLK_<TOKEN>` |
 | 11 | `Manuels de BDD` | CROSS | Manuel d'une BDD Twin/MO/Brain | Spécifications des BDDs des 3 domaines — pont Brain → Twin/MO | `DBMAN_<TOKEN>` |
 
@@ -187,10 +187,10 @@ Le Brain est **lu** par les domaines opérationnels au moment de l'instanciation
 |---|---|
 | `Manuels de BDD` | Source de vérité du schéma des BDDs Twin/MO (les manuels vivent dans le Brain mais décrivent Twin/MO) |
 | `Taxonomies` | Référencées par les manuels Twin/MO ; valeurs canoniques utilisées en options select |
-| `Templates de Bricks` (`TPL_BRK_*`) | Moules instanciés par Mission Ops (D-018) |
-| `Méthodes LBP` (`MET_*`) | Cadres mobilisés par Mission Ops (référence par code) |
-| `Prompts LBP` (`PROMPT_*`) | Instructions agents pendant Mission Ops (référence par code) |
-| `Agents LBP` (`AGENT_*`) | KONTEXT (orchestration MO), Twin architect (peuplement Twin) — D-021 |
+| `Templates de Bricks` (`TPL_BRICK_*`) | Moules instanciés par Mission Ops (D-018) |
+| `Méthodes LBP` (`METH_*`) | Cadres mobilisés par Mission Ops (référence par code) |
+| `Prompts LBP` (`PRMPT_*`) | Instructions agents pendant Mission Ops (référence par code) |
+| `Agents LBP` (`AGT_*`) | KONTEXT (orchestration MO), Twin architect (peuplement Twin) — D-021 |
 | `Outils externes` (`OUT_*`) | Outils tiers mobilisés pendant les actions (référence par code) |
 | `Logic blocks` (`LGBLK_*`) | Blocs de raisonnement réutilisables |
 | `Glossaire LBP` + `Notes de concept` | Référentiel sémantique LBP partagé |
@@ -219,8 +219,8 @@ Tous les docs Brain ont leur source dans `H:\Drive partagés\LBP - shared\Archit
 - `Notes de concept/` — fiches concept (`CPT_*`)
 - `Glossaire/` — mini-fiches concept
 - `Taxonomies/` — 102 taxonomies au canon (Phase A4.A)
-- `Templates de bricks/` — 20 templates `TPL_BRK_*`
-- `Méthodes LBP/` — méthodes `MET_*`
+- `Templates de bricks/` — 20 templates `TPL_BRICK_*`
+- `Méthodes LBP/` — méthodes `METH_*`
 - `00 - Docs méta/` — doctrine méta
 - `Logic Blocks/`, `Prompts/`, `Outils externes/`, `Agents LBP/` — à refondre (cf. Chantier P)
 

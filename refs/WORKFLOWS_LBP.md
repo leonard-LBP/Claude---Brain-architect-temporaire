@@ -526,7 +526,7 @@ Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statem
 
 ### Contexte
 
-Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instances de templates, etc.) au canon frontmatter : codification universelle (R-054 — préfixes `BRK_`, `MET_`, `TPL_BRK_`, `CHRT_`, `DBMAN_`, `WRRD_`, `LGBLK_`, `PROMPT_`, `OUT_`, `AGENT_`…), 3 zones balisées (R-055 — Identité / Méta-gouvernance / Spec d’usage), versioning `X.Y` sans PATCH (R-056).
+Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instances de templates, etc.) au canon frontmatter : codification universelle (R-054 — préfixes `CPT_`, `GLO_`, `METH_`, `TPL_BRICK_`, `CHRT_`, `DBMAN_TW/MO/BR_`, `WRRD_TW/MO/BR_`, `LGBLK_`, `PRMPT_M/S/U/T_`, `OUT_`, `AGT_`… cf. `CODIFICATION_LBP.md`), 3 zones balisées (R-055 — Identité / Méta-gouvernance / Spec d’usage), versioning `X.Y` sans PATCH (R-056).
 
 ### Méthode (pattern script idempotent)
 
