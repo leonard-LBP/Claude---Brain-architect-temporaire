@@ -188,6 +188,19 @@
   - **À cogiter** : la propriété est-elle vraiment nécessaire ou un statut + une convention suffisent-ils ? Préciser le besoin par cas d'usage avant formalisation.
   - **Quand** : à inclure dans la Phase B (tests fonctionnels Twin + Mission Ops) — si on simule des fausses entités et qu'on rencontre des cas de dédoublonnage, cette réflexion mûrira concrètement.
 
+- [30-04-2026] **Désynchronisation libellés taxos LBP ↔ options Notion (28 BDDs Twin + 4 MO + Brain)**
+  - **Contexte** : Audit Phase B test Twin DeepSecAI v0 (30-04-2026) a révélé que de nombreuses options select/multi-select des BDDs Notion divergent des libellés canoniques des `.md` taxonomies LBP source. Mes valeurs collent aux options Notion existantes — donc le défaut n'est pas dans le remplissage mais dans la configuration DDL Notion qui a dérivé des taxonomies source.
+  - **Patterns de désync identifiés** :
+    1. **Suffixe `(5D)` parasite** sur les options ORG5D.DIM côté Notion (`Hard skills (5D)` au lieu du canonique `Hard skills`). Présent sur Postes, Environnements, Actifs, Événements (au minimum).
+    2. **Préfixe ordinal `N – ` / `N - `** sur SCALE.CRITICALITY, SCALE.MATURITY, SCALE.SCOPE, JOB.SENIORITE, COL.FORMALITY, COL.TEMPO_*, EVT.TIME_*, ENV.VOLATILITY, ASSET.SUBSTITUTABILITY, SCALE.CONFIDENCE (`4 – Élevée` au lieu de `Criticité élevée` ou `Élevée`).
+    3. **Libellés courts Notion vs libellés longs canoniques** : `Format = Transcription (oral)` vs taxo `Transcription d'oral (verbatim)` ; `EVT.TYPE = Gouvernance & orga` vs taxo `Gouvernance & organisation` ; `JOB.COVERAGE = Couvert` vs taxo possiblement `Pourvu` ; `SKILL.HARD = SecOps` vs taxo `Security operations`.
+    4. **Format géo** : Pays = `France (FR)` vs taxo `France` (sans code ISO en suffixe).
+    5. **Libellé sectoriel** : `Numérique / IT` vs taxo `Numérique / IT / Logiciels`.
+  - **Portée** : 28 BDDs Twin Notion + 4 BDDs Mission Ops + potentiellement les 11 BDDs Brain (à étendre à l'audit).
+  - **Action requise** : audit DDL transverse + ALTER options Notion pour réaligner avec les `.md` taxos source. Action lourde estimée : ~50+ options sur ~15 BDDs. Articulation avec la phase A4.6 différée (déjà au backlog comme « audit options select Notion vs valeurs Markdown »).
+  - **Quand** : après stabilisation Phase B + Phase C, avant Phase D (Chantier M).
+  - **Articulation avec C-017** : tant que le DDL Notion n'est pas réaligné, l'agent qui remplit les fiches doit utiliser les options Notion existantes (pas les libellés canoniques de la taxo source), et noter explicitement la désync. Doctrine de remplissage à formaliser : « libellé Notion existant prime sur libellé canonique LBP en attendant la sync DDL ».
+
 - [28-04-2026] **Patterns techniques DDL Notion (à documenter dans WF-XXX)**
   - **Contexte** : plusieurs patterns techniques découverts pendant la sync DDL Notion qui méritent d'être documentés pour réutilisation.
   - **Patterns à formaliser** :

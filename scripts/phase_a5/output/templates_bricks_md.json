@@ -1,0 +1,182 @@
+[
+  {
+    "file": "Bricks primaires temporaires\\Template Brick - Chronologie - Organisation.md",
+    "code": "TPL_BRK_TML_ORG",
+    "title": "Template Brick - Chronologie - Organisation",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Construire une chronologie factuelle et exploitable de [NOM_ENTITÉ] (et, si pert"
+  },
+  {
+    "file": "Bricks primaires temporaires\\Template Brick - Enjeux pré-identifiés.md",
+    "code": "TPL_BRK_ENJ_PRE",
+    "title": "Template Brick - Enjeux pré-identifiés",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer des enjeux candidats avant le RDV d’identification du besoin, à parti"
+  },
+  {
+    "file": "Bricks primaires temporaires\\Template Brick - Glossaire - Secteur d'activité.md",
+    "code": "TPL_BRK_GLO_SEC",
+    "title": "Template Brick - Glossaire - Secteur d’activité",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Constituer un glossaire sectoriel de démarrage pour [NOM_SECTEUR], utile pour co"
+  },
+  {
+    "file": "Bricks primaires temporaires\\Template Brick - Profil - Collectifs & Individus.md",
+    "code": "TPL_BRK_PRF_COL_IND",
+    "title": "Template Brick - Profil - Collectifs & Individus",
+    "version": "1.2",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Identifier et décrire les collectifs (équipes, services, BU, départements, sous-"
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Compte-rendu - Entretien individuel.md",
+    "code": "TPL_BRK_MTG_INT_IND_CR",
+    "title": "Template Brick - Meeting - Compte-rendu - Entretien individuel",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Produire un compte-rendu riche, structuré et exploitable d’un entretien individu"
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Compte-rendu - Identification du besoin.md",
+    "code": "TPL_BRK_MTG_IDB_CR",
+    "title": "Template Brick - Meeting - Compte-rendu - Identification du besoin",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Produire un compte-rendu clair, neutre et actionnable du RDV d’identification du"
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Guide - Due diligence organisationnelle.md",
+    "code": "TPL_BRK_MTG_DD_ORG_VENDEUR_GDE",
+    "title": "Template Brick - Meeting - Guide - Due diligence organisationnelle (vendeur) - Achat/Revente",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Guider un entretien (90 min) avec le/la dirigeant(e) vendeur(se) de [NOM_ENTITÉ]"
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Guide - Entretien individuel.md",
+    "code": "TPL_BRK_MTG_INT_IND_GDE",
+    "title": "Template Brick - Meeting - Guide - Entretien individuel",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Préparer et conduire un entretien individuel semi-directif, ancré sur des événem"
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Guide - Identification du besoin.md",
+    "code": "TPL_BRK_MTG_IDB_GDE",
+    "title": "Template Brick - Meeting - Guide - Identification du besoin",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Guider un entretien semi-structuré (1h30-2h) d’identification du besoin avec un "
+  },
+  {
+    "file": "Meetings\\Template Brick - Meeting - Guide - Proposition - Cadrage de mission LBP.md",
+    "code": "TPL_BRK_MTG_PROP_CADRAGE_GDE",
+    "title": "Template Brick - Meeting - Guide - Proposition - Cadrage de mission LBP",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Guider une réunion (60-90 min) de proposition et cadrage avec [NOM_ENTITÉ], pour"
+  },
+  {
+    "file": "Profils\\Template Brick - Profil - Individu.md",
+    "code": "TPL_BRK_PRF_IND",
+    "title": "Template Brick - Profil - Individu",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Dresser un profil d’un individu clé lié à [NOM_ENTITÉ] à partir d’informations d"
+  },
+  {
+    "file": "Socle client\\Template Brick - Philosophie - Organisation.md",
+    "code": "TPL_BRK_PHI_ORG",
+    "title": "Template Brick - Philosophie - Organisation",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Formaliser la philosophie d’une organisation au sens LBP (Mission, Vision, Valeu"
+  },
+  {
+    "file": "Socle client\\Template Brick - Profil - Organisation.md",
+    "code": "TPL_BRK_PRF_ORG",
+    "title": "Template Brick - Profil - Organisation",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Décrire [NOM_ENTITÉ] au niveau macro (identité, offre, modèle d’affaires, canaux"
+  },
+  {
+    "file": "Socle client\\Template Brick - Profil - Secteur d'activité.md",
+    "code": "TPL_BRK_PRF_SEC",
+    "title": "Template Brick - Profil - Secteur d’activité",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Décrire [NOM_SECTEUR] de façon structurante (périmètre, segmentation, chaîne de "
+  },
+  {
+    "file": "Socle client\\Template Brick - Sources - Pack sources web.md",
+    "code": "TPL_BRK_SRC_WEB",
+    "title": "Template Brick - Sources - Pack sources web",
+    "version": "1.1",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer la collecte et la traçabilité des sources web concernant [NOM_ENTITÉ]"
+  },
+  {
+    "file": "Socle Mission\\Template Brick - Mission - Cadrage de mission LBP.md",
+    "code": "TPL_BRK_MGT_SCOPE",
+    "title": "Template Brick - Mission - Cadrage de mission LBP",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Formaliser un cadrage de mission clair et validable avec le client (périmètre, l"
+  },
+  {
+    "file": "Visualisations\\Template Brick - Visualisation - Carte de causalité d'une problématique (Mermaid).md",
+    "code": "TPL_BRK_VIZ_CAUSAL_PROB_MMD",
+    "title": "Template Brick - Visualisation - Carte de causalité d’une problématique (Mermaid)",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer une carte de causalité centrée sur une problématique unique, avec cau"
+  },
+  {
+    "file": "Visualisations\\Template Brick - Visualisation - Carte enjeux et tensions (Mermaid).md",
+    "code": "TPL_BRK_VIZ_ENJ_TENSION_MMD",
+    "title": "Template Brick - Visualisation - Carte enjeux et tensions (Mermaid)",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer une carte visuelle des enjeux et tensions autour d’un sujet (projet, "
+  },
+  {
+    "file": "Visualisations\\Template Brick - Visualisation - Cartographie parties prenantes (Mermaid).md",
+    "code": "TPL_BRK_VIZ_STAKE_MAP_MMD",
+    "title": "Template Brick - Visualisation - Cartographie parties prenantes (Mermaid)",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer une cartographie des parties prenantes et de leurs interactions autou"
+  },
+  {
+    "file": "Visualisations\\Template Brick - Visualisation - Chronologie organisation (Mermaid).md",
+    "code": "TPL_BRK_VIZ_TML_ORG_MMD",
+    "title": "Template Brick - Visualisation - Chronologie organisation (Mermaid)",
+    "version": "1.0",
+    "template_version": null,
+    "summary": "",
+    "purpose": "Structurer une chronologie factuelle de NOM_ENTITE au format Mermaid (timeline),"
+  }
+]

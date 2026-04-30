@@ -1,0 +1,39 @@
+{
+  "page_url": "https://app.notion.com/p/34ee1a18653c80e5b6fbc0940a397bd6",
+  "twin": {
+    "Glossaire spécifique": "collection://f2d74c98-b041-4fd8-b56a-8946e76cd817",
+    "Individus": "collection://fd19eb5d-b866-4b38-9bb9-20e3c3c683ae",
+    "Postes": "collection://d1871545-d33e-481c-9813-ce15336aac67",
+    "Collectifs": "collection://86af5eb1-d46d-4d8b-ae69-cfc4488fc262",
+    "Organisations": "collection://ceaf07f7-0809-4428-8d31-9db52d87bf33",
+    "Relations inter-organisations": "collection://e87dade3-7806-466b-961d-6c0449857d99",
+    "Actifs": "collection://8e398c8d-bf0d-4fec-b393-61a10c557d57",
+    "Événements": "collection://e5aaaac9-5eb3-4bcc-a10a-73e9891100da",
+    "Environnements": "collection://51eaf391-05b3-4276-b8f5-6010dc8a0287",
+    "Actions détectées": "collection://eefcb09b-253c-46e6-b67c-7a5d28863ff0",
+    "Initiatives organisationnelles": "collection://02a9770a-a9cd-43aa-90aa-90f11f5523cf",
+    "Pratiques organisationnelles": "collection://00e31d97-9ae0-4304-b821-71d41aead7b6",
+    "Processus candidats": "collection://8f11ed44-18dc-4e89-9baa-70e3c849e253",
+    "Processus": "collection://d7cf0f34-efe1-467e-8912-65f61a4a1f14",
+    "Enjeux": "collection://eecdfc29-cedf-481f-8cd4-4d0ae52e23cc",
+    "Problématiques": "collection://e76e6c3e-95f8-476d-a506-9127eb2ca4c2",
+    "Indicateurs": "collection://fe9b200f-97c7-4805-9710-5a821d538d0b",
+    "OKR": "collection://09e20d61-0443-4b25-a8f4-fe8f57024637",
+    "Journal des signaux": "collection://9f429a5c-518d-4e13-a57e-10c5ede57e86",
+    "Principes organisationnels": "collection://00349e89-05d9-4dfd-be7c-534e7844da88",
+    "Capacités organisationnelles": "collection://f1d7dbaa-c054-4d07-ab28-fbe800c3002c",
+    "Modulateurs": "collection://2172c9b9-c0e5-47eb-942d-5894a553f82a",
+    "Pratiques organisationnelles sandbox": "collection://e6b8d99a-5400-416c-8206-cd16d2f8c279",
+    "Processus candidats sandbox": "collection://34dbabd2-982e-40d7-81e3-7801235ccfb8",
+    "Capacités métier candidates sandbox": "collection://9219d493-5a4e-41be-a651-abc0c35e4b82",
+    "Principes organisationnels sandbox": "collection://25480353-1673-4e22-8612-0161b87757e2",
+    "Problématiques sandbox": "collection://24b457fd-3e01-404b-9db1-d50eaef59e62",
+    "OKR sandbox": "collection://2b24d7bf-95a6-4bec-9a67-e9846edc0e33"
+  },
+  "mission_ops": {
+    "Sources d'informations": "collection://1d2931c9-8331-47cb-8a37-372f6c6270bb",
+    "Meetings": "collection://ea568e88-225d-460d-aabc-b0b084401bf4",
+    "Actions LBP": "collection://7ce1bae7-522d-4c82-b068-e9cd262c0cc1",
+    "Bricks": "collection://29c320d2-09a5-4ecf-aa65-4c7baf1a06b0"
+  }
+}

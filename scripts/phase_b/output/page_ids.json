@@ -1,0 +1,81 @@
+{
+  "sources": {
+    "SRC-RED-FIRE-001": {
+      "page_id": "352e1a18-653c-811d-9b2d-d86ba48a805d",
+      "url": "https://app.notion.com/p/352e1a18653c811d9b2dd86ba48a805d",
+      "title": "Comité risque - activation Feu Rouge"
+    },
+    "SRC-NOISY-INCIDENT-002": {
+      "page_id": "352e1a18-653c-81ef-a212-f0f0f5ccb8e1",
+      "url": "https://app.notion.com/p/352e1a18653c81efa212f0f0f5ccb8e1",
+      "title": "Canal incident - bruit P1"
+    },
+    "SRC-GOV-GAP-003": {
+      "page_id": "352e1a18-653c-81d6-897c-ed97e6d130da",
+      "url": "https://app.notion.com/p/352e1a18653c81d6897ced97e6d130da",
+      "title": "Memo gouvernance - trou de decision"
+    }
+  },
+  "organisations": {
+    "DeepSecAI": "352e1a18-653c-81da-9915-f8cab9b1b549"
+  },
+  "collectifs": {
+    "Équipe Stress Bank": "352e1a18-653c-8110-acc3-d0326b25f2f7",
+    "Cellule Gouvernance": "352e1a18-653c-817d-b919-f2915053f4f0",
+    "Équipe Incident Bruitée": "352e1a18-653c-81b0-95cf-e61ce90ca5c8",
+    "Archive Lab": "352e1a18-653c-81e2-8af4-edcf790cd449"
+  },
+  "individus": {
+    "Maya Chen": "352e1a18-653c-81a6-9355-ffd0995e7d7e",
+    "Nora Vidal": "352e1a18-653c-81cf-95fc-c43d754de768",
+    "Idris Moreau": "352e1a18-653c-81b2-b77b-c17b79da5a9c",
+    "Salomé Roussel": "352e1a18-653c-8142-91b2-e252c3d27b8f",
+    "Tom Alvarez": "352e1a18-653c-8105-84a1-f9219c018087",
+    "M. Chen duplicate": "352e1a18-653c-819d-bd42-db5caba66459",
+    "Ariane Legacy": "352e1a18-653c-8125-abf3-c57cc78b3cc4"
+  },
+  "postes": {
+    "Pilote opérationnelle Banc de Stress": "352e1a18-653c-81b2-96c1-ecd01a99470d",
+    "Facilitateur arbitrage incident": "352e1a18-653c-8181-9b45-fb1806ec1a07"
+  },
+  "environnements": {
+    "Contexte Feu Rouge P1": "352e1a18-653c-8132-b69a-c8d8f2b632dd",
+    "Fenêtre de stabilisation T2": "352e1a18-653c-8183-8f02-c5c11f4f8e2d"
+  },
+  "actifs": {
+    "Banc de Stress": "352e1a18-653c-81db-8671-ddc25fb702ba",
+    "Runbook Incident Rouge": "352e1a18-653c-8166-baa3-ebca1f17e0ca"
+  },
+  "evenements": {
+    "Activation Feu Rouge": "352e1a18-653c-81f1-960c-ee27f5aa2a0e",
+    "Atelier anti-bruit incident": "352e1a18-653c-8170-a2d8-e036e3def042"
+  },
+  "glossaire_specifique": {},
+  "journal_signaux": {
+    "Signal bruit P1 récurrent": "352e1a18-653c-81d7-8941-de106144079e",
+    "Signal arbitrage rouge retardé": "352e1a18-653c-8186-baf0-ea6538ef2552"
+  },
+  "actions_detectees": {
+    "Stabiliser le Banc de Stress": "352e1a18-653c-8186-b5ba-c67008ce2a24",
+    "Réduire le bruit incident": "352e1a18-653c-8189-9569-f703adba5dc5"
+  },
+  "enjeux": {
+    "Fiabilité de la gouvernance d'incident": "352e1a18-653c-8168-a72e-c0b4e50d3774",
+    "Lisibilité des signaux opérationnels": "352e1a18-653c-8130-8c72-c8536c417014"
+  },
+  "process_candidats_sandbox": {
+    "Arbitrage incident critique (candidat)": "352e1a18-653c-8180-bbad-e23fe155ef90",
+    "Qualification bruit P1 (candidat)": "352e1a18-653c-8175-a399-e632a73c93ac"
+  },
+  "process": {},
+  "pratiques": {},
+  "principes": {},
+  "capacites": {},
+  "modulateurs": {},
+  "problematiques": {},
+  "okr": {},
+  "indicateurs": {},
+  "meetings": {},
+  "actions_lbp": {},
+  "bricks": {}
+}
