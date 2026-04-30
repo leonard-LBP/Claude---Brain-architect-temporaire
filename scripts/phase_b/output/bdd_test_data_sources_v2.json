@@ -1,0 +1,41 @@
+{
+  "_doc": "Nouveaux data source IDs après instanciation des copies par Leonard 30-04-2026. Page parente: 352e1a18653c8079b1b6edd1c456aaeb. Les data sources de la page d'origine (34ee1a18653c80e5b6fbc0940a397bd6) restent valides sur l'ancienne page.",
+  "page_url": "https://www.notion.so/littlebigpicture/BDD-test-26-04-2026-Digital-Twin-update-352e1a18653c8079b1b6edd1c456aaeb",
+  "page_id": "352e1a18653c8079b1b6edd1c456aaeb",
+  "twin": {
+    "Glossaire spécifique": "collection://352e1a18-653c-81c7-9ae9-000bca9df010",
+    "Individus": "collection://352e1a18-653c-81c9-a690-000bd2f51740",
+    "Postes": "collection://352e1a18-653c-8193-bd6e-000b5a99859e",
+    "Collectifs": "collection://352e1a18-653c-8139-ae49-000bd2539725",
+    "Organisations": "collection://352e1a18-653c-81ef-afea-000b9eb6e0e5",
+    "Relations inter-organisations": "collection://352e1a18-653c-8106-98c3-000baa784039",
+    "Actifs": "collection://352e1a18-653c-81d3-b614-000bb2fcd17f",
+    "Événements": "collection://352e1a18-653c-81b6-938b-000b7c3ae3ec",
+    "Environnements": "collection://352e1a18-653c-8112-a4fb-000bd01da5da",
+    "Actions détectées": "collection://352e1a18-653c-81c6-a90c-000b5fa0a2b1",
+    "Initiatives organisationnelles": "collection://352e1a18-653c-8191-937d-000bac46e058",
+    "Pratiques organisationnelles": "collection://352e1a18-653c-8198-8184-000bedf7713e",
+    "Processus candidats": "collection://352e1a18-653c-81ea-ab4d-000be60052de",
+    "Processus": "collection://352e1a18-653c-8149-b59b-000b8a1328fc",
+    "Enjeux": "collection://352e1a18-653c-81a3-a5e3-000b3d309ba4",
+    "Problématiques": "collection://352e1a18-653c-819f-97d8-000bc29cd0eb",
+    "Indicateurs": "collection://352e1a18-653c-816d-be57-000b06eabcfa",
+    "OKR": "collection://352e1a18-653c-819b-bf31-000b7f4a1d26",
+    "Journal des signaux": "collection://352e1a18-653c-81c1-a87f-000b2451fa1d",
+    "Principes organisationnels": "collection://352e1a18-653c-81d0-bfe7-000b53dd9038",
+    "Capacités organisationnelles": "collection://352e1a18-653c-8174-a133-000b69631c95",
+    "Modulateurs": "collection://352e1a18-653c-815f-b2fe-000b7f3288ee",
+    "Pratiques organisationnelles sandbox": "collection://352e1a18-653c-81a2-b861-000b3bcf60e3",
+    "Processus candidats sandbox": "collection://352e1a18-653c-81f5-b2fa-000b068f2218",
+    "Capacités métier candidates sandbox": "collection://352e1a18-653c-8194-a9fc-000bcafb85f9",
+    "Principes organisationnels sandbox": "collection://352e1a18-653c-8149-812e-000b4e917f2e",
+    "Problématiques sandbox": "collection://352e1a18-653c-81a2-8fe0-000b43ac6d0a",
+    "OKR sandbox": "collection://352e1a18-653c-813e-9ee8-000bf9f81661"
+  },
+  "mission_ops": {
+    "Sources d'informations": "collection://352e1a18-653c-8163-a8fa-000b0d3fcc2b",
+    "Meetings": "collection://352e1a18-653c-8120-9ce2-000b514af2ed",
+    "Actions LBP": "collection://352e1a18-653c-8181-bf5a-000ba6726e8d",
+    "Bricks": "collection://352e1a18-653c-8182-93c3-000bf3cdf34b"
+  }
+}
