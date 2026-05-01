@@ -7,6 +7,7 @@ code: "CHRT_RULES_LBP"
 # === Méta-gouvernance ===
 version: "1.0"
 template_code: "CHRT"
+template_version: "1.0"
 created_at: "07-04-2026"
 updated_at: "01-05-2026"
 status: "Validé"

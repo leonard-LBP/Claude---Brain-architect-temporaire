@@ -7,6 +7,7 @@ code: "CHRT_DOCTRINE_TWIN"
 # === Méta-gouvernance ===
 version: "4.0"
 template_code: "CHRT"
+template_version: "1.0"
 created_at: "22-04-2026"
 updated_at: "01-05-2026"
 status: "Validé"
