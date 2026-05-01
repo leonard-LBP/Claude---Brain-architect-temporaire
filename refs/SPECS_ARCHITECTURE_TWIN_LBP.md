@@ -194,6 +194,7 @@ Cf. Panorama §12. Le Twin devient puissant quand on l'interroge par traversées
 Les schémas Notion complets (champs, relations, rollups, formules) sont portés par les **Manuels de BDD** dans le vault "Architecture data". Une fois les nouveaux manuels intégrés au vault, cette section listera les liens.
 
 - Source doctrinale complète : `Panorama V2 v3` (non encore intégré au vault)
+- **Doctrine détaillée Twin** (régimes de structuration des données, 15 chaînes de transformation détaillées, gouvernance Twin, doctrine merge/consolidation/promotion, critères sandbox→officiel) : `refs/DOCTRINE_TWIN_LBP.md` (v4.0 — refonte du Panorama V2 v3 du 22-04-2026, mise à jour 01-05-2026)
 - Manuels de BDD : à intégrer dans `Architecture data/Manuels de BDD/Digital Twin/`
 - Règles gouvernant l'architecture : `refs/RULES_LBP.md` section 3
 - Décisions structurantes : `refs/DECISIONS_LBP.md` D-002 à D-009

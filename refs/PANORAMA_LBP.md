@@ -194,7 +194,8 @@ NIVEAU 1 — Vue d'entrée (à lire en premier)
 └── PANORAMA_LBP.md                         ← TU ES ICI
 
 NIVEAU 2 — Doctrine et règles (pour comprendre)
-├── DOCTRINE_LBP.md                         [pourquoi structurel, narratif]
+├── DOCTRINE_LBP.md                         [doctrines transverses 3 ensembles]
+├── DOCTRINE_TWIN_LBP.md                    [doctrine détaillée Twin — régimes, chaînes, gouvernance]
 ├── RULES_LBP.md             (R-XXX)        [catalogue règles atomiques]
 ├── DECISIONS_LBP.md         (D-XXX)        [catalogue décisions architecturales]
 └── WORKFLOWS_LBP.md         (WF-XXX)       [catalogue workflows opérationnels]
@@ -259,7 +260,8 @@ NIVEAU 4 — Outils transverses (pour exécuter sans erreur)
 
 ## 10. Renvois
 
-- **`refs/DOCTRINE_LBP.md`** — pourquoi structurel des 9 doctrines
+- **`refs/DOCTRINE_LBP.md`** — pourquoi structurel des 9 doctrines transverses
+- **`refs/DOCTRINE_TWIN_LBP.md`** — doctrine détaillée Twin (régimes de structuration, 15 chaînes, gouvernance, merge/consolidation/promotion)
 - **`refs/SPECS_ARCHITECTURE_BRAIN_LBP.md`** — détail des 11 BDDs Brain
 - **`refs/SPECS_ARCHITECTURE_TWIN_LBP.md`** — détail des 28 BDDs Twin
 - **`refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md`** — détail des 4 BDDs MO
