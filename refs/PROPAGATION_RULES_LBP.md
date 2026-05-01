@@ -1,3 +1,31 @@
+---
+# === Identité ===
+title: "Propagation Rules LBP — Cheat sheet de propagation des modifications"
+doc_type: doc_meta
+code: "CHRT_PROPAGATION_RULES_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "01-05-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Cheat sheet 1-pager actionnable distillé depuis WF-008. Règle d'or R-001 (Markdown source de vérité), matrice 'Si tu modifies X → propage dans Y' (11 entrées), checklist 7 étapes, anti-patterns à NE JAMAIS faire, cas particuliers (codification / taxo / template / règle format)."
+purpose: "Servir de fiche de chevet à tout intervenant qui modifie un objet structurant de l'écosystème. Pour le détail procédural complet voir WORKFLOWS_LBP §WF-008."
+tags:
+  - doc_meta
+  - propagation
+  - cheat_sheet
+  - workflows
+  - r001
+  - r041
+  - r042
+  - lbp
+---
+
 # PROPAGATION RULES — Cheat sheet de propagation des modifications LBP
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

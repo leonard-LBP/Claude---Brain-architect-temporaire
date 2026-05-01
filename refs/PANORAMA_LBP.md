@@ -1,3 +1,30 @@
+---
+# === Identité ===
+title: "Panorama LBP — Macro-architecture de l'écosystème"
+doc_type: doc_meta
+code: "CHRT_PANORAMA_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "01-05-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Doc d'entrée du bundle docs méta LBP. Vue macro des 3 ensembles (Brain, Digital Twin, Mission Ops), frontières d'isolation, stack technique cible (Notion / Supabase) et articulations doctrinales. Lisible en 15 min."
+purpose: "Servir de point d'entrée à tout nouveau intervenant LBP (humain ou agent) qui doit comprendre l'écosystème complet. Renvoie systématiquement aux autres docs du bundle pour le détail."
+tags:
+  - doc_meta
+  - panorama
+  - macro_architecture
+  - brain
+  - digital_twin
+  - mission_ops
+  - lbp
+---
+
 # PANORAMA LBP — Macro-architecture de l'écosystème
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

@@ -1,3 +1,32 @@
+---
+# === Identité ===
+title: "Codification LBP — Grammaire des codes (Brain + Twin + Mission Ops + IDs systèmes)"
+doc_type: doc_meta
+code: "CHRT_CODIFICATION_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "01-05-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Référence canonique de toutes les codifications LBP (R-054 + extensions Twin/MO + IDs systèmes R-XXX/D-XXX/WF-XXX/C-XXX). 4 grammaires : G1 général Brain, G2 taxonomies, G3 bricks instanciées MO, G4 occurrences MO. Table officielle des préfixes Brain. Anti-patterns + arbitrages en cours."
+purpose: "Servir de référence pour toute production de code nouveau dans LBP. Évite les préfixes ad hoc qui produisent des asymétries silencieuses. Documente les conventions de codification universelle."
+tags:
+  - doc_meta
+  - codification
+  - codes
+  - grammaire
+  - r054
+  - brain
+  - digital_twin
+  - mission_ops
+  - lbp
+---
+
 # CODIFICATION — Grammaire des codes LBP
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

@@ -1,3 +1,31 @@
+---
+# === Identité ===
+title: "Workflows LBP — Catalogue des workflows opérationnels"
+doc_type: doc_meta
+code: "CHRT_WORKFLOWS_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "07-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Catalogue des 17 workflows opérationnels (WF-XXX) intrinsèques à l'écosystème LBP : récupération URL Drive (WF-011), indexation Notion (WF-012), génération WR-RD (WF-013), génération BDD (WF-014), migration au canon (WF-015), audit transverse (WF-016), sync DDL (WF-017), propagation d'impacts (WF-008), etc."
+purpose: "Référence canonique pour conduire des opérations standardisées sur l'écosystème. Chaque workflow a un ID stable, un statut (Actif / À formaliser), un contexte, des étapes, des règles associées."
+tags:
+  - doc_meta
+  - workflows
+  - catalogue
+  - operations
+  - brain
+  - digital_twin
+  - mission_ops
+  - lbp
+---
+
 # Workflows LBP — Brain / Twin / Mission Ops
 
 > **Scope** : 🟦 LBP — Bundle écosystème.

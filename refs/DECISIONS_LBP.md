@@ -1,3 +1,31 @@
+---
+# === Identité ===
+title: "Décisions architecturales LBP — Catalogue des choix structurants datés"
+doc_type: doc_meta
+code: "CHRT_DECISIONS_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "07-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Catalogue chronologique des 23 décisions architecturales (D-XXX) qui contextualisent l'écosystème LBP. Format standard par décision : Date / Statut / Portée / Contexte / Options envisagées / Choix retenu / Conséquences / Règles associées."
+purpose: "Référence canonique pour comprendre POURQUOI tel choix architectural a été fait. Chaque D-XXX peut générer une ou plusieurs R-XXX (RULES_LBP) ou WF-XXX (WORKFLOWS_LBP)."
+tags:
+  - doc_meta
+  - decisions
+  - catalogue
+  - architecture
+  - brain
+  - digital_twin
+  - mission_ops
+  - lbp
+---
+
 # Décisions architecturales
 
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.

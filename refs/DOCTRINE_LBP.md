@@ -1,3 +1,30 @@
+---
+# === Identité ===
+title: "Doctrine LBP — Pourquoi l'écosystème est conçu comme ça"
+doc_type: doc_meta
+code: "CHRT_DOCTRINE_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "01-05-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Synthèse narrative des 9 doctrines structurantes transverses qui sous-tendent l'écosystème LBP : régimes de connaissance, isolation Brain ↔ Twin/MO, agnosticisme backend, sandboxes, chaînes de transformation, Bricks pivot, 3 agents, propagation Markdown-first, hygiène d'écriture, pile d'orchestration."
+purpose: "Expliquer le POURQUOI structurel, là où RULES_LBP énumère les règles atomiques (R-XXX) et DECISIONS_LBP archive les choix datés (D-XXX). Lisible d'une traite en 30 min."
+tags:
+  - doc_meta
+  - doctrine
+  - lbp
+  - regimes_de_connaissance
+  - isolation
+  - propagation
+  - hygiene_ecriture
+---
+
 # DOCTRINE LBP — Pourquoi l'écosystème est conçu comme ça
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

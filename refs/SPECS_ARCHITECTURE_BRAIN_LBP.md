@@ -1,3 +1,29 @@
+---
+# === Identité ===
+title: "Specs Architecture Brain LBP — Modèle conceptuel des 11 BDDs Brain"
+doc_type: doc_meta
+code: "CHRT_SPECS_BRAIN_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "07-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Modèle conceptuel des 11 BDDs Brain (4 zones : ADMIN / CORE / MOTOR / CROSS-ZONE), leurs articulations (hub Prompts 6 relations, hub Glossaire 3 relations, paire CPT/GLO, taxos↔manuels, manuels↔WR-RD), architecture logique en couches sobres, articulation Brain → Twin/MO en lecture seule."
+purpose: "Servir de référence canonique du modèle Brain pour toute production ou audit. Ne reproduit PAS les schémas DDL Notion volatiles (qui vivent dans les manuels parents Markdown source de vérité, R-001)."
+tags:
+  - doc_meta
+  - specs
+  - architecture
+  - brain
+  - bdd
+  - lbp
+---
+
 # SPECS — Architecture Brain LBP
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

@@ -1,3 +1,31 @@
+---
+# === Identité ===
+title: "Specs Architecture Mission Ops LBP — Modèle conceptuel des 4 BDDs MO"
+doc_type: doc_meta
+code: "CHRT_SPECS_MISSION_OPS_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "30-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Modèle conceptuel des 4 BDDs Mission Ops (Sources d'informations, Meetings, Actions LBP, Bricks) : 6 principes structurants, tableau maître, cartographie objets, architecture logique en 4 couches sobres, articulation Twin↔MO via 3 ponts (Sources / Bricks / Actions), articulation Brain↔MO en lecture seule, stack technique Supabase cible (D-023)."
+purpose: "Servir de référence canonique du modèle Mission Ops. Issu de la validation de la maquette Notion par le test Phase B (51 fiches Twin+MO sur scénario DeepSecAI v0, 30-04-2026)."
+tags:
+  - doc_meta
+  - specs
+  - architecture
+  - mission_ops
+  - bdd
+  - bricks
+  - sources_d_informations
+  - lbp
+---
+
 # SPECS — Architecture Mission Ops LBP
 
 > **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).

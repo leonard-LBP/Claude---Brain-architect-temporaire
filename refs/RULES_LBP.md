@@ -1,3 +1,30 @@
+---
+# === Identité ===
+title: "Règles LBP — Catalogue des règles intrinsèques de l'écosystème"
+doc_type: doc_meta
+code: "CHRT_RULES_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "07-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Catalogue exhaustif des 60 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
+purpose: "Référence canonique pour lookup d'une règle précise. Toute production ou modification structurante doit s'appuyer sur les règles applicables. Pour la narration doctrinale qui les sous-tend voir DOCTRINE_LBP."
+tags:
+  - doc_meta
+  - rules
+  - catalogue
+  - brain
+  - digital_twin
+  - mission_ops
+  - lbp
+---
+
 # Règles de gestion du Brain et du Digital Twin
 
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).

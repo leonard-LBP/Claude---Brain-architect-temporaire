@@ -1,3 +1,31 @@
+---
+# === Identité ===
+title: "Specs Architecture Digital Twin LBP — Modèle conceptuel des 28 BDDs Twin"
+doc_type: doc_meta
+code: "CHRT_SPECS_TWIN_LBP"
+
+# === Méta-gouvernance ===
+version: "1.0"
+template_code: "CHRT"
+created_at: "24-04-2026"
+updated_at: "01-05-2026"
+status: "Validé"
+scope: "LBP"
+
+# === Spec d'usage ===
+summary: "Modèle conceptuel des 28 BDDs Digital Twin v2 (22 officielles + 6 sandboxes) : 8 principes cardinaux, tableau maître canonique, cartographie objets ontologiques, architecture logique en 5 couches, chaînes de transformation D-009, 11 moteurs analytiques, 11 traversées à forte valeur."
+purpose: "Servir de référence canonique du modèle Twin. Pour la doctrine narrative détaillée (régimes de structuration, gouvernance, merge/consolidation/promotion) voir DOCTRINE_TWIN_LBP."
+tags:
+  - doc_meta
+  - specs
+  - architecture
+  - digital_twin
+  - bdd
+  - 5d
+  - sandboxes
+  - lbp
+---
+
 # SPECS — Architecture Digital Twin LBP
 
 > Référence canonique des **28 BDD** du Digital Twin v2 (22 officielles + 6 sandboxes).
