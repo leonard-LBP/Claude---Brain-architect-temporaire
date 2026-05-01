@@ -250,7 +250,7 @@ La sync est **descendante** (Markdown → Notion, R-001). Workflows associés :
 ### 9.1 Chantier P (détail)
 
 Périmètre :
-- Refonte des 4 templates legacy listés dans `ARCHITECTURE_DIGEST_LBP.md` §8 (templates secondaires non encore migrés au canon v2)
+- Refonte des 4 templates legacy (templates secondaires non encore migrés au canon v2 : `Template de system prompt.md`, `template-prompt_maitre_lbp.md`, `Template-prompt_lbp.md`, `template-meta_logic_block_lbp.md` — cf. `MIGRATION_REPORT_2026-04.md` §7.6)
 - Tri massif `Prompts/` (76 prompts → état Twin v2)
 - Tri massif `Logic Blocks/` (101 logic blocks → état Twin v2)
 - Création des 3 fiches `Agents LBP` (D-021) une fois Prompts/Logic blocks à jour

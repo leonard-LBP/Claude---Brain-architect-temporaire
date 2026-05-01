@@ -333,7 +333,6 @@ Glob `refs/*_LBP.md` au 01-05-2026 (10 docs) :
 
 | Doc | Lignes | Rôle |
 |---|---|---|
-| ARCHITECTURE_DIGEST_LBP.md | ~190 | TL;DR de l'architecture (à supprimer une fois PANORAMA validé) |
 | PANORAMA_LBP.md | 274 | Doc d'entrée — vue macro 3 ensembles |
 | DOCTRINE_LBP.md | 327 | Pourquoi structurel — 9 doctrines narratives |
 | SPECS_ARCHITECTURE_BRAIN_LBP.md | 303 | Modèle conceptuel 11 BDDs Brain |
@@ -347,7 +346,106 @@ Glob `refs/*_LBP.md` au 01-05-2026 (10 docs) :
 
 Total : ~4 600 lignes de doc méta durable.
 
-### 7.4 Hors bundle (Scope Session, non destinés à toi)
+### 7.4 Mapping des changements v1 → v2 du Digital Twin
+
+Pour ton onboarding rapide, voici les changements structurels du Twin entre l'ancienne et la nouvelle architecture :
+
+| Avant (Twin v1) | Après (Twin v2) | Décision |
+|---|---|---|
+| Unités Organisationnelles | Organisations + Collectifs | D-002 |
+| Ressources | Actifs | D-003 |
+| Rôles officiels | Postes (1 individu = 1 poste) | D-004 |
+| — | Initiatives organisationnelles (nouvelle BDD) | D-005 |
+| — | Relations inter-organisations (BDD edge, nouvelle) | D-006 |
+| — | 6 sandboxes spécialisées | D-007 |
+| Carte informelle | Tableau maître canonique 28 BDDs Twin | D-008 |
+| Lecture table par table | Chaînes de transformation de la connaissance | D-009 |
+
+Détail complet : `refs/DECISIONS_LBP.md` D-002 à D-009.
+
+### 7.5 Cycle de vie d'un doc Brain
+
+```
+Template (Docs méta) → instanciation (placeholders + @INSTR) → cleanup → doc MD final
+→ validation humaine → indexation Notion (propriétés dérivées) → relations → propagation
+```
+
+Détail des workflows : `refs/WORKFLOWS_LBP.md` (WF-001 à WF-017, notamment WF-008 propagation).
+
+### 7.6 Templates au 01-05-2026
+
+**Templates au canon (v2.0 ou v1.1)** :
+
+| Template | Génère |
+|---|---|
+| `Template - Manuel de BDD - Digital Twin.md` | Manuels de BDD Twin |
+| `Template - Manuel de BDD - Mission Ops.md` | Manuels de BDD Mission Ops |
+| `Template - Manuel de BDD - Brain.md` (v1.1) | Manuels de BDD Brain |
+| `Template - WR-RD - Digital Twin.md` | WR-RD Twin |
+| `Template - WR-RD - Mission Ops.md` | WR-RD Mission Ops |
+| `Template - WR-RD - Brain.md` (v1.0) | WR-RD Brain |
+| `Template - Note de concept.md` | Notes de concept |
+| `Template - Taxonomie.md` (v2.0) | Taxonomies |
+| `Template - Méthode LBP.md` (v2.0) | Méthodes LBP |
+| `Template - Outil externe.md` (v2.0) | Fiches Outils externes |
+| `Template - Template de Brick.md` (v2.0, méta-template) | Templates de Bricks |
+
+**Templates legacy à refondre (Chantier P)** :
+
+| Template | Génère |
+|---|---|
+| `Template de system prompt.md` | System prompts |
+| `template-prompt_maitre_lbp.md` | Prompts maîtres |
+| `Template-prompt_lbp.md` | Prompts LBP |
+| `template-meta_logic_block_lbp.md` | Logic blocks |
+
+### 7.7 Chemins d'accès — table technique
+
+| Ressource | Chemin |
+|---|---|
+| Vault Obsidian | `Architecture data` (via Obsidian CLI) |
+| Drive racine | `H:\Drive partagés\LBP - shared\Architecture data\` |
+| Notion Brain (page maître) | `20be1a18653c8079aeb1e01047fddddd` |
+| Docs méta LBP (templates) | `H:\...\Architecture data\00 - Docs méta\Templates d'instanciation\` |
+| Bundle docs méta durables | `H:\...\Architecture data\00 - Docs méta\Doctrines & playbooks\Bundle écosystème LBP\` (post-publication) |
+| Manuels de BDD | `H:\...\Architecture data\Manuels de BDD\` (sous-dossiers Brain / Digital Twin / Mission Ops) |
+| WR-RD | `H:\...\Architecture data\Manuels de BDD\<Domain>\WR-RD\` |
+| Notes de concept | `H:\...\Architecture data\Notes de concept\` |
+| Méthodes | `H:\...\Architecture data\Méthodes LBP\` |
+| Prompts | `H:\...\Architecture data\Prompts\` |
+| Logic blocks | `H:\...\Architecture data\Logic Blocks\` |
+| Taxonomies | `H:\...\Architecture data\Taxonomies\` |
+| Templates de bricks | `H:\...\Architecture data\Templates de bricks\` |
+| Repo git collab Claude | `C:\Users\leona\LBP - dev\Claude - Brain architect temporaire\` |
+| Maquette Notion test Phase B | Page `352e1a18653c8079b1b6edd1c456aaeb` |
+
+### 7.8 Anomalies / dettes connues au 01-05-2026
+
+**Anomalies actives** (à traiter dans les chantiers à venir) :
+
+1. Glossaire LBP : `est lié à (concepts)` reste un champ texte au lieu d'une relation Notion structurée (anomalie héritée v1, non traitée).
+2. Logic blocks : `Lien Drive du logic block` toujours en `text` au lieu de `url` (héritée v1).
+3. Pipeline de régénération Brain : full rebuild uniquement, pas de sync incrémentale.
+4. Brain Studio (frontend) : 100% mock.
+5. Prompts maîtres (76) et Logic Blocks (101) : obsolètes vs Twin v2 et hors canon → **refonte/regen Chantier P**.
+6. ~275 docs ont `summary` / `purpose` en TODO (à remplir en Phase C).
+7. Audit nettoyage backticks abusifs (R-057) à passer en transverse.
+8. 6 BDDs "XXX" héritées de l'ancienne archi à migrer ou archiver.
+9. Codes de codification ad hoc dans les fichiers du vault potentiellement encore présents (`TPL_BRK_` au lieu de `TPL_BRICK_`, `MET_` au lieu de `METH_`, etc.) — audit transverse à mener (cf. CODIFICATION_LBP §9).
+
+**Anomalies résolues récemment (avril 2026)** :
+
+- **Migration au canon de 318 docs Brain** (43 manuels + 32 WR-RD + 72 notes de concept + 96 taxonomies + 24 instances Phase 7) avec frontmatter R-054 / R-055 / R-056.
+- **Sync DDL Notion Brain** : ~26 actions sur les 11 BDDs (DROP/ADD/ALTER/RENAME), 8 conversions text→rollup, 3 rollups manquants créés sur Outils externes.
+- **R-058 — Suppression des jumelles texte sur Brain** : 2 jumelles DROP sur Logic blocks.
+- **D-019 — DROP `Type fonctionnel (BDD décrite)`** sur Manuels de BDD (devenu redondant avec `Domaine(s) d'usage`).
+- **R-053 — Convention de renaming des docs archivés** appliquée (suffix `(archivé v<X> le JJ-MM-YYYY)`).
+- **R-052 — Apostrophes typographiques** : harmonisation Notion (Logic blocks `Statut de l'objet`).
+- **Refonte v2.0 de 4 templates secondaires** (Phase 6.5).
+- **Migration au canon des manuels Twin v2 + WR-RD Twin v2** (Phases 4-5).
+- **Test Phase B Twin+MO** (51 fiches sur scénario DeepSecAI v0, 30-04-2026) — validation des chaînes D-009 + auto-propagation Notion + bricks D-018.
+
+### 7.9 Hors bundle (Scope Session, non destinés à toi)
 
 | Doc | Rôle |
 |---|---|

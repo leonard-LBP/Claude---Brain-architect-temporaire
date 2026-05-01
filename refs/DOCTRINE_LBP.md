@@ -304,6 +304,43 @@ R-055 (frontmatter 3 zones), R-056 (versioning X.Y), R-058 (anti-jumelles texte 
 
 ---
 
+## 10. La pile d'orchestration des prompts (Brain Motor)
+
+### Le principe directeur
+
+Quand un agent IA exécute une opération structurée dans LBP (génération de brick, contrôle qualité, déduplication, création de relations, etc.), il mobilise une **pile en couches** d'objets Brain Motor. Chaque couche apporte un niveau d'abstraction distinct, et toutes ne sont pas systématiquement traversées — mais le pattern est canonique.
+
+### La pile en 6 couches
+
+```
+1. System prompt          — identité stable de l'agent (quel agent, quel rôle, quelles limites)
+2. Prompt maître          — protocole général d'une opération (quelles étapes, quel ordre)
+3. Logic block(s)         — logique locale opération × cible (comment qualifier un signal,
+                            comment dédoublonner, comment traiter un cas limite)
+4. Manuels / taxonomies   — vérité métier (structure, sens, contraintes des objets cibles)
+5. Instructions écriture / clefs lecture (WR-RD) — cohérence champ par champ
+6. Template de sortie     — forme du rendu (Brick, livrable, exports)
+```
+
+### Pourquoi cette pile
+
+Sans cette stratification, chaque prompt deviendrait monolithique (tout dans un seul prompt géant) et impossible à maintenir. La pile permet :
+- **Réutilisation** : un même Logic block sert plusieurs prompts maîtres
+- **Cohérence** : les Manuels/WR-RD garantissent que tous les agents écrivent dans la même grammaire
+- **Audit** : on peut tracer précisément quel composant produit quelle décision
+- **Évolution indépendante** : on peut bumper un Logic block sans toucher le prompt maître qui le mobilise
+
+### Conséquences pratiques
+
+- Tous les prompts ne traversent pas toute la pile (pattern privilégié pour les opérations **structurées**, optionnel pour des opérations simples).
+- Le **hub central** côté Notion est `Prompts LBP` qui porte 6 relations bidirectionnelles vers Méthodes / Logic blocks / Docs méta / Outils externes / Templates de bricks / Agents (cf. SPECS_ARCHITECTURE_BRAIN_LBP §6.1).
+- Les 3 agents D-021 (Brain architect / Twin architect / KONTEXT) consomment chacun leur propre system prompt + prompts maîtres + logic blocks selon leurs domaines d'intervention.
+
+### Règles dérivées
+D-021 (3 agents), R-058 (anti-jumelles texte Brain), structure des BDDs Brain Motor (cf. SPECS_ARCHITECTURE_BRAIN_LBP §3).
+
+---
+
 ## Conclusion — comment lire le reste du bundle
 
 Tu connais maintenant les 9 doctrines. Voici comment elles éclairent les autres docs :

@@ -39,16 +39,21 @@
 
 ## 3. Documentation de reference
 
-A consulter selon le besoin ; `refs/ARCHITECTURE_DIGEST_LBP.md` a relire au debut de chaque conversation pour se recontextualiser.
+A consulter selon le besoin ; `refs/PANORAMA_LBP.md` a relire au debut de chaque conversation pour se recontextualiser.
 
-**🟦 Scope LBP (bundle ecosysteme)**
-- `refs/ARCHITECTURE_DIGEST_LBP.md` — Synthese de l'architecture LBP
+**🟦 Scope LBP (bundle ecosysteme — 11 docs `*_LBP.md`)**
+- `refs/PANORAMA_LBP.md` — Doc d'entree, vue macro 3 ensembles (Brain/Twin/MO)
+- `refs/DOCTRINE_LBP.md` — 9 doctrines transverses (pourquoi structurel)
+- `refs/DOCTRINE_TWIN_LBP.md` — Doctrine detaillee Twin (regimes, chaines, gouvernance)
 - `refs/RULES_LBP.md` — Regles intrinseques a l'ecosysteme (IDs R-XXX)
-- `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties a formaliser plus tard (Scope Session, hors bundle)
-- `refs/DECISIONS_LBP.md` — Decisions architecturales (le pourquoi des choix, IDs D-XXX)
+- `refs/DECISIONS_LBP.md` — Decisions architecturales (IDs D-XXX)
 - `refs/WORKFLOWS_LBP.md` — Workflows operationnels LBP (IDs WF-XXX)
-- `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md` — Specs detaillees des 11 BDD Brain (schemas Notion)
-- `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` — Specs detaillees des BDD Twin
+- `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md` — Modele conceptuel 11 BDDs Brain
+- `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` — Modele conceptuel 28 BDDs Twin
+- `refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md` — Modele conceptuel 4 BDDs Mission Ops
+- `refs/CODIFICATION_LBP.md` — Grammaire de tous les codes LBP
+- `refs/PROPAGATION_RULES_LBP.md` — Cheat sheet propagation
+- `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties (Scope Session, hors bundle)
 
 **🟪 Scope Session (hors bundle, collaboration Claude/Leonard)**
 - `refs/SESSION_WORKFLOWS.md` — Workflows propres a notre collaboration en session (re-contextualisation, etc.)
