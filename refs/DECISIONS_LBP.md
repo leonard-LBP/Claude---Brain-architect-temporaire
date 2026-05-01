@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Décisions architecturales LBP — Catalogue des choix structurants datés"
+title: "Décisions architecturales LBP - Catalogue des choix structurants datés"
 doc_type: doc_meta
 code: "CHRT_DECISIONS_LBP"
 
@@ -31,7 +31,7 @@ tags:
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 27-04-2026 — ajout D-018 (Bricks de connaissance comme Notes avancées des objets Twin, lien avec R-050)
+> Dernière mise à jour : 27-04-2026 - ajout D-018 (Bricks de connaissance comme Notes avancées des objets Twin, lien avec R-050)
 
 ---
 
@@ -69,7 +69,7 @@ tags:
 - **Date** : 22-04-2026 (formalisée dans Panorama V2 v3)
 - **Statut** : Adoptée (changements faits par Leonard, intégration dans le vault à venir)
 - **Portée** : Twin
-- **Contexte** : La BDD `Unités Organisationnelles` mélangeait deux natures d'objets ontologiquement distinctes — entités juridiques instituées et groupements humains opérants. Cette confusion produisait des analyses imprécises (ex: un "département" rangé au même niveau qu'une "SA").
+- **Contexte** : La BDD `Unités Organisationnelles` mélangeait deux natures d'objets ontologiquement distinctes - entités juridiques instituées et groupements humains opérants. Cette confusion produisait des analyses imprécises (ex: un "département" rangé au même niveau qu'une "SA").
 - **Options envisagées** :
   - Garder UO avec un champ "type" (juridique vs opérant) : simple mais laisse la confusion structurelle.
   - Scinder en deux BDD distinctes : plus rigoureux, permet des relations et propriétés spécifiques à chaque nature.
@@ -89,12 +89,12 @@ tags:
 - **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin + Brain (propagation dans docs)
-- **Contexte** : Le terme "Ressources" était ambigu — confondu avec "ressources humaines", "ressources financières", ou simple support. Il ne traduisait pas la nature gouvernable et administrable de l'objet.
+- **Contexte** : Le terme "Ressources" était ambigu - confondu avec "ressources humaines", "ressources financières", ou simple support. Il ne traduisait pas la nature gouvernable et administrable de l'objet.
 - **Options envisagées** :
   - Garder "Ressources" + préciser dans la description : ne résout pas l'ambiguïté perçue.
   - Renommer en "Actifs" : terme plus précis, aligné sur une notion d'objet mobilisable/gouvernable.
   - Terme plus spécialisé (ex: "Moyens", "Supports") : moins générique, limitant.
-- **Choix retenu** : "Actifs" — objet non humain gouvernable, mobilisable, administrable ou transformable.
+- **Choix retenu** : "Actifs" - objet non humain gouvernable, mobilisable, administrable ou transformable.
 - **Conséquences** :
   - ✅ Frontière clarifiée avec Environnements (cadre d'usage) et Sources (artefact de preuve)
   - ✅ Ouvre la voie à des propriétés spécifiques : type, criticité, substituabilité, cycle de vie
@@ -112,7 +112,7 @@ tags:
   - Garder "Rôles officiels" + règle "1 rôle principal par individu" : laisse la friction terminologique.
   - Renommer en "Postes" + règle 1 individu = 1 poste : plus net structurellement.
   - Renommer en "Fonctions" : terme trop lié aux Fonctions de direction/pilotage.
-- **Choix retenu** : "Postes" — position formelle contextualisée, indépendante de son titulaire. **Règle associée** : un individu est rattaché à un seul poste (clarté et bruit réduit).
+- **Choix retenu** : "Postes" - position formelle contextualisée, indépendante de son titulaire. **Règle associée** : un individu est rattaché à un seul poste (clarté et bruit réduit).
 - **Conséquences** :
   - ✅ Charpente formelle du système plus lisible
   - ✅ Distinction claire avec Individu (personne physique) et Collectif (groupe)
@@ -125,7 +125,7 @@ tags:
 - **Date** : 22-04-2026
 - **Statut** : Adoptée
 - **Portée** : Twin
-- **Contexte** : Le Twin ne portait pas explicitement les **efforts temporaires structurés** (projets, programmes, pilotes, chantiers). Ces objets finissaient dilués dans Événements, Actions détectées ou Processus — chacun étant une distorsion.
+- **Contexte** : Le Twin ne portait pas explicitement les **efforts temporaires structurés** (projets, programmes, pilotes, chantiers). Ces objets finissaient dilués dans Événements, Actions détectées ou Processus - chacun étant une distorsion.
 - **Options envisagées** :
   - Utiliser Événements pour les projets : confond repère temporel et effort intentionnel.
   - Utiliser Actions détectées : confond geste ponctuel et effort structuré.
@@ -135,7 +135,7 @@ tags:
   - ✅ Chaîne de transformation `OKR → Initiatives` explicite (cf. Panorama §10.12)
   - ✅ Lecture de la transformation vivante du système (qui porte quoi, avec quels jalons)
   - ✅ Nouvelle famille architecturale "Mouvement / transformation"
-  - ⚠️ Risque de confusion avec Événements (repère temporel) et Pratiques (récurrent) — à gérer via R-011
+  - ⚠️ Risque de confusion avec Événements (repère temporel) et Pratiques (récurrent) - à gérer via R-011
 - **Règles associées** : R-011
 
 ### D-006 : Création de la BDD edge Relations inter-organisations
@@ -151,7 +151,7 @@ tags:
 - **Conséquences** :
   - ✅ Cartographie de l'écosystème relationnel externe exploitable (traversée §12.3)
   - ✅ Profils 5D d'exposition/dépendance externe possibles
-  - ⚠️ Seule BDD "edge" du Twin — singularité à documenter clairement
+  - ⚠️ Seule BDD "edge" du Twin - singularité à documenter clairement
 - **Règles associées** : R-011, R-013
 
 ### D-007 : Création de 6 sandboxes spécialisées
@@ -274,18 +274,18 @@ tags:
   - Par couche d'artefacts : OK mais mélange refonte arborescence et migration.
   - **Par phases avec refonte en amont** : plus rigoureux, chaque phase vérifiable.
 - **Choix retenu** : Séquence en 7 phases, refonte arborescence d'abord :
-  1. **Phase 1 — Refondre l'arborescence d'Architecture data** : renommer `Docs Méta LBP/` → `00 - Docs méta/` (avec sous-structure Templates + Doctrines), renommer `Core & Motor Brain/` → `Brain/`, créer `archives/` systématiques.
-  2. **Phase 2 — Archiver les anciens docs v1** : tous les manuels Twin v1, toutes les notes de concept v1, toutes les taxonomies v1, ancien template. **Exception** : les logic blocks obsolètes ne sont PAS archivés maintenant (gardés comme inspiration pour la mise à jour future des nouveaux logic blocks Actifs, Collectifs, Organisations, Postes, Initiatives, Relations inter-organisations).
-  3. **Phase 3 — Migrer les nouveaux docs** depuis dossier temporaire vers Architecture data (manuels Twin v2, notes de concept, taxonomies, nouveau template).
-  4. **Phase 4 — Synchronisation Drive + vérification URLs**.
-  5. **Phase 5 — Indexation Notion** : archiver les anciennes entrées Notion + indexer les nouveaux docs avec URLs Drive.
-  6. **Phase 6 — Mise à jour des clefs de lecture** (R-028) : **templatiser d'abord** le doc "Instructions d'écriture & clefs de lecture" (améliorer le modèle), puis mettre à jour chaque doc dérivé.
-  7. **Phase 7 — Chantier Prompts + Logic blocks** (séparé) : audit dossier Prompts actuel, mise à jour des prompts maîtres et logic blocks pour refléter Twin v2, rangement final.
+  1. **Phase 1 - Refondre l'arborescence d'Architecture data** : renommer `Docs Méta LBP/` → `00 - Docs méta/` (avec sous-structure Templates + Doctrines), renommer `Core & Motor Brain/` → `Brain/`, créer `archives/` systématiques.
+  2. **Phase 2 - Archiver les anciens docs v1** : tous les manuels Twin v1, toutes les notes de concept v1, toutes les taxonomies v1, ancien template. **Exception** : les logic blocks obsolètes ne sont PAS archivés maintenant (gardés comme inspiration pour la mise à jour future des nouveaux logic blocks Actifs, Collectifs, Organisations, Postes, Initiatives, Relations inter-organisations).
+  3. **Phase 3 - Migrer les nouveaux docs** depuis dossier temporaire vers Architecture data (manuels Twin v2, notes de concept, taxonomies, nouveau template).
+  4. **Phase 4 - Synchronisation Drive + vérification URLs**.
+  5. **Phase 5 - Indexation Notion** : archiver les anciennes entrées Notion + indexer les nouveaux docs avec URLs Drive.
+  6. **Phase 6 - Mise à jour des clefs de lecture** (R-028) : **templatiser d'abord** le doc "Instructions d'écriture & clefs de lecture" (améliorer le modèle), puis mettre à jour chaque doc dérivé.
+  7. **Phase 7 - Chantier Prompts + Logic blocks** (séparé) : audit dossier Prompts actuel, mise à jour des prompts maîtres et logic blocks pour refléter Twin v2, rangement final.
 - **Conséquences** :
   - ✅ Vault propre avant ingestion des nouveaux docs
   - ✅ Aucune indexation Notion sans URL Drive valide
   - ✅ Clair séparation entre "rangement" (phases 1-4), "gouvernance Notion" (phase 5), "dérivés docs" (phase 6), "mise à jour de contenu" (phase 7)
-  - ✅ Logic blocks obsolètes conservés comme matière d'inspiration — ne pas les archiver trop tôt
+  - ✅ Logic blocks obsolètes conservés comme matière d'inspiration - ne pas les archiver trop tôt
 - **Règles associées** : R-026 (archivage local), R-027 (nommage), R-028 (manuel=source de vérité)
 
 ### D-011 : Conventions de nommage des fichiers Brain/Twin
@@ -293,9 +293,9 @@ tags:
 - **Date** : 24-04-2026
 - **Statut** : Adoptée
 - **Portée** : Transverse
-- **Contexte** : Les anciens fichiers utilisaient différentes conventions (casse CAPITALES, tirets simples). Les nouveaux docs générés arrivaient avec tiret cadratin `—`. Il faut trancher pour éviter les disparités dans le vault.
+- **Contexte** : Les anciens fichiers utilisaient différentes conventions (casse CAPITALES, tirets simples). Les nouveaux docs générés arrivaient avec tiret cadratin `-`. Il faut trancher pour éviter les disparités dans le vault.
 - **Options envisagées** :
-  - Tiret cadratin `—` (nouveaux) : élégant typographiquement, compliqué à taper.
+  - Tiret cadratin `-` (nouveaux) : élégant typographiquement, compliqué à taper.
   - Tiret simple `-` (anciens) : standard clavier, lisible.
   - Underscore `_` : plus technique, moins convivial pour Obsidian.
 - **Choix retenu** :
@@ -328,14 +328,14 @@ tags:
   - ✅ Capacité à filtrer / piloter les migrations futures de templates
   - ✅ Pattern réutilisable pour les autres BDD à templates (Notes concept, Glossaire, Bricks)
   - ⚠️ Il faudra incrémenter `template_version` dans le manuel à chaque montée de version du template (à formaliser quand le 1er upgrade de template arrivera)
-  - ⚠️ Les manuels Brain et Mission Ops anciennement indexés restent vides — la migration future demandera un audit
+  - ⚠️ Les manuels Brain et Mission Ops anciennement indexés restent vides - la migration future demandera un audit
 - **Règles associées** : à venir si on étend le pattern (potentielle R-039 sur "traçabilité de génération par template")
 
 ### D-014 : Colocalisation des docs WR-RD avec leurs manuels de BDD parents
 
 - **Date** : 26-04-2026
-- **Statut** : Adoptée (provisoire — naming "WR-RD" à reconfirmer après discussion sur leur rôle exact)
-- **Portée** : Brain — organisation du vault Architecture data
+- **Statut** : Adoptée (provisoire - naming "WR-RD" à reconfirmer après discussion sur leur rôle exact)
+- **Portée** : Brain - organisation du vault Architecture data
 - **Contexte** : Les docs « Instructions d'écriture + Clefs de lecture » (un par BDD du Brain/Twin/Mission Ops) étaient stockés dans un dossier global `Architecture data/Clefs de lectures/` à la racine du vault. Cette localisation détachait les docs WR-RD de leurs manuels parents, créait une asymétrie avec la nouvelle architecture par groupe (`Manuels de BDD/{Brain, Digital Twin, Mission Ops}/`), et rendait moins évidente la traçabilité « un manuel ↔ ses docs dérivés ». Suite à la refonte Twin v2, tous les docs WR-RD existants étaient désalignés avec les nouvelles specs et devaient être archivés.
 - **Options envisagées** :
   - Conserver le dossier global `Clefs de lectures/` mais y créer une sous-structure par groupe : préserve le repère « zone WR-RD » mais perpétue la séparation manuel/WR-RD.
@@ -354,14 +354,14 @@ tags:
   - ✅ Proximité topologique entre un manuel et ses docs WR-RD (repérage facilité, navigation cohérente avec D-010).
   - ✅ Symétrie complète : chaque groupe BDD a son `WR-RD/` + son `00 - archives/`.
   - ✅ Aucun WR-RD obsolète n'est laissé en zone active.
-  - ⚠ Naming "WR-RD" non finalisé — à reconsidérer après discussion sur le rôle réel de ces docs (extraction, lecture analytique, contrôle qualité, contrat de donnée…).
+  - ⚠ Naming "WR-RD" non finalisé - à reconsidérer après discussion sur le rôle réel de ces docs (extraction, lecture analytique, contrôle qualité, contrat de donnée…).
   - ⚠ Phase 6 = recréation des docs WR-RD pour les manuels Twin v2 actuels (à partir de zéro ou via dérivation depuis les manuels).
 
 ### D-015 : Convention de nommage `00 - archives/` pour les dossiers d'archives
 
 - **Date** : 26-04-2026
 - **Statut** : Adoptée
-- **Portée** : Transverse — organisation visuelle de l'arborescence vault Architecture data
+- **Portée** : Transverse - organisation visuelle de l'arborescence vault Architecture data
 - **Contexte** : Le vault contient 12 dossiers `archives/` répartis dans toute l'arborescence (un par grand dossier de docs : Taxonomies, Méthodes, Notes de Concept, Manuels de BDD/{Brain,Digital Twin,Mission Ops}, etc.). En tri alphabétique standard, ces dossiers se mélangeaient avec les sous-dossiers actifs (parfois en milieu de liste), rendant moins immédiat le repérage de la zone "actuel vs historique" lors de la navigation.
 - **Choix retenu** : préfixer tous les dossiers d'archives par `00 - ` → renommage `archives/` → `00 - archives/`. Le préfixe `00 - ` garantit que ces dossiers remontent en haut de chaque liste (tri alpha standard) sans confusion possible avec un dossier actif.
 - **Migration effective (26-04-2026)** : 12 dossiers renommés en une passe :
@@ -392,11 +392,11 @@ tags:
 - **Contexte** : Suite à la refonte Twin v2 (Phase 5), il fallait définir la place exacte des docs « Instructions d'écriture + Clefs de lecture » (renommés WR-RD) dans l'écosystème agentique LBP, où coexistent : system prompts (identité agent), prompts maîtres (par opération), logic blocks (par opération × BDD), manuels de BDD (référence design exhaustive), descriptions de propriétés Notion (mini-prompts inline). Le risque était soit de doublonner avec les logic blocks, soit de re-générer une doctrine déjà tenue par le manuel parent.
 - **Constat préalable** : le template v6.1.0 du Manuel de BDD - Digital Twin prescrit déjà que les colonnes "Instructions d'écriture" (≤500 chars) et "Clefs de lecture" (≤400 chars) de la section 4 doivent être **autonomes** car elles seront "compilées vers les WR/RD". La doctrine du WR-RD était donc déjà en germe dans le manuel ; il restait à formaliser le format de sortie.
 - **Options envisagées** :
-  - **Option A — Statu quo discipliné** : maintenir un WR-RD éditorial avec sa propre doctrine et son contenu autonome.
-  - **Option B — Fusion dans le manuel** : pas de WR-RD, l'agent charge le manuel complet à chaque opération.
-  - **Option C — Fusion dans les logic blocks** : chaque logic block embarque les règles WR-RD nécessaires.
-  - **Option D — WR-RD comme projection stricte du manuel parent** : extraction automatique d'un sous-ensemble de colonnes de la section 4 du manuel ; aucune doctrine ni contenu propre.
-- **Choix retenu** : **Option D** — le WR-RD est une **projection stricte de la section 4 du manuel parent**, sans contenu propre.
+  - **Option A - Statu quo discipliné** : maintenir un WR-RD éditorial avec sa propre doctrine et son contenu autonome.
+  - **Option B - Fusion dans le manuel** : pas de WR-RD, l'agent charge le manuel complet à chaque opération.
+  - **Option C - Fusion dans les logic blocks** : chaque logic block embarque les règles WR-RD nécessaires.
+  - **Option D - WR-RD comme projection stricte du manuel parent** : extraction automatique d'un sous-ensemble de colonnes de la section 4 du manuel ; aucune doctrine ni contenu propre.
+- **Choix retenu** : **Option D** - le WR-RD est une **projection stricte de la section 4 du manuel parent**, sans contenu propre.
   - **Rôle clarifié** : doc compact runtime pour les agents (twin architect en priorité, mais aussi tout agent opérant sur les BDD) qui doivent lire/écrire dans une BDD sans charger le manuel complet. Les Instructions d'écriture et Clefs de lecture étant autonomes par construction côté manuel, le WR-RD peut s'autosuffire ligne par ligne.
   - **Frontière nette avec les autres docs** :
     - System Prompt (agent) → identité, autorité, garde-fous globaux.
@@ -405,9 +405,9 @@ tags:
     - **WR-RD (par BDD) → tableau champ-par-champ : format d'écriture + sens de lecture (extraction stricte du manuel parent).**
     - Manuel de BDD (par BDD) → design conceptuel exhaustif, relations, gouvernance, narratif, invariants, traçabilité structurelle.
     - Description Notion ≤280 (par champ) → mini-prompt synthétique inline pour saisie rapide directement dans Notion.
-  - **9 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) — codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples.
+  - **9 colonnes retenues du manuel parent** : Champ, Type, Taxonomie(s) - codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité pour le Digital Twin, Exemples.
   - **3 colonnes du manuel NON reprises** : Portée (info de design), Nature de production (implicite dans Type), Prérequis Must/Should/Nice (stratégie de complétion, pas contrat strict).
-  - **Révision 26-04-2026** : la colonne "Utilité pour le Digital Twin" a été réintégrée (initialement exclue v1.0.0 → réintroduite v1.2.0 du Template WR-RD). Argument : elle donne aux agents le sens opératoire de chaque champ (pourquoi ce champ existe, ce qu'il rend possible) sans bruit additionnel — un agent qui sait *pourquoi* écrit/lit mieux qu'un agent qui ne sait que *quoi*.
+  - **Révision 26-04-2026** : la colonne "Utilité pour le Digital Twin" a été réintégrée (initialement exclue v1.0.0 → réintroduite v1.2.0 du Template WR-RD). Argument : elle donne aux agents le sens opératoire de chaque champ (pourquoi ce champ existe, ce qu'il rend possible) sans bruit additionnel - un agent qui sait *pourquoi* écrit/lit mieux qu'un agent qui ne sait que *quoi*.
   - **5 sections cibles** miroir des sous-sections 4.1 à 4.5 du manuel : Génériques / Spécifiques / Relations + jumelles + rollups / 5D / Calculée. Sections 4 et 5 supprimées dans le doc instancié si la BDD n'a ni couche 5D ni couche calculée.
   - **Naming** : fichier `WR-RD - [Nom de la BDD].md` (miroir de `Manuel de BDD - [Nom de la BDD].md`) ; code unique `WRRD_[NOM_TOKEN]` (cohérent avec `DBMAN_[NOM_TOKEN]`).
   - **Frontmatter minimal** : `target_bdd_canonical_name`, `target_bdd_code`, `parent_manual`, `wr_rd_code`, `domain`, `version`, `template_version`, `created_at`, `tags`. Pas de `status` (géré hors document).
@@ -438,13 +438,13 @@ tags:
   2. Créer un prisme dédié `ui_family` orthogonal aux autres → **retenu**.
   3. Mapping ad hoc dans le code app sans formalisation Brain → rejeté : risque de divergence app ↔ Brain, perte de cohérence sémantique.
 - **Choix retenu** : Adopter une classification dédiée `ui_family` en **7 valeurs** :
-  - **Langage** — *Les mots, termes métier, acronymes et définitions propres à l'organisation* (1 BDD : Glossaire spécifique)
-  - **Structure** — *Qui existe, qui porte quoi, comment la structure humaine et institutionnelle est organisée* (5 BDD : Organisations, Relations inter-organisations, Collectifs, Individus, Postes)
-  - **Cadres** — *Les cadres, supports, objets et situations qui conditionnent l'action* (3 BDD : Environnements, Actifs, Événements)
-  - **Moteur** — *Ce qui met l'organisation en mouvement, produit, transforme et stabilise le fonctionnement réel* (5 BDD : Actions détectées, Processus candidats, Processus, Pratiques organisationnelles, Initiatives organisationnelles)
-  - **Pilotage** — *Les sujets à traiter, les objectifs, les mesures et la trajectoire de pilotage* (5 BDD : Enjeux, Problématiques, OKR, Indicateurs, Journal des signaux)
-  - **Ancrages** — *Ce qui oriente, soutient, amplifie ou freine durablement l'action organisationnelle* (3 BDD : Principes organisationnels, Capacités organisationnelles, Modulateurs)
-  - **Objets candidats** — *Les objets organisationnels saisis directement quand la source les exprime explicitement, en complément des BDD-sas qui les déduisent par croisement (Enjeux → Problématiques+OKR ; Actions détectées → Pratiques+Initiatives+Processus candidats). Court-circuit opportuniste de la déduction.* (6 BDD sandbox)
+  - **Langage** - *Les mots, termes métier, acronymes et définitions propres à l'organisation* (1 BDD : Glossaire spécifique)
+  - **Structure** - *Qui existe, qui porte quoi, comment la structure humaine et institutionnelle est organisée* (5 BDD : Organisations, Relations inter-organisations, Collectifs, Individus, Postes)
+  - **Cadres** - *Les cadres, supports, objets et situations qui conditionnent l'action* (3 BDD : Environnements, Actifs, Événements)
+  - **Moteur** - *Ce qui met l'organisation en mouvement, produit, transforme et stabilise le fonctionnement réel* (5 BDD : Actions détectées, Processus candidats, Processus, Pratiques organisationnelles, Initiatives organisationnelles)
+  - **Pilotage** - *Les sujets à traiter, les objectifs, les mesures et la trajectoire de pilotage* (5 BDD : Enjeux, Problématiques, OKR, Indicateurs, Journal des signaux)
+  - **Ancrages** - *Ce qui oriente, soutient, amplifie ou freine durablement l'action organisationnelle* (3 BDD : Principes organisationnels, Capacités organisationnelles, Modulateurs)
+  - **Objets candidats** - *Les objets organisationnels saisis directement quand la source les exprime explicitement, en complément des BDD-sas qui les déduisent par croisement (Enjeux → Problématiques+OKR ; Actions détectées → Pratiques+Initiatives+Processus candidats). Court-circuit opportuniste de la déduction.* (6 BDD sandbox)
 - **Note typographique** : `Objets candidats` est intentionnellement en **2 mots** alors que les 6 autres familles sont en 1 mot. Cette dissonance typographique est **assumée** : elle signale visuellement que cette famille n'est pas un prisme de l'entreprise comme les autres, mais un statut d'objet (en cours de qualification). Le terme `Candidats` seul a été écarté car ambigu dans un contexte entreprise (pourrait évoquer des candidatures RH).
 
 ---
@@ -464,7 +464,7 @@ tags:
   - ✅ Cohérence avec l'écosystème Bricks existant (pas de nouvel objet à inventer).
   - ✅ Profondeur narrative découplée de la fiche structurée (lisibilité préservée).
   - ✅ Réutilisation des Templates de Bricks pour homogénéiser les Notes avancées.
-  - ⚠ Restriction : les Notes avancées ne sont produites **que pour des objets stabilisés** (cf. R-050 — exclusion sandbox, candidats, signaux, actions, indicateurs). On ne sur-documente pas un objet en cours de qualification.
+  - ⚠ Restriction : les Notes avancées ne sont produites **que pour des objets stabilisés** (cf. R-050 - exclusion sandbox, candidats, signaux, actions, indicateurs). On ne sur-documente pas un objet en cours de qualification.
   - 🔜 Identifier ou créer les Templates de Bricks "profil avancé" pour chaque type d'objet (Organisation, Collectif, Individu, Poste, Actif, Environnement, Événement, etc.).
 - **Règles associées** : R-050 (déclaration de la propriété `Lien vers la note avancée`), R-047 v2.1 (position dans l'ordering).
 - **Conséquences** :
@@ -472,7 +472,7 @@ tags:
   - ✅ Prisme **complémentaire** (non substitutif) aux autres : `architecture_family`, `knowledge_regime`, `officiality_regime` restent inchangés et servent la gouvernance technique.
   - ⚠ Charge de propagation : chaque manuel Twin doit recevoir un champ frontmatter `ui_family` (28 manuels à enrichir).
   - ⚠ Charge Notion : la BDD `Manuels de BDD` doit recevoir une propriété `Famille UI` (select) avec les 7 valeurs.
-  - 🔜 La page Notion `BDD test - 26/04/2026 - Digital Twin update` utilise déjà cette classification (titres de groupes appliqués par Leonard 27-04-2026) — sert de référence visuelle.
+  - 🔜 La page Notion `BDD test - 26/04/2026 - Digital Twin update` utilise déjà cette classification (titres de groupes appliqués par Leonard 27-04-2026) - sert de référence visuelle.
 - **Règles associées** : R-049 (déclaration obligatoire `ui_family` dans tout artefact Twin).
 
 ---
@@ -493,11 +493,11 @@ tags:
   3. **Isolation stricte Brain ↔ Mission Ops/Twin** : aucune relation Notion entre une BDD Brain et une BDD Mission Ops ou Digital Twin. Justification : les BDDs Mission Ops et Digital Twin sont **instanciées à chaque mission** (espaces clients distincts), tandis que les BDDs Brain sont **uniques et persistantes** (l'écosystème documentaire LBP). Lier une BDD Brain à une instance MO/Twin créerait une dépendance impossible à matérialiser proprement.
 - **Conséquences** :
   - ✅ Suppression de la propriété `Type fonctionnel` côté BDD Manuels de BDD (Notion + manuel).
-  - ✅ La BDD Manuels de BDD ne porte plus de sous-typage par environnement (Core/Motor/Twin/MO) — le scope est déjà capturé par `DBMAN.SCOPE` (taxo créée Phase 1f).
+  - ✅ La BDD Manuels de BDD ne porte plus de sous-typage par environnement (Core/Motor/Twin/MO) - le scope est déjà capturé par `DBMAN.SCOPE` (taxo créée Phase 1f).
   - ✅ Cohérence sur `Domaine(s) d'usage` : conservé sur les 5 BDDs Motor Brain (Méthodes, Templates, Agents, Outils, Prompts).
-  - ⚠ Lorsqu'on parle "du Brain" en doctrine ou en règles, on parle de **l'environnement documentaire** (les 11 BDDs Brain + leurs docs) — pas des BDDs instanciées en mission.
-  - ⚠ Les bricks produites en mission (BDD Bricks Mission Ops) ne sont **pas** des objets Brain malgré leur valeur cognitive — elles vivent dans l'instance Mission Ops.
-- **Règles associées** : R-058 (interdiction jumelles texte sur Brain — corollaire de l'isolation et de la rigueur structurelle attendue côté Brain).
+  - ⚠ Lorsqu'on parle "du Brain" en doctrine ou en règles, on parle de **l'environnement documentaire** (les 11 BDDs Brain + leurs docs) - pas des BDDs instanciées en mission.
+  - ⚠ Les bricks produites en mission (BDD Bricks Mission Ops) ne sont **pas** des objets Brain malgré leur valeur cognitive - elles vivent dans l'instance Mission Ops.
+- **Règles associées** : R-058 (interdiction jumelles texte sur Brain - corollaire de l'isolation et de la rigueur structurelle attendue côté Brain).
 
 ---
 
@@ -517,7 +517,7 @@ tags:
   - **Mode de remplissage** : `consultant` ou `agent IA` lors de l'instanciation/mise à jour du doc. À défaut de connaissance, laisser vide (mieux que d'inventer).
 - **Conséquences** :
   - ✅ Audit mécanique possible des docs stale lors de bumps majeurs de templates (filtrer Notion par `Version du template ≠ <version courante>`).
-  - ✅ Cohérence transverse Brain — toutes les BDDs portent la même méta-info.
+  - ✅ Cohérence transverse Brain - toutes les BDDs portent la même méta-info.
   - ✅ Convention R-056 (versioning X.Y) directement consommable côté Notion.
   - ⚠ Charge de propagation : 10 manuels Brain à enrichir + 11 WR-RD à propager (R-041/R-042).
   - ⚠ Charge de saisie : les ~310 entrées existantes des BDDs Brain devront être progressivement enrichies de leur version. Pour les nouveaux docs : la valeur est posée à la création.
@@ -526,7 +526,7 @@ tags:
 
 ---
 
-### D-021 : Architecture des 3 agents LBP — Brain architect / Twin architect / KONTEXT
+### D-021 : Architecture des 3 agents LBP - Brain architect / Twin architect / KONTEXT
 
 - **Date** : 28-04-2026
 - **Statut** : Adoptée
@@ -537,7 +537,7 @@ tags:
   2. Deux agents (Brain architect + agent mission unique) → rejeté : confond modélisation Twin et pilotage mission.
   3. **Trois agents avec frontières d'isolation explicites** → **retenu**.
 - **Choix retenu** :
-  1. **Brain architect** : opérations d'évolution sur le Brain (création/modif/refonte de manuels, taxos, méthodes, prompts, templates, agents, outils, logic blocks, docs méta). C'est l'agent méta-LBP — il fait évoluer l'écosystème documentaire.
+  1. **Brain architect** : opérations d'évolution sur le Brain (création/modif/refonte de manuels, taxos, méthodes, prompts, templates, agents, outils, logic blocks, docs méta). C'est l'agent méta-LBP - il fait évoluer l'écosystème documentaire.
   2. **Twin architect** : opérations sur le Twin d'un client (peuplement, refactor, dédoublonnage, complétion, mise à jour des objets Twin, génération de relations, qualification d'objets candidats).
   3. **KONTEXT** (nom provisoire) : agent central côté consultant utilisateur. Gère les Mission Ops : instanciation d'actions de mission, fixation de RDV, génération de livrables/bricks, mise à jour du Twin via délégation à Twin architect.
 - **Frontière d'isolation infranchissable** : KONTEXT **ne peut pas** appeler Brain architect. Justification doctrinale : pendant une prestation, le Brain est **utilisé** (lecture des prompts, méthodes, outils, templates) mais **n'évolue pas**. L'évolution du Brain est une activité méta-LBP (gouvernance documentaire), pas une activité de mission. Cette frontière garantit la stabilité du Brain pendant les missions et évite les modifs accidentelles.
@@ -549,7 +549,7 @@ tags:
   - ✅ Stabilité du Brain pendant les missions.
   - ✅ Séparation claire des responsabilités (Brain = méta, Twin = client, Mission = exécution).
   - ✅ 3 agents = 3 fiches dans la BDD `Agents LBP` (à créer après Phase 7 bis / chantier P de tri Prompts+Logic blocks+Agents).
-  - ⚠ Le nom `KONTEXT` est provisoire — à arbitrer avant publication finale.
+  - ⚠ Le nom `KONTEXT` est provisoire - à arbitrer avant publication finale.
   - ⚠ Cette doctrine bloque toute évolution du Brain en cours de mission. Si un agent identifie un besoin d'évolution Brain, il doit le **flagguer** comme remontée à traiter par Brain architect hors mission, pas le faire lui-même.
 - **Règles associées** : à venir (R-XXX sur les frontières d'isolation des agents, à formaliser quand les 3 fiches Agents seront créées).
 
@@ -559,15 +559,15 @@ tags:
 
 - **Date** : 30-04-2026
 - **Statut** : Active
-- **Portée** : Architecture documentaire — Manuels de BDD Twin et Mission Ops
+- **Portée** : Architecture documentaire - Manuels de BDD Twin et Mission Ops
 - **Contexte** : Backlog 27-04-2026 a remonté une **divergence des frontmatters** entre les manuels Twin (template v6.3.0) et Mission Ops (template v5.1.0). Le Twin embarque `ui_family`, `officiality_regime`, `has_advanced_note`, `aliases` ; Mission Ops ne les embarque pas. Pas d'arbitrage formel jusqu'ici → asymétrie silencieuse entre templates, source potentielle de confusion pour les futurs nouveaux docs MO.
 - **Options envisagées** :
   1. **Harmoniser** : ajouter les 4 champs aussi côté MO pour permettre un audit transverse unifié.
   2. **Différencier explicitement** : assumer que Twin et MO ont des régimes de connaissance différents et que ces champs n'ont pas de sens en MO (statut **retenu**).
-  3. **Laisser flou** : le statu quo, sans formalisation (rejeté — viole la doctrine de clarté C-008).
+  3. **Laisser flou** : le statu quo, sans formalisation (rejeté - viole la doctrine de clarté C-008).
 - **Choix retenu** : **Différenciation assumée**. Twin et MO sont deux domaines aux régimes de connaissance distincts :
   - Twin = **ontologique** (taxonomies, dimensions 5D, relations sémantiques, régime des objets organisationnels). Les champs Twin spécifiques (`ui_family`, `officiality_regime`, `has_advanced_note`, `aliases`) reflètent cette nature : prisme UX (D-017), distinction officiel/sandbox (R-014), bricks comme notes avancées (D-018), aliases pour le dédoublonnage de concepts.
-  - Mission Ops = **opérationnel** (workflows de mission, livrables, traçabilité). Les champs Twin n'ont pas de pertinence en MO : pas de famille UI à classer, pas de régime officiel/sandbox (toutes les fiches MO sont opérationnelles par construction), pas de notes avancées (les bricks **sont** elles-mêmes des fiches MO), pas d'aliases (les noms d'occurrences MO sont uniques par construction — `MTG-XX-DATE`, `ACT-XX-NNN`).
+  - Mission Ops = **opérationnel** (workflows de mission, livrables, traçabilité). Les champs Twin n'ont pas de pertinence en MO : pas de famille UI à classer, pas de régime officiel/sandbox (toutes les fiches MO sont opérationnelles par construction), pas de notes avancées (les bricks **sont** elles-mêmes des fiches MO), pas d'aliases (les noms d'occurrences MO sont uniques par construction - `MTG-XX-DATE`, `ACT-XX-NNN`).
   → Conséquence : le frontmatter MO est plus mince, par design, et c'est correct.
 - **Conséquences** :
   - ✅ Pas de champ vide systématique côté MO (ce qui aurait été inélégant et faux-positif pour les audits de complétude).
@@ -582,18 +582,18 @@ tags:
 
 - **Date** : 30-04-2026
 - **Statut** : Active
-- **Portée** : Architecture transverse — gouvernance des 3 domaines + stack technique de production
+- **Portée** : Architecture transverse - gouvernance des 3 domaines + stack technique de production
 - **Contexte** : Audit 30-04-2026 a révélé l'absence de décision fondatrice formalisant **Mission Ops comme domaine co-égal** au Brain et au Twin. Toutes les D-002→D-021 couvrent essentiellement le Twin (scission UO, sandboxes, chaînes D-009, bricks comme notes avancées) et le Brain (Core+Motor unifié D-019, agents D-021). Mission Ops a été instancié (4 BDDs, test Phase B 30-04-2026) sans formalisation doctrinale. Par ailleurs, la **stack technique de production** n'a jamais été formalisée : la maquette actuelle est sur Notion pour Brain et Twin/MO, mais le déploiement cible est différencié (Notion pour Brain, Supabase pour Twin + MO).
 - **Options envisagées** :
-  1. **MO sous-domaine du Twin** : intégrer les 4 BDDs MO comme extension du Twin (rejeté — viole la séparation des régimes de connaissance et l'isolation Brain ↔ MO/Twin de D-019).
-  2. **MO co-égal Brain/Twin avec stack unifié Notion** : maquettage et production sur Notion (rejeté — Notion ne supporte pas les volumes de Mission Ops à grande échelle, ni les instanciations multi-mission par client, ni les performances de lecture/écriture nécessaires en production).
+  1. **MO sous-domaine du Twin** : intégrer les 4 BDDs MO comme extension du Twin (rejeté - viole la séparation des régimes de connaissance et l'isolation Brain ↔ MO/Twin de D-019).
+  2. **MO co-égal Brain/Twin avec stack unifié Notion** : maquettage et production sur Notion (rejeté - Notion ne supporte pas les volumes de Mission Ops à grande échelle, ni les instanciations multi-mission par client, ni les performances de lecture/écriture nécessaires en production).
   3. **MO co-égal Brain/Twin avec stack différencié** : Notion pour Brain (gouvernance, lent, manuel), Supabase pour Twin + MO (volumes, performance, instanciation client) (statut **retenu**).
 - **Choix retenu** :
   1. **Mission Ops est un domaine co-égal au Brain et au Twin**, gouverné par 4 BDDs structurelles : `Sources d'informations`, `Meetings`, `Actions LBP`, `Bricks`. Chaque mission consultant instancie son propre périmètre Twin + MO ; le Brain est partagé et stable (D-019).
   2. **Articulation entre les 3 domaines** :
      - Brain ↔ Twin : isolation stricte (D-019). Le Brain fournit les manuels, taxonomies, méthodes, templates, prompts, agents, outils. Il **n'évolue pas** pendant les missions (D-021).
      - Brain ↔ MO : isolation stricte (D-019). Le Brain fournit les templates de bricks (TPL_BRICK_*) que MO instancie en bricks de mission.
-     - Twin ↔ MO : articulation via les **Bricks** (D-018) — les bricks MO documentent et alimentent les fiches Twin. Les `Sources d'informations` MO sont l'origine traçable des fiches Twin (régime « extraction directe » C-018).
+     - Twin ↔ MO : articulation via les **Bricks** (D-018) - les bricks MO documentent et alimentent les fiches Twin. Les `Sources d'informations` MO sont l'origine traçable des fiches Twin (régime « extraction directe » C-018).
   3. **Stack technique cible** :
      - **Brain = Notion** : volumétrie modérée (~200 docs Markdown actifs), gouvernance manuelle, navigation hypertexte, audit visuel. Notion suffit et apporte la richesse UX nécessaire à la gouvernance documentaire (relations, rollups, vues, filtres). Pas de migration prévue à court terme.
      - **Twin + Mission Ops = Supabase** : volumétrie potentiellement importante (instanciation par client, fiches Twin pouvant atteindre des milliers par mission, bricks et meetings nombreux), performance lecture/écriture critique, schéma stable car validé via la maquette Notion test (Phase B 30-04). La maquette Notion actuelle de Twin+MO sera **portée** vers Supabase une fois le schéma figé.
@@ -604,7 +604,7 @@ tags:
   - ✅ Mission Ops devient un domaine de premier niveau, avec sa propre doctrine, ses règles propres (à formaliser progressivement), et ses workflows propres (futurs WF-MO-XXX).
   - ✅ Stack technique cible cohérente avec la nature de chaque domaine : Notion pour la gouvernance, Supabase pour la production.
   - ✅ Le bundle de docs méta durables doit traiter les 3 domaines de façon symétrique : `SPECS_ARCHITECTURE_BRAIN_LBP.md` + `SPECS_ARCHITECTURE_TWIN_LBP.md` + `SPECS_ARCHITECTURE_MISSION_OPS_LBP.md` (à créer).
-  - ✅ Justifie la divergence assumée des frontmatters Twin/MO (D-022) — c'est un signe sain de différenciation des régimes.
+  - ✅ Justifie la divergence assumée des frontmatters Twin/MO (D-022) - c'est un signe sain de différenciation des régimes.
   - ⚠ La maquette Notion Twin+MO devient une **fixture de validation de schéma**, pas une prod. À documenter clairement dans `MIGRATION_REPORT_2026-04` pour Clément.
   - ⚠ Le portage Twin+MO vers Supabase est un chantier ultérieur (post-Phase C) qui devra être cadré séparément (workflow dédié, gestion des migrations de données, gouvernance des schémas Supabase).
   - ⚠ Le Brain reste sur Notion à court/moyen terme. Toute future migration éventuelle (12-18 mois) sera elle aussi un chantier dédié.

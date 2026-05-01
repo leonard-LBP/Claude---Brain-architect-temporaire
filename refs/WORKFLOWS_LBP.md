@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Workflows LBP — Catalogue des workflows opérationnels"
+title: "Workflows LBP - Catalogue des workflows opérationnels"
 doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
@@ -26,13 +26,13 @@ tags:
   - lbp
 ---
 
-# Workflows LBP — Brain / Twin / Mission Ops
+# Workflows LBP - Brain / Twin / Mission Ops
 
-> **Scope** : 🟦 LBP — Bundle écosystème.
+> **Scope** : 🟦 LBP - Bundle écosystème.
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.
 > Les workflows propres à notre collaboration Claude (démarrage de session, etc.) sont dans `SESSION_WORKFLOWS.md`.
 > Chaque workflow a un ID stable pour référence.
-> Dernière mise à jour : 30-04-2026 — formalisation WF-008 (propagation d'impacts après modification).
+> Dernière mise à jour : 30-04-2026 - formalisation WF-008 (propagation d'impacts après modification).
 
 ---
 
@@ -110,7 +110,7 @@ https://drive.google.com/file/d/{file_id}/view
 ### Points d'attention
 
 - **Doublons via dossier archive** : un fichier qui a aussi une copie dans `00 - archives/` apparaît 2 fois dans la base. Filtrer par `parent_stable_id` du dossier actif pour éviter les faux positifs.
-- **Caractères spéciaux** : les noms avec apostrophes typographiques (U+2019) ou tirets cadratins (U+2014) doivent être passés tels quels — pas d'échappement.
+- **Caractères spéciaux** : les noms avec apostrophes typographiques (U+2019) ou tirets cadratins (U+2014) doivent être passés tels quels - pas d'échappement.
 - **Batch** : pour un batch de N fichiers, faire une seule connexion SQLite avec une requête IN (...) plutôt que N connexions.
 
 ### Alternative si Drive MCP disponible
@@ -151,7 +151,7 @@ Via `notion-fetch` sur la data source, récupérer les contraintes de format/str
 - Pour les textes longs (Définition, Règles d'usage, Valeur ajoutée) : synthétiser depuis le doc sans inventer
 - Pour les select/multi-select : utiliser uniquement les valeurs strictes autorisées
 
-**6. Créer/mettre à jour l'entrée** (Passe 1, sans relations — R-034)
+**6. Créer/mettre à jour l'entrée** (Passe 1, sans relations - R-034)
 
 Utiliser `notion-create-pages` (création) ou `notion-update-page` (mise à jour). Si relations impossibles car cibles pas encore créées → **laisser vides pour l'instant**.
 
@@ -190,7 +190,7 @@ Vérifier que les entrées sont bien créées et reliées. Commit dans git (refs
 
 L'écosystème LBP est constitué de docs Markdown qui se citent et se propagent entre eux selon des règles strictes (R-001 source de vérité Markdown, R-041/R-042 propagation Manuel↔WR-RD, R-029 indexation Notion, R-031 paire `CPT/GLO`, R-053 archivage). Toute modification d'un doc structurant peut déclencher des **cascades obligatoires** que ce workflow rassemble en un seul pas-à-pas.
 
-**Principe directeur** : la propagation est **strictement descendante** (du doc source vers ses dérivés). Un dérivé ne corrige jamais en remontant — toute amélioration éditoriale repasse par le doc parent (R-041, R-042).
+**Principe directeur** : la propagation est **strictement descendante** (du doc source vers ses dérivés). Un dérivé ne corrige jamais en remontant - toute amélioration éditoriale repasse par le doc parent (R-041, R-042).
 
 ### Cartographie des chaînes de propagation
 
@@ -212,7 +212,7 @@ L'écosystème LBP est constitué de docs Markdown qui se citent et se propagent
 
 ### Étapes (workflow générique en 7 phases)
 
-#### Phase 1 — Identifier le **type de modification** et le **doc source**
+#### Phase 1 - Identifier le **type de modification** et le **doc source**
 
 Avant de propager, classer la modification :
 - **Format** : changement de structure (frontmatter, sections, naming) → cascade large
@@ -220,7 +220,7 @@ Avant de propager, classer la modification :
 - **Codification** : changement de code d'identification → cascade de tous les renvois (cf. WF étape de renames)
 - **Statut / archivage** : passage à archivé → propagation Notion + nettoyage des renvois
 
-#### Phase 2 — Cartographier les **dérivés directs** du doc source
+#### Phase 2 - Cartographier les **dérivés directs** du doc source
 
 Selon le type de doc modifié, lister les dérivés à mettre à jour :
 
@@ -228,16 +228,16 @@ Selon le type de doc modifié, lister les dérivés à mettre à jour :
 |---|---|---|
 | **Manuel de BDD** (section 4) | WR-RD du même nom | R-041, R-042 |
 | **Manuel de BDD** (frontmatter / autres sections) | Fiche Notion `Manuels de BDD` (lien Drive, version, statut) | R-029, D-020 |
-| **WR-RD** (modification non triviale) | ⚠️ INTERDIT — repasser par le manuel parent | R-041 (interdiction propagation remontante) |
+| **WR-RD** (modification non triviale) | ⚠️ INTERDIT - repasser par le manuel parent | R-041 (interdiction propagation remontante) |
 | **Taxonomie .md** (valeurs canoniques) | (a) Manuels référençant la taxo (section "Usages des taxonomies") + (b) Notion DDL : ALTER options select/multi-select de toutes les BDDs concernées + (c) WR-RDs si la valeur impacte une instruction d'écriture | R-049, WF-017 |
 | **Template d'instanciation** | Toutes les instances existantes utilisant ce template (ré-évaluation au cas par cas) | R-056 (versioning), C-019 |
 | **Note de concept** (frontmatter) | Glossaire LBP Notion + Registre des notes de concept Notion | R-029, R-031 |
-| **Note de concept** (corps) | Lien Drive Notion uniquement (pas le contenu — Notion = miroir) | R-001, R-029 |
+| **Note de concept** (corps) | Lien Drive Notion uniquement (pas le contenu - Notion = miroir) | R-001, R-029 |
 | **Règle R-XXX** (création / modification) | RULES_LBP.md + ECOSYSTEM-STATE + docs concernés si format-impactant | R-001, C-007 |
 | **Décision D-XXX** | DECISIONS_LBP.md + RULES_LBP si dérivation R + ECOSYSTEM-STATE | R-001, C-007 |
 | **Convention session C-XXX** | CLAUDE.md + ECOSYSTEM-STATE | C-006 |
 
-#### Phase 3 — Propager **dans l'ordre strict** des dérivés
+#### Phase 3 - Propager **dans l'ordre strict** des dérivés
 
 Important : ne jamais sauter d'étape, ne jamais réordonner.
 
@@ -246,37 +246,37 @@ Important : ne jamais sauter d'étape, ne jamais réordonner.
 3. **Notion ensuite** : une fois le Markdown stable, aligner Notion (DDL si schéma, propriétés textuelles si contenu).
 4. **Renvois croisés** : si le doc modifié est cité ailleurs (autres docs Markdown, ECOSYSTEM-STATE, CLAUDE.md), grep + remplacement systématique (cf. patterns rename Étape 2 bundle docs méta).
 
-#### Phase 4 — QA après propagation
+#### Phase 4 - QA après propagation
 
 - **WR-RD** : appliquer R-042 (égalité mot pour mot des 9 colonnes retenues avec section 4 du manuel parent).
 - **Notion** : re-fetch et comparer avec le manuel (WF-016 audit transverse).
 - **Renvois** : `grep -r "ancien_nom"` doit renvoyer 0 match (sauf dans archives explicites).
 - **Cohérence narrative** : relire le doc parent et son dérivé pour vérifier qu'aucune incohérence sémantique n'a été introduite.
 
-#### Phase 5 — Annonce explicite C-009
+#### Phase 5 - Annonce explicite C-009
 
 Si la modification touche un Manuel et son WR-RD : **annoncer explicitement** dans la même réponse :
 > ✓ Manuel modifié : X manuel(s) · ✓ Propagation WR-RD : Y WR-RD mis à jour
 
 Ou explicitement « WR-RD non concerné car ... » (C-009). Sans cette annonce, la propagation est considérée non vérifiable.
 
-#### Phase 6 — Tracer dans ECOSYSTEM-STATE.md
+#### Phase 6 - Tracer dans ECOSYSTEM-STATE.md
 
 Mise à jour systématique du journal vivant (C-011) :
 - « Dernière mise à jour » avec date du jour
 - Section « Phase actuelle » si phase notable
 - Section « État du Brain » si volumétrie change
-- Pas de batch — un commit ECOSYSTEM-STATE par phase de propagation (C-011)
+- Pas de batch - un commit ECOSYSTEM-STATE par phase de propagation (C-011)
 
-#### Phase 7 — Commit + push (C-013)
+#### Phase 7 - Commit + push (C-013)
 
-- Commit avec message explicite : `[Domain] [Action] [Volume] — propagation [doc source] → [dérivés]`
+- Commit avec message explicite : `[Domain] [Action] [Volume] - propagation [doc source] → [dérivés]`
 - Push immédiat dans la même réponse (C-013)
 - Annoncer : « ✓ Push : N commit(s) poussé(s) sur origin/master »
 
 ### Cas particuliers et edge cases
 
-#### Cas 1 — Modification de codification (R-054)
+#### Cas 1 - Modification de codification (R-054)
 
 Si on change un code stable (ex : `CPT_X` → `CPT_Y`), ce n'est jamais une modification simple : c'est un **archivage de l'ancien + création du nouveau** (R-053).
 
@@ -285,7 +285,7 @@ Si on change un code stable (ex : `CPT_X` → `CPT_Y`), ce n'est jamais une modi
 3. Propager les renvois (grep + remplacement, cf. Étape 2 bundle docs méta)
 4. Si paire `CPT/GLO` (R-031), propagation aux 2 entrées Notion en miroir
 
-#### Cas 2 — Modification d'une taxonomie (cascade large)
+#### Cas 2 - Modification d'une taxonomie (cascade large)
 
 Une taxo est référencée par N manuels et M propriétés Notion. La propagation est :
 1. Mettre à jour la taxo `.md` (source de vérité) + Notion BDD `Registre des taxonomies` (lien Drive, version)
@@ -294,16 +294,16 @@ Une taxo est référencée par N manuels et M propriétés Notion. La propagatio
 4. Pour chaque BDD Notion qui utilise la taxo : ALTER options select (WF-017)
 5. Annoncer le volume total : « Taxo X mise à jour → N manuels + M BDDs Notion alignés »
 
-#### Cas 3 — Modification d'un template d'instanciation (cascade très large)
+#### Cas 3 - Modification d'un template d'instanciation (cascade très large)
 
 Un bump majeur de template (X.Y → (X+1).0) ne propage pas automatiquement à toutes les instances. Au lieu de cela :
 1. Mettre à jour le template (source de vérité dans `00 - Docs méta/Templates d'instanciation/`)
 2. Mettre à jour la propriété Notion `Version du template` sur la fiche du template (D-020)
 3. **Marquer les instances comme stale** : audit mécanique des docs `.md` instances ayant un `template_version` inférieur (D-020)
 4. Planifier une phase de migration des instances (WF-015 si applicable)
-5. **Ne pas propager dans l'urgence** — c'est un chantier dédié
+5. **Ne pas propager dans l'urgence** - c'est un chantier dédié
 
-#### Cas 4 — Modification d'une règle R-XXX qui change un format
+#### Cas 4 - Modification d'une règle R-XXX qui change un format
 
 Cas le plus délicat : si R-052 (apostrophes typographiques) change, des dizaines de docs sont concernés.
 
@@ -384,7 +384,7 @@ Mapping fixe :
 Pour chaque ligne du tableau de la sous-section du manuel, extraire **strictement** les 9 colonnes retenues, dans l'ordre fixe :
 1. Champ
 2. Type
-3. Taxonomie(s) — codes
+3. Taxonomie(s) - codes
 4. Cardinalité / multiplicité
 5. Forme logique attendue
 6. Instructions d'écriture
@@ -451,7 +451,7 @@ Tracer dans `ECOSYSTEM-STATE.md` (journal de session) la création/mise à jour 
 
 ## WF-014 : Générer une BDD Twin sur Notion à partir de son Manuel
 
-**Statut** : Actif (cadrage 26-04-2026, Phase 6.5 — préparation génération des 28 BDD Twin v2). **Révisé 27-04-2026 (WF-014 v3)** : 3 passes globales séparées (natives → relations → rollups). Ce découplage évite la pollution croisée des BDD par les miroirs créés trop tôt (cf. R-047 v2.2 justification).
+**Statut** : Actif (cadrage 26-04-2026, Phase 6.5 - préparation génération des 28 BDD Twin v2). **Révisé 27-04-2026 (WF-014 v3)** : 3 passes globales séparées (natives → relations → rollups). Ce découplage évite la pollution croisée des BDD par les miroirs créés trop tôt (cf. R-047 v2.2 justification).
 
 ### Contexte
 
@@ -459,12 +459,12 @@ Générer une BDD du Digital Twin sur Notion à partir de son manuel parent (sou
 
 ### Étapes (mode batch sur N BDD)
 
-#### Phase 0 — Cadrage
+#### Phase 0 - Cadrage
 1. Identifier la page hôte Notion (où les BDD seront posées en pleine page).
 2. Confirmer le périmètre des BDD à générer (ex. les 28 manuels Twin v2).
 3. Vérifier que les manuels parents sont à jour et conformes (R-027 naming, R-042 alignement WR-RD).
 
-#### Phase 1 — Extraction du manifest
+#### Phase 1 - Extraction du manifest
 1. Pour chaque manuel, parser la section 4 (`4.1` à `4.5`) en JSON structuré :
    - `properties.natives` : type, taxonomie référencée, ordre, bloc d'ordering (R-047)
    - `properties.relations` : BDD cible, propriété miroir, jumelle texte associée, monodirectionnelle ? (cas `Sources d'informations`)
@@ -475,34 +475,34 @@ Générer une BDD du Digital Twin sur Notion à partir de son manuel parent (sou
    - Tout rollup référence une relation source qui existe dans la BDD courante.
    - Toute taxo référencée existe et a au moins une valeur extraite.
 
-#### Phase 2 — Création des BDD vides
+#### Phase 2 - Création des BDD vides
 1. Créer N BDD pleine page sous la page hôte, **avec uniquement le titre** (R-048 : nom canonique simple).
 2. Stocker l'ID Notion de chaque BDD créée pour usage ultérieur (relations + rollups).
 
-#### Passe 1 — Schéma natif (toutes les BDD, props non-relationnelles)
+#### Passe 1 - Schéma natif (toutes les BDD, props non-relationnelles)
 > **Révision WF-014 v3 (27-04-2026, après pilote Actifs)** : la Passe 1 du v2 fusionnait natives + relations en une seule salve par BDD. Cela créait des miroirs prématurés sur les autres BDD (avant que leurs propres natives soient créées), cassant leur ordering. Solution v3 : **3 passes globales séparées**. Passe 1 = natives **sans relations** sur toutes les 28 BDD ; Passe 2 = relations bidir sur toutes les 28 BDD ; Passe 3 = rollups.
 
 Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statements ADD COLUMN dans cet ordre R-047 v2 strict :
 
-1. **Bloc 1 — Tête** (5 props, ordre fixe) :
+1. **Bloc 1 - Tête** (5 props, ordre fixe) :
    `Nom` (title, déjà créé en Phase 2) · `Statut de l'objet` (select OBJ.STATUT.LBP) · `Aliases` · `Erreurs de transcription` (si dans le manuel) · `Description`
 
-2. **Bloc 2 — Corpus métier** :
+2. **Bloc 2 - Corpus métier** :
    - **2a. Spécifiques** (4.2)
-   - **2b. 5D regroupée** (4.4 — natives + jumelles 5D si existent)
-   - **2c. Jumelles textes seules** (4.3 — RICH_TEXT, **sans les relations**)
-   - **2d. Calculés natifs** (4.5 hors rollups) — formules locales. Différé si Leonard valide.
+   - **2b. 5D regroupée** (4.4 - natives + jumelles 5D si existent)
+   - **2c. Jumelles textes seules** (4.3 - RICH_TEXT, **sans les relations**)
+   - **2d. Calculés natifs** (4.5 hors rollups) - formules locales. Différé si Leonard valide.
 
-3. **Bloc 3 — Queue gestion** (~11-12 props, ordre fixe) :
+3. **Bloc 3 - Queue gestion** (~11-12 props, ordre fixe) :
    `Lien vers la note avancée` (URL, conditionnelle, R-050) · `Exemples concrets` · `Commentaires libres` · `Notes du consultant` · `Confidentialité (option)` (si applicable) · `Indices observés` · `Indices d'existence de l'objet` · `Created Date` (CREATED_TIME native renommée) · `Last Updated Date` (LAST_EDITED_TIME native renommée) · `Logs / Révisions LBP` · `Merge Notes` · `Merge Flags`
 
-4. **Bloc 4 — Sources textuelles** (1 prop) :
+4. **Bloc 4 - Sources textuelles** (1 prop) :
    `Source(s) d'information (texte)` (RICH_TEXT). La relation monodirectionnelle `Source(s) d'information` est différée (création de la BDD `Sources d'informations` plus tard sur la même page Notion).
 
 **Pour les select/multi-select avec taxo** : peupler les options à la création (libellés Notion + couleurs depuis le manifest taxos).
 
-#### Passe 2 — Relations bidirectionnelles (toutes BDD, après Passe 1 globale)
-> Les relations sont créées **après** que les 28 BDD ont leurs schémas natifs propres. Notion crée alors automatiquement les miroirs côté BDD cibles, mais leur position en bout de schéma est cohérente (Bloc 7 — Miroirs reçus de R-047 v2.2).
+#### Passe 2 - Relations bidirectionnelles (toutes BDD, après Passe 1 globale)
+> Les relations sont créées **après** que les 28 BDD ont leurs schémas natifs propres. Notion crée alors automatiquement les miroirs côté BDD cibles, mais leur position en bout de schéma est cohérente (Bloc 7 - Miroirs reçus de R-047 v2.2).
 
 1. Pour chaque BDD, exécuter une salve `update_data_source` avec les ADD COLUMN relations bidir :
    - Syntaxe : `RELATION('target_ds_id', DUAL 'mirror_name' 'mirror_id')` (DUAL = bidirectionnelle)
@@ -511,14 +511,14 @@ Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statem
 
 **Pour les sandboxes (R-014)** : Passe 2 quasi-vide (sauf relation Sources d'informations qui sera mono, créée plus tard).
 
-#### Passe 3 — Rollups (toutes BDD, après Passe 2 globale)
+#### Passe 3 - Rollups (toutes BDD, après Passe 2 globale)
 > Les rollups dépendent des relations sources + des propriétés cibles côté BDD cible. Comme les Passes 1 + 2 ont peuplé toutes les BDD, on peut créer les rollups sans risque de référence vide. Ils sont ajoutés en **queue du schéma** (Bloc 6 R-047 v2.2), sémantiquement défendable comme couche calculée dérivée.
 
 1. Pour chaque BDD, exécuter une salve `update_data_source` avec les ADD COLUMN ROLLUP :
    - Syntaxe : `ROLLUP('source_relation', 'target_property', 'function')`
 2. QA après Passe 3 : pas d'erreur "propriété cible introuvable".
 
-#### Passe finale — Sources d'informations + Calculés natifs différés
+#### Passe finale - Sources d'informations + Calculés natifs différés
 1. Créer la BDD `Sources d'informations` sur la même page Notion (section Mission Ops).
 2. Ajouter sur chaque BDD Twin la relation mono `Source(s) d'information` vers la BDD Sources d'informations.
 3. Si les formules ont été différées, les ajouter (queue de schéma, acceptable).
@@ -543,39 +543,39 @@ Pour chaque BDD, exécuter une salve unique `update_data_source` avec les statem
 - **R-046** : ordre de création (DBs → props → relations → rollups → ordering).
 - **R-047** (v2.2, 27-04-2026) : convention d'ordering en **7 blocs**, jumelles textes (Bloc 2c) et relations (Bloc 5) découplées en passes séparées pour préserver l'ordering global des 28 BDD (contrainte Notion DDL : pas de réordonnancement, et création d'une relation bidir crée automatiquement le miroir côté cible).
 - **R-048** : naming BDD = nom canonique simple.
-- **R-014** : sandboxes — pas de relations réelles sauf Sources.
+- **R-014** : sandboxes - pas de relations réelles sauf Sources.
 - **R-019** : architecture en 5 couches d'une BDD bien spécifiée.
 
 ---
 
 ## WF-015 : Migration au canon d’un type de doc Brain (frontmatter R-054 / R-055 / R-056)
 
-**Statut** : Actif (formalisé 28-04-2026 après Phases 4 à 7 — 318 docs migrés).
+**Statut** : Actif (formalisé 28-04-2026 après Phases 4 à 7 - 318 docs migrés).
 
 ### Contexte
 
-Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instances de templates, etc.) au canon frontmatter : codification universelle (R-054 — préfixes `CPT_`, `GLO_`, `METH_`, `TPL_BRICK_`, `CHRT_`, `DBMAN_TW/MO/BR_`, `WRRD_TW/MO/BR_`, `LGBLK_`, `PRMPT_M/S/U/T_`, `OUT_`, `AGT_`… cf. `CODIFICATION_LBP.md`), 3 zones balisées (R-055 — Identité / Méta-gouvernance / Spec d’usage), versioning `X.Y` sans PATCH (R-056).
+Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instances de templates, etc.) au canon frontmatter : codification universelle (R-054 - préfixes `CPT_`, `GLO_`, `METH_`, `TPL_BRICK_`, `CHRT_`, `DBMAN_TW/MO/BR_`, `WRRD_TW/MO/BR_`, `LGBLK_`, `PRMPT_M/S/U/T_`, `OUT_`, `AGT_`… cf. `CODIFICATION_LBP.md`), 3 zones balisées (R-055 - Identité / Méta-gouvernance / Spec d’usage), versioning `X.Y` sans PATCH (R-056).
 
 ### Méthode (pattern script idempotent)
 
-**1. Inventaire** — lister tous les docs du type cible (glob sur le dossier ou liste explicite).
+**1. Inventaire** - lister tous les docs du type cible (glob sur le dossier ou liste explicite).
 
-**2. Parse frontmatter** — pour chaque doc : lire le frontmatter YAML, extraire l’état actuel.
+**2. Parse frontmatter** - pour chaque doc : lire le frontmatter YAML, extraire l’état actuel.
 
-**3. Calcul du frontmatter cible** — appliquer les règles :
+**3. Calcul du frontmatter cible** - appliquer les règles :
 - Génération du `code` selon R-054 (préfixe + token MAJUSCULES_UNDERSCORE).
 - Réorganisation en 3 zones (R-055).
 - Normalisation du `version` en `X.Y` (R-056). Si forme legacy `"DATE vX.Y.Z"` détectée : split en `version` + `created_at`.
 - Normalisation des dates en `JJ-MM-YYYY` (R-044).
 - Normalisation des apostrophes en typographiques `’` (R-052) dans les chaînes de description.
 
-**4. Mode `--dry-run`** — produire un rapport diff par doc (avant / après) sans écrire. Permet revue avant application.
+**4. Mode `--dry-run`** - produire un rapport diff par doc (avant / après) sans écrire. Permet revue avant application.
 
-**5. Mode `--apply`** — écrire les frontmatters normalisés. Idempotent : un second passage ne doit produire aucun diff.
+**5. Mode `--apply`** - écrire les frontmatters normalisés. Idempotent : un second passage ne doit produire aucun diff.
 
-**6. QA post-migration** — re-lire un échantillon, vérifier la conformité aux 3 règles. Vérifier l’absence d’artefacts.
+**6. QA post-migration** - re-lire un échantillon, vérifier la conformité aux 3 règles. Vérifier l’absence d’artefacts.
 
-**7. Commit unifié** — un commit par phase de migration, message clair (volume + type cible).
+**7. Commit unifié** - un commit par phase de migration, message clair (volume + type cible).
 
 ### Volumes de référence (Phases 4-7)
 
@@ -594,7 +594,7 @@ Migrer un lot homogène de docs Brain (manuels, WR-RD, notes de concept, instanc
 
 ## WF-016 : Audit transverse Notion ↔ Manuels Brain
 
-**Statut** : Actif (formalisé 28-04-2026 — rapport de référence : `scripts/notion_brain_audit/audit_notion_brain.md`).
+**Statut** : Actif (formalisé 28-04-2026 - rapport de référence : `scripts/notion_brain_audit/audit_notion_brain.md`).
 
 ### Contexte
 
@@ -602,11 +602,11 @@ Vérifier que les 11 BDDs Brain Notion sont alignées avec leurs manuels parents
 
 ### Méthode
 
-**1. Fetch des 11 data sources Notion** — via `mcp__...__notion-fetch` sur chaque BDD Brain : récupérer la liste exhaustive des propriétés (nom, type, options pour les select/multi-select).
+**1. Fetch des 11 data sources Notion** - via `mcp__...__notion-fetch` sur chaque BDD Brain : récupérer la liste exhaustive des propriétés (nom, type, options pour les select/multi-select).
 
-**2. Parse de la section schéma de chaque manuel parent** — lire la ou les sections du manuel qui décrivent les propriétés Notion attendues (génériques, spécifiques, relations, rollups, taxonomies référencées).
+**2. Parse de la section schéma de chaque manuel parent** - lire la ou les sections du manuel qui décrivent les propriétés Notion attendues (génériques, spécifiques, relations, rollups, taxonomies référencées).
 
-**3. Comparaison ligne à ligne** — pour chaque propriété attendue côté manuel, vérifier sa présence côté Notion (nom exact, type exact, options exactes pour les select). Pour chaque propriété présente côté Notion, vérifier qu’elle est documentée dans le manuel.
+**3. Comparaison ligne à ligne** - pour chaque propriété attendue côté manuel, vérifier sa présence côté Notion (nom exact, type exact, options exactes pour les select). Pour chaque propriété présente côté Notion, vérifier qu’elle est documentée dans le manuel.
 
 **4. Classification des écarts** :
 - **MANQUE** : présent manuel, absent Notion → ADD à prévoir.
@@ -616,9 +616,9 @@ Vérifier que les 11 BDDs Brain Notion sont alignées avec leurs manuels parents
 - **CASSE / TYPO / ACCENTS** : nom différent à la marge → RENAME à prévoir.
 - **JUMELLE TEXTE INTERDITE (R-058)** : DROP à prévoir.
 
-**5. Rapport markdown par BDD** — score (Conforme / Mineur / Majeur / Critique) + liste des écarts classés + recommandations DDL.
+**5. Rapport markdown par BDD** - score (Conforme / Mineur / Majeur / Critique) + liste des écarts classés + recommandations DDL.
 
-**6. Synthèse transverse** — tableau récap des 11 BDDs, total d’actions DDL nécessaires.
+**6. Synthèse transverse** - tableau récap des 11 BDDs, total d’actions DDL nécessaires.
 
 ### Application 28-04-2026
 
@@ -628,7 +628,7 @@ Vérifier que les 11 BDDs Brain Notion sont alignées avec leurs manuels parents
 
 ## WF-017 : Sync DDL Notion BDD Brain à partir des écarts d’audit
 
-**Statut** : Actif (formalisé 28-04-2026 — appliqué sur les 11 BDDs Brain).
+**Statut** : Actif (formalisé 28-04-2026 - appliqué sur les 11 BDDs Brain).
 
 ### Contexte
 
@@ -638,7 +638,7 @@ Appliquer sur Notion les actions DDL identifiées par WF-016. Limitation Notion 
 
 | Action | Quand | Exemple |
 |---|---|---|
-| **DROP** | Propriété obsolète (ex : `actif` Prompts), redondante (ex : `Type fonctionnel (BDD décrite)` Manuels — D-019), interdite (jumelles texte Logic blocks — R-058) | DROP `actif` |
+| **DROP** | Propriété obsolète (ex : `actif` Prompts), redondante (ex : `Type fonctionnel (BDD décrite)` Manuels - D-019), interdite (jumelles texte Logic blocks - R-058) | DROP `actif` |
 | **ADD select / multi-select** | Propriété manquante avec taxo | ADD `Domaine(s) d’usage` multi-select avec 4 options (Core / Motor / Digital Twin / Mission Ops) |
 | **ADD url** | Lien source manquant | ADD `System prompt (lien source)` URL (Agents LBP) |
 | **ALTER options** | Valeurs select divergentes ou casse à harmoniser | ALTER `Statut de déploiement` (5 valeurs `PROMPT.DEPLOY_STATUS`), harmonisation casse `Domaine(s) d’usage` |
@@ -650,20 +650,20 @@ Appliquer sur Notion les actions DDL identifiées par WF-016. Limitation Notion 
 
 **1. Préparer le batch DDL par BDD** depuis le rapport d’audit (WF-016).
 
-**2. Gérer les taxos vides** — si une option select doit être ajoutée mais la taxo Notion est vide, peupler les options à partir du manifest taxos (libellés + couleurs depuis le `.md` de la taxo dans `Taxonomies/`).
+**2. Gérer les taxos vides** - si une option select doit être ajoutée mais la taxo Notion est vide, peupler les options à partir du manifest taxos (libellés + couleurs depuis le `.md` de la taxo dans `Taxonomies/`).
 
-**3. Exécuter via `notion-update-data-source`** — une salve par BDD, opérations groupées dans l’ordre :
+**3. Exécuter via `notion-update-data-source`** - une salve par BDD, opérations groupées dans l’ordre :
    1. RENAME (préparation)
    2. DROP (nettoyage)
    3. ALTER options (correction)
    4. ADD natives (compléments)
-   5. CONVERT / CREATE rollups (couche dérivée — nécessite que les relations sources existent)
+   5. CONVERT / CREATE rollups (couche dérivée - nécessite que les relations sources existent)
 
-**4. Vérification post-DDL** — re-fetch la data source, comparer avec le manuel parent. Score doit être Conforme.
+**4. Vérification post-DDL** - re-fetch la data source, comparer avec le manuel parent. Score doit être Conforme.
 
-**5. Compléter les descriptions à la main** (limite API Notion) — pour les propriétés ajoutées, écrire la description sur la fiche Notion.
+**5. Compléter les descriptions à la main** (limite API Notion) - pour les propriétés ajoutées, écrire la description sur la fiche Notion.
 
-**6. Tracer dans ECOSYSTEM-STATE.md** — chronologie des actions par BDD.
+**6. Tracer dans ECOSYSTEM-STATE.md** - chronologie des actions par BDD.
 
 ### Application 28-04-2026
 

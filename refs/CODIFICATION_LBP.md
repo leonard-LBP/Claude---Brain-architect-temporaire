@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Codification LBP — Grammaire des codes (Brain + Twin + Mission Ops + IDs systèmes)"
+title: "Codification LBP - Grammaire des codes (Brain + Twin + Mission Ops + IDs systèmes)"
 doc_type: doc_meta
 code: "CHRT_CODIFICATION_LBP"
 
@@ -27,16 +27,16 @@ tags:
   - lbp
 ---
 
-# CODIFICATION — Grammaire des codes LBP
+# CODIFICATION - Grammaire des codes LBP
 
-> **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
+> **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Référence canonique de **toutes les codifications** utilisées dans LBP : objets Brain, objets Twin, occurrences Mission Ops, taxonomies, IDs systèmes (R-XXX / D-XXX / WF-XXX / C-XXX).
 > Ce doc rassemble et explicite la grammaire officielle issue de **R-054** (RULES_LBP) + ses extensions Mission Ops + IDs systèmes.
-> Dernière mise à jour : 30-04-2026 — création post-audit refs/.
+> Dernière mise à jour : 30-04-2026 - création post-audit refs/.
 
 ---
 
-## 1. Préambule — pourquoi une grammaire unifiée ?
+## 1. Préambule - pourquoi une grammaire unifiée ?
 
 ### Le problème historique
 
@@ -59,7 +59,7 @@ Avant R-054, les codes LBP coexistaient en **6+ conventions différentes** (`DBM
 
 ---
 
-## 2. Grammaire 1 — Format général (Brain)
+## 2. Grammaire 1 - Format général (Brain)
 
 ```
 <PREFIXE>_<IDENTIFIANT>
@@ -73,15 +73,15 @@ Avant R-054, les codes LBP coexistaient en **6+ conventions différentes** (`DBM
 
 | Préfixe | Type de doc Brain | Taxo de référence | Sous-typage interne | Exemple |
 |---|---|---|---|---|
-| `DBMAN_TW` | Manuel de BDD (Twin) | `DOC.TYPE` + `DBMAN.SCOPE.TWIN` | — | `DBMAN_TW_ACTIFS` |
-| `DBMAN_MO` | Manuel de BDD (Mission Ops) | + `DBMAN.SCOPE.MISSION_OPS` | — | `DBMAN_MO_BRICKS` |
-| `DBMAN_BR` | Manuel de BDD (Brain) | + `DBMAN.SCOPE.BRAIN` | — | `DBMAN_BR_PROMPTS_LBP` |
-| `WRRD_TW` | WR-RD (Twin) | `DOC.TYPE.WR_RD` + scope | — | `WRRD_TW_ACTIFS` |
-| `WRRD_MO` | WR-RD (Mission Ops) | idem | — | `WRRD_MO_BRICKS` |
-| `WRRD_BR` | WR-RD (Brain) | idem | — | `WRRD_BR_PROMPTS_LBP` |
-| `CPT` | Note de concept | `DOC.TYPE.NOTE_CONCEPT` | — | `CPT_SOFT_SKILL` |
-| `GLO` | Entry de glossaire | `DOC.TYPE.GLOSSAIRE_ENTRY` | — | `GLO_SOFT_SKILL` (paire R-031) |
-| `TPL` | Template d'instanciation (général) | `DOC.TYPE.TEMPLATE_INSTANCIATION` | — | `TPL_MANUEL_BDD_BRAIN` |
+| `DBMAN_TW` | Manuel de BDD (Twin) | `DOC.TYPE` + `DBMAN.SCOPE.TWIN` | - | `DBMAN_TW_ACTIFS` |
+| `DBMAN_MO` | Manuel de BDD (Mission Ops) | + `DBMAN.SCOPE.MISSION_OPS` | - | `DBMAN_MO_BRICKS` |
+| `DBMAN_BR` | Manuel de BDD (Brain) | + `DBMAN.SCOPE.BRAIN` | - | `DBMAN_BR_PROMPTS_LBP` |
+| `WRRD_TW` | WR-RD (Twin) | `DOC.TYPE.WR_RD` + scope | - | `WRRD_TW_ACTIFS` |
+| `WRRD_MO` | WR-RD (Mission Ops) | idem | - | `WRRD_MO_BRICKS` |
+| `WRRD_BR` | WR-RD (Brain) | idem | - | `WRRD_BR_PROMPTS_LBP` |
+| `CPT` | Note de concept | `DOC.TYPE.NOTE_CONCEPT` | - | `CPT_SOFT_SKILL` |
+| `GLO` | Entry de glossaire | `DOC.TYPE.GLOSSAIRE_ENTRY` | - | `GLO_SOFT_SKILL` (paire R-031) |
+| `TPL` | Template d'instanciation (général) | `DOC.TYPE.TEMPLATE_INSTANCIATION` | - | `TPL_MANUEL_BDD_BRAIN` |
 | `TPL_BRICK` | Template de Brick | `DOC.TYPE.TEMPLATE_BRICK` | `BRICK.FAMILY` | `TPL_BRICK_PRF_ORG` |
 | `PRMPT_M` | Prompt maître | `DOC.TYPE.PROMPT` | `PROMPT.ARCH_ROLE.PROMPT_MAITRE` | `PRMPT_M_REFACTOR_TWIN` |
 | `PRMPT_S` | System prompt | idem | `PROMPT.ARCH_ROLE.SYSTEM_PROMPT` | `PRMPT_S_KONTEXT` |
@@ -96,8 +96,8 @@ Avant R-054, les codes LBP coexistaient en **6+ conventions différentes** (`DBM
 ### 2.2 Paire `CPT_*` ↔ `GLO_*` (R-031)
 
 Un concept LBP a **deux fiches en miroir** :
-- `Registre des notes de concept` (`CPT_<TOKEN>`) — méta du fichier source
-- `Glossaire LBP` (`GLO_<TOKEN>`) — identité + sémantique du concept
+- `Registre des notes de concept` (`CPT_<TOKEN>`) - méta du fichier source
+- `Glossaire LBP` (`GLO_<TOKEN>`) - identité + sémantique du concept
 
 Les **deux fiches partagent le même TOKEN** dans leur code (R-031). Exemple : `CPT_SOFT_SKILL` et `GLO_SOFT_SKILL`.
 
@@ -110,7 +110,7 @@ Les **deux fiches partagent le même TOKEN** dans leur code (R-031). Exemple : `
 
 ---
 
-## 3. Grammaire 2 — Taxonomies
+## 3. Grammaire 2 - Taxonomies
 
 ```
 <NAMESPACE>.<TAXO>
@@ -155,7 +155,7 @@ Une taxo est `mono` (un seul taxon par fiche) ou `multi` (plusieurs taxons possi
 
 ---
 
-## 4. Grammaire 3 — Bricks instanciées (Mission Ops)
+## 4. Grammaire 3 - Bricks instanciées (Mission Ops)
 
 ```
 BRK_<mission_code>_<brick_code>_<discriminant>_<rev>
@@ -203,7 +203,7 @@ C'est la grammaire la plus structurée, utilisée pour les bricks instanciées p
 
 ---
 
-## 5. Grammaire 4 — Codes d'occurrence Mission Ops
+## 5. Grammaire 4 - Codes d'occurrence Mission Ops
 
 Pour les occurrences Mission Ops (Sources, Meetings, Actions LBP), **R-054 prévoit en Phase 2** une extension avec des préfixes dédiés. Pendant la Phase B test (30-04-2026), des codes ad hoc ont été utilisés avec séparateur `-`. À arbitrer (cf. §9 Anti-patterns et arbitrages).
 
@@ -232,7 +232,7 @@ Pour les occurrences Mission Ops (Sources, Meetings, Actions LBP), **R-054 prév
 
 ## 6. IDs systèmes (règles, décisions, workflows, conventions)
 
-Hors R-054 (qui se concentre sur les objets) — chaque type de capture transverse a son propre ID stable.
+Hors R-054 (qui se concentre sur les objets) - chaque type de capture transverse a son propre ID stable.
 
 ### 6.1 Format
 
@@ -292,7 +292,7 @@ Lors d'une indexation Notion : avant toute création, requêter le registre cibl
 
 ### 7.5 Versioning (R-056)
 
-`<MAJOR>.<MINOR>` — pas de PATCH. Pas de zéro-padding. Bumps significatifs uniquement.
+`<MAJOR>.<MINOR>` - pas de PATCH. Pas de zéro-padding. Bumps significatifs uniquement.
 
 ---
 
@@ -304,7 +304,7 @@ Lors d'une indexation Notion : avant toute création, requêter le registre cibl
 |---|---|---|---|
 | 1 | Suffix `LBP` dans les codes (`CPT.X.LBP.Y`, `OBJ.STATUT.LBP`) | Convention legacy pré-R-054 | Migration Phase A4.A 28-04-2026 (96 codes migrés) |
 | 2 | Codes Brain dispersés en 6+ conventions | Pré-R-054 | R-054 unifie tout |
-| 3 | Confusion `BRK_` (préfixe) vs `BRICK.` (namespace taxo) | — | `BRK` = objet brick (G1, G3) ; `BRICK.FAMILY` = taxo des familles (G2) |
+| 3 | Confusion `BRK_` (préfixe) vs `BRICK.` (namespace taxo) | - | `BRK` = objet brick (G1, G3) ; `BRICK.FAMILY` = taxo des familles (G2) |
 | 4 | Confusion `MTG-XX-DATE` (occurrence MO observée) vs `MTG_XX_NN` (R-054 Phase 2) | Phase B test | À arbitrer (cf. §5.2) |
 | 5 | Préfixes inventés ad hoc dans le bundle (`AGENT_`, `MET_`, `META_`, `TPL_BRK_`, `PROMPT_`) au lieu des préfixes officiels (`AGT_`, `METH_`, `CHRT_`, `TPL_BRICK_`, `PRMPT_M/S/U/T`) | Bundle 30-04-2026 (SPECS_BRAIN, SPECS_MO, D-022, D-023) | Correction propagée dans la même unité de travail (cf. §10) |
 
@@ -350,15 +350,15 @@ R-054 (table officielle) reste **la source de vérité**. Les usages divergents 
 
 ### Règles fondatrices
 
-- `refs/RULES_LBP.md` — R-054 (codification universelle), R-031 (paire CPT/GLO), R-038 (identifiant pivot), R-053 (archivage), R-055 (frontmatter 3 zones), R-056 (versioning X.Y)
+- `refs/RULES_LBP.md` - R-054 (codification universelle), R-031 (paire CPT/GLO), R-038 (identifiant pivot), R-053 (archivage), R-055 (frontmatter 3 zones), R-056 (versioning X.Y)
 
 ### Décisions
 
-- `refs/DECISIONS_LBP.md` — D-019 (Brain unifié + isolation), D-021 (3 agents), D-022 (frontmatters Twin/MO différenciés), D-023 (stack Notion/Supabase)
+- `refs/DECISIONS_LBP.md` - D-019 (Brain unifié + isolation), D-021 (3 agents), D-022 (frontmatters Twin/MO différenciés), D-023 (stack Notion/Supabase)
 
 ### Workflows
 
-- `refs/WORKFLOWS_LBP.md` — WF-008 (propagation d'impacts), WF-015 (migration au canon), WF-016 (audit transverse), WF-017 (sync DDL)
+- `refs/WORKFLOWS_LBP.md` - WF-008 (propagation d'impacts), WF-015 (migration au canon), WF-016 (audit transverse), WF-017 (sync DDL)
 
 ### Manuels et schémas
 
@@ -375,4 +375,4 @@ R-054 (table officielle) reste **la source de vérité**. Les usages divergents 
 
 ---
 
-> Dernière mise à jour : 30-04-2026 — création post-audit refs/. Référence canonique pour toute production de codes nouveaux dans LBP.
+> Dernière mise à jour : 30-04-2026 - création post-audit refs/. Référence canonique pour toute production de codes nouveaux dans LBP.

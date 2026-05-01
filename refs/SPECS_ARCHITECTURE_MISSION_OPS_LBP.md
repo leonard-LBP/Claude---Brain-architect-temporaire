@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Specs Architecture Mission Ops LBP — Modèle conceptuel des 4 BDDs MO"
+title: "Specs Architecture Mission Ops LBP - Modèle conceptuel des 4 BDDs MO"
 doc_type: doc_meta
 code: "CHRT_SPECS_MISSION_OPS_LBP"
 
@@ -26,17 +26,17 @@ tags:
   - lbp
 ---
 
-# SPECS — Architecture Mission Ops LBP
+# SPECS - Architecture Mission Ops LBP
 
-> **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
+> **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Référence canonique des **4 BDDs structurelles** du domaine Mission Ops, instancié à chaque mission consultant.
 > Mission Ops est un domaine **co-égal** au Brain et au Digital Twin (cf. D-023), gouverné par 4 BDDs : `Sources d'informations`, `Meetings`, `Actions LBP`, `Bricks`.
 > Les schémas détaillés (champs, propriétés, relations) vivent dans les **Manuels de BDD** sous `H:\Drive partagés\LBP - shared\Architecture data\Manuels de BDD\Mission Ops\`. Ce fichier porte la vue d'ensemble structurante.
-> Dernière mise à jour : 30-04-2026 — création post-Phase B test Twin+MO DeepSecAI v0 (51 fiches sur la maquette Notion).
+> Dernière mise à jour : 30-04-2026 - création post-Phase B test Twin+MO DeepSecAI v0 (51 fiches sur la maquette Notion).
 
 ---
 
-## 1. Préambule — qu'est-ce que Mission Ops ?
+## 1. Préambule - qu'est-ce que Mission Ops ?
 
 **Mission Ops** est le domaine de **gouvernance opérationnelle des missions de conseil LBP**. Il porte la trace structurée de ce qui se passe pendant une mission (sources collectées, meetings tenus, actions exécutées par le consultant LBP, livrables produits).
 
@@ -44,7 +44,7 @@ tags:
 
 | Domaine | Rôle | Stack cible | Évolution pendant mission |
 |---|---|---|---|
-| **Brain** | Méta — référentiel doctrinal LBP (manuels, taxonomies, méthodes, templates, prompts, agents, outils). Stable, évolue **hors mission**. | Notion (à moyen terme) | ❌ Non (D-019, D-021) |
+| **Brain** | Méta - référentiel doctrinal LBP (manuels, taxonomies, méthodes, templates, prompts, agents, outils). Stable, évolue **hors mission**. | Notion (à moyen terme) | ❌ Non (D-019, D-021) |
 | **Digital Twin** | Représentation structurée d'**une organisation cliente** (objets ontologiques, relations, 5D). Instancié par mission. | Supabase (cible D-023) | ✅ Oui (peuplement progressif) |
 | **Mission Ops** | Gouvernance opérationnelle de la **mission elle-même** (sources, meetings, actions consultant, livrables). | Supabase (cible D-023) | ✅ Oui (en flux continu) |
 
@@ -68,12 +68,12 @@ Mission Ops est de régime **opérationnel**, distinct du régime ontologique du
 
 Mission Ops est gouverné par **6 principes cardinaux** propres :
 
-1. **Trace de mission, pas vérité organisationnelle** — MO documente ce qui s'est passé pendant la mission (qui a parlé, quoi a été fait, quels livrables ont été produits). La vérité organisationnelle vit dans le Twin.
-2. **Sources = origine traçable de tout** — toute fiche MO ou Twin remontant à une mission doit pouvoir être reliée à au moins une `Source d'information` (R-001 transitif).
-3. **Bricks = unité documentaire pivot** (D-018) — les bricks sont à la fois livrables MO et notes avancées Twin. Elles sont le **pont** structurel entre les deux domaines.
-4. **Actions LBP = activité du consultant uniquement** — pas l'activité du client (qui se modélise via `Actions détectées` dans le Twin). Distinction stricte : `Actions LBP` = ce que LE CONSULTANT fait pendant la mission.
-5. **Une mission = une instance MO complète** — chaque mission a son propre périmètre MO instancié (pas de fiches MO partagées entre missions, sauf cas exceptionnel à arbitrer).
-6. **Régime opérationnel sobre** — MO n'a pas de couche analytique (5D, rollups complexes, chaînes de transformation). Son rôle est traçabilité + pilotage opérationnel, pas analyse organisationnelle.
+1. **Trace de mission, pas vérité organisationnelle** - MO documente ce qui s'est passé pendant la mission (qui a parlé, quoi a été fait, quels livrables ont été produits). La vérité organisationnelle vit dans le Twin.
+2. **Sources = origine traçable de tout** - toute fiche MO ou Twin remontant à une mission doit pouvoir être reliée à au moins une `Source d'information` (R-001 transitif).
+3. **Bricks = unité documentaire pivot** (D-018) - les bricks sont à la fois livrables MO et notes avancées Twin. Elles sont le **pont** structurel entre les deux domaines.
+4. **Actions LBP = activité du consultant uniquement** - pas l'activité du client (qui se modélise via `Actions détectées` dans le Twin). Distinction stricte : `Actions LBP` = ce que LE CONSULTANT fait pendant la mission.
+5. **Une mission = une instance MO complète** - chaque mission a son propre périmètre MO instancié (pas de fiches MO partagées entre missions, sauf cas exceptionnel à arbitrer).
+6. **Régime opérationnel sobre** - MO n'a pas de couche analytique (5D, rollups complexes, chaînes de transformation). Son rôle est traçabilité + pilotage opérationnel, pas analyse organisationnelle.
 
 ---
 
@@ -90,7 +90,7 @@ Mission Ops est gouverné par **6 principes cardinaux** propres :
 
 #### 3.1 Sources d'informations
 
-**Rôle pivot** — c'est la BDD **la plus articulatoire** de Mission Ops. Elle est :
+**Rôle pivot** - c'est la BDD **la plus articulatoire** de Mission Ops. Elle est :
 - L'**origine** de toutes les fiches Twin (chaîne d'extraction directe, C-018)
 - La **preuve documentaire** de toutes les bricks MO (chaque brick est documentée par une ou plusieurs sources)
 - Le **point d'entrée** d'une mission depuis l'extérieur (entretien transcrit, document client, export système, observation terrain)
@@ -101,7 +101,7 @@ Mission Ops est gouverné par **6 principes cardinaux** propres :
 
 #### 3.2 Meetings
 
-**Rôle** — trace structurée de chaque rendez-vous tenu pendant la mission (entretien individuel, atelier collaboratif, kickoff, comité, restitution, validation).
+**Rôle** - trace structurée de chaque rendez-vous tenu pendant la mission (entretien individuel, atelier collaboratif, kickoff, comité, restitution, validation).
 
 **Champs caractéristiques** : `Code` (`MTG-<TYPE>-<DISCRIMINANT>-<DATE-ISO>`), `Type de meeting` (taxo MTG.TYPE), `Format` (visio / présentiel / hybride), `Date/heure`, `Durée (min)`, `Lieu / outil`, `Lien calendrier (Google Calendar)`, `Objet du meeting`, `Agenda`, `Hypothèses / questions à clarifier`, `Résultats et décisions`, `Enregistrement (oui/non)`, `Statut d'exécution` (taxo OPS.STATUS).
 
@@ -111,7 +111,7 @@ Mission Ops est gouverné par **6 principes cardinaux** propres :
 
 #### 3.3 Actions LBP
 
-**Rôle** — pilotage opérationnel des actions exécutées **par le consultant LBP** pendant la mission. Distinct de `Actions détectées` (Twin) qui modélise l'agir observé chez le client.
+**Rôle** - pilotage opérationnel des actions exécutées **par le consultant LBP** pendant la mission. Distinct de `Actions détectées` (Twin) qui modélise l'agir observé chez le client.
 
 **Champs caractéristiques** : `Code` (`ACT-<DISCRIMINANT>-<NNN-ou-DATE>`), `Type d'entrée` (Activité = lot / Action = atomique), `Famille d'action` (taxo OPS.ACTION_FAMILY : préparation de meeting / animation en direct / coordination / collecte / analyse / synthèse / administratif), `Responsable principal` (Consultant LBP / Client / Mixte), `Échéance`, `Date de clôture`, `Description et critères de done`, `utilise aussi en inputs`, `Statut d'exécution`.
 
@@ -121,9 +121,9 @@ Mission Ops est gouverné par **6 principes cardinaux** propres :
 
 #### 3.4 Bricks
 
-**Rôle pivot** — unité documentaire produite par la mission. Elles sont à la fois :
+**Rôle pivot** - unité documentaire produite par la mission. Elles sont à la fois :
 - Livrable MO (output d'une `Action LBP`, doit être traçable)
-- Note avancée Twin (D-018) — peut détailler une fiche Twin (profil organisationnel, analyse 3P, etc.)
+- Note avancée Twin (D-018) - peut détailler une fiche Twin (profil organisationnel, analyse 3P, etc.)
 
 **Champs caractéristiques** : `Brick ID` (titre, format `BRK_<mission>_<brick>_<discriminant>_<rev>`), `Nom canonique` (humain), `Purpose`, `Famille de brick` (taxo BRICK.FAMILY : profil / meeting / compte-rendu / analyse / livrable / correspondance / sources / glossaire / socle client / socle mission), `Generated at`, `Version` (R01/R02/...), `mission_code`, `brick_code`, `Discriminant`, `rev`, `Lien drive`, `Utilise aussi en inputs`, `Statut d'exécution`.
 
@@ -141,8 +141,8 @@ Définitions canoniques et frontières (à ne pas confondre avec d'autres objets
 |---|---|---|
 | **Source d'information** | Pièce documentaire / entretien / artefact servant de preuve primaire | Actif (Twin), Glossaire (Twin), Brick |
 | **Meeting** | Rendez-vous tenu pendant la mission, daté et structuré | Événement (Twin) ; un meeting est une trace de mission, un événement Twin est un repère organisationnel |
-| **Action LBP** | Activité ou action exécutée par le consultant LBP | Action détectée (Twin) — qui modélise l'agir observé chez le client |
-| **Activité (Actions LBP)** | Lot de travail regroupant N actions atomiques | Initiative organisationnelle (Twin) — qui est un effort temporaire **chez le client** |
+| **Action LBP** | Activité ou action exécutée par le consultant LBP | Action détectée (Twin) - qui modélise l'agir observé chez le client |
+| **Activité (Actions LBP)** | Lot de travail regroupant N actions atomiques | Initiative organisationnelle (Twin) - qui est un effort temporaire **chez le client** |
 | **Brick** | Livrable documentaire produit ou utilisé par une action de mission | Note avancée d'objet Twin (rôle pivot, D-018) ; document Brain (template) |
 
 ---
@@ -157,7 +157,7 @@ Le régime MO est plus sobre que le régime Twin. Une BDD MO a typiquement 4 cou
 | 2. Propriétés spécifiques | Champs propres à l'objet (Type, Format, Famille, Brick ID, etc.) | Qu'est-ce qui caractérise cette occurrence MO ? |
 | 3. Relations + jumelles textes | Liens bidir intra-MO + monodir Twin + jumelles textes | À quoi cette fiche est-elle reliée dans la mission ? |
 | 4. Couche pilotage opérationnel | `Statut d'exécution` (OPS.STATUS) | Où en est-on dans le cycle de vie opérationnel ? |
-| 5. (Couche calculée — optionnelle) | Rollups d'avancement (Actions LBP uniquement) | Quel est le taux d'avancement d'une activité ? |
+| 5. (Couche calculée - optionnelle) | Rollups d'avancement (Actions LBP uniquement) | Quel est le taux d'avancement d'une activité ? |
 
 **Différences avec Twin** :
 - ❌ Pas de couche 5D (le 5D est un prisme Twin)
@@ -186,14 +186,14 @@ Sources d'informations (MO)
     └── ... (tous les objets Twin du socle structurel + observation)
 ```
 
-Les BDDs Twin de **régime consolidé/dérivé** (Processus, Pratiques, Principes, Capacités, Modulateurs, Problématiques, OKR, Indicateurs) **n'ont pas** de relation directe vers Sources — leur traçabilité est transitive via les BDDs amont (C-018).
+Les BDDs Twin de **régime consolidé/dérivé** (Processus, Pratiques, Principes, Capacités, Modulateurs, Problématiques, OKR, Indicateurs) **n'ont pas** de relation directe vers Sources - leur traçabilité est transitive via les BDDs amont (C-018).
 
 ### 6.2 Pont par les Bricks (notes avancées, D-018)
 
 Une brick MO peut servir de **note avancée** à une fiche Twin :
 - Brick `Profil` → fiche `Organisations` ou `Collectifs` Twin (profil organisationnel synthétique)
 - Brick `Analyse` → fiche analytique (Processus / Pratique / Capacité)
-- Brick `Compte-rendu` → fiche `Meeting` MO (CR interne) — articulation intra-MO
+- Brick `Compte-rendu` → fiche `Meeting` MO (CR interne) - articulation intra-MO
 - Brick `Livrable` → restitution multi-fiches Twin (note de synthèse client)
 
 L'articulation se fait par le champ `Lien vers la note avancée` côté Twin (URL Drive de la brick) ou par référence textuelle dans la brick.
@@ -221,7 +221,7 @@ Mission Ops consomme plusieurs objets Brain, mais **n'écrit jamais** dedans (D-
 | `Logic blocks` (`LGBLK_*`) | Blocs de raisonnement réutilisables |
 | `Glossaire LBP` + `Notes de concept` | Référentiel sémantique LBP |
 
-**Mécanique de consommation** : la référence se fait par **code stable** (R-054) — pas par relation cross-stack. Au moment de l'instanciation MO (création d'une brick par exemple), le code template (`TPL_BRICK_PRF_ORG`) est inscrit en référence textuelle dans la fiche brick. La structure du template est **lue** depuis le Brain (lecture seule).
+**Mécanique de consommation** : la référence se fait par **code stable** (R-054) - pas par relation cross-stack. Au moment de l'instanciation MO (création d'une brick par exemple), le code template (`TPL_BRICK_PRF_ORG`) est inscrit en référence textuelle dans la fiche brick. La structure du template est **lue** depuis le Brain (lecture seule).
 
 **Frontière infranchissable** : KONTEXT (l'agent MO) **ne peut pas** appeler Brain architect (D-021). Si une évolution Brain est nécessaire, elle est **flaggée** comme remontée hors mission.
 
@@ -277,17 +277,17 @@ Sous `Manuels de BDD/Mission Ops/WR-RD/` :
 
 ### Templates de bricks consommés par Mission Ops
 
-Sous `Architecture data/Templates de bricks/` (Brain) — `TPL_BRICK_*`. Liste de référence dans la BDD Notion `Templates de bricks` du Brain.
+Sous `Architecture data/Templates de bricks/` (Brain) - `TPL_BRICK_*`. Liste de référence dans la BDD Notion `Templates de bricks` du Brain.
 
 ### Apprentissages opérationnels
 
-- `refs/TEST_TWIN_OPS_PLAYBOOK.md` — playbook stabilisé post-Phase B test (logiques de remplissage, patterns, anomalies, quirks techniques).
+- `refs/TEST_TWIN_OPS_PLAYBOOK.md` - playbook stabilisé post-Phase B test (logiques de remplissage, patterns, anomalies, quirks techniques).
 
 ### Décisions et règles structurantes
 
-- `refs/DECISIONS_LBP.md` — D-018 (bricks=notes avancées), D-019 (isolation Brain ↔ MO/Twin), D-021 (3 agents), D-022 (frontmatters Twin/MO différenciés), D-023 (MO co-égal + stack Notion/Supabase)
-- `refs/RULES_LBP.md` — section dédiée Mission Ops (à enrichir au fur et à mesure)
-- `refs/WORKFLOWS_LBP.md` — WF-008 (propagation d'impacts), futurs WF-MO-XXX à formaliser
+- `refs/DECISIONS_LBP.md` - D-018 (bricks=notes avancées), D-019 (isolation Brain ↔ MO/Twin), D-021 (3 agents), D-022 (frontmatters Twin/MO différenciés), D-023 (MO co-égal + stack Notion/Supabase)
+- `refs/RULES_LBP.md` - section dédiée Mission Ops (à enrichir au fur et à mesure)
+- `refs/WORKFLOWS_LBP.md` - WF-008 (propagation d'impacts), futurs WF-MO-XXX à formaliser
 
 ---
 
@@ -303,4 +303,4 @@ Sous `Architecture data/Templates de bricks/` (Brain) — `TPL_BRICK_*`. Liste d
 
 ---
 
-> Dernière mise à jour : 30-04-2026 — création post-Phase B test Twin+MO DeepSecAI v0. Spécifications stabilisées sur la maquette Notion (51 fiches), prêtes pour portage Supabase ultérieur.
+> Dernière mise à jour : 30-04-2026 - création post-Phase B test Twin+MO DeepSecAI v0. Spécifications stabilisées sur la maquette Notion (51 fiches), prêtes pour portage Supabase ultérieur.

@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Specs Architecture Digital Twin LBP — Modèle conceptuel des 28 BDDs Twin"
+title: "Specs Architecture Digital Twin LBP - Modèle conceptuel des 28 BDDs Twin"
 doc_type: doc_meta
 code: "CHRT_SPECS_TWIN_LBP"
 
@@ -26,13 +26,13 @@ tags:
   - lbp
 ---
 
-# SPECS — Architecture Digital Twin LBP
+# SPECS - Architecture Digital Twin LBP
 
 > Référence canonique des **28 BDD** du Digital Twin v2 (22 officielles + 6 sandboxes).
-> Source doctrinale : `Panorama V2 — Macro-architecture, chaînes de valeur et logique analytique du Digital Twin LBP v3`.
+> Source doctrinale : `Panorama V2 - Macro-architecture, chaînes de valeur et logique analytique du Digital Twin LBP v3`.
 > **Note** : `Sources d'informations` n'est PAS une BDD Twin mais une BDD **Mission Ops** (comme `Meetings`, `Actions LBP`, `Bricks`). Le Panorama l'inclut dans son tableau maître parce qu'elle joue un rôle de satellite de traçabilité pour les objets Twin, mais son instance opérationnelle vit en Mission Ops.
 > Les schémas Notion détaillés (champs, propriétés, relations) vivent dans les **Manuels de BDD** (vault Architecture data). Ce fichier porte la vue d'ensemble structurante.
-> Dernière mise à jour : 24-04-2026 — retrait de Sources d'informations (Mission Ops)
+> Dernière mise à jour : 24-04-2026 - retrait de Sources d'informations (Mission Ops)
 
 ---
 
@@ -222,7 +222,7 @@ Cf. Panorama §12. Le Twin devient puissant quand on l'interroge par traversées
 Les schémas Notion complets (champs, relations, rollups, formules) sont portés par les **Manuels de BDD** dans le vault "Architecture data". Une fois les nouveaux manuels intégrés au vault, cette section listera les liens.
 
 - Source doctrinale complète : `Panorama V2 v3` (non encore intégré au vault)
-- **Doctrine détaillée Twin** (régimes de structuration des données, 15 chaînes de transformation détaillées, gouvernance Twin, doctrine merge/consolidation/promotion, critères sandbox→officiel) : `refs/DOCTRINE_TWIN_LBP.md` (v4.0 — refonte du Panorama V2 v3 du 22-04-2026, mise à jour 01-05-2026)
+- **Doctrine détaillée Twin** (régimes de structuration des données, 15 chaînes de transformation détaillées, gouvernance Twin, doctrine merge/consolidation/promotion, critères sandbox→officiel) : `refs/DOCTRINE_TWIN_LBP.md` (v4.0 - refonte du Panorama V2 v3 du 22-04-2026, mise à jour 01-05-2026)
 - Manuels de BDD : à intégrer dans `Architecture data/Manuels de BDD/Digital Twin/`
 - Règles gouvernant l'architecture : `refs/RULES_LBP.md` section 3
 - Décisions structurantes : `refs/DECISIONS_LBP.md` D-002 à D-009

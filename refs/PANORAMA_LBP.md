@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Panorama LBP — Macro-architecture de l'écosystème"
+title: "Panorama LBP - Macro-architecture de l'écosystème"
 doc_type: doc_meta
 code: "CHRT_PANORAMA_LBP"
 
@@ -25,16 +25,16 @@ tags:
   - lbp
 ---
 
-# PANORAMA LBP — Macro-architecture de l'écosystème
+# PANORAMA LBP - Macro-architecture de l'écosystème
 
-> **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
+> **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > **Doc d'entrée** : à lire en premier pour comprendre l'écosystème LBP. Vue macro des 3 ensembles, de leurs frontières, de leur stack technique et de leurs articulations.
 > Pour le **pourquoi** structurel des choix : `DOCTRINE_LBP.md`.
 > Pour le **détail** d'un domaine : `SPECS_ARCHITECTURE_<DOMAIN>_LBP.md`.
 > Pour les **règles atomiques** : `RULES_LBP.md` (R-XXX), `DECISIONS_LBP.md` (D-XXX), `WORKFLOWS_LBP.md` (WF-XXX).
 > **Public visé** : nouveau dev (Clément, futurs collaborateurs), consultants LBP, agents.
 > **Format** : ~250 lignes, lisible en 15 min.
-> Dernière mise à jour : 01-05-2026 — création post-bundle. Remplace le `Panorama V2 v3` du 22-04-2026 (obsolète).
+> Dernière mise à jour : 01-05-2026 - création post-bundle. Remplace le `Panorama V2 v3` du 22-04-2026 (obsolète).
 
 ---
 
@@ -69,7 +69,7 @@ tags:
 └───────────────────────────────────────────────────────────────────┘
 ```
 
-### 2.1 Brain — référentiel doctrinal LBP
+### 2.1 Brain - référentiel doctrinal LBP
 
 **Rôle** : porter la **gouvernance documentaire de LBP**. Il définit le vocabulaire (concepts, taxonomies), les méthodes (3P, etc.), les prompts, les templates de bricks, les agents, les outils, les manuels de BDD et les docs méta qui régissent l'ensemble.
 
@@ -83,7 +83,7 @@ tags:
 
 **Détail** → `SPECS_ARCHITECTURE_BRAIN_LBP.md`
 
-### 2.2 Digital Twin — modèle ontologique du client
+### 2.2 Digital Twin - modèle ontologique du client
 
 **Rôle** : représenter **une organisation cliente** sous forme d'objets ontologiques (Individus, Collectifs, Organisations, Postes, Actifs, Environnements, Événements, Processus, Pratiques, Principes, Capacités, etc.) reliés par des relations sémantiques. Le Twin permet de produire des lectures systémiques (5D, 3P, chaînes diagnostic→pilotage).
 
@@ -100,15 +100,15 @@ tags:
 
 **Détail** → `SPECS_ARCHITECTURE_TWIN_LBP.md`
 
-### 2.3 Mission Ops — gouvernance opérationnelle de la mission
+### 2.3 Mission Ops - gouvernance opérationnelle de la mission
 
 **Rôle** : tracer **ce qui se passe pendant une mission de conseil LBP** (sources collectées, meetings tenus, actions exécutées par le consultant LBP, livrables produits).
 
 **4 BDDs structurelles** :
-- `Sources d'informations` — pivot d'origine (entretiens, docs, exports), articule MO ↔ Twin
-- `Meetings` — trace des rendez-vous tenus
-- `Actions LBP` — backlog des actions du consultant LBP
-- `Bricks` — livrables documentaires produits (D-018 — pivot MO ↔ Twin)
+- `Sources d'informations` - pivot d'origine (entretiens, docs, exports), articule MO ↔ Twin
+- `Meetings` - trace des rendez-vous tenus
+- `Actions LBP` - backlog des actions du consultant LBP
+- `Bricks` - livrables documentaires produits (D-018 - pivot MO ↔ Twin)
 
 **Stack** : Supabase (cible D-023). Maquette Notion test validée Phase B.
 
@@ -200,39 +200,39 @@ LBP s'appuie sur 3 agents IA spécialisés avec des rôles strictement séparés
 
 Pour comprendre **pourquoi** l'écosystème est conçu comme ça, voir `DOCTRINE_LBP.md`. Vue express :
 
-1. **4 régimes de connaissance** (R-012) — preuve / qualification / consolidation / action
-2. **Isolation Brain ↔ Twin/MO** (D-019, D-021) — le Brain ne change pas pendant les missions
-3. **Agnosticisme backend** — les manuels survivent à Notion/Supabase
-4. **Sandboxes** (R-014) — sas d'exploration sans relations dures
-5. **Chaînes de transformation** (D-009) — paradigme de lecture du Twin
-6. **Bricks comme pivot** (D-018) — unité documentaire entre MO et Twin
+1. **4 régimes de connaissance** (R-012) - preuve / qualification / consolidation / action
+2. **Isolation Brain ↔ Twin/MO** (D-019, D-021) - le Brain ne change pas pendant les missions
+3. **Agnosticisme backend** - les manuels survivent à Notion/Supabase
+4. **Sandboxes** (R-014) - sas d'exploration sans relations dures
+5. **Chaînes de transformation** (D-009) - paradigme de lecture du Twin
+6. **Bricks comme pivot** (D-018) - unité documentaire entre MO et Twin
 7. **3 agents avec frontières** (D-021)
 8. **Propagation Markdown-first** (R-001 + R-041/042 + WF-008)
 9. **Hygiène d'écriture** (R-055/056/058/059)
 
 ---
 
-## 7. Le bundle de docs méta — comment naviguer
+## 7. Le bundle de docs méta - comment naviguer
 
 ### Pyramide à 4 niveaux
 
 ```
-NIVEAU 1 — Vue d'entrée (à lire en premier)
+NIVEAU 1 - Vue d'entrée (à lire en premier)
 └── PANORAMA_LBP.md                         ← TU ES ICI
 
-NIVEAU 2 — Doctrine et règles (pour comprendre)
+NIVEAU 2 - Doctrine et règles (pour comprendre)
 ├── DOCTRINE_LBP.md                         [doctrines transverses 3 ensembles]
-├── DOCTRINE_TWIN_LBP.md                    [doctrine détaillée Twin — régimes, chaînes, gouvernance]
+├── DOCTRINE_TWIN_LBP.md                    [doctrine détaillée Twin - régimes, chaînes, gouvernance]
 ├── RULES_LBP.md             (R-XXX)        [catalogue règles atomiques]
 ├── DECISIONS_LBP.md         (D-XXX)        [catalogue décisions architecturales]
 └── WORKFLOWS_LBP.md         (WF-XXX)       [catalogue workflows opérationnels]
 
-NIVEAU 3 — Spécifications par domaine (pour construire)
+NIVEAU 3 - Spécifications par domaine (pour construire)
 ├── SPECS_ARCHITECTURE_BRAIN_LBP.md         [modèle conceptuel 11 BDDs Brain]
 ├── SPECS_ARCHITECTURE_TWIN_LBP.md          [modèle conceptuel 28 BDDs Twin]
 ├── SPECS_ARCHITECTURE_MISSION_OPS_LBP.md   [modèle conceptuel 4 BDDs MO]
 
-NIVEAU 4 — Outils transverses (pour exécuter sans erreur)
+NIVEAU 4 - Outils transverses (pour exécuter sans erreur)
 ├── CODIFICATION_LBP.md                     [grammaire de tous les codes]
 └── PROPAGATION_RULES_LBP.md                [cheat sheet propagation]
 ```
@@ -287,16 +287,16 @@ NIVEAU 4 — Outils transverses (pour exécuter sans erreur)
 
 ## 10. Renvois
 
-- **`refs/DOCTRINE_LBP.md`** — pourquoi structurel des 9 doctrines transverses
-- **`refs/DOCTRINE_TWIN_LBP.md`** — doctrine détaillée Twin (régimes de structuration, 15 chaînes, gouvernance, merge/consolidation/promotion)
-- **`refs/SPECS_ARCHITECTURE_BRAIN_LBP.md`** — détail des 11 BDDs Brain
-- **`refs/SPECS_ARCHITECTURE_TWIN_LBP.md`** — détail des 28 BDDs Twin
-- **`refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md`** — détail des 4 BDDs MO
-- **`refs/RULES_LBP.md`** — catalogue règles R-XXX
-- **`refs/DECISIONS_LBP.md`** — catalogue décisions D-XXX
-- **`refs/WORKFLOWS_LBP.md`** — catalogue workflows WF-XXX
-- **`refs/CODIFICATION_LBP.md`** — grammaire des codes
-- **`refs/PROPAGATION_RULES_LBP.md`** — cheat sheet propagation
+- **`refs/DOCTRINE_LBP.md`** - pourquoi structurel des 9 doctrines transverses
+- **`refs/DOCTRINE_TWIN_LBP.md`** - doctrine détaillée Twin (régimes de structuration, 15 chaînes, gouvernance, merge/consolidation/promotion)
+- **`refs/SPECS_ARCHITECTURE_BRAIN_LBP.md`** - détail des 11 BDDs Brain
+- **`refs/SPECS_ARCHITECTURE_TWIN_LBP.md`** - détail des 28 BDDs Twin
+- **`refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md`** - détail des 4 BDDs MO
+- **`refs/RULES_LBP.md`** - catalogue règles R-XXX
+- **`refs/DECISIONS_LBP.md`** - catalogue décisions D-XXX
+- **`refs/WORKFLOWS_LBP.md`** - catalogue workflows WF-XXX
+- **`refs/CODIFICATION_LBP.md`** - grammaire des codes
+- **`refs/PROPAGATION_RULES_LBP.md`** - cheat sheet propagation
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Doctrine Digital Twin — Macro-architecture, chaînes de valeur et logique analytique"
+title: "Doctrine Digital Twin - Macro-architecture, chaînes de valeur et logique analytique"
 doc_type: doc_meta
 code: "CHRT_DOCTRINE_TWIN"
 
@@ -25,8 +25,8 @@ tags:
   - gouvernance_twin
 ---
 
-> **Scope** : 🟦 LBP — Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
-> **Historique** : ce doc est dérivé du *Panorama V2 v3* du 22-04-2026 (archivé sous `Architecture data\00 - Docs méta\Doctrines & playbooks\00 - archives\Panorama V2 — ... v3 (archivé v3 le 01-05-2026).md`). Il a été renommé `DOCTRINE_TWIN_LBP.md` et **mis à jour** au 01-05-2026 pour intégrer les évolutions doctrinales postérieures au 22-04 (D-019 Brain unifié, D-021 3 agents, D-022 frontmatters Twin/MO différenciés, D-023 MO co-égal + stack Notion/Supabase, R-054 codification universelle, R-055/056/058/059 hygiène d'écriture).
+> **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
+> **Historique** : ce doc est dérivé du *Panorama V2 v3* du 22-04-2026 (archivé sous `Architecture data\00 - Docs méta\Doctrines & playbooks\00 - archives\Panorama V2 - ... v3 (archivé v3 le 01-05-2026).md`). Il a été renommé `DOCTRINE_TWIN_LBP.md` et **mis à jour** au 01-05-2026 pour intégrer les évolutions doctrinales postérieures au 22-04 (D-019 Brain unifié, D-021 3 agents, D-022 frontmatters Twin/MO différenciés, D-023 MO co-égal + stack Notion/Supabase, R-054 codification universelle, R-055/056/058/059 hygiène d'écriture).
 > **Place dans le bundle** : doctrine **détaillée Twin** (vs `DOCTRINE_LBP.md` = doctrines **transverses** des 3 domaines). Pour la vue macro 3 ensembles voir `PANORAMA_LBP.md`. Pour les specs schématiques voir `SPECS_ARCHITECTURE_TWIN_LBP.md`.
 
 ---
@@ -297,7 +297,7 @@ Le Twin assume donc :
 
 # 4) Tableau maître canonique des BDD du Digital Twin
 
-> **Note d'actualisation 01-05-2026** : depuis D-023 (30-04-2026), `Sources d'informations` est officiellement reclassée comme **BDD Mission Ops** (avec `Meetings`, `Actions LBP`, `Bricks`), pas Twin. Elle reste **incluse dans ce tableau** parce qu'elle joue un rôle de **satellite de traçabilité transverse** pour les objets Twin (origine traçable des fiches Twin via la chaîne d'extraction directe — cf. C-018). Décompte officiel actuel : **28 BDDs Twin** (22 officielles + 6 sandboxes) + **4 BDDs Mission Ops** (dont Sources d'informations). Pour la spec Mission Ops voir `SPECS_ARCHITECTURE_MISSION_OPS_LBP.md`.
+> **Note d'actualisation 01-05-2026** : depuis D-023 (30-04-2026), `Sources d'informations` est officiellement reclassée comme **BDD Mission Ops** (avec `Meetings`, `Actions LBP`, `Bricks`), pas Twin. Elle reste **incluse dans ce tableau** parce qu'elle joue un rôle de **satellite de traçabilité transverse** pour les objets Twin (origine traçable des fiches Twin via la chaîne d'extraction directe - cf. C-018). Décompte officiel actuel : **28 BDDs Twin** (22 officielles + 6 sandboxes) + **4 BDDs Mission Ops** (dont Sources d'informations). Pour la spec Mission Ops voir `SPECS_ARCHITECTURE_MISSION_OPS_LBP.md`.
 
 ## 4.1 Tableau maître exhaustif des BDD
 
@@ -770,39 +770,39 @@ C’est la couche qui rend le Twin actionnable.
 **Légende**
 - `●` = fonction dominante
 - `○` = contribution importante mais secondaire
-- `—` = fonction non centrale
+- `-` = fonction non centrale
 
 | BDD | Stabiliser la preuve et le langage | Décrire le système | Capturer la matière brute | Qualifier avant consolidation | Expliquer le fonctionnement réel | Expliquer les tensions | Expliquer les aptitudes, les normes et les conditions d’effectivité | Piloter, transformer et mesurer |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `Sources d’informations` | ● | — | ○ | — | — | — | — | — |
-| `Glossaire spécifique entreprise` | ● | ○ | — | — | — | — | — | — |
-| `Journal des signaux` | ○ | — | ● | ○ | — | ● | — | — |
-| `Actions détectées` | — | ○ | ● | ○ | ○ | — | — | — |
-| `Enjeux` | — | — | ● | ○ | — | ● | — | ○ |
-| `Organisations` | — | ● | — | — | ○ | ○ | — | ○ |
-| `Relations inter-organisations` | — | ● | — | — | — | ○ | — | ○ |
-| `Collectifs` | — | ● | — | — | ○ | ○ | — | ○ |
-| `Individus` | — | ● | — | — | ○ | ○ | — | ○ |
-| `Postes` | — | ● | — | — | ○ | — | — | ○ |
-| `Actifs` | — | ● | — | — | ○ | ○ | ○ | — |
-| `Environnements` | — | ● | — | — | ○ | ● | ○ | — |
-| `Événements` | — | ● | — | — | ○ | ○ | — | ○ |
-| `Initiatives organisationnelles` | — | ○ | — | — | ○ | ○ | ○ | ● |
-| `Processus candidats` | — | — | — | ● | ○ | — | — | — |
-| `Processus` | — | ○ | — | — | ● | ○ | ○ | ○ |
-| `Pratiques organisationnelles` | — | ○ | — | — | ● | ○ | ● | ○ |
-| `Principes organisationnels` | — | — | — | — | ○ | ○ | ● | ○ |
-| `Capacités organisationnelles` | — | — | — | — | ○ | ○ | ● | ○ |
-| `Problématiques` | — | — | — | ○ | ○ | ● | ○ | ○ |
-| `OKR` | — | — | — | — | — | ○ | ○ | ● |
-| `Indicateurs` | — | — | — | — | ○ | ○ | ○ | ● |
-| `Modulateurs` | — | — | — | — | ○ | ○ | ● | ○ |
-| `Capacités métier candidates (sandbox)` | — | — | — | ● | — | ○ | ○ | — |
-| `OKR (sandbox)` | — | — | — | ● | — | ○ | ○ | ○ |
-| `Pratiques organisationnelles (sandbox)` | — | — | — | ● | ○ | ○ | ○ | — |
-| `Principes organisationnels (sandbox)` | — | — | — | ● | — | ○ | ○ | — |
-| `Problématiques (sandbox)` | — | — | — | ● | — | ○ | ○ | — |
-| `Processus candidats (sandbox)` | — | — | — | ● | ○ | — | — | — |
+| `Sources d’informations` | ● | - | ○ | - | - | - | - | - |
+| `Glossaire spécifique entreprise` | ● | ○ | - | - | - | - | - | - |
+| `Journal des signaux` | ○ | - | ● | ○ | - | ● | - | - |
+| `Actions détectées` | - | ○ | ● | ○ | ○ | - | - | - |
+| `Enjeux` | - | - | ● | ○ | - | ● | - | ○ |
+| `Organisations` | - | ● | - | - | ○ | ○ | - | ○ |
+| `Relations inter-organisations` | - | ● | - | - | - | ○ | - | ○ |
+| `Collectifs` | - | ● | - | - | ○ | ○ | - | ○ |
+| `Individus` | - | ● | - | - | ○ | ○ | - | ○ |
+| `Postes` | - | ● | - | - | ○ | - | - | ○ |
+| `Actifs` | - | ● | - | - | ○ | ○ | ○ | - |
+| `Environnements` | - | ● | - | - | ○ | ● | ○ | - |
+| `Événements` | - | ● | - | - | ○ | ○ | - | ○ |
+| `Initiatives organisationnelles` | - | ○ | - | - | ○ | ○ | ○ | ● |
+| `Processus candidats` | - | - | - | ● | ○ | - | - | - |
+| `Processus` | - | ○ | - | - | ● | ○ | ○ | ○ |
+| `Pratiques organisationnelles` | - | ○ | - | - | ● | ○ | ● | ○ |
+| `Principes organisationnels` | - | - | - | - | ○ | ○ | ● | ○ |
+| `Capacités organisationnelles` | - | - | - | - | ○ | ○ | ● | ○ |
+| `Problématiques` | - | - | - | ○ | ○ | ● | ○ | ○ |
+| `OKR` | - | - | - | - | - | ○ | ○ | ● |
+| `Indicateurs` | - | - | - | - | ○ | ○ | ○ | ● |
+| `Modulateurs` | - | - | - | - | ○ | ○ | ● | ○ |
+| `Capacités métier candidates (sandbox)` | - | - | - | ● | - | ○ | ○ | - |
+| `OKR (sandbox)` | - | - | - | ● | - | ○ | ○ | ○ |
+| `Pratiques organisationnelles (sandbox)` | - | - | - | ● | ○ | ○ | ○ | - |
+| `Principes organisationnels (sandbox)` | - | - | - | ● | - | ○ | ○ | - |
+| `Problématiques (sandbox)` | - | - | - | ● | - | ○ | ○ | - |
+| `Processus candidats (sandbox)` | - | - | - | ● | ○ | - | - | - |
 
 # 8) Les régimes de structuration des données
 
@@ -1071,7 +1071,7 @@ Elles ont une vraie utilité :
 
 Une BDD importante du Twin est généralement pensée comme un **empilement cohérent de couches**.
 
-### Couche 1 — Propriétés génériques
+### Couche 1 - Propriétés génériques
 Elle rend la fiche :
 - gouvernable,
 - traçable,
@@ -1079,18 +1079,18 @@ Elle rend la fiche :
 - fusionnable si besoin,
 - et audit-able.
 
-### Couche 2 — Relations + jumelles textes
+### Couche 2 - Relations + jumelles textes
 Elle relie l’objet aux autres objets du système, tout en conservant :
 - la formulation observée,
 - et un espace de consolidation progressive.
 
-### Couche 3 — Propriétés spécifiques
+### Couche 3 - Propriétés spécifiques
 Elle donne à la BDD son **pouvoir explicatif propre**.
 
-### Couche 4 — Couche 5D
+### Couche 4 - Couche 5D
 Elle rend l’objet traversable dans la matrice systémique.
 
-### Couche 5 — Couche calculée
+### Couche 5 - Couche calculée
 Elle produit :
 - des synthèses agrégées,
 - des états calculés,
@@ -1940,13 +1940,13 @@ La robustesse du Twin vient de l’articulation entre :
 
 Le Twin doit toujours être lu selon trois niveaux simultanés :
 
-### Niveau 1 — ce qui existe
+### Niveau 1 - ce qui existe
 Objets, acteurs, supports, contextes, temps.
 
-### Niveau 2 — ce qui se passe
+### Niveau 2 - ce qui se passe
 Actions, pratiques, processus, signaux, enjeux, transformations.
 
-### Niveau 3 — ce que cela signifie et ce qu’il faut en faire
+### Niveau 3 - ce que cela signifie et ce qu’il faut en faire
 Problématiques, capacités, principes, modulateurs, OKR, indicateurs.
 
 ## 14.4 Formule de synthèse
@@ -2004,6 +2004,6 @@ Ces évolutions concernent surtout le **Brain**, **Mission Ops** et la **stack t
 
 ---
 
-> Doctrine Twin v4.0 — mise à jour 01-05-2026 post-bundle. Pour l'historique antérieur voir `Architecture data\00 - Docs méta\Doctrines & playbooks\00 - archives\Panorama V2 — ... v3 (archivé v3 le 01-05-2026).md`.
+> Doctrine Twin v4.0 - mise à jour 01-05-2026 post-bundle. Pour l'historique antérieur voir `Architecture data\00 - Docs méta\Doctrines & playbooks\00 - archives\Panorama V2 - ... v3 (archivé v3 le 01-05-2026).md`.
 
 C’est une **machine de lecture systémique de l’organisation**.
