@@ -210,6 +210,22 @@
   - **Portée** : Transverse — script de génération/sync Notion.
   - **À formaliser** : documenter dans `WORKFLOWS_LBP.md` WF-XXX (à enrichir WF-017 ou créer un WF-018 dédié aux patterns DDL Notion).
 
+- [01-05-2026] **Templates dédiés par type de doc méta Brain (charte, panorama, doctrine, specs d'architecture, codification, propagation, etc.)**
+  - **Contexte** : Au moment de la création du bundle docs méta (11 docs `*_LBP.md`), aucun template dédié n'existait pour les types de docs méta Brain. Les 11 docs ont été produits manuellement avec frontmatter R-055 ad hoc (`code`, `version`, `template_code: "CHRT"`, `template_version`, `created_at`, `updated_at`, `status`, `scope`, `summary`, `purpose`, `tags`). Pour chaque type (panorama, doctrine, charte rédactionnelle, charte graphique, specs d'architecture, codification, règles de propagation, etc.) il faudrait un **template dédié** qui guide la production future et garantit la cohérence (frontmatter, structure narrative, sections obligatoires).
+  - **Portée potentielle** : Brain - templates d'instanciation (sous `00 - Docs méta/Templates d'instanciation/`).
+  - **Cibles probables** :
+    - `Template - Charte rédactionnelle.md`
+    - `Template - Charte graphique.md`
+    - `Template - Panorama.md`
+    - `Template - Doctrine.md`
+    - `Template - Specs d'architecture.md`
+    - `Template - Convention de codification.md`
+    - `Template - Règles de propagation.md`
+    - (à compléter selon les futurs docs méta envisagés)
+  - **Bloquant à lever avant formalisation** : décider du périmètre exact des templates ; arbitrer entre **un méta-template `CHRT`** générique (avec sections optionnelles selon le sous-type) ou **N templates dédiés** (un par type). À cogiter.
+  - **Lien avec D-020** : chaque template aura sa propre `template_version` qui sera tracée dans le frontmatter des instances.
+  - **Conséquence sur le bundle actuel** : les 11 docs *_LBP.md actuels ont été produits sans template dédié. Quand les templates seront créés, on **réactualisera les docs existants** au canon des templates (refactoring contrôlé, bump de leur `version` à `2.0`).
+
 ---
 
 ## Règles sorties du backlog (historique)
