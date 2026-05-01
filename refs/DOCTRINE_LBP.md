@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Doctrine de l'écosystème LBP"
+title: "Doctrine de l'écosystème LBP"
 doc_type: doc_meta
 code: "CHRT_DOCTRINE_LBP"
 

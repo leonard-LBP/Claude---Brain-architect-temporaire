@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Décisions architecturales LBP"
+title: "Décisions architecturales LBP"
 doc_type: doc_meta
 code: "CHRT_DECISIONS_LBP"
 

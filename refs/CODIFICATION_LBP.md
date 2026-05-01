@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Codification LBP"
+title: "Codification LBP"
 doc_type: doc_meta
 code: "CHRT_CODIFICATION_LBP"
 

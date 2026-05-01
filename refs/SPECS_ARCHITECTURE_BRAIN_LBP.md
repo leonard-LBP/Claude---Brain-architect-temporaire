@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Architecture du Brain LBP"
+title: "Architecture du Brain LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_BRAIN_LBP"
 

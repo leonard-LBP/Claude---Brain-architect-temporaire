@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Architecture du Digital Twin LBP"
+title: "Architecture du Digital Twin LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_TWIN_LBP"
 

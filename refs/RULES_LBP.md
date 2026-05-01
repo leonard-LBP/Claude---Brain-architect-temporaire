@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Règles intrinsèques LBP"
+title: "Règles intrinsèques LBP"
 doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 

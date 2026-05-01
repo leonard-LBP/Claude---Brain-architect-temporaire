@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Architecture de Mission Ops LBP"
+title: "Architecture de Mission Ops LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_MISSION_OPS_LBP"
 

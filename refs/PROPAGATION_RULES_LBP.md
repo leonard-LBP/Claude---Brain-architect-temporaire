@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Règles de propagation LBP"
+title: "Règles de propagation LBP"
 doc_type: doc_meta
 code: "CHRT_PROPAGATION_RULES_LBP"
 

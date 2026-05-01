@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Doctrine du Digital Twin LBP"
+title: "Doctrine du Digital Twin LBP"
 doc_type: doc_meta
 code: "CHRT_DOCTRINE_TWIN"
 

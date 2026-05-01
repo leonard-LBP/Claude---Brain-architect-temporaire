@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Panorama de l'écosystème LBP"
+title: "Panorama de l'écosystème LBP"
 doc_type: doc_meta
 code: "CHRT_PANORAMA_LBP"
 

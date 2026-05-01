@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-"Workflows opérationnels LBP"
+title: "Workflows opérationnels LBP"
 doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
