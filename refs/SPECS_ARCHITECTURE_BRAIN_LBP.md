@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Specs Architecture Brain LBP - Modèle conceptuel des 11 BDDs Brain"
+"Architecture du Brain LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_BRAIN_LBP"
 
@@ -25,7 +25,7 @@ tags:
   - lbp
 ---
 
-# SPECS - Architecture Brain LBP
+# Architecture du Brain LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Référence canonique des **11 BDDs structurelles** du domaine Brain, partagées et stables (pas instanciées par mission).

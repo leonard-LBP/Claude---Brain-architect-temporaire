@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Workflows LBP - Catalogue des workflows opérationnels"
+"Workflows opérationnels LBP"
 doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
@@ -27,7 +27,7 @@ tags:
   - lbp
 ---
 
-# Workflows LBP - Brain / Twin / Mission Ops
+# Workflows opérationnels LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème.
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.

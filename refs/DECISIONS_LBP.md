@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Décisions architecturales LBP - Catalogue des choix structurants datés"
+"Décisions architecturales LBP"
 doc_type: doc_meta
 code: "CHRT_DECISIONS_LBP"
 
@@ -27,7 +27,7 @@ tags:
   - lbp
 ---
 
-# Décisions architecturales
+# Décisions architecturales LBP
 
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.

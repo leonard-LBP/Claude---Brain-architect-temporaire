@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Doctrine LBP - Pourquoi l'écosystème est conçu comme ça"
+"Doctrine de l'écosystème LBP"
 doc_type: doc_meta
 code: "CHRT_DOCTRINE_LBP"
 
@@ -26,7 +26,7 @@ tags:
   - hygiene_ecriture
 ---
 
-# DOCTRINE LBP - Pourquoi l'écosystème est conçu comme ça
+# Doctrine de l'écosystème LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Synthèse narrative des **paradigmes structurants** qui sous-tendent l'écosystème LBP. Ce doc explique le **pourquoi**, là où `RULES_LBP.md` énumère les règles atomiques (R-XXX) et `DECISIONS_LBP.md` archive les choix datés (D-XXX).

@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Codification LBP - Grammaire des codes (Brain + Twin + Mission Ops + IDs systèmes)"
+"Codification LBP"
 doc_type: doc_meta
 code: "CHRT_CODIFICATION_LBP"
 
@@ -28,7 +28,7 @@ tags:
   - lbp
 ---
 
-# CODIFICATION - Grammaire des codes LBP
+# Codification LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Référence canonique de **toutes les codifications** utilisées dans LBP : objets Brain, objets Twin, occurrences Mission Ops, taxonomies, IDs systèmes (R-XXX / D-XXX / WF-XXX / C-XXX).

@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Specs Architecture Mission Ops LBP - Modèle conceptuel des 4 BDDs MO"
+"Architecture de Mission Ops LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_MISSION_OPS_LBP"
 
@@ -27,7 +27,7 @@ tags:
   - lbp
 ---
 
-# SPECS - Architecture Mission Ops LBP
+# Architecture de Mission Ops LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > Référence canonique des **4 BDDs structurelles** du domaine Mission Ops, instancié à chaque mission consultant.

@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Règles LBP - Catalogue des règles intrinsèques de l'écosystème"
+"Règles intrinsèques LBP"
 doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
@@ -26,7 +26,7 @@ tags:
   - lbp
 ---
 
-# Règles de gestion du Brain et du Digital Twin
+# Règles intrinsèques LBP
 
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
@@ -1279,6 +1279,25 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ `Panorama LBP - Macro-architecture` (cadratin)
   - ❌ `R-061 - Préférer` (cadratin)
 - **Découverte** : 01-05-2026, Leonard, lors de la création de la 1ère fiche Notion du bundle docs méta (`CHRT_PANORAMA_LBP`) - confirmation explicite « on n'utilise plus de tirets `-`, on utilise `-` à la place ».
+
+#### R-062 : Naming des fiches Docs méta LBP - éviter les noms ambigus
+
+- **Portée** : Brain - BDD `Docs méta LBP` (et par extension toute BDD Brain qui accueille des fiches de typologie hétérogène : Méthodes LBP, Templates de Bricks, Outils externes, Agents LBP, Logic blocks, où le nom doit rester univoque même quand la BDD se peuple).
+- **Statut** : Actif
+- **Why** : La BDD `Docs méta LBP` accueille dans le temps de nombreuses doctrines (chartes graphiques, chartes rédactionnelles, conventions de nommage, règles de modélisation, workflows de production, politiques de confidentialité, etc.). Si on nomme une fiche `Règles LBP` ou `Doctrine LBP` sans qualificatif, elle devient ambiguë dès qu'une autre fiche thématiquement proche apparaît (ex. `Règles graphiques LBP`, `Règles de confidentialité LBP`). Les noms ambigus dégradent le routage agent et la recherche humaine.
+- **How to apply** : Le `Nom canonique` d'une fiche Docs méta (et plus largement Brain Motor) doit rester **univoque par construction**, en intégrant un qualificatif précisant la spécificité du contenu. Pattern recommandé : `<Nom + qualificatif précisant la spécificité> LBP`.
+  - Si le nom seul est déjà univoque (ex. `Codification LBP`, `Panorama de l'écosystème LBP`) : pas besoin de qualificatif supplémentaire.
+  - Si le nom seul est trop générique (ex. `Règles LBP`, `Doctrine LBP`, `Workflows LBP`) : ajouter un qualificatif (ex. `Règles intrinsèques LBP`, `Doctrine de l'écosystème LBP`, `Workflows opérationnels LBP`).
+  - Si le nom seul est ambigu sur le périmètre : préciser le domaine (ex. `Architecture du Brain LBP`, `Doctrine du Digital Twin LBP`).
+- **Articulation avec la Famille (Doc méta)** : la Famille (taxo `META.FAMILY`) **typifie** la fiche (Charts / Naming conventions / Workflows playbooks / Data model rules / etc.). Le `Nom canonique` **précise la spécificité** dans cette famille. Les deux jouent ensemble pour lever toute ambiguïté.
+- **Exemples** :
+  - ✅ `Règles intrinsèques LBP` (Famille : Data model rules) - distinct des futures règles graphiques ou de confidentialité
+  - ✅ `Doctrine du Digital Twin LBP` (Famille : Data model rules) - périmètre Twin clair
+  - ✅ `Architecture du Brain LBP` (Famille : Data model rules) - périmètre Brain clair
+  - ❌ `Règles LBP` - ambigu (règles de quoi ?)
+  - ❌ `Doctrine LBP` - ambigu (toute fiche Docs méta est une doctrine selon le manuel)
+- **Conséquence si violation** : confusion au lookup (humain ou agent), risque de doublons silencieux quand de nouvelles fiches arrivent.
+- **Découverte** : 01-05-2026, Leonard, lors du naming du bundle docs méta initial - anticipation de l'arrivée future de chartes graphiques / rédactionnelles / etc. dans la BDD `Docs méta LBP`.
 
 ---
 

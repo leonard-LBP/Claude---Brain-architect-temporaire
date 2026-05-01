@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Specs Architecture Digital Twin LBP - Modèle conceptuel des 28 BDDs Twin"
+"Architecture du Digital Twin LBP"
 doc_type: doc_meta
 code: "CHRT_SPECS_TWIN_LBP"
 
@@ -27,7 +27,7 @@ tags:
   - lbp
 ---
 
-# SPECS - Architecture Digital Twin LBP
+# Architecture du Digital Twin LBP
 
 > Référence canonique des **28 BDD** du Digital Twin v2 (22 officielles + 6 sandboxes).
 > Source doctrinale : `Panorama V2 - Macro-architecture, chaînes de valeur et logique analytique du Digital Twin LBP v3`.

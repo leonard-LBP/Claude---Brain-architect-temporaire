@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Doctrine Digital Twin - Macro-architecture, chaînes de valeur et logique analytique"
+"Doctrine du Digital Twin LBP"
 doc_type: doc_meta
 code: "CHRT_DOCTRINE_TWIN"
 
@@ -25,6 +25,8 @@ tags:
   - chaines_de_transformation
   - gouvernance_twin
 ---
+
+# Doctrine du Digital Twin LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > **Historique** : ce doc est dérivé du *Panorama V2 v3* du 22-04-2026 (archivé sous `Architecture data\00 - Docs méta\Doctrines & playbooks\00 - archives\Panorama V2 - ... v3 (archivé v3 le 01-05-2026).md`). Il a été renommé `DOCTRINE_TWIN_LBP.md` et **mis à jour** au 01-05-2026 pour intégrer les évolutions doctrinales postérieures au 22-04 (D-019 Brain unifié, D-021 3 agents, D-022 frontmatters Twin/MO différenciés, D-023 MO co-égal + stack Notion/Supabase, R-054 codification universelle, R-055/056/058/059 hygiène d'écriture).

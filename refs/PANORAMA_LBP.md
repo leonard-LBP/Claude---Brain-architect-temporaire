@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Panorama LBP - Macro-architecture de l'écosystème"
+"Panorama de l'écosystème LBP"
 doc_type: doc_meta
 code: "CHRT_PANORAMA_LBP"
 
@@ -26,7 +26,7 @@ tags:
   - lbp
 ---
 
-# PANORAMA LBP - Macro-architecture de l'écosystème
+# Panorama de l'écosystème LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > **Doc d'entrée** : à lire en premier pour comprendre l'écosystème LBP. Vue macro des 3 ensembles, de leurs frontières, de leur stack technique et de leurs articulations.

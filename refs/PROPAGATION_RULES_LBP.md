@@ -1,6 +1,6 @@
 ---
 # === Identité ===
-title: "Propagation Rules LBP - Cheat sheet de propagation des modifications"
+"Règles de propagation LBP"
 doc_type: doc_meta
 code: "CHRT_PROPAGATION_RULES_LBP"
 
@@ -27,7 +27,7 @@ tags:
   - lbp
 ---
 
-# PROPAGATION RULES - Cheat sheet de propagation des modifications LBP
+# Règles de propagation LBP
 
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta` du Brain).
 > **Format** : cheat sheet 1-pager actionnable. Pour le détail procédural complet en 7 phases, voir `WORKFLOWS_LBP.md` → **WF-008**.
