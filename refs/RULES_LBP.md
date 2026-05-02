@@ -5,11 +5,11 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.0"
+version: "1.1"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
-updated_at: "01-05-2026"
+updated_at: "02-05-2026"
 status: "Validé"
 scope: "LBP"
 
@@ -31,7 +31,7 @@ tags:
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 29-04-2026 - R-060 (hygiène d'écriture des champs `summary` et `purpose` du frontmatter Brain : `summary` = description neutre du quoi, `purpose` = verbe à l'infinitif décrivant la fonction ; lisible humain ET agent, formulation neutre sur le consommateur, anti-patterns « aider un agent à » proscrits). Découverte lors de la rédaction des 10 purpose taxos canoniques de référence (Phase 0a).
+> Dernière mise à jour : 02-05-2026 - R-063 (politique de bump version pour les docs méta indexés dans BDD `Docs méta LBP` : patch 1.X→1.X+1 pour ajout d'une entrée atomique R/D/WF/C, minor 1.X→2.0 pour refonte d'une section, pas de bump pour typo). Articulation avec WF-008 Phase 2 (ligne « Doc méta indexé »). Découverte sur arbitrage D1/D3 architecture docs méta (vault devenu SoT unique).
 
 ---
 
@@ -1298,6 +1298,24 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ `Doctrine LBP` - ambigu (toute fiche Docs méta est une doctrine selon le manuel)
 - **Conséquence si violation** : confusion au lookup (humain ou agent), risque de doublons silencieux quand de nouvelles fiches arrivent.
 - **Découverte** : 01-05-2026, Leonard, lors du naming du bundle docs méta initial - anticipation de l'arrivée future de chartes graphiques / rédactionnelles / etc. dans la BDD `Docs méta LBP`.
+
+#### R-063 : Politique de bump version pour les docs méta indexés dans BDD `Docs méta LBP`
+
+- **Portée** : Brain - tous les docs méta indexés dans BDD `Docs méta LBP` (RULES_LBP, DECISIONS_LBP, PANORAMA_LBP, DOCTRINE_LBP, DOCTRINE_TWIN_LBP, WORKFLOWS_LBP, SPECS_ARCHITECTURE_*_LBP, CODIFICATION_LBP, PROPAGATION_RULES_LBP, et tout futur doc méta indexé).
+- **Statut** : Actif
+- **Why** : Les docs méta indexés évoluent en continu (capture de R-XXX, D-XXX, WF-XXX, C-XXX, refonte de sections). Sans politique de bump claire, soit (a) la version reste figée à 1.0 indéfiniment et perd toute valeur d'audit, soit (b) elle est bumpée à chaque virgule et le champ `Version du document` côté Notion devient un signal bruité. R-063 codifie un seuil de granularité.
+- **How to apply** : suivre R-056 (format `X.Y`) avec les paliers suivants :
+  - **Patch (1.0 → 1.1, 1.1 → 1.2, etc.)** : ajout d'une nouvelle entrée atomique (R-XXX, D-XXX, WF-XXX, C-XXX) sans refonte. Reformulation mineure d'une entrée existante. Mise à jour d'un exemple, d'une découverte, d'une articulation.
+  - **Minor (1.X → 2.0, 2.X → 3.0, etc.)** : refonte d'une section entière. Ajout/suppression d'une section structurante. Changement de doctrine sur un sujet déjà traité.
+  - **Pas de bump** : typo, correction orthographique, ajustement de mise en forme sans impact sémantique.
+- **À chaque bump** : (i) modifier `version` dans le frontmatter ; (ii) modifier `updated_at` à la date du jour ; (iii) propager à la fiche Notion `Docs méta LBP` correspondante (`Version du document`, `updated_at`) ; (iv) rafraîchir le miroir `refs/<DOC>_LBP.md` du repo collab. Cf. WF-008 Phase 2 ligne « Doc méta indexé ».
+- **Articulation** : R-001 (Markdown SoT) + R-029 (indexation Notion) + R-056 (format `X.Y`) + WF-008 (propagation).
+- **Exemples** :
+  - ✅ Capture de R-063 dans RULES_LBP : 1.0 → 1.1
+  - ✅ Extension WF-008 Phase 2 (ajout ligne « Doc méta indexé ») dans WORKFLOWS_LBP : 1.0 → 1.1
+  - ✅ Refonte complète de la section « Cas particuliers » de WF-008 : 1.X → 2.0
+  - ❌ Correction d'une coquille « lex » → « les » : pas de bump
+- **Découverte** : 02-05-2026, arbitrage Leonard sur D1/D3 architecture des docs méta : besoin de codifier le critère de bump après que (a) le vault Architecture data est devenu source de vérité unique pour les docs méta (en application de R-001), (b) la fiche Notion `Docs méta LBP` doit refléter les évolutions des docs sous-jacents.
 
 ---
 

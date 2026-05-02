@@ -5,11 +5,11 @@ doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
 # === Méta-gouvernance ===
-version: "1.0"
+version: "1.1"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
-updated_at: "01-05-2026"
+updated_at: "02-05-2026"
 status: "Validé"
 scope: "LBP"
 
@@ -33,7 +33,7 @@ tags:
 > Ce fichier recense les workflows opérationnels intrinsèques à l'écosystème LBP (Brain, Digital Twin, Mission Ops). Il a vocation à être consommé par les agents et humains LBP (consultants, twin architect, brain architect) pour conduire des opérations standardisées sur l'écosystème.
 > Les workflows propres à notre collaboration Claude (démarrage de session, etc.) sont dans `SESSION_WORKFLOWS.md`.
 > Chaque workflow a un ID stable pour référence.
-> Dernière mise à jour : 30-04-2026 - formalisation WF-008 (propagation d'impacts après modification).
+> Dernière mise à jour : 02-05-2026 - extension WF-008 Phase 2 : ajout ligne « Doc méta indexé » dans la table des dérivés (cartographie + tableau) pour expliciter la propagation vers la fiche Notion `Docs méta LBP` + miroir `refs/` du repo collab. Articulation R-063 (politique de bump version pour docs méta indexés).
 
 ---
 
@@ -208,7 +208,9 @@ L'écosystème LBP est constitué de docs Markdown qui se citent et se propagent
         │
         ├── Règle R-XXX (RULES_LBP) ─→ Docs concernés (manuels, WR-RD, templates) si la règle change un format
         │
-        └── Décision D-XXX (DECISIONS_LBP) ─→ Mise à jour des règles R impactées + manuels concernés + ECOSYSTEM-STATE
+        ├── Décision D-XXX (DECISIONS_LBP) ─→ Mise à jour des règles R impactées + manuels concernés + ECOSYSTEM-STATE
+        │
+        └── Doc méta indexé (RULES_LBP, DOCTRINE_LBP, WORKFLOWS_LBP, etc.) ─→ Fiche Notion `Docs méta LBP` (version, updated_at, statut) + miroir refs/ du repo collab
 ```
 
 ### Étapes (workflow générique en 7 phases)
@@ -237,6 +239,7 @@ Selon le type de doc modifié, lister les dérivés à mettre à jour :
 | **Règle R-XXX** (création / modification) | RULES_LBP.md + ECOSYSTEM-STATE + docs concernés si format-impactant | R-001, C-007 |
 | **Décision D-XXX** | DECISIONS_LBP.md + RULES_LBP si dérivation R + ECOSYSTEM-STATE | R-001, C-007 |
 | **Convention session C-XXX** | CLAUDE.md + ECOSYSTEM-STATE | C-006 |
+| **Doc méta indexé** dans BDD `Docs méta LBP` (RULES_LBP, DECISIONS_LBP, PANORAMA_LBP, DOCTRINE_LBP, DOCTRINE_TWIN_LBP, WORKFLOWS_LBP, SPECS_ARCHITECTURE_*_LBP, CODIFICATION_LBP, PROPAGATION_RULES_LBP, etc.) | (a) Bumper `version` + `updated_at` du frontmatter Markdown selon R-063 ; (b) Fiche Notion `Docs méta LBP` correspondante : `Version du document`, `updated_at`, `Statut de l'objet`, `Lien doc méta (source)` ; (c) Miroir `refs/<DOC>_LBP.md` du repo collab `Claude - Brain architect temporaire` (copie 1:1 du vault) | R-001, R-029, R-063, D-020 |
 
 #### Phase 3 - Propager **dans l'ordre strict** des dérivés
 
