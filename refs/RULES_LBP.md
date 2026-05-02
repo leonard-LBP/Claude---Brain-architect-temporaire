@@ -5,11 +5,11 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.1"
+version: "1.2"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
-updated_at: "02-05-2026"
+updated_at: "03-05-2026"
 status: "Validé"
 scope: "LBP"
 
@@ -31,7 +31,7 @@ tags:
 > Ce fichier recense les règles **intrinsèques à l'écosystème LBP** (Brain + Twin + Mission Ops).
 > Les règles contextuelles à notre collaboration (comportement de Claude, outillage) sont dans `CLAUDE.md` (IDs `C-XXX`).
 > Chaque règle a un ID stable (`R-XXX`) qui ne change jamais, même si la règle déménage de section.
-> Dernière mise à jour : 02-05-2026 - R-063 (politique de bump version pour les docs méta indexés dans BDD `Docs méta LBP` : patch 1.X→1.X+1 pour ajout d'une entrée atomique R/D/WF/C, minor 1.X→2.0 pour refonte d'une section, pas de bump pour typo). Articulation avec WF-008 Phase 2 (ligne « Doc méta indexé »). Découverte sur arbitrage D1/D3 architecture docs méta (vault devenu SoT unique).
+> Dernière mise à jour : 03-05-2026 - section 5.8 « Architecture des docs méta du Brain LBP » créée avec 3 nouvelles règles (Phase 1.0 du chantier d'architecture) : R-064 (naming des docs méta : filename humain identique au title, code `META_<TOKEN>_<SCOPE>`, scope `_LBP`/`_BRAIN`/`_TWIN`/`_MO`), R-065 (définition opérationnelle « doc méta gouverne plusieurs objets/BDDs/familles d'artefacts/workflows »), R-066 (propriétaire canonique unique : 1 information structurante = 1 propriétaire, autres docs citent via wikilinks). Articulation D-024/D-025/D-026 capturées le même jour dans DECISIONS_LBP.
 
 ---
 
@@ -1316,6 +1316,77 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ✅ Refonte complète de la section « Cas particuliers » de WF-008 : 1.X → 2.0
   - ❌ Correction d'une coquille « lex » → « les » : pas de bump
 - **Découverte** : 02-05-2026, arbitrage Leonard sur D1/D3 architecture des docs méta : besoin de codifier le critère de bump après que (a) le vault Architecture data est devenu source de vérité unique pour les docs méta (en application de R-001), (b) la fiche Notion `Docs méta LBP` doit refléter les évolutions des docs sous-jacents.
+
+### 5.8 Architecture des docs méta du Brain LBP
+
+#### R-064 : Naming des docs méta indexés (filename humain + code `META_*` + scope explicite)
+
+- **Portée** : Brain — tous les docs méta indexés dans BDD `Docs méta LBP`.
+- **Statut** : Actif
+- **Why** : Lever toute ambiguïté visuelle entre code (forme programmatique pour audits/scripts) et nom canonique (forme humaine pour navigation et lecture). Sans règle stricte, on tombe vite dans des asymétries (filename `DOC_MAP_META_LBP.md` vs title « Constitution des docs méta - LBP » vs Notion « Docs map ») qui dégradent la maintenabilité et l'agent-friendliness.
+- **How to apply** : un doc méta indexé respecte 3 niveaux distincts mais corrélés :
+  1. **Filename** = strictement identique au `title:` du frontmatter = strictement identique au `Nom canonique` côté Notion. Forme **humaine** : `<Type lisible> - <Scope>.md`. Exemples : `Constitution des docs méta - LBP.md`, `Cadre - Twin.md`, `Quality control - Brain.md`. **Aucun code dans le filename.**
+  2. **Code** (frontmatter `code:` + Notion `Code unique`) : forme **programmatique** au format `META_<TOKEN>_<SCOPE>`. Préfixe `META_` obligatoire (cf. D-024, remplace l'historique `CHRT_`). `<TOKEN>` en MAJUSCULES `[A-Z0-9_]+`. `<SCOPE>` au choix selon le périmètre (cf. point 3).
+  3. **Scope** dans le code (suffix obligatoire) :
+     - `_LBP` si le doc est **transverse** (concerne Brain + Twin + Mission Ops + écosystème global). Exemples : `META_RULES_LBP`, `META_PANORAMA_LBP`, `META_CODIFICATION_LBP`.
+     - `_BRAIN` / `_TWIN` / `_MO` si le doc concerne un **domaine spécifique**. Exemples : `META_CADRE_TWIN`, `META_QC_BRAIN`, `META_SPECS_ARCHITECTURE_MO`.
+     - **Jamais de doublon `_LBP` + scope domaine** (ex. `META_CADRE_TWIN_LBP` est interdit — on choisit l'un ou l'autre).
+- **Aliases (frontmatter)** : tout doc méta susceptible d'être cité sous plusieurs formes ou renommé doit déclarer ses `aliases:` (ancien nom, variantes courantes, code historique). Cohérent avec C-024 (résilience au rename via Obsidian UI).
+- **Articulation** : R-052 (apostrophes typographiques), R-053 (archivage si rename de code), R-054 (codification), R-061 (tirets simples), R-062 (naming univoque), R-063 (bump version), C-024 (wikilinks + aliases), D-024 (préfixe `META_`).
+- **Exemples** :
+  - ✅ Filename `Cadre - Twin.md`, code `META_CADRE_TWIN`, scope `_TWIN`
+  - ✅ Filename `Règles intrinsèques - LBP.md`, code `META_RULES_LBP`, scope `_LBP` (transverse)
+  - ✅ Filename `Quality control - Brain.md`, code `META_QC_BRAIN`, scope `_BRAIN`
+  - ❌ Filename `META_CADRE_TWIN.md` (code dans le filename — interdit)
+  - ❌ Filename `Cadre Twin.md` (manque le séparateur tiret-espace)
+  - ❌ Code `META_CADRE_TWIN_LBP` (doublon scope)
+  - ❌ Code `CHRT_CADRE_TWIN` (préfixe historique, à migrer en Phase 4)
+- **Conséquence si violation** : asymétrie entre filename / title / Notion → confusion humaine, casse les audits programmatiques qui s'appuient sur le filename ou le code, dégrade la lisibilité du file explorer Obsidian.
+- **Découverte** : 03-05-2026, Phase 1.0 du chantier d'architecture des docs méta. Leonard a flaggé la divergence filename `DOC_MAP_META_LBP.md` vs title « Constitution des docs méta - LBP » sur le premier doc créé selon la nouvelle convention.
+
+#### R-065 : Définition opérationnelle d'un doc méta — frontière « gouverne plusieurs objets »
+
+- **Portée** : Brain — décision d'indexation dans BDD `Docs méta LBP` ou ailleurs.
+- **Statut** : Actif
+- **Why** : Sans définition opérationnelle stricte, la BDD `Docs méta LBP` devient un « grenier à docs importants » et perd son rôle de **plan de contrôle** (cf. `[[Constitution des docs méta - LBP]]` §1). Besoin d'un critère de tri actionnable en 5 secondes pour tout nouveau doc.
+- **How to apply** : appliquer la règle frontière suivante :
+  > **Un doc est méta s'il gouverne plusieurs objets, plusieurs BDD, plusieurs familles d'artefacts ou plusieurs workflows.**
+  > **Un doc n'est PAS méta s'il décrit un objet, une BDD, une taxonomie, un prompt, une méthode ou un template spécifique.**
+- **Conséquence pratique** : tout nouveau doc candidat à `Docs méta LBP` doit passer ce filtre AVANT indexation. Si le doc gouverne **un seul** objet/BDD/taxo, il vit dans la BDD dédiée à cet objet (Manuels de BDD, Registre des taxonomies, Notes de Concept, Méthodes, Prompts, Agents, Outils externes, Logic blocks, Templates de Bricks, Templates méta Brain).
+- **Cas limites documentés dans `[[Constitution des docs méta - LBP]]` §2.3** :
+  - Charte spécifique à une mission client → **n'est PAS un doc méta LBP** (vit dans Twin/MO de la mission, zero contamination D-007).
+  - Doc qui mélange plusieurs fonctions à parts égales → signal de redécoupage (split en plusieurs docs, cf. R-066).
+- **Articulation** : R-001 (Markdown SoT), R-012 (séparation des régimes), R-066 (propriétaire canonique), D-007 (zero contamination), D-026 (BDD Templates méta Brain séparée), C-018 (régimes différents).
+- **Exemples** :
+  - ✅ `Workflows opérationnels - LBP` → gouverne tous les workflows de l'écosystème → doc méta
+  - ✅ `Codification - LBP` → gouverne la grammaire des codes pour tous les objets Brain → doc méta
+  - ❌ `Manuel de BDD - Glossaire LBP` → décrit UNE BDD spécifique → vit dans `Manuels de BDD`, pas dans `Docs méta LBP`
+  - ❌ `Concept - Capacité organisationnelle` → décrit UN concept du glossaire → vit dans `Notes de Concept LBP`
+  - ❌ `Template - Note de concept v2.0` → moule pour instancier UN type d'objet → vit dans `Templates méta Brain` (Phase 2)
+- **Découverte** : 03-05-2026, Phase 1.0 du chantier d'architecture des docs méta. Inspirée par la table « va dans Docs méta vs va ailleurs » de la Constitution §2.2.
+
+#### R-066 : Propriétaire canonique unique (anti-doublon)
+
+- **Portée** : Transverse — toute information structurante de l'écosystème LBP (règles, décisions, codes, valeurs de taxonomies, champs de BDD, workflows de propagation, etc.).
+- **Statut** : Actif
+- **Why** : Sans règle de propriétaire canonique, la même information se retrouve à plusieurs endroits (ex. liste des 11 BDD Brain dupliquée dans Panorama + Architecture Brain + manuels), créant des asymétries silencieuses lors des modifications. La cohérence devient impossible à maintenir, et les agents lisent des versions divergentes selon le doc consulté.
+- **How to apply** : appliquer la règle suivante :
+  > **Une information structurante a un seul propriétaire canonique. Tous les autres docs peuvent la résumer ou la citer, mais doivent pointer vers le propriétaire — jamais la redéfinir.**
+- **Mécanique technique** :
+  1. **Identifier le propriétaire canonique** de chaque information structurante (cf. table `[[Constitution des docs méta - LBP]]` §5.2).
+  2. **Renvois via wikilinks `[[Doc cible]]`** (cf. C-024) — lisibles humain ET agent, résilients au rename via Obsidian UI.
+  3. **Pas de transclusion `![[Doc#Section]]` dans les docs canoniques** (cf. C-023) — la transclusion est invisible aux agents.
+  4. **Backlinks Obsidian natifs** (cf. C-025) — la lecture inverse est calculée automatiquement, sans déclaration côté cible.
+- **Conséquence pratique** : avant de copier une information dans un doc, se poser la question « qui en est le propriétaire canonique ? ». Si l'information existe ailleurs, **ne pas la dupliquer** : la résumer en 1-3 lignes + pointer vers le propriétaire via wikilink.
+- **Articulation** : R-001 (Markdown SoT), R-041 (propagation Manuel ↔ WR-RD descendante), R-042 (égalité mot pour mot), C-023 (pas de transclusion dans canoniques), C-024 (pattern wikilinks), C-025 (backlinks bidirectionnels), WF-008 (propagation d'impacts).
+- **Exemples (cf. Constitution §5.2 pour la table complète)** :
+  - ✅ Liste des 11 BDDs Brain : propriétaire = `[[Architecture - Brain]]`. Panorama résume, manuels détaillent.
+  - ✅ Champs exacts d'une BDD : propriétaire = manuel de BDD. Specs architecture **ne reproduit pas** le DDL.
+  - ✅ Code d'un objet Brain : propriétaire = `[[Codification - LBP]]` + frontmatter du doc. Les autres docs **citent** le code.
+  - ❌ Recopier la liste des 11 BDDs dans Panorama + Architecture + Cadre + chaque manuel → asymétrie garantie au premier ajout/suppression.
+  - ❌ Reproduire les valeurs d'une taxo dans un manuel qui la consomme → la taxo doit rester source unique.
+- **Conséquence si violation** : asymétries silencieuses, désync entre docs, perte de fiabilité de l'écosystème.
+- **Découverte** : 03-05-2026, Phase 1.0 du chantier d'architecture des docs méta. Inspirée par ChatGPT §6 (réponse sur l'architecture des docs méta) et formalisée dans `[[Constitution des docs méta - LBP]]` §5.
 
 ---
 

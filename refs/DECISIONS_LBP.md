@@ -5,16 +5,16 @@ doc_type: doc_meta
 code: "CHRT_DECISIONS_LBP"
 
 # === Méta-gouvernance ===
-version: "1.0"
+version: "1.1"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
-updated_at: "01-05-2026"
+updated_at: "03-05-2026"
 status: "Validé"
 scope: "LBP"
 
 # === Spec d'usage ===
-summary: "Catalogue chronologique des 23 décisions architecturales (D-XXX) qui contextualisent l'écosystème LBP. Format standard par décision : Date / Statut / Portée / Contexte / Options envisagées / Choix retenu / Conséquences / Règles associées."
+summary: "Catalogue chronologique des 26 décisions architecturales (D-XXX) qui contextualisent l'écosystème LBP. Format standard par décision : Date / Statut / Portée / Contexte / Options envisagées / Choix retenu / Conséquences / Règles associées."
 purpose: "Référence canonique pour comprendre POURQUOI tel choix architectural a été fait. Chaque D-XXX peut générer une ou plusieurs R-XXX (RULES_LBP) ou WF-XXX (WORKFLOWS_LBP)."
 tags:
   - doc_meta
@@ -32,7 +32,7 @@ tags:
 > Ce fichier trace les choix structurants qui ne sont pas des règles à appliquer, mais des décisions qui contextualisent l'écosystème.
 > Chaque décision a un ID stable (D-XXX) et documente le *pourquoi* du choix, pas juste le *quoi*.
 > Utile pour comprendre l'histoire de l'architecture et retracer les raisonnements.
-> Dernière mise à jour : 27-04-2026 - ajout D-018 (Bricks de connaissance comme Notes avancées des objets Twin, lien avec R-050)
+> Dernière mise à jour : 03-05-2026 - ajout D-024 (préfixe `META_` pour codes des docs méta indexés, remplace `CHRT_`), D-025 (5 fonctions systémiques `META.FUNCTION` remplacent l'ancienne taxo `META.FAMILY` archivée), D-026 (création BDD `Templates méta Brain` séparée + `Templates de Bricks` reste séparée par scope agent kontext). Articulation Phase 1.0 du chantier d'architecture des docs méta (cf. `[[Constitution des docs méta - LBP]]`).
 
 ---
 
@@ -640,6 +640,68 @@ tags:
   - ✅ Portabilité maximale, historique fin, graphe Obsidian navigable.
   - ⚠️ Risque de désync entre les trois (à gouverner).
 - **Règles associées** : R-001, R-010
+
+### D-024 : Adoption du préfixe `META_` pour les codes des docs méta indexés (remplace `CHRT_`)
+
+- **Date** : 03-05-2026
+- **Statut** : Adoptée
+- **Portée** : Brain — BDD `Docs méta LBP`
+- **Contexte** : Le préfixe historique `CHRT_` (abréviation de « charte ») est cryptique et peu parlant. Il n'évoque pas la nature « doc méta » (qui peut être bien plus large qu'une charte : panorama, doctrine, spec, règle, workflow, codification, etc.). À l'occasion du chantier d'architecture des docs méta (Phase 1.0), opportunité de basculer sur un préfixe plus explicite.
+- **Options envisagées** :
+  - **(A)** Garder `CHRT_` + ajouter un préfixe par fonction systémique (ex. `CHRT_NRM_RULES_LBP`) : long, redondance avec la propriété `Fonction systémique`.
+  - **(B)** Remplacer `CHRT_` par préfixe par fonction (ex. `NRM_RULES_LBP`) : court mais perte du signal « doc méta » et divergence avec autres BDDs (`CPT_*` Glossaire, `MAN_*` Manuels, etc.).
+  - **(C)** Garder `CHRT_` (statu quo) : stable mais cryptique pour tout nouveau lecteur.
+  - **(D)** Remplacer `CHRT_` par `META_` : explicite, court, cohérent avec le namespace `META.*` (taxos META.FUNCTION, ex META.FAMILY archivée), évite de fragmenter par fonction (la fonction reste portée par `META.FUNCTION` côté propriété).
+- **Choix retenu** : **(D)** Préfixe `META_<TOKEN>_<SCOPE>` pour tous les codes des docs méta indexés. Le scope `_LBP` signale transverse, les scopes `_BRAIN` / `_TWIN` / `_MO` signalent un domaine spécifique.
+- **Conséquences** :
+  - ✅ Code parlant immédiatement (« si je vois `META_*`, c'est un doc méta »).
+  - ✅ Cohérence avec le namespace `META.*` des taxos méta.
+  - ✅ Lisibilité humaine et agent améliorée.
+  - ⚠️ Coût de migration : ~11 codes existants à renommer en Phase 4 (refonte progressive doc par doc), avec cascade R-053 (archivage des anciens codes) et propagation des renvois (cf. WF-008 + cascade Notion).
+- **Règles associées** : R-064 (naming des docs méta — à codifier en Phase 1.0).
+- **Articulation** : `[[Constitution des docs méta - LBP]]` (annexe A et conventions résumées).
+
+### D-025 : Adoption des 5 fonctions systémiques `META.FUNCTION` (remplace `META.FAMILY`)
+
+- **Date** : 03-05-2026
+- **Statut** : Adoptée
+- **Portée** : Brain — BDD `Docs méta LBP`
+- **Contexte** : La taxonomie historique `META.FAMILY` (8 valeurs : Naming conventions, Quality QA, Charts, Workflows playbooks, Tooling rules, Template rules, Data model rules, Security privacy) classait les docs méta par **type de contenu**. À l'usage, ce critère se révèle peu opérant pour le routage agent et la gouvernance : un doc méta peut combiner plusieurs types de contenu (ex. un doc qui pose des règles ET une charte rédactionnelle), mais sa **fonction systémique de gouvernance** est unique. Besoin d'un axe de classification plus stable et plus opérant.
+- **Options envisagées** :
+  - **(A)** Garder `META.FAMILY` (8 valeurs) + ajouter `META.FUNCTION` (5 valeurs) : 2 axes coexistent. Coût faible, mais redondance et risque de désync.
+  - **(B)** Reconvertir `META.FAMILY` (renommer les 8 taxons → 5 fonctions) : moyen coût, perte de l'axe « type de contenu ».
+  - **(C)** Virer `META.FAMILY`, créer `META.FUNCTION`, **typer le doc via la relation au template** dans `Templates méta Brain` (Phase 2). Le type est dérivé de la relation au template, pas dupliqué dans une taxo.
+- **Choix retenu** : **(C)**. Création de `META.FUNCTION` (5 valeurs : Orienter, Expliquer, Structurer, Normer, Opérer). Archivage de `META.FAMILY` (R-053). Le type de contenu sera porté par la **relation au template** côté BDD `Docs méta LBP` (Phase 2 : création BDD `Templates méta Brain` + ajout relation `Template`).
+- **Conséquences** :
+  - ✅ Axe de classification stable, exhaustif, agent-friendly (5 fonctions = 5 boucles de gouvernance).
+  - ✅ Cohérence avec l'arborescence cible `00 - Docs méta/` (sous-dossiers numérotés 10-Orienter, 20-Expliquer, 30-Structurer, 40-Normer, 50-Opérer).
+  - ✅ Single source of truth pour le type d'un doc méta (= relation au template, pas une taxo dédiée).
+  - ⚠️ Coût migration : ~11 fiches Notion `Docs méta LBP` à mettre à jour (ajout `Fonction systémique`, retrait `Famille (Doc méta)`) en Phase 2-3.
+  - ⚠️ Note : la fonction « Contrôler » (audit / QA) avait été envisagée comme 6e valeur, mais a été **fusionnée dans Opérer** (l'audit étant une opération standardisée, pas une fonction systémique distincte).
+- **Règles associées** : R-049 (taxos orthogonales), R-053 (archivage).
+- **Articulation** : `[[Constitution des docs méta - LBP]]` §3 (5 fonctions) + `Taxonomies/META.FUNCTION.md` (taxo source) + `Taxonomies/00 - archives/META.FAMILY (archivé v1.0 le 03-05-2026).md`.
+
+### D-026 : Création de la BDD `Templates méta Brain` séparée — `Templates de Bricks` reste une BDD distincte
+
+- **Date** : 03-05-2026
+- **Statut** : Adoptée
+- **Portée** : Brain — BDDs `Docs méta LBP`, `Templates méta Brain` (à créer Phase 2), `Templates de Bricks` (existante)
+- **Contexte** : Aujourd'hui les **templates d'instanciation** (TPL_NOTE_CONCEPT, TPL_TAXO, TPL_WRRD_BR, TPL_PROMPT, TPL_AGENT, etc.) sont indexés dans la BDD `Docs méta LBP`. C'est un **mal-classement** : un template est un objet **gouverné** (un moule pour instancier d'autres objets), pas un doc de **gouvernance**. Sa fonction n'est pas d'orienter/expliquer/structurer/normer/opérer ; c'est d'instancier. À côté, la BDD `Templates de Bricks` existe déjà et concerne les templates utilisés par l'agent **kontext** pour générer les livrables clients à partir des données Mission Ops.
+- **Options envisagées** :
+  - **(A)** Garder les templates d'instanciation dans `Docs méta LBP` (statu quo) : simple mais BDD `Docs méta LBP` devient un grenier.
+  - **(B)** Créer **1 seule BDD** `Templates Brain` qui regroupe tous les templates (instanciation + bricks) : simple en gouvernance mais kontext (consommateur des bricks) verrait du bruit (templates d'instanciation Brain qui ne le concernent pas).
+  - **(C)** Créer une BDD `Templates méta Brain` pour les templates d'instanciation (consommée par brain architect) ET garder `Templates de Bricks` séparée (consommée par kontext) : 2 BDDs distinctes par scope agent.
+- **Choix retenu** : **(C)**. Justifications :
+  - **Scope agent différent** : brain architect produit/maintient les templates d'instanciation Brain ; kontext consomme les templates de bricks. Mélanger = bruit côté kontext.
+  - **Régime de vie différent** (cf. C-018) : les templates de bricks évoluent avec les besoins de livraison client ; les templates d'instanciation Brain évoluent avec la doctrine LBP (plus stable). Cycles de revue distincts.
+  - **Frontière Brain ↔ Mission** (R-002, R-003, D-007) : les templates de bricks sont **dans le Brain** (zone stable, pas de contamination client) MAIS sont **consommés par Mission Ops via kontext**. Garder une BDD dédiée matérialise cette interface cross-zone, comme on l'a fait pour les Manuels de BDD.
+- **Conséquences** :
+  - ✅ `Docs méta LBP` redevient pure (uniquement docs de gouvernance).
+  - ✅ Chaque BDD a un consommateur agent clair (brain architect pour `Docs méta LBP` et `Templates méta Brain` ; kontext pour `Templates de Bricks`).
+  - ✅ Permet une taxo dédiée `TPL.SCOPE` pour les sous-types de templates Brain (note de concept, manuel, taxo, prompt, agent, méthode, outil, logic block).
+  - ⚠️ Coût ponctuel : créer manuel `Manuel de BDD - Templates méta Brain` + WR-RD + générer BDD Notion via WF-014 + migrer ~6 fiches templates actuellement dans `Docs méta LBP` + créer taxo `TPL.SCOPE`. Estimation 1 journée (Phase 2).
+- **Règles associées** : R-012 (séparation des régimes de connaissance), R-053 (archivage si rename de codes), C-018 (régimes différents → BDDs distinctes).
+- **Articulation** : `[[Constitution des docs méta - LBP]]` §2 (table de classement) et annexe A.
 
 ---
 
