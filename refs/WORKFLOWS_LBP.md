@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
 # === Méta-gouvernance ===
-version: "1.2"
+version: "1.3"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
@@ -14,7 +14,7 @@ status: "Validé"
 scope: "LBP"
 
 # === Spec d'usage ===
-summary: "Catalogue des 17 workflows opérationnels (WF-XXX) intrinsèques à l'écosystème LBP : récupération URL Drive (WF-011), indexation Notion (WF-012), génération WR-RD (WF-013), génération BDD (WF-014), migration au canon (WF-015), audit transverse (WF-016), sync DDL (WF-017), propagation d'impacts (WF-008), etc."
+summary: "Catalogue des 12 workflows opérationnels (WF-XXX) intrinsèques à l'écosystème LBP : récupération URL Drive (WF-011), indexation Notion (WF-012), génération WR-RD (WF-013), génération BDD (WF-014), migration au canon (WF-015), audit transverse (WF-016), sync DDL (WF-017), propagation d'impacts (WF-008), capture anti-pattern (WF-019), cascade refonte template (WF-020), audit grep catalogue (WF-021), production décision (WF-022)."
 purpose: "Référence canonique pour conduire des opérations standardisées sur l'écosystème. Chaque workflow a un ID stable, un statut (Actif / À formaliser), un contexte, des étapes, des règles associées."
 tags:
   - doc_meta
@@ -53,6 +53,10 @@ tags:
 | WF-015 | Migration au canon d’un type de doc Brain (frontmatter R-054 / R-055 / R-056) | Actif (formalisé 28-04-2026 après Phases 4-7) |
 | WF-016 | Audit transverse Notion ↔ Manuels Brain | Actif (formalisé 28-04-2026) |
 | WF-017 | Sync DDL Notion BDD Brain à partir des écarts d’audit | Actif (formalisé 28-04-2026) |
+| WF-019 | Capture proactive d'un anti-pattern observé en R/PROP/D/code | Pressenti (capturé 03-05-2026) |
+| WF-020 | Cascade refonte structurelle d'un template (bump MAJOR + impact instances) | Pressenti (capturé 03-05-2026) |
+| WF-021 | Audit grep post-instanciation d'un doc catalogue | Pressenti (capturé 03-05-2026, partiellement formalisé dans TPL_META_CATALOGUE §7) |
+| WF-022 | Cycle de production d'une nouvelle décision D-XXX | Pressenti (capturé 03-05-2026) |
 
 ---
 
@@ -676,3 +680,87 @@ Appliquer sur Notion les actions DDL identifiées par WF-016. Limitation Notion 
 ---
 
 *Les autres workflows seront formalisés au fur et à mesure qu'on les pratiquera.*
+
+---
+
+## WF-019 : Capture proactive d'un anti-pattern observé en R/PROP/D/code
+
+- **Statut** : Pressenti, capturé 03-05-2026 (à formaliser dans Workflows opérationnels - LBP)
+- **Trigger** : Observation d'un anti-pattern (typiquement Leonard flagge un comportement de Claude qui crée une asymétrie ou une dette silencieuse, ou Claude détecte un anti-pattern lors d'un audit).
+- **Préconditions** : L'anti-pattern est nommable, son coût opérationnel est mesurable, sa portée est identifiable.
+- **Étapes** :
+  1. Observer et décrire l'anti-pattern (ce qui s'est passé, le coût opérationnel, la portée).
+  2. Formuler la règle qui le proscrit : Why (pourquoi cette règle existe), How to apply (comment appliquer), Articulation (liens avec règles voisines), Exemples ✅/❌, Conséquence si violation.
+  3. Choisir le bon catalogue cible : R-XXX (règle statique applicable à toute interaction), PROP-XXX (cascade événementielle), D-XXX (décision architecturale), code-XXX (convention de codification), C-XXX (convention session Claude/Leonard).
+  4. Choisir la sous-section thématique correspondante.
+  5. Proposer ID + Nom + sous-section à Leonard pour validation explicite (cf. C-001, protocole de capture proactive §5 CLAUDE.md).
+  6. Une fois validé : ajouter l'item dans le catalogue + mettre à jour le récap §4.
+  7. Bumper version du catalogue selon R-063 (patch pour ajout d'entrée atomique).
+  8. Update fiche Notion correspondante (Version du document, updated_at).
+  9. Mirror `refs/` + commit + push 2 repos (cf. C-019).
+  10. Si l'anti-pattern impacte des docs existants (ex. R-072 Énumération de taxons impacte des manuels existants) : déclencher PROP-007 (cascade R-XXX → audit transverse + migration ciblée).
+- **Sortie** : 1 nouvelle règle/décision/convention captée dans son catalogue cible + traçabilité complète.
+- **Articulation** : R-063 (politique bump), R-070 (Brain agent-agnostique — pour bien arbitrer R vs C), R-074 (méthodes pour règles de maintenance), C-001, protocole §5 CLAUDE.md (capture proactive), PROP-007/008/009 (cascades de capture R/D/C selon catalogue cible).
+- **Origine** : 03-05-2026, observé ≥7 fois pendant la session (R-072, R-073, R-074, R-075, C-028, et migrations R→PROP). Pattern qui définit la maintenance vivante de l'écosystème doctrinal.
+
+---
+
+## WF-020 : Cascade refonte structurelle d'un template (bump MAJOR + impact instances)
+
+- **Statut** : Pressenti, capturé 03-05-2026 (à formaliser dans Workflows opérationnels - LBP)
+- **Trigger** : Bump MAJOR d'un template d'instanciation (refonte structurelle des sections, changement du frontmatter structurel, changement du sens canonique).
+- **Préconditions** : Template `.md` source disponible. Liste des instances déjà générées avec leur `template_version` actuelle (frontmatter ou propriété Notion `Version du template`).
+- **Étapes** :
+  1. Modifier le template `.md` source (refonte structurelle) + bumper `version` selon R-056 (X.Y → (X+1).0).
+  2. Documenter le changement dans le frontmatter `notes:` ou via commit message clair.
+  3. Update fiche Notion `Templates Brain` (Version du template à la nouvelle valeur, Description si refonte sémantique).
+  4. **Audit mécanique des instances stale** : grep / Dataview sur le champ `template_version` du frontmatter des instances `< version cible`.
+  5. Lister les instances stale dans `ECOSYSTEM-STATE.md` (à migrer dans une phase dédiée).
+  6. **Pour chaque instance stale**, en cascade : migrer au nouveau schéma (peut être structurellement lourd — réorganiser sections, ajouter / retirer champs frontmatter, etc.) ; bumper `template_version` de l'instance ; bumper `version` de l'instance (MINOR ou MAJOR selon impact) ; update fiche Notion correspondante ; mirror refs/ + commit + push.
+  7. Une fois toutes les instances migrées : audit final que `template_version` = version cible sur 100% des instances.
+- **Sortie** : Toutes les instances alignées sur le nouveau template. Aucune instance stale.
+- **Articulation** : R-004 (template obligatoire), R-040 (instructions @INSTR-*), R-055 (frontmatter), R-056 (versioning), R-063 (bump version docs méta indexés), D-013 (traçabilité template_version), D-020 (propagation Version du template Brain), PROP-004 (cascade bump majeur template), WF-015 (migration de masse).
+- **Origine** : 03-05-2026, observé 1 fois pendant la session : TPL_META_CATALOGUE v1.4 → v1.5 → v1.6 a impacté Règles intrinsèques v1.0 → v1.3 (cascade structurelle : ajout §6 Archives, swap §4↔§5 récap/catalogue, renommage Découverte→Origine, audit grep ajouté). Procédure cascade éprouvée.
+
+---
+
+## WF-021 : Audit grep post-instanciation d'un doc catalogue
+
+- **Statut** : Pressenti, capturé 03-05-2026 (à formaliser dans Workflows opérationnels - LBP). Déjà partiellement formalisé dans TPL_META_CATALOGUE v1.5+ §7 INSTANTIATION_FLOW.
+- **Trigger** : Après production initiale ou modification structurante d'un doc catalogue, avant publication / commit final.
+- **Préconditions** : Doc catalogue produit + Python disponible pour scripts d'audit.
+- **Étapes** : 5 contrôles mécaniques :
+  1. **Wikilinks intra-doc** : tout renvoi à un autre item du même catalogue est-il en wikilink interne `[[#PREFIXE-XXX]]` (et non en prose brute « voir R-027 ») ? Script Python avec regex `^#### ` (avec espace) pour distinguer H4 strict de H5+ (sinon items contenant des sous-sections H5 internes voient leur body extrait tronqué — bug détecté en cours d'audit Phase 4.1).
+  2. **Champ Origine rempli** : tous les items ont-ils un champ `Origine` non vide ? Vérifier l'absence de placeholders `[[JJ-MM-YYYY...]]` résiduels.
+  3. **Marqueurs temporels résiduels (C-027)** : aucun marqueur `(à créer|à venir|TBD|TODO|provisoire|sera créé|futur)` dans le doc instancié (filtrer les exemples explicites en R-073 / R-059 qui les mentionnent légitimement).
+  4. **Énumération de taxons (R-072)** : aucune liste explicite de valeurs de taxonomies dans les instructions / descriptions ≤280. Vérification visuelle des champs `How to apply` qui mentionnent `Taxo: <CODE>`.
+  5. **YAML frontmatter parseable (R-073)** : `python -c "import yaml; yaml.safe_load(open('instance.md').read().split('---')[1])"` → 0 erreur. Vérifier aussi que les items de liste contenant `:` ou apostrophes typographiques sont enveloppés en quotes.
+  - **Si un contrôle échoue**, corriger avant publication. Ne pas committer un doc qui ne passe pas l'audit.
+- **Sortie** : Doc catalogue conforme aux règles de qualité, prêt pour publication / commit.
+- **Articulation** : R-027 (conventions naming), R-039 (anti-artefacts IA), R-040 (instructions @INSTR-*), R-053 (archivage), R-055 (frontmatter), R-056 (versioning), R-064 (naming docs méta), R-068 (aliases anti-redondance), R-072 (anti-énumération taxons), R-073 (YAML), C-024 (wikilinks), C-027 (anti-marqueurs temporels), TPL_META_CATALOGUE §7 INSTANTIATION_FLOW.
+- **Origine** : 03-05-2026, formalisé en cours de production des catalogues fondateurs après détection de plusieurs anomalies (R-068 alias = code, R-073 YAML cassé sur cleanup_rules, regex audit qui matche H4+H5).
+
+---
+
+## WF-022 : Cycle de production d'une nouvelle décision D-XXX
+
+- **Statut** : Pressenti, capturé 03-05-2026 (à formaliser dans Workflows opérationnels - LBP)
+- **Trigger** : Émergence d'un choix architectural structurant à formaliser (décision spontanée Leonard, arbitrage suite à un audit, refonte structurante).
+- **Préconditions** : Le contexte qui motive la décision est clair, les options envisagées sont identifiables, le choix retenu est opposable.
+- **Étapes** :
+  1. Décrire le **Contexte** (problème ou besoin qui motive la décision — équivalent du Why d'une R).
+  2. Identifier les **Options envisagées** (alternatives considérées avec analyse coûts/bénéfices).
+  3. Énoncer la **Décision** (choix retenu, énoncé clair et opposable).
+  4. Décrire les **Conséquences** (effets directs sur l'écosystème : R-XXX dérivées, PROP-XXX dérivées, WF à mettre à jour, migrations à planifier).
+  5. Identifier l'**Articulation** (wikilinks vers R/PROP/WF dérivées, autres D antécédentes/conséquentes/révisées).
+  6. Choisir la sous-section thématique de `Décisions architecturales - LBP` (5.1 fondatrices / 5.2 ontologie / 5.3 architecture transverse / 5.4 conventions docs / 5.5 codification).
+  7. Proposer ID + Nom + sous-section à Leonard pour validation explicite.
+  8. Si validé : ajouter D-XXX dans le bon §5.x + récap §4 (avec Date de décision et Origine séparées).
+  9. Bumper version Décisions selon R-063.
+  10. Update fiche Notion `Décisions architecturales - LBP` dans BDD `Docs méta LBP` (Version du document, updated_at).
+  11. Si la décision dérive en R-XXX nouvelle : déclencher WF-019 (capture R) + R citée en articulation de la D.
+  12. Mirror refs/ + commit + push 2 repos.
+- **Sortie** : 1 nouvelle décision capturée dans son catalogue + R-XXX/PROP-XXX dérivées éventuellement.
+- **Articulation** : PROP-008 (cascade D-XXX), R-063 (bump), C-001, C-009, C-011, C-019, WF-019 (capture R si dérivation).
+- **Origine** : 03-05-2026, observé sur D-024, D-025, D-026 (capturées en Phase 1.0 du chantier docs méta). Pattern stable.
+
