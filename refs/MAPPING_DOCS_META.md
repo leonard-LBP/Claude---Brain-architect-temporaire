@@ -135,13 +135,24 @@ Règle pratique : pour chaque instruction du template, se demander « cette inst
 
 **Découverte** : 03-05-2026, Leonard a flaggé l'étape « scanner legacy » dans le 1er jet de TPL_META_CATALOGUE comme non durable.
 
-### 3.9 Bonnes pratiques d'écriture EMBARQUÉES dans le doc canonique (pas dans le doc de chantier)
+### 3.9 Bonnes pratiques de maintenance d'un type de doc → vivent dans une **méthode dédiée**, pas dupliquées dans chaque instance du type
 
-Les bonnes pratiques de gestion d'un type de doc (stabilité du schéma, traçabilité des items, cycle de vie, anti-patterns) doivent vivre **dans le template ET dans le doc canonique généré** (section dédiée type « Bonnes pratiques d'écriture du catalogue »). Pas seulement dans le doc de chantier (qui est transitoire).
+Les règles de maintenance et d'évolution communes à un type de doc (stabilité du schéma, traçabilité des items, cycle de vie, anti-patterns transverses) ont **un seul propriétaire canonique** : une méthode dédiée indexée dans la BDD `Méthodes LBP`.
 
-Bénéfice : un consommateur du doc canonique (humain ou agent) trouve sur place les règles d'évolution du doc, sans avoir à consulter un autre doc qui aura disparu.
+**Anti-pattern** : embarquer ces règles dans chaque doc canonique généré (ex. section « Bonnes pratiques d'écriture » dans chaque catalogue). Conséquences :
+- Doublon × N (autant d'instances du type que de copies dupliquées des bonnes pratiques)
+- Asymétrie inévitable : enrichir une bonne pratique force à propager dans les N docs
+- Couplage fort entre docs qui devraient rester indépendants
+- Violation R-066 (propriétaire canonique unique)
 
-**Découverte** : 03-05-2026, Leonard a explicité la distinction « MAPPING transitoire vs templates durables ».
+**Pattern correct** :
+- **Méthode dédiée** dans BDD `Méthodes LBP` (ex. `Méthode - Maintenance d'un catalogue Brain.md`) : SoT des règles de maintenance pour le type de doc.
+- **Template** : guide la **génération initiale** via le `TEMPLATE_USAGE_GUIDE` (qui peut référencer la méthode pour la maintenance future), mais ne reproduit pas les règles de maintenance dans les docs générés.
+- **Doc canonique généré** : éventuellement un wikilink en footer du type « Maintenance et évolution : voir [[Méthode - Maintenance de X]] ». Ou rien (la méthode est consommée par les agents qui font la maintenance, pas par le lecteur du contenu).
+
+**À produire en Phase 4** : `Méthode - Maintenance d'un catalogue Brain.md` (et équivalent par type de doc majeur). Indexée dans BDD Notion `Méthodes LBP`.
+
+**Découverte** : 03-05-2026. 1re itération de TPL_META_CATALOGUE incluait une section §6 « Bonnes pratiques d'écriture du catalogue » dupliquée dans chaque doc canonique généré. Leonard a flaggé l'anti-pattern : « risque fort de doublon avec des méthodes qui vivraient autre part ; le maintien de la cohérence à travers l'évolution est fondamental ». Section §6 supprimée du template (v1.3 → v1.4) ; règles de maintenance déplacées vers une méthode dédiée à produire (BDD Méthodes LBP).
 
 ### 3.10 Niveau d'explicité attendu dans les templates : référence Manuel BDD Twin v7.0
 
@@ -215,7 +226,12 @@ Pour chaque template (dans l'ordre stratégique) :
 
 ### 6.3 Après les 10 templates
 
-Capture d'une `Méthode - Génération d'un template Brain.md` dans `H:\Drive partagés\LBP - shared\Architecture data\Méthodes\` (sur la base de `Template - Méthode LBP.md`), indexée dans la BDD Notion `Méthodes LBP`. Capitalise tout ce qu'on aura appris pour future réplication (Clément, autres).
+À produire (capitalisation Phase 4 final) :
+- `Méthode - Génération d'un template Brain.md` — capitalise les conventions de production des templates Brain (R-040, R-055, R-056, R-064, R-073, niveau d'explicité Manuel Twin, anti-patterns identifiés).
+- `Méthode - Maintenance d'un catalogue Brain.md` — règles de maintenance et d'évolution communes aux docs catalogues (stabilité du schéma, traçabilité des items, cycle de vie, anti-patterns). SoT unique référencée par chaque catalogue en footer (cf. §3.9).
+- (Éventuellement, par type de doc majeur) : méthodes de maintenance équivalentes pour les autres types (Cadre, Specs, Charte, QC, etc.) si les règles de maintenance s'avèrent suffisamment riches pour justifier une méthode dédiée. Sinon : un seul doc générique.
+
+Toutes ces méthodes sont produites sur la base de `Template - Méthode LBP.md` et indexées dans la BDD Notion `Méthodes LBP`.
 
 ---
 
@@ -224,6 +240,6 @@ Capture d'une `Méthode - Génération d'un template Brain.md` dans `H:\Drive pa
 | Indicateur | Valeur |
 |---|---|
 | Docs cibles produits (sur 24) | 1/24 (Constitution v0.3, à raffiner) |
-| Templates META produits (sur 10) | 1/10 (TPL_META_CATALOGUE v1.1, en validation) |
+| Templates META produits (sur 10) | 1/10 (TPL_META_CATALOGUE v1.4, en validation) |
 | Phase courante | Phase 3 close, Phase 4 à démarrer |
 | Dernière mise à jour | 03-05-2026 |
