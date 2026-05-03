@@ -265,6 +265,34 @@ Les 5 catalogues prévus se répartissent dans 3 fonctions META.FUNCTION différ
 
 **Origine de l'observation** : 03-05-2026, Leonard a flaggé que mon premier réflexe (placer Règles de propagation dans 50-Opérer) confondait « propagation = action » et « propagation = règle de cascade ». Une PROP est conceptuellement une norme contraignante (« quand X, alors faire Y »), donc Normer.
 
+### 6.2quater Décision : créer un template TPL_META_GRAMMAR (en plus des 10 templates initialement prévus)
+
+**Décision arbitrée 03-05-2026** lors de la préparation Phase 4.4 (production de Codification - LBP) : le template TPL_META_CATALOGUE colle « limite » au cas Codification, parce que les items de codification sont d'une nature structurelle différente :
+
+| Mode d'évolution | Catalogues concernés | Caractéristique |
+|---|---|---|
+| **Log historique** | D-XXX (Décisions) | Archivage fréquent (révision = nouvelle D + ancienne en §6 « Remplacée par »). Décisions s'empilent. |
+| **Substitution en place** | R-XXX, PROP-XXX | Modification en place (bump version du doc, item garde son ID). Archivage rare. |
+| **Référentiel statique** | code-XXX (Codification) et futures grammaires | Conventions de format figées dès adoption. Modifications très rares (changement de grammaire = événement structurel). |
+
+→ Le pattern TPL_META_CATALOGUE convient bien aux modes 1 et 2. Pour le mode 3 (référentiel statique), un template dédié **TPL_META_GRAMMAR** est plus approprié.
+
+**Justifications du nouveau template** :
+- Schéma item structurellement différent (Pattern / Composantes / Anti-patterns vs Why / How to apply)
+- Format narratif structuré (introduction des grammaires, table de référence des préfixes, conventions transverses) — perdu dans un catalogue d'items atomiques pur
+- Réutilisabilité future : grammaire SQL pour Supabase (Twin/MO), grammaire de naming bricks Mission Ops, grammaire des prompts maîtres LBP, grammaire de classification UX — ~3-5 docs futurs candidats
+- Capitalise une typologie distincte (référentiel structurel vs catalogue normatif)
+
+**Mapping actualisé** :
+- 11 templates au total (10 initialement prévus + TPL_META_GRAMMAR)
+- TPL_META_GRAMMAR sert au moins 1 doc cible : Codification - LBP (40-Normer/)
+- À produire : Phase 4.5 ou plus tard, après finalisation des catalogues (R, PROP, D faits ; WF en cours)
+
+**Planning révisé** :
+- Phase 4.4 (en cours) : Workflows opérationnels - LBP (catalogue WF) → continuer le pattern catalogue éprouvé
+- Phase 4.5 : Codification - LBP + production simultanée du template TPL_META_GRAMMAR
+- Phase 4.6+ : autres docs cibles selon le mapping principal
+
 ### 6.2bis Vision Phase 5+ : split par domaine (à mémoriser)
 
 Une fois les 5 catalogues canoniques produits (Règles, Décisions, Codification, Workflows, Propagation), envisager une optimisation par split par domaine :
