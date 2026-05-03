@@ -178,6 +178,10 @@ F3. Phase 7 bis : refonte structurelle des 101 logic blocks + 76 prompts (post-C
 
 ## A faire (prochaines étapes)
 
+**Dette technique — citations placeholders à résoudre après Phase 4.5** :
+
+- **Audit + remplacement de toutes les citations vers docs « futurs »** dans les catalogues docs méta produits (R / PROP / D / WF actuellement, codification + grammaires + méthodes à venir). Exemples connus : `[[Codification - LBP]]` cité dans WF-019 (futur Phase 4.5), `Méthodes LBP` cité dans WF (futur post-Phase 4) — à transformer en wikilinks valides dès production des docs cibles. Lancer un grep pattern `\[\[(Codification - LBP|Méthodes LBP|...)\]\]` dans tous les catalogues une fois Phase 4 close pour détection exhaustive et résolution. Dette à porter jusqu'à la fin de Phase 4 inclus.
+
 **Court terme — chantier Brain au canon Notion** :
 
 1. **Indexation des Markdown au canon dans les BDDs Notion Brain** — **mise à jour des entrées existantes** plutôt qu’archivage+recréation (préservation des relations Notion existantes).
