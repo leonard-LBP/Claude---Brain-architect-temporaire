@@ -5,9 +5,9 @@ doc_type: doc_meta
 code: "META_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.1"
+version: "1.2"
 template_code: "TPL_META_CATALOGUE"
-template_version: "1.5"
+template_version: "1.6"
 created_at: "03-05-2026"
 updated_at: "03-05-2026"
 
@@ -83,7 +83,7 @@ Catalogue exhaustif des règles atomiques (R-XXX) qui gouvernent l'écosystème 
 | Articulation | texte long | Liens vers règles voisines (wikilinks internes `[[#R-XXX]]`), décisions D-XXX, doctrines, conventions C-XXX. | [[#R-066]], [[#R-074]] |
 | Exemples | texte long | Cas ✅ / ❌ illustratifs. | ✅ ... / ❌ ... |
 | Conséquence si violation | texte long | Impact opérationnel concret de la violation. | Asymétrie silencieuse, propagation manuelle obligatoire. |
-| Découverte | texte court | Date `JJ-MM-YYYY` + 1 ligne de contexte. | 03-05-2026, Phase 4, Leonard a flaggé. |
+| Origine | texte court | Date `JJ-MM-YYYY` + 1 ligne de contexte d'émergence (peut être : audit, observation d'une violation, formalisation post-discussion, généralisation d'un anti-pattern, capture proactive en session — pas obligatoirement rattachée à un doc spécifique). | 03-05-2026, Phase 4, Leonard a flaggé Y en discussion. |
 
 Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'exception de `Articulation`, `Exemples`, `Conséquence si violation` qui peuvent être omis si non pertinents pour la règle (ex. règle isolée sans articulation directe).
 
@@ -105,7 +105,7 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 - **Articulation** : [[#R-001]] (Markdown SoT), [[#R-074]] (méthodes pour règles de maintenance), [[Constitution des docs méta - LBP]].
 - **Exemples** : ✅ Liste des 11 BDDs Brain → propriétaire = [[Architecture - Brain]] / ❌ Dupliquer la liste dans Panorama et 3 Cadres.
 - **Conséquence si violation** : N copies à mettre à jour à chaque modification, asymétries silencieuses, érosion de la cohérence.
-- **Découverte** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle anti-doublon.
+- **Origine** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle anti-doublon.
 ```
 
 ---
@@ -131,7 +131,7 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 
 # 4) Récap tabulaire
 
-| ID | Nom | Sous-section (§5.x) | Découverte |
+| ID | Nom | Sous-section (§5.x) | Origine |
 |---|---|---|---|
 | R-001 | Source de vérité = doc Markdown | 5.1 Fondations doctrinales | Principe architectural originel |
 | R-002 | Zero donnée client dans Core / Motor | 5.1 Fondations doctrinales | Principe architectural originel |
@@ -187,6 +187,7 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 | R-070 | Ban des noms d'agents dans les sources de vérité (Brain agent-agnostique) | 5.7 Hygiène d'écriture | 03-05-2026 |
 | R-071 | Auto-suffisance des descriptions dans les sources de vérité | 5.7 Hygiène d'écriture | 03-05-2026 |
 | R-072 | Pas d'énumération de taxons dans les instructions d'écriture / descriptions ≤280 | 5.7 Hygiène d'écriture | 03-05-2026 |
+| R-075 | Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue | 5.7 Hygiène d'écriture | 03-05-2026 |
 | R-011 | Frontières fortes entre objets canoniques | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
 | R-012 | Séparation des 4 régimes de connaissance | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
 | R-013 | Sobriété relationnelle | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
@@ -220,7 +221,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ✅ Renommer une propriété d'une BDD : modifier d'abord le manuel `.md`, puis renommer la propriété dans Notion via DDL.
   - ❌ Renommer une propriété directement dans Notion sans toucher au manuel — désynchronisation immédiate et silencieuse.
 - **Conséquence si violation** : SoT incertaine, asymétries silencieuses Markdown ↔ Notion, agents et humains ne savent plus laquelle source faire foi.
-- **Découverte** : Principe architectural originel (avant captures formelles).
+- **Origine** : Principe architectural originel (avant captures formelles).
 
 #### R-002 : Zero donnée client dans Core / Motor
 
@@ -232,7 +233,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ✅ Note de concept « Capacité Organisationnelle » dans `Glossaire LBP` (transverse, sans contexte client)
   - ❌ Note de concept « Capacité Organisationnelle - Client X » dans `Glossaire LBP`
 - **Conséquence si violation** : pollution du Brain par contexte client, perte de la propriété de réutilisabilité cross-mission, risque de fuite si export du Brain.
-- **Découverte** : Principe architectural originel.
+- **Origine** : Principe architectural originel.
 
 #### R-039 : Aucun artefact de génération IA dans les docs LBP
 
@@ -252,7 +253,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ❌ `concept - Repères communs.md` : `Ils peuvent être symboliques [...] fonctionnels:contentReference[oaicite:5]{index=5}iguïtés en rendant visibles des attentes communes.` (artefact de citation + texte tronqué)
   - ❌ `concept - Soft skill.md` : `qualité des interactions, des décin collective.` (texte tronqué visible)
 - **Conséquence si violation** : doc à corriger en source (vault) ET en cible (Notion), pollution de l'extraction sémantique, perte de crédibilité.
-- **Découverte** : 25-04-2026, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
+- **Origine** : 25-04-2026, Leonard, après détection en batch C de 2 occurrences sur 72 notes de concept.
 
 #### R-065 : Définition opérationnelle d'un doc méta — frontière « gouverne plusieurs objets »
 
@@ -269,7 +270,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ❌ Pas un doc méta : `Manuel de BDD - Actifs` (décrit une seule BDD spécifique, vit en `Manuels de BDD`)
   - ❌ Pas un doc méta : `Méthode - Carte de causalité` (décrit une méthode spécifique, vit en `Méthodes LBP`)
 - **Conséquence si violation** : BDD `Docs méta LBP` devient un grenier mal calibré, frontière flottante, indexation incohérente.
-- **Découverte** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle frontière en complément de la définition narrative dans la Constitution.
+- **Origine** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle frontière en complément de la définition narrative dans la Constitution.
 
 #### R-066 : Propriétaire canonique unique (anti-doublon)
 
@@ -287,7 +288,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ✅ `[[Panorama LBP]]` résume l'architecture du Brain mais renvoie à `[[Architecture - Brain]]` pour les 11 BDDs
   - ❌ Liste des 11 BDDs Brain dupliquée dans Panorama, 3 Cadres et 5 manuels (asymétrie garantie au moindre changement)
 - **Conséquence si violation** : N copies de la même info à mettre à jour à chaque modification, asymétries silencieuses, propagation manuelle obligatoire.
-- **Découverte** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle anti-doublon comme principe structurant de la Constitution des docs méta.
+- **Origine** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle anti-doublon comme principe structurant de la Constitution des docs méta.
 
 #### R-074 : Règles de maintenance d'un type de doc → propriétaire canonique unique = méthode dédiée
 
@@ -305,7 +306,7 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ✅ Logic block consommé par brain architect : implémentation technique des règles de maintenance dérivées de la méthode (mise à jour en continu)
   - ❌ Section « Bonnes pratiques d'écriture du catalogue » dupliquée dans chaque catalogue → propagation manuelle obligatoire à chaque enrichissement, asymétrie garantie
 - **Conséquence si violation** : N copies du contenu transverse, asymétrie inévitable, dégradation de la cohérence à chaque évolution.
-- **Découverte** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.3. Le template incluait une section §6 « Bonnes pratiques d'écriture du catalogue » destinée à être reproduite dans chaque catalogue généré. Leonard a flaggé : « risque fort de doublon avec des méthodes/règles d'utilisation qui vivraient autre part ; le maintien de la cohérence à travers l'évolution est fondamental ». Section §6 supprimée du template (v1.3 → v1.4) ; principe formalisé en R-074 ; méthodes correspondantes à produire en Phase 4 final.
+- **Origine** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.3. Le template incluait une section §6 « Bonnes pratiques d'écriture du catalogue » destinée à être reproduite dans chaque catalogue généré. Leonard a flaggé : « risque fort de doublon avec des méthodes/règles d'utilisation qui vivraient autre part ; le maintien de la cohérence à travers l'évolution est fondamental ». Section §6 supprimée du template (v1.3 → v1.4) ; principe formalisé en R-074 ; méthodes correspondantes à produire en Phase 4 final.
 
 ## 5.2 Codification, identifiants & nommage
 
@@ -317,7 +318,7 @@ Règles structurantes sur les codes, identifiants stables, formats de dates, con
 - **Why** : Référencement stable entre BDD, résistance aux renommages. Sans cette règle, tout renommage d'objet casse les références cross-BDD.
 - **How to apply** : Le code unique d'un objet Brain (ex: `CPT_GOV_SSOT`) ne change jamais, même si le nom canonique évolue. Un renommage produit un nouveau code + archivage de l'ancien (cf. [[#R-053]]).
 - **Articulation** : [[#R-053]] (archivage en cas de rename), [[#R-054]] (codification universelle).
-- **Découverte** : Règle initiale (pré-formalisation Phase A4).
+- **Origine** : Règle initiale (pré-formalisation Phase A4).
 
 #### R-027 : Conventions de nommage des fichiers Brain/Twin
 
@@ -341,7 +342,7 @@ Règles structurantes sur les codes, identifiants stables, formats de dates, con
   - ❌ `concept - Actif.md` (préfixe minuscule legacy)
   - ❌ `BDD_ACTIFS.md` (underscore)
 - **Migration 26-04-2026** : 87 fichiers vault renommés en bulk + 100 frontmatters harmonisés (em dash → dash ASCII) lors de la cleanup Phase 6.
-- **Découverte** : 24-04-2026, standardisation lors de la migration Twin v2 (D-011) ; révisée 26-04-2026 pour intégrer [[#R-043]] et bannir l'em dash dans les filenames.
+- **Origine** : 24-04-2026, standardisation lors de la migration Twin v2 (D-011) ; révisée 26-04-2026 pour intégrer [[#R-043]] et bannir l'em dash dans les filenames.
 
 #### R-043 : Cohérence stricte filename ↔ frontmatter `title`
 
@@ -358,7 +359,7 @@ Règles structurantes sur les codes, identifiants stables, formats de dates, con
   - ✅ Fichier `Concept - Input - Output (LBP).md` ↔ `title: "Concept - Input / Output (LBP)"` (le `/` est autorisé dans le title, remplacé par ` - ` dans le filename).
   - ❌ Fichier `BDD - AGENTS LBP.md` ↔ `title: "Manuel de BDD - Agents LBP"` (mismatch ; à corriger en renommant le fichier).
 - **Conséquence si violation** : navigation incohérente (le titre vu en haut du doc diffère du nom dans l'arborescence), liens cross-doc fragiles, perte de confiance dans l'identité des fichiers.
-- **Découverte** : 26-04-2026, Leonard, après audit de 114 mismatches dans le vault (manuels Brain en `BDD - X` au lieu de `Manuel de BDD - X`, notes en `concept - X` au lieu de `Concept - X`, manuels Twin avec em dash dans le title).
+- **Origine** : 26-04-2026, Leonard, après audit de 114 mismatches dans le vault (manuels Brain en `BDD - X` au lieu de `Manuel de BDD - X`, notes en `concept - X` au lieu de `Concept - X`, manuels Twin avec em dash dans le title).
 
 #### R-044 : Format de date `JJ-MM-YYYY` (transverse LBP)
 
@@ -373,7 +374,7 @@ Règles structurantes sur les codes, identifiants stables, formats de dates, con
   - ✅ `| 26-04-2026 | Création du doc | v0.1.0 |` (ligne de log)
   - ❌ `created_at: "2026-04-26"` (format ISO interdit en texte clair)
   - ❌ `created_at: "26/04/2026"` (slash interdit)
-- **Découverte** : 26-04-2026, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
+- **Origine** : 26-04-2026, Leonard, lors de la finalisation des 28 WR-RD Twin v2 ; choix du dash ASCII pour éviter cassures et abus de `/`.
 
 #### R-052 : Apostrophe typographique uniforme (U+2019) dans les noms
 
@@ -389,7 +390,7 @@ Règles structurantes sur les codes, identifiants stables, formats de dates, con
   - ✅ `Statut de l’objet`, `Critère observable d’existence`, `Source(s) d’information (texte)`
   - ❌ `Statut de l'objet`, `Source(s) d'information (texte)` (ASCII U+0027 dans un nom affiché)
 - **Conséquence si violation** : faux négatifs en audit (props non détectées comme dupliquées), divergence silencieuse Manuel ↔ Notion, retrievers / agents ne matchent pas le nom attendu.
-- **Découverte** : 27-04-2026, Leonard, après création par DDL de `Source(s) d'information (texte)` sur la BDD Capacités métier candidates sandbox avec apostrophe ASCII alors que le reste du schéma utilisait la typographique. Renommage immédiat puis formalisation de la règle.
+- **Origine** : 27-04-2026, Leonard, après création par DDL de `Source(s) d'information (texte)` sur la BDD Capacités métier candidates sandbox avec apostrophe ASCII alors que le reste du schéma utilisait la typographique. Renommage immédiat puis formalisation de la règle.
 
 #### R-054 : Codification universelle des objets Brain
 
@@ -517,7 +518,7 @@ Préfixes proposés (à figer en Phase 2) :
 
 - **Articulation** : [[#R-005]] (code unique stable), [[#R-053]] (renaming via archivage), [[#R-055]] (frontmatter), [[#R-064]] (naming des docs méta).
 - **Conséquence si violation** : faux positifs en audit, codes dupliqués, références cross-écosystème cassées, agents ne pouvant filtrer fiable par regex, ruptures de lignée template → instance.
-- **Découverte** : 28-04-2026, Leonard, en préparation du chantier de migration globale. Capturé après audit ciblé des taxonomies Brain et arbitrages collaboratifs sur la grammaire.
+- **Origine** : 28-04-2026, Leonard, en préparation du chantier de migration globale. Capturé après audit ciblé des taxonomies Brain et arbitrages collaboratifs sur la grammaire.
 
 #### R-061 : Préférer les tirets simples `-` aux tirets cadratins `—`
 
@@ -538,7 +539,7 @@ Préfixes proposés (à figer en Phase 2) :
   - ✅ `Brain → Twin` (flèche conservée)
   - ❌ `Panorama LBP — Macro-architecture` (cadratin)
   - ❌ `R-061 — Préférer` (cadratin)
-- **Découverte** : 01-05-2026, Leonard, lors de la création de la 1ère fiche Notion du bundle docs méta - confirmation explicite « on n'utilise plus de tirets `—`, on utilise `-` à la place ».
+- **Origine** : 01-05-2026, Leonard, lors de la création de la 1ère fiche Notion du bundle docs méta - confirmation explicite « on n'utilise plus de tirets `—`, on utilise `-` à la place ».
 
 #### R-062 : Naming des fiches Docs méta LBP - éviter les noms ambigus
 
@@ -557,7 +558,7 @@ Préfixes proposés (à figer en Phase 2) :
   - ❌ `Règles LBP` - ambigu (règles de quoi ?)
   - ❌ `Doctrine LBP` - ambigu (toute fiche Docs méta est une doctrine)
 - **Conséquence si violation** : confusion au lookup (humain ou agent), risque de doublons silencieux quand de nouvelles fiches arrivent.
-- **Découverte** : 01-05-2026, Leonard, lors du naming du bundle docs méta initial - anticipation de l'arrivée future de chartes graphiques / rédactionnelles / etc. dans la BDD `Docs méta LBP`.
+- **Origine** : 01-05-2026, Leonard, lors du naming du bundle docs méta initial - anticipation de l'arrivée future de chartes graphiques / rédactionnelles / etc. dans la BDD `Docs méta LBP`.
 
 #### R-064 : Naming des docs méta indexés (filename humain + code `META_*` + scope explicite)
 
@@ -581,7 +582,7 @@ Préfixes proposés (à figer en Phase 2) :
   - ❌ Code `META_CADRE_TWIN_LBP` (doublon scope)
   - ❌ Code `CHRT_CADRE_TWIN` (préfixe historique, à migrer)
 - **Conséquence si violation** : asymétrie entre filename / title / Notion → confusion humaine, casse les audits programmatiques qui s'appuient sur le filename ou le code, dégrade la lisibilité du file explorer Obsidian.
-- **Découverte** : 03-05-2026, Phase 1.0 du chantier d'architecture des docs méta. Leonard a flaggé la divergence filename `DOC_MAP_META_LBP.md` vs title « Constitution des docs méta - LBP » sur le premier doc créé selon la nouvelle convention.
+- **Origine** : 03-05-2026, Phase 1.0 du chantier d'architecture des docs méta. Leonard a flaggé la divergence filename `DOC_MAP_META_LBP.md` vs title « Constitution des docs méta - LBP » sur le premier doc créé selon la nouvelle convention.
 
 ## 5.3 Frontmatter & versioning
 
@@ -612,7 +613,7 @@ Règles structurantes sur le frontmatter en 3 zones balisées, la grammaire de v
 - **Regex de validation** : `\(archivé( v\d+\.\d+)? le (\d{2}-\d{2}-\d{4})\)\.md$` (post [[#R-056]] : version au format `MAJOR.MINOR`)
 - **Date forfaitaire pour rétroactif** : `26-04-2026` (date du sweep d'archivage massif Phase 1-4 documenté dans `ECOSYSTEM-STATE.md`).
 - **Conséquence si violation** : confusion de search, citation d'archives obsolètes comme sources vérifiées, erreurs silencieuses dans les pipelines IA qui consomment le vault.
-- **Découverte** : 28-04-2026, Leonard, en préparant le chantier d'indexation Brain. Formalisation immédiate avant migration des 212 fichiers déjà archivés.
+- **Origine** : 28-04-2026, Leonard, en préparant le chantier d'indexation Brain. Formalisation immédiate avant migration des 212 fichiers déjà archivés.
 
 #### R-055 : Frontmatter canon des docs Brain (3 zones balisées)
 
@@ -684,7 +685,7 @@ Pour fiabilisation future : un hook git pre-commit peut être ajouté pour bumpe
 
 - **Articulation** : [[#R-044]] (format date), [[#R-054]] (codification), [[#R-056]] (versioning), [[#R-073]] (YAML frontmatter robuste).
 - **Conséquence si violation** : frontmatter incohérent entre docs, agents qui ne trouvent pas les champs attendus, audit Brain ↔ vault impossible, perte de la traçabilité de lignée template.
-- **Découverte** : 28-04-2026, Leonard, après audit factuel des frontmatter de toutes les typologies (sub-agent `frontmatter_audit_report.md`) qui a révélé 3 anomalies majeures, 5 templates sans bloc B, double frontmatter visuel sur 2 templates, et asymétries Twin / Mission Ops.
+- **Origine** : 28-04-2026, Leonard, après audit factuel des frontmatter de toutes les typologies (sub-agent `frontmatter_audit_report.md`) qui a révélé 3 anomalies majeures, 5 templates sans bloc B, double frontmatter visuel sur 2 templates, et asymétries Twin / Mission Ops.
 
 #### R-056 : Grammaire de versioning des docs Brain (`X.Y`)
 
@@ -747,7 +748,7 @@ C'est une migration de format pure (pas un changement de contenu) : la version r
 
 - **Articulation** : [[#R-053]] (archivage), [[#R-055]] (frontmatter), [[#R-063]] (politique bump docs méta indexés).
 - **Conséquence si violation** : versions illisibles ou ambiguës, audit de lignée template impossible, agents incapables de distinguer refonte et correction.
-- **Découverte** : 28-04-2026, Leonard, en challengeant la convention semver `X.Y.Z` héritée par défaut. Constat : aucune convention de versioning n'a jamais été formalisée dans LBP, les versions actuelles ont été générées à la volée par différents agents sans règle commune, donc on n'est pas tenu de suivre semver. Décision : passer à `X.Y` plus simple et adapté aux docs.
+- **Origine** : 28-04-2026, Leonard, en challengeant la convention semver `X.Y.Z` héritée par défaut. Constat : aucune convention de versioning n'a jamais été formalisée dans LBP, les versions actuelles ont été générées à la volée par différents agents sans règle commune, donc on n'est pas tenu de suivre semver. Décision : passer à `X.Y` plus simple et adapté aux docs.
 
 #### R-063 : Politique de bump version pour les docs méta indexés dans BDD `Docs méta LBP`
 
@@ -764,7 +765,7 @@ C'est une migration de format pure (pas un changement de contenu) : la version r
   - ✅ Refonte complète d'une section structurante : 1.X → 2.0
   - ❌ Correction d'une coquille « lex » → « les » : pas de bump
 - **Conséquence si violation** : `Version du document` bruitée côté Notion, audit de lignée stale impossible, perte de la valeur de signal du champ.
-- **Découverte** : 02-05-2026, arbitrage Leonard sur D1/D3 architecture des docs méta : besoin de codifier le critère de bump après que (a) le vault Architecture data est devenu source de vérité unique pour les docs méta (en application de [[#R-001]]), (b) la fiche Notion `Docs méta LBP` doit refléter les évolutions des docs sous-jacents.
+- **Origine** : 02-05-2026, arbitrage Leonard sur D1/D3 architecture des docs méta : besoin de codifier le critère de bump après que (a) le vault Architecture data est devenu source de vérité unique pour les docs méta (en application de [[#R-001]]), (b) la fiche Notion `Docs méta LBP` doit refléter les évolutions des docs sous-jacents.
 
 #### R-073 : Frontmatter YAML — envelopper en quotes tout item de liste contenant `:`, apostrophes typographiques ou `"`
 
@@ -783,7 +784,7 @@ C'est une migration de format pure (pas un changement de contenu) : la version r
   - ❌ `- Note avec apostrophe typographique : c'est cassé` → ambigu
   - ✅ `- "Note avec apostrophe typographique : c'est OK"`
 - **Conséquence si violation** : frontmatter affiché en texte brut dans Obsidian, propriétés non indexées par Bases / Dataview, fiche Notion potentiellement non-syncable, perte de discoverabilité.
-- **Découverte** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.1. Leonard a flaggé le frontmatter affiché en rouge dans Obsidian au lieu du panneau Properties. Cause identifiée : item `cleanup_rules` contenant `: "à créer"` interprété comme mapping imbriqué par le parser YAML.
+- **Origine** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.1. Leonard a flaggé le frontmatter affiché en rouge dans Obsidian au lieu du panneau Properties. Cause identifiée : item `cleanup_rules` contenant `: "à créer"` interprété comme mapping imbriqué par le parser YAML.
 
 ## 5.4 Templates & instanciation des docs
 
@@ -795,7 +796,7 @@ Règles structurantes sur la production des docs Brain via templates : obligatio
 - **Why** : Homogénéité, gouvernance par les Docs méta, agents IA capables d'instancier de manière reproductible. Sans template obligatoire, chaque nouveau doc serait produit ad hoc avec des structures variantes, rendant l'audit transverse et la consommation par agents impossibles.
 - **How to apply** : Tout doc Brain est généré à partir d'un template (indexé dans BDD `Templates Brain`). Cycle : Template → instanciation → cleanup → validation → indexation Notion.
 - **Articulation** : [[#R-040]] (instructions dans @INSTR-*), [[#R-054]] (codification des templates), [[#R-055]] (frontmatter du doc généré reflète le template_code et template_version).
-- **Découverte** : Principe architectural originel.
+- **Origine** : Principe architectural originel.
 
 #### R-040 : Toutes les instructions de génération vivent dans des blocs `@INSTR-*`
 
@@ -818,7 +819,7 @@ Règles structurantes sur la production des docs Brain via templates : obligatio
   - ✅ Une seule règle de cleanup suffit : `SUPPRIMER tous les commentaires HTML @INSTR-*`.
   - ✅ Pas de risque de contamination structurelle ni d'oubli de suppression.
 - **Migration effectuée** : 26-04-2026 - 6 templates corrigés. Le 7e cas (`# 0) Meta de la brick` dans `Template méta de Brick.md`) est conservé car c'est une vraie section structurelle du doc final.
-- **Découverte** : 26-04-2026, Leonard, après revue des templates Manuel de BDD - Digital Twin v6.1.0 et WR-RD - Digital Twin v1.0.0.
+- **Origine** : 26-04-2026, Leonard, après revue des templates Manuel de BDD - Digital Twin v6.1.0 et WR-RD - Digital Twin v1.0.0.
 
 #### R-045 : Source de vérité pour la génération d'une BDD = Manuel parent
 
@@ -826,7 +827,7 @@ Règles structurantes sur la production des docs Brain via templates : obligatio
 - **Why** : Le manuel a 12 colonnes (vs 9 dans le WR-RD) - notamment **Portée**, **Nature de production** (Saisie / Calculé / Dérivé) et **Forme logique** détaillée. Ces champs sont indispensables pour générer correctement (ex. distinguer une formule d'une saisie, une relation native d'une jumelle texte, un rollup d'une propriété directe). Le WR-RD est une projection runtime, pas un canon de génération.
 - **How to apply** : Toute génération de BDD Notion ou refonte de schéma repose strictement sur la section 4 du manuel parent (4.1 à 4.5). Le WR-RD n'est consulté qu'en runtime par les agents. Si un écart apparaît entre manuel et WR-RD, c'est le manuel qui prime (cohérent avec [[#R-041]] / [[#R-042]]).
 - **Articulation** : [[#R-041]] (propagation Manuel→WR-RD), [[#R-042]] (QA stricte égalité Manuel/WR-RD), [[#R-046]] (ordre de création des éléments).
-- **Découverte** : 26-04-2026, Phase 6.5 - préparation génération des 28 BDD Twin v2 sur Notion.
+- **Origine** : 26-04-2026, Phase 6.5 - préparation génération des 28 BDD Twin v2 sur Notion.
 
 ## 5.5 Indexation Notion & lifecycle des fiches
 
@@ -838,7 +839,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Why** : Lisibilité Notion, cohérence inter-BDD, utilisabilité par les agents. Au-delà de 280 caractères, la description est tronquée à l'affichage et perd sa fonction de mini-prompt actionnable.
 - **How to apply** : Les descriptions de propriétés dans Notion commencent par un verbe à l'infinitif, restent en texte brut (pas de Markdown), ne dépassent pas 280 caractères. On les copie directement depuis le manuel de BDD (colonne « Description et règles ≤280 (à coller dans Notion) » côté Brain, ou « Instructions d'écriture » côté Twin/MO).
 - **Articulation** : [[#R-029]] (doc Markdown SoT pour indexation), [[#R-033]] (descriptions = mini-prompts), [[#R-072]] (pas d'énumération de taxons dans descriptions ≤280).
-- **Découverte** : Convention établie dans les templates de manuels de BDD.
+- **Origine** : Convention établie dans les templates de manuels de BDD.
 
 #### R-008 : Statuts harmonisés
 
@@ -846,7 +847,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Why** : Uniformité de gouvernance à travers les 11 BDD Brain. Sans harmonisation, chaque BDD inventerait ses propres statuts (Actif, En cours, Validé, Final, Brouillon...) et les agents devraient maintenir une table de correspondance.
 - **How to apply** : Toutes les BDD Brain utilisent la taxonomie `OBJ.STATUT` avec les valeurs canoniques : `Brouillon`, `Validé`, `À revoir`, `Archivé`. Pas de valeur ad hoc.
 - **Articulation** : [[#R-007]] (taxonomies par codes), [[#R-067]] (libellés humains).
-- **Découverte** : Convention établie.
+- **Origine** : Convention établie.
 
 #### R-026 : Archivage local par dossier thématique
 
@@ -855,7 +856,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **How to apply** : Chaque dossier thématique (`Manuels de BDD/Digital Twin/`, `Notes de Concept/`, `Taxonomies/`, `Logic Blocks/`, `00 - Docs méta/`) a son propre sous-dossier `archives/` (ou `99-Archives/` pour les nouveaux dossiers fonctionnels). Le git garde l'historique complet des déplacements - pas besoin de doublons dans le vault.
 - **Articulation** : [[#R-053]] (renaming des docs archivés).
 - **Exemples** : ✅ `Notes de Concept/archives/Concept - Ressource.md` / ❌ `ARCHIVES/Notes de Concept/...`
-- **Découverte** : 24-04-2026, conception arborescence cible pour refonte Twin v2 (D-010).
+- **Origine** : 24-04-2026, conception arborescence cible pour refonte Twin v2 (D-010).
 
 #### R-029 : Le doc Markdown est source de vérité pour l'indexation Notion
 
@@ -866,7 +867,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Exemples** :
   - ✅ `Définition` remplie avec 3-10 lignes extraites/synthétisées du doc (car la description Notion impose 3-10 lignes)
   - ❌ `Définition` générée de toutes pièces par l'agent
-- **Découverte** : 24-04-2026, Leonard, avant indexation Twin v2.
+- **Origine** : 24-04-2026, Leonard, avant indexation Twin v2.
 
 #### R-030 : Double indexation d'une note de concept
 
@@ -878,7 +879,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   3. Lier l'entrée Glossaire → Registre via la relation `est documenté par (notes de concept)`
   4. Si applicable, lier également Glossaire → Méthodes (`est mis en oeuvre par`) et/ou Glossaire → Manuels de BDD (`est modélisé par`)
 - **Articulation** : [[#R-031]] (alignment code note↔glossaire), [[#R-054]] (paire `CPT_*` ↔ `GLO_*`).
-- **Découverte** : 24-04-2026, Leonard, avant indexation Twin v2.
+- **Origine** : 24-04-2026, Leonard, avant indexation Twin v2.
 
 #### R-031 : Alignement du code unique entre note de concept et glossaire
 
@@ -886,7 +887,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Why** : Traçabilité stable et navigation cohérente. Un même concept doit avoir le **même code** dans les deux BDD.
 - **How to apply** : Le `Code unique` d'une entrée dans `Registre des notes de concept` (préfixe `CPT_`) et l'entrée correspondante dans `Glossaire LBP` (préfixe `GLO_`) doivent partager strictement le même `<DOMAIN>_<TOKEN>`. Ce code provient du doc Markdown source.
 - **Articulation** : [[#R-030]] (double indexation), [[#R-054]] (paire `CPT_*` ↔ `GLO_*`).
-- **Découverte** : 24-04-2026.
+- **Origine** : 24-04-2026.
 
 #### R-032 : Mise à jour plutôt que création pour une entrée existante
 
@@ -898,7 +899,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   - **Ne pas changer le `Code unique`** (stable par [[#R-005]])
   - Si le doc v2 porte un **nom ou code différent** de la v1, alors **archiver l'entrée v1** (Statut = Archivé) et **créer une nouvelle entrée v2** ([[#R-036]])
 - **Articulation** : [[#R-005]] (code unique stable), [[#R-036]] (Code unique = identité), [[#R-038]] (identifiant pivot par type).
-- **Découverte** : 24-04-2026.
+- **Origine** : 24-04-2026.
 
 #### R-033 : Les descriptions de propriétés Notion sont des mini-prompts de remplissage
 
@@ -913,7 +914,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Exemples** :
   - ✅ Pour `Code unique` d'une taxo, la description impose format `NAMESPACE.TAXO` MAJUSCULES → valeur dérivée du nom de fichier `.md`
   - ❌ Inventer un code libre
-- **Découverte** : 24-04-2026.
+- **Origine** : 24-04-2026.
 
 #### R-034 : Ordonnancement création puis relation (2 passes)
 
@@ -925,7 +926,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   3. En pratique : regrouper les docs par "type sans dépendance" en premier (ex: taxonomies), puis types dépendants (ex: manuels qui référencent taxonomies), puis types couvrant le graphe (ex: glossaire qui pointe vers manuels)
 - **Articulation** : [[#R-035]] (généralisation inter-types), [[#R-046]] (ordre création BDD Notion).
 - **Exemples** : ✅ Créer Manuel Actifs + Taxo ASSET.SUBTYPE → puis relier Manuel → Taxo / ❌ Tenter de créer le Manuel avec relation vers Taxo qui n'existe pas encore.
-- **Découverte** : 24-04-2026, lors du dry-run mini-batch 0.
+- **Origine** : 24-04-2026, lors du dry-run mini-batch 0.
 
 #### R-035 : Ordre d'indexation inter-types (graphe de dépendances)
 
@@ -939,7 +940,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Généralise [[#R-034]]** : R-034 dit "créer puis relier" au sein d'un batch. R-035 étend à l'échelle inter-types.
 - **Articulation** : [[#R-034]] (2 passes intra-batch).
 - **Exemples** : ✅ Indexer ASSET.SUBTYPE → puis Manuel Actifs peut référencer ASSET.SUBTYPE dans sa création / ❌ Indexer Manuel Actifs d'abord avec relation vide vers ASSET.SUBTYPE, puis revenir plus tard (dette).
-- **Découverte** : 24-04-2026, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
+- **Origine** : 24-04-2026, mini-batch 0 a créé une dette (Manuel Actifs sans ses 7 autres taxos non encore créées). Règle posée pour ne pas reproduire.
 
 #### R-036 : Le Code unique est l'identité ; MAJ en place tant que le code est stable
 
@@ -953,7 +954,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   - ✅ ORG.CONTEXTE : v1 "Contexte d'ancrage de rôle" → v2 "Contexte d'ancrage organisationnel d'un poste" (code stable) → **MAJ** de v1
   - ✅ ORG.DEP_LEVEL → COL.DEP_LEVEL (code change suite à scission UO→Orga+Collectif) → archive v1 + création v2
 - **Conséquence** : Registre propre, IDs Notion stables, relations préservées. La trace des évolutions de libellés vit dans l'historique Notion (créé/last edited) et le journal git.
-- **Découverte** : 25-04-2026, Leonard, après examen des batchs A1+A2 (correctifs sur 25 doublons inutiles).
+- **Origine** : 25-04-2026, Leonard, après examen des batchs A1+A2 (correctifs sur 25 doublons inutiles).
 
 #### R-037 : Lecture complète du doc obligatoire avant indexation (pas de raccourci frontmatter)
 
@@ -966,7 +967,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   - **Glossaire** (dérivé de note de concept via [[#R-030]]) : lire la note de concept ET le doc auquel elle fait référence pour synthétiser
 - **Articulation** : [[#R-029]] (doc Markdown SoT), [[#R-069]] (lecture complète avant indexation - extension Twin/MO).
 - **Exemples** : ✅ Lire `ORG.CONTEXTE.md` en entier pour en tirer une Description source qui mentionne "qualifie le contexte organisationnel d'un poste par niveau de périmètre ; règles : choisir 1 seule valeur, ne pas typer un collectif ou une organisation avec cette taxo" / ❌ Se contenter du `summary:` du frontmatter qui dit juste "Qualifie le contexte d'ancrage d'un poste".
-- **Découverte** : 24-04-2026, Leonard, après batch A1 où raccourci frontmatter-only a produit des descriptions jugées pauvres.
+- **Origine** : 24-04-2026, Leonard, après batch A1 où raccourci frontmatter-only a produit des descriptions jugées pauvres.
 
 #### R-038 : Identifiant pivot par type d'objet (taxonomies = code, autres = nom)
 
@@ -981,7 +982,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   - ✅ Taxo ORG.CONTEXTE : doublon détecté par code → MAJ v1
   - ✅ Manuel "Actifs" (anciennement "Ressources") : doublon détecté par nom (après normalisation)
   - ❌ Tester un doublon de manuel uniquement par code : risque de rater une refonte de nom + code, ou de créer un faux doublon si le code a évolué
-- **Découverte** : 25-04-2026, Leonard, après correction des 25 doublons A1+A2.
+- **Origine** : 25-04-2026, Leonard, après correction des 25 doublons A1+A2.
 
 #### R-046 : Ordre de création des éléments d'une BDD sur Notion
 
@@ -998,7 +999,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
   5. **Réordonner les propriétés** selon [[#R-051]] (`update_view SHOW`) si l'ordre s'est dégradé après ajouts post-création
 - **Exception monodirectionnalité** : la relation `Source(s) d'information` côté Twin est mono - pas de propriété miroir côté `Sources d'informations`.
 - **Articulation** : [[#R-034]] (2 passes), [[#R-047]] (ordering Twin), [[#R-051]] (`update_view SHOW`).
-- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
+- **Origine** : 26-04-2026, Leonard, Phase 6.5.
 
 #### R-047 : Convention d'ordering des propriétés Notion (Twin)
 
@@ -1019,7 +1020,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Renommage des natives Notion** : `Created Date` et `Last Updated Date` réutilisent les propriétés natives Notion `Created time` / `Last edited time` mais sont **renommées** pour rester cohérent avec la nomenclature des manuels.
 - **Justification doctrinale** : relations et rollups forment la **couche calculée et le graphe dérivé** (lecture analytique secondaire), pas une saisie directe par humain. Les voir en bout de schéma signale visuellement leur nature dérivée.
 - **Articulation** : [[#R-046]] (ordre création), [[#R-051]] (`update_view SHOW` final).
-- **Découverte** : 26-04-2026, Leonard, Phase 6.5. **R-047 v2.2 (27-04-2026)** : découplage jumelles+relations (jumelles seules en Bloc 2c Passe 1, relations en Bloc 5 Passe 2 globale), ajout Bloc 6 rollups + Bloc 7 miroirs reçus.
+- **Origine** : 26-04-2026, Leonard, Phase 6.5. **R-047 v2.2 (27-04-2026)** : découplage jumelles+relations (jumelles seules en Bloc 2c Passe 1, relations en Bloc 5 Passe 2 globale), ajout Bloc 6 rollups + Bloc 7 miroirs reçus.
 
 #### R-048 : Naming d'une BDD Notion = nom canonique simple
 
@@ -1028,7 +1029,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **How to apply** : Le titre d'une BDD Notion = **nom canonique simple** au pluriel et avec accents (ex. `Actifs`, `Collectifs`, `Pratiques organisationnelles`, `Événements`, `Problématiques sandbox`). Aucun préfixe `Manuel de BDD - `, aucun suffixe descriptif. Le nom canonique du manuel et le titre de la BDD doivent matcher 1:1.
 - **Articulation** : [[#R-027]] (conventions naming filename), [[#R-062]] (naming univoque docs méta).
 - **Exemples** : ✅ `Actifs` / ❌ `Manuel de BDD - Actifs` / ❌ `BDD Actifs Twin v2`
-- **Découverte** : 26-04-2026, Leonard, Phase 6.5.
+- **Origine** : 26-04-2026, Leonard, Phase 6.5.
 
 #### R-051 : Ordering des propriétés Notion via `update_view SHOW` (et non via l'ordre des `ADD COLUMN`)
 
@@ -1041,7 +1042,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 - **Conséquence sur le workflow** : [[#R-047]] décrit l'ordre **cible final** ; R-051 garantit que l'ordering UI final est conforme **indépendamment** de l'ordre de création.
 - **Effets de bord** : si une nouvelle propriété est créée après le `SHOW` final (ex. ajout d'une relation oubliée), elle apparaît en queue de la vue. Il faut alors relancer `update_view SHOW` pour la repositionner.
 - **Articulation** : [[#R-046]] (ordre création), [[#R-047]] (ordering Twin).
-- **Découverte** : 27-04-2026, Leonard, après pilote Actifs - l'IA Notion a démontré qu'elle pouvait réordonner via `displayProperties`, et l'outil MCP `notion-update-view` expose la même capacité via la directive `SHOW`.
+- **Origine** : 27-04-2026, Leonard, après pilote Actifs - l'IA Notion a démontré qu'elle pouvait réordonner via `displayProperties`, et l'outil MCP `notion-update-view` expose la même capacité via la directive `SHOW`.
 
 ## 5.6 Gouvernance des taxonomies & WR-RD
 
@@ -1053,7 +1054,7 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
 - **Why** : Séparer le stockage lisible (libellés) du référencement stable (codes). Sans cette séparation, tout renommage de libellé casse les références.
 - **How to apply** : Les BDD stockent des libellés humains. Les codes taxonomiques (ex: `OBJ.STATUT`) apparaissent uniquement dans les descriptions ≤280 et dans la documentation. Pas de codes dans le corps des textes.
 - **Articulation** : [[#R-008]] (statuts harmonisés OBJ.STATUT), [[#R-054]] (codification universelle), [[#R-067]] (libellés humains pour les valeurs select Notion).
-- **Découverte** : Convention établie dans les templates.
+- **Origine** : Convention établie dans les templates.
 
 #### R-028 : Cohérence manuel ↔ doc clefs de lecture
 
@@ -1066,7 +1067,7 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
   4. Consigner la MAJ dans les logs du doc dérivé
 - **Articulation** : [[#R-041]] (propagation Manuel→WR-RD obligatoire — extension générale de R-028 au cas WR-RD), [[#R-042]] (QA stricte d'égalité).
 - **Exemples** : ✅ On renomme le champ "Rôles officiels" en "Postes" dans le manuel → on met à jour le WR-RD correspondant / ❌ On modifie un manuel sans vérifier le doc dérivé.
-- **Découverte** : 24-04-2026, confirmé par Leonard.
+- **Origine** : 24-04-2026, confirmé par Leonard.
 
 #### R-041 : Propagation Manuel de BDD → WR-RD obligatoire
 
@@ -1081,7 +1082,7 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
 - **Articulation** : [[#R-028]] (cohérence manuel ↔ doc clefs de lecture — généralisation), [[#R-042]] (QA stricte d'égalité), [[#R-045]] (manuel = SoT pour génération BDD), [[CLAUDE.md#C-009]] (annonce explicite de la propagation Manuel ↔ WR-RD).
 - **Outillage suggéré** : à terme, un script de génération automatique du WR-RD à partir du manuel parent (extraction des 9 colonnes des sous-sections 4.1 à 4.5).
 - **Conséquence si violation** : WR-RD désaligné = agents qui produisent des données non conformes au manuel = pollution silencieuse du Twin client. À détecter au plus tôt par audit régulier.
-- **Découverte** : 26-04-2026, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
+- **Origine** : 26-04-2026, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
 
 #### R-042 : QA stricte d'égalité entre WR-RD et section 4 du manuel parent
 
@@ -1095,7 +1096,7 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
 - **Articulation** : [[#R-041]] (propagation obligatoire), [[CLAUDE.md#C-009]] (annonce explicite).
 - **Outillage suggéré** : script de diff automatique manuel ↔ WR-RD à terme, avec alerte sur les cellules divergentes.
 - **Conséquence si violation** : voir [[#R-041]] - désalignement silencieux entre les deux artefacts, lecture incohérente côté agents et humains.
-- **Découverte** : 26-04-2026, Leonard, après les 3 premiers WR-RD instanciés.
+- **Origine** : 26-04-2026, Leonard, après les 3 premiers WR-RD instanciés.
 
 #### R-058 : Aucune jumelle texte sur les BDDs Brain
 
@@ -1111,7 +1112,7 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
   - Doublonnage du modèle, sources de vérité multiples pour la même info.
   - Désynchronisation silencieuse (relation modifiée mais pas le texte, ou inverse).
   - Pollution des audits Manuel ↔ Notion (champ Notion non documenté = faux positif).
-- **Découverte** : 28-04-2026, Leonard, lors de l'audit transverse Notion ↔ Manuels Brain. Détection sur la BDD Registre des logic blocks de 2 jumelles texte en conflit avec la règle 3.1 du manuel Logic blocks. Décision Leonard : interdire la pratique sur Brain, conserver Twin (où elle est utile), tester Mission Ops.
+- **Origine** : 28-04-2026, Leonard, lors de l'audit transverse Notion ↔ Manuels Brain. Détection sur la BDD Registre des logic blocks de 2 jumelles texte en conflit avec la règle 3.1 du manuel Logic blocks. Décision Leonard : interdire la pratique sur Brain, conserver Twin (où elle est utile), tester Mission Ops.
 
 ## 5.7 Hygiène d'écriture des docs
 
@@ -1131,7 +1132,7 @@ Règles structurantes sur la qualité éditoriale des docs LBP : discipline des 
 - **Cas particulier** : à l'intérieur d'un commentaire HTML `<!-- ... -->`, ne **jamais** écrire la séquence `-->` littérale (même entourée de backticks), car le parseur HTML ferme le commentaire avant que Markdown n'agisse. Solution : sortir l'exemple à citer hors du commentaire HTML.
 - **Articulation** : [[#R-040]] (blocs `@INSTR-*`).
 - **Conséquence si violation** : bruit visuel, confusion lecture, et dans le cas du `-->` dans un commentaire : commentaire HTML cassé en plein milieu, instructions exposées en zone visible.
-- **Découverte** : 28-04-2026, Leonard, en repérant que le `` `<!-- @INSTR-START ... @INSTR-END -->` `` cité dans la procédure de purge finale d'un template cassait le périmètre du commentaire HTML englobant.
+- **Origine** : 28-04-2026, Leonard, en repérant que le `` `<!-- @INSTR-START ... @INSTR-END -->` `` cité dans la procédure de purge finale d'un template cassait le périmètre du commentaire HTML englobant.
 
 #### R-059 : Hygiène d'écriture des docs Brain - pas de bruit historique ni de spéculation future
 
@@ -1149,7 +1150,7 @@ Règles structurantes sur la qualité éditoriale des docs LBP : discipline des 
   - Agents en retrieval qui hésitent entre deux versions, choisissent mal, ou propagent l'incertitude.
   - Difficulté pour un humain de relire le doc et savoir "ce qui est vrai aujourd'hui".
   - Pollution sémantique : le doc devient un mélange de documentation et de log de chantier.
-- **Découverte** : 28-04-2026, Leonard, après détection que mes propositions de mises à jour de manuels Brain incluaient des "notes de version" expliquant ce qui changeait par rapport à la version précédente - exactement le bruit historique que cette règle interdit.
+- **Origine** : 28-04-2026, Leonard, après détection que mes propositions de mises à jour de manuels Brain incluaient des "notes de version" expliquant ce qui changeait par rapport à la version précédente - exactement le bruit historique que cette règle interdit.
 
 #### R-060 : Hygiène d'écriture des champs `summary` et `purpose` du frontmatter Brain
 
@@ -1201,7 +1202,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ Énumération des valeurs en prose → ✅ la section 3 du fichier est le point d'autorité
   - ❌ Citation d'objet voisin → ✅ section 6 « Cohérence & impacts croisés »
   - ❌ Public cible explicite (« pour les consultants ») → ✅ neutre
-- **Découverte** : 28-04-2026, Leonard, après audit factuel des champs summary / purpose à travers les frontmatter Brain.
+- **Origine** : 28-04-2026, Leonard, après audit factuel des champs summary / purpose à travers les frontmatter Brain.
 
 #### R-067 : Libellés humains pour les valeurs de select / multi-select Notion (le code immuable reste séparé)
 
@@ -1218,7 +1219,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ✅ Taxo META.FUNCTION : code `META.FUNCTION.ORIENTER`, libellé canonique = libellé Notion = « Orienter »
   - ❌ Libellé Notion = `NOTE_CONCEPT` (forme code-style, peu humaine)
 - **Conséquence si violation** : BDD Notion peu engageante pour les humains, illusion d'un système purement technique, lecture pénible des fiches.
-- **Découverte** : 03-05-2026, Phase 2.2 du chantier d'architecture des docs méta. Leonard a flaggé la dégradation visuelle lors de la création d'options select brutes.
+- **Origine** : 03-05-2026, Phase 2.2 du chantier d'architecture des docs méta. Leonard a flaggé la dégradation visuelle lors de la création d'options select brutes.
 
 #### R-068 : Aliases ne contiennent ni le code unique ni le nom canonique (anti-redondance)
 
@@ -1234,7 +1235,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ Aliases pour `TPL_DBMAN_BR` qui contient `TPL_DBMAN_BR` (déjà dans `Code unique`)
   - ❌ Aliases pour fiche « Template - Note de concept » qui contient « Template - Note de concept » (déjà dans `Nom canonique`)
 - **Conséquence si violation** : redondance dans la BDD (signal bruité), maintenance dégradée (un rename oblige à 2 modifs au lieu d'1), perte de valeur de la propriété Aliases.
-- **Découverte** : 03-05-2026, Phase 2.2 b.2. Leonard a flaggé la redondance lors de la création de fiches calibration dans Templates Brain.
+- **Origine** : 03-05-2026, Phase 2.2 b.2. Leonard a flaggé la redondance lors de la création de fiches calibration dans Templates Brain.
 
 #### R-069 : Lecture complète du doc avant indexation dans une BDD Notion (pas seulement le frontmatter)
 
@@ -1249,7 +1250,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ✅ Indexer `Template - Méthode LBP` en lisant ses 18 sections d'instructions agent + ses exemples → Description discriminante mentionnant les patterns spécifiques.
   - ❌ Indexer le même template en se contentant du `summary` → Description générique « modèle pour générer une méthode LBP au canon » qui pourrait s'appliquer à n'importe quel template.
 - **Conséquence si violation** : BDD Notion devient un catalogue plat, routage agent dégradé, perte de valeur de la BDD.
-- **Découverte** : 03-05-2026, Phase 2.2 b.3. Indexation de 15 templates faite initialement à partir des seuls frontmatters → 15 fiches aux descriptions génériques détectées par Leonard. Refonte complète après lecture intégrale.
+- **Origine** : 03-05-2026, Phase 2.2 b.3. Indexation de 15 templates faite initialement à partir des seuls frontmatters → 15 fiches aux descriptions génériques détectées par Leonard. Refonte complète après lecture intégrale.
 
 #### R-070 : Ban des noms d'agents dans les sources de vérité (Brain agent-agnostique)
 
@@ -1266,7 +1267,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « Consommé par brain architect au démarrage de la création »
   - ❌ « Sera consommé par kontext (runtime MO) au moment de l'instanciation »
 - **Conséquence si violation** : asymétries silencieuses lors de l'évolution des agents (rename, fusion, suppression), couplage fort SoT ↔ agents qui freine l'évolution architecturale, dégradation de la lisibilité par tout intervenant qui ne connaît pas les noms des agents internes.
-- **Découverte** : 03-05-2026, Phase 2.2 b.3. Leonard a flaggé l'anti-pattern lors de l'indexation de 15 templates citant « brain architect », « twin architect » et « kontext ».
+- **Origine** : 03-05-2026, Phase 2.2 b.3. Leonard a flaggé l'anti-pattern lors de l'indexation de 15 templates citant « brain architect », « twin architect » et « kontext ».
 
 #### R-071 : Auto-suffisance des descriptions dans les sources de vérité (pas de comparaisons relatives)
 
@@ -1284,7 +1285,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « 11 sections (vs 8 côté Twin/MO — divergence assumée) »
   - ❌ « Niveau d'orchestration intermédiaire entre system prompt et logic block » (compare à 2 autres docs)
 - **Conséquence si violation** : asymétries silencieuses au moindre changement d'un doc cité, couplage fort entre docs qui devrait rester découplés, dégradation de la lisibilité.
-- **Découverte** : 03-05-2026, Phase 2.2 b.3. Leonard a flaggé l'anti-pattern lors de l'indexation de 15 templates avec descriptions comparatives.
+- **Origine** : 03-05-2026, Phase 2.2 b.3. Leonard a flaggé l'anti-pattern lors de l'indexation de 15 templates avec descriptions comparatives.
 
 #### R-072 : Pas d'énumération de taxons dans les instructions d'écriture / descriptions ≤280
 
@@ -1302,7 +1303,24 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « Classer selon sa fonction systémique (Orienter, Expliquer, Structurer, Normer, Opérer); Taxo: META.FUNCTION; Niveau: taxon. »
   - ❌ « Indiquer l'état (à traiter, en cours, validé, archivé); Taxo: OBJ.STATUT. »
 - **Conséquence si violation** : asymétries silencieuses dès la moindre évolution de la taxonomie référencée, agents en routage erroné, repassage manuel sur N manuels au lieu de modifier uniquement le `.md` de taxonomie.
-- **Découverte** : 03-05-2026, Phase 3.B refonte Manuel + WR-RD `Docs méta LBP`. Lors de la migration `META.FAMILY → META.FUNCTION`, j'avais inliné les 5 taxons. Leonard a flaggé.
+- **Origine** : 03-05-2026, Phase 3.B refonte Manuel + WR-RD `Docs méta LBP`. Lors de la migration `META.FAMILY → META.FUNCTION`, j'avais inliné les 5 taxons. Leonard a flaggé.
+
+#### R-075 : Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue
+
+- **Portée** : Transverse — tous les catalogues docs méta LBP (Règles intrinsèques, Décisions architecturales, Codification, Workflows opérationnels, Règles de propagation, et tout futur catalogue).
+- **Why** : Quand un item d'un catalogue (ex. R-XXX) cite par wikilink un item d'un autre catalogue (ex. `[[Règles de propagation - LBP#PROP-XXX]]`), l'ajout / la modification de cet item crée une dépendance entre les deux catalogues. Sans vérification croisée systématique au moment du changement, on risque : (a) wikilink mort si l'item cité n'existe pas (faute de frappe ou item non encore créé) ; (b) sens cité divergent du sens réel de l'item cible (drift sémantique silencieux) ; (c) doublon implicite (même règle exprimée 2× sous formes différentes) ; (d) dépendance bidirectionnelle attendue mais non matérialisée côté cible. Ces asymétries silencieuses sont le 1er coût de la fragmentation en catalogues atomiques.
+- **How to apply** : à chaque ajout / modification / suppression d'un item citant un autre catalogue, **consulter le catalogue cité en parallèle** et vérifier :
+  1. **Existence** : l'item cité existe et a le bon ID (pas de wikilink mort).
+  2. **Cohérence sémantique** : le sens cité par cet item est cohérent avec ce que l'item cible définit réellement (relire l'item cible).
+  3. **Anti-doublon** : aucun doublon implicite n'est créé entre les deux catalogues (même contrainte ou cascade exprimée 2× sous formes différentes — auquel cas garder un seul propriétaire canonique cf. [[#R-066]]).
+  4. **Bidirectionnalité** : si la citation crée une dépendance bidirectionnelle (l'item cité devrait à son tour mentionner cet item pour cohérence), faire la modification réciproque OU documenter pourquoi la bidirectionnalité n'est pas requise.
+- **Articulation** : [[#R-066]] (propriétaire canonique unique — application directe), [[#R-074]] (méthodes pour règles de maintenance — R-075 sera intégrée à la future Méthode - Maintenance d'un catalogue Brain), [[CLAUDE.md#C-024]] (wikilinks). **Note de migration** : R-075 est conceptuellement une **règle de propagation** (déclenchée par un événement = ajout/modif d'item) ; elle migrera vers PROP-XXX quand `Règles de propagation - LBP` sera produite (Phase 4), aux côtés de [[#R-041]], [[#R-042]], [[#R-028]] qui sont elles aussi des PROP « déguisées ».
+- **Exemples** :
+  - ✅ Ajout d'un nouveau R-XXX qui cite `[[Règles de propagation - LBP#PROP-005]]` → ouvrir Règles de propagation, vérifier que PROP-005 existe et que ce qu'elle définit est bien ce qu'on cite.
+  - ✅ Modification d'un WF-XXX qui cite plusieurs R-XXX → relire chaque R citée pour s'assurer que la modification du WF reste cohérente avec ce que les R prescrivent.
+  - ❌ Capturer un nouveau D-XXX qui cite `[[Règles intrinsèques - LBP#R-099]]` sans vérifier que R-099 existe (résultat : wikilink mort silencieux).
+- **Conséquence si violation** : wikilinks morts, drift sémantique silencieux entre catalogues, doublons implicites, dépendances bidirectionnelles oubliées. Asymétries détectables seulement par audit transverse (coût élevé).
+- **Origine** : 03-05-2026, en discussion Leonard suite à la rétrospective de migration de Règles intrinsèques v1.1. Capture proactive avant production des 4 catalogues restants pour formaliser la discipline de maintenance croisée.
 
 ## 5.8 Architecture & doctrine Twin
 
@@ -1323,7 +1341,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - une **Action détectée** n'est pas une **Pratique** (geste observé vs pattern récurrent consolidé)
 - **Articulation** : [[#R-012]] (séparation 4 régimes — autre frontière fondamentale).
 - **Exemples** : ✅ Une équipe produit = Collectif ; SA TotalEnergies = Organisation / ❌ "Équipe ABC (SA)" dans Organisations.
-- **Découverte** : Panorama V2 v3, §3.2.
+- **Origine** : Panorama V2 v3, §3.2.
 
 #### R-012 : Séparation des 4 régimes de connaissance
 
@@ -1335,7 +1353,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   3. **Consolidation analytique** : stabilisé comme objet de lecture/diagnostic
   4. **Pilotage / action** : oriente, mesure, transforme
 - **Articulation** : [[#R-002]] (zero contamination — autre frontière), [[#R-011]] (frontières objets), [[CLAUDE.md#C-018]] (vérifier régime BDD avant de signaler une anomalie de relation absente).
-- **Découverte** : Panorama V2 v3, §3.1.
+- **Origine** : Panorama V2 v3, §3.1.
 
 #### R-013 : Sobriété relationnelle
 
@@ -1344,7 +1362,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **How to apply** : Une relation réelle n'est créée que si elle apporte un gain clair de : compréhension, traversée, consolidation, comparaison, ou diagnostic. Éviter les relations "au cas où" et les raffinements sans gain net.
 - **Articulation** : [[#R-014]] (règle absolue sandboxes), [[#R-017]] (sobriété rollups), [[#R-058]] (pas de jumelles texte sur Brain — distinction stricte).
 - **Exemples** : ✅ `Organisation → comprend → Collectif` ; `OKR → est mesuré par → Indicateur` / ❌ Relation décorative "est mentionné par".
-- **Découverte** : Panorama V2 v3, §3.3 et §8.1.
+- **Origine** : Panorama V2 v3, §3.3 et §8.1.
 
 #### R-014 : Règle absolue des sandboxes
 
@@ -1353,7 +1371,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **How to apply** : Une BDD sandbox n'a **jamais** de relations réelles avec les autres BDD du Twin, **à une seule exception** : la relation vers `Sources d'informations`. Les liens se matérialisent uniquement via jumelles textes.
 - **Articulation** : [[#R-015]] (jumelles textes systématiques), [[#R-021]] (consolider vs promouvoir), [[#R-022]] (critères promotion sandbox→officielle).
 - **Exemples** : ✅ Sandbox Pratiques → jumelle texte "est conduite par (collectifs) (texte)" / ❌ Sandbox Pratiques → relation réelle vers Collectifs.
-- **Découverte** : Panorama V2 v3, §3.4.
+- **Origine** : Panorama V2 v3, §3.4.
 
 #### R-015 : Jumelles textes systématiques
 
@@ -1361,7 +1379,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **Why** : Préserver la formulation observée dans les sources, permettre la consolidation progressive, garder un indice relationnel avant validation, servir de base de vérification pour humain ou agent.
 - **How to apply** : Pour chaque relation réelle dans une BDD officielle, prévoir une **jumelle texte** qui conserve les formulations observées. Exemple : `est conduite par (collectifs) (texte)` accompagne `est conduite par (collectifs)`. Dans une sandbox, **seule la jumelle texte** existe.
 - **Articulation** : [[#R-014]] (sandbox = uniquement jumelles), [[#R-058]] (Brain = pas de jumelles — distinction stricte des doctrines Brain vs Twin).
-- **Découverte** : Panorama V2 v3, §8.2.
+- **Origine** : Panorama V2 v3, §8.2.
 
 #### R-016 : La 5D est une matrice de lecture, jamais une preuve primaire
 
@@ -1369,7 +1387,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **Why** : La 5D sert à rendre visibles des structures, comparer des objets hétérogènes, synthétiser des traversées. Elle ne remplace pas la preuve, qui reste portée par objets, relations, propriétés spécifiques, sources, indices.
 - **How to apply** : Utiliser la 5D pour : contribution, exposition, dépendance, causalité/impact/risque, pilotage/mesure. Ne jamais l'utiliser pour reclassifier les objets ou fonder un diagnostic.
 - **Articulation** : [[#R-017]] (sobriété rollups — la 5D peut générer des rollups, à ne pas multiplier).
-- **Découverte** : Panorama V2 v3, §3.5 et §8.5.
+- **Origine** : Panorama V2 v3, §3.5 et §8.5.
 
 #### R-017 : Sobriété des rollups et formules
 
@@ -1378,7 +1396,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **How to apply** : Un rollup ou une formule n'est conservé que s'il améliore réellement l'intelligibilité. Jamais de formule décorative. Pas de rollup dans une sandbox sans relations réelles.
 - **Articulation** : [[#R-013]] (sobriété relationnelle), [[#R-014]] (sandbox sans rollups), [[#R-016]] (5D = lecture, pas preuve).
 - **Exemples** : ✅ Formule `Vulnérabilité nette de l'actif`, rollup `Profils 5D agrégés d'exposition` / ❌ Formule "nombre total de relations".
-- **Découverte** : Panorama V2 v3, §3.6, §8.6, §8.7.
+- **Origine** : Panorama V2 v3, §3.6, §8.6, §8.7.
 
 #### R-018 : Spécialisation des propriétés génériques à l'écriture
 
@@ -1387,7 +1405,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **How to apply** : Respecter les propriétés génériques communes (Description, Indices observés, Indices d'existence, Commentaires, Merge Notes, Logs) mais appliquer des **instructions d'écriture spécifiques à chaque objet**. Les manuels de BDD portent cette doctrine via les colonnes « Instructions d'écriture » de leur section 4.
 - **Articulation** : [[#R-019]] (5 couches BDD), [[#R-041]] (propagation Manuel→WR-RD).
 - **Exemples** : ✅ Description d'une problématique = nœud diagnostique consolidé + périmètre + logique centrale ; Description d'un actif = ce que c'est + à quoi il sert + pour qui / ❌ Description uniforme "texte libre 3-10 lignes".
-- **Découverte** : Panorama V2 v3, §3.7 et §8.4.
+- **Origine** : Panorama V2 v3, §3.7 et §8.4.
 
 #### R-019 : Architecture en 5 couches d'une BDD bien spécifiée
 
@@ -1401,7 +1419,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   5. **Couche calculée** (rollups + formules)
 - **Articulation** : [[#R-018]] (spécialisation à l'écriture), [[#R-047]] (ordering Notion qui matérialise les couches dans l'UI).
 - **Exemples** : Variantes d'intensité selon famille (registre, socle sémantique, extraction factuelle, socle structurel, post-traitement analytique) - cf. Panorama §9.2.
-- **Découverte** : Panorama V2 v3, §9.1.
+- **Origine** : Panorama V2 v3, §9.1.
 
 #### R-020 : Traçabilité obligatoire des fiches importantes
 
@@ -1414,7 +1432,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - Logs / Révisions LBP
   - Traces de merge si applicable
 - **Articulation** : [[#R-023]] (progressivité — la traçabilité accompagne la densification), [[#R-025]] (tableau maître).
-- **Découverte** : Panorama V2 v3, §13.2.
+- **Origine** : Panorama V2 v3, §13.2.
 
 #### R-021 : Distinction stricte fusionner / consolider / promouvoir
 
@@ -1426,7 +1444,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - **Promouvoir** : une entrée sandbox devient une BDD officielle
 - **Articulation** : [[#R-014]] (sandboxes), [[#R-022]] (critères promotion).
 - **Exemples** : ✅ "Fusion" dans Merge Notes d'une BDD ; "Consolidation" dans le passage Journal des signaux → Enjeux / ❌ Parler de "fusion" pour une promotion sandbox.
-- **Découverte** : Panorama V2 v3, §13.3.
+- **Origine** : Panorama V2 v3, §13.3.
 
 #### R-022 : Critères minimaux de promotion sandbox → BDD officielle
 
@@ -1439,7 +1457,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   4. **Valeur analytique nette** attendue après promotion
   5. **Cohérence avec la frontière conceptuelle** de la BDD cible
 - **Articulation** : [[#R-014]] (sandbox = pas de relations réelles), [[#R-021]] (distinction promotion vs fusion vs consolidation).
-- **Découverte** : Panorama V2 v3, §13.4.
+- **Origine** : Panorama V2 v3, §13.4.
 
 #### R-023 : Progressivité du remplissage
 
@@ -1447,7 +1465,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **Why** : Le Twin n'est pas conçu pour être "plein" immédiatement mais densifié progressivement à mesure que la preuve augmente. Imposer une complétude uniforme génère du remplissage artificiel.
 - **How to apply** : Toutes les BDD n'ont pas besoin du même niveau de densité au même moment. Ce qui compte : la qualité de ce qui est utile pour la question analytique du moment.
 - **Articulation** : [[#R-020]] (traçabilité), [[#R-024]] (lecture 3 niveaux — la progressivité s'évalue par niveau).
-- **Découverte** : Panorama V2 v3, §13.5.
+- **Origine** : Panorama V2 v3, §13.5.
 
 #### R-024 : Lecture du Twin sur 3 niveaux simultanés
 
@@ -1458,7 +1476,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   2. **Niveau 2 - ce qui se passe** : actions, pratiques, processus, signaux, enjeux, transformations
   3. **Niveau 3 - ce que cela signifie et ce qu'il faut en faire** : problématiques, capacités, principes, modulateurs, OKR, indicateurs
 - **Articulation** : [[#R-016]] (5D pour traversée), [[#R-023]] (progressivité par niveau).
-- **Découverte** : Panorama V2 v3, §14.3.
+- **Origine** : Panorama V2 v3, §14.3.
 
 #### R-025 : Tableau maître canonique obligatoirement tenu à jour
 
@@ -1470,7 +1488,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - Tout changement de régime architectural doit y être explicité
   - Toute sandbox doit être distinguée de sa BDD officielle cible
 - **Articulation** : [[#R-066]] (propriétaire canonique unique — le tableau maître applique R-066 au catalogue des BDDs Twin).
-- **Découverte** : Panorama V2 v3, §4.3. Tableau maître reproduit dans `[[Architecture - Twin]]`.
+- **Origine** : Panorama V2 v3, §4.3. Tableau maître reproduit dans `[[Architecture - Twin]]`.
 
 #### R-049 : Déclaration obligatoire de la `ui_family` pour toute BDD Twin
 
@@ -1490,7 +1508,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - ✅ `ui_family: "Objets candidats"` (toutes les sandboxes)
   - ❌ `ui_family: "objets candidats"` (casse non canonique)
   - ❌ `ui_family: "Sandboxes"` (valeur non canonique)
-- **Découverte** : 27-04-2026, Phase 6.5 Twin v2. Capture déclenchée par l'adoption de D-017 (ui_family en 7 valeurs orientées utilisateur) et la nécessité d'imposer la déclaration sur les 28 BDDs Twin en cours de création. Champ `Découverte` non explicitement formalisé en legacy, restauré ici à partir du contexte de Phase 6.5.
+- **Origine** : 27-04-2026, Phase 6.5 Twin v2. Capture déclenchée par l'adoption de D-017 (ui_family en 7 valeurs orientées utilisateur) et la nécessité d'imposer la déclaration sur les 28 BDDs Twin en cours de création. Champ `Découverte` non explicitement formalisé en legacy, restauré ici à partir du contexte de Phase 6.5.
 
 #### R-050 : Propriété conditionnelle `Lien vers la note avancée` (URL)
 
@@ -1511,7 +1529,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 - **Liste actuelle (Twin v2)** des BDD `has_advanced_note: false` (10) : 6 sandboxes + Processus candidats + Journal des signaux + Actions détectées + Indicateurs.
 - **Articulation** : [[#R-047]] (ordering propriétés Twin), [[#R-049]] (ui_family), [[#R-055]] (frontmatter has_advanced_note).
 - **Exemples** : ✅ `https://notion.so/Profil-Organisationnel-Numalis-...` / ❌ propriété présente sur fiche `OKR sandbox` (sandbox = exclu).
-- **Découverte** : 27-04-2026, Leonard, Phase 6.5.
+- **Origine** : 27-04-2026, Leonard, Phase 6.5.
 
 ---
 

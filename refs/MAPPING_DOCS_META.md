@@ -157,6 +157,33 @@ Les règles de maintenance et d'évolution communes à un type de doc (stabilit�
 
 **Découverte** : 03-05-2026. 1re itération de TPL_META_CATALOGUE incluait une section §6 « Bonnes pratiques d'écriture du catalogue » dupliquée dans chaque doc canonique généré. Leonard a flaggé l'anti-pattern : « risque fort de doublon avec des méthodes qui vivraient autre part ; le maintien de la cohérence à travers l'évolution est fondamental ». Section §6 supprimée du template (v1.3 → v1.4) ; règles de maintenance déplacées vers une méthode dédiée à produire (BDD Méthodes LBP).
 
+### 3.11 Maintenance croisée inter-catalogues : règle dédiée + invocation par Workflow
+
+Quand un item d'un catalogue cite un item d'un autre catalogue (wikilink inter-doc type `[[Règles intrinsèques - LBP#R-XXX]]`), l'ajout / modification de cet item crée une dépendance entre les deux catalogues. La discipline de vérification croisée (existence de l'item cité, cohérence sémantique, anti-doublon, bidirectionnalité éventuelle) est portée par **R-075** (capturée 03-05-2026) qui est une **règle de propagation déguisée** — elle migrera vers PROP-XXX quand `Règles de propagation - LBP` sera produite.
+
+Cette règle (R-075 puis future PROP-XXX) sera **invoquée par le futur Workflow d'ajout/modification d'item dans un catalogue**. Elle ne doit **pas** être documentée dans le template d'instanciation TPL_META_CATALOGUE (le template guide la génération initiale, pas la maintenance post-instanciation).
+
+**Anti-pattern** : embarquer cette discipline dans le `TEMPLATE_USAGE_GUIDE` du template (signalé par Leonard 03-05-2026, retiré du template v1.6).
+
+### 3.12 Chaîne intuition Leonard : Catalogues atomiques → Catalogue orchestré → Méthodes (vision Phase 4-5)
+
+Architecture en 3 niveaux qui structure les futures productions :
+
+```
+Niveau 1 - Catalogues atomiques     Niveau 2 - Catalogue orchestré     Niveau 3 - Méthodes (futures)
+- Règles intrinsèques (R-XXX)        - Workflows opérationnels (WF-XXX)  - Procédures riches consommables
+- Règles de propagation (PROP-XXX)     qui invoquent les R/PROP/code/D     par agents (brain architect, etc.)
+- Décisions architecturales (D-XXX)    par wikilinks inter-doc, sans       qui synthétisent N WF + leurs
+- Codification (code-XXX)              dupliquer leur contenu              R/PROP/code/D référencés
+```
+
+**Règles de composition** :
+- Un Workflow (WF-XXX) **invoque** une R-XXX, une PROP-XXX, une code-XXX, une D-XXX par wikilink. Il **ne reproduit pas** leur contenu (cf. [[#R-066]]).
+- Une Méthode (à produire en Phase 4 final ou Phase 5) **agrège** N WF + leurs items référencés en une procédure narrative riche. Elle ne reproduit pas non plus le contenu des items.
+- Le Brain LBP final aura donc 3 niveaux de granularité documentaire : items atomiques (R/PROP/code/D), workflows orchestrés (WF), méthodes synthétiques.
+
+**Pas de méthodes maintenant** (vision Leonard 03-05-2026) : on ne présuppose pas l'existence des méthodes au fil de l'eau (trop abstrait sans la vue d'ensemble). On produit d'abord les 5 catalogues atomiques + le catalogue WF, puis on dérive les méthodes quand on a la vue d'ensemble.
+
 ### 3.10 Niveau d'explicité attendu dans les templates : référence Manuel BDD Twin v7.0
 
 Le pattern de référence pour le niveau d'explicité d'un template Brain est `Template - Manuel de BDD - Digital Twin.md` v7.0. Ses caractéristiques :
