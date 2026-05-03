@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_DOC_MAP_LBP"
 
 # === Méta-gouvernance ===
-version: "0.1"
+version: "0.2"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "03-05-2026"
@@ -34,7 +34,6 @@ tags:
 > **Scope** : 🟦 LBP - Bundle écosystème (durable, indexé dans BDD `Docs méta LBP`).
 > **Fonction systémique** : `META.FUNCTION.ORIENTER` (porte d'entrée pour comprendre les docs méta).
 > **Public visé** : intervenants LBP (Leonard, Clément, futurs collaborateurs), agents (brain architect, agents d'analyse).
-> Pour le **catalogue exhaustif des templates par fonction** et le **cycle de revue par famille** : voir version v1.0 (à produire après refonte des docs méta — Phase 5 du chantier).
 
 ---
 
@@ -49,14 +48,14 @@ Concrètement, un doc méta sert à **gouverner** d'autres objets, pas à les re
 ### 1.2 Articulation avec les règles fondatrices
 
 - **R-001** (Markdown SoT) : tous les docs méta vivent en Markdown dans le vault `Architecture data`. Notion est un miroir d'index.
-- **D-023** (stack) : Brain = Notion (BDD `Docs méta LBP` indexée dans Notion), Twin + Mission Ops = Supabase (à venir).
+- **D-023** (stack) : Brain = Notion (BDD `Docs méta LBP` indexée dans Notion), Twin + Mission Ops = Supabase.
 - **R-002, R-003, D-007** (zero contamination) : aucun contenu spécifique à une mission client n'entre dans `Docs méta LBP`. Les docs méta sont **transverses cross-mission**, stables, réutilisables.
 
 ---
 
 ## 2. Définition opérationnelle
 
-### 2.1 Règle frontière (à codifier en R-XXX en Phase 1.0)
+### 2.1 Règle frontière (R-065)
 
 > **Un doc est méta s'il gouverne plusieurs objets, plusieurs BDD, plusieurs familles d'artefacts ou plusieurs workflows.**
 > **Un doc n'est pas méta s'il décrit un objet, une BDD, une taxonomie, un prompt, une méthode ou un template spécifique.**
@@ -71,7 +70,7 @@ Concrètement, un doc méta sert à **gouverner** d'autres objets, pas à les re
 | `[[Architecture Brain]]`, `[[Architecture Twin]]`, `[[Architecture Mission Ops]]` | Prompts maîtres, system prompts → BDD `Prompts LBP` |
 | `[[Règles intrinsèques LBP]]`, `[[Décisions architecturales LBP]]`, `[[Workflows opérationnels LBP]]`, `[[Codification LBP]]`, `[[Règles de propagation LBP]]` | Méthodes LBP → BDD `Méthodes LBP` |
 | Chartes (rédactionnelle, graphique, sécurité/RGPD) **transverses LBP** | Logic blocks, agents, outils externes → BDDs dédiées |
-| Quality control (par domaine : Brain, Twin, MO) | **Templates d'instanciation** → BDD `Templates méta Brain` (à créer en Phase 2) |
+| Quality control (par domaine : Brain, Twin, MO) | **Templates d'instanciation** → BDD `Templates Brain` |
 | **Constitution** elle-même (ce doc) | Templates de bricks → BDD `Templates de Bricks` (existante, séparée par scope agent — utilisée par kontext) |
 
 ### 2.3 Cas limites
@@ -122,7 +121,7 @@ Pour la définition complète, les observables et les règles d'arbitrage : voir
 
 ## 5. Règle anti-doublon : propriétaire canonique unique
 
-### 5.1 Énoncé (à codifier en R-XXX en Phase 1.0)
+### 5.1 Énoncé (R-066)
 
 > **Une information structurante a un seul propriétaire canonique. Tous les autres docs peuvent la résumer ou la citer, mais doivent pointer vers le propriétaire — jamais la redéfinir.**
 
@@ -139,7 +138,7 @@ Pour la définition complète, les observables et les règles d'arbitrage : voir
 | Comment appliquer une règle | `[[Règles intrinsèques LBP]]` ou `[[Workflows opérationnels LBP]]` selon le cas | Doctrine explique le paradigme, pas l'application |
 | Que faire après modification | `[[Règles de propagation LBP]]` ou `[[Workflows opérationnels LBP]]` (WF-008) | Les docs concernés indiquent seulement « voir propagation » |
 | Définition d'un concept du glossaire | Note de concept correspondante (BDD `Notes de Concept LBP`) | Les docs méta peuvent **citer** le concept, pas le redéfinir |
-| Template d'instanciation d'un objet | BDD `Templates méta Brain` (Phase 2) | Les docs méta peuvent **citer** le template utilisé via la propriété `Template`, pas le copier |
+| Template d'instanciation d'un objet | BDD `Templates Brain` | Les docs méta peuvent **citer** le template utilisé via la propriété `Template`, pas le copier |
 
 ### 5.3 Mécanisme technique de mise en œuvre
 
@@ -191,59 +190,57 @@ Mise à jour de l'état de l'écosystème (ECOSYSTEM-STATE — scope Session)
 - **WF-XXX** (Workflows) : opération standardisée. Souvent dérivée d'une règle qui définit le « quoi », tandis que le workflow définit le « comment ». Vit dans `[[Workflows opérationnels LBP]]`.
 - **C-XXX** (Conventions session) : règles de la collaboration Claude/Leonard, hors bundle LBP. Vivent dans `CLAUDE.md`.
 
-### 7.2 Cycle de revue (esquisse — à enrichir en v1.0)
+### 7.2 Cycle de revue (esquisse)
 
-- **Constitution (ce doc)** : à revoir à chaque clôture de Phase majeure du chantier d'architecture des docs méta + audit annuel.
+- **Constitution (ce doc)** : audit annuel + revue après tout changement structurel de l'architecture des docs méta.
 - **Catalogues (RULES, DECISIONS, WORKFLOWS)** : pas de revue cyclique, bumpés au fil de l'eau (R-063 — patch sur ajout d'entrée atomique).
-- **Cadres (CADRE_LBP, CADRE_TWIN, etc.)** : revue trimestrielle ou à milestone (refonte d'une section structurante).
+- **Cadres** : revue trimestrielle ou à milestone (refonte d'une section structurante).
 - **Specs d'architecture** : revue à chaque évolution structurelle d'un domaine.
-- **Chartes** (à créer Phase 5) : revue annuelle ou à changement de positionnement éditorial / graphique.
+- **Chartes** : revue annuelle ou à changement de positionnement éditorial / graphique.
 
 ---
 
 ## 8. Statut de cette constitution
 
-- **Version actuelle** : 0.1 (minimale, invariants stables uniquement).
-- **Version cible** (Phase 5 du chantier d'architecture) : 1.0 (intégrera le catalogue exhaustif des 10 templates par fonction, la table de propagation détaillée par type de doc, le cycle de revue formalisé par famille).
-- **Bump version** : suit R-063.
+- **Bump version** : suit R-063 (patch sur enrichissement compatible, minor sur refonte structurelle).
 
 ---
 
-## Annexe A — Arborescence cible des docs méta (Phase 3)
+## Annexe A — Arborescence cible des docs méta
 
-> **Convention de nommage des fichiers (R-064 à codifier)** : le filename d'un doc méta est strictement identique à son `title:` frontmatter (= nom canonique humain), et à son `Nom canonique` côté Notion. Le code `META_*` vit dans le frontmatter et dans la propriété `Code unique` côté Notion, mais **n'apparaît pas dans le filename**. Cohérence : 1 doc = 1 nom humain, sans bruit visuel.
+> **Convention de nommage des fichiers (R-064)** : le filename d'un doc méta est strictement identique à son `title:` frontmatter (= nom canonique humain), et à son `Nom canonique` côté Notion. Le code `META_*` vit dans le frontmatter et dans la propriété `Code unique` côté Notion, mais **n'apparaît pas dans le filename**. Cohérence : 1 doc = 1 nom humain, sans bruit visuel.
 
 ```
 00 - Docs méta/
   10 - Orienter/
     Panorama - LBP.md                          (code : META_PANORAMA_LBP)
-    Constitution des docs méta - LBP.md        (code : META_DOC_MAP_LBP) — ce doc
-    Philosophie - LBP.md                       (code : META_PHILOSOPHIE_LBP)         (à créer Phase 5)
-    Profil - LBP.md                            (code : META_PROFIL_LBP)              (à créer Phase 5, optionnel)
+    Constitution des docs méta - LBP.md        (code : META_DOC_MAP_LBP)
+    Philosophie - LBP.md                       (code : META_PHILOSOPHIE_LBP)
+    Profil - LBP.md                            (code : META_PROFIL_LBP)
 
   20 - Expliquer/
-    Cadre - LBP.md                             (code : META_CADRE_LBP)               (ex DOCTRINE_LBP)
-    Cadre - Brain.md                           (code : META_CADRE_BRAIN)             (à créer Phase 5)
-    Cadre - Twin.md                            (code : META_CADRE_TWIN)              (ex DOCTRINE_TWIN_LBP)
-    Cadre - Mission Ops.md                     (code : META_CADRE_MO)                (à créer Phase 5)
-    Principes structurants - LBP.md            (code : META_PRINCIPES_LBP)        (à créer Phase 5)
+    Cadre - LBP.md                             (code : META_CADRE_LBP)
+    Cadre - Brain.md                           (code : META_CADRE_BRAIN)
+    Cadre - Twin.md                            (code : META_CADRE_TWIN)
+    Cadre - Mission Ops.md                     (code : META_CADRE_MO)
+    Principes structurants - LBP.md            (code : META_PRINCIPES_LBP)
     Décisions architecturales - LBP.md         (code : META_DECISIONS_LBP)
 
   30 - Structurer/
     Architecture - Brain.md                    (code : META_SPECS_ARCHITECTURE_BRAIN)
     Architecture - Twin.md                     (code : META_SPECS_ARCHITECTURE_TWIN)
     Architecture - Mission Ops.md              (code : META_SPECS_ARCHITECTURE_MO)
-    Interfaces Brain↔Twin↔MO.md                (code : META_INTERFACES_LBP)          (à créer Phase 5, optionnel)
+    Interfaces Brain↔Twin↔MO.md                (code : META_INTERFACES_LBP)
 
   40 - Normer/
     Règles intrinsèques - LBP.md               (code : META_RULES_LBP)
     Codification - LBP.md                      (code : META_CODIFICATION_LBP)
-    Charte rédactionnelle - LBP.md             (code : META_CHARTE_REDACTIONNELLE_LBP)   (à créer Phase 5)
-    Charte graphique - LBP.md                  (code : META_CHARTE_GRAPHIQUE_LBP)        (à créer Phase 5)
-    Sécurité & RGPD - LBP.md                   (code : META_SECURITY_RGPD_LBP)           (à créer Phase 5)
-    Quality control - Brain.md                 (code : META_QC_BRAIN)                    (à créer Phase 5)
-    Quality control - Twin.md                  (code : META_QC_TWIN)                     (à créer Phase 5)
-    Quality control - Mission Ops.md           (code : META_QC_MO)                       (à créer Phase 5)
+    Charte rédactionnelle - LBP.md             (code : META_CHARTE_REDACTIONNELLE_LBP)
+    Charte graphique - LBP.md                  (code : META_CHARTE_GRAPHIQUE_LBP)
+    Sécurité & RGPD - LBP.md                   (code : META_SECURITY_RGPD_LBP)
+    Quality control - Brain.md                 (code : META_QC_BRAIN)
+    Quality control - Twin.md                  (code : META_QC_TWIN)
+    Quality control - Mission Ops.md           (code : META_QC_MO)
 
   50 - Opérer/
     Workflows opérationnels - LBP.md           (code : META_WORKFLOWS_LBP)
@@ -256,9 +253,9 @@ Mise à jour de l'état de l'écosystème (ECOSYSTEM-STATE — scope Session)
     (anciennes versions des docs refondus, suffixées selon R-053)
 ```
 
-**Conventions résumées (à codifier en R-064 Phase 1.0)** :
+**Conventions résumées (R-064)** :
 - **Filename = nom canonique humain** (identique au `title:` frontmatter et au `Nom canonique` Notion). Pas de code dans le filename.
-- **Code** : préfixe `META_` pour tous les docs méta indexés (remplace l'ancien préfixe `CHRT_` — décision D-XXX à capturer Phase 1.0). Migration des codes existants en Phase 4 (refonte progressive doc par doc).
+- **Code** : préfixe `META_` pour tous les docs méta indexés.
 - **Scope dans le code** : suffix `_LBP` pour transverse (Brain + Twin + MO), suffix `_BRAIN` / `_TWIN` / `_MO` pour domaine spécifique (jamais les deux).
 - **Wikilinks systématiques** (cf. C-024) : les renvois inter-docs utilisent `[[Nom humain]]`, ex. `[[Constitution des docs méta - LBP]]`. Aliases dans frontmatter pour résilience au rename via Obsidian UI.
 
@@ -284,16 +281,16 @@ Ne pas surinvestir dans `META_WORKFLOWS_LBP` au-delà du nécessaire. Garder le 
 
 ### Articulation à formaliser
 
-Décision architecturale à capturer dans `[[Décisions architecturales LBP]]` quand brain architect sera proche de l'opérationnel (D-XXX future). Cette décision tranchera : (a) garder les workflows Markdown comme catalogue de référence + outillage agent en parallèle ; ou (b) archiver les workflows Markdown et basculer entièrement sur l'outillage agent.
+Une décision architecturale dans `[[Décisions architecturales LBP]]` tranchera, quand brain architect sera proche de l'opérationnel : (a) garder les workflows Markdown comme catalogue de référence + outillage agent en parallèle ; ou (b) archiver les workflows Markdown et basculer entièrement sur l'outillage agent.
 
 ---
 
 ## Annexe B — Articulations clés
 
-- **Préfixe code `META_`** : décision architecturale D-XXX (à capturer Phase 1.0).
-- **Naming des docs méta** : règle R-064 (à codifier Phase 1.0) — code `META_<TOKEN>_<SCOPE>`, nom canonique humain `<Type lisible> - <Scope>`, suffix `_LBP` pour scope transverse / `_BRAIN` / `_TWIN` / `_MO` pour domaine spécifique.
-- **5 fonctions systémiques** : taxo `[[META.FUNCTION]]` (créée 03-05-2026, remplace l'ancienne `META.FAMILY` archivée le même jour).
-- **BDD `Templates méta Brain`** : à créer Phase 2 — sortir les templates d'instanciation de la BDD `Docs méta LBP` pour pureté de la BDD de gouvernance.
+- **Préfixe code `META_`** : D-024 — préfixe `META_` pour tous les codes des docs méta indexés.
+- **Naming des docs méta** : R-064 — code `META_<TOKEN>_<SCOPE>`, nom canonique humain `<Type lisible> - <Scope>`, suffix `_LBP` pour scope transverse / `_BRAIN` / `_TWIN` / `_MO` pour domaine spécifique.
+- **5 fonctions systémiques** : taxo `[[META.FUNCTION]]` (D-025).
+- **BDD `Templates Brain`** : D-026 — BDD séparée des docs méta indexant les templates d'instanciation (consommée par brain architect). Distincte de la BDD `Templates de Bricks` (consommée par kontext).
 - **Anti-pattern transclusion `![[]]`** : C-023 — pas de transclusion dans les docs canoniques.
 - **Pattern wikilinks `[[]]`** : C-024 — utiliser systématiquement les wikilinks pour les renvois inter-docs (résilience au rename).
 - **Backlinks bidirectionnels Obsidian** : C-025 — relations bidirectionnelles natives, à exploiter pour découvrir « qui me cite ».
