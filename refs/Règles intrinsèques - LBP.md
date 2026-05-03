@@ -517,7 +517,7 @@ Préfixes proposés (à figer en Phase 2) :
 
 - **Articulation** : [[#R-005]] (code unique stable), [[#R-053]] (renaming via archivage), [[#R-055]] (frontmatter), [[#R-064]] (naming des docs méta).
 - **Conséquence si violation** : faux positifs en audit, codes dupliqués, références cross-écosystème cassées, agents ne pouvant filtrer fiable par regex, ruptures de lignée template → instance.
-- **Découverte** : 28-04-2026, Leonard, en préparation du chantier de migration globale. Capturé après audit ciblé des taxonomies Brain et arbitrages collaboratifs sur la grammaire (sub-agent `taxos_brain_audit.md`).
+- **Découverte** : 28-04-2026, Leonard, en préparation du chantier de migration globale. Capturé après audit ciblé des taxonomies Brain et arbitrages collaboratifs sur la grammaire.
 
 #### R-061 : Préférer les tirets simples `-` aux tirets cadratins `—`
 
@@ -1490,6 +1490,7 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
   - ✅ `ui_family: "Objets candidats"` (toutes les sandboxes)
   - ❌ `ui_family: "objets candidats"` (casse non canonique)
   - ❌ `ui_family: "Sandboxes"` (valeur non canonique)
+- **Découverte** : 27-04-2026, Phase 6.5 Twin v2. Capture déclenchée par l'adoption de D-017 (ui_family en 7 valeurs orientées utilisateur) et la nécessité d'imposer la déclaration sur les 28 BDDs Twin en cours de création. Champ `Découverte` non explicitement formalisé en legacy, restauré ici à partir du contexte de Phase 6.5.
 
 #### R-050 : Propriété conditionnelle `Lien vers la note avancée` (URL)
 
