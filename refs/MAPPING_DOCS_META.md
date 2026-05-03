@@ -141,7 +141,44 @@ Une fois la Phase 4 terminée et Constitution v1.0 publiée → ce mapping est a
 
 ---
 
-## 6. État du chantier (mis à jour en continu)
+## 6. Stratégie de séquencement (validée 03-05-2026)
+
+### 6.1 Flow par template (interleaved + capture lessons learned)
+
+Pour chaque template (dans l'ordre stratégique) :
+1. Produire le template `.md` dans `Templates Brain/`
+2. Indexer la fiche dans BDD Notion `Templates Brain`
+3. Choisir 1 doc cible représentatif comme **calibrateur**
+4. Instancier le template → produire le 1er doc canonique dans le bon dossier `10/20/30/40/50-`
+5. Soumettre le doc à Leonard pour validation
+6. Si correctif : ajuster le template + bump version + propager au doc
+7. Si OK : produire les autres docs de la série (si template réutilisé) sans nouvelle validation lourde
+8. **Capture lessons learned** : si une convention transverse aux 10 templates émerge, mettre à jour ce mapping (§3 bonnes pratiques) + appliquer aux templates non encore produits
+9. Mettre à jour ECOSYSTEM-STATE + commit + push (vault + collab si besoin)
+10. Passer au template suivant
+
+### 6.2 Ordre stratégique des 10 templates
+
+| Ordre | Template | Doc calibrateur | Pourquoi cet ordre |
+|---|---|---|---|
+| 1 | TPL_META_CATALOGUE | Règles intrinsèques - LBP | **Le plus impactant** : sert 5 docs cibles dont les nouveaux réceptacles de R-XXX, D-XXX, WF-XXX, PROP-XXX, codification. Une fois les 5 catalogues produits → toute capture future va directement vers le nouveau SoT (plus de cul-entre-deux-chaises avec docs legacy). Calibre aussi la convention « Anatomie d'un item ». |
+| 2 | TPL_META_PANORAMA | Panorama - LBP | Simple, valide le pattern narratif |
+| 3 | TPL_META_CADRE | Cadre - LBP | Réutilisé 4×, valide tôt avant scale |
+| 4 | TPL_META_SPECS_ARCHI | Architecture - Brain | Réutilisé 3×, valide pattern pointage croisé enrichi (R-XXX §3.2 du mapping) |
+| 5 | TPL_META_PRINCIPES | Principes structurants - LBP | Court, valide variante de catalogue |
+| 6 | TPL_META_INTERFACES | Interfaces Brain↔Twin↔MO | Nouveau pattern |
+| 7 | TPL_META_CHARTE | Charte rédactionnelle - LBP | Réutilisé 3×, valide pattern guidelines |
+| 8 | TPL_META_QC | Quality control - Brain | Réutilisé 3×, valide pattern procédures |
+| 9 | TPL_META_MANIFEST | Philosophie - LBP | Court, manifeste |
+| 10 | TPL_META_CONSTITUTION | Constitution des docs méta - LBP v1.0 | En dernier : absorbe tout ce qu'on a appris |
+
+### 6.3 Après les 10 templates
+
+Capture d'une `Méthode - Génération d'un template Brain.md` dans `H:\Drive partagés\LBP - shared\Architecture data\Méthodes\` (sur la base de `Template - Méthode LBP.md`), indexée dans la BDD Notion `Méthodes LBP`. Capitalise tout ce qu'on aura appris pour future réplication (Clément, autres).
+
+---
+
+## 7. État du chantier (mis à jour en continu)
 
 | Indicateur | Valeur |
 |---|---|
