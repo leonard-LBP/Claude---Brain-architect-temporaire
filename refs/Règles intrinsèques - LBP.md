@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.2"
+version: "1.3"
 template_code: "TPL_META_CATALOGUE"
 template_version: "1.6"
 created_at: "03-05-2026"
@@ -174,9 +174,9 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 | R-048 | Naming d'une BDD Notion = nom canonique simple | 5.5 Indexation Notion & lifecycle | 26-04-2026 |
 | R-051 | Ordering des propriétés Notion via `update_view SHOW` (et non via l'ordre des `ADD COLUMN`) | 5.5 Indexation Notion & lifecycle | 27-04-2026 |
 | R-007 | Taxonomies par codes | 5.6 Gouvernance taxos & WR-RD | Convention établie |
-| R-028 | Cohérence manuel ↔ doc clefs de lecture | 5.6 Gouvernance taxos & WR-RD | 24-04-2026 |
-| R-041 | Propagation Manuel de BDD → WR-RD obligatoire | 5.6 Gouvernance taxos & WR-RD | 26-04-2026 |
-| R-042 | QA stricte d'égalité entre WR-RD et section 4 du manuel parent | 5.6 Gouvernance taxos & WR-RD | 26-04-2026 |
+| R-028 | Cohérence manuel ↔ doc clefs de lecture | 6 Archives — remplacée par PROP-001 | 24-04-2026 |
+| R-041 | Propagation Manuel de BDD → WR-RD obligatoire | 6 Archives — remplacée par PROP-001 | 26-04-2026 |
+| R-042 | QA stricte d'égalité entre WR-RD et section 4 du manuel parent | 6 Archives — remplacée par PROP-001 | 26-04-2026 |
 | R-058 | Aucune jumelle texte sur les BDDs Brain | 5.6 Gouvernance taxos & WR-RD | 28-04-2026 |
 | R-057 | Discipline d'usage des backticks Markdown | 5.7 Hygiène d'écriture | 28-04-2026 |
 | R-059 | Hygiène d'écriture des docs Brain - pas de bruit historique ni de spéculation future | 5.7 Hygiène d'écriture | 28-04-2026 |
@@ -187,7 +187,7 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 | R-070 | Ban des noms d'agents dans les sources de vérité (Brain agent-agnostique) | 5.7 Hygiène d'écriture | 03-05-2026 |
 | R-071 | Auto-suffisance des descriptions dans les sources de vérité | 5.7 Hygiène d'écriture | 03-05-2026 |
 | R-072 | Pas d'énumération de taxons dans les instructions d'écriture / descriptions ≤280 | 5.7 Hygiène d'écriture | 03-05-2026 |
-| R-075 | Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue | 5.7 Hygiène d'écriture | 03-05-2026 |
+| R-075 | Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue | 6 Archives — remplacée par PROP-011 | 03-05-2026 |
 | R-011 | Frontières fortes entre objets canoniques | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
 | R-012 | Séparation des 4 régimes de connaissance | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
 | R-013 | Sobriété relationnelle | 5.8 Architecture & doctrine Twin | Panorama V2 v3 |
@@ -1056,48 +1056,6 @@ Règles structurantes sur la gestion des taxonomies (séparation libellés humai
 - **Articulation** : [[#R-008]] (statuts harmonisés OBJ.STATUT), [[#R-054]] (codification universelle), [[#R-067]] (libellés humains pour les valeurs select Notion).
 - **Origine** : Convention établie dans les templates.
 
-#### R-028 : Cohérence manuel ↔ doc clefs de lecture
-
-- **Portée** : Brain (propagation vers docs dérivés)
-- **Why** : Le doc *Instructions d'écriture & clefs de lecture* d'une BDD est **dérivé** du manuel de BDD correspondant. Une asymétrie entre les deux produit des agents qui écrivent/lisent différemment de la spec, et des incohérences dans le Twin.
-- **How to apply** : Le **manuel de BDD est source de vérité**. À chaque mise à jour d'un manuel :
-  1. Identifier le doc clefs de lecture correspondant (WR-RD côté Brain Twin/MO ; ancien `Clefs de lectures/` legacy à migrer)
-  2. Vérifier la cohérence (champs, instructions d'écriture, clefs de lecture, taxonomies référencées)
-  3. Mettre à jour le doc dérivé si asymétrie
-  4. Consigner la MAJ dans les logs du doc dérivé
-- **Articulation** : [[#R-041]] (propagation Manuel→WR-RD obligatoire — extension générale de R-028 au cas WR-RD), [[#R-042]] (QA stricte d'égalité).
-- **Exemples** : ✅ On renomme le champ "Rôles officiels" en "Postes" dans le manuel → on met à jour le WR-RD correspondant / ❌ On modifie un manuel sans vérifier le doc dérivé.
-- **Origine** : 24-04-2026, confirmé par Leonard.
-
-#### R-041 : Propagation Manuel de BDD → WR-RD obligatoire
-
-- **Portée** : Brain (toute BDD ayant un WR-RD instancié)
-- **Why** : Le WR-RD est une **projection stricte** de la section 4 du manuel parent (D-016). Si une propriété change dans le manuel (création, suppression, modification de Type, Cardinalité, Taxonomie, Forme logique, Instructions d'écriture, Clefs de lecture, Utilité ou Exemples) sans propagation au WR-RD, alors le WR-RD ment aux agents qui le consomment runtime → erreurs de saisie ou d'interprétation. La direction de propagation est unilatérale : **manuel → WR-RD, jamais l'inverse**.
-- **How to apply** :
-  - Toute modification d'une propriété en section 4 d'un Manuel de BDD (sous-sections 4.1 à 4.5) déclenche **obligatoirement** la mise à jour du WR-RD correspondant.
-  - Pour chaque propriété modifiée, reporter les colonnes retenues dans le WR-RD : Champ, Type, Taxonomie(s) - codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité, Exemples.
-  - Bumper la version du WR-RD (`version` dans frontmatter) et son `template_version` si le template a évolué.
-  - Le WR-RD ne doit **jamais** être édité indépendamment du manuel parent : si une formulation pose problème dans le WR-RD, corriger d'abord le manuel parent puis re-projeter.
-  - À l'inverse : aucune modification du WR-RD ne doit remonter "à reculons" dans le manuel sans passer par une décision éditoriale explicite côté manuel.
-- **Articulation** : [[#R-028]] (cohérence manuel ↔ doc clefs de lecture — généralisation), [[#R-042]] (QA stricte d'égalité), [[#R-045]] (manuel = SoT pour génération BDD), [[CLAUDE.md#C-009]] (annonce explicite de la propagation Manuel ↔ WR-RD).
-- **Outillage suggéré** : à terme, un script de génération automatique du WR-RD à partir du manuel parent (extraction des 9 colonnes des sous-sections 4.1 à 4.5).
-- **Conséquence si violation** : WR-RD désaligné = agents qui produisent des données non conformes au manuel = pollution silencieuse du Twin client. À détecter au plus tôt par audit régulier.
-- **Origine** : 26-04-2026, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
-
-#### R-042 : QA stricte d'égalité entre WR-RD et section 4 du manuel parent
-
-- **Portée** : Brain (toute génération ou modification d'un WR-RD)
-- **Why** : Le WR-RD étant une projection stricte (D-016, [[#R-041]]), tout écart entre le contenu d'une cellule du WR-RD et la cellule correspondante du manuel parent constitue une **dérive éditoriale** silencieuse. Une instruction d'écriture reformulée "pour faire mieux" dans le WR-RD est une violation : le canon est dans le manuel.
-- **How to apply** :
-  - À la génération ou à la modification d'un WR-RD, vérifier que **chaque cellule** des 9 colonnes retenues est **mot pour mot identique** à la cellule correspondante du manuel parent (sections 4.1 à 4.5, colonnes : Champ, Type, Taxonomie(s) - codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité, Exemples).
-  - Tolérances admises : adaptations purement typographiques inévitables au transfert Markdown - à signaler dans les `Logs / Révisions` du WR-RD si appliquées.
-  - Si une instruction d'écriture ou clef de lecture est jugée mal formulée dans le manuel, **corriger d'abord le manuel parent** puis re-projeter vers le WR-RD (cohérent avec [[#R-041]]).
-- **Contrôle** : avant tout commit / publication d'un WR-RD, faire un diff avec la section 4 du manuel parent sur les 9 colonnes retenues. Aucun écart non-typographique ne doit subsister.
-- **Articulation** : [[#R-041]] (propagation obligatoire), [[CLAUDE.md#C-009]] (annonce explicite).
-- **Outillage suggéré** : script de diff automatique manuel ↔ WR-RD à terme, avec alerte sur les cellules divergentes.
-- **Conséquence si violation** : voir [[#R-041]] - désalignement silencieux entre les deux artefacts, lecture incohérente côté agents et humains.
-- **Origine** : 26-04-2026, Leonard, après les 3 premiers WR-RD instanciés.
-
 #### R-058 : Aucune jumelle texte sur les BDDs Brain
 
 - **Portée** : Les 11 BDDs Brain (Core + Motor : Glossaire LBP, Notes de concept, Taxonomies, Manuels de BDD, Docs méta LBP, Méthodes LBP, Prompts LBP, Templates de bricks, Agents LBP, Outils externes, Registre des logic blocks). **Hors scope** : BDDs Digital Twin (les jumelles texte y sont **autorisées et utiles**) ; BDDs Mission Ops (usage **expérimental** à valider, non interdit pour l'instant).
@@ -1304,27 +1262,6 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « Indiquer l'état (à traiter, en cours, validé, archivé); Taxo: OBJ.STATUT. »
 - **Conséquence si violation** : asymétries silencieuses dès la moindre évolution de la taxonomie référencée, agents en routage erroné, repassage manuel sur N manuels au lieu de modifier uniquement le `.md` de taxonomie.
 - **Origine** : 03-05-2026, Phase 3.B refonte Manuel + WR-RD `Docs méta LBP`. Lors de la migration `META.FAMILY → META.FUNCTION`, j'avais inliné les 5 taxons. Leonard a flaggé.
-
-#### R-075 : Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue
-
-- **Portée** : Transverse — tous les catalogues docs méta LBP (Règles intrinsèques, Décisions architecturales, Codification, Workflows opérationnels, Règles de propagation, et tout futur catalogue).
-- **Why** : Quand un item d'un catalogue (ex. R-XXX) cite par wikilink un item d'un autre catalogue (ex. `[[Règles de propagation - LBP#PROP-XXX]]`), l'ajout / la modification de cet item crée une dépendance entre les deux catalogues. Sans vérification croisée systématique au moment du changement, on risque : (a) wikilink mort si l'item cité n'existe pas (faute de frappe ou item non encore créé) ; (b) sens cité divergent du sens réel de l'item cible (drift sémantique silencieux) ; (c) doublon implicite (même règle exprimée 2× sous formes différentes) ; (d) dépendance bidirectionnelle attendue mais non matérialisée côté cible. Ces asymétries silencieuses sont le 1er coût de la fragmentation en catalogues atomiques.
-- **How to apply** : à chaque ajout / modification / suppression d'un item citant un autre catalogue, **consulter le catalogue cité en parallèle** et vérifier :
-  1. **Existence** : l'item cité existe et a le bon ID (pas de wikilink mort).
-  2. **Cohérence sémantique** : le sens cité par cet item est cohérent avec ce que l'item cible définit réellement (relire l'item cible).
-  3. **Anti-doublon** : aucun doublon implicite n'est créé entre les deux catalogues (même contrainte ou cascade exprimée 2× sous formes différentes — auquel cas garder un seul propriétaire canonique cf. [[#R-066]]).
-  4. **Bidirectionnalité** : si la citation crée une dépendance bidirectionnelle (l'item cité devrait à son tour mentionner cet item pour cohérence), faire la modification réciproque OU documenter pourquoi la bidirectionnalité n'est pas requise.
-- **Articulation** : [[#R-066]] (propriétaire canonique unique — application directe), [[#R-074]] (méthodes pour règles de maintenance — R-075 sera intégrée à la future Méthode - Maintenance d'un catalogue Brain), [[CLAUDE.md#C-024]] (wikilinks). **Note de migration** : R-075 est conceptuellement une **règle de propagation** (déclenchée par un événement = ajout/modif d'item) ; elle migrera vers PROP-XXX quand `Règles de propagation - LBP` sera produite (Phase 4), aux côtés de [[#R-041]], [[#R-042]], [[#R-028]] qui sont elles aussi des PROP « déguisées ».
-- **Exemples** :
-  - ✅ Ajout d'un nouveau R-XXX qui cite `[[Règles de propagation - LBP#PROP-005]]` → ouvrir Règles de propagation, vérifier que PROP-005 existe et que ce qu'elle définit est bien ce qu'on cite.
-  - ✅ Modification d'un WF-XXX qui cite plusieurs R-XXX → relire chaque R citée pour s'assurer que la modification du WF reste cohérente avec ce que les R prescrivent.
-  - ❌ Capturer un nouveau D-XXX qui cite `[[Règles intrinsèques - LBP#R-099]]` sans vérifier que R-099 existe (résultat : wikilink mort silencieux).
-- **Conséquence si violation** : wikilinks morts, drift sémantique silencieux entre catalogues, doublons implicites, dépendances bidirectionnelles oubliées. Asymétries détectables seulement par audit transverse (coût élevé).
-- **Origine** : 03-05-2026, en discussion Leonard suite à la rétrospective de migration de Règles intrinsèques v1.1. Capture proactive avant production des 4 catalogues restants pour formaliser la discipline de maintenance croisée.
-
-## 5.8 Architecture & doctrine Twin
-
-Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniques, séparation des régimes de connaissance, doctrine relationnelle, 5D, traçabilité, lifecycle sandbox→officielle, génération des BDD Notion (ui_family, lien note avancée).
 
 #### R-011 : Frontières fortes entre objets canoniques
 
@@ -1538,7 +1475,83 @@ Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniq
 
 # 6) Archives — Règles intrinsèques - LBP
 
-*(Aucun item archivé à ce jour.)*
+
+*Items migrés vers d'autres catalogues, conservés ici pour traçabilité (IDs immuables, jamais réutilisés).*
+
+#### R-028 : Cohérence manuel ↔ doc clefs de lecture
+
+- **Archivé** : 03-05-2026 — Migrée vers le catalogue Règles de propagation - LBP (cascade événementielle, donc PROP plutôt que R).
+- **Remplacée par** : [[Règles de propagation - LBP#PROP-001]]
+- **Portée** : Brain (propagation vers docs dérivés)
+- **Why** : Le doc *Instructions d'écriture & clefs de lecture* d'une BDD est **dérivé** du manuel de BDD correspondant. Une asymétrie entre les deux produit des agents qui écrivent/lisent différemment de la spec, et des incohérences dans le Twin.
+- **How to apply** : Le **manuel de BDD est source de vérité**. À chaque mise à jour d'un manuel :
+  1. Identifier le doc clefs de lecture correspondant (WR-RD côté Brain Twin/MO ; ancien `Clefs de lectures/` legacy à migrer)
+  2. Vérifier la cohérence (champs, instructions d'écriture, clefs de lecture, taxonomies référencées)
+  3. Mettre à jour le doc dérivé si asymétrie
+  4. Consigner la MAJ dans les logs du doc dérivé
+- **Articulation** : [[#R-041]] (propagation Manuel→WR-RD obligatoire — extension générale de R-028 au cas WR-RD), [[#R-042]] (QA stricte d'égalité).
+- **Exemples** : ✅ On renomme le champ "Rôles officiels" en "Postes" dans le manuel → on met à jour le WR-RD correspondant / ❌ On modifie un manuel sans vérifier le doc dérivé.
+- **Origine** : 24-04-2026, confirmé par Leonard.
+
+
+#### R-041 : Propagation Manuel de BDD → WR-RD obligatoire
+
+- **Archivé** : 03-05-2026 — Migrée vers le catalogue Règles de propagation - LBP (cascade événementielle, donc PROP plutôt que R).
+- **Remplacée par** : [[Règles de propagation - LBP#PROP-001]]
+- **Portée** : Brain (toute BDD ayant un WR-RD instancié)
+- **Why** : Le WR-RD est une **projection stricte** de la section 4 du manuel parent (D-016). Si une propriété change dans le manuel (création, suppression, modification de Type, Cardinalité, Taxonomie, Forme logique, Instructions d'écriture, Clefs de lecture, Utilité ou Exemples) sans propagation au WR-RD, alors le WR-RD ment aux agents qui le consomment runtime → erreurs de saisie ou d'interprétation. La direction de propagation est unilatérale : **manuel → WR-RD, jamais l'inverse**.
+- **How to apply** :
+  - Toute modification d'une propriété en section 4 d'un Manuel de BDD (sous-sections 4.1 à 4.5) déclenche **obligatoirement** la mise à jour du WR-RD correspondant.
+  - Pour chaque propriété modifiée, reporter les colonnes retenues dans le WR-RD : Champ, Type, Taxonomie(s) - codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité, Exemples.
+  - Bumper la version du WR-RD (`version` dans frontmatter) et son `template_version` si le template a évolué.
+  - Le WR-RD ne doit **jamais** être édité indépendamment du manuel parent : si une formulation pose problème dans le WR-RD, corriger d'abord le manuel parent puis re-projeter.
+  - À l'inverse : aucune modification du WR-RD ne doit remonter "à reculons" dans le manuel sans passer par une décision éditoriale explicite côté manuel.
+- **Articulation** : [[#R-028]] (cohérence manuel ↔ doc clefs de lecture — généralisation), [[#R-042]] (QA stricte d'égalité), [[#R-045]] (manuel = SoT pour génération BDD), [[CLAUDE.md#C-009]] (annonce explicite de la propagation Manuel ↔ WR-RD).
+- **Outillage suggéré** : à terme, un script de génération automatique du WR-RD à partir du manuel parent (extraction des 9 colonnes des sous-sections 4.1 à 4.5).
+- **Conséquence si violation** : WR-RD désaligné = agents qui produisent des données non conformes au manuel = pollution silencieuse du Twin client. À détecter au plus tôt par audit régulier.
+- **Origine** : 26-04-2026, Leonard, après instanciation des 3 premiers WR-RD (Actifs, Pratiques organisationnelles, Journal des signaux).
+
+
+#### R-042 : QA stricte d'égalité entre WR-RD et section 4 du manuel parent
+
+- **Archivé** : 03-05-2026 — Migrée vers le catalogue Règles de propagation - LBP (cascade événementielle, donc PROP plutôt que R).
+- **Remplacée par** : [[Règles de propagation - LBP#PROP-001]]
+- **Portée** : Brain (toute génération ou modification d'un WR-RD)
+- **Why** : Le WR-RD étant une projection stricte (D-016, [[#R-041]]), tout écart entre le contenu d'une cellule du WR-RD et la cellule correspondante du manuel parent constitue une **dérive éditoriale** silencieuse. Une instruction d'écriture reformulée "pour faire mieux" dans le WR-RD est une violation : le canon est dans le manuel.
+- **How to apply** :
+  - À la génération ou à la modification d'un WR-RD, vérifier que **chaque cellule** des 9 colonnes retenues est **mot pour mot identique** à la cellule correspondante du manuel parent (sections 4.1 à 4.5, colonnes : Champ, Type, Taxonomie(s) - codes, Cardinalité / multiplicité, Forme logique attendue, Instructions d'écriture, Clefs de lecture, Utilité, Exemples).
+  - Tolérances admises : adaptations purement typographiques inévitables au transfert Markdown - à signaler dans les `Logs / Révisions` du WR-RD si appliquées.
+  - Si une instruction d'écriture ou clef de lecture est jugée mal formulée dans le manuel, **corriger d'abord le manuel parent** puis re-projeter vers le WR-RD (cohérent avec [[#R-041]]).
+- **Contrôle** : avant tout commit / publication d'un WR-RD, faire un diff avec la section 4 du manuel parent sur les 9 colonnes retenues. Aucun écart non-typographique ne doit subsister.
+- **Articulation** : [[#R-041]] (propagation obligatoire), [[CLAUDE.md#C-009]] (annonce explicite).
+- **Outillage suggéré** : script de diff automatique manuel ↔ WR-RD à terme, avec alerte sur les cellules divergentes.
+- **Conséquence si violation** : voir [[#R-041]] - désalignement silencieux entre les deux artefacts, lecture incohérente côté agents et humains.
+- **Origine** : 26-04-2026, Leonard, après les 3 premiers WR-RD instanciés.
+
+
+#### R-075 : Vérification de cohérence inter-catalogues lors de l'ajout/modification d'item citant un autre catalogue
+
+- **Archivé** : 03-05-2026 — Migrée vers le catalogue Règles de propagation - LBP (cascade événementielle, donc PROP plutôt que R).
+- **Remplacée par** : [[Règles de propagation - LBP#PROP-011]]
+- **Portée** : Transverse — tous les catalogues docs méta LBP (Règles intrinsèques, Décisions architecturales, Codification, Workflows opérationnels, Règles de propagation, et tout futur catalogue).
+- **Why** : Quand un item d'un catalogue (ex. R-XXX) cite par wikilink un item d'un autre catalogue (ex. `[[Règles de propagation - LBP#PROP-XXX]]`), l'ajout / la modification de cet item crée une dépendance entre les deux catalogues. Sans vérification croisée systématique au moment du changement, on risque : (a) wikilink mort si l'item cité n'existe pas (faute de frappe ou item non encore créé) ; (b) sens cité divergent du sens réel de l'item cible (drift sémantique silencieux) ; (c) doublon implicite (même règle exprimée 2× sous formes différentes) ; (d) dépendance bidirectionnelle attendue mais non matérialisée côté cible. Ces asymétries silencieuses sont le 1er coût de la fragmentation en catalogues atomiques.
+- **How to apply** : à chaque ajout / modification / suppression d'un item citant un autre catalogue, **consulter le catalogue cité en parallèle** et vérifier :
+  1. **Existence** : l'item cité existe et a le bon ID (pas de wikilink mort).
+  2. **Cohérence sémantique** : le sens cité par cet item est cohérent avec ce que l'item cible définit réellement (relire l'item cible).
+  3. **Anti-doublon** : aucun doublon implicite n'est créé entre les deux catalogues (même contrainte ou cascade exprimée 2× sous formes différentes — auquel cas garder un seul propriétaire canonique cf. [[#R-066]]).
+  4. **Bidirectionnalité** : si la citation crée une dépendance bidirectionnelle (l'item cité devrait à son tour mentionner cet item pour cohérence), faire la modification réciproque OU documenter pourquoi la bidirectionnalité n'est pas requise.
+- **Articulation** : [[#R-066]] (propriétaire canonique unique — application directe), [[#R-074]] (méthodes pour règles de maintenance — R-075 sera intégrée à la future Méthode - Maintenance d'un catalogue Brain), [[CLAUDE.md#C-024]] (wikilinks). **Note de migration** : R-075 est conceptuellement une **règle de propagation** (déclenchée par un événement = ajout/modif d'item) ; elle migrera vers PROP-XXX quand `Règles de propagation - LBP` sera produite (Phase 4), aux côtés de [[#R-041]], [[#R-042]], [[#R-028]] qui sont elles aussi des PROP « déguisées ».
+- **Exemples** :
+  - ✅ Ajout d'un nouveau R-XXX qui cite `[[Règles de propagation - LBP#PROP-005]]` → ouvrir Règles de propagation, vérifier que PROP-005 existe et que ce qu'elle définit est bien ce qu'on cite.
+  - ✅ Modification d'un WF-XXX qui cite plusieurs R-XXX → relire chaque R citée pour s'assurer que la modification du WF reste cohérente avec ce que les R prescrivent.
+  - ❌ Capturer un nouveau D-XXX qui cite `[[Règles intrinsèques - LBP#R-099]]` sans vérifier que R-099 existe (résultat : wikilink mort silencieux).
+- **Conséquence si violation** : wikilinks morts, drift sémantique silencieux entre catalogues, doublons implicites, dépendances bidirectionnelles oubliées. Asymétries détectables seulement par audit transverse (coût élevé).
+- **Origine** : 03-05-2026, en discussion Leonard suite à la rétrospective de migration de Règles intrinsèques v1.1. Capture proactive avant production des 4 catalogues restants pour formaliser la discipline de maintenance croisée.
+
+## 5.8 Architecture & doctrine Twin
+
+Règles structurantes propres au Digital Twin LBP : ontologie des objets canoniques, séparation des régimes de connaissance, doctrine relationnelle, 5D, traçabilité, lifecycle sandbox→officielle, génération des BDD Notion (ui_family, lien note avancée).
+
 
 
 ---

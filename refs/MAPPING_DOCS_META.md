@@ -254,6 +254,17 @@ Pour chaque template (dans l'ordre stratégique) :
 | 9 | TPL_META_MANIFEST | Philosophie - LBP | Court, manifeste |
 | 10 | TPL_META_CONSTITUTION | Constitution des docs méta - LBP v1.0 | En dernier : absorbe tout ce qu'on a appris |
 
+### 6.2ter Observation : le template TPL_META_CATALOGUE est trans-fonction
+
+Les 5 catalogues prévus se répartissent dans 3 fonctions META.FUNCTION différentes :
+- `Règles intrinsèques`, `Règles de propagation`, `Codification` → **40-Normer/** (3 catalogues)
+- `Décisions architecturales` → **20-Expliquer/** (le « pourquoi »)
+- `Workflows opérationnels` → **50-Opérer/** (le « comment » orchestré)
+
+→ Le template TPL_META_CATALOGUE est **trans-fonction** : la nature « catalogue d'items atomiques » ne préjuge pas de la fonction systémique du doc instancié. Ce sera à formaliser dans la `Constitution des docs méta v1.0` (Annexe « Cartographie complète »).
+
+**Origine de l'observation** : 03-05-2026, Leonard a flaggé que mon premier réflexe (placer Règles de propagation dans 50-Opérer) confondait « propagation = action » et « propagation = règle de cascade ». Une PROP est conceptuellement une norme contraignante (« quand X, alors faire Y »), donc Normer.
+
 ### 6.2bis Vision Phase 5+ : split par domaine (à mémoriser)
 
 Une fois les 5 catalogues canoniques produits (Règles, Décisions, Codification, Workflows, Propagation), envisager une optimisation par split par domaine :
