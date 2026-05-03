@@ -5,11 +5,11 @@ doc_type: doc_meta
 code: "CHRT_WORKFLOWS_LBP"
 
 # === Méta-gouvernance ===
-version: "1.1"
+version: "1.2"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
-updated_at: "02-05-2026"
+updated_at: "03-05-2026"
 status: "Validé"
 scope: "LBP"
 
@@ -301,7 +301,7 @@ Une taxo est référencée par N manuels et M propriétés Notion. La propagatio
 #### Cas 3 - Modification d'un template d'instanciation (cascade très large)
 
 Un bump majeur de template (X.Y → (X+1).0) ne propage pas automatiquement à toutes les instances. Au lieu de cela :
-1. Mettre à jour le template (source de vérité dans `00 - Docs méta/Templates d'instanciation/`)
+1. Mettre à jour le template (source de vérité dans `Templates Brain/`)
 2. Mettre à jour la propriété Notion `Version du template` sur la fiche du template (D-020)
 3. **Marquer les instances comme stale** : audit mécanique des docs `.md` instances ayant un `template_version` inférieur (D-020)
 4. Planifier une phase de migration des instances (WF-015 si applicable)
@@ -355,7 +355,7 @@ Le WR-RD (Write Rules / Read Keys) est un précis champ par champ destiné aux a
 ### Prérequis
 
 - Manuel de BDD parent existant et stabilisé (au moins en version v0.X.Y avec section 4 renseignée).
-- Template `Template - WR-RD - Digital Twin.md` (v1.2.0+) accessible dans `00 - Docs méta/Templates d'instanciation/`.
+- Template `Template - WR-RD - Digital Twin.md` (v1.2.0+) accessible dans `Templates Brain/`.
 - Sous-dossier `WR-RD/` créé dans le groupe BDD cible (`Manuels de BDD/{Brain,Digital Twin,Mission Ops}/WR-RD/`).
 
 ### Étapes

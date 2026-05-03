@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_DOC_MAP_LBP"
 
 # === Méta-gouvernance ===
-version: "0.2"
+version: "0.3"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "03-05-2026"
@@ -70,7 +70,7 @@ Concrètement, un doc méta sert à **gouverner** d'autres objets, pas à les re
 | `[[Architecture Brain]]`, `[[Architecture Twin]]`, `[[Architecture Mission Ops]]` | Prompts maîtres, system prompts → BDD `Prompts LBP` |
 | `[[Règles intrinsèques LBP]]`, `[[Décisions architecturales LBP]]`, `[[Workflows opérationnels LBP]]`, `[[Codification LBP]]`, `[[Règles de propagation LBP]]` | Méthodes LBP → BDD `Méthodes LBP` |
 | Chartes (rédactionnelle, graphique, sécurité/RGPD) **transverses LBP** | Logic blocks, agents, outils externes → BDDs dédiées |
-| Quality control (par domaine : Brain, Twin, MO) | **Templates d'instanciation** → BDD `Templates Brain` |
+| Quality control (par domaine : Brain, Twin, MO) | **Templates** (dans `Templates Brain/` racine vault) → BDD `Templates Brain` |
 | **Constitution** elle-même (ce doc) | Templates de bricks → BDD `Templates de Bricks` (existante, séparée par scope agent — utilisée par kontext) |
 
 ### 2.3 Cas limites
