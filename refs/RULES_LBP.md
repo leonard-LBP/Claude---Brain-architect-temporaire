@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.2"
+version: "1.6"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
@@ -802,6 +802,101 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
 - **Why** : Uniformité de gouvernance à travers les 11 BDD Brain.
 - **How to apply** : Toutes les BDD Brain utilisent la taxonomie `OBJ.STATUT.LBP` avec les valeurs `Brouillon`, `Validé`, `À revoir`, `Archivé`.
 - **Découverte** : Convention établie.
+
+#### R-067 : Libellés humains pour les valeurs de select / multi-select Notion (le code immuable reste séparé)
+
+- **Portée** : Transverse — toutes les taxonomies LBP consommées par des propriétés select / multi-select dans les BDDs Notion (Brain, Twin, Mission Ops).
+- **Statut** : Actif
+- **Why** : Le code immuable d'un taxon (ex. `TPL.SCOPE.NOTE_CONCEPT`) est nécessaire pour les audits, scripts et références programmatiques (R-054). Mais l'**afficher tel quel** comme libellé d'option Notion (« NOTE_CONCEPT ») dégrade fortement l'usage humain : illisible au premier coup d'œil, donne l'impression d'un système purement technique, peu engageant pour les utilisateurs LBP. Or les BDDs Notion sont aussi des outils de pilotage humain. La séparation **code (immuable) ↔ libellé (humain)** doit donc s'appliquer aux taxons exactement comme elle s'applique aux docs méta (R-064 : filename humain identique au title, code séparé en frontmatter).
+- **How to apply** : pour toute taxonomie LBP consommée par une propriété select / multi-select Notion :
+  1. **Code immuable du taxon** (frontmatter taxo, références dans les manuels, scripts d'audit) : forme programmatique en MAJUSCULES, format `<NAMESPACE>.<TAXO>.<TOKEN>` (R-054 grammaire 2). Ex : `TPL.SCOPE.NOTE_CONCEPT`, `META.FUNCTION.ORIENTER`, `OBJ.STATUT.VALIDE`.
+  2. **Libellé canonique (= libellé Notion)** : forme **humaine courte**, lisible et engageante. Ex : « Note de concept », « Orienter », « Validé ». Sentence case français pour les français, casse adaptée aux noms propres pour les anglais (« System prompt », « WR-RD »).
+  3. **Cohérence dans le tableau §3 du doc taxo** : les colonnes « Libellé (canonique) » et « Libellé Notion (recommandé) » sont identiques (forme humaine). Le « Code (immuable) » est séparé.
+  4. **Aliases** : inclure le code MAJUSCULES dans les aliases pour permettre le matching agent (ex. alias `NOTE_CONCEPT` pour le libellé « Note de concept »).
+- **Articulation** : R-054 (codification immuable des codes), R-049 (taxonomies orthogonales), R-064 (séparation code / nom humain pour les docs méta — même logique appliquée ici aux taxons), C-014 (quirk wrapper MCP Notion qui peut affecter la lecture des libellés mais pas leur définition canonique).
+- **Exemples** :
+  - ✅ Taxo TPL.SCOPE : code `TPL.SCOPE.PROMPT_MAITRE`, libellé canonique = libellé Notion = « Prompt maître »
+  - ✅ Taxo META.FUNCTION : code `META.FUNCTION.ORIENTER`, libellé canonique = libellé Notion = « Orienter »
+  - ✅ Taxo OBJ.STATUT : code `OBJ.STATUT.VALIDE`, libellé canonique = libellé Notion = « Validé »
+  - ❌ Libellé Notion = `NOTE_CONCEPT` (forme code-style, peu humaine)
+  - ❌ Libellé Notion = `PROMPT_MAITRE` (idem)
+- **Conséquence si violation** : BDD Notion peu engageante pour les humains, illusion d'un système purement technique, lecture pénible des fiches, dégradation de l'usage des vues filtrées par taxon.
+- **Découverte** : 03-05-2026, Phase 2.2 du chantier d'architecture des docs méta. Lors de la création de la BDD Notion `Templates Brain`, j'ai initialement créé les options du select `Sous-type de template` avec les codes bruts (NOTE_CONCEPT, MANUEL_BDD, etc.). Leonard a flaggé la dégradation visuelle : « je préfère qu'on garde des libellés courts mais humains pour les valeurs affichées dans Notion ». Toutes les options ont été renommées en libellés humains (Note de concept, Manuel de BDD, etc.), le code immuable étant préservé dans le frontmatter de la taxo.
+
+#### R-068 : Aliases ne contiennent ni le code unique ni le nom canonique (anti-redondance)
+
+- **Portée** : Transverse — toutes les BDDs LBP qui ont une propriété `Aliases` (ou équivalent : synonymes, noms alternatifs, alias).
+- **Statut** : Actif
+- **Why** : Les aliases servent à matcher des **termes alternatifs** (ancien nom, variantes courantes, traductions, synonymes métier, jargon interne). Le code unique d'une fiche est déjà porté par la propriété `Code unique` ; le nom canonique est déjà porté par la propriété `Nom canonique` (ou `Title` Notion). Les inclure aussi en aliases est **redondant** (l'agent qui cherche par code utilise la propriété `Code unique` ; l'agent qui cherche par nom canonique utilise la propriété `Nom canonique`) et **dégrade le signal** des aliases (qui doivent rester un vecteur de matching alternatif, pas une duplication des champs canoniques).
+- **How to apply** : pour toute fiche d'une BDD LBP, lors du remplissage de la propriété `Aliases` :
+  1. **Inclure** : variantes courantes (« template glossaire » pour TPL_NOTE_CONCEPT), anciens noms historiques (« template-note_concept_lbp » avant rename), traductions (« concept template » pour matching anglais), synonymes métier (« moule de note de concept »), jargon interne.
+  2. **Exclure** : le `Code unique` exact (déjà porté par sa propriété), le `Nom canonique` exact (déjà porté par sa propriété), variantes triviales du nom canonique (ponctuation/casse seule).
+  3. **Format** : liste séparée par `;` (cf. R-007 et conventions des manuels).
+- **Articulation** : R-064 (séparation code / nom humain), R-067 (libellés humains pour les valeurs select), C-024 (pattern wikilinks + aliases pour résilience au rename — ici les aliases du frontmatter Markdown sont traités séparément des aliases Notion ; même logique anti-redondance s'applique).
+- **Exemples** :
+  - ✅ Aliases pour fiche `TPL_NOTE_CONCEPT` (Nom : « Template - Note de concept ») : « template-note_concept_lbp ; template note de concept LBP ; template glossaire » (ancien nom + variantes courantes)
+  - ✅ Aliases pour fiche `CPT_CAPACITE_ORGANISATIONNELLE` (Nom : « Concept - Capacité organisationnelle ») : « capacité collective ; capability ; aptitude organisationnelle ; savoir-faire collectif »
+  - ❌ Aliases pour `TPL_DBMAN_BR` qui contient `TPL_DBMAN_BR` (déjà dans `Code unique`)
+  - ❌ Aliases pour `TPL_NOTE_CONCEPT` qui contient `TPL_NOTE_CONCEPT` (déjà dans `Code unique`)
+  - ❌ Aliases pour fiche « Template - Note de concept » qui contient « Template - Note de concept » (déjà dans `Nom canonique`)
+- **Conséquence si violation** : redondance dans la BDD (signal bruité), maintenance dégradée (un rename de code ou de nom oblige à 2 modifs au lieu d'1), perte de valeur de la propriété Aliases (devient un fourre-tout au lieu d'un vecteur de matching alternatif ciblé).
+- **Découverte** : 03-05-2026, Phase 2.2 b.2 du chantier d'architecture des docs méta. Lors de la création des 2 fiches calibration dans `Templates Brain`, j'avais initialement inclus les codes uniques (`TPL_NOTE_CONCEPT`, `TPL_DBMAN_BR`) dans la propriété `Aliases`. Leonard a flaggé la redondance.
+
+#### R-069 : Lecture complète du doc avant indexation dans une BDD Notion (pas seulement le frontmatter)
+
+- **Portée** : Transverse — toute opération d'indexation d'un doc Markdown source dans une BDD Notion LBP (Brain, Twin, Mission Ops).
+- **Statut** : Actif
+- **Why** : Le frontmatter d'un doc résume **le quoi** (titre, code, version, summary, purpose) ; mais le corps du doc porte **les singularités** : exemples concrets, anti-patterns, articulations avec d'autres objets, instructions agent, sections distinctes des autres docs du même type. Si l'agent indexeur se contente du frontmatter pour remplir les propriétés Notion (Description, Valeur ajoutée LBP, Usages IA potentiels, etc.), les fiches indexées deviennent **substituables les unes aux autres** et perdent leur valeur de routage agent / lecture humaine. La BDD se transforme en catalogue plat de descriptions génériques au lieu d'un index discriminant.
+- **How to apply** : avant d'indexer un doc Markdown dans sa BDD Notion (création d'une nouvelle fiche ou refonte d'une existante) :
+  1. **Lire l'intégralité du `.md` source** : frontmatter + corps + sections d'instructions agent (`@INSTR-START` etc.) + exemples + annexes.
+  2. **Identifier les singularités** : qu'est-ce que ce doc fait que les autres docs du même type ne font pas ? Quels exemples concrets le caractérisent ? Quelles articulations spécifiques avec d'autres objets de l'écosystème ? Quels anti-patterns documente-t-il ?
+  3. **Rédiger les propriétés Notion en exploitant ces singularités** : la Description doit être discriminante (un humain ou un agent qui lit la fiche doit comprendre ce qui rend ce doc unique) ; la Valeur ajoutée LBP doit refléter le bénéfice concret de ce doc (pas une formule générique applicable à toute la famille) ; les Usages IA potentiels doivent citer les agents et workflows concrets qui consommeront ce doc.
+- **Articulation** : C-017 (lecture WR-RD/taxos avant remplissage d'une **instance** dans une BDD) ↔ R-069 (lecture du **doc source complet** avant indexation de **ce doc** dans sa BDD). Les 2 cernent la même discipline appliquée à 2 moments différents (production d'instance vs indexation du moule). R-069 s'applique aussi à C-012 (calibration avant production en série) : la calibration doit valider que le pattern de remplissage exploite bien la lecture complète, pas le frontmatter seul.
+- **Exemples** :
+  - ✅ Indexer `Template - Méthode LBP` en lisant ses 18 sections d'instructions agent + ses exemples de méthodes types + son anti-pattern « confusion méthode vs prompt » → Description discriminante mentionnant les patterns spécifiques d'instructions agent + les exemples de méthodes types couvertes.
+  - ❌ Indexer le même template en se contentant du `summary` du frontmatter → Description générique « modèle pour générer une méthode LBP au canon » qui pourrait s'appliquer à n'importe quel template d'objet Brain.
+- **Conséquence si violation** : BDD Notion devient un catalogue plat (toutes les fiches se ressemblent), routage agent dégradé (l'agent ne peut pas discriminer entre 2 fiches similaires), perte de valeur de la BDD comme outil de gouvernance documentaire.
+- **Découverte** : 03-05-2026, Phase 2.2 b.3 du chantier d'architecture des docs méta. Indexation de 15 templates faite initialement à partir des seuls frontmatters → 15 fiches aux descriptions génériques détectées par Leonard. Refonte complète des 15 fiches après lecture intégrale des templates.
+
+#### R-070 : Ban des noms d'agents dans les sources de vérité (Brain agent-agnostique)
+
+- **Portée** : Transverse — toutes les sources de vérité Markdown LBP (manuels de BDD, WR-RD, taxonomies, docs méta indexés, notes de concept, templates) et toutes les fiches indexées dans les BDDs Notion (Brain, Twin, Mission Ops).
+- **Statut** : Actif
+- **Why** : Les noms d'agents (ex. brain architect, twin architect, kontext, futurs agents) sont des **artefacts évolutifs** : ils sont créés, renommés, fusionnés ou supprimés au fil des chantiers. Citer un nom d'agent dans une SoT crée un point d'attache fragile : si l'agent est renommé ou supprimé, des dizaines de SoT deviennent stale silencieusement (asymétrie). Le Brain doit rester **agent-agnostique** : décrire des actions, des opérations, des fonctions, mais pas qui les exécute. Cette discipline garantit que les SoT restent valides quelle que soit l'évolution future des agents.
+- **How to apply** : pour toute SoT (frontmatter, corps, descriptions Notion, instructions d'écriture) :
+  1. **Décrire des actions, pas des acteurs nommés** : « Génération guidée d'une nouvelle note de concept » plutôt que « Consommé par brain architect au démarrage de la création d'une nouvelle note de concept ».
+  2. **Si nécessaire de mentionner un acteur, utiliser un rôle générique** : « consultant », « agent d'analyse », « agent producteur », « agent orchestrateur ». Ces rôles sont stables.
+  3. **Ne jamais citer** : brain architect, twin architect, kontext, ou tout autre nom d'agent spécifique LBP. Pas non plus de noms d'agents externes (Claude, GPT-4, etc.).
+- **Articulation** : R-002 / R-003 (séparation Brain/Twin/MO), D-007 (zero contamination), R-001 (Markdown SoT). Cas particulier de C-XXX qui restent dans CLAUDE.md (scope Session, hors SoT LBP) — les références à Claude y sont autorisées car CLAUDE.md n'est pas une SoT LBP.
+- **Exemples** :
+  - ✅ « Lecture obligatoire avant remplissage d'une fiche dans une BDD Brain »
+  - ✅ « Mode de remplissage : consultant ; agent d'analyse »
+  - ✅ « Génération guidée d'un nouveau template »
+  - ❌ « Consommé par brain architect au démarrage de la création »
+  - ❌ « Sera consommé par kontext (runtime MO) au moment de l'instanciation »
+  - ❌ « Charge l'agent twin architect en contexte »
+- **Conséquence si violation** : asymétries silencieuses lors de l'évolution des agents (rename, fusion, suppression), couplage fort SoT ↔ agents qui freine l'évolution architecturale, dégradation de la lisibilité par tout intervenant qui ne connaît pas les noms des agents internes.
+- **Découverte** : 03-05-2026, Phase 2.2 b.3 du chantier d'architecture des docs méta. Lors de l'indexation des 15 templates dans BDD `Templates Brain`, j'avais cité « brain architect », « twin architect » et « kontext » dans les Description / Valeur ajoutée / Usages IA potentiels. Leonard a flaggé l'anti-pattern : « il est interdit de citer le nom d'agents (c'est trop évolutif, donc risque de générer des asymétries) ». Refonte complète des 15 fiches en mode agent-agnostique.
+
+#### R-071 : Auto-suffisance des descriptions dans les sources de vérité (pas de comparaisons relatives)
+
+- **Portée** : Transverse — toutes les descriptions de fiches dans les BDDs LBP (Notion : Description, Valeur ajoutée LBP, Usages IA potentiels, etc.) et toutes les descriptions structurantes dans les SoT Markdown.
+- **Statut** : Actif
+- **Why** : Décrire une fiche par **comparaison à une autre** (« 11 sections vs 8 côté Twin/MO », « contrairement à X », « comme Y mais sans Z ») crée une **dépendance silencieuse** entre 2 docs. Si un doc cité évolue (ex. le manuel Twin passe de 8 à 9 sections), la description comparative devient fausse sans qu'aucun audit ne le détecte. Chaque SoT doit se décrire **par elle-même** (par ses caractéristiques intrinsèques), pas par différence avec d'autres docs.
+- **How to apply** : pour toute description dans une SoT :
+  1. **Décrire l'objet par lui-même** : ses propriétés, sa fonction, ses sections, son contenu.
+  2. **Pas de comparaisons relatives** : éviter « vs autre doc », « contrairement à », « comme X mais avec Y », « plus/moins que », etc.
+  3. **Si une distinction est essentielle pour la compréhension**, l'exprimer en **caractéristique intrinsèque** : « couvre les spécificités Twin (5D, jumelles texte) » plutôt que « 5 sections vs 4 côté Brain ».
+  4. **Pas de citation de structure d'autres docs** : décrire la structure du doc courant, jamais celle d'un autre.
+- **Articulation** : R-001 (Markdown SoT), R-066 (propriétaire canonique unique — chaque info a un propriétaire, pas de duplication par comparaison), R-070 (ban noms agents — même logique d'auto-suffisance), C-027 (pas d'infos temporaires dans SoT — même logique de stabilité).
+- **Exemples** :
+  - ✅ « Modèle pour générer un manuel de BDD du Brain LBP : spécification champ par champ du modèle de données d'une BDD du méta-écosystème Brain »
+  - ✅ « Couvre les spécificités Twin (couche 5D, jumelles texte expressives) »
+  - ❌ « 11 sections (vs 8 côté Twin/MO — divergence assumée) »
+  - ❌ « Niveau d'orchestration intermédiaire entre system prompt et logic block » (compare à 2 autres docs)
+  - ❌ « Contrairement à WR-RD Brain qui n'a pas de jumelles, WR-RD Twin... »
+- **Conséquence si violation** : asymétries silencieuses au moindre changement d'un doc cité, couplage fort entre docs qui devrait rester découplés, dégradation de la lisibilité (le lecteur doit aller voir l'autre doc pour comprendre la comparaison).
+- **Découverte** : 03-05-2026, Phase 2.2 b.3. Lors de l'indexation des 15 templates dans BDD `Templates Brain`, j'avais émaillé les descriptions de comparaisons (« 11 sections vs 8 côté Twin/MO », « 4 sections vs 5 côté Twin/MO », « contrairement à... »). Leonard a flaggé l'anti-pattern : « qu'est-ce que tu vas aller faire des singularités distinctives dans des descriptions ? encore des comparaisons / mentions d'autres éléments, donc risque d'asymétrie si un autre doc évolue ». Refonte des 15 fiches en mode auto-suffisant.
 
 ### 2.5 Génération d'une BDD à partir d'un manuel
 
