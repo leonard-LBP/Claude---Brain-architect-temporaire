@@ -58,6 +58,12 @@ Catalogue exhaustif des règles de propagation atomiques (PROP-XXX) qui décrive
 - Conventions de codification détaillées → vivent dans `[[Codification - LBP]]`.
 - Conventions de la collaboration Claude/Leonard (`C-XXX`) → vivent dans `CLAUDE.md` (scope Session).
 
+**Couverture actuelle vs cible** : ce catalogue est **trans-écosystème** (Brain + Twin + Mission Ops) par construction. Les PROP actuelles (PROP-001 à PROP-011) capturent essentiellement les cascades **du Brain** (Manuel ↔ WR-RD ↔ Notion, paire CPT/GLO, items inter-catalogues docs méta), parce que le legacy `PROPAGATION_RULES_LBP.md` était centré Brain et que la production des cascades Twin / Mission Ops n'a pas encore eu lieu. Les futures cascades spécifiques seront ajoutées au fil de leur découverte :
+- **Twin** (Supabase comme stockage cible, pas Notion) : Manuel BDD Twin → WR-RD Twin + tables Supabase ; modifications d'instances Twin (Actifs, Organisations, etc.) → cascades propres ; chaînes D-009 entre BDDs Twin.
+- **Mission Ops** : modifications d'instances client (Bricks, Meetings, Actions) → cascades propres.
+
+Ces extensions futures iront soit dans les sous-sections existantes (si la cascade rentre dans une thématique déjà couverte), soit dans de nouvelles sous-sections dédiées (`§5.6 Cascades spécifiques Twin`, `§5.7 Cascades spécifiques Mission Ops`) si le volume le justifie. Vision long terme (cf. `MAPPING_DOCS_META.md` §6.2bis) : split éventuel en 3 catalogues PROP par domaine + 1 catalogue transverse, si le catalogue unique devient trop hétérogène.
+
 ## 1.3 Granularité d'item
 
 - **1 PROP-XXX = 1 cascade atomique** : 1 type de modification source produit 1 set de propagations cibles avec 1 set d'étapes cohérent.

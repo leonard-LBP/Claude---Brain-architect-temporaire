@@ -272,6 +272,8 @@ Une fois les 5 catalogues canoniques produits (Règles, Décisions, Codification
 - Créer en complément `Règles intrinsèques - Brain.md`, `Règles intrinsèques - Twin.md`, `Règles intrinsèques - Mission Ops.md` pour les règles propres à chaque domaine.
 - Probablement applicable à tous les catalogues (Décisions par domaine, Workflows par domaine, etc.).
 
+**Confirmé pour Règles de propagation (Phase 4.2, 03-05-2026)** : les PROP-XXX actuelles sont essentiellement Brain-centrées (le legacy était centré Brain). Au fil de la découverte des cascades Twin (Supabase comme stockage cible) et Mission Ops (instances client), des PROP spécifiques s'ajouteront. Si le volume devient hétérogène, split en 3 catalogues PROP par domaine + 1 transverse selon la même doctrine.
+
 Bénéfice : réduction de la taille des catalogues transverses (limite atteinte avec 17 items par sous-section dans Règles intrinsèques v1.0), amélioration du routage des consommateurs spécialistes.
 
 À évaluer après la production complète des 5 catalogues v1.0 (Phase 4) — si la croissance le justifie. Pas d'action immédiate.
