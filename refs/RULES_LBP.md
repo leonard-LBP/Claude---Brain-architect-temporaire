@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.8"
+version: "1.9"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
@@ -14,7 +14,7 @@ status: "Validé"
 scope: "LBP"
 
 # === Spec d'usage ===
-summary: "Catalogue exhaustif des 70 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
+summary: "Catalogue exhaustif des 71 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
 purpose: "Référence canonique pour lookup d'une règle précise. Toute production ou modification structurante doit s'appuyer sur les règles applicables. Pour la narration doctrinale qui les sous-tend voir DOCTRINE_LBP."
 tags:
   - doc_meta
@@ -936,6 +936,25 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ✅ `- "Note avec apostrophe typographique : c'est OK"`
 - **Conséquence si violation** : frontmatter affiché en texte brut dans Obsidian, propriétés non indexées par Bases / Dataview, fiche Notion potentiellement non-syncable, perte de discoverabilité.
 - **Découverte** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.1. Leonard a flaggé le frontmatter affiché en rouge dans Obsidian au lieu du panneau Properties. Cause identifiée : item `cleanup_rules` contenant `: "à créer"` interprété comme mapping imbriqué par le parser YAML.
+
+#### R-074 : Règles de maintenance d'un type de doc → propriétaire canonique unique = méthode dédiée
+
+- **Portée** : Transverse — tous les types de docs canoniques LBP qui ont N instances partageant des règles de maintenance communes (catalogues, manuels de BDD, taxonomies, chartes, specs d'architecture, etc.).
+- **Statut** : Actif
+- **Why** : Quand plusieurs instances d'un même **type de doc** partagent des règles de maintenance / d'évolution communes (stabilité du schéma, traçabilité, cycle de vie, anti-patterns transverses), embarquer ces règles dans chaque instance crée : (a) doublon × N (autant de copies dupliquées que d'instances) ; (b) asymétrie inévitable à chaque enrichissement (il faut propager dans les N instances, ce qu'on oublie systématiquement) ; (c) couplage fort entre instances qui devraient rester indépendantes ; (d) violation directe de R-066 (propriétaire canonique unique). Ces règles relèvent du savoir-faire opérationnel transverse au type de doc → leur propriétaire canonique est une **méthode** indexée dans la BDD `Méthodes LBP`.
+- **How to apply** :
+  1. **Méthode dédiée** dans BDD `Méthodes LBP` (ex. `Méthode - Maintenance d'un catalogue Brain.md`, `Méthode - Maintenance d'un manuel de BDD Brain.md`) = **SoT** des règles de maintenance pour le type de doc. Cette méthode est durable et capitalise les conventions issues du chantier de production / refonte du type.
+  2. **Template** d'instanciation = guide la **génération initiale** d'une instance via son `TEMPLATE_USAGE_GUIDE` (qui peut citer la méthode pour la maintenance future). Le template **ne reproduit pas** les règles de maintenance dans les docs générés.
+  3. **Doc canonique généré** = peut citer la méthode en footer via wikilink (« voir `[[Méthode - Maintenance d'un X Brain]]` »). N'embarque jamais une copie des règles.
+  4. **Prompts maîtres et logic blocks** consommés par les agents (brain architect, autres) = artefacts opérationnels **dérivés** de la méthode, tenus à jour en permanence avec un niveau de détail technique. Eux portent les règles d'exécution effectives. La méthode reste la source de vérité doctrinale ; les prompts/logic blocks la matérialisent côté agent.
+- **Articulation** : R-066 (propriétaire canonique unique — R-074 est une application directe au cas des règles de maintenance), R-001 (Markdown SoT), C-024 (wikilinks pour les renvois inter-docs), R-040 (templates : instructions dans @INSTR-*).
+- **Exemples** :
+  - ✅ Footer d'un catalogue : « Maintenance et évolution : voir `[[Méthode - Maintenance d'un catalogue Brain]]` »
+  - ✅ Section dans la méthode : « Stabilité du schéma d'item, traçabilité, cycle de vie, anti-patterns » (SoT unique)
+  - ✅ Logic block consommé par brain architect : implémentation technique des règles de maintenance dérivées de la méthode (mise à jour en continu)
+  - ❌ Section « Bonnes pratiques d'écriture du catalogue » dupliquée dans chaque catalogue → propagation manuelle obligatoire à chaque enrichissement, asymétrie garantie
+- **Conséquence si violation** : N copies du contenu transverse, asymétrie inévitable, dégradation de la cohérence à chaque évolution.
+- **Découverte** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.3. Le template incluait une section §6 « Bonnes pratiques d'écriture du catalogue » destinée à être reproduite dans chaque catalogue généré. Leonard a flaggé : « risque fort de doublon avec des méthodes/règles d'utilisation qui vivraient autre part ; le maintien de la cohérence à travers l'évolution est fondamental ». Section §6 supprimée du template (v1.3 → v1.4) ; principe formalisé en R-074 ; méthodes correspondantes à produire en Phase 4 final.
 
 ### 2.5 Génération d'une BDD à partir d'un manuel
 

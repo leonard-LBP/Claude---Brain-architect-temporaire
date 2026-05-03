@@ -145,10 +145,13 @@ Les règles de maintenance et d'évolution communes à un type de doc (stabilit�
 - Couplage fort entre docs qui devraient rester indépendants
 - Violation R-066 (propriétaire canonique unique)
 
-**Pattern correct** :
-- **Méthode dédiée** dans BDD `Méthodes LBP` (ex. `Méthode - Maintenance d'un catalogue Brain.md`) : SoT des règles de maintenance pour le type de doc.
+**Pattern correct** (formalisé en R-074) :
+- **Méthode dédiée** dans BDD `Méthodes LBP` (ex. `Méthode - Maintenance d'un catalogue Brain.md`) : **SoT doctrinale** des règles de maintenance pour le type de doc. Doc durable.
 - **Template** : guide la **génération initiale** via le `TEMPLATE_USAGE_GUIDE` (qui peut référencer la méthode pour la maintenance future), mais ne reproduit pas les règles de maintenance dans les docs générés.
-- **Doc canonique généré** : éventuellement un wikilink en footer du type « Maintenance et évolution : voir [[Méthode - Maintenance de X]] ». Ou rien (la méthode est consommée par les agents qui font la maintenance, pas par le lecteur du contenu).
+- **Doc canonique généré** : footer wikilink « Maintenance et évolution : voir [[Méthode - Maintenance de X]] ». Ou rien.
+- **Prompts maîtres + logic blocks consommés par brain architect** : artefacts opérationnels **dérivés** de la méthode, ultra-détaillés techniquement, tenus à jour en permanence. Eux portent les règles d'exécution effectives côté agent. La méthode reste la source de vérité doctrinale ; les prompts/logic blocks la matérialisent côté agent.
+
+**Chaîne** : Méthode (SoT doctrinale, BDD `Méthodes LBP`) → System prompt + Prompts maîtres + Logic blocks (BDDs Motor Brain) → Exécution agent (brain architect).
 
 **À produire en Phase 4** : `Méthode - Maintenance d'un catalogue Brain.md` (et équivalent par type de doc majeur). Indexée dans BDD Notion `Méthodes LBP`.
 
