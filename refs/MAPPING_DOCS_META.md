@@ -227,6 +227,19 @@ Pour chaque template (dans l'ordre stratégique) :
 | 9 | TPL_META_MANIFEST | Philosophie - LBP | Court, manifeste |
 | 10 | TPL_META_CONSTITUTION | Constitution des docs méta - LBP v1.0 | En dernier : absorbe tout ce qu'on a appris |
 
+### 6.2bis Vision Phase 5+ : split par domaine (à mémoriser)
+
+Une fois les 5 catalogues canoniques produits (Règles, Décisions, Codification, Workflows, Propagation), envisager une optimisation par split par domaine :
+- `Règles intrinsèques - LBP.md` → garde **uniquement les règles transversales** (s'appliquent à tout l'écosystème).
+- Créer en complément `Règles intrinsèques - Brain.md`, `Règles intrinsèques - Twin.md`, `Règles intrinsèques - Mission Ops.md` pour les règles propres à chaque domaine.
+- Probablement applicable à tous les catalogues (Décisions par domaine, Workflows par domaine, etc.).
+
+Bénéfice : réduction de la taille des catalogues transverses (limite atteinte avec 17 items par sous-section dans Règles intrinsèques v1.0), amélioration du routage des consommateurs spécialistes.
+
+À évaluer après la production complète des 5 catalogues v1.0 (Phase 4) — si la croissance le justifie. Pas d'action immédiate.
+
+**Origine** : suggestion Leonard 03-05-2026 lors de la calibration `Règles intrinsèques - LBP` v1.0.
+
 ### 6.3 Après les 10 templates
 
 À produire (capitalisation Phase 4 final) :
