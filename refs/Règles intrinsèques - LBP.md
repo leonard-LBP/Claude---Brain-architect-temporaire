@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.3"
+version: "1.4"
 template_code: "TPL_META_CATALOGUE"
 template_version: "1.6"
 created_at: "03-05-2026"
@@ -853,7 +853,7 @@ Règles structurantes sur la sync Markdown SoT → BDDs Notion : descriptions de
 
 - **Portée** : Transverse (Brain + Twin)
 - **Why** : Éviter qu'un "grenier global" à la racine du vault gonfle sans fin et rende l'archivage illisible. Garder l'archive proche de son contexte thématique.
-- **How to apply** : Chaque dossier thématique (`Manuels de BDD/Digital Twin/`, `Notes de Concept/`, `Taxonomies/`, `Logic Blocks/`, `00 - Docs méta/`) a son propre sous-dossier `archives/` (ou `99-Archives/` pour les nouveaux dossiers fonctionnels). Le git garde l'historique complet des déplacements - pas besoin de doublons dans le vault.
+- **How to apply** : Chaque dossier thématique (`Manuels de BDD/Digital Twin/`, `Notes de Concept/`, `Taxonomies/`, `Logic Blocks/`, `00 - Docs méta/`) a son propre sous-dossier `00 - archives/` (convention transverse uniforme). Le git garde l'historique complet des déplacements - pas besoin de doublons dans le vault.
 - **Articulation** : [[#R-053]] (renaming des docs archivés).
 - **Exemples** : ✅ `Notes de Concept/archives/Concept - Ressource.md` / ❌ `ARCHIVES/Notes de Concept/...`
 - **Origine** : 24-04-2026, conception arborescence cible pour refonte Twin v2 (D-010).
