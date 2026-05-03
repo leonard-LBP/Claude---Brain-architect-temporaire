@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.4"
+version: "1.5"
 template_code: "TPL_META_CATALOGUE"
 template_version: "1.6"
 created_at: "03-05-2026"
@@ -139,6 +139,7 @@ Tous les champs ci-dessus sont obligatoires (convention par défaut), à l'excep
 | R-065 | Définition opérationnelle d'un doc méta — frontière « gouverne plusieurs objets » | 5.1 Fondations doctrinales | 03-05-2026 |
 | R-066 | Propriétaire canonique unique (anti-doublon) | 5.1 Fondations doctrinales | 03-05-2026 |
 | R-074 | Règles de maintenance d'un type de doc → propriétaire canonique unique = méthode dédiée | 5.1 Fondations doctrinales | 03-05-2026 |
+| R-076 | Modification d'item existant prime sur création (anti-prolifération) | 5.1 Fondations doctrinales | 03-05-2026 |
 | R-005 | Code unique stable | 5.2 Codification, identifiants & nommage | Règle initiale |
 | R-027 | Conventions de nommage des fichiers Brain/Twin | 5.2 Codification, identifiants & nommage | 24-04-2026 |
 | R-043 | Cohérence stricte filename ↔ frontmatter `title` | 5.2 Codification, identifiants & nommage | 26-04-2026 |
@@ -289,6 +290,23 @@ Règles axiomatiques structurantes qui définissent les frontières fondamentale
   - ❌ Liste des 11 BDDs Brain dupliquée dans Panorama, 3 Cadres et 5 manuels (asymétrie garantie au moindre changement)
 - **Conséquence si violation** : N copies de la même info à mettre à jour à chaque modification, asymétries silencieuses, propagation manuelle obligatoire.
 - **Origine** : 03-05-2026, Phase 1.0 chantier docs méta, formalisation de la règle anti-doublon comme principe structurant de la Constitution des docs méta.
+
+#### R-076 : Modification d'item existant prime sur création (anti-prolifération)
+
+- **Portée** : Transverse — tous les catalogues LBP (R / PROP / D / WF / code / C, et futurs catalogues PRIN / QC / etc.).
+- **Why** : Le réflexe par défaut « capturer un nouvel item » fait gonfler les catalogues par accumulation de doublons partiels qui se recouvrent silencieusement. Chaque doublon partiel fragmente la connaissance (le lecteur doit consulter N items pour reconstituer un seul concept), multiplie la maintenance (toute évolution de la doctrine doit être propagée à N items au lieu d'1), et érode la lisibilité du catalogue. À l'inverse, un item qui évolue garde son ID immuable et son historique git — l'écosystème grandit organiquement plutôt que par accumulation.
+- **How to apply** : Avant toute capture proactive (déclenchement de [[#R-039]] détectant un anti-pattern, ou de [[Workflows opérationnels - LBP#WF-019]] / [[Workflows opérationnels - LBP#WF-022]] / [[Workflows opérationnels - LBP#WF-023]]), examiner systématiquement si un item existant peut être étendu, reformulé ou enrichi pour absorber le nouveau cas. **Test discriminant** :
+  1. Si un item existant a la **même portée** + le **même Why** + un **How proche** → modifier l'item existant en élargissant son scope, ses exemples, ses garde-fous. Bumper la version du catalogue.
+  2. Si un item existant a une **portée différente** ou un **Why distinct** → capturer un nouvel item atomique avec son propre ID.
+  3. **En cas de doute → modifier** (réversible, item garde son ID) plutôt que créer (immuable côté ID, prolifération difficile à corriger après coup).
+- **Articulation** : [[#R-066]] (propriétaire canonique unique — un même besoin doctrinal a un seul propriétaire, ne pas le dupliquer en N items partiels), [[#R-074]] (méthodes pour règles de maintenance — application directe à la maintenance des catalogues), [[Workflows opérationnels - LBP]] §1.3 (granularité d'item — anti-pattern « items doublons partiels »), [[Workflows opérationnels - LBP#WF-019]] (cette règle s'applique en pré-test du choix de catalogue cible).
+- **Exemples** :
+  - ✅ Étendre [[#R-039]] (anti-artefacts IA) pour absorber un nouveau type d'artefact détecté, en ajoutant le pattern à la liste existante. Pas de R-080 « Anti-artefact format X » créée pour cela.
+  - ✅ Enrichir les `Cas particuliers` de [[Workflows opérationnels - LBP#WF-008]] pour absorber un cas marginal de propagation, plutôt que créer un WF-024 dédié à ce cas.
+  - ✅ Reformuler [[#R-026]] pour aligner sur la convention transverse `00 - archives/`, plutôt que créer R-077 « Convention archive transverse uniforme ».
+  - ❌ Capturer R-076 puis R-077 « anti-prolifération étendue aux PROP » au lieu d'élargir R-076 dans son `How to apply` (recouvrement total).
+- **Conséquence si violation** : prolifération des catalogues, items partiellement redondants, asymétries silencieuses entre items qui se recouvrent, érosion de la lisibilité, augmentation du coût de maintenance (chaque modification doit être propagée à N items doublons au lieu d'1 item canonique).
+- **Origine** : 03-05-2026, généralisation post-Phase 4.4 — Leonard observe que le réflexe systématique appliqué pendant la session a été de modifier les R / PROP / WF existants plutôt que créer un nouvel item à chaque fois (réflexe organique de cohérence), et propose la formalisation en règle systémique pour qu'elle s'impose à toute capture proactive future.
 
 #### R-074 : Règles de maintenance d'un type de doc → propriétaire canonique unique = méthode dédiée
 
