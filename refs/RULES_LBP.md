@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.7"
+version: "1.8"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
@@ -14,7 +14,7 @@ status: "Validé"
 scope: "LBP"
 
 # === Spec d'usage ===
-summary: "Catalogue exhaustif des 69 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
+summary: "Catalogue exhaustif des 70 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
 purpose: "Référence canonique pour lookup d'une règle précise. Toute production ou modification structurante doit s'appuyer sur les règles applicables. Pour la narration doctrinale qui les sous-tend voir DOCTRINE_LBP."
 tags:
   - doc_meta
@@ -916,6 +916,26 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « Indiquer l'état (à traiter, en cours, validé, archivé); Taxo: OBJ.STATUT. »
 - **Conséquence si violation** : asymétries silencieuses dès la moindre évolution de la taxonomie référencée, agents en routage erroné, repassage manuel sur N manuels au lieu de modifier uniquement le `.md` de taxonomie.
 - **Découverte** : 03-05-2026, Phase 3.B refonte Manuel + WR-RD `Docs méta LBP`. Lors de la migration `META.FAMILY → META.FUNCTION`, j'avais inliné les 5 taxons (Orienter, Expliquer, Structurer, Normer, Opérer) dans la description ≤280 du champ `Fonction systémique`. Leonard a flaggé : « Si on met à jour la taxonomie et que ses valeurs changent, l'agent qui lira ces instructions ne trouvera pas les bonnes valeurs dans la propriété select. C'est une prévention contre les asymétries. »
+
+#### R-073 : Frontmatter YAML — envelopper en quotes tout item de liste contenant `:`, apostrophes typographiques ou `"`
+
+- **Portée** : Transverse — tout doc Markdown LBP avec frontmatter YAML (manuels de BDD, WR-RD, taxonomies, notes de concept, docs méta, templates).
+- **Statut** : Actif
+- **Why** : Le parser YAML interprète tout `:` suivi d'un espace comme un séparateur clé/valeur. Si un item de liste contient un `:` non échappé (ex. `- VÉRIFIER (cf. R-072) : "à créer"`), le parser tente de créer un mapping imbriqué et échoue silencieusement. Conséquence : Obsidian affiche le frontmatter en texte brut au lieu du panneau Properties (sans message d'erreur), Bases / Dataview n'indexent pas les propriétés, et toute sync vers une fiche Notion peut échouer. Le piège est silencieux donc particulièrement dangereux.
+- **How to apply** :
+  1. Tout item de liste contenant `:` suivi d'un espace → envelopper en quotes (simples `'...'` ou doubles `"..."`).
+  2. Single quotes recommandées si le texte contient des doubles quotes internes (pas d'échappement nécessaire).
+  3. Double quotes recommandées si le texte contient des apostrophes ASCII `'`.
+  4. Si le texte contient les deux : doubler les single quotes intérieures `''` ou échapper les doubles quotes `\"`.
+  5. **Validation systématique** avant publication : parser le frontmatter avec `python -c "import yaml; yaml.safe_load(open('doc.md').read().split('---')[1])"` ou équivalent. Si erreur → corriger.
+- **Articulation** : R-001 (Markdown SoT — frontmatter doit être lisible mécaniquement), R-055 (frontmatter en 3 zones balisées — la structure ne suffit pas, encore faut-il que YAML soit parseable).
+- **Exemples** :
+  - ❌ `- VÉRIFIER absence de marqueurs (cf. C-027) : "à créer", "TBD"` → parse échoué (le parser voit un mapping `VÉRIFIER absence... : valeur`)
+  - ✅ `- 'VÉRIFIER absence de marqueurs (cf. C-027) : à créer, TBD'`
+  - ❌ `- Note avec apostrophe typographique : c'est cassé` → ambigu
+  - ✅ `- "Note avec apostrophe typographique : c'est OK"`
+- **Conséquence si violation** : frontmatter affiché en texte brut dans Obsidian, propriétés non indexées par Bases / Dataview, fiche Notion potentiellement non-syncable, perte de discoverabilité.
+- **Découverte** : 03-05-2026, lors de la production de TPL_META_CATALOGUE v1.1. Leonard a flaggé le frontmatter affiché en rouge dans Obsidian au lieu du panneau Properties. Cause identifiée : item `cleanup_rules` contenant `: "à créer"` interprété comme mapping imbriqué par le parser YAML.
 
 ### 2.5 Génération d'une BDD à partir d'un manuel
 
