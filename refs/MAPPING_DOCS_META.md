@@ -114,6 +114,47 @@ Mentionner uniquement le code de la taxonomie (`Taxo: META.FUNCTION`) et le nive
 
 Utiliser systématiquement `[[Nom humain]]` pour citer un autre doc méta. Bénéfice : résilience au rename via Obsidian UI + indexation par recherche Obsidian.
 
+### 3.7 Pas de panorama d'articulations dans les docs méta SoT (anti-asymétrie)
+
+Ne PAS lister en prose dans un doc méta « ce doc cite X / est cité par Y / complète Z » sous forme de tableau panorama. Ce type de section crée un risque d'asymétrie systémique : si un doc cité évolue, les N docs qui le citaient en panorama deviennent silencieusement faux. La cartographie cross-cutting vit dans **3 endroits dédiés** :
+- `[[Constitution des docs méta - LBP]]` (Annexe « Cartographie complète » en v1.0)
+- **Backlinks Obsidian** (calculés automatiquement, cf. C-025)
+- **Relations Notion** (machine-queryable)
+
+Ce qui reste légitime dans un doc méta : (a) section « Périmètre Exclus » qui formalise l'application R-066 (« cet item ne va pas ici, voir [[doc cible]] »), et (b) section « Garde-fous de cohérence » optionnelle limitée à 2-6 règles structurelles concrètes (« si X dans ce doc, alors faire / ne pas faire Y dans le doc voisin ») — supprimable à l'instanciation si aucun garde-fou opérationnel n'existe.
+
+**Découverte** : 03-05-2026, Leonard a flaggé l'anti-pattern dans le 1er jet de TPL_META_CATALOGUE qui contenait une section §3 « Articulation » avec tableau panorama.
+
+### 3.8 Pas d'instructions transitoires dans les templates durables
+
+Un template Brain est un artefact **durable** : il guide la production de docs sur des années, pour des cas d'usage qu'on ne connaît pas encore. Les instructions qu'il embarque doivent rester valides dans le temps.
+
+Anti-pattern : embarquer dans le template une étape spécifique à un chantier en cours (ex. « scanner le doc legacy source » alors que les docs legacy n'existeront plus dans 6 mois). Cette étape doit vivre dans le **doc de chantier transitoire** (ex. ce mapping `MAPPING_DOCS_META.md`).
+
+Règle pratique : pour chaque instruction du template, se demander « cette instruction sera-t-elle encore valide pour générer un doc dans 2 ans ? ». Si non → la déplacer dans le doc de chantier.
+
+**Découverte** : 03-05-2026, Leonard a flaggé l'étape « scanner legacy » dans le 1er jet de TPL_META_CATALOGUE comme non durable.
+
+### 3.9 Bonnes pratiques d'écriture EMBARQUÉES dans le doc canonique (pas dans le doc de chantier)
+
+Les bonnes pratiques de gestion d'un type de doc (stabilité du schéma, traçabilité des items, cycle de vie, anti-patterns) doivent vivre **dans le template ET dans le doc canonique généré** (section dédiée type « Bonnes pratiques d'écriture du catalogue »). Pas seulement dans le doc de chantier (qui est transitoire).
+
+Bénéfice : un consommateur du doc canonique (humain ou agent) trouve sur place les règles d'évolution du doc, sans avoir à consulter un autre doc qui aura disparu.
+
+**Découverte** : 03-05-2026, Leonard a explicité la distinction « MAPPING transitoire vs templates durables ».
+
+### 3.10 Niveau d'explicité attendu dans les templates : référence Manuel BDD Twin v7.0
+
+Le pattern de référence pour le niveau d'explicité d'un template Brain est `Template - Manuel de BDD - Digital Twin.md` v7.0. Ses caractéristiques :
+- `cleanup_rules` et `notes` directement dans le frontmatter du template (pas dans un bloc INSTR)
+- Multiples blocs INSTR spécialisés en tête : `SETTINGS`, `FRONTMATTER_INSTANCE`, `FRONTMATTER_CONTROLLED_VOCAB`, `FRONTMATTER_DECISION_RULES`, `FRONTMATTER_EXAMPLES` — un bloc par concept structurant
+- Plusieurs exemples concrets dans `FRONTMATTER_EXAMPLES` (un par variante d'instanciation)
+- Section-by-section : chaque section structurante a son propre bloc INSTR à proximité avec but, règles, vocabulaire contrôlé
+
+Anti-pattern : un seul gros bloc `TEMPLATE_USAGE_GUIDE` qui mélange tout (cas du 1er jet de TPL_META_CATALOGUE, refondu en v1.1).
+
+**Découverte** : 03-05-2026, lors de la refonte de TPL_META_CATALOGUE après lecture du Manuel Twin pour calibrage.
+
 ---
 
 ## 4. Articulation avec la Constitution des docs méta - LBP
@@ -183,6 +224,6 @@ Capture d'une `Méthode - Génération d'un template Brain.md` dans `H:\Drive pa
 | Indicateur | Valeur |
 |---|---|
 | Docs cibles produits (sur 24) | 1/24 (Constitution v0.3, à raffiner) |
-| Templates META produits (sur 10) | 0/10 |
+| Templates META produits (sur 10) | 1/10 (TPL_META_CATALOGUE v1.1, en validation) |
 | Phase courante | Phase 3 close, Phase 4 à démarrer |
 | Dernière mise à jour | 03-05-2026 |
