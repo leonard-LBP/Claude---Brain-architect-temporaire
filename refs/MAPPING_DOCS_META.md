@@ -265,6 +265,51 @@ Les 5 catalogues prévus se répartissent dans 3 fonctions META.FUNCTION différ
 
 **Origine de l'observation** : 03-05-2026, Leonard a flaggé que mon premier réflexe (placer Règles de propagation dans 50-Opérer) confondait « propagation = action » et « propagation = règle de cascade ». Une PROP est conceptuellement une norme contraignante (« quand X, alors faire Y »), donc Normer.
 
+### 6.2quinquies Phase 4.4 — Plan validé pour Workflows opérationnels - LBP
+
+**Validé Leonard 03-05-2026** avant interruption pour bout de contexte. À reprendre en début de prochaine session.
+
+**Sous-sections validées (Option B — par cycle de vie, 3 sous-sections équilibrées)** :
+
+| § | Thématique | # WF | Workflows |
+|---|---|---|---|
+| 5.1 | Workflows de production initiale | 4 | WF-011 (URL Drive), WF-012 (indexation Markdown→Notion), WF-013 (génération WR-RD depuis Manuel), WF-014 (génération BDD Notion depuis Manuel) |
+| 5.2 | Workflows de maintenance et propagation | 2 | WF-008 (propagation cascade après modification), WF-017 (sync DDL Notion à partir des écarts d'audit) |
+| 5.3 | Workflows d'audit et de migration | 2 | WF-015 (migration au canon d'un type de doc Brain), WF-016 (audit transverse Notion ↔ Manuels Brain) |
+
+**Schéma item WF-XXX validé (10 champs)** :
+- ID (WF-XXX immuable)
+- Nom (titre lisible)
+- Portée (Brain / Twin / MO / Transverse / Contextuel)
+- **Trigger** (événement ou besoin déclencheur — obligatoire)
+- **Préconditions** (contexte requis avant lancement — obligatoire)
+- **Étapes** (procédure ordonnée détaillée, souvent 5-10 étapes numérotées — obligatoire, longue, flexibilité maximale H5/code/tableaux)
+- **Sortie** (livrables attendus — obligatoire)
+- Garde-fous (recommandé)
+- Anti-patterns (recommandé)
+- Articulation (wikilinks vers R/PROP/D/autres WF — recommandé, dense)
+- Origine (date + contexte — obligatoire)
+
+**Volume estimé** : 8 WF × ~85 lignes/WF (legacy) = ~700-900 lignes total. Production lourde — à faire en début de session fraîche.
+
+**Observation Leonard** : « peu de workflows documentés malgré tout le travail » — beaucoup de méthodologies implicites (migration catalogue, audit grep, validation thématique, sync 2 repos, archivage R-053) ne sont pas capturées en WF. Elles émergeront quand on convertira les autres docs (refactor des prompts/logic blocks, production des méthodes Brain, etc.). Ne pas chercher à les rétro-capturer prématurément.
+
+### 6.2sexies Note de maintenance intelligente des catalogues
+
+**Principe Leonard 03-05-2026** : pour la modification des catalogues au besoin (nouveau champ thématique car un item ne rentre dans aucune thématique existante, ou champ thématique trop chargé d'items), on doit pouvoir **réfléchir de façon intelligente pour faire évoluer les sections** afin d'absorber au fur et à mesure tout en respectant la structure imposée par le template (3-8 sous-sections, 2-15 items/section).
+
+**Possibilités d'évolution autorisées par bump MINOR** (cf. R-056 + R-063) :
+- Ajout d'une nouvelle sous-section thématique pour absorber des items qui n'entrent dans aucune existante
+- Split d'une sous-section devenue trop chargée (>15 items) en 2 sous-sections cohérentes
+- Fusion de 2 sous-sections sous-utilisées (chacune <2 items qui se rapprochent conceptuellement)
+- Renommage d'une sous-section pour clarifier (à condition que le sens reste cohérent avec son contenu)
+
+**Déclencheurs pour ces évolutions** :
+- À chaque ajout d'item, vérifier qu'il rentre proprement dans une sous-section existante. Sinon : déclencher une évolution.
+- Audit périodique (mensuel ?) : vérifier les volumes par sous-section (alerte si <2 ou >15).
+
+**Codification cible** : ces principes seront formalisés dans la future `Méthode - Maintenance d'un catalogue Brain` (BDD Méthodes LBP, à produire post-Phase 4 catalogues).
+
 ### 6.2quater Décision : créer un template TPL_META_GRAMMAR (en plus des 10 templates initialement prévus)
 
 **Décision arbitrée 03-05-2026** lors de la préparation Phase 4.4 (production de Codification - LBP) : le template TPL_META_CATALOGUE colle « limite » au cas Codification, parce que les items de codification sont d'une nature structurelle différente :
