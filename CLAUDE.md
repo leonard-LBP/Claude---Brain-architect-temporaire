@@ -39,25 +39,38 @@
 
 ## 3. Documentation de reference
 
-A consulter selon le besoin ; `refs/PANORAMA_LBP.md` a relire au debut de chaque conversation pour se recontextualiser.
+A consulter selon le besoin. Au debut de chaque conversation, relire `refs/ECOSYSTEM-STATE.md` (journal de session) + le doc d'entree LBP courant (Panorama LBP quand v1.0 produit, sinon `refs/PANORAMA_LBP.md` legacy) pour se recontextualiser.
 
-**🟦 Scope LBP (bundle ecosysteme — 11 docs `*_LBP.md`)**
-- `refs/PANORAMA_LBP.md` — Doc d'entree, vue macro 3 ensembles (Brain/Twin/MO)
-- `refs/DOCTRINE_LBP.md` — 9 doctrines transverses (pourquoi structurel)
-- `refs/DOCTRINE_TWIN_LBP.md` — Doctrine detaillee Twin (regimes, chaines, gouvernance)
-- `refs/RULES_LBP.md` — Regles intrinseques a l'ecosysteme (IDs R-XXX)
-- `refs/DECISIONS_LBP.md` — Decisions architecturales (IDs D-XXX)
-- `refs/WORKFLOWS_LBP.md` — Workflows operationnels LBP (IDs WF-XXX)
-- `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md` — Modele conceptuel 11 BDDs Brain
-- `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` — Modele conceptuel 28 BDDs Twin
-- `refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md` — Modele conceptuel 4 BDDs Mission Ops
-- `refs/CODIFICATION_LBP.md` — Grammaire de tous les codes LBP
-- `refs/PROPAGATION_RULES_LBP.md` — Cheat sheet propagation
+**🟦 Scope LBP — Nouveaux docs meta canoniques (vault Architecture data, source de verite directe)**
+
+Convention C-029 : pas de mirror `refs/` pour ces docs (vault = SoT). Toujours pointer le chemin canonique du vault.
+
+- `H:\Drive partages\LBP - shared\Architecture data\00 - Docs meta\40-Normer\Regles intrinseques - LBP.md` — Catalogue des R-XXX (regles atomiques)
+- `H:\Drive partages\LBP - shared\Architecture data\00 - Docs meta\40-Normer\Regles de propagation - LBP.md` — Catalogue des PROP-XXX (cascades evenementielles)
+- `H:\Drive partages\LBP - shared\Architecture data\00 - Docs meta\20-Expliquer\Decisions architecturales - LBP.md` — Catalogue des D-XXX (decisions architecturales)
+- `H:\Drive partages\LBP - shared\Architecture data\00 - Docs meta\50-Operer\Workflows operationnels - LBP.md` — Catalogue des WF-XXX (workflows operationnels)
+- `H:\Drive partages\LBP - shared\Architecture data\00 - Docs meta\Doctrines & playbooks\Constitution des docs meta - LBP.md` — Constitution actuelle (v0.4, refonte v1.0 Phase 5)
+- `H:\Drive partages\LBP - shared\Architecture data\Templates Brain\Template - META Catalogue.md` — Template TPL_META_CATALOGUE v1.6
+
+**🟦 Scope LBP — Anciens docs en cours de conversion (mirror `refs/` conserve tant que non converti)**
+
+Mirror disparait naturellement de `refs/` au fur et a mesure des conversions Phase 4.5+ vers de nouveaux docs canoniques au format catalogue / grammaire / etc.
+
+- `refs/PANORAMA_LBP.md` — Legacy Doc d'entree (sera converti en Panorama LBP v1.0 via TPL_META_PANORAMA)
+- `refs/DOCTRINE_LBP.md` — Legacy 9 doctrines transverses (sera convertit en Cadre LBP via TPL_META_CADRE)
+- `refs/DOCTRINE_TWIN_LBP.md` — Legacy Doctrine Twin (sera converti en Cadre Twin via TPL_META_CADRE)
+- `refs/SPECS_ARCHITECTURE_BRAIN_LBP.md` — Legacy modele conceptuel 11 BDDs Brain (sera converti en Architecture - Brain via TPL_META_SPECS_ARCHI)
+- `refs/SPECS_ARCHITECTURE_TWIN_LBP.md` — Legacy modele conceptuel 28 BDDs Twin (sera converti en Architecture - Twin)
+- `refs/SPECS_ARCHITECTURE_MISSION_OPS_LBP.md` — Legacy modele conceptuel 4 BDDs Mission Ops
+- `refs/CODIFICATION_LBP.md` — Legacy grammaire des codes LBP (sera converti en Codification - LBP via TPL_META_GRAMMAR Phase 4.5)
+- `refs/Constitution des docs meta - LBP.md` — Mirror temporaire (en attente refonte v1.0 Phase 5)
 - `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties (Scope Session, hors bundle)
 
-**🟪 Scope Session (hors bundle, collaboration Claude/Leonard)**
+**🟪 Scope Session (collaboration Claude/Leonard, vit uniquement dans le repo collab)**
 - `refs/SESSION_WORKFLOWS.md` — Workflows propres a notre collaboration en session (re-contextualisation, etc.)
 - `refs/ECOSYSTEM-STATE.md` — Journal de session + etat courant (a mettre a jour apres chaque changement)
+- `refs/MAPPING_DOCS_META.md` — Cartographie de la conversion des docs meta (vivant, mis a jour Phase 4-5)
+- `refs/RULES_BRAIN_TWIN-backlog.md` — Regles pressenties non confirmees
 
 ---
 
@@ -98,6 +111,8 @@ A consulter selon le besoin ; `refs/PANORAMA_LBP.md` a relire au debut de chaque
 - **C-028 — Ne consulter QUE `DB NOTES BRAIN` pour les BDDs Notion du Brain ; ignorer absolument `Source of truth`** : La page Notion `Source of truth` (`2a9e1a18-653c-802d-af50-ea54457e9544`) contient des contenus legacy datant d'avant que Markdown ne devienne SoT canonique (R-001) : anciennes taxos, anciens manuels de BDD avec body rempli, doublons figés. Ces contenus sont **périmés** et leur consultation crée des asymétries silencieuses (l'agent compare la SoT Markdown courante avec un snapshot obsolète et conclut à une désynchronisation à corriger, alors qu'il s'agit juste de legacy à ignorer). **Règle pratique** : pour toute opération sur les BDDs Notion du Brain (lecture schéma, query, update propriétés, audit relations, identification de fiche canonique), partir **exclusivement** de `DB NOTES BRAIN` (`20be1a18-653c-8079-aeb1-e01047fddddd`) qui liste les 11 BDDs canoniques. Si une recherche MCP ou un fetch retourne une page sous `Source of truth`, **ignorer le résultat** et chercher l'équivalent sous `DB NOTES BRAIN`. Ignorer également les BDDs préfixées `XXX` dans `DB NOTES BRAIN` (anciennes versions à traiter manuellement par Leonard). **Articulation** : C-002 (vault unique = Architecture data, même logique d'unicité de source), R-001 (Markdown SoT — Notion mirror suit, le legacy Notion ne fait foi sur rien). **Découverte** : 03-05-2026, Phase 3.B Notion. Lors du fetch de la fiche `Manuel de BDD - Docs méta LBP`, le résultat de search a renvoyé en premier la fiche `317e1a18-653c-8193-a19e-fadd00d9deb7` (sous `Source of truth → Manuels de BDD - 02/03/2026`) avec un body de 340 lignes contenant l'ancien snapshot du manuel (`META.FAMILY.LBP`, etc.). J'ai pris cette fiche comme cible canonique de la sync Phase 3.B et failli faire un `replace_content` body (340 lignes) basé sur cette confusion. Leonard a flaggé : « tu n'as pas à aller là bas, ce sont des contenus périmés ». Correction : la fiche active vit dans `DB NOTES BRAIN → Manuels de BDD` (BDD canonique `698c6c7809ae4cf6ba6bf20346459114`), avec un body **vide** (convention LBP : Notion = index de propriétés, contenu canonique dans le `.md` Drive référencé par `Lien vers le manuel de BDD (.md)`).
 
 - **C-019 — Push systématique sur TOUS les repos git impactés (extension de C-013)** : L'écosystème LBP comporte plusieurs repos git distincts qui doivent être commit + push **chacun** dans leur propre cadence : (1) `Claude - Brain architect temporaire` (collab Claude/Leonard, scripts, refs/, Transmission Clément/) ; (2) `lbp-architecture-data-vault` (vault Markdown source de vérité R-001 — manuels, WR-RD, taxos, bundle docs méta, taxonomies, notes de concept, templates, etc.) ; (3) tout futur repo (app LBP, scripts dédiés, etc.). À chaque fin de phase notable, **vérifier `git status` dans chaque repo pertinent** et committer + pousser séparément. Une cascade WF-008 qui touche le vault doit générer un commit dans le vault, pas seulement dans le repo collab. Annoncer explicitement : « ✓ Push : N commits sur repo-A · ✓ Push : M commits sur repo-B ». **Articulation avec C-013** : C-013 disait « push après commit », C-019 dit « vérifier que TOUS les repos pertinents ont leurs commits à jour avant la fin de phase ». **Articulation avec WF-008** : la phase 7 du workflow (commit + push) s'applique à chaque repo touché par la propagation, pas à un seul. **Découverte** : 02-05-2026 — Leonard signale que 5 jours de modifs sur le vault `Architecture data` (227 fichiers : Phases A4 + B + Bundle docs méta + Cleanup + Cascades WF-008) étaient restés uncommitted sur le repo `lbp-architecture-data-vault`, alors que le repo collab `Claude - Brain architect temporaire` était à jour. Risque concret : crash machine ou bug Drive desktop = 2+ jours de travail perdus. Correctif rétroactif : commit massif `66547c7` poussé immédiatement.
+
+- **C-029 — Pas de mirror `refs/` pour les SoT canoniques du vault Architecture data** : Les nouveaux docs méta canoniques produits Phase 4+ (catalogues `Règles intrinsèques - LBP`, `Règles de propagation - LBP`, `Décisions architecturales - LBP`, `Workflows opérationnels - LBP`, futurs `Codification - LBP`, `Architecture - Brain/Twin/MO`, `Cadre - LBP/Brain/Twin/MO`, etc.) vivent **uniquement** dans le vault `H:\Drive partagés\LBP - shared\Architecture data\00 - Docs méta\` (ou `Templates Brain/` pour les templates). **Ne jamais créer de copie dans `refs/`** : ce serait un doublon qui viole [[refs/Règles intrinsèques - LBP#R-001]] (Markdown SoT — vault), [[refs/Règles intrinsèques - LBP#R-066]] (propriétaire canonique unique), [[refs/Règles intrinsèques - LBP#R-076]] (anti-prolifération), et créerait un risque silencieux d'asymétrie si je rate un sync `cp` après une modif. **Règle pratique** : pour citer un de ces docs dans une réponse ou dans un autre doc méta, **toujours pointer le chemin canonique du vault** (`H:\Drive partagés\LBP - shared\Architecture data\00 - Docs méta\<sous-dossier>\<nom>.md`) ou utiliser un wikilink Obsidian (`[[Nom du doc]]`). Ne JAMAIS faire `cp <vault> refs/`. **Cas où `refs/` reste légitime** : (a) anciens docs LBP encore en cours de conversion (ex. `refs/PANORAMA_LBP.md`, `refs/DOCTRINE_LBP.md`, etc., qui disparaîtront naturellement de `refs/` au fur et à mesure des conversions Phase 4.5+) ; (b) docs scope Session qui vivent UNIQUEMENT dans le repo collab (ex. `refs/ECOSYSTEM-STATE.md`, `refs/MAPPING_DOCS_META.md`, `refs/SESSION_WORKFLOWS.md`, `refs/RULES_BRAIN_TWIN-backlog.md`). **Articulation** : R-001, R-066, R-076 (anti-prolifération), C-002 (vault unique = Architecture data — extension : SoT unique aussi pour ses docs canoniques). **Découverte** : 04-05-2026, fin Phase 4.4+. Leonard observe que je copiais systématiquement chaque nouveau doc méta canonique dans `refs/` ET dans le vault, en faisant des `cp` manuels après chaque modif (réflexe hérité de la convention `refs/` initiale qui mirorait les anciens docs `RULES_LBP.md`, `DECISIONS_LBP.md`, etc.). Vérification a confirmé 4/4 mirrors identiques au moment de la suppression — pas de perte d'info, mais le risque de désynchro silencieuse était installé. Correctif : suppression des 4 mirrors (`Règles intrinsèques`, `Règles de propagation`, `Décisions architecturales`, `Workflows opérationnels`) + update CLAUDE.md §3 avec chemins vault directs.
 
 ---
 
