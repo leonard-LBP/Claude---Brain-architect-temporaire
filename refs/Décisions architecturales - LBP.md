@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "META_DECISIONS_LBP"
 
 # === Méta-gouvernance ===
-version: "1.0"
+version: "1.1"
 template_code: "TPL_META_CATALOGUE"
 template_version: "1.6"
 created_at: "03-05-2026"
@@ -170,6 +170,7 @@ Le catalogue se lit selon 2 axes :
 | D-024 | Adoption du préfixe `META_` pour les codes des docs méta indexés (remplace `CHRT_`) | 03-05-2026 | 5.5 Codification, templates et migrations docs méta | Phase 1.0 chantier d'architecture des docs méta |
 | D-025 | Adoption des 5 fonctions systémiques `META.FUNCTION` (remplace `META.FAMILY`) | 03-05-2026 | 5.5 Codification, templates et migrations docs méta | Phase 1.0 chantier d'architecture des docs méta |
 | D-026 | Création de la BDD `Templates Brain` séparée — `Templates de Bricks` reste une BDD distincte | 03-05-2026 | 5.5 Codification, templates et migrations docs méta | Phase 1.0 chantier d'architecture des docs méta |
+| D-027 | Pas de catalogue « Principes structurants » — éviter la collision sémantique avec `Principes organisationnels` (Twin) | 03-05-2026 | 5.5 Codification, templates et migrations docs méta | Phase 4.4+ post-capture R-076 |
 
 ---
 
@@ -750,6 +751,26 @@ Décisions sur la traçabilité des templates d'instanciation, la séquence de m
   - ⚠️ Coût ponctuel : créer manuel `Manuel de BDD - Templates Brain` + WR-RD + générer BDD Notion + migrer ~6 fiches templates + créer taxo `TPL.SCOPE`.
 - **Articulation** : [[Règles intrinsèques - LBP#R-012]] (séparation des régimes de connaissance), [[Règles intrinsèques - LBP#R-053]] (archivage si rename de codes), [[CLAUDE.md#C-018]] (régimes différents → BDDs distinctes), `[[Constitution des docs méta - LBP]]` §2.
 - **Origine** : Phase 1.0 du chantier d'architecture des docs méta.
+
+#### D-027 : Pas de catalogue « Principes structurants » — éviter la collision sémantique avec `Principes organisationnels` (Twin)
+
+- **Portée** : Brain — architecture des catalogues docs méta + frontière sémantique Brain ↔ Twin
+- **Date de décision** : 03-05-2026
+- **Contexte** : Le mapping initial des docs méta prévoyait un doc `Principes structurants - LBP.md` en `20-Expliquer/`, instancié depuis un template TPL_META_PRINCIPES dédié. Ce doc devait lister les axiomes structurants de l'écosystème LBP (zero contamination Core/Motor, Markdown source de vérité, Brain agent-agnostique, propriétaire canonique unique, etc.). Or **deux problèmes** émergent :
+  1. **Collision sémantique avec le Twin** : le mot « Principe » a déjà un sens cadré côté Twin (BDD `Principes organisationnels` + manuel + WR-RD, qui désigne une ligne directrice organisationnelle observée chez un client). Réutiliser le mot « Principe » côté docs méta créait un risque réel de confusion : un agent ou un humain consultant l'écosystème ne saurait pas distinguer un Principe au sens « axiome structurant LBP » d'un Principe au sens « ligne directrice organisationnelle Twin ».
+  2. **Prolifération doctrinale** : les principes axiomatiques LBP sont **déjà** capturés en R-XXX dans `Règles intrinsèques - LBP §5.1 Fondations doctrinales` (R-001 Markdown SoT, R-002 Zero contamination, R-012 Séparation des régimes, R-066 Propriétaire canonique unique, R-070 Brain agent-agnostique, R-076 Modification > création, etc.). Créer un catalogue PRIN-XXX en plus serait un doublon partiel (anti-pattern direct de [[Règles intrinsèques - LBP#R-076]]).
+- **Options envisagées** :
+  - **(a)** Créer le doc `Principes structurants - LBP` comme prévu au mapping initial → rejeté (collision Twin + violation R-076).
+  - **(b)** Ne pas créer le doc — tous les principes axiomatiques vivent en R-XXX dans `Règles intrinsèques §5.1` (cas statique applicable à toute interaction) ou en PROP-XXX dans `Règles de propagation` (cas événementiel) → **retenu**.
+  - **(c)** Créer le doc avec un autre nom (ex. « Axiomes LBP », « Lois fondatrices ») → rejeté (complexité gratuite, R-076 toujours violée — les axiomes restent dupliqués des R existantes).
+- **Décision** : **(b)**. Pas de catalogue dédié aux principes axiomatiques LBP. Tous les principes structurants sont capturés dans [[Règles intrinsèques - LBP]] (§5.1 Fondations doctrinales pour les principes statiques, autres §5.x pour les principes plus spécifiques) ou dans [[Règles de propagation - LBP]] (cas événementiels). Le mot « Principe » est **réservé à son usage Twin** (BDD `Principes organisationnels`) ; aucun doc méta LBP ne réutilise ce mot pour désigner un axiome ou une règle.
+- **Conséquences** :
+  - ✅ `MAPPING_DOCS_META.md` mis à jour : retirer ligne E.5 `Principes structurants - LBP.md` du §2 + retirer template TPL_META_PRINCIPES (ligne 5) du récap §1. Le doc cible total passe de 24 à 23 ; le nombre de templates à produire passe de 11 (10 initiaux + TPL_META_GRAMMAR) à 10.
+  - ✅ Les principes axiomatiques déjà capturés en R-XXX (R-001, R-002, R-012, R-066, R-070, R-076, etc.) restent dans `Règles intrinsèques §5.1 Fondations doctrinales` — pas de migration ni de déplacement.
+  - ✅ Le doc `Philosophie - LBP.md` (O.3, `10-Orienter/`) reste prévu comme **manifeste narratif intangible** (missions / visions / valeurs de LBP en tant qu'entreprise), totalement décorrélé de toute notion d'axiome ou de règle structurante.
+  - ⚠️ **Vocabulaire à proscrire** dans les docs méta LBP : ne pas utiliser le mot « Principe » pour désigner un axiome, une règle, une convention ou une décision — sauf citation explicite de la BDD Twin `Principes organisationnels`.
+- **Articulation** : [[Règles intrinsèques - LBP#R-076]] (anti-prolifération — application directe), [[Règles intrinsèques - LBP#R-001]], [[Règles intrinsèques - LBP#R-002]], [[Règles intrinsèques - LBP#R-012]], [[Règles intrinsèques - LBP#R-066]], [[Règles intrinsèques - LBP#R-070]] (principes structurants déjà capturés en R, pas besoin de doublon), `[[MAPPING_DOCS_META]]` (mapping à mettre à jour en cascade), `Manuel de BDD - Principes organisationnels` (Twin — propriétaire canonique du mot « Principe »).
+- **Origine** : 03-05-2026, Phase 4.4+ post-capture R-076. Leonard observe que (i) le mot « Principe » est cadré côté Twin et qu'on doit éviter la collision sémantique, (ii) les principes axiomatiques LBP sont déjà capturés en R-XXX dans `Règles intrinsèques §5.1`. Application immédiate de R-076 (« modification d'item existant prime sur création ») dès sa capture.
 
 ---
 

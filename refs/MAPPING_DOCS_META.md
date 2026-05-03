@@ -7,7 +7,9 @@
 
 ---
 
-## 1. Récap : 10 templates → 24 docs cibles
+## 1. Récap : 10 templates → 23 docs cibles
+
+> **Décision 03-05-2026 (D-027)** : pas de doc `Principes structurants - LBP` ni de template TPL_META_PRINCIPES — pour éviter la collision sémantique avec la BDD Twin `Principes organisationnels` et par application de R-076 (anti-prolifération : les principes axiomatiques LBP sont déjà capturés en R-XXX dans `Règles intrinsèques §5.1 Fondations doctrinales`). Mapping ré-aligné : 11 → 10 templates et 24 → 23 docs cibles.
 
 | # | Template | Code | Docs cibles produits | Réutilisation |
 |---|---|---|---|---|
@@ -15,8 +17,8 @@
 | 2 | TPL_META_CONSTITUTION | `TPL_META_CONSTITUTION` | 1 (Constitution des docs méta) | Unique |
 | 3 | TPL_META_MANIFEST | `TPL_META_MANIFEST` | 2 (Philosophie + Profil) | Réutilisé 2× |
 | 4 | TPL_META_CADRE | `TPL_META_CADRE` | 4 (LBP, Brain, Twin, MO) | Réutilisé 4× |
-| 5 | TPL_META_PRINCIPES | `TPL_META_PRINCIPES` | 1 (Principes structurants) | Unique |
-| 6 | TPL_META_CATALOGUE | `TPL_META_CATALOGUE` | 5 (Décisions, Règles, Codification, Workflows, Propagation) | Réutilisé 5× |
+| 5 | TPL_META_CATALOGUE | `TPL_META_CATALOGUE` | 4 (Décisions, Règles, Workflows, Propagation) | Réutilisé 4× |
+| 6 | TPL_META_GRAMMAR | `TPL_META_GRAMMAR` | 1 (Codification) | Unique (mode référentiel statique, distinct de CATALOGUE) |
 | 7 | TPL_META_SPECS_ARCHI | `TPL_META_SPECS_ARCHI` | 3 (Architecture Brain/Twin/MO) | Réutilisé 3× |
 | 8 | TPL_META_INTERFACES | `TPL_META_INTERFACES` | 1 (Interfaces Brain↔Twin↔MO) | Unique |
 | 9 | TPL_META_CHARTE | `TPL_META_CHARTE` | 3 (Rédac, Graphique, Sécurité & RGPD) | Réutilisé 3× |
@@ -47,8 +49,8 @@ Statuts possibles : 🔴 à faire / 🟡 en cours / 🟢 fait.
 | E.2 | `Cadre - Brain.md` | `DOCTRINE_LBP.md` (sections spécifiques Brain) | Extraire ce qui est propre au Brain (control plane, motor, core). | Risque : actuel `DOCTRINE_LBP` mélange transverse et Brain — désentrelacer proprement. | 🔴 |
 | E.3 | `Cadre - Twin.md` | `DOCTRINE_TWIN_LBP.md` | Reprendre les régimes, chaînes, gouvernance Twin. | Doc déjà bien structuré, conversion légère via TPL_META_CADRE. | 🔴 |
 | E.4 | `Cadre - Mission Ops.md` | _from scratch_ (extraction possible de `DOCTRINE_LBP`) | Construire à partir de zéro le cadre MO (livrables, opérations, articulation Twin↔MO). | Domaine moins documenté actuellement — préparer un brouillon avant template. | 🔴 |
-| E.5 | `Principes structurants - LBP.md` | `DOCTRINE_LBP.md` (extraits principes) | Lister les principes atomiques (ex. zero contamination, R-001 SoT Markdown, etc.) en mode catalogue. | Distinguer Principes (énoncés courts axiomatiques) de Cadre (narration explicative). | 🔴 |
-| E.6 | `Décisions architecturales - LBP.md` | `DECISIONS_LBP.md` | Conversion via TPL_META_CATALOGUE. Schéma item D-XXX : Contexte / Options / Décision / Conséquences / Date. | Schéma item à figer en publication v1.0. | 🔴 |
+| ~~E.5~~ | ~~`Principes structurants - LBP.md`~~ | — | **Retiré du mapping (D-027, 03-05-2026)** : pas de catalogue Principes — éviter collision sémantique avec `Principes organisationnels` (Twin) + application R-076 (les principes axiomatiques LBP sont déjà capturés en R-XXX dans `Règles intrinsèques §5.1`). | — | ❌ Ne sera pas produit |
+| E.6 | `Décisions architecturales - LBP.md` | `DECISIONS_LBP.md` | Conversion via TPL_META_CATALOGUE. Schéma item D-XXX : Contexte / Options / Décision / Conséquences / Date. | Schéma item à figer en publication v1.0. | 🟢 v1.1 (03-05-2026) |
 
 ### `30-Structurer/`
 
@@ -241,18 +243,20 @@ Pour chaque template (dans l'ordre stratégique) :
 
 ### 6.2 Ordre stratégique des 10 templates
 
-| Ordre | Template | Doc calibrateur | Pourquoi cet ordre |
-|---|---|---|---|
-| 1 | TPL_META_CATALOGUE | Règles intrinsèques - LBP | **Le plus impactant** : sert 5 docs cibles dont les nouveaux réceptacles de R-XXX, D-XXX, WF-XXX, PROP-XXX, codification. Une fois les 5 catalogues produits → toute capture future va directement vers le nouveau SoT (plus de cul-entre-deux-chaises avec docs legacy). Calibre aussi la convention « Anatomie d'un item ». |
-| 2 | TPL_META_PANORAMA | Panorama - LBP | Simple, valide le pattern narratif |
-| 3 | TPL_META_CADRE | Cadre - LBP | Réutilisé 4×, valide tôt avant scale |
-| 4 | TPL_META_SPECS_ARCHI | Architecture - Brain | Réutilisé 3×, valide pattern pointage croisé enrichi (R-XXX §3.2 du mapping) |
-| 5 | TPL_META_PRINCIPES | Principes structurants - LBP | Court, valide variante de catalogue |
-| 6 | TPL_META_INTERFACES | Interfaces Brain↔Twin↔MO | Nouveau pattern |
-| 7 | TPL_META_CHARTE | Charte rédactionnelle - LBP | Réutilisé 3×, valide pattern guidelines |
-| 8 | TPL_META_QC | Quality control - Brain | Réutilisé 3×, valide pattern procédures |
-| 9 | TPL_META_MANIFEST | Philosophie - LBP | Court, manifeste |
-| 10 | TPL_META_CONSTITUTION | Constitution des docs méta - LBP v1.0 | En dernier : absorbe tout ce qu'on a appris |
+| Ordre | Template | Doc calibrateur | Pourquoi cet ordre | Statut |
+|---|---|---|---|---|
+| 1 | TPL_META_CATALOGUE | Règles intrinsèques - LBP | **Le plus impactant** : sert 4 docs cibles (R, PROP, D, WF) qui sont les nouveaux réceptacles atomiques de l'écosystème. Une fois les 4 catalogues produits → toute capture future va directement vers le nouveau SoT (plus de cul-entre-deux-chaises avec docs legacy). Calibre aussi la convention « Anatomie d'un item ». | 🟢 v1.6 produit + 4 catalogues instanciés |
+| 2 | TPL_META_GRAMMAR | Codification - LBP | Mode « référentiel statique » distinct de CATALOGUE (modes log/substitution). Sert au moins 1 doc cible (Codification) + futures grammaires SQL/Supabase, naming bricks MO, prompts maîtres LBP. | 🔴 Phase 4.5 |
+| 3 | TPL_META_PANORAMA | Panorama - LBP | Simple, valide le pattern narratif | 🔴 |
+| 4 | TPL_META_CADRE | Cadre - LBP | Réutilisé 4×, valide tôt avant scale | 🔴 |
+| 5 | TPL_META_SPECS_ARCHI | Architecture - Brain | Réutilisé 3×, valide pattern pointage croisé enrichi | 🔴 |
+| 6 | TPL_META_INTERFACES | Interfaces Brain↔Twin↔MO | Nouveau pattern | 🔴 |
+| 7 | TPL_META_CHARTE | Charte rédactionnelle - LBP | Réutilisé 3×, valide pattern guidelines | 🔴 |
+| 8 | TPL_META_QC | Quality control - Brain | Réutilisé 3×, valide pattern procédures (candidat catalogue à arbitrer Phase 4.6) | 🔴 |
+| 9 | TPL_META_MANIFEST | Philosophie - LBP | Court, manifeste | 🔴 |
+| 10 | TPL_META_CONSTITUTION | Constitution des docs méta - LBP v1.0 | En dernier : absorbe tout ce qu'on a appris | 🟡 v0.4 (capitalisation continue, refonte v1.0 en Phase 5) |
+
+> **Retiré du tableau (D-027, 03-05-2026)** : ~~TPL_META_PRINCIPES~~ — pas de catalogue Principes structurants.
 
 ### 6.2ter Observation : le template TPL_META_CATALOGUE est trans-fonction
 
