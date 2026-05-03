@@ -1476,7 +1476,7 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
 # 6) Archives — Règles intrinsèques - LBP
 
 
-*Items migrés vers d'autres catalogues, conservés ici pour traçabilité (IDs immuables, jamais réutilisés).*
+*Items archivés — règles devenues caduques suite à refonte structurelle, remplacées par d'autres règles, dont la portée a disparu, ou (cas marginal) migrées vers un autre catalogue. Conservés ici pour traçabilité historique, IDs immuables jamais réutilisés.*
 
 #### R-028 : Cohérence manuel ↔ doc clefs de lecture
 
