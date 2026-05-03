@@ -5,7 +5,7 @@ doc_type: doc_meta
 code: "CHRT_RULES_LBP"
 
 # === Méta-gouvernance ===
-version: "1.6"
+version: "1.7"
 template_code: "CHRT"
 template_version: "1.0"
 created_at: "07-04-2026"
@@ -14,7 +14,7 @@ status: "Validé"
 scope: "LBP"
 
 # === Spec d'usage ===
-summary: "Catalogue exhaustif des 60 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
+summary: "Catalogue exhaustif des 69 règles atomiques (R-XXX) qui gouvernent l'écosystème LBP (Brain + Digital Twin + Mission Ops). Chaque règle a un ID stable, une portée, un statut, un why, un how to apply, et la date de découverte."
 purpose: "Référence canonique pour lookup d'une règle précise. Toute production ou modification structurante doit s'appuyer sur les règles applicables. Pour la narration doctrinale qui les sous-tend voir DOCTRINE_LBP."
 tags:
   - doc_meta
@@ -897,6 +897,25 @@ Le `purpose` décrit **l'effet immédiat** que produit la taxo sur les objets qu
   - ❌ « Contrairement à WR-RD Brain qui n'a pas de jumelles, WR-RD Twin... »
 - **Conséquence si violation** : asymétries silencieuses au moindre changement d'un doc cité, couplage fort entre docs qui devrait rester découplés, dégradation de la lisibilité (le lecteur doit aller voir l'autre doc pour comprendre la comparaison).
 - **Découverte** : 03-05-2026, Phase 2.2 b.3. Lors de l'indexation des 15 templates dans BDD `Templates Brain`, j'avais émaillé les descriptions de comparaisons (« 11 sections vs 8 côté Twin/MO », « 4 sections vs 5 côté Twin/MO », « contrairement à... »). Leonard a flaggé l'anti-pattern : « qu'est-ce que tu vas aller faire des singularités distinctives dans des descriptions ? encore des comparaisons / mentions d'autres éléments, donc risque d'asymétrie si un autre doc évolue ». Refonte des 15 fiches en mode auto-suffisant.
+
+#### R-072 : Pas d'énumération de taxons dans les instructions d'écriture / descriptions ≤280
+
+- **Portée** : Transverse — colonnes « Description et règles ≤280 (à coller dans Notion) » des manuels de BDD Brain ; colonnes « Instructions d'écriture » des manuels de BDD Twin et Mission Ops ; et leurs WR-RD dérivés.
+- **Statut** : Actif
+- **Why** : Inliner les valeurs (taxons) d'une taxonomie dans une instruction d'écriture crée une **dépendance silencieuse** entre l'instruction et la version courante de la taxonomie. Si la taxonomie évolue (ajout, retrait, renommage de taxon), l'instruction devient fausse sans qu'aucun audit ne le détecte. L'agent qui consomme l'instruction cherchera des valeurs qui n'existent plus dans la propriété select/multiselect, créant routage erroné ou fiches incomplètes.
+- **How to apply** : pour toute instruction d'écriture sur un champ taxonomique :
+  1. **Mentionner uniquement le code de la taxonomie** : `Taxo: META.FUNCTION`.
+  2. **Si hiérarchique, mentionner le niveau attendu** : `Niveau: category | subdomain | taxon`.
+  3. **Ne jamais énumérer les valeurs** (taxons) dans l'instruction.
+  4. **La source de vérité des valeurs reste le `.md` de la taxonomie** (réf. R-049, R-052) — l'agent doit consulter la taxonomie ou la propriété select Notion pour les valeurs valides.
+- **Articulation** : R-001 (Markdown SoT), R-049 (taxonomies orthogonales), R-052 (mini-doc taxonomie source de vérité sémantique), R-066 (propriétaire canonique unique), R-071 (auto-suffisance des descriptions — même logique d'évitement des dépendances silencieuses).
+- **Exemples** :
+  - ✅ « Classer le doc selon sa fonction systémique dominante; choisir 1 valeur; Taxo: META.FUNCTION; Niveau: taxon. »
+  - ✅ « Indiquer l'état de gouvernance de la fiche; Taxo: OBJ.STATUT. »
+  - ❌ « Classer selon sa fonction systémique (Orienter, Expliquer, Structurer, Normer, Opérer); Taxo: META.FUNCTION; Niveau: taxon. »
+  - ❌ « Indiquer l'état (à traiter, en cours, validé, archivé); Taxo: OBJ.STATUT. »
+- **Conséquence si violation** : asymétries silencieuses dès la moindre évolution de la taxonomie référencée, agents en routage erroné, repassage manuel sur N manuels au lieu de modifier uniquement le `.md` de taxonomie.
+- **Découverte** : 03-05-2026, Phase 3.B refonte Manuel + WR-RD `Docs méta LBP`. Lors de la migration `META.FAMILY → META.FUNCTION`, j'avais inliné les 5 taxons (Orienter, Expliquer, Structurer, Normer, Opérer) dans la description ≤280 du champ `Fonction systémique`. Leonard a flaggé : « Si on met à jour la taxonomie et que ses valeurs changent, l'agent qui lira ces instructions ne trouvera pas les bonnes valeurs dans la propriété select. C'est une prévention contre les asymétries. »
 
 ### 2.5 Génération d'une BDD à partir d'un manuel
 

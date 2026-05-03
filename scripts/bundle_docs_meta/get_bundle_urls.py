@@ -2,7 +2,7 @@
 WF-011 ad hoc — récupération URLs Drive pour les 11 docs du bundle docs méta LBP.
 
 Lit le SQLite local de Drive Desktop pour résoudre file_id de chacun des 11 fichiers
-.md publiés dans Architecture data\00 - Docs méta\Doctrines & playbooks\Bundle écosystème LBP\
+.md publiés dans Architecture data\00 - Docs méta\Doctrines & playbooks\
 
 Output : scripts/bundle_docs_meta/output/bundle_urls.json
   { "<file.md>": { "drive_id": "...", "url": "..." }, ... }
@@ -13,7 +13,7 @@ import json
 import sqlite3
 from pathlib import Path
 
-BUNDLE_FOLDER = Path(r"H:/Drive partagés/LBP - shared/Architecture data/00 - Docs méta/Doctrines & playbooks/Bundle écosystème LBP")
+BUNDLE_FOLDER = Path(r"H:/Drive partagés/LBP - shared/Architecture data/00 - Docs méta/Doctrines & playbooks")
 DRIVEFS_DB_CANDIDATES = [
     Path(r"C:/Users/leona/AppData/Local/Google/DriveFS/101486418960336612156/metadata_sqlite_db"),
     Path(r"C:/Users/leona/AppData/Local/Google/DriveFS/114540043112787619692/metadata_sqlite_db"),
