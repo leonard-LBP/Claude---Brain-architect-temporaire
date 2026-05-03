@@ -17,8 +17,8 @@
 | 2 | TPL_META_CONSTITUTION | `TPL_META_CONSTITUTION` | 1 (Constitution des docs méta) | Unique |
 | 3 | TPL_META_MANIFEST | `TPL_META_MANIFEST` | 2 (Philosophie + Profil) | Réutilisé 2× |
 | 4 | TPL_META_CADRE | `TPL_META_CADRE` | 4 (LBP, Brain, Twin, MO) | Réutilisé 4× |
-| 5 | TPL_META_CATALOGUE | `TPL_META_CATALOGUE` | 4 (Décisions, Règles, Workflows, Propagation) | Réutilisé 4× |
-| 6 | TPL_META_GRAMMAR | `TPL_META_GRAMMAR` | 1 (Codification) | Unique (mode référentiel statique, distinct de CATALOGUE) |
+| 5 | TPL_META_CATALOGUE | `TPL_META_CATALOGUE` | 4 (Décisions, Règles, Workflows, Propagation) | Réutilisé 4× — 🟢 v1.6 actif, 4 catalogues instanciés |
+| 6 | TPL_META_GRAMMAR | `TPL_META_GRAMMAR` | 1 (Codification) actuel + future Grammaire SQL/Supabase si bascule | 🟢 v1.0 actif, 1 instance produite (Codification - LBP v1.0) |
 | 7 | TPL_META_SPECS_ARCHI | `TPL_META_SPECS_ARCHI` | 3 (Architecture Brain/Twin/MO) | Réutilisé 3× |
 | 8 | TPL_META_INTERFACES | `TPL_META_INTERFACES` | 1 (Interfaces Brain↔Twin↔MO) | Unique |
 | 9 | TPL_META_CHARTE | `TPL_META_CHARTE` | 3 (Rédac, Graphique, Sécurité & RGPD) | Réutilisé 3× |
@@ -66,7 +66,7 @@ Statuts possibles : 🔴 à faire / 🟡 en cours / 🟢 fait.
 | # | Doc cible | Source(s) actuelle(s) | Logique de conversion | Points de vigilance | Statut |
 |---|---|---|---|---|---|
 | N.1 | `Règles intrinsèques - LBP.md` | `RULES_LBP.md` | Conversion via TPL_META_CATALOGUE. Schéma item R-XXX : Portée / Statut / Why / How / Articulation / Découverte. **Devient le nouveau réceptacle des futurs R-XXX.** | Schéma item à figer en v1.0. Recapter R-072 capturée 03-05-2026 dans le nouveau format. | 🔴 |
-| N.2 | `Codification - LBP.md` | `CODIFICATION_LBP.md` | Conversion via TPL_META_CATALOGUE. Schéma item : Type d'objet / Format du code / Exemples / Anti-patterns. | Doc référentiel — vérifier exhaustivité au moment du bump. | 🔴 |
+| N.2 | `Codification - LBP.md` | `CODIFICATION_LBP.md` (archivé v1.0 le 04-05-2026) | Conversion via **TPL_META_GRAMMAR** v1.0 (pas TPL_META_CATALOGUE — mode référentiel statique distinct des modes log/substitution). 5 sous-grammaires : G1 Format général Brain, G2 Taxonomies, G3 Bricks instanciées MO, G4 Codes occurrence MO, G5 IDs systèmes en table de lookup. | Cascade R-077 appliquée : R-005, R-027, R-053, R-054, R-061, R-062, R-064, R-068 reformulées pour pointer vers Codification. | 🟢 v1.0 (04-05-2026) |
 | N.3 | `Charte rédactionnelle - LBP.md` | _from scratch_ | Guidelines d'écriture transverses LBP : ton, structure, conventions de prose, tableaux, etc. | Risque doublons avec règles déjà dans RULES_LBP — extraire et migrer ce qui est rédactionnel. | 🔴 |
 | N.4 | `Charte graphique - LBP.md` | _from scratch_ | Conventions visuelles : couleurs, icônes Notion, emoji conventions, mise en page docs. | Bas niveau de priorité tant que pas d'asset graphique standardisé. | 🔴 |
 | N.5 | `Sécurité & RGPD - LBP.md` | _from scratch_ | Règles de manipulation des données client, anonymisation, accès, rétention. | Critique pour les missions client — bonne base avant prochain client. | 🔴 |
