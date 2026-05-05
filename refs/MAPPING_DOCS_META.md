@@ -372,7 +372,9 @@ Toutes ces méthodes sont produites sur la base de `Template - Méthode LBP.md` 
 
 | Indicateur | Valeur |
 |---|---|
-| Docs cibles produits (sur 24) | 1/24 (Constitution v0.3, à raffiner) |
-| Templates META produits (sur 10) | 1/10 (TPL_META_CATALOGUE v1.4, en validation) |
-| Phase courante | Phase 3 close, Phase 4 à démarrer |
-| Dernière mise à jour | 03-05-2026 |
+| Docs canoniques produits | ~14 produits : 5 catalogues fondateurs (Règles intrinsèques v1.15, Règles de propagation v1.0, Décisions architecturales v1.1, Workflows opérationnels v1.1, Codification v1.0) + 4 Référentiels directeurs (Brain v1.1, Twin v1.2, Mission Ops v1.1, LBP v1.1) + 3 Architectures (Brain, Twin, Mission Ops via TPL_META_ARCHITECTURE v1.1) + Constitution méta v0.4 + Lectures - Twin v3.3 (1er doc canonique Twin de fonction OPERER cognitive) |
+| Templates META produits | 4 actifs : TPL_META_CATALOGUE v1.6 + TPL_META_GRAMMAR v1.0 + TPL_META_REFDIR v1.1 + TPL_META_ARCHITECTURE v1.1 |
+| Quadrant Twin | 3 docs sur 4 actifs (Refdir Twin v1.2 ✅ + Architecture - Twin ✅ + Lectures - Twin v3.3 ✅) — manque Écritures - Twin (Phase 4.10). Le pattern quadrant n'est pas transverse — Twin-spécifique (arbitrage Leonard 05-05-2026). |
+| Dernière phase close | Phase 4.8d (05-05-2026) — Lectures - Twin v3.3 + capture R-083 (niveau d'abstraction docs méta selon fonction systémique) + capture hypothèse backlog (propriété qualification de complétude sur BDDs Twin) |
+| Phase suivante | Phase 4.9 (Panorama + Philosophie + Profil + Offres + Playbook stratégique) ou Phase 4.10 (Chartes + QC + Écritures - Twin) — arbitrage Leonard à venir |
+| Dernière mise à jour | 05-05-2026 |
