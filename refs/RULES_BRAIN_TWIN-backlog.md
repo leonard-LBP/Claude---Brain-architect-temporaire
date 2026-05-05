@@ -19,6 +19,23 @@
 
 ## Règles en attente
 
+- [05-05-2026] **Propriété de qualification de complétude sur les BDDs Twin (statut : exhaustif / partiel / non instruit)**
+  - **Contexte** : Émergé Phase 4.8d production Lectures - Twin v3.1 lors de la formalisation de la doctrine de prudence interprétative §4.5. Constat de fond : le Twin n'est jamais « la réalité », c'est un modèle partiel ciblé par les besoins de la mission (ex. Royal Canin 9 000 personnes — on n'indexe que les individus pertinents, peut-être quelques dizaines). Sans qualification de complétude par fiche, l'agent qui lit le Twin traite toutes les fiches comme équivalentes et risque de produire des analyses confiantes sur des objets sous-instruits (« cet individu n'est responsable que de 3 processus » alors que c'est juste ce qu'on a vu). Mécanisme à 3 niveaux articulé dans §4.5 de Lectures - Twin v3.1 : (i) cadre d'attendus par BDD posé en début de mission [niveau macro] ; (ii) qualification de complétude par fiche [niveau objet — c'est cette propriété qui est ici pressentie] ; (iii) propagation aux relations et propriétés de l'objet [niveau induit].
+  - **Portée potentielle** : Twin (toutes les BDDs susceptibles d'être instanciées en mission). Possiblement transverse Brain-Twin selon la décision sur les BDDs Brain mission-specific.
+  - **Pistes à examiner** :
+    1. **Format de la propriété** : sélecteur à 3 valeurs (`exhaustif` / `partiel` / `non instruit`) ou sélecteur à plus de granularité (ex. ajout `incertain`, `obsolète`, etc.) ? Trois valeurs semble suffisant pour la prudence interprétative ; plus de granularité crée du bruit.
+    2. **Universalité ou opt-in par BDD** : la propriété s'applique-t-elle à toutes les BDDs Twin uniformément, ou est-elle activée seulement sur les BDDs où la complétude varie d'objet à objet (typiquement Individus, Collectifs, Actifs, Pratiques) ? Les BDDs analytiques consolidées (Problématiques, Capacités) peuvent ne pas en avoir besoin si elles sont de facto exhaustivement instruites.
+    3. **Cas particulier des relations** : faut-il un mécanisme similaire au niveau relation (ex. sur la relation `est responsable de`) pour signaler qu'une relation est exhaustive même si l'objet source est partiel (cf. §4.5.3 de Lectures - Twin) ? Si oui, comment matérialiser cette précision dans le schéma Notion (propriété auxiliaire texte, convention de nommage, etc.) ?
+    4. **Articulation avec les sandboxes** : les BDDs sandbox sont par construction « partielles » (cf. R-014, R-022). La propriété de complétude n'a-t-elle de sens que sur les BDDs officielles ? Probablement oui.
+    5. **Articulation avec les sources** : un objet « exhaustif » présuppose-t-il une qualité de sources particulière (plusieurs sources convergentes) ou est-ce indépendant ? Probablement indépendant — la complétude est une déclaration du consultant sur l'instruction, pas sur la robustesse de la preuve.
+  - **Bloquant à lever avant formalisation** :
+    - Test en condition réelle de la doctrine §4.5 sur 1-2 missions pilotes pour valider que le mécanisme à 3 niveaux est exploitable opérationnellement.
+    - Décider du périmètre BDDs concernées (toutes vs subset).
+    - Décider du mécanisme niveau relation (cas particulier §4.5.3).
+    - Une fois tranché : impact sur Architecture - Twin (ajout propriété transverse documentée) + Écritures - Twin (doctrine d'instruction de la qualification pendant le peuplement) + production du template `Cadre d'attendus par BDD` (instrument complémentaire au niveau macro §4.5.1).
+  - **Quand** : après validation Phase 4.10 (production Écritures - Twin) ou Phase 5 (Cercle 2 mission test).
+  - **Lien doctrinal** : Lectures - Twin v3.1 §4.5 (toute la doctrine de prudence interprétative à 3 niveaux), Glossaire LBP (concept `known unknown` / `unknown unknown` mobilisé en §4.5.4).
+
 - [27-04-2026] **Doctrine "manuels et templates de BDD agnostiques du backend"**
   - **Contexte** : Lors de la revue du nouveau template Mission Ops v5.1.0, Leonard a explicitement demandé qu'**aucune mention de Notion (ou tout autre backend spécifique) ne figure dans les templates et manuels de BDD**. Notion est un outil transitoire, pas durable. Les manuels doivent rester vrais quel que soit le backend (Notion aujourd'hui, autre demain). Application immédiate : suppression des `Libellé Notion ou libellé canonique unique` → `Libellé canonique unique` dans les 4 manuels Mission Ops + audit `purpose` du nouveau template (lui-même déjà conforme).
   - **Portée potentielle** : Transverse Brain + Twin + Mission Ops (toute la couche manuels et templates).
