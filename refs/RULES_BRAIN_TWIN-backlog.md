@@ -19,22 +19,33 @@
 
 ## Règles en attente
 
-- [05-05-2026] **Propriété de qualification de complétude sur les BDDs Twin (statut : exhaustif / partiel / non instruit)**
-  - **Contexte** : Émergé Phase 4.8d production Lectures - Twin v3.1 lors de la formalisation de la doctrine de prudence interprétative §4.5. Constat de fond : le Twin n'est jamais « la réalité », c'est un modèle partiel ciblé par les besoins de la mission (ex. Royal Canin 9 000 personnes — on n'indexe que les individus pertinents, peut-être quelques dizaines). Sans qualification de complétude par fiche, l'agent qui lit le Twin traite toutes les fiches comme équivalentes et risque de produire des analyses confiantes sur des objets sous-instruits (« cet individu n'est responsable que de 3 processus » alors que c'est juste ce qu'on a vu). Mécanisme à 3 niveaux articulé dans §4.5 de Lectures - Twin v3.1 : (i) cadre d'attendus par BDD posé en début de mission [niveau macro] ; (ii) qualification de complétude par fiche [niveau objet — c'est cette propriété qui est ici pressentie] ; (iii) propagation aux relations et propriétés de l'objet [niveau induit].
-  - **Portée potentielle** : Twin (toutes les BDDs susceptibles d'être instanciées en mission). Possiblement transverse Brain-Twin selon la décision sur les BDDs Brain mission-specific.
-  - **Pistes à examiner** :
-    1. **Format de la propriété** : sélecteur à 3 valeurs (`exhaustif` / `partiel` / `non instruit`) ou sélecteur à plus de granularité (ex. ajout `incertain`, `obsolète`, etc.) ? Trois valeurs semble suffisant pour la prudence interprétative ; plus de granularité crée du bruit.
-    2. **Universalité ou opt-in par BDD** : la propriété s'applique-t-elle à toutes les BDDs Twin uniformément, ou est-elle activée seulement sur les BDDs où la complétude varie d'objet à objet (typiquement Individus, Collectifs, Actifs, Pratiques) ? Les BDDs analytiques consolidées (Problématiques, Capacités) peuvent ne pas en avoir besoin si elles sont de facto exhaustivement instruites.
-    3. **Cas particulier des relations** : faut-il un mécanisme similaire au niveau relation (ex. sur la relation `est responsable de`) pour signaler qu'une relation est exhaustive même si l'objet source est partiel (cf. §4.5.3 de Lectures - Twin) ? Si oui, comment matérialiser cette précision dans le schéma Notion (propriété auxiliaire texte, convention de nommage, etc.) ?
-    4. **Articulation avec les sandboxes** : les BDDs sandbox sont par construction « partielles » (cf. R-014, R-022). La propriété de complétude n'a-t-elle de sens que sur les BDDs officielles ? Probablement oui.
-    5. **Articulation avec les sources** : un objet « exhaustif » présuppose-t-il une qualité de sources particulière (plusieurs sources convergentes) ou est-ce indépendant ? Probablement indépendant — la complétude est une déclaration du consultant sur l'instruction, pas sur la robustesse de la preuve.
-  - **Bloquant à lever avant formalisation** :
-    - Test en condition réelle de la doctrine §4.5 sur 1-2 missions pilotes pour valider que le mécanisme à 3 niveaux est exploitable opérationnellement.
-    - Décider du périmètre BDDs concernées (toutes vs subset).
-    - Décider du mécanisme niveau relation (cas particulier §4.5.3).
-    - Une fois tranché : impact sur Architecture - Twin (ajout propriété transverse documentée) + Écritures - Twin (doctrine d'instruction de la qualification pendant le peuplement) + production du template `Cadre d'attendus par BDD` (instrument complémentaire au niveau macro §4.5.1).
-  - **Quand** : après validation Phase 4.10 (production Écritures - Twin) ou Phase 5 (Cercle 2 mission test).
-  - **Lien doctrinal** : Lectures - Twin v3.1 §4.5 (toute la doctrine de prudence interprétative à 3 niveaux), Glossaire LBP (concept `known unknown` / `unknown unknown` mobilisé en §4.5.4).
+- [05-05-2026 → dépassé 06-05-2026] **Propriété de qualification de complétude sur les BDDs Twin (statut : exhaustif / partiel / non instruit) — abandonné au profit du Chantier G (Gouvernance des objets)**
+  - **Contexte initial** : Émergé Phase 4.8d production Lectures - Twin v3.1 lors de la formalisation de la doctrine de prudence interprétative §4.5. Première approche : qualification au niveau objet (exhaustif / partiel / non instruit) avec arbitrage des libellés et de la matérialisation Notion (taxonomie OBJ.STATUT v2 ordinale 6 valeurs ou OBJ.MATURITE 4 valeurs).
+  - **Évolution doctrinale 06-05-2026** : Leonard a posé une vision plus fine et plus puissante — le **verrouillage progressif par propriété** (granularité au niveau de la propriété, pas de l'objet entier). Avec l'information que les BDDs Twin sont déjà gérées sur Supabase (Notion étant un outil de prototypage initial), les contraintes techniques qui forçaient une qualification grossière au niveau objet sautent. Le verrouillage par propriété + propagation symétrique automatique + déduction logique par cardinalité + indicateurs natifs de fiabilité deviennent implémentables nativement via schéma Supabase.
+  - **Décision** : la qualification au niveau objet (exhaustif / partiel / non instruit) reste valide comme **agrégat calculé** issu des verrouillages de propriétés, mais **n'est plus la primitive d'instruction**. La primitive est le verrouillage par propriété.
+  - **Cascade** : ouverture du **Chantier G — Gouvernance des objets** (capture doctrinale dans `Gouvernance des objets - Twin.md` + `Gouvernance des objets - Mission Ops.md` + spec technique Supabase avec Clément + implémentation pilote + cascade 28 BDDs Twin + doctrine d'extraction/analyse).
+  - **Lien doctrinal** : `Gouvernance des objets - Twin.md` (à produire — Phase G1) ; bumps déjà appliqués 06-05-2026 sur Lectures - Twin v3.4 (§4.5.2 enrichi) et Écritures - Twin v1.1 (§11.5 refondu).
+
+- [06-05-2026] **Chantier G — Gouvernance des objets (Twin + Mission Ops)**
+  - **Vision (Leonard 06-05-2026)** : doctrine de gouvernance multi-granulaire des objets Twin via verrouillage progressif par propriété, propagation symétrique automatique, déduction logique par cardinalité, indicateurs natifs de fiabilité. Mission Ops aura sa propre doctrine de gouvernance (cycle de vie des bricks, articulation actions/meetings, doctrine de production de livrables).
+  - **Bénéfice attendu** :
+    - Réduction du travail des agents d'extraction (ignorer les propriétés verrouillées)
+    - Solidité progressive du Twin (zones de certitude vs zones d'ombre lisibles)
+    - Matière première calibrée pour les agents d'analyse (chat, bricks, livrables) qui peuvent appuyer leurs conclusions sur du verrouillé et signaler explicitement les zones d'hypothèse
+    - Différenciateur LBP sur le marché des Twin enterprise : Twin gouverné, auditable, qui sait ce qu'il sait et ce qu'il ne sait pas
+  - **Architecture technique** : Supabase comme SoT (Notion étant un outil de visualisation/prototypage). Schéma à concevoir avec Clément : tables `property_locks` + `lock_events`, vues d'agrégation (% verrouillés par fiche / BDD / couche), triggers de propagation symétrique, déduction logique par cardinalité saturée.
+  - **Pentagone Twin confirmé** : Refdir + Architecture + Écritures + Lectures + **Gouvernance** (5e doc canonique du quadrant Twin, dans `00 - Docs méta/50-Opérer/`).
+  - **Doc complémentaire MO** : `Gouvernance des objets - Mission Ops.md` dans `50-Opérer/` (doctrine plus simple, scope cycle de vie des bricks + articulation actions/meetings).
+  - **Phases** :
+    - G1 : Doctrine `Gouvernance des objets - Twin` (1-2 sessions)
+    - G2 : Doctrine `Gouvernance des objets - Mission Ops` (1 session)
+    - G3 : Spec technique Supabase avec Clément (1-2 sessions)
+    - G4 : Implémentation pilote 2-3 BDDs Twin (Individus + Postes + Pratiques organisationnelles) + UI app LBP (2-3 sessions Clément)
+    - G5 : Cascade 28 BDDs Twin + bumps Architecture/Écritures/Lectures Twin (2-3 sessions)
+    - G6 : Cascade Mission Ops gouvernance (1-2 sessions)
+    - G7 / Chantier P : Refonte agents alignés sur Twin gouverné (3-5 sessions)
+  - **Total estimé** : 8-13 sessions étalées sur 2-4 semaines selon disponibilités Clément.
+  - **Lien doctrinal** : Lectures - Twin v3.4 §4.5 (prudence interprétative à 3 niveaux), Écritures - Twin v1.1 §11 (qualification de complétude — articulation transitoire à dépasser), Doctrine `Gouvernance des objets - Twin` (à produire).
 
 - [27-04-2026] **Doctrine "manuels et templates de BDD agnostiques du backend"**
   - **Contexte** : Lors de la revue du nouveau template Mission Ops v5.1.0, Leonard a explicitement demandé qu'**aucune mention de Notion (ou tout autre backend spécifique) ne figure dans les templates et manuels de BDD**. Notion est un outil transitoire, pas durable. Les manuels doivent rester vrais quel que soit le backend (Notion aujourd'hui, autre demain). Application immédiate : suppression des `Libellé Notion ou libellé canonique unique` → `Libellé canonique unique` dans les 4 manuels Mission Ops + audit `purpose` du nouveau template (lui-même déjà conforme).
